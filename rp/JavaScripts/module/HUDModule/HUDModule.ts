@@ -140,11 +140,11 @@ export class HUDPanel extends HUDPanel_Generate {
     }
 
     private showHideGoodsButton(): void {
-        this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible);
+        this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
     }
 
     private addDeleteAllGoods(): void {
-        this.constollerGoodsContentCanvasVisible(false);
+        this.constollerGoodsContentCanvasVisible(false, true);
         this.getHUDModuleC.deleteAllGoodsAction.call();
     }
 
@@ -176,8 +176,8 @@ export class HUDPanel extends HUDPanel_Generate {
         Utils.setWidgetVisibility(this.mGoodsCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
     }
 
-    public constollerGoodsContentCanvasVisible(isVisible: boolean): void {
-        this.constollerGoodsCanvasVisible(isVisible);
+    public constollerGoodsContentCanvasVisible(isVisible: boolean, isParent: boolean): void {
+        if (isParent) this.constollerGoodsCanvasVisible(isVisible);
         Utils.setWidgetVisibility(this.mGoodsContentCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
     }
 
@@ -203,7 +203,7 @@ export class HUDPanel extends HUDPanel_Generate {
                 this.hudItems.push(hudItem);
             }
         }
-        this.constollerGoodsContentCanvasVisible(bagIds.length > 0);
+        this.constollerGoodsContentCanvasVisible(bagIds.length > 0, true);
     }
 }
 

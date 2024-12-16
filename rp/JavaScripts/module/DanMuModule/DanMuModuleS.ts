@@ -32,6 +32,7 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
             Utils.buffMap.get(player.playerId)?.destroy();
             Utils.buffMap.delete(player.playerId);
         }
+        this.unloadAllBag(player, false);
     }
 
     private initBuff(player: mw.Player): void {
@@ -255,10 +256,14 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
 
     public async net_unloadAllBag(): Promise<number[]> {
         let player = this.currentPlayer;
+        return await this.unloadAllBag(player, true);
+    }
+
+    private async unloadAllBag(player: mw.Player, isSync: boolean): Promise<number[]> {
         if (!this.playerBagMap.has(player.playerId)) return;
         let playerBag = this.playerBagMap.get(player.playerId);
         for (let i = 0; i < playerBag.length; ++i) {
-            await playerBag[i].unEquip(player, playerBag[i].bagId);
+            await playerBag[i].unEquip(player, playerBag[i].bagId, isSync);
         }
         this.playerBagMap.delete(player.playerId);
         return [];
@@ -403,7 +408,7 @@ export class PlayerBag {
         return true;
     }
 
-    public async unEquip(player: mw.Player, bagId: number): Promise<boolean> {
+    public async unEquip(player: mw.Player, bagId: number, isSync: boolean = true): Promise<boolean> {
         this.isUpdate = false;
         this.stopEffect();
         this.stop3DSound();
@@ -425,7 +430,7 @@ export class PlayerBag {
         }
         this.recycleMode();
         this.recycleVehiclesMode();
-        await TimeUtil.delaySecond(0.1);
+        if (isSync) await TimeUtil.delaySecond(0.1);
         return true;
     }
 
@@ -490,7 +495,6 @@ export class PlayerBag {
         this.vehiclesMode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
         this.vehiclesMode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
         this.vehiclesMode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
-        this.playerIdleAction();
     }
 
     public recycleVehiclesMode(): void {

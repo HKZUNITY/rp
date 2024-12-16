@@ -205,15 +205,29 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
 
     private playerInteractoringMap: Map<number, number> = new Map<number, number>();
     public async net_interact(isInteract: boolean, id: number): Promise<number> {
+        let player = this.currentPlayer;
         return new Promise<number>(async (resolve: (value: number) => void) => {
-            let player = this.currentPlayer;
             if (!this.playerInteractorMap.has(id)) return resolve(0);
             let playerInteractor = this.playerInteractorMap.get(id);
             if (isInteract) {
                 if (!playerInteractor.isCanSit) return resolve(3);
                 playerInteractor.interactor.onEnter.add(() => {
-                    player.character.localTransform.position = mw.Vector.zero;
+                    switch (sitElement.HumanoidSlotType) {
+                        case mw.HumanoidSlotType.Root:
+                        case mw.HumanoidSlotType.RightFoot:
+                        case mw.HumanoidSlotType.LeftFoot:
+                            let z = player.character.collisionExtent.z;
+                            player.character.localTransform.position = new mw.Vector(0, 0, z / 2);
+                            break;
+                        case mw.HumanoidSlotType.Hair:
+                        case mw.HumanoidSlotType.Buttocks:
+                            player.character.localTransform.position = mw.Vector.zero;
+                        default:
+                            player.character.localTransform.position = mw.Vector.zero;
+                            break;
+                    }
                     player.character.localTransform.rotation = mw.Rotation.zero;
+                    playerInteractor.interactor.onEnter.clear();
                     return resolve(1);
                 });
                 let sitElement = GameConfig.Interact.getElement(id);
@@ -222,9 +236,10 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
                 this.playerInteractoringMap.set(player.playerId, id);
             } else {
                 playerInteractor.interactor.onLeave.add(() => {
+                    playerInteractor.interactor.onLeave.clear();
                     return resolve(2);
                 });
-                playerInteractor.interactor.leave();
+                playerInteractor.interactor.leave(playerInteractor.interactor.worldTransform.position);
                 playerInteractor.isCanSit = true;
                 if (this.playerInteractoringMap.has(player.playerId)) this.playerInteractoringMap.delete(player.playerId);
             }
@@ -237,10 +252,18 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
         let id = this.playerInteractoringMap.get(playerId);
         if (!this.playerInteractorMap.has(id)) return;
         let playerInteractor = this.playerInteractorMap.get(id);
-        playerInteractor.interactor.onLeave.add(() => { });
+        playerInteractor.interactor.onLeave.add(() => {
+            console.error(`playerId = ${playerId}, id = ${id}`);
+            playerInteractor.interactor.onLeave.clear();
+        });
         playerInteractor.interactor.leave();
         playerInteractor.isCanSit = true;
         this.playerInteractoringMap.delete(playerId);
+        console.error(`playerId = ${playerId}, id = ${id}`);
+
+        if (this.usingBagIdMap.has(playerId)) {
+            this.usingBagIdMap.delete(playerId);
+        }
     }
 
     private modelGuidMap: Map<string, mw.Model> = new Map<string, mw.Model>();

@@ -3,6 +3,7 @@ import DanMuModuleC from "./module/DanMuModule/DanMuModuleC";
 import DanMuModuleS from "./module/DanMuModule/DanMuModuleS";
 import { HUDModuleC, HUDModuleS } from "./module/HUDModule/HUDModule";
 import { InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
+import { NavigationModuleC, NavigationModuleS } from "./module/NavigationModule/NavigationModule";
 
 @Component
 export default class GameStart extends Script {
@@ -25,6 +26,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
         ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
+        ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
     }
 
     /**

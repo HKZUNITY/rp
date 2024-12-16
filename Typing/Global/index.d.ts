@@ -5259,6 +5259,21 @@ declare global {
      */
     type StringCallback = mw.StringCallback;
     /**
+     * @author xiangkun.sun
+     * @description 事件监听器
+     * @groups 基础类型/事件
+     * @networkStatus usage:双端
+     */
+    const EventListener: typeof mw.EventListener;
+    type EventListener = mw.EventListener;
+    /**
+     * @description 事件发送的结果
+     * @author xiangkun.sun
+     * @groups 基础类型/事件
+     */
+    const DispatchEventResult: typeof mw.DispatchEventResult;
+    type DispatchEventResult = mw.DispatchEventResult;
+    /**
      * @author mengyuan.hao
      * @description 事件
      * @description MW编辑器支持多种类型的事件。
@@ -5275,21 +5290,6 @@ declare global {
      */
     const Event: typeof mw.Event;
     type Event = mw.Event;
-    /**
-     * @author xiangkun.sun
-     * @description 事件监听器
-     * @groups 基础类型/事件
-     * @networkStatus usage:双端
-     */
-    const EventListener: typeof mw.EventListener;
-    type EventListener = mw.EventListener;
-    /**
-     * @description 事件发送的结果
-     * @author xiangkun.sun
-     * @groups 基础类型/事件
-     */
-    const DispatchEventResult: typeof mw.DispatchEventResult;
-    type DispatchEventResult = mw.DispatchEventResult;
     /**
      * @description 数据储存返回代码
      * @author xiangkun.sun
@@ -5324,13 +5324,12 @@ declare global {
     const LanguageUtil: typeof mw.LanguageUtil;
     type LanguageUtil = mw.LanguageUtil;
     /**
-     * @author jun.zhang
-     * @description 游戏性能数据，辅助 Debug 和性能优化
-     * @groups 工具
-     * @networkStatus usage:双端
+     * @author baoqiang.han
+     * @description 触摸类型
+     * @groups 输入
      */
-    const DebugUtil: typeof mw.DebugUtil;
-    type DebugUtil = mw.DebugUtil;
+    const TouchInputType: typeof mw.TouchInputType;
+    type TouchInputType = mw.TouchInputType;
     /**
      * @author xiaobo.qi
      * @description 本地化工具
@@ -5339,13 +5338,6 @@ declare global {
      */
     const LocaleUtil: typeof mw.LocaleUtil;
     type LocaleUtil = mw.LocaleUtil;
-    /**
-     * @author baoqiang.han
-     * @description 触摸类型
-     * @groups 输入
-     */
-    const TouchInputType: typeof mw.TouchInputType;
-    type TouchInputType = mw.TouchInputType;
     /**
      * @author jie.wu
      * @description 输入事件工具
@@ -5384,6 +5376,14 @@ declare global {
      */
     const InputUtil: typeof mw.InputUtil;
     type InputUtil = mw.InputUtil;
+    /**
+     * @author jun.zhang
+     * @description 游戏性能数据，辅助 Debug 和性能优化
+     * @groups 工具
+     * @networkStatus usage:双端
+     */
+    const DebugUtil: typeof mw.DebugUtil;
+    type DebugUtil = mw.DebugUtil;
     /**
      * @author xiangkun.sun
      * @description 数学库工具
