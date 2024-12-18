@@ -35,4 +35,9 @@ export default class Utils {
     }
 
     public static buffMap: Map<number, Buff> = new Map<number, Buff>();
+
+    public static birthPos: mw.Vector = new mw.Vector(0, 0, 130);
+    public static resetPlayerPos(): void {
+        Player.localPlayer.character.worldTransform.position = this.birthPos;
+    }
 }

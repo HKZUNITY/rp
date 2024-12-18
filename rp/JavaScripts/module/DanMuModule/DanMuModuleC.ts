@@ -91,10 +91,7 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
     private bindEvent(): void {
         Event.addLocalListener(DanmuSyncServer, this.sendDanMuSyncServer.bind(this));
         Event.addLocalListener(DanmuSyncClient, this.sendDanMuSyncClient.bind(this));
-        RoomService.registerMGSChatMessageEvent((jsonData: string) => {
-            this.getDanMuPanel.createDanMuItem(jsonData, false, false);
-            this.showBubbleText(jsonData);
-        });
+        RoomService.registerMGSChatMessageEvent(this.addMGSChatMessageEvent.bind(this));
         this.onOpenChatAction.add(this.addOpenChatAction.bind(this));
         this.onClickChatItem1Action.add(this.addClickChatItem1Action.bind(this));
         this.onClickChatItem2Action.add(this.addClickChatItem2Action.bind(this));
@@ -113,6 +110,12 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
         this.getHudModuleC.clickGoodItemAction.add(this.addClickGoodItemAction.bind(this));
         this.getHudModuleC.clickCloseGoodItemAction.add(this.addClickCloseGoodItemAction.bind(this));
         this.getHudModuleC.deleteAllGoodsAction.add(this.addDeleteAllGoodsAction.bind(this));
+        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+    }
+
+    private addOnOffMainUI(isShow: boolean): void {
+        console.error(`wfz - addOnOffMainUI - isShow:${isShow}`);
+        isShow ? this.getChatPanel.show() : this.getChatPanel.hide();
     }
 
     //#region  弹幕
@@ -122,6 +125,11 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
 
     private sendDanMuSyncClient(msg: string, isActive: boolean): void {
         this.getDanMuPanel.createDanMuItem(msg, isActive, true);
+    }
+
+    private addMGSChatMessageEvent(jsonData: string): void {
+        this.getDanMuPanel.createDanMuItem(jsonData, false, false);
+        this.showBubbleText(jsonData);
     }
 
     public net_sendDanMu(userId: string, msg: string, isActive: boolean): void {

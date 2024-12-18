@@ -1,5 +1,6 @@
 ﻿import { GameConfig } from "../../configs/GameConfig";
 import Utils from "../../tools/Utils";
+import ExecutorManager from "../../tools/WaitingQueue";
 import HUDItem_Generate from "../../ui-generate/module/HUDModule/HUDItem_generate";
 import HUDPanel_Generate from "../../ui-generate/module/HUDModule/HUDPanel_generate";
 import DanMuModuleC from "../DanMuModule/DanMuModuleC";
@@ -117,6 +118,8 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mBagButton.onClicked.add(this.addBagButton.bind(this));
         this.mShowHideGoodsButton.onClicked.add(this.showHideGoodsButton.bind(this));
         this.mDeleteAllGoodsButton.onClicked.add(this.addDeleteAllGoods.bind(this));
+        this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
+        this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -146,6 +149,14 @@ export class HUDPanel extends HUDPanel_Generate {
     private addDeleteAllGoods(): void {
         this.constollerGoodsContentCanvasVisible(false, true);
         this.getHUDModuleC.deleteAllGoodsAction.call();
+    }
+
+    private addSetButton(): void {
+        this.getHUDModuleC.onOpenSetAction.call();
+    }
+
+    private addClothButton(): void {
+        this.getHUDModuleC.onOpenClothAction.call();
     }
 
     public controllerBagUIVisible(isVisible: boolean): void {
@@ -231,6 +242,8 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public clickGoodItemAction: Action1<number> = new Action1<number>();
     public clickCloseGoodItemAction: Action1<number> = new Action1<number>();
     public deleteAllGoodsAction: Action = new Action();
+    public onOpenSetAction: Action = new Action();
+    public onOpenClothAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -240,6 +253,8 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
     protected onEnterScene(sceneType: number): void {
         this.getHUDPanel.show();
+        this.playBgMusic();
+        AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
     }
 
     private initUI(): void {
@@ -250,6 +265,10 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.onCrouchAction.add(this.onCrouchActionHandler.bind(this));
         this.onActionButton.add(this.onActionButtonHandler.bind(this));
         this.onBagButton.add(this.onBagButtonHandler.bind(this));
+        this.onOpenSetAction.add(this.onOpenSetActionHandler.bind(this));
+        this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
+        mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
+        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
     }
 
     private onJumpActionHandler(): void {
@@ -274,6 +293,33 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.getDanMuModuleC.onNextBagAction.call();
     }
 
+    private onOpenSetActionHandler(): void { }
+
+    private onOpenClothActionHandler(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await AvatarEditorService.asyncOpenAvatarEditorModule();
+        });
+    }
+
+    private addAvatarServiceDelegate(eventName: string, ...params: unknown[]): void {
+        console.error(`eventName: ${eventName}`);
+        switch (eventName) {
+            case "AE_OnQuit":
+                Event.dispatchToLocal(`OnOffMainUI`, true);
+                // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, true);
+                break;
+            case "AE_OnOpen":
+                Event.dispatchToLocal(`OnOffMainUI`, false);
+                // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
+                break;
+        }
+    }
+
+    private addOnOffMainUI(isShow: boolean): void {
+        console.error(`isShow: ${isShow}`);
+        isShow ? this.getHUDPanel.show() : this.getHUDPanel.hide();
+    }
+
     public controllerBagUIVisible(isVisible: boolean): void {
         this.getHUDPanel.controllerBagUIVisible(isVisible);
     }
@@ -296,6 +342,10 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
     public action(bagId: number): void {
         this.getDanMuModuleC.onClickBagItemAction.call(bagId);
+    }
+
+    private playBgMusic(): void {
+        SoundService.playBGM(`63341`);
     }
 }
 

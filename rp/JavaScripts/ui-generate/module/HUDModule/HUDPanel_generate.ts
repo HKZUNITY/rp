@@ -1,80 +1,108 @@
 ﻿/**
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 携一壶浊酒
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.03-16.17.53
+ * TIME: 2024.12.18-21.10.40
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
 export default class HUDPanel_Generate extends UIScript {
-		private mJumpBgImage_Internal: mw.Image
+		private mOpenSetImage_Internal: mw.Image
+	public get mOpenSetImage(): mw.Image {
+		if(!this.mOpenSetImage_Internal&&this.uiWidgetBase) {
+			this.mOpenSetImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage') as mw.Image
+		}
+		return this.mOpenSetImage_Internal
+	}
+	private mOpenSetButton_Internal: mw.StaleButton
+	public get mOpenSetButton(): mw.StaleButton {
+		if(!this.mOpenSetButton_Internal&&this.uiWidgetBase) {
+			this.mOpenSetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage/mOpenSetButton') as mw.StaleButton
+		}
+		return this.mOpenSetButton_Internal
+	}
+	private mOpenClothImage_Internal: mw.Image
+	public get mOpenClothImage(): mw.Image {
+		if(!this.mOpenClothImage_Internal&&this.uiWidgetBase) {
+			this.mOpenClothImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage') as mw.Image
+		}
+		return this.mOpenClothImage_Internal
+	}
+	private mOpenClothButton_Internal: mw.StaleButton
+	public get mOpenClothButton(): mw.StaleButton {
+		if(!this.mOpenClothButton_Internal&&this.uiWidgetBase) {
+			this.mOpenClothButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothButton') as mw.StaleButton
+		}
+		return this.mOpenClothButton_Internal
+	}
+	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
 		if(!this.mJumpBgImage_Internal&&this.uiWidgetBase) {
-			this.mJumpBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mJumpBgImage') as mw.Image
+			this.mJumpBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mJumpBgImage') as mw.Image
 		}
 		return this.mJumpBgImage_Internal
 	}
 	private mJumpButton_Internal: mw.Button
 	public get mJumpButton(): mw.Button {
 		if(!this.mJumpButton_Internal&&this.uiWidgetBase) {
-			this.mJumpButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mJumpBgImage/mJumpButton') as mw.Button
+			this.mJumpButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mJumpBgImage/mJumpButton') as mw.Button
 		}
 		return this.mJumpButton_Internal
 	}
 	private mCrouchBgImage_Internal: mw.Image
 	public get mCrouchBgImage(): mw.Image {
 		if(!this.mCrouchBgImage_Internal&&this.uiWidgetBase) {
-			this.mCrouchBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCrouchBgImage') as mw.Image
+			this.mCrouchBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mCrouchBgImage') as mw.Image
 		}
 		return this.mCrouchBgImage_Internal
 	}
 	private mCrouchButton_Internal: mw.Button
 	public get mCrouchButton(): mw.Button {
 		if(!this.mCrouchButton_Internal&&this.uiWidgetBase) {
-			this.mCrouchButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCrouchBgImage/mCrouchButton') as mw.Button
+			this.mCrouchButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mCrouchBgImage/mCrouchButton') as mw.Button
 		}
 		return this.mCrouchButton_Internal
 	}
 	private mBagBgImage_Internal: mw.Image
 	public get mBagBgImage(): mw.Image {
 		if(!this.mBagBgImage_Internal&&this.uiWidgetBase) {
-			this.mBagBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBagBgImage') as mw.Image
+			this.mBagBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mBagBgImage') as mw.Image
 		}
 		return this.mBagBgImage_Internal
 	}
 	private mBagButton_Internal: mw.Button
 	public get mBagButton(): mw.Button {
 		if(!this.mBagButton_Internal&&this.uiWidgetBase) {
-			this.mBagButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBagBgImage/mBagButton') as mw.Button
+			this.mBagButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mBagBgImage/mBagButton') as mw.Button
 		}
 		return this.mBagButton_Internal
 	}
 	private mExitBgImage_Internal: mw.Image
 	public get mExitBgImage(): mw.Image {
 		if(!this.mExitBgImage_Internal&&this.uiWidgetBase) {
-			this.mExitBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mExitBgImage') as mw.Image
+			this.mExitBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mExitBgImage') as mw.Image
 		}
 		return this.mExitBgImage_Internal
 	}
 	private mExitButton_Internal: mw.Button
 	public get mExitButton(): mw.Button {
 		if(!this.mExitButton_Internal&&this.uiWidgetBase) {
-			this.mExitButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mExitBgImage/mExitButton') as mw.Button
+			this.mExitButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mExitBgImage/mExitButton') as mw.Button
 		}
 		return this.mExitButton_Internal
 	}
 	private mActionBgImage_Internal: mw.Image
 	public get mActionBgImage(): mw.Image {
 		if(!this.mActionBgImage_Internal&&this.uiWidgetBase) {
-			this.mActionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mActionBgImage') as mw.Image
+			this.mActionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mActionBgImage') as mw.Image
 		}
 		return this.mActionBgImage_Internal
 	}
 	private mActionButton_Internal: mw.Button
 	public get mActionButton(): mw.Button {
 		if(!this.mActionButton_Internal&&this.uiWidgetBase) {
-			this.mActionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mActionBgImage/mActionButton') as mw.Button
+			this.mActionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mActionBgImage/mActionButton') as mw.Button
 		}
 		return this.mActionButton_Internal
 	}
@@ -131,6 +159,20 @@ export default class HUDPanel_Generate extends UIScript {
 	protected initButtons() {
 		//按钮添加点击
 		
+		this.mOpenSetButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
+		});
+		this.initLanguage(this.mOpenSetButton);
+		this.mOpenSetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenClothButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenClothButton");
+		});
+		this.initLanguage(this.mOpenClothButton);
+		this.mOpenClothButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
 		});
