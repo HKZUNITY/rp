@@ -36,7 +36,7 @@ export default class Utils {
 
     public static buffMap: Map<number, Buff> = new Map<number, Buff>();
 
-    public static birthPos: mw.Vector = new mw.Vector(0, 0, 130);
+    public static birthPos: mw.Vector = new mw.Vector(0, 0, 1000);
     public static resetPlayerPos(): void {
         Player.localPlayer.character.worldTransform.position = this.birthPos;
     }
@@ -44,6 +44,7 @@ export default class Utils {
     public static async applySharedId(character: mw.Character, sharedId: string): Promise<boolean> {
         return new Promise(async (resolve: (isSuccess: boolean) => void) => {
             mw.AccountService.applySharedId(character, sharedId, async (success: boolean) => {
+                console.error(`success:${success}`);
                 if (success) character.syncDescription();
                 await character.asyncReady();
                 return resolve(success);

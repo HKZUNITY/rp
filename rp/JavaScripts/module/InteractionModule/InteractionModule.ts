@@ -1,7 +1,6 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
 import { IInteractElement } from "../../configs/Interact";
-import { ISitElement } from "../../configs/Sit";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/OnClickPanel_generate";
@@ -231,7 +230,7 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
 
     private playerInteractorMap: Map<number, PlayerInteractor> = new Map<number, PlayerInteractor>();
     private findInteractors(): void {
-        GameConfig.Interact.getAllElement().forEach(async (value: ISitElement) => {
+        GameConfig.Interact.getAllElement().forEach(async (value: IInteractElement) => {
             let interactivityGuid = value.InteractivityGuid;
             if (!interactivityGuid || interactivityGuid.length == 0) return;
             let interactor = await GameObject.asyncFindGameObjectById(interactivityGuid) as mw.Interactor;
@@ -247,8 +246,10 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
             let playerInteractor = this.playerInteractorMap.get(id);
             if (isInteract) {
                 if (!playerInteractor.isCanSit) return resolve(3);
+                let interactElement = GameConfig.Interact.getElement(id);
+                playerInteractor.interactor.onEnter.clear();
                 playerInteractor.interactor.onEnter.add(() => {
-                    switch (sitElement.HumanoidSlotType) {
+                    switch (interactElement.HumanoidSlotType) {
                         case mw.HumanoidSlotType.Root:
                         case mw.HumanoidSlotType.RightFoot:
                         case mw.HumanoidSlotType.LeftFoot:
@@ -263,19 +264,18 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
                             break;
                     }
                     player.character.localTransform.rotation = mw.Rotation.zero;
-                    playerInteractor.interactor.onEnter.clear();
                     return resolve(1);
                 });
-                let sitElement = GameConfig.Interact.getElement(id);
-                playerInteractor.interactor.enter(player.character, sitElement.HumanoidSlotType, sitElement.SitStance);
+                playerInteractor.interactor.enter(player.character, interactElement.HumanoidSlotType, interactElement.SitStance);
                 playerInteractor.isCanSit = false;
                 this.playerInteractoringMap.set(player.playerId, id);
             } else {
+                playerInteractor.interactor.onLeave.clear();
                 playerInteractor.interactor.onLeave.add(() => {
-                    playerInteractor.interactor.onLeave.clear();
                     return resolve(2);
                 });
-                playerInteractor.interactor.leave(playerInteractor.interactor.worldTransform.position);
+                let playerInteractorLoc = playerInteractor.interactor.worldTransform.position;
+                playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
                 playerInteractor.isCanSit = true;
                 if (this.playerInteractoringMap.has(player.playerId)) this.playerInteractoringMap.delete(player.playerId);
             }

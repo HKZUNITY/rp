@@ -580,7 +580,6 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
     }
 
     private checkParachute(): void {
-        return;//TODO:暂时关闭
         try {
             if (!this.isInitParachute) return;
             if (!this.localPlayer || !this.localPlayer.character) return;

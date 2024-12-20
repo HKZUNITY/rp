@@ -109,13 +109,13 @@ export default class ExecutorManager {
         this.doneCb.call();
     }
 
-    //执行命令，20秒超时
+    //执行命令，10秒超时
     private runExecute(exeFunc: () => Promise<void>): Promise<void> {
         return new Promise<void>(async (resolve: () => void) => {
             let timeOut = setTimeout(() => {
-                console.error(`命令执行20秒超时`);
+                console.error(`命令执行10秒超时`);
                 return resolve();
-            }, 20 * 1000);
+            }, 10 * 1000);
             await exeFunc();
             clearTimeout(timeOut);
             return resolve();

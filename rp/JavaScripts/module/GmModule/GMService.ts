@@ -1,10 +1,20 @@
-﻿import GMHUD_Generate from "../../ui-generate/module/GMModule/GMHUD_generate";
+﻿import Utils from "../../tools/Utils";
+import GMHUD_Generate from "../../ui-generate/module/GMModule/GMHUD_generate";
 import GMItem_Generate from "../../ui-generate/module/GMModule/GMItem_generate";
 
 const GMConfig = [];
 export function AddGMCommand(cmd: GMData) {
     GMConfig.push(cmd);
 }
+
+AddGMCommand({
+    label: "applySharedId",
+    clientCmd: async (player, value) => {
+        Utils.applySharedId(player.character, value);
+    },
+    serverCmd: (player, value) => {
+    }
+});
 
 AddGMCommand({
     label: "雪",
