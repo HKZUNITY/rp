@@ -5,7 +5,7 @@ import {ChatConfig} from "./Chat";
 import {ExpressionConfig} from "./Expression";
 import {InteractConfig} from "./Interact";
 import {LanguageConfig} from "./Language";
-import {SitConfig} from "./Sit";
+import {ShareIdConfig} from "./ShareId";
 
 export class GameConfig{
 	private static configMap:Map<string, ConfigBase<IElementBase>> = new Map();
@@ -30,5 +30,5 @@ export class GameConfig{
 	public static get Expression():ExpressionConfig{ return this.getConfig(ExpressionConfig) };
 	public static get Interact():InteractConfig{ return this.getConfig(InteractConfig) };
 	public static get Language():LanguageConfig{ return this.getConfig(LanguageConfig) };
-	public static get Sit():SitConfig{ return this.getConfig(SitConfig) };
+	public static get ShareId():ShareIdConfig{ return this.getConfig(ShareIdConfig) };
 }

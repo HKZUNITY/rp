@@ -40,4 +40,14 @@ export default class Utils {
     public static resetPlayerPos(): void {
         Player.localPlayer.character.worldTransform.position = this.birthPos;
     }
+
+    public static async applySharedId(character: mw.Character, sharedId: string): Promise<boolean> {
+        return new Promise(async (resolve: (isSuccess: boolean) => void) => {
+            mw.AccountService.applySharedId(character, sharedId, async (success: boolean) => {
+                if (success) character.syncDescription();
+                await character.asyncReady();
+                return resolve(success);
+            });
+        });
+    }
 }

@@ -1,5 +1,6 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
+import { IInteractElement } from "../../configs/Interact";
 import { ISitElement } from "../../configs/Sit";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
@@ -115,6 +116,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
         return this.hudModuleC;
     }
 
+    private currentDescription: mw.CharacterDescription = null;
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
     }
@@ -124,17 +126,40 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
     }
 
     private findTriggers(): void {
-        GameConfig.Interact.getAllElement().forEach(async (value: ISitElement) => {
+        GameConfig.Interact.getAllElement().forEach(async (value: IInteractElement) => {
             let triggerGuid = value.TriggerGuid;
-            if (!triggerGuid || triggerGuid.length == 0) return;
-            let trigger = await GameObject.asyncFindGameObjectById(triggerGuid) as mw.Trigger;
-            await trigger.asyncReady();
-            trigger.onEnter.add((char: mw.Character) => {
-                this.onEnterTrigger(char, value.ID, trigger);
-            });
-            trigger.onLeave.add((char: mw.Character) => {
-                this.onLeaveTrigger(char);
-            });
+            if (triggerGuid && triggerGuid.length > 0) {
+                let trigger = await GameObject.asyncFindGameObjectById(triggerGuid) as mw.Trigger;
+                await trigger.asyncReady();
+                trigger.onEnter.add((char: mw.Character) => {
+                    this.onEnterTrigger(char, value.ID, trigger);
+                });
+                trigger.onLeave.add((char: mw.Character) => {
+                    this.onLeaveTrigger(char);
+                });
+            }
+            let npcId = value.NpcId;
+            if (npcId && npcId.length > 0) {
+                let npc = await GameObject.asyncFindGameObjectById(npcId) as mw.Character;
+                await npc.asyncReady();
+                npc.complexMovementEnabled = false;
+                npc.collisionWithOtherCharacterEnabled = false;
+                let shareId = value.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        Utils.applySharedId(npc, shareIdStr);
+                    }
+                } else {
+                    this.currentDescription = this.localPlayer.character.getDescription();
+                    npc.setDescription(this.currentDescription);
+                }
+                let npcAnimationId = value.NpcAnimationId;
+                if (npcAnimationId && npcAnimationId.length > 0) {
+                    await Utils.asyncDownloadAsset(npcAnimationId);
+                    npc.loadSubStance(npcAnimationId).play();
+                }
+            }
         });
     }
 
@@ -164,6 +189,17 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
                     } else {
                         this.getHUDModuleC.action(bagId);
                     }
+                }
+                let shareId = interact.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                    }
+                } else {
+                    this.localPlayer.character.setDescription(this.currentDescription);
+                    await this.localPlayer.character.asyncReady();
+                    this.localPlayer.character.syncDescription();
                 }
                 return;
             }
