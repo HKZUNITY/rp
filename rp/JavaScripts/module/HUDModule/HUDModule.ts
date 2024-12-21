@@ -1,4 +1,5 @@
 ﻿import { GameConfig } from "../../configs/GameConfig";
+import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import HUDItem_Generate from "../../ui-generate/module/HUDModule/HUDItem_generate";
@@ -108,6 +109,10 @@ export class HUDPanel extends HUDPanel_Generate {
         this.controllerBagUIVisible(false);
         this.controllerActionUIVisible(false);
         this.constollerGoodsCanvasVisible(false);
+
+        if (GlobalData.languageId == 0) {
+            Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
+        }
     }
 
     private bindButton(): void {

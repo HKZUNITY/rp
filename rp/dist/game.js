@@ -1575,7 +1575,7 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     ExpressionConfig: ExpressionConfig
 });
 
-const EXCELDATA$3 = [["ID", "TriggerGuid", "InteractivityGuid", "ModelGuid", "InteractIcon", "HumanoidSlotType", "SitStance", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", "", "", "", ""], [1, "0CD59651", "0325841C", null, "120767", 23, "151060", 10106, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", "10A33D41", null, "120767", 23, "151060", 10439, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", "26DBBEB9", null, "123030", 19, "151060", 10106, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", "0D1267C4", null, "169463", 23, "151060", 10106, null, 0, null, "御剑-"], [100, null, null, null, null, 0, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, null, 0, null, 0, "271ABFD3", 3, "122232", "壁咚"]];
+const EXCELDATA$3 = [["ID", "TriggerGuid", "InteractivityGuid", "ModelGuid", "InteractIcon", "HumanoidSlotType", "SitStance", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", "", "", "", ""], [1, "0CD59651", "0325841C", null, "120767", 23, "151060", 10106, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", "10A33D41", null, "120767", 23, "151060", 10439, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", "26DBBEB9", null, "123030", 19, "151060", 10106, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", "0D1267C4", null, "169463", 23, "151060", 20045, null, 0, null, "御剑-翅膀"], [5, "2A86F403", "3A0716FC", null, "167883", 23, "151060", 10106, null, 0, null, "滑板-电吉他"], [6, "02502CF9", null, "1316BF5C", "103437", 0, null, 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", null, "30C9467F", "103437", 0, null, 30048, null, 0, null, "呲花"], [9, "3B9F004A", null, "02D3D0FB", "103437", 0, null, 30006, null, 0, null], [10, "30A6E783", null, "2B6B0FA6", "103437", 0, null, 30050, null, 0, null], [11, "1B77E308", null, "2FEFA7B3", "103437", 0, null, 30052, null, 0, null], [12, "2ABFBE64", null, "3B620F67", "103437", 0, null, 30008, null, 0, null], [13, "23C087D3", null, "01DA388E", "103437", 0, null, 30052, null, 0, null], [14, "32D06BAB", null, "31EDB7B3", "103437", 0, null, 30010, null, 0, null], [15, "2A9CA5D5", null, "3CCD170C", "103437", 0, null, 30012, null, 0, null], [16, "2321D6C9", null, "17F59CCA", "103437", 0, null, 30014, null, 0, null], [17, "357B83A4", null, "2EB80290", "103437", 0, null, 30054, null, 0, null], [18, "03196BF5", null, "04E952B8", "103437", 0, null, 30056, null, 0, null], [19, "3D1A7899", null, "3CD1BBC4", "103437", 0, null, 30058, null, 0, null], [20, "1660D04A", null, "2805AB56", "103437", 0, null, 30060, null, 0, null], [21, "2F8E9759", null, "4398570", "103437", 0, null, 30062, null, 0, null], [22, "029A708E", null, "0E1CF95E", "103437", 0, null, 30064, null, 0, null], [23, "2B2F3434", null, "0DD82373", "103437", 0, null, 30016, null, 0, null], [24, "1DC00881", null, "2EDE3317", "103437", 0, null, 30066, null, 0, null], [25, "36676894", null, "1F73A63A", "103437", 0, null, 30068, null, 0, null], [26, "1CDE2B65", null, "39B89333", "103437", 0, null, 30070, null, 0, null], [27, "10896871", null, "03D689AA", "103437", 0, null, 30018, null, 0, null], [28, "1AA32466", null, "3F32DF53", "103437", 0, null, 30020, null, 0, null], [29, "37B72C47", null, "2A744A78", "103437", 0, null, 30022, null, 0, null], [30, "30A942B1", null, "1142E907", "103437", 0, null, 30008, null, 0, null], [31, "0FD25D88", null, "01862B9F", "103437", 0, null, 30006, null, 0, null], [32, "114B5C28", null, "27ADEC9A", "103437", 0, null, 30002, null, 0, null], [33, "02CE9D49", null, "2311BAB2", "103437", 0, null, 30010, null, 0, null], [34, "2E950C81", null, "0C6C59A6", "103437", 0, null, 30032, null, 0, null], [35, "11D391D2", null, "1CBB7B6A", "103437", 0, null, 30034, null, 0, null], [36, "3E1D73CC", null, "1877B361", "103437", 0, null, 30036, null, 0, null], [37, "3A591F1D", "3535B689", null, "110057", 19, "218260", 10193, null, 0, null], [38, "11FC2714", null, null, "120649", 0, null, 10193, null, 0, null], [39, "059DA227", "3CD25E81", null, "110057", 19, "14689", 10138, null, 0, null], [40, "3ED043F4", "3458BAE7", null, "110057", 19, "14645", 10163, null, 0, null], [41, "13896C73", "06BFEF06", null, "120694", 0, "175980", 0, null, 0, null], [42, "29EA4298", "1C80ECCB", null, "120694", 0, "14654", 0, null, 0, null], [43, "07A399B3", "17D272F2", null, "110057", 19, "15208", 0, null, 0, null], [44, "0C32A043", "14AC2061", null, "110057", 19, "15208", 0, null, 0, null], [45, "229775EF", "2B31CC4F", null, "110057", 19, "14565", 0, null, 0, null], [46, "0F63B8C0", "3E004E7C", null, "110057", 19, "15208", 0, null, 0, null], [47, "2AC7C25D", "346F5B6C", null, "110057", 19, "14587", 0, null, 0, null], [48, "26920B3D", "0C8AD0CD", null, "110057", 19, "180882", 0, null, 0, null], [49, "2348CF4D", "02BD8A1A", null, "110057", 19, "180891", 0, null, 0, null], [50, "1FC1F0EE", "219AE411", null, "120727", 17, "122231", 10194, null, 0, null], [51, "088F5EE5", "248E8860", null, "146643", 19, "29741", 10091, null, 0, null], [52, "2C87FD97", "16A0B6D0", null, "146643", 19, "35447", 10091, null, 0, null], [53, "05FABD75", "2680E280", null, "168260", 17, "52984", 10430, null, 0, null], [54, "3FE87C24", "06ED66F5", null, "168260", 17, "52984", 10431, null, 0, null], [55, "3E0200C0", "170E7571", null, "168260", 17, "52984", 10432, null, 0, null], [56, "3A8D6DA5", "264275C6", null, "168260", 17, "52984", 10433, null, 0, null], [57, "06416F41", null, null, "120767", 0, null, 60005, null, 0, null], [58, "1AD5C96C", "3DEAE70E", null, "120649", 23, "192126", 10195, null, 0, null], [59, "2AC2381F", "244C6B0B", null, "128699", 18, "122231", 0, null, 0, null], [60, "0AD851F5", "2E363452", null, "156849", 18, "122232", 0, null, 0, null], [61, "35FCD627", "3507E8CF", null, "168260", 17, "14601", 0, null, 0, null], [62, "36416FEF", "16C58F11", null, "158399", 19, "122449", 0, null, 0, null], [63, "117E9D97", null, null, "158398", 0, null, 10420, null, 0, null], [64, "22119BD8", null, null, "158398", 0, null, 10420, null, 0, null], [65, "2BA03CE9", null, null, "158398", 0, null, 10420, null, 0, null], [66, "05E360CD", null, null, "158398", 0, null, 10420, null, 0, null], [67, "36F54E8F", null, null, "120719", 0, null, 10440, null, 0, null], [68, "140807DC", null, null, "120719", 0, null, 10440, null, 0, null], [69, "2EE4A29B", null, null, "120719", 0, null, 10440, null, 0, null], [100, null, null, null, null, 0, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, null, 0, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, null, null, 0, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, null, null, 0, null, 0, "2815DDD0", 8, "180891", "被搂"]];
 class InteractConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$3);
@@ -1638,12 +1638,17 @@ var foreign12 = /*#__PURE__*/Object.freeze({
     LanguageConfig: LanguageConfig
 });
 
-const EXCELDATA$1 = [["ID", "ShareId"], ["", ""], [1, "1022S89K"], [2, "1022S8X6"], [3, "1022S7KJ"], [4, "1022S7KD"], [5, "1022S7K9"], [6, "1022S88E"], [7, "1022S7IE"], [8, "1022S861"], [9, "1022S85O"], [10, "1022S85E"], [11, "1022S8QF"], [12, "1022S82R"], [13, "1022S8R5"], [14, "1022S8RC"], [15, "1022S8RL"], [16, "1022S7FQ"], [17, "1022S8RW"], [18, "1022S8SB"], [19, "1022S7G7"], [20, "1022S84B"], [21, "1022S7GF"], [22, "1022S7GT"], [23, "1022S8T2"], [24, "1022S855"], [25, "10004K5Z"], [26, "10004K60"]];
+const EXCELDATA$1 = [["ID", "ShareId"], ["", ""], [1, "1022S89K", "电锯人"], [2, "1022S8X6", "黑爵士"], [3, "1022S7KJ", "白-爵士"], [4, "1022S7KD", "鬼"], [5, "1022S7K9", "青蛙"], [6, "1022S88E", "恐龙"], [7, "1022S7IE", "射手-"], [8, "1022S861", "繁星"], [9, "1022S85O", "竹节虫-女-黑"], [10, "1022S85E", "竹节虫-女-黑"], [11, "1022S8QF", "竹节虫-男-黑"], [12, "1022S82R", "竹节虫-女-白"], [13, "1022S8R5", "挨个子-女"], [14, "1022S8RC", "竹节虫-女-黑"], [15, "1022S8RL", "新手礼包-矮个子"], [16, "1022S7FQ", "挨个子-女白"], [17, "1022S8RW", "挨个子-女白"], [18, "1022S8SB", "竹节虫-女-白"], [19, "1022S7G7", "挨个子-女黑"], [20, "1022S84B", "竹节虫-女-白"], [21, "1022S7GF", "挨个子-女黑"], [22, "1022S7GT", "兔子帽子女"], [23, "1022S8T2", "棺材女红"], [24, "1022S855", "挨个子-女白"], [25, "102383MF", "圣诞-女"], [26, "102383TY", "圣诞男"], [27, "102382PL", "女"]];
 class ShareIdConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$1);
     }
 }
+
+var foreign13 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    ShareIdConfig: ShareIdConfig
+});
 
 class GameConfig {
     /**
@@ -2463,6 +2468,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.controllerBagUIVisible(false);
         this.controllerActionUIVisible(false);
         this.constollerGoodsCanvasVisible(false);
+        if (GlobalData.languageId == 0) {
+            Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
+        }
     }
     bindButton() {
         this.mJumpButton.onClicked.add(this.addJumpButton.bind(this));
@@ -5121,17 +5129,7 @@ class DanMuModuleC extends ModuleC {
         this.isInitParachute = true;
     }
     checkParachute() {
-        try {
-            if (!this.isInitParachute)
-                return;
-            if (!this.localPlayer || !this.localPlayer.character)
-                return;
-            console.error(`this.localPlayer.character.velocity.z:${this.localPlayer.character.velocity.z}`);
-            if (this.localPlayer.character.isJumping && this.localPlayer.character.velocity.z < -1200 && !this.isGlide) {
-                this.startGlide();
-            }
-        }
-        catch (error) { }
+        return;
     }
     startGlide() {
         this.isGlide = true;
@@ -6295,26 +6293,30 @@ class InteractionModuleC extends ModuleC {
                 if (bagId && bagId > 0) {
                     let modelGuid = interact.ModelGuid;
                     if (modelGuid && modelGuid.length > 0) {
-                        let code = await this.server.net_playInteract(bagId, modelGuid);
-                        if (code == 0) {
-                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                        }
+                        this.server.net_playInteract(bagId, modelGuid).then((interactCode) => {
+                            if (interactCode == 0) {
+                                Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
+                            }
+                        });
                     }
                     else {
                         this.getHUDModuleC.action(bagId);
                     }
                 }
-                let shareId = interact.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                let npcId = interact.NpcId;
+                if (npcId && npcId.length > 0) {
+                    let shareId = interact.ShareId;
+                    if (shareId > 0) {
+                        let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                        if (shareIdStr && shareIdStr.length > 0) {
+                            await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                        }
                     }
-                }
-                else {
-                    this.localPlayer.character.setDescription(this.currentDescription);
-                    await this.localPlayer.character.asyncReady();
-                    this.localPlayer.character.syncDescription();
+                    else {
+                        this.localPlayer.character.setDescription(this.currentDescription);
+                        await this.localPlayer.character.asyncReady();
+                        this.localPlayer.character.syncDescription();
+                    }
                 }
                 return;
             }
@@ -6397,7 +6399,8 @@ class InteractionModuleS extends ModuleS {
                     return resolve(2);
                 });
                 let playerInteractorLoc = playerInteractor.interactor.worldTransform.position;
-                playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
+                let a = playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
+                console.error(`a = ${a}`);
                 playerInteractor.isCanSit = true;
                 if (this.playerInteractoringMap.has(player.playerId))
                     this.playerInteractoringMap.delete(player.playerId);
@@ -6617,6 +6620,7 @@ const navigationConfigs = [
     { modelId: "348F4F22", pathId: "01087776", speed: 15 },
     { modelId: "289E46DE", pathId: "340AFE18", speed: 20 },
     { modelId: "1CD6E58A", pathId: "03498777", speed: 10 },
+    { modelId: "2963B95A", pathId: "1D44FD67", speed: 10 },
 ];
 class NavigationModuleS extends ModuleS {
     constructor() {
@@ -7876,6 +7880,7 @@ const MWModuleMap = {
      '5518D83E44C5548F0296A588F32A2EBA': foreign10,
      '3AB8E07248A4F10CBBD12990567959A3': foreign11,
      '243765004517AECC33492499B2B88CBC': foreign12,
+     '2C6C1F5B41E266A6AEA9DE92728F56BA': foreign13,
      '9BC6EE924CE6A5778D6FAFBF640EED8C': foreign14,
      'D2DDF11D4BF0BEBBCE0F2B9CF42517EE': foreign15,
      '0FCAF0584709FBB39E590CAEA83B1217': foreign16,
@@ -7935,6 +7940,7 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign10 || {}, "JavaScripts/configs/GameConfig"],
 [foreign11 || {}, "JavaScripts/configs/Interact"],
 [foreign12 || {}, "JavaScripts/configs/Language"],
+[foreign13 || {}, "JavaScripts/configs/ShareId"],
 [foreign14 || {}, "JavaScripts/configs/Sit"],
 [foreign15 || {}, "JavaScripts/GameStart"],
 [foreign16 || {}, "JavaScripts/GlobalData"],

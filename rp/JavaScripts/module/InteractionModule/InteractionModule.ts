@@ -181,24 +181,28 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
                 if (bagId && bagId > 0) {
                     let modelGuid = interact.ModelGuid;
                     if (modelGuid && modelGuid.length > 0) {
-                        let code = await this.server.net_playInteract(bagId, modelGuid);
-                        if (code == 0) {
-                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                        }
+                        this.server.net_playInteract(bagId, modelGuid).then((interactCode: number) => {
+                            if (interactCode == 0) {
+                                Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
+                            }
+                        });
                     } else {
                         this.getHUDModuleC.action(bagId);
                     }
                 }
-                let shareId = interact.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                let npcId = interact.NpcId;
+                if (npcId && npcId.length > 0) {
+                    let shareId = interact.ShareId;
+                    if (shareId > 0) {
+                        let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                        if (shareIdStr && shareIdStr.length > 0) {
+                            await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                        }
+                    } else {
+                        this.localPlayer.character.setDescription(this.currentDescription);
+                        await this.localPlayer.character.asyncReady();
+                        this.localPlayer.character.syncDescription();
                     }
-                } else {
-                    this.localPlayer.character.setDescription(this.currentDescription);
-                    await this.localPlayer.character.asyncReady();
-                    this.localPlayer.character.syncDescription();
                 }
                 return;
             }
@@ -275,7 +279,8 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
                     return resolve(2);
                 });
                 let playerInteractorLoc = playerInteractor.interactor.worldTransform.position;
-                playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
+                let a = playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
+                console.error(`a = ${a}`);
                 playerInteractor.isCanSit = true;
                 if (this.playerInteractoringMap.has(player.playerId)) this.playerInteractoringMap.delete(player.playerId);
             }
