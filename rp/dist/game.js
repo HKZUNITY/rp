@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign40 = /*#__PURE__*/Object.freeze({
+var foreign41 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign42 = /*#__PURE__*/Object.freeze({
+var foreign43 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -1575,7 +1575,7 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     ExpressionConfig: ExpressionConfig
 });
 
-const EXCELDATA$3 = [["ID", "TriggerGuid", "InteractivityGuid", "ModelGuid", "InteractIcon", "HumanoidSlotType", "SitStance", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", "", "", "", ""], [1, "0CD59651", "0325841C", null, "120767", 23, "151060", 10106, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", "10A33D41", null, "120767", 23, "151060", 10439, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", "26DBBEB9", null, "123030", 19, "151060", 10106, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", "0D1267C4", null, "169463", 23, "151060", 20045, null, 0, null, "御剑-翅膀"], [5, "2A86F403", "3A0716FC", null, "167883", 23, "151060", 10106, null, 0, null, "滑板-电吉他"], [6, "02502CF9", null, "1316BF5C", "103437", 0, null, 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", null, "30C9467F", "103437", 0, null, 30048, null, 0, null, "呲花"], [9, "3B9F004A", null, "02D3D0FB", "103437", 0, null, 30006, null, 0, null], [10, "30A6E783", null, "2B6B0FA6", "103437", 0, null, 30050, null, 0, null], [11, "1B77E308", null, "2FEFA7B3", "103437", 0, null, 30052, null, 0, null], [12, "2ABFBE64", null, "3B620F67", "103437", 0, null, 30008, null, 0, null], [13, "23C087D3", null, "01DA388E", "103437", 0, null, 30052, null, 0, null], [14, "32D06BAB", null, "31EDB7B3", "103437", 0, null, 30010, null, 0, null], [15, "2A9CA5D5", null, "3CCD170C", "103437", 0, null, 30012, null, 0, null], [16, "2321D6C9", null, "17F59CCA", "103437", 0, null, 30014, null, 0, null], [17, "357B83A4", null, "2EB80290", "103437", 0, null, 30054, null, 0, null], [18, "03196BF5", null, "04E952B8", "103437", 0, null, 30056, null, 0, null], [19, "3D1A7899", null, "3CD1BBC4", "103437", 0, null, 30058, null, 0, null], [20, "1660D04A", null, "2805AB56", "103437", 0, null, 30060, null, 0, null], [21, "2F8E9759", null, "4398570", "103437", 0, null, 30062, null, 0, null], [22, "029A708E", null, "0E1CF95E", "103437", 0, null, 30064, null, 0, null], [23, "2B2F3434", null, "0DD82373", "103437", 0, null, 30016, null, 0, null], [24, "1DC00881", null, "2EDE3317", "103437", 0, null, 30066, null, 0, null], [25, "36676894", null, "1F73A63A", "103437", 0, null, 30068, null, 0, null], [26, "1CDE2B65", null, "39B89333", "103437", 0, null, 30070, null, 0, null], [27, "10896871", null, "03D689AA", "103437", 0, null, 30018, null, 0, null], [28, "1AA32466", null, "3F32DF53", "103437", 0, null, 30020, null, 0, null], [29, "37B72C47", null, "2A744A78", "103437", 0, null, 30022, null, 0, null], [30, "30A942B1", null, "1142E907", "103437", 0, null, 30008, null, 0, null], [31, "0FD25D88", null, "01862B9F", "103437", 0, null, 30006, null, 0, null], [32, "114B5C28", null, "27ADEC9A", "103437", 0, null, 30002, null, 0, null], [33, "02CE9D49", null, "2311BAB2", "103437", 0, null, 30010, null, 0, null], [34, "2E950C81", null, "0C6C59A6", "103437", 0, null, 30032, null, 0, null], [35, "11D391D2", null, "1CBB7B6A", "103437", 0, null, 30034, null, 0, null], [36, "3E1D73CC", null, "1877B361", "103437", 0, null, 30036, null, 0, null], [37, "3A591F1D", "3535B689", null, "110057", 19, "218260", 10193, null, 0, null], [38, "11FC2714", null, null, "120649", 0, null, 10193, null, 0, null], [39, "059DA227", "3CD25E81", null, "110057", 19, "14689", 10138, null, 0, null], [40, "3ED043F4", "3458BAE7", null, "110057", 19, "14645", 10163, null, 0, null], [41, "13896C73", "06BFEF06", null, "120694", 0, "175980", 0, null, 0, null], [42, "29EA4298", "1C80ECCB", null, "120694", 0, "14654", 0, null, 0, null], [43, "07A399B3", "17D272F2", null, "110057", 19, "15208", 0, null, 0, null], [44, "0C32A043", "14AC2061", null, "110057", 19, "15208", 0, null, 0, null], [45, "229775EF", "2B31CC4F", null, "110057", 19, "14565", 0, null, 0, null], [46, "0F63B8C0", "3E004E7C", null, "110057", 19, "15208", 0, null, 0, null], [47, "2AC7C25D", "346F5B6C", null, "110057", 19, "14587", 0, null, 0, null], [48, "26920B3D", "0C8AD0CD", null, "110057", 19, "180882", 0, null, 0, null], [49, "2348CF4D", "02BD8A1A", null, "110057", 19, "180891", 0, null, 0, null], [50, "1FC1F0EE", "219AE411", null, "120727", 17, "122231", 10194, null, 0, null], [51, "088F5EE5", "248E8860", null, "146643", 19, "29741", 10091, null, 0, null], [52, "2C87FD97", "16A0B6D0", null, "146643", 19, "35447", 10091, null, 0, null], [53, "05FABD75", "2680E280", null, "168260", 17, "52984", 10430, null, 0, null], [54, "3FE87C24", "06ED66F5", null, "168260", 17, "52984", 10431, null, 0, null], [55, "3E0200C0", "170E7571", null, "168260", 17, "52984", 10432, null, 0, null], [56, "3A8D6DA5", "264275C6", null, "168260", 17, "52984", 10433, null, 0, null], [57, "06416F41", null, null, "120767", 0, null, 60005, null, 0, null], [58, "1AD5C96C", "3DEAE70E", null, "120649", 23, "192126", 10195, null, 0, null], [59, "2AC2381F", "244C6B0B", null, "128699", 18, "122231", 0, null, 0, null], [60, "0AD851F5", "2E363452", null, "156849", 18, "122232", 0, null, 0, null], [61, "35FCD627", "3507E8CF", null, "168260", 17, "14601", 0, null, 0, null], [62, "36416FEF", "16C58F11", null, "158399", 19, "122449", 0, null, 0, null], [63, "117E9D97", null, null, "158398", 0, null, 10420, null, 0, null], [64, "22119BD8", null, null, "158398", 0, null, 10420, null, 0, null], [65, "2BA03CE9", null, null, "158398", 0, null, 10420, null, 0, null], [66, "05E360CD", null, null, "158398", 0, null, 10420, null, 0, null], [67, "36F54E8F", null, null, "120719", 0, null, 10440, null, 0, null], [68, "140807DC", null, null, "120719", 0, null, 10440, null, 0, null], [69, "2EE4A29B", null, null, "120719", 0, null, 10440, null, 0, null], [100, null, null, null, null, 0, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, null, 0, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, null, null, 0, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, null, null, 0, null, 0, "2815DDD0", 8, "180891", "被搂"]];
+const EXCELDATA$3 = [["ID", "TriggerGuid", "InteractivityGuid", "ModelGuid", "InteractIcon", "HumanoidSlotType", "SitStance", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", "", "", "", ""], [1, "0CD59651", null, null, "120767", 23, "151060", 60004, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", null, null, "120767", 23, "151060", 60005, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", null, null, "123030", 19, "151060", 60014, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", null, null, "169463", 23, "151060", 60013, null, 0, null, "御剑-翅膀"], [5, "2A86F403", null, null, "167883", 23, "151060", 60001, null, 0, null, "滑板-电吉他"], [6, "02502CF9", null, "1316BF5C", "103437", 0, null, 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", null, "30C9467F", "103437", 0, null, 30048, null, 0, null, "呲花"], [9, "3B9F004A", null, "02D3D0FB", "103437", 0, null, 30006, null, 0, null], [10, "30A6E783", null, "2B6B0FA6", "103437", 0, null, 30050, null, 0, null], [11, "1B77E308", null, "2FEFA7B3", "103437", 0, null, 30052, null, 0, null], [12, "2ABFBE64", null, "3B620F67", "103437", 0, null, 30008, null, 0, null], [13, "23C087D3", null, "01DA388E", "103437", 0, null, 30052, null, 0, null], [14, "32D06BAB", null, "31EDB7B3", "103437", 0, null, 30010, null, 0, null], [15, "2A9CA5D5", null, "3CCD170C", "103437", 0, null, 30012, null, 0, null], [16, "2321D6C9", null, "17F59CCA", "103437", 0, null, 30014, null, 0, null], [17, "357B83A4", null, "2EB80290", "103437", 0, null, 30054, null, 0, null], [18, "03196BF5", null, "04E952B8", "103437", 0, null, 30056, null, 0, null], [19, "3D1A7899", null, "3CD1BBC4", "103437", 0, null, 30058, null, 0, null], [20, "1660D04A", null, "2805AB56", "103437", 0, null, 30060, null, 0, null], [21, "2F8E9759", null, "4398570", "103437", 0, null, 30062, null, 0, null], [22, "029A708E", null, "0E1CF95E", "103437", 0, null, 30064, null, 0, null], [23, "2B2F3434", null, "0DD82373", "103437", 0, null, 30016, null, 0, null], [24, "1DC00881", null, "2EDE3317", "103437", 0, null, 30066, null, 0, null], [25, "36676894", null, "1F73A63A", "103437", 0, null, 30068, null, 0, null], [26, "1CDE2B65", null, "39B89333", "103437", 0, null, 30070, null, 0, null], [27, "10896871", null, "03D689AA", "103437", 0, null, 30018, null, 0, null], [28, "1AA32466", null, "3F32DF53", "103437", 0, null, 30020, null, 0, null], [29, "37B72C47", null, "2A744A78", "103437", 0, null, 30022, null, 0, null], [30, "30A942B1", null, "1142E907", "103437", 0, null, 30008, null, 0, null], [31, "0FD25D88", null, "01862B9F", "103437", 0, null, 30006, null, 0, null], [32, "114B5C28", null, "27ADEC9A", "103437", 0, null, 30002, null, 0, null], [33, "02CE9D49", null, "2311BAB2", "103437", 0, null, 30010, null, 0, null], [34, "2E950C81", null, "0C6C59A6", "103437", 0, null, 30032, null, 0, null], [35, "11D391D2", null, "1CBB7B6A", "103437", 0, null, 30034, null, 0, null], [36, "3E1D73CC", null, "1877B361", "103437", 0, null, 30036, null, 0, null], [37, "3A591F1D", null, null, "110057", 19, "218260", 10193, null, 0, null], [38, "11FC2714", null, null, "120649", 0, null, 10193, null, 0, null], [39, "059DA227", null, null, "110057", 19, "14689", 10138, null, 0, null], [40, "3ED043F4", null, null, "110057", 19, "14645", 10163, null, 0, null], [50, "1FC1F0EE", null, null, "120727", 17, "122231", 10194, null, 0, null], [51, "088F5EE5", null, null, "146643", 19, "29741", 10091, null, 0, null], [52, "2C87FD97", null, null, "146643", 19, "35447", 10091, null, 0, null], [53, "05FABD75", null, null, "168260", 17, "52984", 10430, null, 0, null], [54, "3FE87C24", null, null, "168260", 17, "52984", 10431, null, 0, null], [55, "3E0200C0", null, null, "168260", 17, "52984", 10432, null, 0, null], [56, "3A8D6DA5", null, null, "168260", 17, "52984", 10433, null, 0, null], [57, "06416F41", null, null, "120767", 0, null, 60005, null, 0, null], [58, "1AD5C96C", null, null, "120649", 23, "192126", 10195, null, 0, null], [63, "117E9D97", null, null, "158398", 0, null, 10420, null, 0, null], [64, "22119BD8", null, null, "158398", 0, null, 10420, null, 0, null], [65, "2BA03CE9", null, null, "158398", 0, null, 10420, null, 0, null], [66, "05E360CD", null, null, "158398", 0, null, 10420, null, 0, null], [67, "36F54E8F", null, null, "120719", 0, null, 10440, null, 0, null], [68, "140807DC", null, null, "120719", 0, null, 10440, null, 0, null], [69, "2EE4A29B", null, null, "120719", 0, null, 10440, null, 0, null], [100, null, null, null, null, 0, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, null, 0, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, null, null, 0, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, null, null, 0, null, 0, "2815DDD0", 8, "180891", "被搂"]];
 class InteractConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$3);
@@ -1761,7 +1761,7 @@ Utils.assetIconDataMap = new Map();
 Utils.buffMap = new Map();
 Utils.birthPos = new mw.Vector(0, 0, 1000);
 
-var foreign38 = /*#__PURE__*/Object.freeze({
+var foreign39 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Utils
 });
@@ -1829,7 +1829,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign59 = /*#__PURE__*/Object.freeze({
+var foreign60 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -1871,7 +1871,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign37 = /*#__PURE__*/Object.freeze({
+var foreign38 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -1995,7 +1995,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign39 = /*#__PURE__*/Object.freeze({
+var foreign40 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -2063,7 +2063,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign47 = /*#__PURE__*/Object.freeze({
+var foreign48 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -2146,7 +2146,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign55 = /*#__PURE__*/Object.freeze({
+var foreign56 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -2354,7 +2354,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign56 = /*#__PURE__*/Object.freeze({
+var foreign57 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -3286,7 +3286,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign50 = /*#__PURE__*/Object.freeze({
+var foreign51 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -3364,7 +3364,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign43 = /*#__PURE__*/Object.freeze({
+var foreign44 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -3474,7 +3474,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign44 = /*#__PURE__*/Object.freeze({
+var foreign45 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -3601,7 +3601,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign45 = /*#__PURE__*/Object.freeze({
+var foreign46 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -3719,7 +3719,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign46 = /*#__PURE__*/Object.freeze({
+var foreign47 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -3841,7 +3841,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign48 = /*#__PURE__*/Object.freeze({
+var foreign49 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -3944,7 +3944,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign49 = /*#__PURE__*/Object.freeze({
+var foreign50 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -4054,7 +4054,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign52 = /*#__PURE__*/Object.freeze({
+var foreign53 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -4499,7 +4499,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign51 = /*#__PURE__*/Object.freeze({
+var foreign52 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -6121,7 +6121,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign57 = /*#__PURE__*/Object.freeze({
+var foreign58 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -6918,7 +6918,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign58 = /*#__PURE__*/Object.freeze({
+var foreign59 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -7487,7 +7487,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign53 = /*#__PURE__*/Object.freeze({
+var foreign54 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -7547,7 +7547,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign54 = /*#__PURE__*/Object.freeze({
+var foreign55 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -7799,6 +7799,204 @@ var foreign31 = /*#__PURE__*/Object.freeze({
     default: GMService$1
 });
 
+var FreeCamera_1;
+let FreeCamera = FreeCamera_1 = class FreeCamera extends Script {
+    constructor() {
+        super(...arguments);
+        /** 摄像机锚点移动速度 */
+        this.speed = 500;
+        /** 移动叠加向量 */
+        this._moveDirection = Vector.zero;
+        /** 移动临时位置 */
+        this._moveLoc = Vector.zero;
+        /** 比值用常量 */
+        this.VECTOR_ZERO = Vector.zero;
+        /** 是否处于自由视角状态 */
+        this.isFreeCamera = false;
+        this.isFirstChange = true;
+    }
+    onStart() {
+        this.init();
+    }
+    async init() {
+        if (SystemUtil.isServer())
+            return;
+        await (await Player.asyncGetLocalPlayer()).character.asyncReady();
+        this.freeCamera = await GameObject.asyncSpawn("Camera");
+        this.freeCamera.springArm.localTransform = Transform.identity;
+        // Config
+        this.freeCamera.upAngleLimit = 89.9;
+        this.freeCamera.downAngleLimit = 89.9;
+        this.freeCamera.localTransform = Transform.identity;
+        this.freeCamera.springArm.localTransform = Transform.identity;
+        this.freeCamera.springArm.length = 0;
+        this.freeCamera.springArm.collisionEnabled = false;
+        InputUtil.onKeyDown(Keys.F8, () => {
+            if (this.isFreeCamera) {
+                this.exitFreeCamera();
+            }
+            else {
+                this.enterFreeCamera();
+            }
+        });
+        InputUtil.onKeyDown(Keys.NumPadNine, () => {
+            this.freeCamera.springArm.worldTransform.position = Player.localPlayer.character.worldTransform.position.clone();
+            this._moveLoc = this.freeCamera.springArm.worldTransform.position.clone();
+        });
+        Event.addLocalListener(FreeCamera_1.EVENTS_JOYSTICK_INPUT, (dir) => {
+            if (this.freeCamera) {
+                const forward = this.freeCamera.worldTransform.clone().getForwardVector().clone();
+                const right = this.freeCamera.worldTransform.clone().getRightVector().clone();
+                this._moveDirection.set(forward.multiply(dir.y).add(right.multiply(dir.x)));
+                Vector.add(this._moveLoc, this._moveDirection.normalized.multiply(this.speed * 0.02), this._moveLoc);
+                this.freeCamera.springArm.worldTransform.position = this._moveLoc;
+                // 避免重复使用
+                if (this.useUpdate)
+                    this.useUpdate = false;
+            }
+        });
+        KeyActionManager.instance.add([Keys.W, Keys.S, Keys.A, Keys.D, Keys.E, Keys.Q]);
+    }
+    /**
+     * 切换至自由视角摄像机（暂未提供触屏控制方式）
+     */
+    enterFreeCamera() {
+        if (!this.originCamera) {
+            this.originCamera = Camera.currentCamera;
+        }
+        if (this.isFirstChange) {
+            this.freeCamera.springArm.worldTransform.position = Player.localPlayer.character.worldTransform.position.clone();
+            this._moveLoc = this.freeCamera.springArm.worldTransform.position.clone();
+            this.isFirstChange = false;
+        }
+        Camera.switch(this.freeCamera, 0);
+        this.originCamera.springArm.useControllerRotation = false;
+        this.freeCamera.springArm.useControllerRotation = true;
+        Player.localPlayer.character.movementEnabled = false;
+        this.isFreeCamera = true;
+        this.useUpdate = true;
+    }
+    /**
+     * 退出自由视角摄像机
+     */
+    exitFreeCamera() {
+        if (!this.isFreeCamera)
+            return;
+        Camera.switch(this.originCamera, 0);
+        this.originCamera.springArm.useControllerRotation = true;
+        this.freeCamera.springArm.useControllerRotation = false;
+        Player.localPlayer.character.movementEnabled = true;
+        this.isFreeCamera = false;
+        this.useUpdate = false;
+    }
+    onUpdate(dt) {
+        // 监听按键并叠加控制锚点位移的向量
+        if (KeyActionManager.instance.isPress(Keys.W)) {
+            // 将三维向量压缩至二维使用
+            const forward = this.freeCamera.worldTransform.clone().getForwardVector().clone();
+            this._moveDirection.x += forward.x;
+            this._moveDirection.y += forward.y;
+        }
+        if (KeyActionManager.instance.isPress(Keys.S)) {
+            const back = this.freeCamera.worldTransform.clone().getForwardVector().clone().multiply(-1);
+            this._moveDirection.x += back.x;
+            this._moveDirection.y += back.y;
+        }
+        if (KeyActionManager.instance.isPress(Keys.A)) {
+            const left = this.freeCamera.worldTransform.clone().getRightVector().clone().multiply(-1);
+            this._moveDirection.x += left.x;
+            this._moveDirection.y += left.y;
+        }
+        if (KeyActionManager.instance.isPress(Keys.D)) {
+            const right = this.freeCamera.worldTransform.clone().getRightVector().clone();
+            this._moveDirection.x += right.x;
+            this._moveDirection.y += right.y;
+        }
+        if (KeyActionManager.instance.isPress(Keys.E)) {
+            this._moveDirection.z += 1;
+        }
+        if (KeyActionManager.instance.isPress(Keys.Q)) {
+            this._moveDirection.z -= 1;
+        }
+        // 为锚点设置叠加后向量，实现无限制位移
+        if (!this._moveDirection.equals(this.VECTOR_ZERO)) {
+            Vector.add(this._moveLoc, this._moveDirection.normalized.multiply(this.speed * dt), this._moveLoc);
+            this.freeCamera.springArm.worldTransform.position = this._moveLoc;
+            this._moveDirection.x = 0;
+            this._moveDirection.y = 0;
+            this._moveDirection.z = 0;
+        }
+    }
+};
+FreeCamera.EVENTS_JOYSTICK_INPUT = "FreeCamera.EVENTS_JOYSTICK_INPUT";
+FreeCamera = FreeCamera_1 = __decorate([
+    Component
+], FreeCamera);
+var FreeCamera$1 = FreeCamera;
+/**
+ * 按键状态管理器
+ */
+class KeyActionManager {
+    constructor() {
+        /** 初始化标记 */
+        this.isReady = false;
+        /** 按下状态表 */
+        this._actionStates = new Map;
+        this._btnStates = new Map;
+    }
+    static get instance() {
+        if (!KeyActionManager._instance) {
+            KeyActionManager._instance = new KeyActionManager();
+        }
+        return KeyActionManager._instance;
+    }
+    /**
+     * 检测按键是否被按下，无延迟（需要在update中调用，留意性能开销）
+     * @param action 项目内按键操作枚举
+     * @returns 是否被按下
+     */
+    isPress(action) {
+        if (action instanceof mw.Button) {
+            return this._btnStates.get(action.guid);
+        }
+        else {
+            return this._actionStates.get(action);
+        }
+    }
+    /**
+     * 为指定按钮添加状态监听
+     * @param btn 需要监听状态的按钮
+     */
+    add(btn) {
+        // 初始化按下状态 并设定状态改变监听
+        if (btn instanceof Button) {
+            this._btnStates.set(btn.guid, false);
+            btn.onPressed.add(() => {
+                this._btnStates.set(btn.guid, true);
+            });
+            btn.onReleased.add(() => {
+                this._btnStates.set(btn.guid, false);
+            });
+        }
+        else {
+            btn.forEach(element => {
+                this._actionStates.set(element, false);
+                InputUtil.onKeyDown(element, () => {
+                    this._actionStates.set(element, true);
+                });
+                InputUtil.onKeyUp(element, () => {
+                    this._actionStates.set(element, false);
+                });
+            });
+        }
+    }
+}
+
+var foreign37 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: FreeCamera$1
+});
+
 /**
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
@@ -7862,7 +8060,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign41 = /*#__PURE__*/Object.freeze({
+var foreign42 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -7904,29 +8102,30 @@ const MWModuleMap = {
      'D8E6B9EF4DE0DF3088CC3C8599F76F45': foreign34,
      'A8FB760F441C95AFACBAD78838B58528': foreign35,
      'DC56F3F94E062B2AD909F386B767436F': foreign36,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign37,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign38,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign39,
-     '741B06144E25B4753E8005985816DAF8': foreign40,
-     'EE3F354349BB041CD741FF84B745B113': foreign41,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign42,
-     '486071A84887288700A7E297CBF6B438': foreign43,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign44,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign45,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign46,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign47,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign48,
-     '827757834BCFC569771BCB84A3609238': foreign49,
-     'F58702064960960163820CB9C8D0F3C1': foreign50,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign51,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign52,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign53,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign54,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign55,
-     '337A59B14A237973EEB178A260344C21': foreign56,
-     'C4E377B14812C09429E28988E62907DB': foreign57,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign58,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign59,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign37,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign38,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign39,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign40,
+     '741B06144E25B4753E8005985816DAF8': foreign41,
+     'EE3F354349BB041CD741FF84B745B113': foreign42,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign43,
+     '486071A84887288700A7E297CBF6B438': foreign44,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign45,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign46,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign47,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign48,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign49,
+     '827757834BCFC569771BCB84A3609238': foreign50,
+     'F58702064960960163820CB9C8D0F3C1': foreign51,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign52,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign53,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign54,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign55,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign56,
+     '337A59B14A237973EEB178A260344C21': foreign57,
+     'C4E377B14812C09429E28988E62907DB': foreign58,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign59,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign60,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -7964,29 +8163,30 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign34 || {}, "JavaScripts/module/NavigationModule/NavigationModule"],
 [foreign35 || {}, "JavaScripts/module/SetModule/SetModule"],
 [foreign36 || {}, "JavaScripts/module/SetModule/ui/SetPanel"],
-[foreign37 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign38 || {}, "JavaScripts/tools/Utils"],
-[foreign39 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign40 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign41 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign42 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign43 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign44 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign45 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign46 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign47 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign48 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign49 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign50 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign51 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign52 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign53 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign54 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign55 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign56 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign57 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign58 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign59 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign37 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign38 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign39 || {}, "JavaScripts/tools/Utils"],
+[foreign40 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign41 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign42 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign43 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign44 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign45 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign46 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign47 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign48 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign49 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign50 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign51 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign52 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign53 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign54 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign55 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign56 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign57 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign58 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign59 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign60 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;
