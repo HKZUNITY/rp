@@ -26,6 +26,10 @@ export default class BagTabItem extends BagTabItem_Generate {
 		this.mClickButton.normalImageGuid = `221282`;
 		this.mClickButton.pressedImageGuid = `221283`;
 		this.mClickButton.disableImageGuid = `221283`;
+
+		if (GlobalData.languageId == 0) {
+			this.mTabNameTextBlock.fontSize = 15;
+		}
 	}
 
 	private bindButton(): void {

@@ -125,6 +125,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mDeleteAllGoodsButton.onClicked.add(this.addDeleteAllGoods.bind(this));
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
+        this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -145,6 +146,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addBagButton(): void {
         this.getHUDModuleC.onBagButton.call();
+    }
+
+    private addOpenRankButton(): void {
+        this.getHUDModuleC.onOpenRankAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -249,6 +254,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public deleteAllGoodsAction: Action = new Action();
     public onOpenSetAction: Action = new Action();
     public onOpenClothAction: Action = new Action();
+    public onOpenRankAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

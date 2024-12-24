@@ -458,7 +458,7 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
 
     private bagTabIndex: number = 0;
     private addClickBagTabAction(index: number): void {
-        if (this.bagTabIndex == index) return;
+        // if (this.bagTabIndex == index) return;
         this.bagTabIndex = index;
         this.getChatPanel.showBagItemList(this.bagTabIndex);
     }
@@ -482,12 +482,12 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
     private addClickBagItemAction(bagId: number): void {
         console.error(`wfz - ClickBagItem - bagId:${bagId}`);
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            this.getHudModuleC.updateBagIcon(bagId);
             let bagIds: number[] = await this.server.net_useBag(bagId);
             this.getChatPanel.closeBagCanvas(false);
             this.currentBagIds = bagIds;
             if (this.currentBagIds.includes(bagId)) {
                 this.currentBagId = bagId;
+                this.getHudModuleC.updateBagIcon(bagId);
                 this.getHudModuleC.updateGoodsListCanvas(this.currentBagIds);
                 console.error(`wfz - ClickBagItem - this.currentBagIds:${this.currentBagIds}  this.currentBagId:${this.currentBagId}`)
             } else {

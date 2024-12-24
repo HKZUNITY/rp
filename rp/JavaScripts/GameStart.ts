@@ -4,14 +4,20 @@ import GlobalData from "./GlobalData";
 import DanMuModuleC from "./module/DanMuModule/DanMuModuleC";
 import DanMuModuleS from "./module/DanMuModule/DanMuModuleS";
 import { HUDModuleC, HUDModuleS } from "./module/HUDModule/HUDModule";
-import { InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
+import { InteractionData, InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
 import { NavigationModuleC, NavigationModuleS } from "./module/NavigationModule/NavigationModule";
+import { RankData } from "./module/RankModule/RankData";
+import RankModuleC from "./module/RankModule/RankModuleC";
+import RankModuleS from "./module/RankModule/RankModuleS";
 import { SetModuleS, SetModuleC, SetData } from "./module/SetModule/SetModule";
 
 @Component
 export default class GameStart extends Script {
     @mw.Property({ displayName: "多语言", group: "脚本设置", enumType: { "系统默认": -1, "英语": 0, "简体中文": 1, "繁体中文": 2, "日语": 3, "韩语": 4 } })
     private languageId: number = -1;
+
+    @mw.Property({ displayName: "是否开启IAA", group: "脚本设置" })
+    private isOpenIAA: boolean = true;
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -24,14 +30,16 @@ export default class GameStart extends Script {
     }
 
     private onStartCS(): void {
+        GlobalData.isOpenIAA = !mw.SystemUtil.isPIE || this.isOpenIAA;
         this.registerModule();
     }
 
     private registerModule(): void {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
-        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
+        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, InteractionData);
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
+        ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
     }
 

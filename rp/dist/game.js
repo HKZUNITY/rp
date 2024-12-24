@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.30
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign41 = /*#__PURE__*/Object.freeze({
+var foreign48 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -96,7 +96,7 @@ var foreign41 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.30
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign43 = /*#__PURE__*/Object.freeze({
+var foreign50 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -1539,7 +1539,7 @@ var foreign5 = /*#__PURE__*/Object.freeze({
     ActionConfigConfig: ActionConfigConfig
 });
 
-const EXCELDATA$6 = [["ID", "Name", "NextId", "Tab", "Sort", "AssetId", "SlotType", "ModeOffsetParameter", "AnimationId", "AnimationParameter", "AnimationSlot", "EffectId", "EffectOffsetParameter", "EffectLoop", "SoundId", "SoundParameter", "MaterialId", "IsFly", "ButtonIconId", "Icon", "DelayParameter", "DelayAssetId", "DelayModeOffsetParameter", "DelayModeEffectId", "DelayModeEffectOffsetParameter", "DelayEffectId", "DelayEffectOffsetParameter", "DelayModeSoundId", "DelayModeSoundParameter", "VehiclesIcon", "VehiclesChildId", "VehiclesChildParameter", "VehiclesChildMoveId", "VehiclesChildIdleId", "VehiclesWalkStanceId", "VehiclesWalkStanceSlot", "VehiclesIdleStanceId", "VehiclesIdleStanceSlot", "VehiclesWalkAnimationId", "VehiclesWalkAnimationSlot", "VehiclesIdleAnimationId", "VehiclesIdleAnimationSlot", "BuffId", "BuffType", "BuffParams"], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], [10006, "电吉他", 10106, 1, 1, "170487", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10106, null, 10006, 0, 0, null, 13, [18.77, 32.96, -57.93, 1.88, -43.35, -83.69, 1, 1, 1], "121812", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "147341", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10093, null, 10193, 1, 7, "129224", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10193, null, 10093, 0, 0, null, 13, [33.36, 29.26, -56.4, -11.98, -55.89, -89.71, 1, 1, 1], "122451", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "146098", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10094, null, 10194, 1, 8, "170611", 12, [10, -38, -36, -14, 54, -105, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10194, null, 10094, 0, 0, null, 14, [20.47, -37.05, -57.34, -1.81, 47.06, -95.53, 1, 1, 1], "35412", [1, 0], 1, "172882", [0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5], 0, "52334", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10095, null, 10195, 1, 9, "27099", 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35415", [1, 0], 1, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10195, null, 10095, 0, 0, null, 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35412", [1, 0], 1, "4368", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, "45287", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10320, null, 10420, 1, 2, "3C5A7B8940E805D7192F53ACF6989935", 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, null, null, 0, null, null, null, 0, "158398", "216957", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10420, null, 10320, 0, 0, null, 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, "130776", [0, 0, 20, 0, 0, 0, 1.5, 1.5, 1], 0, "117193", [500, 1.5, 0], null, 0, "158398", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10340, null, 10440, 1, 3, "170495", 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123634", [1, 0], 3, null, null, 0, null, null, null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10440, null, 10340, 0, 0, null, 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123300", [1, 0], 3, "119917", [8, 0, 0, 0, 0, 0, 1, 1, 0.8], 0, "117197", [500, 1, 0], null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10338, null, 10438, 1, 5, "05B519BD4F3FE68467C4F78BE870B7E2", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10438, null, 10338, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "216688", [1, 0], 3, null, null, 0, "147340", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10339, null, 10439, 1, 4, "807D3DAD4695AD616EF6B6A6DE05CF50", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132901", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10439, null, 10339, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "212813", [1, 0], 3, null, null, 0, "147338", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10341, null, 10441, 1, 13, "173566", 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "182947", [1, 0], 3, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10441, null, 10341, 0, 0, null, 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "14516", [1, 0], 1, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10329, null, 10429, 1, 38, "135229", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10429, null, 10329, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10330, null, 10430, 1, 39, "198914", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10430, null, 10330, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10331, null, 10431, 1, 40, "199057", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "210884", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10431, null, 10331, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10332, null, 10432, 1, 41, "199090", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10432, null, 10332, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10333, null, 10433, 1, 42, "198991", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10433, null, 10333, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10334, null, 10434, 1, 42.1, "198902", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10434, null, 10334, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10335, null, 10435, 1, 44, "198968", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10435, null, 10335, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10336, null, 10436, 1, 46, "198896", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10436, null, 10336, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10337, null, 10437, 1, 48, "198912", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10437, null, 10337, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10342, null, 10442, 1, 17, "36250", 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10442, null, 10342, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10343, null, 10443, 1, 23, "121354", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10443, null, 10343, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10344, null, 10444, 1, 24, "121351", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10444, null, 10344, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10345, null, 10445, 1, 43, "198892", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10445, null, 10345, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10346, null, 10446, 1, 45, "198894", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10446, null, 10346, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10347, null, 10447, 1, 47, "198898", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10447, null, 10347, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10348, null, 10448, 1, 49, "198904", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10448, null, 10348, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10349, null, 10449, 1, 11, "25354", 16, [12.72, 1.83, 10.34, -60.44, -42.82, -42.85, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10449, null, 10349, 0, 0, null, 23, [-16, 0, -15, 0, 0, -90, 1, 1, 1], "170905", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10312, null, 10412, 1, 19, "210651", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10412, null, 10312, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 2, 1, [0.4]], [10313, null, 10413, 1, 20, "210652", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10413, null, 10313, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 3, 1, [3]], [10314, null, 10414, 1, 21, "210790", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10414, null, 10314, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 4, 1, [0.2]], [10315, null, 10415, 1, 22, "210820", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10415, null, 10315, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10316, null, 10416, 1, 12, "091282744E9FD074EC3B4A9336B2136F", 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "192126", [1, 0], 3, null, null, 0, null, null, null, 0, "158427", "22961", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10416, null, 10316, 0, 0, null, 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "14565", [1, 0], 3, "172886", [0, 0, 9, 0, 0, 0, 0.5, 0.5, 1], 0, null, null, null, 0, "158427", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10317, null, 10417, 1, 15, "22940", 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10417, null, 10317, 0, 0, null, 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10318, null, 10418, 1, 16, "38008", 23, [13.7, 0, 0, 0, 0, 90, 1.5, 1.5, 1.5], "47756", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10418, null, 10318, 0, 0, null, 1, [0, 0, 32, -180, 0, -45, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10319, null, 10419, 1, 14, "40876", 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29759", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10419, null, 10319, 0, 0, null, 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29755", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10321, null, 10421, 1, 33, "212767", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10421, null, 10321, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10322, null, 10422, 1, 34, "212777", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10422, null, 10322, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10323, null, 10423, 1, 35, "213047", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10423, null, 10323, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10324, null, 10424, 1, 32, "218065", 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10424, null, 10324, 0, 0, null, 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10325, null, 10425, 1, 36, "135222", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10425, null, 10325, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10326, null, 10426, 1, 37, "135223", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10426, null, 10326, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10306, null, 10406, 1, 10, "174452", 16, [12.72, 1.06, 31.84, 299.23, -42.82, 677.15, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10406, null, 10306, 0, 0, null, 23, [-16, 0, 10, 0, 0, -90, 1, 1, 1], "218259", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10092, null, 10192, 1, 30.1, "173243", 16, [13.6, 6, -2, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10192, null, 10092, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 1], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10074, null, 10174, 1, 18, "122954", 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10174, null, 10074, 0, 0, null, 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 1, 1, [2]], [10051, null, 10151, 1, 31, "33028", 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10151, null, 10051, 0, 0, null, 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, "32254", [0, 0, 40, -120, 0, 0, 2, 5, 5], 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10052, null, 10152, 1, 25, "87019", 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10152, null, 10052, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.1, 1], 1, "4394", [35, 0, 12, 0, 0, 180, 1, 1, 1], 1, "20322", [500, 1, 1], null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10047, null, 10147, 1, 30, "20799", 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10147, null, 10047, 0, 0, null, 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], "14557", [1, 1], 1, null, null, 0, "108734", [500, 0.8, 1], null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10005, null, 10105, 1, 6, "88974", 16, [4, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10105, null, 10005, 0, 0, null, 16, [3.13, -1.62, -1.12, 0, 0, 0, 1, 1, 1], "174562", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10007, null, 10107, 1, 28, "175291", 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10107, null, 10007, 0, 0, null, 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, "88791", [0, 18, 3, 0, 0, 90, 1, 1, 1], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10008, null, 10108, 1, 27, "176450", 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10108, null, 10008, 0, 0, null, 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [1, 1], 1, "4387", [0, 40, 0, 0, 0, 90, 1, 1, 1], 1, "39320", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10009, null, 10109, 1, 26, "176541", 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10109, null, 10009, 0, 0, null, 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [1, 1], 1, "13594", [40, 0, 10, 0, 0, 0, 0.5, 0.5, 0.5], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10012, null, 10112, 1, 29, "176320", 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98751", [1, 0], 1, null, null, 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10112, null, 10012, 0, 0, null, 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98746", [1, 0], 1, "60761", [0, 0, 0, 0, 0, 90, 0.5, 0.5, 0.5], 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10001, null, 10101, 3, 4, "163620", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10101, null, 10001, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97383", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10002, null, 10102, 3, 5, "176521", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10102, null, 10002, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97386", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10003, null, 10103, 3, 19, "88948", 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], null, [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10103, null, 10003, 0, 0, null, 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], "14739", [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10004, null, 10104, 3, 20, "176511", 16, [-5, -12, 0, 90, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10104, null, 10004, 0, 0, null, 16, [-5, -12, -2, 90, 0, -90, 1, 1, 1], "98797", [1, 1], 1, null, null, 0, "97374", [500, 1, 1], null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10011, null, 10111, 3, 21, "176265", 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98737", [1, 0], 1, null, null, 0, null, null, null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10111, null, 10011, 0, 0, null, 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98740", [1, 1], 1, null, null, 0, "97379", [500, 1, 1], null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10014, null, 10114, 3, 22, "176478", 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10114, null, 10014, 0, 0, null, 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10016, null, 10116, 3, 3, "162188", 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10116, null, 10016, 0, 0, null, 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], "217871", [1, 1], 1, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10017, null, 10117, 3, 7, "176260", 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10117, null, 10017, 0, 0, null, 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10019, null, 10119, 3, 6, "176266", 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10119, null, 10019, 0, 0, null, 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10020, null, 10120, 3, 8, "176501", 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "98757", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10120, null, 10020, 0, 0, null, 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10021, null, 10121, 3, 1, "176321", 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "98752", [1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10121, null, 10021, 0, 0, null, 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "14557", [0.1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10046, null, 10146, 3, 2, "85003", 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10146, null, 10046, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10048, null, 10148, 3, 15, "23414", 16, [5, -10, -20, 10, 5, -60, 0.5, 0.5, 0.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10148, null, 10048, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10049, null, 10149, 3, 16, "32626", 16, [0, -15, -20, 0, 5, -60, 1.5, 1.5, 1.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10149, null, 10049, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1.5, 1.5, 1.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10064, null, 10164, 3, 11, "27022", 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10164, null, 10064, 0, 0, null, 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10065, null, 10165, 3, 12, "72490", 16, [3, -10, -10, -60, 0, 0, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10165, null, 10065, 0, 0, null, 16, [0, -10, 0, 25, 0, 0, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10066, null, 10166, 3, 13, "32618", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10166, null, 10066, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10067, null, 10167, 3, 14, "32622", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10167, null, 10067, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10069, null, 10169, 3, 9, "27066", 16, [5, -8, -12, 0, 60, 90, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10169, null, 10069, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10070, null, 10170, 3, 17, "32568", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10170, null, 10070, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10071, null, 10171, 3, 18, "32570", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10171, null, 10071, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10073, null, 10173, 3, 10, "32556", 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10173, null, 10073, 0, 0, null, 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10075, null, 10175, 3, 201, "123357", 16, [-9, 0, -20, 90, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10175, null, 10075, 0, 0, null, 23, [0, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10076, null, 10176, 3, 202, "123355", 16, [-14, 0, -18, 110, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10176, null, 10076, 0, 0, null, 23, [30, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10077, null, 10177, 3, 203, "136420", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10177, null, 10077, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10078, null, 10178, 3, 204, "136408", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10178, null, 10078, 0, 0, null, 23, [10, 0, 65, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10079, null, 10179, 3, 205, "136422", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10179, null, 10079, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10080, null, 10180, 3, 206, "136415", 16, [-4, 0, -21, -180, 90, 0, 0.2, 0.2, 0.2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10180, null, 10080, 0, 0, null, 23, [10, 0, 10, 0, 0, 180, 1, 1, 1], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10081, null, 10181, 3, 207, "136418", 16, [-10, 0, -16, -180, 90, 0, 2.5, 2.5, 2.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10181, null, 10081, 0, 0, null, 23, [10, 0, 40, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10082, null, 10182, 3, 208, "136409", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10182, null, 10082, 0, 0, null, 23, [10, 0, 30, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10083, null, 10183, 3, 209, "136410", 16, [-3, 0, -21, -180, 90, 0, 0.3, 0.7, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10183, null, 10083, 0, 0, null, 23, [0, 0, 40, 0, 0, 180, 1, 5, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10084, null, 10184, 3, 210, "122172", 16, [5, -25, -5, 0, 60, 90, 0.15, 0.15, 0.15], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10184, null, 10084, 0, 0, null, 23, [20, 0, 60, 0, 0, 0, 0.2, 0.2, 0.2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10085, null, 10185, 3, 211, "136417", 16, [-4, 0, -15, -180, 90, 0, 7, 10, 7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10185, null, 10085, 0, 0, null, 23, [20, 0, 60, 0, 0, 180, 20, 20, 20], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10086, null, 10186, 3, 212, "136405", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10186, null, 10086, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 4, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10087, null, 10187, 3, 213, "136416", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10187, null, 10087, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10088, null, 10188, 3, 214, "136412", 16, [5, -8, -12, 0, 60, 90, 1, 1.2, 1.2], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10188, null, 10088, 0, 0, null, 23, [-20, 0, 40, 0, 0, 180, 2, 2, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10089, null, 10189, 3, 16, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10189, null, 10089, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "123718", [1, 1], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10090, null, 10190, 3, 17, "40809", 16, [6.04, -7.74, -4.26, 0, 0, -79.46, 0.06, 0.06, 0.06], "35385", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10190, null, 10090, 0, 0, null, 16, [4.32, -2.89, -5.03, 0, 0, -33.59, 0.06, 0.06, 0.06], "14514", [1, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10091, null, 10191, 3, 18, "173243", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10191, null, 10091, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10097, null, 10197, 3, 38, "197388", 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, "177590", [-5000, 0, 0, 0, 0, -90, 100, 100, 100], 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10197, null, 10097, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, null, null, 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10098, null, 10198, 3, 301, "180966", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10198, null, 10098, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145506", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10099, null, 10199, 3, 302, "184457", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10199, null, 10099, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "88020", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10300, null, 10400, 3, 303, "184458", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10400, null, 10300, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27392", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10301, null, 10401, 3, 304, "184556", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10401, null, 10301, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27447", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10302, null, 10402, 3, 305, "186655", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10402, null, 10302, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145495", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10303, null, 10403, 3, 306, "179470", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10403, null, 10303, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "151527", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10304, null, 10404, 3, 307, "180967", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10404, null, 10304, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145512", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10305, null, 10405, 3, 308, "80343", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10405, null, 10305, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], "14620", [1, 0], 0, "153613", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10307, null, 10407, 3, 27, "172199", 14, [3.1, 12.9, -44.11, 63.65, -62.11, 22.9, 1, 1, 1], null, null, 0, "162221", [0, 0, 0, 90, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10407, null, 10307, 0, 0, null, 16, [0, 0, 45, -90, 0, 0, 1, 1, 1], "122491", [1, 1], 3, "88442", [0, 80, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10308, null, 10408, 3, 27, "122949", 12, [11.2, -32.84, 20.81, 180.05, -48.22, -90.01, 1, 1, 1], null, null, 0, "103123", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10408, null, 10308, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "111102", [1, 1], 3, "180505", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 1, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10309, null, 10409, 3, 27, "186519", 12, [6.28, 33.79, 25.13, 180, 46.64, -90, 1, 1, 1], null, null, 0, "162250", [0, 0, 32, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10409, null, 10309, 0, 0, null, 15, [0, 0, 0, -6.2, 10.73, 29.3, 1, 1, 1], "217289", [1, 1], 3, "14323", [0, 0, 95, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10310, null, 10410, 3, 30, "218258", 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219281", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10410, null, 10310, 0, 0, null, 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10311, null, 10411, 3, 30, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219280", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10411, null, 10311, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10327, null, 10427, 3, 15, "135233", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10427, null, 10327, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10328, null, 10428, 3, 15, "128491", 16, [0, -10, -10, 0, 5, -60, 0.2, 0.2, 0.2], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10428, null, 10328, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 0.2, 0.2, 0.2], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10022, null, 10122, 4, 0, "37975", 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "98747", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10122, null, 10022, 0, 0, null, 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10023, null, 10123, 4, 0, "29005", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10123, null, 10023, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10024, null, 10124, 4, 0, "46131", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10124, null, 10024, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10025, null, 10125, 4, 0, "46132", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10125, null, 10025, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10027, null, 10127, 4, 0, "46150", 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10127, null, 10027, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10028, null, 10128, 4, 0, "46156", 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10128, null, 10028, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10029, null, 10129, 4, 0, "46158", 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10129, null, 10029, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10031, null, 10131, 4, 0, "49441", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10131, null, 10031, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10033, null, 10133, 4, 0, "40819", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10133, null, 10033, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10034, null, 10134, 4, 0, "40832", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10134, null, 10034, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10038, null, 10138, 4, 0, "46136", 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10138, null, 10038, 0, 0, null, 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10041, null, 10141, 4, 0, "27826", 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10141, null, 10041, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10043, null, 10143, 4, 0, "28995", 15, [5, 2, -8, 0, 0, 0, 0.7, 0.7, 0.7], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10143, null, 10043, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 0.7, 0.7, 0.7], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10054, null, 10154, 4, 0, "23115", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10154, null, 10054, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10057, null, 10157, 4, 0, "23116", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10157, null, 10057, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10059, null, 10159, 4, 0, "23191", 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10159, null, 10059, 0, 0, null, 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10062, null, 10162, 4, 0, "23043", 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10162, null, 10062, 0, 0, null, 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10063, null, 10163, 4, 0, "23071", 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10163, null, 10063, 0, 0, null, 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20001, null, 20002, 2, 2, "223877", 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20002, null, 20001, 2, 0, null, 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20003, null, 20004, 2, 2, "135840", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20004, null, 20003, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20005, null, 20006, 2, 2, "135851", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20006, null, 20005, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20007, null, 20008, 2, 2, "135848", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20008, null, 20007, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20009, null, 20010, 2, 2, "334814", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20010, null, 20009, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20011, null, 20012, 2, 2, "42804", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20012, null, 20011, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20013, null, 20014, 2, 2, "42805", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20014, null, 20013, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20015, null, 20016, 2, 2, "42816", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20016, null, 20015, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20017, null, 20018, 2, 2, "42818", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20018, null, 20017, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20019, null, 20020, 2, 2, "42821", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20020, null, 20019, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20021, null, 20022, 2, 2, "42828", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20022, null, 20021, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20023, null, 20024, 2, 2, "145906", 12, [0, 0, -20, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20024, null, 20023, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20025, null, 20026, 2, 2, "145908", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20026, null, 20025, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20027, null, 20028, 2, 2, "145910", 12, [0, 0, 0, 0, 0, 180, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20028, null, 20027, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20029, null, 20030, 2, 2, "145912", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20030, null, 20029, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20031, null, 20032, 2, 2, "145913", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20032, null, 20031, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20033, null, 20034, 2, 2, "340180", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20034, null, 20033, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20035, null, 20036, 2, 2, "342526", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20036, null, 20035, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20037, null, 20038, 2, 2, "342530", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20038, null, 20037, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20039, null, 20040, 2, 2, "375134", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20040, null, 20039, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20041, null, 20042, 2, 2, "375788", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20042, null, 20041, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20043, null, 20044, 2, 2, "393543", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20044, null, 20043, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20045, null, 20046, 2, 1, "399002", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20046, null, 20045, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20047, null, 20048, 2, 2, "42830", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20048, null, 20047, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20049, null, 20050, 2, 2, "136963", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20050, null, 20049, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20051, null, 20052, 2, 2, "145902", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20052, null, 20051, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20053, null, 20054, 2, 2, "145904", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20054, null, 20053, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20055, null, 20056, 2, 2, "136966", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20056, null, 20055, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20057, null, 20058, 2, 2, "145909", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20058, null, 20057, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20059, null, 20060, 2, 2, "145911", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20060, null, 20059, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20061, null, 20062, 2, 2, "211667", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20062, null, 20061, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30001, null, 30002, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125370", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30002, null, 30002, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125370", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30003, null, 30004, 5, 0, "122174", 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], null, null, 0, "86375", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "96613", "86375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30004, null, 30004, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "52981", [1, 1], 0, null, null, 0, null, null, null, 0, "96613", null, [2, 1, 1], "122174", [0, 0, 0, 0, 0, 0, 1, 1, 1], "86375", [0, 0, 30, 0, 0, 0, 1, 1, 1], "85151", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "97385", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30005, null, 30006, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4374", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30006, null, 30006, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4374", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30007, null, 30008, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30008, null, 30008, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4375", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30009, null, 30010, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4376", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30010, null, 30010, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4376", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30011, null, 30012, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4377", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30012, null, 30012, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4377", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30013, null, 30014, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "32679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30014, null, 30014, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "32679", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30015, null, 30016, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81684", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30016, null, 30016, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81684", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30017, null, 30018, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81685", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30018, null, 30018, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81685", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30019, null, 30020, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88812", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30020, null, 30020, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88812", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30021, null, 30022, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88816", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30022, null, 30022, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88816", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30023, null, 30024, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88821", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30024, null, 30024, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88821", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30025, null, 30026, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88828", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30026, null, 30026, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88828", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30027, null, 30028, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88832", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30028, null, 30028, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88832", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30029, null, 30030, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88835", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30030, null, 30030, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88835", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30031, null, 30032, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125365", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30032, null, 30032, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125365", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30033, null, 30034, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125373", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30034, null, 30034, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125373", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30035, null, 30036, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141911", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30036, null, 30036, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141911", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30037, null, 30038, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141912", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30038, null, 30038, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141912", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30039, null, 30040, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141915", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30040, null, 30040, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141915", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30041, null, 30042, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141916", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30042, null, 30042, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141916", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30043, null, 30044, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174253", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30044, null, 30044, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "174253", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30045, null, 30046, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78884", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30046, null, 30046, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78884", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30047, null, 30048, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78885", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30048, null, 30048, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78885", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30049, null, 30050, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78886", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30050, null, 30050, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78886", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30051, null, 30052, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78887", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30052, null, 30052, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78887", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30053, null, 30054, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30054, null, 30054, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146328", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30055, null, 30056, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146329", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30056, null, 30056, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146329", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30057, null, 30058, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146753", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30058, null, 30058, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146753", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30059, null, 30060, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146754", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30060, null, 30060, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146754", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30061, null, 30062, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146781", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30062, null, 30062, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146781", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30063, null, 30064, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146782", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30064, null, 30064, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146782", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30065, null, 30066, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173515", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30066, null, 30066, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173515", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30067, null, 30068, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173518", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30068, null, 30068, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173518", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30069, null, 30070, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174247", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30070, null, 30070, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174247", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30071, null, 30072, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174249", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30072, null, 30072, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174249", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30073, null, 30074, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174251", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30074, null, 30074, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174251", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [60001, "滑板", 0, 6, 0, "363FEA624259C1B9142621B378EF2D00", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167883", null, null, null, null, null, null, null, null, null, null, "167883", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60002, "滑板2", 0, 6, 0, "E8023A80499578B92FF7FF9DC6B0C5DF", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60003, "滑板3", 0, 6, 0, "DD372C0847DF60EA5A71188793CED8B9", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60004, "冲浪板", 0, 6, 0, "CA4C723A47326DBDD6C15E81BF263948", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112946", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60005, "冲浪板_1", 0, 6, 0, "44C88B394905C23FAEB144A09D1C288F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112935", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60006, "自行车", 0, 6, 0, "3535C0024A4AB595E185E696C68D7A92", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "31526", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60007, "自行车1", 0, 6, 0, "CD227C3B493C28D21247CF9B037E2C79", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "186109", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60008, "花猪", 0, 6, 0, "10C7602E48F2D1CCFB972EBF05FCEB99", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160429", "159590", null, null, null, null, null, null, null, null, null, null, "159590", [15, 0, 50, 0, 0, 0, 1, 1, 1], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60009, "狗儿子", 0, 6, 0, "30AACA6644A6A8934E7CBA8C6391853F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160427", "160319", null, null, null, null, null, null, null, null, null, null, "160319", [20, 0, 80, 0, 0, 0, 2, 2, 2], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60010, "彩虹马", 0, 6, 0, "04EC792B4A3A2234074439AD1B38B6A0", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "131921", "174968", null, null, null, null, null, null, null, null, null, null, "174968", [20, 0, 80, 0, 0, 0, 3, 3, 3], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60011, "熊猫", 0, 6, 0, "D15BB1CF4FA03737446352A21DFB0807", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "193823", "159933", null, null, null, null, null, null, null, null, null, null, "159933", [-10, 0, 60, 0, 0, 0, 1.5, 1.5, 1.5], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60012, "小龙", 0, 6, 0, "8A792E1B42F34D60C29234A0B038B26C", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "408381", "160634", null, null, null, null, null, null, null, null, null, null, "160634", [5, 0, 50, 0, 0, 0, 2.4, 2.4, 2.4], "160618", "160618", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60013, "御剑", 0, 6, 0, "C1CBB0A8489B5CC17AB0A49EBC78D26D", 23, [-50, 0, 0, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "169463", "300435", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "284751", 3, "284751", 3, 0, 0, null], [60014, "鱼", 0, 6, 0, "B76602D34118414D88C30ABABC20DCE1", 23, [15, 0, 50, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "123030", "23559", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "169639", 3, "169639", 3, 0, 0, null]];
+const EXCELDATA$6 = [["ID", "Name", "NextId", "Tab", "Sort", "AssetId", "SlotType", "ModeOffsetParameter", "AnimationId", "AnimationParameter", "AnimationSlot", "EffectId", "EffectOffsetParameter", "EffectLoop", "SoundId", "SoundParameter", "MaterialId", "IsFly", "ButtonIconId", "Icon", "DelayParameter", "DelayAssetId", "DelayModeOffsetParameter", "DelayModeEffectId", "DelayModeEffectOffsetParameter", "DelayEffectId", "DelayEffectOffsetParameter", "DelayModeSoundId", "DelayModeSoundParameter", "VehiclesIcon", "VehiclesChildId", "VehiclesChildParameter", "VehiclesChildMoveId", "VehiclesChildIdleId", "VehiclesWalkStanceId", "VehiclesWalkStanceSlot", "VehiclesIdleStanceId", "VehiclesIdleStanceSlot", "VehiclesWalkAnimationId", "VehiclesWalkAnimationSlot", "VehiclesIdleAnimationId", "VehiclesIdleAnimationSlot", "BuffId", "BuffType", "BuffParams"], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], [10006, "电吉他", 10106, 1, 1, "170487", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10106, null, 10006, 0, 0, null, 13, [18.77, 32.96, -57.93, 1.88, -43.35, -83.69, 1, 1, 1], "121812", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "147341", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10093, "电吉他", 10193, 1, 7, "129224", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10193, null, 10093, 0, 0, null, 13, [33.36, 29.26, -56.4, -11.98, -55.89, -89.71, 1, 1, 1], "122451", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "146098", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10094, "吉他", 10194, 1, 8, "170611", 12, [10, -38, -36, -14, 54, -105, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10194, null, 10094, 0, 0, null, 14, [20.47, -37.05, -57.34, -1.81, 47.06, -95.53, 1, 1, 1], "35412", [1, 0], 1, "172882", [0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5], 0, "52334", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10095, "吉他", 10195, 1, 9, "27099", 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35415", [1, 0], 1, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10195, null, 10095, 0, 0, null, 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35412", [1, 0], 1, "4368", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, "45287", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10320, "钢琴", 10420, 1, 2, "3C5A7B8940E805D7192F53ACF6989935", 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, null, null, 0, null, null, null, 0, "158398", "216957", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10420, null, 10320, 0, 0, null, 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, "130776", [0, 0, 20, 0, 0, 0, 1.5, 1.5, 1], 0, "117193", [500, 1.5, 0], null, 0, "158398", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10340, "架子鼓", 10440, 1, 3, "170495", 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123634", [1, 0], 3, null, null, 0, null, null, null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10440, null, 10340, 0, 0, null, 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123300", [1, 0], 3, "119917", [8, 0, 0, 0, 0, 0, 1, 1, 0.8], 0, "117197", [500, 1, 0], null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10338, "灯球", 10438, 1, 5, "05B519BD4F3FE68467C4F78BE870B7E2", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10438, null, 10338, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "216688", [1, 0], 3, null, null, 0, "147340", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10339, "灯球", 10439, 1, 4, "807D3DAD4695AD616EF6B6A6DE05CF50", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132901", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10439, null, 10339, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "212813", [1, 0], 3, null, null, 0, "147338", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10341, "沙发", 10441, 1, 13, "173566", 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "182947", [1, 0], 3, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10441, null, 10341, 0, 0, null, 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "14516", [1, 0], 1, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10329, "卡通小人", 10429, 1, 38, "135229", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10429, null, 10329, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10330, "L", 10430, 1, 39, "198914", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10430, null, 10330, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10331, "O", 10431, 1, 40, "199057", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "210884", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10431, null, 10331, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10332, "V", 10432, 1, 41, "199090", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10432, null, 10332, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10333, "E", 10433, 1, 42, "198991", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10433, null, 10333, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10334, "F", 10434, 1, 42.1, "198902", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10434, null, 10334, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10335, "U", 10435, 1, 44, "198968", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10435, null, 10335, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10336, "C", 10436, 1, 46, "198896", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10436, null, 10336, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10337, "K", 10437, 1, 48, "198912", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10437, null, 10337, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10342, "箱子", 10442, 1, 17, "36250", 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10442, null, 10342, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10343, "红手牌(笑脸)", 10443, 1, 23, "121354", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10443, null, 10343, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10344, "蓝手牌(委屈脸)", 10444, 1, 24, "121351", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10444, null, 10344, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10345, "A", 10445, 1, 43, "198892", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10445, null, 10345, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10346, "B", 10446, 1, 45, "198894", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10446, null, 10346, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10347, "D", 10447, 1, 47, "198898", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10447, null, 10347, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10348, "G", 10448, 1, 49, "198904", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10448, null, 10348, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10349, "凳子", 10449, 1, 11, "25354", 16, [12.72, 1.83, 10.34, -60.44, -42.82, -42.85, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10449, null, 10349, 0, 0, null, 23, [-16, 0, -15, 0, 0, -90, 1, 1, 1], "170905", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10312, "蓝色法杖", 10412, 1, 19, "210651", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10412, null, 10312, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 2, 1, [0.4]], [10313, "红色法杖", 10413, 1, 20, "210652", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10413, null, 10313, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 3, 1, [3]], [10314, "扫帚法杖", 10414, 1, 21, "210790", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10414, null, 10314, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 4, 1, [0.2]], [10315, "魔法仗", 10415, 1, 22, "210820", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10415, null, 10315, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10316, "地毯", 10416, 1, 12, "091282744E9FD074EC3B4A9336B2136F", 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "192126", [1, 0], 3, null, null, 0, null, null, null, 0, "158427", "22961", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10416, null, 10316, 0, 0, null, 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "14565", [1, 0], 3, "172886", [0, 0, 9, 0, 0, 0, 0.5, 0.5, 1], 0, null, null, null, 0, "158427", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10317, "足球筐", 10417, 1, 15, "22940", 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10417, null, 10317, 0, 0, null, 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10318, "纸板箱", 10418, 1, 16, "38008", 23, [13.7, 0, 0, 0, 0, 90, 1.5, 1.5, 1.5], "47756", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10418, null, 10318, 0, 0, null, 1, [0, 0, 32, -180, 0, -45, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10319, "热狗摊", 10419, 1, 14, "40876", 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29759", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10419, null, 10319, 0, 0, null, 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29755", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10321, "妲己耳朵", 10421, 1, 33, "212767", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10421, null, 10321, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10322, "长耳兔灰耳朵", 10422, 1, 34, "212777", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10422, null, 10322, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10323, "黑狼耳朵", 10423, 1, 35, "213047", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10423, null, 10323, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10324, "气球", 10424, 1, 32, "218065", 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10424, null, 10324, 0, 0, null, 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10325, "卡通小人", 10425, 1, 36, "135222", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10425, null, 10325, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10326, "卡通小人", 10426, 1, 37, "135223", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10426, null, 10326, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10306, "凳子", 10406, 1, 10, "174452", 16, [12.72, 1.06, 31.84, 299.23, -42.82, 677.15, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10406, null, 10306, 0, 0, null, 23, [-16, 0, 10, 0, 0, -90, 1, 1, 1], "218259", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10092, "女帽子", 10192, 1, 30.1, "173243", 16, [13.6, 6, -2, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10192, null, 10092, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 1], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10074, "法杖", 10174, 1, 18, "122954", 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10174, null, 10074, 0, 0, null, 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 1, 1, [2]], [10051, "射灯", 10151, 1, 31, "33028", 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10151, null, 10051, 0, 0, null, 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, "32254", [0, 0, 40, -120, 0, 0, 2, 5, 5], 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10052, "喷火枪", 10152, 1, 25, "87019", 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10152, null, 10052, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.1, 1], 1, "4394", [35, 0, 12, 0, 0, 180, 1, 1, 1], 1, "20322", [500, 1, 1], null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10047, "尖叫鸡", 10147, 1, 30, "20799", 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10147, null, 10047, 0, 0, null, 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], "14557", [1, 1], 1, null, null, 0, "108734", [500, 0.8, 1], null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10005, "荧光棒", 10105, 1, 6, "88974", 16, [4, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10105, null, 10005, 0, 0, null, 16, [3.13, -1.62, -1.12, 0, 0, 0, 1, 1, 1], "174562", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10007, "左轮手枪", 10107, 1, 28, "175291", 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10107, null, 10007, 0, 0, null, 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, "88791", [0, 18, 3, 0, 0, 90, 1, 1, 1], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10008, "散弹枪", 10108, 1, 27, "176450", 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10108, null, 10008, 0, 0, null, 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [1, 1], 1, "4387", [0, 40, 0, 0, 0, 90, 1, 1, 1], 1, "39320", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10009, "步枪", 10109, 1, 26, "176541", 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10109, null, 10009, 0, 0, null, 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [1, 1], 1, "13594", [40, 0, 10, 0, 0, 0, 0.5, 0.5, 0.5], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10012, "美元", 10112, 1, 29, "176320", 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98751", [1, 0], 1, null, null, 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10112, null, 10012, 0, 0, null, 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98746", [1, 0], 1, "60761", [0, 0, 0, 0, 0, 90, 0.5, 0.5, 0.5], 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10001, "洋娃娃", 10101, 3, 4, "163620", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10101, null, 10001, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97383", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10002, "娃娃", 10102, 3, 5, "176521", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10102, null, 10002, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97386", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10003, "书本", 10103, 3, 19, "88948", 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], null, [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10103, null, 10003, 0, 0, null, 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], "14739", [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10004, "相机", 10104, 3, 20, "176511", 16, [-5, -12, 0, 90, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10104, null, 10004, 0, 0, null, 16, [-5, -12, -2, 90, 0, -90, 1, 1, 1], "98797", [1, 1], 1, null, null, 0, "97374", [500, 1, 1], null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10011, "笔记本电脑", 10111, 3, 21, "176265", 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98737", [1, 0], 1, null, null, 0, null, null, null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10111, null, 10011, 0, 0, null, 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98740", [1, 1], 1, null, null, 0, "97379", [500, 1, 1], null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10014, "手机", 10114, 3, 22, "176478", 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10114, null, 10014, 0, 0, null, 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10016, "手捧鲜花", 10116, 3, 3, "162188", 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10116, null, 10016, 0, 0, null, 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], "217871", [1, 1], 1, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10017, "购物车", 10117, 3, 7, "176260", 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10117, null, 10017, 0, 0, null, 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10019, "婴儿车", 10119, 3, 6, "176266", 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10119, null, 10019, 0, 0, null, 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10020, "行李箱", 10120, 3, 8, "176501", 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "98757", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10120, null, 10020, 0, 0, null, 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10021, "黑色雨伞", 10121, 3, 1, "176321", 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "98752", [1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10121, null, 10021, 0, 0, null, 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "14557", [0.1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10046, "气球", 10146, 3, 2, "85003", 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10146, null, 10046, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10048, "小白兔玩偶", 10148, 3, 15, "23414", 16, [5, -10, -20, 10, 5, -60, 0.5, 0.5, 0.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10148, null, 10048, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10049, "玩偶", 10149, 3, 16, "32626", 16, [0, -15, -20, 0, 5, -60, 1.5, 1.5, 1.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10149, null, 10049, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1.5, 1.5, 1.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10064, "杠铃", 10164, 3, 11, "27022", 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10164, null, 10064, 0, 0, null, 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10065, "杠铃", 10165, 3, 12, "72490", 16, [3, -10, -10, -60, 0, 0, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10165, null, 10065, 0, 0, null, 16, [0, -10, 0, 25, 0, 0, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10066, "玩偶", 10166, 3, 13, "32618", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10166, null, 10066, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10067, "玩偶", 10167, 3, 14, "32622", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10167, null, 10067, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10069, "奖杯", 10169, 3, 9, "27066", 16, [5, -8, -12, 0, 60, 90, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10169, null, 10069, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10070, "靠垫", 10170, 3, 17, "32568", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10170, null, 10070, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10071, "靠垫", 10171, 3, 18, "32570", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10171, null, 10071, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10073, "游戏机", 10173, 3, 10, "32556", 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10173, null, 10073, 0, 0, null, 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10075, "鲤鱼", 10175, 3, 201, "123357", 16, [-9, 0, -20, 90, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10175, null, 10075, 0, 0, null, 23, [0, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10076, "龙虾", 10176, 3, 202, "123355", 16, [-14, 0, -18, 110, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10176, null, 10076, 0, 0, null, 23, [30, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10077, "金龙鱼", 10177, 3, 203, "136420", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10177, null, 10077, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10078, "毛鼻鲶", 10178, 3, 204, "136408", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10178, null, 10078, 0, 0, null, 23, [10, 0, 65, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10079, "尖吻鲈", 10179, 3, 205, "136422", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10179, null, 10079, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10080, "蓝鳍金枪鱼", 10180, 3, 206, "136415", 16, [-4, 0, -21, -180, 90, 0, 0.2, 0.2, 0.2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10180, null, 10080, 0, 0, null, 23, [10, 0, 10, 0, 0, 180, 1, 1, 1], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10081, "大眼鲤鱼", 10181, 3, 207, "136418", 16, [-10, 0, -16, -180, 90, 0, 2.5, 2.5, 2.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10181, null, 10081, 0, 0, null, 23, [10, 0, 40, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10082, "大口副鲈", 10182, 3, 208, "136409", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10182, null, 10082, 0, 0, null, 23, [10, 0, 30, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10083, "皇带鱼", 10183, 3, 209, "136410", 16, [-3, 0, -21, -180, 90, 0, 0.3, 0.7, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10183, null, 10083, 0, 0, null, 23, [0, 0, 40, 0, 0, 180, 1, 5, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10084, "鲸鱼", 10184, 3, 210, "122172", 16, [5, -25, -5, 0, 60, 90, 0.15, 0.15, 0.15], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10184, null, 10084, 0, 0, null, 23, [20, 0, 60, 0, 0, 0, 0.2, 0.2, 0.2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10085, "孔雀鱼", 10185, 3, 211, "136417", 16, [-4, 0, -15, -180, 90, 0, 7, 10, 7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10185, null, 10085, 0, 0, null, 23, [20, 0, 60, 0, 0, 180, 20, 20, 20], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10086, "笛鲷", 10186, 3, 212, "136405", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10186, null, 10086, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 4, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10087, "平颌鱲", 10187, 3, 213, "136416", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10187, null, 10087, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10088, "鲨鱼", 10188, 3, 214, "136412", 16, [5, -8, -12, 0, 60, 90, 1, 1.2, 1.2], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10188, null, 10088, 0, 0, null, 23, [-20, 0, 40, 0, 0, 180, 2, 2, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10089, "樱花枝", 10189, 3, 16, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10189, null, 10089, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "123718", [1, 1], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10090, "咖啡", 10190, 3, 17, "40809", 16, [6.04, -7.74, -4.26, 0, 0, -79.46, 0.06, 0.06, 0.06], "35385", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10190, null, 10090, 0, 0, null, 16, [4.32, -2.89, -5.03, 0, 0, -33.59, 0.06, 0.06, 0.06], "14514", [1, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10091, "女帽子", 10191, 3, 18, "173243", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10191, null, 10091, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10097, "角色模型", 10197, 3, 38, "177590", 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, "177590", [-5000, 0, 0, 0, 0, -90, 100, 100, 100], 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10197, null, 10097, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, null, null, 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10098, "背带鲨鱼", 10198, 3, 301, "180966", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10198, null, 10098, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145506", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10099, "埃及鲨鱼", 10199, 3, 302, "184457", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10199, null, 10099, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "88020", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10300, "埃及章鱼", 10400, 3, 303, "184458", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10400, null, 10300, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27392", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10301, "埃及金鱼", 10401, 3, 304, "184556", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10401, null, 10301, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27447", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10302, "天使章鱼", 10402, 3, 305, "186655", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10402, null, 10302, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145495", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10303, "嘟嘟嘴金鱼", 10403, 3, 306, "179470", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10403, null, 10303, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "151527", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10304, "嘟嘟嘴红金鱼", 10404, 3, 307, "180967", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10404, null, 10304, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145512", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10305, "灯笼鱼形态的宠物", 10405, 3, 308, "80343", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10405, null, 10305, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], "14620", [1, 0], 0, "153613", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10307, "紫阳春剑", 10407, 3, 27, "172199", 14, [3.1, 12.9, -44.11, 63.65, -62.11, 22.9, 1, 1, 1], null, null, 0, "162221", [0, 0, 0, 90, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10407, null, 10307, 0, 0, null, 16, [0, 0, 45, -90, 0, 0, 1, 1, 1], "122491", [1, 1], 3, "88442", [0, 80, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10308, "剑", 10408, 3, 27, "122949", 12, [11.2, -32.84, 20.81, 180.05, -48.22, -90.01, 1, 1, 1], null, null, 0, "103123", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10408, null, 10308, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "111102", [1, 1], 3, "180505", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 1, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10309, "大剑", 10409, 3, 27, "186519", 12, [6.28, 33.79, 25.13, 180, 46.64, -90, 1, 1, 1], null, null, 0, "162250", [0, 0, 32, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10409, null, 10309, 0, 0, null, 15, [0, 0, 0, -6.2, 10.73, 29.3, 1, 1, 1], "217289", [1, 1], 3, "14323", [0, 0, 95, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10310, "樱花枝", 10410, 3, 30, "218258", 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219281", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10410, null, 10310, 0, 0, null, 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10311, "樱花枝", 10411, 3, 30, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219280", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10411, null, 10311, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10327, "卡通小人", 10427, 3, 15, "135233", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10427, null, 10327, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10328, "甜品店吉祥物", 10428, 3, 15, "128491", 16, [0, -10, -10, 0, 5, -60, 0.2, 0.2, 0.2], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10428, null, 10328, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 0.2, 0.2, 0.2], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10022, "汉堡", 10122, 4, 0, "37975", 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "98747", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10122, null, 10022, 0, 0, null, 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10023, "羊奶", 10123, 4, 0, "29005", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10123, null, 10023, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10024, "面包", 10124, 4, 0, "46131", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10124, null, 10024, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10025, "面包", 10125, 4, 0, "46132", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10125, null, 10025, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10027, "饮料", 10127, 4, 0, "46150", 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10127, null, 10027, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10028, "饮料", 10128, 4, 0, "46156", 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10128, null, 10028, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10029, "饮料", 10129, 4, 0, "46158", 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10129, null, 10029, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10031, "酒", 10131, 4, 0, "49441", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10131, null, 10031, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10033, "奶昔", 10133, 4, 0, "40819", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10133, null, 10033, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10034, "冰淇淋", 10134, 4, 0, "40832", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10134, null, 10034, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10038, "烧烤", 10138, 4, 0, "46136", 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10138, null, 10038, 0, 0, null, 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10041, "奶茶", 10141, 4, 0, "27826", 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10141, null, 10041, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10043, "猫粮", 10143, 4, 0, "28995", 15, [5, 2, -8, 0, 0, 0, 0.7, 0.7, 0.7], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10143, null, 10043, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 0.7, 0.7, 0.7], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10054, "蛋糕", 10154, 4, 0, "23115", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10154, null, 10054, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10057, "一盘蛋糕", 10157, 4, 0, "23116", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10157, null, 10057, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10059, "咖啡", 10159, 4, 0, "23191", 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10159, null, 10059, 0, 0, null, 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10062, "清酒", 10162, 4, 0, "23043", 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10162, null, 10062, 0, 0, null, 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10063, "清酒", 10163, 4, 0, "23071", 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10163, null, 10063, 0, 0, null, 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20001, "火焰翅膀", 20002, 2, 2, "223877", 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20002, null, 20001, 2, 0, null, 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20003, "翅膀", 20004, 2, 2, "135840", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20004, null, 20003, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20005, "翅膀", 20006, 2, 2, "135851", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20006, null, 20005, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20007, "翅膀", 20008, 2, 2, "135848", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20008, null, 20007, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20009, "双层翅膀", 20010, 2, 2, "334814", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20010, null, 20009, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20011, "翅膀", 20012, 2, 2, "42804", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20012, null, 20011, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20013, "翅膀", 20014, 2, 2, "42805", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20014, null, 20013, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20015, "翅膀", 20016, 2, 2, "42816", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20016, null, 20015, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20017, "翅膀", 20018, 2, 2, "42818", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20018, null, 20017, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20019, "翅膀", 20020, 2, 2, "42821", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20020, null, 20019, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20021, "翅膀", 20022, 2, 2, "42828", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20022, null, 20021, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20023, "翅膀", 20024, 2, 2, "145906", 12, [0, 0, -20, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20024, null, 20023, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20025, "翅膀", 20026, 2, 2, "145908", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20026, null, 20025, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20027, "翅膀", 20028, 2, 2, "145910", 12, [0, 0, 0, 0, 0, 180, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20028, null, 20027, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20029, "翅膀", 20030, 2, 2, "145912", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20030, null, 20029, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20031, "翅膀", 20032, 2, 2, "145913", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20032, null, 20031, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20033, "翅膀", 20034, 2, 2, "340180", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20034, null, 20033, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20035, "翅膀", 20036, 2, 2, "342526", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20036, null, 20035, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20037, "翅膀", 20038, 2, 2, "342530", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20038, null, 20037, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20039, "翅膀", 20040, 2, 2, "375134", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20040, null, 20039, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20041, "翅膀", 20042, 2, 2, "375788", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20042, null, 20041, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20043, "翅膀", 20044, 2, 2, "393543", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20044, null, 20043, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20045, "六翼翅膀", 20046, 2, 1, "399002", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20046, null, 20045, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20047, "翅膀", 20048, 2, 2, "42830", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20048, null, 20047, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20049, "翅膀", 20050, 2, 2, "136963", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20050, null, 20049, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20051, "翅膀", 20052, 2, 2, "145902", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20052, null, 20051, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20053, "翅膀", 20054, 2, 2, "145904", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20054, null, 20053, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20055, "翅膀", 20056, 2, 2, "136966", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20056, null, 20055, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20057, "翅膀", 20058, 2, 2, "145909", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20058, null, 20057, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20059, "翅膀", 20060, 2, 2, "145911", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20060, null, 20059, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20061, "火焰翅膀", 20062, 2, 2, "211667", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20062, null, 20061, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30001, "烟花筒", 30002, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125370", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30002, null, 30002, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125370", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30003, "炮弹", 30004, 5, 0, "122174", 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], null, null, 0, "86375", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "96613", "86375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30004, null, 30004, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "52981", [1, 1], 0, null, null, 0, null, null, null, 0, "96613", null, [2, 1, 1], "122174", [0, 0, 0, 0, 0, 0, 1, 1, 1], "86375", [0, 0, 30, 0, 0, 0, 1, 1, 1], "85151", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "97385", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30005, "烟花筒", 30006, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4374", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30006, null, 30006, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4374", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30007, "烟花筒", 30008, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30008, null, 30008, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4375", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30009, "烟花筒", 30010, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4376", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30010, null, 30010, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4376", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30011, "烟花筒", 30012, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4377", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30012, null, 30012, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4377", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30013, "烟花筒", 30014, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "32679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30014, null, 30014, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "32679", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30015, "烟花筒", 30016, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81684", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30016, null, 30016, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81684", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30017, "烟花筒", 30018, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81685", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30018, null, 30018, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81685", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30019, "烟花筒", 30020, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88812", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30020, null, 30020, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88812", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30021, "烟花筒", 30022, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88816", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30022, null, 30022, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88816", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30023, "烟花筒", 30024, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88821", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30024, null, 30024, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88821", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30025, "烟花筒", 30026, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88828", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30026, null, 30026, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88828", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30027, "烟花筒", 30028, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88832", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30028, null, 30028, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88832", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30029, "烟花筒", 30030, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88835", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30030, null, 30030, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88835", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30031, "烟花筒", 30032, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125365", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30032, null, 30032, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125365", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30033, "烟花筒", 30034, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125373", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30034, null, 30034, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125373", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30035, "烟花筒", 30036, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141911", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30036, null, 30036, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141911", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30037, "烟花筒", 30038, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141912", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30038, null, 30038, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141912", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30039, "烟花筒", 30040, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141915", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30040, null, 30040, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141915", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30041, "烟花筒", 30042, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141916", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30042, null, 30042, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141916", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30043, "烟花筒", 30044, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174253", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30044, null, 30044, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "174253", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30045, "炮竹", 30046, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78884", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30046, null, 30046, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78884", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30047, "炮竹", 30048, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78885", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30048, null, 30048, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78885", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30049, "炮竹", 30050, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78886", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30050, null, 30050, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78886", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30051, "炮竹", 30052, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78887", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30052, null, 30052, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78887", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30053, "炮竹", 30054, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30054, null, 30054, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146328", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30055, "炮竹", 30056, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146329", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30056, null, 30056, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146329", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30057, "炮竹", 30058, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146753", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30058, null, 30058, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146753", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30059, "炮竹", 30060, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146754", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30060, null, 30060, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146754", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30061, "炮竹", 30062, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146781", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30062, null, 30062, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146781", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30063, "炮竹", 30064, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146782", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30064, null, 30064, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146782", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30065, "炮竹", 30066, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173515", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30066, null, 30066, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173515", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30067, "炮竹", 30068, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173518", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30068, null, 30068, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173518", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30069, "炮竹", 30070, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174247", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30070, null, 30070, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174247", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30071, "炮竹", 30072, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174249", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30072, null, 30072, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174249", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30073, "炮竹", 30074, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174251", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30074, null, 30074, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174251", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [60001, "滑板", 0, 6, 0, "363FEA624259C1B9142621B378EF2D00", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167883", null, null, null, null, null, null, null, null, null, null, "167883", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60002, "滑板2", 0, 6, 0, "E8023A80499578B92FF7FF9DC6B0C5DF", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60003, "滑板3", 0, 6, 0, "DD372C0847DF60EA5A71188793CED8B9", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60004, "冲浪板", 0, 6, 0, "CA4C723A47326DBDD6C15E81BF263948", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112946", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60005, "冲浪板_1", 0, 6, 0, "44C88B394905C23FAEB144A09D1C288F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112935", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60006, "自行车", 0, 6, 0, "3535C0024A4AB595E185E696C68D7A92", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "31526", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60007, "自行车1", 0, 6, 0, "CD227C3B493C28D21247CF9B037E2C79", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "186109", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60008, "花猪", 0, 6, 0, "10C7602E48F2D1CCFB972EBF05FCEB99", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160429", "159590", null, null, null, null, null, null, null, null, null, null, "159590", [15, 0, 50, 0, 0, 0, 1, 1, 1], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60009, "狗儿子", 0, 6, 0, "30AACA6644A6A8934E7CBA8C6391853F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160427", "160319", null, null, null, null, null, null, null, null, null, null, "160319", [20, 0, 80, 0, 0, 0, 2, 2, 2], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60010, "彩虹马", 0, 6, 0, "04EC792B4A3A2234074439AD1B38B6A0", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "131921", "174968", null, null, null, null, null, null, null, null, null, null, "174968", [20, 0, 80, 0, 0, 0, 3, 3, 3], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60011, "熊猫", 0, 6, 0, "D15BB1CF4FA03737446352A21DFB0807", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "193823", "159933", null, null, null, null, null, null, null, null, null, null, "159933", [-10, 0, 60, 0, 0, 0, 1.5, 1.5, 1.5], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60012, "小龙", 0, 6, 0, "8A792E1B42F34D60C29234A0B038B26C", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "408381", "160634", null, null, null, null, null, null, null, null, null, null, "160634", [5, 0, 50, 0, 0, 0, 2.4, 2.4, 2.4], "160618", "160618", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60013, "御剑", 0, 6, 0, "C1CBB0A8489B5CC17AB0A49EBC78D26D", 23, [-50, 0, 0, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "169463", "300435", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "284751", 3, "284751", 3, 0, 0, null], [60014, "鱼", 0, 6, 0, "B76602D34118414D88C30ABABC20DCE1", 23, [15, 0, 50, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "123030", "23559", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "169639", 3, "169639", 3, 0, 0, null]];
 class ActionPropConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$6);
@@ -1575,7 +1575,7 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     ExpressionConfig: ExpressionConfig
 });
 
-const EXCELDATA$3 = [["ID", "TriggerGuid", "InteractivityGuid", "ModelGuid", "InteractIcon", "HumanoidSlotType", "SitStance", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", "", "", "", ""], [1, "0CD59651", null, null, "120767", 23, "151060", 60004, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", null, null, "120767", 23, "151060", 60005, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", null, null, "123030", 19, "151060", 60014, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", null, null, "169463", 23, "151060", 60013, null, 0, null, "御剑-翅膀"], [5, "2A86F403", null, null, "167883", 23, "151060", 60001, null, 0, null, "滑板-电吉他"], [6, "02502CF9", null, "1316BF5C", "103437", 0, null, 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", null, "30C9467F", "103437", 0, null, 30048, null, 0, null, "呲花"], [9, "3B9F004A", null, "02D3D0FB", "103437", 0, null, 30006, null, 0, null], [10, "30A6E783", null, "2B6B0FA6", "103437", 0, null, 30050, null, 0, null], [11, "1B77E308", null, "2FEFA7B3", "103437", 0, null, 30052, null, 0, null], [12, "2ABFBE64", null, "3B620F67", "103437", 0, null, 30008, null, 0, null], [13, "23C087D3", null, "01DA388E", "103437", 0, null, 30052, null, 0, null], [14, "32D06BAB", null, "31EDB7B3", "103437", 0, null, 30010, null, 0, null], [15, "2A9CA5D5", null, "3CCD170C", "103437", 0, null, 30012, null, 0, null], [16, "2321D6C9", null, "17F59CCA", "103437", 0, null, 30014, null, 0, null], [17, "357B83A4", null, "2EB80290", "103437", 0, null, 30054, null, 0, null], [18, "03196BF5", null, "04E952B8", "103437", 0, null, 30056, null, 0, null], [19, "3D1A7899", null, "3CD1BBC4", "103437", 0, null, 30058, null, 0, null], [20, "1660D04A", null, "2805AB56", "103437", 0, null, 30060, null, 0, null], [21, "2F8E9759", null, "4398570", "103437", 0, null, 30062, null, 0, null], [22, "029A708E", null, "0E1CF95E", "103437", 0, null, 30064, null, 0, null], [23, "2B2F3434", null, "0DD82373", "103437", 0, null, 30016, null, 0, null], [24, "1DC00881", null, "2EDE3317", "103437", 0, null, 30066, null, 0, null], [25, "36676894", null, "1F73A63A", "103437", 0, null, 30068, null, 0, null], [26, "1CDE2B65", null, "39B89333", "103437", 0, null, 30070, null, 0, null], [27, "10896871", null, "03D689AA", "103437", 0, null, 30018, null, 0, null], [28, "1AA32466", null, "3F32DF53", "103437", 0, null, 30020, null, 0, null], [29, "37B72C47", null, "2A744A78", "103437", 0, null, 30022, null, 0, null], [30, "30A942B1", null, "1142E907", "103437", 0, null, 30008, null, 0, null], [31, "0FD25D88", null, "01862B9F", "103437", 0, null, 30006, null, 0, null], [32, "114B5C28", null, "27ADEC9A", "103437", 0, null, 30002, null, 0, null], [33, "02CE9D49", null, "2311BAB2", "103437", 0, null, 30010, null, 0, null], [34, "2E950C81", null, "0C6C59A6", "103437", 0, null, 30032, null, 0, null], [35, "11D391D2", null, "1CBB7B6A", "103437", 0, null, 30034, null, 0, null], [36, "3E1D73CC", null, "1877B361", "103437", 0, null, 30036, null, 0, null], [37, "3A591F1D", null, null, "110057", 19, "218260", 10193, null, 0, null], [38, "11FC2714", null, null, "120649", 0, null, 10193, null, 0, null], [39, "059DA227", null, null, "110057", 19, "14689", 10138, null, 0, null], [40, "3ED043F4", null, null, "110057", 19, "14645", 10163, null, 0, null], [50, "1FC1F0EE", null, null, "120727", 17, "122231", 10194, null, 0, null], [51, "088F5EE5", null, null, "146643", 19, "29741", 10091, null, 0, null], [52, "2C87FD97", null, null, "146643", 19, "35447", 10091, null, 0, null], [53, "05FABD75", null, null, "168260", 17, "52984", 10430, null, 0, null], [54, "3FE87C24", null, null, "168260", 17, "52984", 10431, null, 0, null], [55, "3E0200C0", null, null, "168260", 17, "52984", 10432, null, 0, null], [56, "3A8D6DA5", null, null, "168260", 17, "52984", 10433, null, 0, null], [57, "06416F41", null, null, "120767", 0, null, 60005, null, 0, null], [58, "1AD5C96C", null, null, "120649", 23, "192126", 10195, null, 0, null], [63, "117E9D97", null, null, "158398", 0, null, 10420, null, 0, null], [64, "22119BD8", null, null, "158398", 0, null, 10420, null, 0, null], [65, "2BA03CE9", null, null, "158398", 0, null, 10420, null, 0, null], [66, "05E360CD", null, null, "158398", 0, null, 10420, null, 0, null], [67, "36F54E8F", null, null, "120719", 0, null, 10440, null, 0, null], [68, "140807DC", null, null, "120719", 0, null, 10440, null, 0, null], [69, "2EE4A29B", null, null, "120719", 0, null, 10440, null, 0, null], [100, null, null, null, null, 0, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, null, 0, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, null, null, 0, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, null, null, 0, null, 0, "2815DDD0", 8, "180891", "被搂"]];
+const EXCELDATA$3 = [["ID", "TriggerGuid", "ModelGuid", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", ""], [1, "0CD59651", null, 60004, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", null, 60005, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", null, 60014, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", null, 60013, null, 0, null, "御剑-翅膀"], [5, "2A86F403", null, 60001, null, 0, null, "滑板-电吉他"], [6, "02502CF9", "1316BF5C", 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", "30C9467F", 30048, null, 0, null, "呲花"], [9, "3B9F004A", "02D3D0FB", 30006, null, 0, null], [10, "30A6E783", "2B6B0FA6", 30050, null, 0, null], [11, "1B77E308", "2FEFA7B3", 30052, null, 0, null], [12, "2ABFBE64", "3B620F67", 30008, null, 0, null], [13, "23C087D3", "01DA388E", 30052, null, 0, null], [14, "32D06BAB", "31EDB7B3", 30010, null, 0, null], [15, "2A9CA5D5", "3CCD170C", 30012, null, 0, null], [16, "2321D6C9", "17F59CCA", 30014, null, 0, null], [17, "357B83A4", "2EB80290", 30054, null, 0, null], [18, "03196BF5", "04E952B8", 30056, null, 0, null], [19, "3D1A7899", "3CD1BBC4", 30058, null, 0, null], [20, "1660D04A", "2805AB56", 30060, null, 0, null], [21, "2F8E9759", "4398570", 30062, null, 0, null], [22, "029A708E", "0E1CF95E", 30064, null, 0, null], [23, "2B2F3434", "0DD82373", 30016, null, 0, null], [24, "1DC00881", "2EDE3317", 30066, null, 0, null], [25, "36676894", "1F73A63A", 30068, null, 0, null], [26, "1CDE2B65", "39B89333", 30070, null, 0, null], [27, "10896871", "03D689AA", 30018, null, 0, null], [28, "1AA32466", "3F32DF53", 30020, null, 0, null], [29, "37B72C47", "2A744A78", 30022, null, 0, null], [30, "30A942B1", "1142E907", 30008, null, 0, null], [31, "0FD25D88", "01862B9F", 30006, null, 0, null], [32, "114B5C28", "27ADEC9A", 30002, null, 0, null], [33, "02CE9D49", "2311BAB2", 30010, null, 0, null], [34, "2E950C81", "0C6C59A6", 30032, null, 0, null], [35, "11D391D2", "1CBB7B6A", 30034, null, 0, null], [36, "3E1D73CC", "1877B361", 30036, null, 0, null], [37, "3A591F1D", null, 10193, null, 0, null], [38, "11FC2714", null, 10193, null, 0, null], [39, "059DA227", null, 10138, null, 0, null], [40, "3ED043F4", null, 10163, null, 0, null], [50, "1FC1F0EE", null, 10194, null, 0, null], [51, "088F5EE5", null, 10091, null, 0, null], [52, "2C87FD97", null, 10091, null, 0, null], [53, "05FABD75", null, 10430, null, 0, null], [54, "3FE87C24", null, 10431, null, 0, null], [55, "3E0200C0", null, 10432, null, 0, null], [56, "3A8D6DA5", null, 10433, null, 0, null], [57, "06416F41", null, 60005, null, 0, null], [58, "1AD5C96C", null, 10195, null, 0, null], [63, "117E9D97", null, 10420, null, 0, null], [64, "22119BD8", null, 10420, null, 0, null], [65, "2BA03CE9", null, 10420, null, 0, null], [66, "05E360CD", null, 10420, null, 0, null], [67, "36F54E8F", null, 10440, null, 0, null], [68, "140807DC", null, 10440, null, 0, null], [69, "2EE4A29B", null, 10440, null, 0, null], [100, null, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, 0, "2815DDD0", 8, "180891", "被搂"]];
 class InteractConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$3);
@@ -1587,7 +1587,7 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"]];
+const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_GuideTips", "Reach near the target point", "达到目标点附近"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$2);
@@ -1630,6 +1630,45 @@ class LanguageConfig extends ConfigBase {
     ;
     /**关*/
     get Text_Off() { return this.getElement(13); }
+    ;
+    /**已获得，打开背包使用*/
+    get Text_ObtainedTips() { return this.getElement(14); }
+    ;
+    /**广告奖励*/
+    get Text_Advertising() { return this.getElement(15); }
+    ;
+    /**看广告免费指引你获得*/
+    get Text_ADGetTips() { return this.getElement(16); }
+    ;
+    /**不要*/
+    get Text_Dont() { return this.getElement(17); }
+    ;
+    /**免费获得*/
+    get Text_Free() { return this.getElement(18); }
+    ;
+    /**指引失败，请重试*/
+    get Text_Fail() { return this.getElement(19); }
+    ;
+    /**未上榜*/
+    get Text_NoOnTheList() { return this.getElement(20); }
+    ;
+    /**排名*/
+    get Text_Ranking() { return this.getElement(21); }
+    ;
+    /**昵称*/
+    get Text_Nickname() { return this.getElement(22); }
+    ;
+    /**分数*/
+    get Text_Score() { return this.getElement(23); }
+    ;
+    /**时长*/
+    get Text_Duration() { return this.getElement(24); }
+    ;
+    /**时长全服前{0}名*/
+    get Text_TopInTermsOfDuration() { return this.getElement(25); }
+    ;
+    /**达到目标点附近*/
+    get Text_GuideTips() { return this.getElement(26); }
     ;
 }
 
@@ -1703,7 +1742,10 @@ var foreign14 = /*#__PURE__*/Object.freeze({
 class GlobalData {
 }
 GlobalData.languageId = 1;
+/**是否开启IAA */
+GlobalData.isOpenIAA = false;
 GlobalData.bagCount = 5;
+GlobalData.worldCount = 500;
 
 var foreign16 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -1756,12 +1798,140 @@ class Utils {
             });
         });
     }
+    /**开始引导 */
+    static startGuide(targetLoc, onComplete = null) {
+        if (!targetLoc)
+            return;
+        if (this.targetGuideEffectId) {
+            EffectService.stop(this.targetGuideEffectId);
+            this.targetGuideEffectId = null;
+        }
+        this.targetGuideEffectId = EffectService.playAtPosition(this.targetEffectGuid, targetLoc, { loopCount: 0 });
+        if (this.guideIntervalId) {
+            TimeUtil.clearInterval(this.guideIntervalId);
+            this.guideIntervalId = null;
+        }
+        this.guideIntervalId = TimeUtil.setInterval(() => {
+            let playerLoc = Player.localPlayer.character.worldTransform.position;
+            if (Math.abs(playerLoc.x - this.prePlayerLoc.x) < 0.1 && Math.abs(playerLoc.y - this.prePlayerLoc.y) < 0.1 && Math.abs(playerLoc.z - this.prePlayerLoc.z) < 0.1)
+                return;
+            this.prePlayerLoc = playerLoc;
+            let distance = mw.Vector.distance(playerLoc, targetLoc);
+            if (distance <= 200) {
+                TimeUtil.clearInterval(this.guideIntervalId);
+                this.guideIntervalId = null;
+                if (this.targetGuideEffectId) {
+                    EffectService.stop(this.targetGuideEffectId);
+                    this.targetGuideEffectId = null;
+                }
+                if (this.guideEffectIds.length != 0) {
+                    this.guideEffectIds.forEach((effectId) => {
+                        EffectService.stop(effectId);
+                    });
+                    this.guideEffectIds.length = 0;
+                }
+                Notice.showDownNotice(GameConfig.Language.Text_GuideTips.Value);
+                if (onComplete)
+                    onComplete();
+                return;
+            }
+            let pointNum = Math.floor(distance / 100);
+            let locs = this.getCurvePointsInNum([playerLoc, targetLoc], pointNum);
+            if (pointNum > 35) {
+                pointNum = 35;
+            }
+            if (this.guideEffectIds.length == 0) {
+                for (let i = 1; i < pointNum; ++i) {
+                    let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i], { loopCount: 0 });
+                    this.guideEffectIds.push(effectId);
+                }
+            }
+            else {
+                if (this.guideEffectIds.length == pointNum) {
+                    for (let i = 1; i < pointNum; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i - 1]).then((effect) => {
+                            effect.worldTransform.position = (new mw.Vector(locs[i].x, locs[i].y, locs[i].z - 85));
+                        });
+                    }
+                    EffectService.stop(this.guideEffectIds[pointNum - 1]);
+                    this.guideEffectIds.length = pointNum - 1;
+                }
+                else if (this.guideEffectIds.length < pointNum) {
+                    for (let i = 0; i < this.guideEffectIds.length; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect) => {
+                            effect.worldTransform.position = (new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85));
+                        });
+                    }
+                    for (let i = this.guideEffectIds.length; i < pointNum - 1; ++i) {
+                        let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i + 1], { loopCount: 0 });
+                        this.guideEffectIds.push(effectId);
+                    }
+                }
+                else if (this.guideEffectIds.length > pointNum) {
+                    for (let i = 0; i < pointNum; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect) => {
+                            if (!locs[i + 1])
+                                return;
+                            effect.worldTransform.position = (new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85));
+                        });
+                    }
+                    for (let i = pointNum; i < this.guideEffectIds.length; ++i) {
+                        EffectService.stop(this.guideEffectIds[i]);
+                    }
+                    this.guideEffectIds.length = pointNum;
+                }
+            }
+        }, 0.1);
+    }
+    /**
+     * 获取贝塞尔曲线的点的集合
+     * @param points 点的集合, 至少包含起点和终点
+     * @param num 想要生成多少点
+     * @returns
+     */
+    static getCurvePointsInNum(points, num) {
+        let result = new Array();
+        for (let i = 0; i < num; i++) {
+            let t = i / (num - 1);
+            let point = this.getKeyPoint(points, t);
+            result.push(point);
+        }
+        return result;
+    }
+    static getKeyPoint(points, t) {
+        if (points.length > 1) {
+            let dirs = new Array();
+            for (let i = 0; i < points.length - 1; ++i) {
+                dirs.push(new mw.Vector(points[i + 1].x - points[i].x, points[i + 1].y - points[i].y, points[i + 1].z - points[i].z));
+            }
+            let points2 = new Array();
+            for (let j = 0; j < dirs.length; j++) {
+                points2.push(new mw.Vector(points[j].x + dirs[j].x * t, points[j].y + dirs[j].y * t, points[j].z + dirs[j].z * t));
+            }
+            return this.getKeyPoint(points2, t);
+        }
+        else {
+            return new mw.Vector(points[0].x, points[0].y, points[0].z);
+        }
+    }
 }
 Utils.assetIconDataMap = new Map();
 Utils.buffMap = new Map();
 Utils.birthPos = new mw.Vector(0, 0, 1000);
+/**引导目标点特效ID */
+Utils.targetGuideEffectId = null;
+/**引导间隔标识 */
+Utils.guideIntervalId = null;
+/**引导线特效ID */
+Utils.guideEffectIds = [];
+/**记录上一次玩家的坐标 */
+Utils.prePlayerLoc = mw.Vector.zero;
+/**引导线特效Guid */
+Utils.guideEffectGuid = `146775`;
+/**引导目标点特效Guid */
+Utils.targetEffectGuid = `142962`;
 
-var foreign39 = /*#__PURE__*/Object.freeze({
+var foreign46 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Utils
 });
@@ -1771,7 +1941,7 @@ var foreign39 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.30
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -1829,7 +1999,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign60 = /*#__PURE__*/Object.freeze({
+var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -1871,7 +2041,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign38 = /*#__PURE__*/Object.freeze({
+var foreign45 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -1995,7 +2165,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign40 = /*#__PURE__*/Object.freeze({
+var foreign47 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -2005,7 +2175,7 @@ var foreign40 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -2063,7 +2233,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign48 = /*#__PURE__*/Object.freeze({
+var foreign56 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -2073,7 +2243,7 @@ var foreign48 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -2146,7 +2316,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign56 = /*#__PURE__*/Object.freeze({
+var foreign64 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -2156,7 +2326,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mOpenSetImage() {
@@ -2182,6 +2352,18 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mOpenClothButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothButton');
         }
         return this.mOpenClothButton_Internal;
+    }
+    get mOpenRankImage() {
+        if (!this.mOpenRankImage_Internal && this.uiWidgetBase) {
+            this.mOpenRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage');
+        }
+        return this.mOpenRankImage_Internal;
+    }
+    get mOpenRankButton() {
+        if (!this.mOpenRankButton_Internal && this.uiWidgetBase) {
+            this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton');
+        }
+        return this.mOpenRankButton_Internal;
     }
     get mJumpBgImage() {
         if (!this.mJumpBgImage_Internal && this.uiWidgetBase) {
@@ -2297,6 +2479,11 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         });
         this.initLanguage(this.mOpenClothButton);
         this.mOpenClothButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mOpenRankButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenRankButton");
+        });
+        this.initLanguage(this.mOpenRankButton);
+        this.mOpenRankButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
         this.mDeleteAllGoodsButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
         });
@@ -2354,7 +2541,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign57 = /*#__PURE__*/Object.freeze({
+var foreign65 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -2482,6 +2669,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mDeleteAllGoodsButton.onClicked.add(this.addDeleteAllGoods.bind(this));
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
+        this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
     }
     addJumpButton() {
         this.getHUDModuleC.onJumpAction.call();
@@ -2497,6 +2685,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     addBagButton() {
         this.getHUDModuleC.onBagButton.call();
+    }
+    addOpenRankButton() {
+        this.getHUDModuleC.onOpenRankAction.call();
     }
     showHideGoodsButton() {
         this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
@@ -2580,6 +2771,7 @@ class HUDModuleC extends ModuleC {
         this.deleteAllGoodsAction = new Action();
         this.onOpenSetAction = new Action();
         this.onOpenClothAction = new Action();
+        this.onOpenRankAction = new Action();
     }
     get getHUDPanel() {
         if (!this.hudPanel) {
@@ -2685,7 +2877,7 @@ class HUDModuleS extends ModuleS {
     }
 }
 
-var foreign32 = /*#__PURE__*/Object.freeze({
+var foreign33 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HUDItem: HUDItem,
     HUDModuleC: HUDModuleC,
@@ -2932,7 +3124,7 @@ class StateMeasure {
     }
 }
 
-var foreign17 = /*#__PURE__*/Object.freeze({
+var foreign18 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     Bubble: Bubble
 });
@@ -2945,7 +3137,7 @@ class ActionData {
 } //AssetId:96612
 // AssetId:168261
 
-var foreign19 = /*#__PURE__*/Object.freeze({
+var foreign20 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ActionData: ActionData,
     ChatData: ChatData,
@@ -2957,7 +3149,7 @@ var foreign19 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -3286,7 +3478,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign51 = /*#__PURE__*/Object.freeze({
+var foreign59 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -3295,8 +3487,943 @@ var foreign51 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/InteractionModule/OnClickPanel.ui
+ * TIME: 2024.12.24-22.15.31
+ */
+let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickBtn() {
+        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
+            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickBtn');
+        }
+        return this.mClickBtn_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
+        });
+        this.mClickBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+OnClickPanel_Generate = __decorate([
+    UIBind('UI/module/InteractionModule/OnClickPanel.ui')
+], OnClickPanel_Generate);
+var OnClickPanel_Generate$1 = OnClickPanel_Generate;
+
+var foreign66 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: OnClickPanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/AdModule/AdPanel.ui
+ * TIME: 2024.12.24-22.15.30
+ */
+let AdPanel_Generate = class AdPanel_Generate extends UIScript {
+    get mTitleTxt() {
+        if (!this.mTitleTxt_Internal && this.uiWidgetBase) {
+            this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mTitleTxt');
+        }
+        return this.mTitleTxt_Internal;
+    }
+    get mContentTxt() {
+        if (!this.mContentTxt_Internal && this.uiWidgetBase) {
+            this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mContentTxt');
+        }
+        return this.mContentTxt_Internal;
+    }
+    get mNoBtn() {
+        if (!this.mNoBtn_Internal && this.uiWidgetBase) {
+            this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mNoBtn');
+        }
+        return this.mNoBtn_Internal;
+    }
+    get mYesBtn() {
+        if (!this.mYesBtn_Internal && this.uiWidgetBase) {
+            this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mYesBtn');
+        }
+        return this.mYesBtn_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        this.mNoBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
+        });
+        this.initLanguage(this.mNoBtn);
+        this.mNoBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mTitleTxt);
+        this.initLanguage(this.mContentTxt);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+AdPanel_Generate = __decorate([
+    UIBind('UI/module/AdModule/AdPanel.ui')
+], AdPanel_Generate);
+var AdPanel_Generate$1 = AdPanel_Generate;
+
+var foreign51 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: AdPanel_Generate$1
+});
+
+class AdPanel extends AdPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.callback = null;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerDialog;
+        this.bindButtons();
+    }
+    bindButtons() {
+        this.mYesBtn.onClose.add(this.onClickYesButton.bind(this));
+        this.mNoBtn.onClicked.add(this.onClickNoButton.bind(this));
+    }
+    onClickYesButton(isSuccess) {
+        if (!isSuccess) {
+            Notice.showDownNotice(GameConfig.Language.Text_Fail.Value);
+            return;
+        }
+        this.hide();
+        if (this.callback)
+            this.callback();
+    }
+    onClickNoButton() {
+        this.hide();
+    }
+    showRewardAd(callback, contentText, noText, yesText) {
+        this.callback = callback;
+        this.mContentTxt.text = contentText;
+        this.mNoBtn.text = noText;
+        this.mYesBtn.text = yesText;
+        this.show();
+    }
+}
+
+var foreign17 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: AdPanel
+});
+
+class RoomData {
+    constructor(userId, name, killCount, time) {
+        this.userId = "";
+        this.playerName = "";
+        this.score = 0;
+        this.time = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+    }
+    setData(userId, name, killCount, time) {
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+    }
+}
+class WorldData {
+    constructor(userId, name, time) {
+        this.userId = "";
+        this.playerName = "";
+        this.time = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+    setData(userId, name, time) {
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+}
+class RankData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.time = 0;
+    }
+    setTime(addTime) {
+        this.time += addTime;
+        this.save(false);
+    }
+    get getTime() {
+        return this.time;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], RankData.prototype, "time", void 0);
+
+var foreign36 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    RankData: RankData,
+    RoomData: RoomData,
+    WorldData: WorldData
+});
+
+class RankModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.worldDatas = [];
+        this.time = 60;
+        this.timer = 0;
+        this.syncPlayerMap = new Map();
+        this.roomDataMap = new Map();
+        this.roomUserIds = [];
+        this.roomNames = [];
+        this.roomScores = [];
+        this.roomTimes = [];
+        this.worldUserIds = [];
+        this.worldNames = [];
+        this.worldTimes = [];
+        this.redFirstModel = null;
+        this.blueFirstModel = null;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    onUpdate(dt) {
+        this.timer += dt;
+        if (this.timer >= this.time) {
+            this.timer = 0;
+            this.refreshTime();
+        }
+    }
+    onPlayerLeft(player) {
+        let userId = player.userId;
+        if (this.roomDataMap.has(userId))
+            this.roomDataMap.delete(userId);
+        if (this.syncPlayerMap.has(player))
+            this.syncPlayerMap.delete(player);
+        this.synchrodata_Room();
+    }
+    net_updateSyncPlayer(isSync) {
+        let player = this.currentPlayer;
+        if (!this.syncPlayerMap.has(player))
+            return;
+        this.syncPlayerMap.set(player, isSync);
+        if (isSync)
+            this.synchrodata_aRoomWorld(player);
+    }
+    net_onEnterScene(playerName, score) {
+        this.syncPlayerMap.set(this.currentPlayer, false);
+        let userId = this.currentPlayer.userId;
+        this.currentPlayer.character.displayName = playerName;
+        let time = this.currentData.time;
+        this.onEnterScene(userId, playerName, score, time);
+    }
+    async onEnterScene(userId, playerName, score, time) {
+        let roomData = new RoomData(userId, playerName, score, time);
+        this.roomDataMap.set(userId, roomData);
+        let worldData = new WorldData(userId, playerName, time);
+        this.worldDatas = (await this.getCustomdata("WorldData"));
+        this.isRefreshWorldData([worldData]);
+        this.synchrodata_onEnterScene(userId);
+    }
+    refreshScore(userId, score) {
+        if (!this.roomDataMap.has(userId))
+            return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.score = score;
+        this.synchrodata_Room();
+    }
+    async refreshTime() {
+        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
+            return;
+        let tmpWorldDatas = [];
+        this.syncPlayerMap.forEach((value, key) => {
+            DataCenterS.getData(key, RankData).setTime(1);
+            let userId = key.userId;
+            if (!this.roomDataMap.has(userId))
+                return;
+            let roomData = this.roomDataMap.get(userId);
+            roomData.time += 1;
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            tmpWorldDatas.push(worldData);
+        });
+        this.worldDatas = (await this.getCustomdata("WorldData"));
+        this.isRefreshWorldData(tmpWorldDatas);
+        this.synchrodata_World();
+    }
+    isRefreshWorldData(tmpWorldDatas) {
+        if (this.worldDatas == null) {
+            this.worldDatas = [];
+        }
+        let isNeedSave = false;
+        for (let k = 0; k < tmpWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let worldData = tmpWorldDatas[k];
+            if (this.worldDatas.length < GlobalData.worldCount) {
+                if (this.worldDatas.length == 0) {
+                    this.worldDatas.push(worldData);
+                    isPush = true;
+                    isNeedSave = true;
+                }
+                else {
+                    for (let i = 0; i < this.worldDatas.length; ++i) {
+                        if (this.worldDatas[i].userId != worldData.userId)
+                            continue;
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 1);
+                            break;
+                        }
+                        else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+                    if (ishasData)
+                        continue;
+                    for (let i = 0; i < this.worldDatas.length; i++) {
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 0, worldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+                    if (!isPush) {
+                        this.worldDatas.push(worldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            }
+            else {
+                for (let i = 0; i < this.worldDatas.length; ++i) {
+                    if (this.worldDatas[i].userId != worldData.userId)
+                        continue;
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    }
+                    else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+                if (ishasData)
+                    continue;
+                for (let i = 0; i < this.worldDatas.length; i++) {
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 0, worldData);
+                        if (!ishasDelete) {
+                            this.worldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            this.setCustomData("WorldData", this.worldDatas);
+        }
+        return isNeedSave;
+    }
+    updateRoomData() {
+        if (this.roomDataMap.size == 0 || !this.roomDataMap)
+            return;
+        this.roomUserIds.length = 0;
+        this.roomNames.length = 0;
+        this.roomScores.length = 0;
+        this.roomDataMap.forEach((value, key) => {
+            this.roomUserIds.push(value.userId);
+            this.roomNames.push(value.playerName);
+            this.roomScores.push(value.score);
+            this.roomTimes.push(value.time);
+        });
+    }
+    updateWorldData() {
+        if (!this.worldDatas || this.worldDatas.length == 0)
+            return;
+        this.worldUserIds.length = 0;
+        this.worldNames.length = 0;
+        this.worldTimes.length = 0;
+        for (let i = 0; i < this.worldDatas.length; i++) {
+            this.worldUserIds.push(this.worldDatas[i].userId);
+            this.worldNames.push(this.worldDatas[i].playerName);
+            this.worldTimes.push(this.worldDatas[i].time);
+        }
+    }
+    synchrodata_onEnterScene(sendUserId) {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            if (sendUserId == key.userId) {
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+            }
+            else {
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+            }
+        });
+    }
+    synchrodata_Room() {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+        });
+    }
+    synchrodata_World() {
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+        });
+    }
+    synchrodata_RoomWorld() {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+        });
+    }
+    synchrodata_aRoomWorld(player) {
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+    }
+    async getCustomdata(key) {
+        return (await DataStorage.asyncGetData(key)).data;
+    }
+    async setCustomData(saveKey, dataInfo) {
+        let code = null;
+        code = await DataStorage.asyncSetData(saveKey, dataInfo);
+        return code == mw.DataStorageResultCode.Success;
+    }
+    getNamesByUserId(userId1, userId2) {
+        if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
+            return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
+        }
+        return null;
+    }
+    getNameByUserId(userId) {
+        if (this.roomDataMap.has(userId)) {
+            return this.roomDataMap.get(userId).playerName;
+        }
+        return null;
+    }
+    net_setFirstModel(isRed) {
+        let character = this.currentPlayer.character;
+        this.setFirstModel(character, isRed);
+    }
+    async setFirstModel(character, isRed) {
+        if (isRed) {
+            if (!this.redFirstModel)
+                this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
+            character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
+            this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+            this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        }
+        else {
+            if (!this.blueFirstModel)
+                this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
+            character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
+            this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+            this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        }
+    }
+}
+__decorate([
+    Decorator.noReply()
+], RankModuleS.prototype, "net_updateSyncPlayer", null);
+__decorate([
+    Decorator.noReply()
+], RankModuleS.prototype, "net_onEnterScene", null);
+__decorate([
+    Decorator.noReply()
+], RankModuleS.prototype, "net_setFirstModel", null);
+
+var foreign38 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankModuleS
+});
+
+class OnClickPanel extends OnClickPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.interactionModuleC = null;
+        this.id = -1;
+        this.offset = new mw.Vector(0, 0, 0);
+        this.obj = null;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getInteractionModuleC() {
+        if (this.interactionModuleC == null) {
+            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+        }
+        return this.interactionModuleC;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerMiddle;
+        this.initUI();
+        this.bindButtons();
+        this.registerActions();
+    }
+    initUI() {
+        // Utils.setWidgetVisibility(this.mBgImage, mw.SlateVisibility.Collapsed);
+    }
+    /**按钮绑定 */
+    bindButtons() {
+        this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
+    }
+    /**注册事件 */
+    registerActions() {
+        this.getHUDModuleC.onExitAction.add(this.onExitHandler.bind(this));
+    }
+    onExitHandler() {
+        this.getInteractionModuleC.interact(false, this.id);
+    }
+    onClickButtons() {
+        if (!this.id)
+            return;
+        console.warn("OnClickPanel-this.id = " + this.id);
+        this.canUpdate = false;
+        this.hide();
+        if (this.id <= 0)
+            return;
+        this.getInteractionModuleC.interact(true, this.id);
+    }
+    /**显示NPC按钮 */
+    showBtn(id, obj) {
+        this.id = id;
+        this.canUpdate = true;
+        this.obj = obj;
+        let pos = InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
+        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
+        this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
+        this.show();
+    }
+    /**隐藏NPC按钮 */
+    hideBtn() {
+        this.canUpdate = false;
+        this.hide();
+    }
+    onShow(...params) {
+        console.error("[OnClickPanel-onShow]");
+    }
+    onUpdate(dt) {
+        if (!this.obj)
+            return;
+        let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
+        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
+    }
+}
+class InteractionModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.onClickPanel = null;
+        this.hudModuleC = null;
+        this.adPanel = null;
+        this.onClickBagItemAction = new Action1();
+        this.currentDescription = null;
+        this.triggerLocMap = new Map();
+        this.bagIds = [];
+    }
+    get getOnClickPanel() {
+        if (this.onClickPanel == null) {
+            this.onClickPanel = mw.UIService.getUI(OnClickPanel);
+        }
+        return this.onClickPanel;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getAdPanel() {
+        if (this.adPanel == null) {
+            this.adPanel = mw.UIService.getUI(AdPanel);
+        }
+        return this.adPanel;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.bindEvent();
+    }
+    onEnterScene(sceneType) {
+        this.initBagIds();
+        this.findTriggers();
+    }
+    bindEvent() {
+        this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
+    }
+    findTriggers() {
+        GameConfig.Interact.getAllElement().forEach(async (value) => {
+            let triggerGuid = value.TriggerGuid;
+            if (triggerGuid && triggerGuid.length > 0) {
+                let trigger = await GameObject.asyncFindGameObjectById(triggerGuid);
+                await trigger.asyncReady();
+                trigger.onEnter.add((char) => {
+                    this.onEnterTrigger(char, value.ID, trigger);
+                });
+                trigger.onLeave.add((char) => {
+                    this.onLeaveTrigger(char);
+                });
+                let bagId = value.BagId;
+                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId)
+                    bagId -= 1;
+                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+                if (!actionPropElement.AssetId) {
+                    bagId = actionPropElement.NextId;
+                }
+                this.triggerLocMap.set(bagId, trigger.worldTransform.position);
+            }
+            let npcId = value.NpcId;
+            if (npcId && npcId.length > 0) {
+                let npc = await GameObject.asyncFindGameObjectById(npcId);
+                await npc.asyncReady();
+                npc.complexMovementEnabled = false;
+                npc.collisionWithOtherCharacterEnabled = false;
+                let shareId = value.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        Utils.applySharedId(npc, shareIdStr);
+                    }
+                }
+                else {
+                    this.currentDescription = this.localPlayer.character.getDescription();
+                    npc.setDescription(this.currentDescription);
+                }
+                let npcAnimationId = value.NpcAnimationId;
+                if (npcAnimationId && npcAnimationId.length > 0) {
+                    await Utils.asyncDownloadAsset(npcAnimationId);
+                    npc.loadSubStance(npcAnimationId).play();
+                }
+            }
+        });
+    }
+    onEnterTrigger(char, id, go) {
+        if (char != Player.localPlayer.character)
+            return;
+        this.getOnClickPanel.showBtn(id, go);
+    }
+    onLeaveTrigger(char) {
+        if (char != Player.localPlayer.character)
+            return;
+        this.getOnClickPanel.hideBtn();
+    }
+    interact(isInteract, id) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            let interact = GameConfig.Interact.getElement(id);
+            let bagId = interact.BagId;
+            if (bagId && bagId > 0) {
+                let modelGuid = interact.ModelGuid;
+                if (modelGuid && modelGuid.length > 0) {
+                    this.server.net_playInteract(bagId, modelGuid).then((interactCode) => {
+                        if (interactCode == 0) {
+                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
+                        }
+                    });
+                }
+                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId)
+                    bagId -= 1;
+                this.getHUDModuleC.action(bagId);
+                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+                if (!actionPropElement.AssetId) {
+                    bagId = actionPropElement.NextId;
+                }
+                this.setBagId(bagId);
+            }
+            let npcId = interact.NpcId;
+            if (npcId && npcId.length > 0) {
+                let shareId = interact.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                    }
+                }
+                else {
+                    this.localPlayer.character.setDescription(this.currentDescription);
+                    await this.localPlayer.character.asyncReady();
+                    this.localPlayer.character.syncDescription();
+                }
+            }
+        });
+    }
+    addClickBagItemAction(bagId) {
+        if (this.bagIds.includes(bagId))
+            return;
+        if (GlobalData.isOpenIAA) {
+            this.getAdPanel.showRewardAd(() => {
+                if (this.triggerLocMap.has(bagId)) {
+                    let targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => { });
+                }
+            }, GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
+        }
+        else {
+            if (this.triggerLocMap.has(bagId)) {
+                let targetLoc = this.triggerLocMap.get(bagId);
+                Utils.startGuide(targetLoc, () => { });
+            }
+        }
+    }
+    initBagIds() {
+        this.bagIds = this.data.bagIds;
+    }
+    setBagId(bagId) {
+        if (this.bagIds.includes(bagId))
+            return;
+        Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
+        this.bagIds.push(bagId);
+        this.server.net_setBagId(bagId);
+    }
+    get getBagIds() {
+        return this.bagIds;
+    }
+}
+class InteractionModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.rankModuleS = null;
+        this.modelGuidMap = new Map();
+        this.usingBagIdMap = new Map();
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    onPlayerLeft(player) {
+    }
+    async net_playInteract(bagId, modelGuid) {
+        let player = this.currentPlayer;
+        let playerId = player.playerId;
+        let usingBagIds = [];
+        if (this.usingBagIdMap.has(playerId)) {
+            usingBagIds = this.usingBagIdMap.get(playerId);
+            if (usingBagIds.includes(bagId))
+                return 0;
+            usingBagIds.push(bagId);
+        }
+        else {
+            usingBagIds.push(bagId);
+            this.usingBagIdMap.set(playerId, usingBagIds);
+        }
+        console.error(`usingBagIds = ${usingBagIds}`);
+        let model = null;
+        if (this.modelGuidMap.has(modelGuid)) {
+            model = this.modelGuidMap.get(modelGuid);
+        }
+        else {
+            model = await mw.GameObject.asyncFindGameObjectById(modelGuid);
+            this.modelGuidMap.set(modelGuid, model);
+        }
+        await model.asyncReady();
+        this.placingItems(player, bagId, model).then(() => {
+            usingBagIds.splice(usingBagIds.indexOf(bagId), 1);
+            console.error(`usingBagIds = ${usingBagIds}`);
+        });
+        return 1;
+    }
+    async placingItems(player, bagId, itemMode) {
+        if (!player)
+            return;
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        let animationId = actionPropElement.AnimationId;
+        if (animationId && animationId.length > 0) {
+            await Utils.asyncDownloadAsset(animationId);
+            let animation = player.character.loadAnimation(animationId);
+            if (actionPropElement.AnimationSlot)
+                animation.slot = actionPropElement.AnimationSlot;
+            let parameter = actionPropElement.AnimationParameter;
+            if (parameter && parameter.length > 0) {
+                animation.speed = parameter[0];
+                animation.loop = parameter[1];
+            }
+            animation.play();
+        }
+        let playAnimationTime = 1;
+        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
+            playAnimationTime = actionPropElement.AnimationParameter[0];
+        }
+        await TimeUtil.delaySecond(playAnimationTime);
+        let delayModeEffectId = null;
+        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
+        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
+            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
+            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
+            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
+                loopCount: 0,
+                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
+                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
+                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
+            });
+        }
+        let delayParameter = actionPropElement.DelayParameter;
+        let delayTime = delayParameter[0];
+        let delayCount = delayParameter[1];
+        let delayInterval = delayParameter[2];
+        await TimeUtil.delaySecond(delayTime - playAnimationTime);
+        for (let i = 0; i < delayCount; ++i) {
+            await new Promise((resolve) => {
+                setTimeout(async () => {
+                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
+                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
+                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
+                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
+                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
+                            loopCount: 1,
+                            rotation: itemMode.worldTransform.rotation,
+                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
+                        });
+                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
+                        if (delayModeSoundId && delayModeSoundId.length > 0) {
+                            await Utils.asyncDownloadAsset(delayModeSoundId);
+                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
+                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], { radius: delayModeSoundParameter[1], falloffDistance: delayModeSoundParameter[1] * 1.2 });
+                        }
+                    }
+                    return resolve();
+                }, delayInterval * 1000);
+            });
+        }
+        if (actionPropElement.ID != 30004)
+            await TimeUtil.delaySecond(delayInterval);
+        if (delayModeEffectId)
+            EffectService.stop(delayModeEffectId);
+    }
+    net_setBagId(bagId) {
+        this.currentData.setBagId(bagId);
+        let score = this.currentData.bagIds.length;
+        this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
+    }
+}
+__decorate([
+    Decorator.noReply()
+], InteractionModuleS.prototype, "net_setBagId", null);
+class PlayerInteractor {
+    constructor() {
+        this.isCanSit = true;
+        this.interactor = null;
+    }
+}
+var OnClickType;
+(function (OnClickType) {
+    OnClickType[OnClickType["Sit"] = 1] = "Sit";
+    OnClickType[OnClickType["Shake"] = 2] = "Shake";
+    OnClickType[OnClickType["Dance"] = 3] = "Dance";
+})(OnClickType || (OnClickType = {}));
+class InteractionData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.bagIds = [];
+    }
+    setBagId(bagId) {
+        if (this.bagIds.includes(bagId))
+            return;
+        this.bagIds.push(bagId);
+        this.save(false);
+    }
+}
+__decorate([
+    Decorator.persistence()
+], InteractionData.prototype, "bagIds", void 0);
+
+var foreign34 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    InteractionData: InteractionData,
+    InteractionModuleC: InteractionModuleC,
+    InteractionModuleS: InteractionModuleS,
+    OnClickPanel: OnClickPanel,
+    get OnClickType () { return OnClickType; },
+    PlayerInteractor: PlayerInteractor
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -3364,7 +4491,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign44 = /*#__PURE__*/Object.freeze({
+var foreign52 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -3408,7 +4535,7 @@ class ActionItem extends ActionItem_Generate$1 {
     }
 }
 
-var foreign22 = /*#__PURE__*/Object.freeze({
+var foreign23 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem
 });
@@ -3418,7 +4545,7 @@ var foreign22 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -3474,7 +4601,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign45 = /*#__PURE__*/Object.freeze({
+var foreign53 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -3536,7 +4663,7 @@ class ActionTabItem extends ActionTabItem_Generate$1 {
     }
 }
 
-var foreign23 = /*#__PURE__*/Object.freeze({
+var foreign24 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem
 });
@@ -3546,7 +4673,7 @@ var foreign23 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -3560,6 +4687,12 @@ let BagItem_Generate = class BagItem_Generate extends UIScript {
             this.mClickButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickButton');
         }
         return this.mClickButton_Internal;
+    }
+    get mLockImage() {
+        if (!this.mLockImage_Internal && this.uiWidgetBase) {
+            this.mLockImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockImage');
+        }
+        return this.mLockImage_Internal;
     }
     onAwake() {
         //设置能否每帧触发onUpdate
@@ -3601,7 +4734,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign46 = /*#__PURE__*/Object.freeze({
+var foreign54 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -3610,14 +4743,21 @@ class BagItem extends BagItem_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
-        this.isCanClick = true;
+        this.interactionModuleC = null;
         this.bagId = 0;
+        this.isHas = false;
     }
     get getDanMuModuleC() {
         if (!this.danMuModuleC) {
             this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
         }
         return this.danMuModuleC;
+    }
+    get getInteractionModuleC() {
+        if (!this.interactionModuleC) {
+            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+        }
+        return this.interactionModuleC;
     }
     /**
      * 构造UI文件成功后，在合适的时机最先初始化一次
@@ -3632,13 +4772,14 @@ class BagItem extends BagItem_Generate$1 {
         this.mClickButton.onClicked.add(this.addClickButton.bind(this));
     }
     addClickButton() {
-        if (!this.isCanClick)
-            return;
-        this.isCanClick = false;
-        TimeUtil.delaySecond(3).then(() => { this.isCanClick = true; });
-        this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+        if (this.isHas) {
+            this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+        }
+        else {
+            this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
+        }
     }
-    setDatas(bagId) {
+    setDatas(bagId, isHas) {
         this.bagId = bagId;
         let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
         if (actionPropElement.VehiclesIcon) {
@@ -3650,10 +4791,22 @@ class BagItem extends BagItem_Generate$1 {
         else if (actionPropElement.AssetId) {
             Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
         }
+        this.isHas = isHas;
+        this.updateState();
+    }
+    updateState() {
+        if (this.isHas) {
+            Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.Collapsed);
+            this.mIconImage.setImageColorByHex("FFFFFFFF");
+        }
+        else {
+            Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mIconImage.setImageColorByHex("646464FF");
+        }
     }
 }
 
-var foreign24 = /*#__PURE__*/Object.freeze({
+var foreign25 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem
 });
@@ -3663,7 +4816,7 @@ var foreign24 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -3719,7 +4872,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign47 = /*#__PURE__*/Object.freeze({
+var foreign55 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -3751,6 +4904,9 @@ class BagTabItem extends BagTabItem_Generate$1 {
         this.mClickButton.normalImageGuid = `221282`;
         this.mClickButton.pressedImageGuid = `221283`;
         this.mClickButton.disableImageGuid = `221283`;
+        if (GlobalData.languageId == 0) {
+            this.mTabNameTextBlock.fontSize = 15;
+        }
     }
     bindButton() {
         this.mClickButton.onClicked.add(this.addClickButton.bind(this));
@@ -3781,7 +4937,7 @@ class BagTabItem extends BagTabItem_Generate$1 {
     }
 }
 
-var foreign25 = /*#__PURE__*/Object.freeze({
+var foreign26 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem
 });
@@ -3791,7 +4947,7 @@ var foreign25 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -3841,7 +4997,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign49 = /*#__PURE__*/Object.freeze({
+var foreign57 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -3884,7 +5040,7 @@ class ChatItem1 extends ChatItem1_Generate$1 {
     }
 }
 
-var foreign26 = /*#__PURE__*/Object.freeze({
+var foreign27 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1
 });
@@ -3894,7 +5050,7 @@ var foreign26 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -3944,7 +5100,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign50 = /*#__PURE__*/Object.freeze({
+var foreign58 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -3989,7 +5145,7 @@ class ChatItem2 extends ChatItem2_Generate$1 {
     }
 }
 
-var foreign27 = /*#__PURE__*/Object.freeze({
+var foreign28 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2
 });
@@ -3999,7 +5155,7 @@ var foreign27 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -4054,7 +5210,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign53 = /*#__PURE__*/Object.freeze({
+var foreign61 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -4097,7 +5253,7 @@ class ExpressionItem extends ExpressionItem_Generate$1 {
     }
 }
 
-var foreign30 = /*#__PURE__*/Object.freeze({
+var foreign31 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem
 });
@@ -4106,6 +5262,7 @@ class ChatPanel extends ChatPanel_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
+        this.interactionModuleC = null;
         //#region 聊天列表
         this.chatDatas = []; //聊天列表
         this.chatItems2 = []; //聊天列表
@@ -4127,6 +5284,7 @@ class ChatPanel extends ChatPanel_Generate$1 {
         this.bagTabItems = [];
         this.isInitBagUI = false;
         this.bagItems = [];
+        this.bagTabIndex = 1;
         //#endregion
     }
     get getDanMuModuleC() {
@@ -4134,6 +5292,12 @@ class ChatPanel extends ChatPanel_Generate$1 {
             this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
         }
         return this.danMuModuleC;
+    }
+    get getInteractionModuleC() {
+        if (!this.interactionModuleC) {
+            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+        }
+        return this.interactionModuleC;
     }
     /**
      * 构造UI文件成功后，在合适的时机最先初始化一次
@@ -4385,12 +5549,13 @@ class ChatPanel extends ChatPanel_Generate$1 {
                 this.mBagTabCanvas.addChild(bagTabItem.uiObject);
                 this.bagTabItems.push(bagTabItem);
             }
-            this.getDanMuModuleC.onClickBagTabAction.call(1);
             // this.bagTabItems[4].uiObject.visibility = mw.SlateVisibility.Collapsed;
         }
+        this.getDanMuModuleC.onClickBagTabAction.call(this.bagTabIndex);
         this.closeBagCanvas(true);
     }
     showBagItemList(index) {
+        this.bagTabIndex = index;
         switch (index) {
             case 1:
                 this.updatePropList(1);
@@ -4417,21 +5582,22 @@ class ChatPanel extends ChatPanel_Generate$1 {
         actionPropElement = actionPropElement.filter((value) => { return value.AssetId && value.AssetId != "" && value.Tab == tabIndex; });
         actionPropElement.sort((a, b) => { return a.Sort - b.Sort; });
         // if (!actionPropElement || actionPropElement.length == 0) return;
+        let bagIds = this.getInteractionModuleC.getBagIds;
         if (actionPropElement.length > this.bagItems.length) {
             for (let i = 0; i < this.bagItems.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID);
+                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = this.bagItems.length; i < actionPropElement.length; ++i) {
                 let bagItem = mw.UIService.create(BagItem);
-                bagItem.setDatas(actionPropElement[i].ID);
+                bagItem.setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
                 this.mBagContentCanvas.addChild(bagItem.uiObject);
                 this.bagItems.push(bagItem);
             }
         }
         else {
             for (let i = 0; i < actionPropElement.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID);
+                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = actionPropElement.length; i < this.bagItems.length; ++i) {
@@ -4444,7 +5610,7 @@ class ChatPanel extends ChatPanel_Generate$1 {
     }
 }
 
-var foreign28 = /*#__PURE__*/Object.freeze({
+var foreign29 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel
 });
@@ -4454,7 +5620,7 @@ var foreign28 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -4499,7 +5665,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign52 = /*#__PURE__*/Object.freeze({
+var foreign60 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -4583,7 +5749,7 @@ class DanMuPanel extends DanMuPanel_Generate$1 {
     }
 }
 
-var foreign29 = /*#__PURE__*/Object.freeze({
+var foreign30 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel
 });
@@ -5026,8 +6192,7 @@ class DanMuModuleC extends ModuleC {
         this.getChatPanel.showBagCanvas();
     }
     addClickBagTabAction(index) {
-        if (this.bagTabIndex == index)
-            return;
+        // if (this.bagTabIndex == index) return;
         this.bagTabIndex = index;
         this.getChatPanel.showBagItemList(this.bagTabIndex);
     }
@@ -5047,12 +6212,12 @@ class DanMuModuleC extends ModuleC {
     addClickBagItemAction(bagId) {
         console.error(`wfz - ClickBagItem - bagId:${bagId}`);
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            this.getHudModuleC.updateBagIcon(bagId);
             let bagIds = await this.server.net_useBag(bagId);
             this.getChatPanel.closeBagCanvas(false);
             this.currentBagIds = bagIds;
             if (this.currentBagIds.includes(bagId)) {
                 this.currentBagId = bagId;
+                this.getHudModuleC.updateBagIcon(bagId);
                 this.getHudModuleC.updateGoodsListCanvas(this.currentBagIds);
                 console.error(`wfz - ClickBagItem - this.currentBagIds:${this.currentBagIds}  this.currentBagId:${this.currentBagId}`);
             }
@@ -5158,7 +6323,7 @@ const danceInteracts = [
     { npcIds: ["1C528004", "2C9FC93B"], danceIds: ["122808", "122810"] },
 ];
 
-var foreign20 = /*#__PURE__*/Object.freeze({
+var foreign21 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     DanmuSyncClient: DanmuSyncClient,
     DanmuSyncServer: DanmuSyncServer,
@@ -5240,7 +6405,7 @@ Buff = __decorate([
 ], Buff);
 var Buff$1 = Buff;
 
-var foreign18 = /*#__PURE__*/Object.freeze({
+var foreign19 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Buff$1
 });
@@ -6053,498 +7218,12 @@ class PlayerInteract {
     }
 }
 
-var foreign21 = /*#__PURE__*/Object.freeze({
+var foreign22 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     PlayerBag: PlayerBag,
     PlayerGlide: PlayerGlide,
     PlayerInteract: PlayerInteract,
     default: DanMuModuleS
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2024.12.18-21.10.40
- */
-let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
-        }
-        return this.mBgImage_Internal;
-    }
-    get mClickBtn() {
-        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
-            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickBtn');
-        }
-        return this.mClickBtn_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mClickBtn.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
-        });
-        this.mClickBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-OnClickPanel_Generate = __decorate([
-    UIBind('UI/module/InteractionModule/OnClickPanel.ui')
-], OnClickPanel_Generate);
-var OnClickPanel_Generate$1 = OnClickPanel_Generate;
-
-var foreign58 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: OnClickPanel_Generate$1
-});
-
-class OnClickPanel extends OnClickPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.interactionModuleC = null;
-        this.id = -1;
-        this.offset = new mw.Vector(0, 0, 0);
-        this.obj = null;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getInteractionModuleC() {
-        if (this.interactionModuleC == null) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
-    }
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerMiddle;
-        this.initUI();
-        this.bindButtons();
-        this.registerActions();
-    }
-    initUI() {
-        // Utils.setWidgetVisibility(this.mBgImage, mw.SlateVisibility.Collapsed);
-    }
-    /**按钮绑定 */
-    bindButtons() {
-        this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
-    }
-    /**注册事件 */
-    registerActions() {
-        this.getHUDModuleC.onExitAction.add(this.onExitHandler.bind(this));
-    }
-    onExitHandler() {
-        this.getInteractionModuleC.interact(false, this.id);
-    }
-    onClickButtons() {
-        if (!this.id)
-            return;
-        console.warn("OnClickPanel-this.id = " + this.id);
-        this.canUpdate = false;
-        this.hide();
-        if (this.id <= 0)
-            return;
-        this.getInteractionModuleC.interact(true, this.id);
-    }
-    /**显示NPC按钮 */
-    showBtn(id, obj) {
-        this.id = id;
-        this.canUpdate = true;
-        this.obj = obj;
-        let pos = InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
-        this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
-        this.show();
-    }
-    /**隐藏NPC按钮 */
-    hideBtn() {
-        this.canUpdate = false;
-        this.hide();
-    }
-    onShow(...params) {
-        console.error("[OnClickPanel-onShow]");
-        let imageGuid = GameConfig.Interact.getElement(this.id).InteractIcon;
-        this.mClickBtn.normalImageGuid = imageGuid;
-        this.mClickBtn.pressedImageGuid = imageGuid;
-        this.mClickBtn.disableImageGuid = imageGuid;
-    }
-    onUpdate(dt) {
-        if (!this.obj)
-            return;
-        let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
-    }
-}
-class InteractionModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.onClickPanel = null;
-        this.hudModuleC = null;
-        this.currentDescription = null;
-    }
-    get getOnClickPanel() {
-        if (this.onClickPanel == null) {
-            this.onClickPanel = mw.UIService.getUI(OnClickPanel);
-        }
-        return this.onClickPanel;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-    onEnterScene(sceneType) {
-        this.findTriggers();
-    }
-    findTriggers() {
-        GameConfig.Interact.getAllElement().forEach(async (value) => {
-            let triggerGuid = value.TriggerGuid;
-            if (triggerGuid && triggerGuid.length > 0) {
-                let trigger = await GameObject.asyncFindGameObjectById(triggerGuid);
-                await trigger.asyncReady();
-                trigger.onEnter.add((char) => {
-                    this.onEnterTrigger(char, value.ID, trigger);
-                });
-                trigger.onLeave.add((char) => {
-                    this.onLeaveTrigger(char);
-                });
-            }
-            let npcId = value.NpcId;
-            if (npcId && npcId.length > 0) {
-                let npc = await GameObject.asyncFindGameObjectById(npcId);
-                await npc.asyncReady();
-                npc.complexMovementEnabled = false;
-                npc.collisionWithOtherCharacterEnabled = false;
-                let shareId = value.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        Utils.applySharedId(npc, shareIdStr);
-                    }
-                }
-                else {
-                    this.currentDescription = this.localPlayer.character.getDescription();
-                    npc.setDescription(this.currentDescription);
-                }
-                let npcAnimationId = value.NpcAnimationId;
-                if (npcAnimationId && npcAnimationId.length > 0) {
-                    await Utils.asyncDownloadAsset(npcAnimationId);
-                    npc.loadSubStance(npcAnimationId).play();
-                }
-            }
-        });
-    }
-    onEnterTrigger(char, id, go) {
-        if (char != Player.localPlayer.character)
-            return;
-        this.getOnClickPanel.showBtn(id, go);
-    }
-    onLeaveTrigger(char) {
-        if (char != Player.localPlayer.character)
-            return;
-        this.getOnClickPanel.hideBtn();
-    }
-    interact(isInteract, id) {
-        ExecutorManager.instance.pushAsyncExecutor(async () => {
-            let interact = GameConfig.Interact.getElement(id);
-            let interactivityGuid = interact.InteractivityGuid;
-            if (!interactivityGuid || interactivityGuid.length == 0) {
-                let bagId = interact.BagId;
-                if (bagId && bagId > 0) {
-                    let modelGuid = interact.ModelGuid;
-                    if (modelGuid && modelGuid.length > 0) {
-                        this.server.net_playInteract(bagId, modelGuid).then((interactCode) => {
-                            if (interactCode == 0) {
-                                Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                            }
-                        });
-                    }
-                    else {
-                        this.getHUDModuleC.action(bagId);
-                    }
-                }
-                let npcId = interact.NpcId;
-                if (npcId && npcId.length > 0) {
-                    let shareId = interact.ShareId;
-                    if (shareId > 0) {
-                        let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                        if (shareIdStr && shareIdStr.length > 0) {
-                            await Utils.applySharedId(this.localPlayer.character, shareIdStr);
-                        }
-                    }
-                    else {
-                        this.localPlayer.character.setDescription(this.currentDescription);
-                        await this.localPlayer.character.asyncReady();
-                        this.localPlayer.character.syncDescription();
-                    }
-                }
-                return;
-            }
-            let code = await this.server.net_interact(isInteract, id);
-            if (code == 3) {
-                Notice.showDownNotice(GameConfig.Language.Text_Tips1.Value);
-            }
-            else if (code == 1) {
-                this.getHUDModuleC.controllerExitUIVisible(true);
-                let bagId = GameConfig.Interact.getElement(id).BagId;
-                if (bagId > 0)
-                    this.getHUDModuleC.action(bagId);
-            }
-            else if (code == 2) {
-                this.getHUDModuleC.controllerExitUIVisible(false);
-            }
-        });
-    }
-}
-class InteractionModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.playerInteractorMap = new Map();
-        this.playerInteractoringMap = new Map();
-        this.modelGuidMap = new Map();
-        this.usingBagIdMap = new Map();
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.findInteractors();
-    }
-    onPlayerLeft(player) {
-        this.leavingCheckInteract(player);
-    }
-    findInteractors() {
-        GameConfig.Interact.getAllElement().forEach(async (value) => {
-            let interactivityGuid = value.InteractivityGuid;
-            if (!interactivityGuid || interactivityGuid.length == 0)
-                return;
-            let interactor = await GameObject.asyncFindGameObjectById(interactivityGuid);
-            this.playerInteractorMap.set(value.ID, { isCanSit: true, interactor: interactor });
-        });
-    }
-    async net_interact(isInteract, id) {
-        let player = this.currentPlayer;
-        return new Promise(async (resolve) => {
-            if (!this.playerInteractorMap.has(id))
-                return resolve(0);
-            let playerInteractor = this.playerInteractorMap.get(id);
-            if (isInteract) {
-                if (!playerInteractor.isCanSit)
-                    return resolve(3);
-                let interactElement = GameConfig.Interact.getElement(id);
-                playerInteractor.interactor.onEnter.clear();
-                playerInteractor.interactor.onEnter.add(() => {
-                    switch (interactElement.HumanoidSlotType) {
-                        case mw.HumanoidSlotType.Root:
-                        case mw.HumanoidSlotType.RightFoot:
-                        case mw.HumanoidSlotType.LeftFoot:
-                            let z = player.character.collisionExtent.z;
-                            player.character.localTransform.position = new mw.Vector(0, 0, z / 2);
-                            break;
-                        case mw.HumanoidSlotType.Hair:
-                        case mw.HumanoidSlotType.Buttocks:
-                            player.character.localTransform.position = mw.Vector.zero;
-                        default:
-                            player.character.localTransform.position = mw.Vector.zero;
-                            break;
-                    }
-                    player.character.localTransform.rotation = mw.Rotation.zero;
-                    return resolve(1);
-                });
-                playerInteractor.interactor.enter(player.character, interactElement.HumanoidSlotType, interactElement.SitStance);
-                playerInteractor.isCanSit = false;
-                this.playerInteractoringMap.set(player.playerId, id);
-            }
-            else {
-                playerInteractor.interactor.onLeave.clear();
-                playerInteractor.interactor.onLeave.add(() => {
-                    return resolve(2);
-                });
-                let playerInteractorLoc = playerInteractor.interactor.worldTransform.position;
-                let a = playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
-                console.error(`a = ${a}`);
-                playerInteractor.isCanSit = true;
-                if (this.playerInteractoringMap.has(player.playerId))
-                    this.playerInteractoringMap.delete(player.playerId);
-            }
-        });
-    }
-    leavingCheckInteract(player) {
-        let playerId = player.playerId;
-        if (!this.playerInteractoringMap.has(playerId))
-            return;
-        let id = this.playerInteractoringMap.get(playerId);
-        if (!this.playerInteractorMap.has(id))
-            return;
-        let playerInteractor = this.playerInteractorMap.get(id);
-        playerInteractor.interactor.onLeave.add(() => {
-            console.error(`playerId = ${playerId}, id = ${id}`);
-            playerInteractor.interactor.onLeave.clear();
-        });
-        playerInteractor.interactor.leave();
-        playerInteractor.isCanSit = true;
-        this.playerInteractoringMap.delete(playerId);
-        console.error(`playerId = ${playerId}, id = ${id}`);
-        if (this.usingBagIdMap.has(playerId)) {
-            this.usingBagIdMap.delete(playerId);
-        }
-    }
-    async net_playInteract(bagId, modelGuid) {
-        let player = this.currentPlayer;
-        let playerId = player.playerId;
-        let usingBagIds = [];
-        if (this.usingBagIdMap.has(playerId)) {
-            usingBagIds = this.usingBagIdMap.get(playerId);
-            if (usingBagIds.includes(bagId))
-                return 0;
-            usingBagIds.push(bagId);
-        }
-        else {
-            usingBagIds.push(bagId);
-            this.usingBagIdMap.set(playerId, usingBagIds);
-        }
-        console.error(`usingBagIds = ${usingBagIds}`);
-        let model = null;
-        if (this.modelGuidMap.has(modelGuid)) {
-            model = this.modelGuidMap.get(modelGuid);
-        }
-        else {
-            model = await mw.GameObject.asyncFindGameObjectById(modelGuid);
-            this.modelGuidMap.set(modelGuid, model);
-        }
-        await model.asyncReady();
-        this.placingItems(player, bagId, model).then(() => {
-            usingBagIds.splice(usingBagIds.indexOf(bagId), 1);
-            console.error(`usingBagIds = ${usingBagIds}`);
-        });
-        return 1;
-    }
-    async placingItems(player, bagId, itemMode) {
-        if (!player)
-            return;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        let animationId = actionPropElement.AnimationId;
-        if (animationId && animationId.length > 0) {
-            await Utils.asyncDownloadAsset(animationId);
-            let animation = player.character.loadAnimation(animationId);
-            if (actionPropElement.AnimationSlot)
-                animation.slot = actionPropElement.AnimationSlot;
-            let parameter = actionPropElement.AnimationParameter;
-            if (parameter && parameter.length > 0) {
-                animation.speed = parameter[0];
-                animation.loop = parameter[1];
-            }
-            animation.play();
-        }
-        let playAnimationTime = 1;
-        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
-            playAnimationTime = actionPropElement.AnimationParameter[0];
-        }
-        await TimeUtil.delaySecond(playAnimationTime);
-        let delayModeEffectId = null;
-        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
-        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
-            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
-            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
-            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
-                loopCount: 0,
-                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
-                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
-                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
-            });
-        }
-        let delayParameter = actionPropElement.DelayParameter;
-        let delayTime = delayParameter[0];
-        let delayCount = delayParameter[1];
-        let delayInterval = delayParameter[2];
-        await TimeUtil.delaySecond(delayTime - playAnimationTime);
-        for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve) => {
-                setTimeout(async () => {
-                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
-                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
-                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
-                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
-                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
-                            loopCount: 1,
-                            rotation: itemMode.worldTransform.rotation,
-                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
-                        });
-                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
-                        if (delayModeSoundId && delayModeSoundId.length > 0) {
-                            await Utils.asyncDownloadAsset(delayModeSoundId);
-                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
-                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], { radius: delayModeSoundParameter[1], falloffDistance: delayModeSoundParameter[1] * 1.2 });
-                        }
-                    }
-                    return resolve();
-                }, delayInterval * 1000);
-            });
-        }
-        if (actionPropElement.ID != 30004)
-            await TimeUtil.delaySecond(delayInterval);
-        if (delayModeEffectId)
-            EffectService.stop(delayModeEffectId);
-    }
-}
-class PlayerInteractor {
-    constructor() {
-        this.isCanSit = true;
-        this.interactor = null;
-    }
-}
-var OnClickType;
-(function (OnClickType) {
-    OnClickType[OnClickType["Sit"] = 1] = "Sit";
-    OnClickType[OnClickType["Shake"] = 2] = "Shake";
-    OnClickType[OnClickType["Dance"] = 3] = "Dance";
-})(OnClickType || (OnClickType = {}));
-
-var foreign33 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    InteractionModuleC: InteractionModuleC,
-    InteractionModuleS: InteractionModuleS,
-    OnClickPanel: OnClickPanel,
-    get OnClickType () { return OnClickType; },
-    PlayerInteractor: PlayerInteractor
 });
 
 class NavigationConfig {
@@ -6657,7 +7336,7 @@ class NavigationModuleS extends ModuleS {
     }
 }
 
-var foreign34 = /*#__PURE__*/Object.freeze({
+var foreign35 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     NavigationConfig: NavigationConfig,
     NavigationModel: NavigationModel,
@@ -6669,8 +7348,680 @@ var foreign34 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/RankModule/RankPanel.ui
+ * TIME: 2024.12.24-22.15.31
+ */
+let RankPanel_Generate = class RankPanel_Generate extends UIScript {
+    get mOpenRoomRankImage() {
+        if (!this.mOpenRoomRankImage_Internal && this.uiWidgetBase) {
+            this.mOpenRoomRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mOpenRoomRankImage');
+        }
+        return this.mOpenRoomRankImage_Internal;
+    }
+    get mOpenRoomRankButton() {
+        if (!this.mOpenRoomRankButton_Internal && this.uiWidgetBase) {
+            this.mOpenRoomRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mOpenRoomRankImage/mOpenRoomRankButton');
+        }
+        return this.mOpenRoomRankButton_Internal;
+    }
+    get mRoomCanvas() {
+        if (!this.mRoomCanvas_Internal && this.uiWidgetBase) {
+            this.mRoomCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas');
+        }
+        return this.mRoomCanvas_Internal;
+    }
+    get mCloseRoomButton() {
+        if (!this.mCloseRoomButton_Internal && this.uiWidgetBase) {
+            this.mCloseRoomButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/mCloseRoomButton');
+        }
+        return this.mCloseRoomButton_Internal;
+    }
+    get mRoomRankTextBlock() {
+        if (!this.mRoomRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRoomRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomRankTextBlock');
+        }
+        return this.mRoomRankTextBlock_Internal;
+    }
+    get mRoomNameTextBlock() {
+        if (!this.mRoomNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mRoomNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomNameTextBlock');
+        }
+        return this.mRoomNameTextBlock_Internal;
+    }
+    get mRoomScoreTextBlock() {
+        if (!this.mRoomScoreTextBlock_Internal && this.uiWidgetBase) {
+            this.mRoomScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomScoreTextBlock');
+        }
+        return this.mRoomScoreTextBlock_Internal;
+    }
+    get mRoomScrollBox() {
+        if (!this.mRoomScrollBox_Internal && this.uiWidgetBase) {
+            this.mRoomScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/mRoomScrollBox');
+        }
+        return this.mRoomScrollBox_Internal;
+    }
+    get mRoomContentCanvas() {
+        if (!this.mRoomContentCanvas_Internal && this.uiWidgetBase) {
+            this.mRoomContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/mRoomScrollBox/mRoomContentCanvas');
+        }
+        return this.mRoomContentCanvas_Internal;
+    }
+    get mWorldCanvas() {
+        if (!this.mWorldCanvas_Internal && this.uiWidgetBase) {
+            this.mWorldCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas');
+        }
+        return this.mWorldCanvas_Internal;
+    }
+    get mTitleTextBlock() {
+        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/MainWorldCanvas/TitleWorldCanvas/mTitleTextBlock');
+        }
+        return this.mTitleTextBlock_Internal;
+    }
+    get mWorldRankTextBlock() {
+        if (!this.mWorldRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/WorldCanvas/mWorldRankTextBlock');
+        }
+        return this.mWorldRankTextBlock_Internal;
+    }
+    get mWorldNameTextBlock() {
+        if (!this.mWorldNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/WorldCanvas/mWorldNameTextBlock');
+        }
+        return this.mWorldNameTextBlock_Internal;
+    }
+    get mWorldTimeTextBlock() {
+        if (!this.mWorldTimeTextBlock_Internal && this.uiWidgetBase) {
+            this.mWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/WorldCanvas/mWorldTimeTextBlock');
+        }
+        return this.mWorldTimeTextBlock_Internal;
+    }
+    get mWorldContentCanvas() {
+        if (!this.mWorldContentCanvas_Internal && this.uiWidgetBase) {
+            this.mWorldContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/ScrollBox/mWorldContentCanvas');
+        }
+        return this.mWorldContentCanvas_Internal;
+    }
+    get mSelfWorldCanvas() {
+        if (!this.mSelfWorldCanvas_Internal && this.uiWidgetBase) {
+            this.mSelfWorldCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas');
+        }
+        return this.mSelfWorldCanvas_Internal;
+    }
+    get mSelfWorldRankTextBlock() {
+        if (!this.mSelfWorldRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldRankTextBlock');
+        }
+        return this.mSelfWorldRankTextBlock_Internal;
+    }
+    get mSelfWorldNameTextBlock() {
+        if (!this.mSelfWorldNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldNameTextBlock');
+        }
+        return this.mSelfWorldNameTextBlock_Internal;
+    }
+    get mSelfWorldTimeTextBlock() {
+        if (!this.mSelfWorldTimeTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldTimeTextBlock');
+        }
+        return this.mSelfWorldTimeTextBlock_Internal;
+    }
+    get mCloseWorldButton() {
+        if (!this.mCloseWorldButton_Internal && this.uiWidgetBase) {
+            this.mCloseWorldButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseWorldButton');
+        }
+        return this.mCloseWorldButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        this.mOpenRoomRankButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenRoomRankButton");
+        });
+        this.initLanguage(this.mOpenRoomRankButton);
+        this.mOpenRoomRankButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮添加点击
+        this.mCloseRoomButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseRoomButton");
+        });
+        this.mCloseRoomButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCloseWorldButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseWorldButton");
+        });
+        this.mCloseWorldButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mRoomRankTextBlock);
+        this.initLanguage(this.mRoomNameTextBlock);
+        this.initLanguage(this.mRoomScoreTextBlock);
+        this.initLanguage(this.mTitleTextBlock);
+        this.initLanguage(this.mWorldRankTextBlock);
+        this.initLanguage(this.mWorldNameTextBlock);
+        this.initLanguage(this.mWorldTimeTextBlock);
+        this.initLanguage(this.mSelfWorldRankTextBlock);
+        this.initLanguage(this.mSelfWorldNameTextBlock);
+        this.initLanguage(this.mSelfWorldTimeTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+RankPanel_Generate = __decorate([
+    UIBind('UI/module/RankModule/RankPanel.ui')
+], RankPanel_Generate);
+var RankPanel_Generate$1 = RankPanel_Generate;
+
+var foreign67 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankPanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/RankModule/RoomItem.ui
+ * TIME: 2024.12.24-22.15.31
+ */
+let RoomItem_Generate = class RoomItem_Generate extends UIScript {
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mKillCountTextBlock() {
+        if (!this.mKillCountTextBlock_Internal && this.uiWidgetBase) {
+            this.mKillCountTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mKillCountTextBlock');
+        }
+        return this.mKillCountTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mKillCountTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+RoomItem_Generate = __decorate([
+    UIBind('UI/module/RankModule/RoomItem.ui')
+], RoomItem_Generate);
+var RoomItem_Generate$1 = RoomItem_Generate;
+
+var foreign68 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RoomItem_Generate$1
+});
+
+class RoomItem extends RoomItem_Generate$1 {
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+    }
+    setData(ranking, roomData, isSelf) {
+        this.mRankTextBlock.text = ranking.toString();
+        this.mNameTextBlock.text = roomData.playerName;
+        this.mKillCountTextBlock.text = roomData.score.toString();
+        let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
+        this.mRankTextBlock.fontColor = fontColor;
+        this.mNameTextBlock.fontColor = fontColor;
+        this.mKillCountTextBlock.fontColor = fontColor;
+    }
+}
+
+var foreign40 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RoomItem
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/RankModule/WorldItem.ui
+ * TIME: 2024.12.24-22.15.31
+ */
+let WorldItem_Generate = class WorldItem_Generate extends UIScript {
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mTimeTextBlock() {
+        if (!this.mTimeTextBlock_Internal && this.uiWidgetBase) {
+            this.mTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mTimeTextBlock');
+        }
+        return this.mTimeTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mTimeTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+WorldItem_Generate = __decorate([
+    UIBind('UI/module/RankModule/WorldItem.ui')
+], WorldItem_Generate);
+var WorldItem_Generate$1 = WorldItem_Generate;
+
+var foreign69 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: WorldItem_Generate$1
+});
+
+class WorldItem extends WorldItem_Generate$1 {
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+    }
+    setData(ranking, roomData, isSelf) {
+        this.mRankTextBlock.text = ranking.toString();
+        this.mNameTextBlock.text = roomData.playerName;
+        this.mTimeTextBlock.text = roomData.time.toString();
+        let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
+        this.mRankTextBlock.fontColor = fontColor;
+        this.mNameTextBlock.fontColor = fontColor;
+        this.mTimeTextBlock.fontColor = fontColor;
+    }
+}
+
+var foreign41 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: WorldItem
+});
+
+class RankPanel extends RankPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.rankModuleC = null;
+        this.roomItems = [];
+        this.worldItems = [];
+    }
+    get getRankModuleC() {
+        if (!this.rankModuleC) {
+            this.rankModuleC = ModuleService.getModule(RankModuleC);
+        }
+        return this.rankModuleC;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerTop;
+        this.initUI();
+        this.bindButton();
+    }
+    bindButton() {
+        this.mOpenRoomRankButton.onClicked.add(this.bindOpenRoomRankButton.bind(this));
+        this.mCloseRoomButton.onClicked.add(this.bindCloseRoomButton.bind(this));
+        this.mCloseWorldButton.onClicked.add(this.bindCloseWorldButton.bind(this));
+        this.getRankModuleC.onOpenWorldRankAction.add(this.addOpenWorldRankAction.bind(this));
+    }
+    initUI() {
+        this.mRoomRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
+        this.mRoomNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
+        this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
+        this.mTitleTextBlock.text = StringUtil.format(GameConfig.Language.Text_TopInTermsOfDuration.Value, GlobalData.worldCount);
+        this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
+        this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
+        this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+    }
+    bindOpenRoomRankButton() {
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    bindCloseRoomButton() {
+        Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    addOpenWorldRankAction() {
+        Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Visible);
+        Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    bindCloseWorldButton() {
+        Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+    }
+    refreshRankPanel_RoomWorld(roomDatas, curRoomIndex, worldDatas, curWorldIndex) {
+        this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+        this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+    }
+    refreshRankPanel_Room(roomDatas, curRoomIndex) {
+        this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+    }
+    refreshRoomRankPanel(roomDatas, curRoomIndex) {
+        if (roomDatas.length > this.roomItems.length) {
+            for (let i = 0; i < this.roomItems.length; ++i) {
+                this.roomItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.roomItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.roomItems.length; i < roomDatas.length; ++i) {
+                let redItem = UIService.create(RoomItem);
+                redItem.setData(i + 1, roomDatas[i], i == curRoomIndex);
+                this.mRoomContentCanvas.addChild(redItem.uiObject);
+                this.roomItems.push(redItem);
+            }
+        }
+        else {
+            for (let i = 0; i < roomDatas.length; ++i) {
+                this.roomItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.roomItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = roomDatas.length; i < this.roomItems.length; ++i) {
+                Utils.setWidgetVisibility(this.roomItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+    }
+    refreshRankPanel_World(worldDatas, curWorldIndex) {
+        this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+    }
+    refreshWorldRankPanel(worldDatas, curWorldIndex) {
+        if (worldDatas.length > this.worldItems.length) {
+            for (let i = 0; i < this.worldItems.length; ++i) {
+                this.worldItems[i].setData(i + 1, worldDatas[i], i == curWorldIndex);
+                Utils.setWidgetVisibility(this.worldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.worldItems.length; i < worldDatas.length; ++i) {
+                let worldItem = UIService.create(WorldItem);
+                worldItem.setData(i + 1, worldDatas[i], i == curWorldIndex);
+                this.mWorldContentCanvas.addChild(worldItem.uiObject);
+                this.worldItems.push(worldItem);
+            }
+        }
+        else {
+            for (let i = 0; i < worldDatas.length; ++i) {
+                this.worldItems[i].setData(i + 1, worldDatas[i], i == curWorldIndex);
+                Utils.setWidgetVisibility(this.worldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = worldDatas.length; i < this.worldItems.length; ++i) {
+                Utils.setWidgetVisibility(this.worldItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+    }
+    refreshSelfWorldNameAndTimeUI(roomData) {
+        this.mSelfWorldNameTextBlock.text = roomData.playerName;
+        this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
+    }
+    refreshSelfWorldRankUI(ranking) {
+        this.mSelfWorldRankTextBlock.text = (ranking <= GlobalData.worldCount) ? ranking.toString() : GameConfig.Language.Text_NoOnTheList.Value;
+    }
+}
+
+var foreign39 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankPanel
+});
+
+class RankModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.rankPanel = null;
+        this.userId = null;
+        this.interactionData = null;
+        this.onOpenWorldRankAction = new Action();
+        this.roomDatas = [];
+        this.recycleRoomDatas = [];
+        this.curRoomIndex = -1;
+        this.worldDatas = [];
+        this.recycleWorldDatas = [];
+        this.curWorldIndex = -1;
+    }
+    get getHUDModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getRankPanel() {
+        if (!this.rankPanel) {
+            this.rankPanel = UIService.getUI(RankPanel);
+        }
+        return this.rankPanel;
+    }
+    get currentUserId() {
+        if (this.userId == "" || this.userId == null) {
+            this.userId = this.localPlayer.userId;
+        }
+        return this.userId;
+    }
+    get getInteractionData() {
+        if (this.interactionData == null) {
+            this.interactionData = DataCenterC.getData(InteractionData);
+        }
+        return this.interactionData;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.initEventAction();
+    }
+    initEventAction() {
+        this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
+    }
+    addOnOffRankPanelAction() {
+        this.onOpenWorldRankAction.call();
+    }
+    onEnterScene(sceneType) {
+        let nickName = mw.AccountService.getNickName();
+        nickName = nickName ? nickName : "UserId：" + this.currentUserId;
+        let bagIds = this.getInteractionData.bagIds;
+        let score = (!bagIds) ? 0 : bagIds.length;
+        this.server.net_onEnterScene(nickName, score);
+        TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+    }
+    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
+        if (this.roomDatas.length > roomUserIds.length) {
+            for (let i = 0; i < roomUserIds.length; ++i) {
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+            }
+            for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
+                this.recycleRoomDatas.push(this.roomDatas[i]);
+            }
+            this.roomDatas.length = roomUserIds.length;
+        }
+        else {
+            for (let i = 0; i < this.roomDatas.length; ++i) {
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+            }
+            for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
+                let tmpRoomData = null;
+                if (this.recycleRoomDatas.length > 0)
+                    tmpRoomData = this.recycleRoomDatas.pop();
+                if (!tmpRoomData)
+                    tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas.push(tmpRoomData);
+            }
+        }
+    }
+    updateRoomIndex() {
+        this.curRoomIndex = -1;
+        for (let i = 0; i < this.roomDatas.length; ++i) {
+            if (this.roomDatas[i].userId != this.currentUserId)
+                continue;
+            this.curRoomIndex = i;
+            // console.error("wfz = " + this.curRoomIndex);
+            this.getRankPanel.refreshSelfWorldNameAndTimeUI(this.roomDatas[i]);
+            break;
+        }
+    }
+    updateWorldDatas(worldUserIds, worldNames, worldScores) {
+        if (this.worldDatas.length > worldUserIds.length) {
+            for (let i = 0; i < worldUserIds.length; ++i) {
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+            }
+            for (let i = worldUserIds.length; i < this.worldDatas.length; ++i) {
+                this.recycleWorldDatas.push(this.worldDatas[i]);
+            }
+            this.worldDatas.length = worldUserIds.length;
+        }
+        else {
+            for (let i = 0; i < this.worldDatas.length; ++i) {
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+            }
+            for (let i = this.worldDatas.length; i < worldUserIds.length; ++i) {
+                let tmpWorldData = null;
+                if (this.recycleWorldDatas.length > 0)
+                    tmpWorldData = this.recycleWorldDatas.pop();
+                if (tmpWorldData) {
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                }
+                else {
+                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldScores[i]);
+                }
+                this.worldDatas.push(tmpWorldData);
+            }
+        }
+    }
+    updateWorldIndex() {
+        this.curWorldIndex = -1;
+        for (let i = 0; i < this.worldDatas.length; ++i) {
+            if (this.worldDatas[i].userId != this.currentUserId)
+                continue;
+            this.curWorldIndex = i;
+            break;
+        }
+        this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex + 1);
+    }
+    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes) {
+        // console.error("wfz = " + roomUserIds.length);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.sortRoomData();
+        this.updateRoomIndex();
+        this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
+    }
+    net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
+        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+        this.updateWorldIndex();
+        this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
+    }
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, worldUserIds, worldNames, worldScores) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.sortRoomData();
+        this.updateRoomIndex();
+        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+        this.updateWorldIndex();
+        this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
+    }
+    sortRoomData() {
+        this.roomDatas.sort((a, b) => {
+            return b.score - a.score;
+        });
+    }
+}
+
+var foreign37 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankModuleC
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -6918,7 +8269,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign59 = /*#__PURE__*/Object.freeze({
+var foreign70 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -7027,7 +8378,7 @@ class SetPanel extends SetPanel_Generate$1 {
     }
 }
 
-var foreign36 = /*#__PURE__*/Object.freeze({
+var foreign43 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel
 });
@@ -7280,7 +8631,7 @@ __decorate([
     Decorator.noReply()
 ], SetModuleS.prototype, "net_reset", null);
 
-var foreign35 = /*#__PURE__*/Object.freeze({
+var foreign42 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SetData: SetData,
     SetModuleC: SetModuleC,
@@ -7291,6 +8642,7 @@ let GameStart = class GameStart extends Script {
     constructor() {
         super(...arguments);
         this.languageId = -1;
+        this.isOpenIAA = true;
         /**--------------------------------【服务端】-------------------------------- */
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
@@ -7304,13 +8656,15 @@ let GameStart = class GameStart extends Script {
         }
     }
     onStartCS() {
+        GlobalData.isOpenIAA = !mw.SystemUtil.isPIE || this.isOpenIAA;
         this.registerModule();
     }
     registerModule() {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
-        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
+        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, InteractionData);
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
+        ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
     }
     /**
@@ -7392,6 +8746,9 @@ let GameStart = class GameStart extends Script {
 __decorate([
     mw.Property({ displayName: "多语言", group: "脚本设置", enumType: { "系统默认": -1, "英语": 0, "简体中文": 1, "繁体中文": 2, "日语": 3, "韩语": 4 } })
 ], GameStart.prototype, "languageId", void 0);
+__decorate([
+    mw.Property({ displayName: "是否开启IAA", group: "脚本设置" })
+], GameStart.prototype, "isOpenIAA", void 0);
 GameStart = __decorate([
     Component
 ], GameStart);
@@ -7407,7 +8764,7 @@ var foreign15 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -7487,7 +8844,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign54 = /*#__PURE__*/Object.freeze({
+var foreign62 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -7497,7 +8854,7 @@ var foreign54 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -7547,7 +8904,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign55 = /*#__PURE__*/Object.freeze({
+var foreign63 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -7791,7 +9148,7 @@ class DropdownList {
     }
 }
 
-var foreign31 = /*#__PURE__*/Object.freeze({
+var foreign32 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AddGMCommand: AddGMCommand,
     CloseGMUI: CloseGMUI,
@@ -7992,7 +9349,7 @@ class KeyActionManager {
     }
 }
 
-var foreign37 = /*#__PURE__*/Object.freeze({
+var foreign44 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -8002,7 +9359,7 @@ var foreign37 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.30
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -8060,7 +9417,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign42 = /*#__PURE__*/Object.freeze({
+var foreign49 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -8082,50 +9439,61 @@ const MWModuleMap = {
      '9BC6EE924CE6A5778D6FAFBF640EED8C': foreign14,
      'D2DDF11D4BF0BEBBCE0F2B9CF42517EE': foreign15,
      '0FCAF0584709FBB39E590CAEA83B1217': foreign16,
-     '904D34A54E1F6197EF34B1892E35FC85': foreign17,
-     'AA3586B64B181C63C928A1810CCA95E1': foreign18,
-     '9C6A23FA4F6E9AAA9861F28F43A80CB7': foreign19,
-     '837FD9D94CC2AE241B061DABC0E78B17': foreign20,
-     '09C1929E4D5A6DC4B1C6DF8F280C0B8E': foreign21,
-     '644F545245224887FB7893A799934F09': foreign22,
-     '33E4306448F72B0C557086A691B9CBFF': foreign23,
-     'F411D5434367FBC411D5629DE4530583': foreign24,
-     '32887ABC4B678AD4708B3EAB42A38F87': foreign25,
-     'D7B3EB9F492B14994EC537AEF4144580': foreign26,
-     'E5070EED458C8754669EE78CB19176FE': foreign27,
-     '0687D50F477374C7AB669BBD15E6FDF5': foreign28,
-     '3340D31D4C01664F7F4F45A689890DBD': foreign29,
-     'DCE2333D4CD32653F566BA81ED0419FF': foreign30,
-     'ADCD102745EC6ADBA54B59A92A39C2DB': foreign31,
-     '8846728C43298291A92B03A84C2B605C': foreign32,
-     'A7352BD449067EB6E854E3AF902BC932': foreign33,
-     'D8E6B9EF4DE0DF3088CC3C8599F76F45': foreign34,
-     'A8FB760F441C95AFACBAD78838B58528': foreign35,
-     'DC56F3F94E062B2AD909F386B767436F': foreign36,
-     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign37,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign38,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign39,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign40,
-     '741B06144E25B4753E8005985816DAF8': foreign41,
-     'EE3F354349BB041CD741FF84B745B113': foreign42,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign43,
-     '486071A84887288700A7E297CBF6B438': foreign44,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign45,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign46,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign47,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign48,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign49,
-     '827757834BCFC569771BCB84A3609238': foreign50,
-     'F58702064960960163820CB9C8D0F3C1': foreign51,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign52,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign53,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign54,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign55,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign56,
-     '337A59B14A237973EEB178A260344C21': foreign57,
-     'C4E377B14812C09429E28988E62907DB': foreign58,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign59,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign60,
+     '7D98F77C457BD44550899198F36FDB9F': foreign17,
+     '904D34A54E1F6197EF34B1892E35FC85': foreign18,
+     'AA3586B64B181C63C928A1810CCA95E1': foreign19,
+     '9C6A23FA4F6E9AAA9861F28F43A80CB7': foreign20,
+     '837FD9D94CC2AE241B061DABC0E78B17': foreign21,
+     '09C1929E4D5A6DC4B1C6DF8F280C0B8E': foreign22,
+     '644F545245224887FB7893A799934F09': foreign23,
+     '33E4306448F72B0C557086A691B9CBFF': foreign24,
+     'F411D5434367FBC411D5629DE4530583': foreign25,
+     '32887ABC4B678AD4708B3EAB42A38F87': foreign26,
+     'D7B3EB9F492B14994EC537AEF4144580': foreign27,
+     'E5070EED458C8754669EE78CB19176FE': foreign28,
+     '0687D50F477374C7AB669BBD15E6FDF5': foreign29,
+     '3340D31D4C01664F7F4F45A689890DBD': foreign30,
+     'DCE2333D4CD32653F566BA81ED0419FF': foreign31,
+     'ADCD102745EC6ADBA54B59A92A39C2DB': foreign32,
+     '8846728C43298291A92B03A84C2B605C': foreign33,
+     'A7352BD449067EB6E854E3AF902BC932': foreign34,
+     'D8E6B9EF4DE0DF3088CC3C8599F76F45': foreign35,
+     '7833C871441E612CC5B5CE9BDDA947C9': foreign36,
+     'A12B8D524B602E750EB63288C79D32E2': foreign37,
+     'F057824E4569A842D403858DC7D1D88B': foreign38,
+     '9F1D50A144B07BFAFC552F925299CE71': foreign39,
+     '3E1D070A4147D9A5B46E0EAF1E5FD4E1': foreign40,
+     'F215908B4B4F40F5531DE4A01F660731': foreign41,
+     'A8FB760F441C95AFACBAD78838B58528': foreign42,
+     'DC56F3F94E062B2AD909F386B767436F': foreign43,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign44,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign45,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign46,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign47,
+     '741B06144E25B4753E8005985816DAF8': foreign48,
+     'EE3F354349BB041CD741FF84B745B113': foreign49,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign50,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign51,
+     '486071A84887288700A7E297CBF6B438': foreign52,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign53,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign54,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign55,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign56,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign57,
+     '827757834BCFC569771BCB84A3609238': foreign58,
+     'F58702064960960163820CB9C8D0F3C1': foreign59,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign60,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign61,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign62,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign63,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign64,
+     '337A59B14A237973EEB178A260344C21': foreign65,
+     'C4E377B14812C09429E28988E62907DB': foreign66,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign67,
+     'A8E0593D477EC697B2559789990E0882': foreign68,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign69,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign70,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign71,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -8143,50 +9511,61 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign14 || {}, "JavaScripts/configs/Sit"],
 [foreign15 || {}, "JavaScripts/GameStart"],
 [foreign16 || {}, "JavaScripts/GlobalData"],
-[foreign17 || {}, "JavaScripts/module/DanMuModule/Bubble"],
-[foreign18 || {}, "JavaScripts/module/DanMuModule/Buff"],
-[foreign19 || {}, "JavaScripts/module/DanMuModule/DanMuData"],
-[foreign20 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC"],
-[foreign21 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS"],
-[foreign22 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem"],
-[foreign23 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem"],
-[foreign24 || {}, "JavaScripts/module/DanMuModule/ui/BagItem"],
-[foreign25 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem"],
-[foreign26 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1"],
-[foreign27 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2"],
-[foreign28 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel"],
-[foreign29 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel"],
-[foreign30 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem"],
-[foreign31 || {}, "JavaScripts/module/GmModule/GMService"],
-[foreign32 || {}, "JavaScripts/module/HUDModule/HUDModule"],
-[foreign33 || {}, "JavaScripts/module/InteractionModule/InteractionModule"],
-[foreign34 || {}, "JavaScripts/module/NavigationModule/NavigationModule"],
-[foreign35 || {}, "JavaScripts/module/SetModule/SetModule"],
-[foreign36 || {}, "JavaScripts/module/SetModule/ui/SetPanel"],
-[foreign37 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign38 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign39 || {}, "JavaScripts/tools/Utils"],
-[foreign40 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign41 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign42 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign43 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign44 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign45 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign46 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign47 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign48 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign49 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign50 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign51 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign52 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign53 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign54 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign55 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign56 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign57 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign58 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign59 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign60 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign17 || {}, "JavaScripts/module/AdModule/ui/AdPanel"],
+[foreign18 || {}, "JavaScripts/module/DanMuModule/Bubble"],
+[foreign19 || {}, "JavaScripts/module/DanMuModule/Buff"],
+[foreign20 || {}, "JavaScripts/module/DanMuModule/DanMuData"],
+[foreign21 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC"],
+[foreign22 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS"],
+[foreign23 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem"],
+[foreign24 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem"],
+[foreign25 || {}, "JavaScripts/module/DanMuModule/ui/BagItem"],
+[foreign26 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem"],
+[foreign27 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1"],
+[foreign28 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2"],
+[foreign29 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel"],
+[foreign30 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel"],
+[foreign31 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem"],
+[foreign32 || {}, "JavaScripts/module/GmModule/GMService"],
+[foreign33 || {}, "JavaScripts/module/HUDModule/HUDModule"],
+[foreign34 || {}, "JavaScripts/module/InteractionModule/InteractionModule"],
+[foreign35 || {}, "JavaScripts/module/NavigationModule/NavigationModule"],
+[foreign36 || {}, "JavaScripts/module/RankModule/RankData"],
+[foreign37 || {}, "JavaScripts/module/RankModule/RankModuleC"],
+[foreign38 || {}, "JavaScripts/module/RankModule/RankModuleS"],
+[foreign39 || {}, "JavaScripts/module/RankModule/ui/RankPanel"],
+[foreign40 || {}, "JavaScripts/module/RankModule/ui/RoomItem"],
+[foreign41 || {}, "JavaScripts/module/RankModule/ui/WorldItem"],
+[foreign42 || {}, "JavaScripts/module/SetModule/SetModule"],
+[foreign43 || {}, "JavaScripts/module/SetModule/ui/SetPanel"],
+[foreign44 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign45 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign46 || {}, "JavaScripts/tools/Utils"],
+[foreign47 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign48 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign49 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign50 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign51 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign52 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign53 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign54 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign55 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign56 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign57 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign58 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign59 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign60 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign61 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign62 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign63 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign64 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign65 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign66 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign67 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign68 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign69 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign70 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign71 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

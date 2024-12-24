@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -35,6 +35,20 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenClothButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothButton') as mw.StaleButton
 		}
 		return this.mOpenClothButton_Internal
+	}
+	private mOpenRankImage_Internal: mw.Image
+	public get mOpenRankImage(): mw.Image {
+		if(!this.mOpenRankImage_Internal&&this.uiWidgetBase) {
+			this.mOpenRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage') as mw.Image
+		}
+		return this.mOpenRankImage_Internal
+	}
+	private mOpenRankButton_Internal: mw.StaleButton
+	public get mOpenRankButton(): mw.StaleButton {
+		if(!this.mOpenRankButton_Internal&&this.uiWidgetBase) {
+			this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton') as mw.StaleButton
+		}
+		return this.mOpenRankButton_Internal
 	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
@@ -171,6 +185,13 @@ export default class HUDPanel_Generate extends UIScript {
 		});
 		this.initLanguage(this.mOpenClothButton);
 		this.mOpenClothButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenRankButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenRankButton");
+		});
+		this.initLanguage(this.mOpenRankButton);
+		this.mOpenRankButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{

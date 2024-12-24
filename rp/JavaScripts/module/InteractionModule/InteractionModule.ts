@@ -1,10 +1,13 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
 import { IInteractElement } from "../../configs/Interact";
+import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/OnClickPanel_generate";
+import AdPanel from "../AdModule/ui/AdPanel";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import RankModuleS from "../RankModule/RankModuleS";
 
 export class OnClickPanel extends OnClickPanel_Generate {
     private hudModuleC: HUDModuleC = null;
@@ -86,10 +89,6 @@ export class OnClickPanel extends OnClickPanel_Generate {
 
     protected onShow(...params: any[]): void {
         console.error("[OnClickPanel-onShow]");
-        let imageGuid: string = GameConfig.Interact.getElement(this.id).InteractIcon;
-        this.mClickBtn.normalImageGuid = imageGuid;
-        this.mClickBtn.pressedImageGuid = imageGuid;
-        this.mClickBtn.disableImageGuid = imageGuid;
     }
 
     protected onUpdate(dt: number) {
@@ -99,7 +98,7 @@ export class OnClickPanel extends OnClickPanel_Generate {
     }
 }
 
-export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
+export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionData> {
     private onClickPanel: OnClickPanel = null;
     private get getOnClickPanel(): OnClickPanel {
         if (this.onClickPanel == null) {
@@ -114,16 +113,31 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
         }
         return this.hudModuleC;
     }
+    private adPanel: AdPanel = null;
+    private get getAdPanel(): AdPanel {
+        if (this.adPanel == null) {
+            this.adPanel = mw.UIService.getUI(AdPanel);
+        }
+        return this.adPanel;
+    }
+    public onClickBagItemAction: Action1<number> = new Action1<number>();
 
     private currentDescription: mw.CharacterDescription = null;
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
+        this.bindEvent();
     }
 
     protected onEnterScene(sceneType: number): void {
+        this.initBagIds();
         this.findTriggers();
     }
 
+    private bindEvent(): void {
+        this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
+    }
+
+    private triggerLocMap: Map<number, mw.Vector> = new Map<number, mw.Vector>();
     private findTriggers(): void {
         GameConfig.Interact.getAllElement().forEach(async (value: IInteractElement) => {
             let triggerGuid = value.TriggerGuid;
@@ -136,6 +150,14 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
                 trigger.onLeave.add((char: mw.Character) => {
                     this.onLeaveTrigger(char);
                 });
+
+                let bagId = value.BagId;
+                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+                if (!actionPropElement.AssetId) {
+                    bagId = actionPropElement.NextId;
+                }
+                this.triggerLocMap.set(bagId, trigger.worldTransform.position);
             }
             let npcId = value.NpcId;
             if (npcId && npcId.length > 0) {
@@ -175,136 +197,94 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, null> {
     public interact(isInteract: boolean, id: number): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             let interact = GameConfig.Interact.getElement(id);
-            let interactivityGuid = interact.InteractivityGuid;
-            if (!interactivityGuid || interactivityGuid.length == 0) {
-                let bagId = interact.BagId;
-                if (bagId && bagId > 0) {
-                    let modelGuid = interact.ModelGuid;
-                    if (modelGuid && modelGuid.length > 0) {
-                        this.server.net_playInteract(bagId, modelGuid).then((interactCode: number) => {
-                            if (interactCode == 0) {
-                                Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                            }
-                        });
-                    } else {
-                        this.getHUDModuleC.action(bagId);
-                    }
-                }
-                let npcId = interact.NpcId;
-                if (npcId && npcId.length > 0) {
-                    let shareId = interact.ShareId;
-                    if (shareId > 0) {
-                        let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                        if (shareIdStr && shareIdStr.length > 0) {
-                            await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+            let bagId = interact.BagId;
+            if (bagId && bagId > 0) {
+                let modelGuid = interact.ModelGuid;
+                if (modelGuid && modelGuid.length > 0) {
+                    this.server.net_playInteract(bagId, modelGuid).then((interactCode: number) => {
+                        if (interactCode == 0) {
+                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
                         }
-                    } else {
-                        this.localPlayer.character.setDescription(this.currentDescription);
-                        await this.localPlayer.character.asyncReady();
-                        this.localPlayer.character.syncDescription();
-                    }
+                    });
                 }
-                return;
-            }
 
-            let code = await this.server.net_interact(isInteract, id);
-            if (code == 3) {
-                Notice.showDownNotice(GameConfig.Language.Text_Tips1.Value);
-            } else if (code == 1) {
-                this.getHUDModuleC.controllerExitUIVisible(true);
-                let bagId = GameConfig.Interact.getElement(id).BagId;
-                if (bagId > 0) this.getHUDModuleC.action(bagId);
-            } else if (code == 2) {
-                this.getHUDModuleC.controllerExitUIVisible(false);
+                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+                this.getHUDModuleC.action(bagId);
+
+                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+                if (!actionPropElement.AssetId) {
+                    bagId = actionPropElement.NextId;
+                }
+
+                this.setBagId(bagId);
+            }
+            let npcId = interact.NpcId;
+            if (npcId && npcId.length > 0) {
+                let shareId = interact.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+                    }
+                } else {
+                    this.localPlayer.character.setDescription(this.currentDescription);
+                    await this.localPlayer.character.asyncReady();
+                    this.localPlayer.character.syncDescription();
+                }
             }
         });
+    }
+
+    private addClickBagItemAction(bagId: number): void {
+        if (this.bagIds.includes(bagId)) return;
+        if (GlobalData.isOpenIAA) {
+            this.getAdPanel.showRewardAd(() => {
+                if (this.triggerLocMap.has(bagId)) {
+                    let targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => { });
+                }
+            }, GameConfig.Language.Text_ADGetTips.Value
+                , GameConfig.Language.Text_Dont.Value
+                , GameConfig.Language.Text_Free.Value);
+        } else {
+            if (this.triggerLocMap.has(bagId)) {
+                let targetLoc = this.triggerLocMap.get(bagId);
+                Utils.startGuide(targetLoc, () => { });
+            }
+        }
+    }
+
+    private initBagIds(): void {
+        this.bagIds = this.data.bagIds;
+    }
+
+    private bagIds: number[] = [];
+    public setBagId(bagId: number): void {
+        if (this.bagIds.includes(bagId)) return;
+        Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
+        this.bagIds.push(bagId);
+        this.server.net_setBagId(bagId);
+    }
+
+    public get getBagIds(): number[] {
+        return this.bagIds;
     }
 }
 
-export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
+export class InteractionModuleS extends ModuleS<InteractionModuleC, InteractionData> {
+    private rankModuleS: RankModuleS = null;
+    private get getRankModuleS(): RankModuleS {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
-        this.findInteractors();
     }
 
     protected onPlayerLeft(player: mw.Player): void {
-        this.leavingCheckInteract(player);
-    }
-
-    private playerInteractorMap: Map<number, PlayerInteractor> = new Map<number, PlayerInteractor>();
-    private findInteractors(): void {
-        GameConfig.Interact.getAllElement().forEach(async (value: IInteractElement) => {
-            let interactivityGuid = value.InteractivityGuid;
-            if (!interactivityGuid || interactivityGuid.length == 0) return;
-            let interactor = await GameObject.asyncFindGameObjectById(interactivityGuid) as mw.Interactor;
-            this.playerInteractorMap.set(value.ID, { isCanSit: true, interactor: interactor });
-        });
-    }
-
-    private playerInteractoringMap: Map<number, number> = new Map<number, number>();
-    public async net_interact(isInteract: boolean, id: number): Promise<number> {
-        let player = this.currentPlayer;
-        return new Promise<number>(async (resolve: (value: number) => void) => {
-            if (!this.playerInteractorMap.has(id)) return resolve(0);
-            let playerInteractor = this.playerInteractorMap.get(id);
-            if (isInteract) {
-                if (!playerInteractor.isCanSit) return resolve(3);
-                let interactElement = GameConfig.Interact.getElement(id);
-                playerInteractor.interactor.onEnter.clear();
-                playerInteractor.interactor.onEnter.add(() => {
-                    switch (interactElement.HumanoidSlotType) {
-                        case mw.HumanoidSlotType.Root:
-                        case mw.HumanoidSlotType.RightFoot:
-                        case mw.HumanoidSlotType.LeftFoot:
-                            let z = player.character.collisionExtent.z;
-                            player.character.localTransform.position = new mw.Vector(0, 0, z / 2);
-                            break;
-                        case mw.HumanoidSlotType.Hair:
-                        case mw.HumanoidSlotType.Buttocks:
-                            player.character.localTransform.position = mw.Vector.zero;
-                        default:
-                            player.character.localTransform.position = mw.Vector.zero;
-                            break;
-                    }
-                    player.character.localTransform.rotation = mw.Rotation.zero;
-                    return resolve(1);
-                });
-                playerInteractor.interactor.enter(player.character, interactElement.HumanoidSlotType, interactElement.SitStance);
-                playerInteractor.isCanSit = false;
-                this.playerInteractoringMap.set(player.playerId, id);
-            } else {
-                playerInteractor.interactor.onLeave.clear();
-                playerInteractor.interactor.onLeave.add(() => {
-                    return resolve(2);
-                });
-                let playerInteractorLoc = playerInteractor.interactor.worldTransform.position;
-                let a = playerInteractor.interactor.leave(new mw.Vector(playerInteractorLoc.x, playerInteractorLoc.y, playerInteractorLoc.z + 100));
-                console.error(`a = ${a}`);
-                playerInteractor.isCanSit = true;
-                if (this.playerInteractoringMap.has(player.playerId)) this.playerInteractoringMap.delete(player.playerId);
-            }
-        });
-    }
-
-    private leavingCheckInteract(player: mw.Player): void {
-        let playerId = player.playerId;
-        if (!this.playerInteractoringMap.has(playerId)) return;
-        let id = this.playerInteractoringMap.get(playerId);
-        if (!this.playerInteractorMap.has(id)) return;
-        let playerInteractor = this.playerInteractorMap.get(id);
-        playerInteractor.interactor.onLeave.add(() => {
-            console.error(`playerId = ${playerId}, id = ${id}`);
-            playerInteractor.interactor.onLeave.clear();
-        });
-        playerInteractor.interactor.leave();
-        playerInteractor.isCanSit = true;
-        this.playerInteractoringMap.delete(playerId);
-        console.error(`playerId = ${playerId}, id = ${id}`);
-
-        if (this.usingBagIdMap.has(playerId)) {
-            this.usingBagIdMap.delete(playerId);
-        }
     }
 
     private modelGuidMap: Map<string, mw.Model> = new Map<string, mw.Model>();
@@ -407,6 +387,13 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, null> {
         if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
         if (delayModeEffectId) EffectService.stop(delayModeEffectId);
     }
+
+    @Decorator.noReply()
+    public net_setBagId(bagId: number): void {
+        this.currentData.setBagId(bagId);
+        let score = this.currentData.bagIds.length;
+        this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
+    }
 }
 
 export class PlayerInteractor {
@@ -418,4 +405,15 @@ export enum OnClickType {
     Sit = 1,
     Shake = 2,
     Dance = 3,
+}
+
+export class InteractionData extends Subdata {
+    @Decorator.persistence()
+    public bagIds: number[] = [];
+
+    public setBagId(bagId: number): void {
+        if (this.bagIds.includes(bagId)) return;
+        this.bagIds.push(bagId);
+        this.save(false);
+    }
 }

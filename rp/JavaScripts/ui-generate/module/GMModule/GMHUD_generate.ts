@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2024.12.18-21.10.40
+ * TIME: 2024.12.24-22.15.31
  */
  
 @UIBind('UI/module/GMModule/GMHUD.ui')

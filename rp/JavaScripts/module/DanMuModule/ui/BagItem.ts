@@ -1,6 +1,7 @@
 ﻿import { GameConfig } from "../../../configs/GameConfig";
 import Utils from "../../../tools/Utils";
 import BagItem_Generate from "../../../ui-generate/module/DanMuModule/BagItem_generate";
+import { InteractionModuleC } from "../../InteractionModule/InteractionModule";
 import DanMuModuleC from "../DanMuModuleC";
 
 export default class BagItem extends BagItem_Generate {
@@ -10,6 +11,13 @@ export default class BagItem extends BagItem_Generate {
 			this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
 		}
 		return this.danMuModuleC;
+	}
+	private interactionModuleC: InteractionModuleC = null;
+	private get getInteractionModuleC(): InteractionModuleC {
+		if (!this.interactionModuleC) {
+			this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+		}
+		return this.interactionModuleC;
 	}
 
 	/** 
@@ -26,16 +34,17 @@ export default class BagItem extends BagItem_Generate {
 		this.mClickButton.onClicked.add(this.addClickButton.bind(this));
 	}
 
-	private isCanClick: boolean = true;
 	private addClickButton(): void {
-		if (!this.isCanClick) return;
-		this.isCanClick = false;
-		TimeUtil.delaySecond(3).then(() => { this.isCanClick = true; });
-		this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+		if (this.isHas) {
+			this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+		} else {
+			this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
+		}
 	}
 
 	private bagId: number = 0;
-	public setDatas(bagId: number): void {
+	private isHas: boolean = false;
+	public setDatas(bagId: number, isHas: boolean): void {
 		this.bagId = bagId;
 		let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
 		if (actionPropElement.VehiclesIcon) {
@@ -44,6 +53,18 @@ export default class BagItem extends BagItem_Generate {
 			Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
 		} else if (actionPropElement.AssetId) {
 			Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
+		}
+		this.isHas = isHas;
+		this.updateState();
+	}
+
+	private updateState(): void {
+		if (this.isHas) {
+			Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.Collapsed);
+			this.mIconImage.setImageColorByHex("FFFFFFFF");
+		} else {
+			Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.SelfHitTestInvisible);
+			this.mIconImage.setImageColorByHex("646464FF");
 		}
 	}
 }
