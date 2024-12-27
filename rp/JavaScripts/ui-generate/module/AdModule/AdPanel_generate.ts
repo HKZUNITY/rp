@@ -3,36 +3,43 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2024.12.24-22.15.30
+ * TIME: 2024.12.27-21.54.52
  */
  
 @UIBind('UI/module/AdModule/AdPanel.ui')
 export default class AdPanel_Generate extends UIScript {
-		private mTitleTxt_Internal: mw.TextBlock
+		private mCanvas_Internal: mw.Canvas
+	public get mCanvas(): mw.Canvas {
+		if(!this.mCanvas_Internal&&this.uiWidgetBase) {
+			this.mCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas') as mw.Canvas
+		}
+		return this.mCanvas_Internal
+	}
+	private mTitleTxt_Internal: mw.TextBlock
 	public get mTitleTxt(): mw.TextBlock {
 		if(!this.mTitleTxt_Internal&&this.uiWidgetBase) {
-			this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mTitleTxt') as mw.TextBlock
+			this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mTitleTxt') as mw.TextBlock
 		}
 		return this.mTitleTxt_Internal
 	}
 	private mContentTxt_Internal: mw.TextBlock
 	public get mContentTxt(): mw.TextBlock {
 		if(!this.mContentTxt_Internal&&this.uiWidgetBase) {
-			this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mContentTxt') as mw.TextBlock
+			this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mContentTxt') as mw.TextBlock
 		}
 		return this.mContentTxt_Internal
 	}
 	private mNoBtn_Internal: mw.StaleButton
 	public get mNoBtn(): mw.StaleButton {
 		if(!this.mNoBtn_Internal&&this.uiWidgetBase) {
-			this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mNoBtn') as mw.StaleButton
+			this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mNoBtn') as mw.StaleButton
 		}
 		return this.mNoBtn_Internal
 	}
 	private mYesBtn_Internal: mw.AdsButton
 	public get mYesBtn(): mw.AdsButton {
 		if(!this.mYesBtn_Internal&&this.uiWidgetBase) {
-			this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mYesBtn') as mw.AdsButton
+			this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mYesBtn') as mw.AdsButton
 		}
 		return this.mYesBtn_Internal
 	}

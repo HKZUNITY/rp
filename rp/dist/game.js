@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2024.12.24-22.15.30
+ * TIME: 2024.12.27-21.54.51
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign48 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2024.12.24-22.15.30
+ * TIME: 2024.12.27-21.54.52
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1575,7 +1575,7 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     ExpressionConfig: ExpressionConfig
 });
 
-const EXCELDATA$3 = [["ID", "TriggerGuid", "ModelGuid", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", ""], [1, "0CD59651", null, 60004, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", null, 60005, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", null, 60014, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", null, 60013, null, 0, null, "御剑-翅膀"], [5, "2A86F403", null, 60001, null, 0, null, "滑板-电吉他"], [6, "02502CF9", "1316BF5C", 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", "30C9467F", 30048, null, 0, null, "呲花"], [9, "3B9F004A", "02D3D0FB", 30006, null, 0, null], [10, "30A6E783", "2B6B0FA6", 30050, null, 0, null], [11, "1B77E308", "2FEFA7B3", 30052, null, 0, null], [12, "2ABFBE64", "3B620F67", 30008, null, 0, null], [13, "23C087D3", "01DA388E", 30052, null, 0, null], [14, "32D06BAB", "31EDB7B3", 30010, null, 0, null], [15, "2A9CA5D5", "3CCD170C", 30012, null, 0, null], [16, "2321D6C9", "17F59CCA", 30014, null, 0, null], [17, "357B83A4", "2EB80290", 30054, null, 0, null], [18, "03196BF5", "04E952B8", 30056, null, 0, null], [19, "3D1A7899", "3CD1BBC4", 30058, null, 0, null], [20, "1660D04A", "2805AB56", 30060, null, 0, null], [21, "2F8E9759", "4398570", 30062, null, 0, null], [22, "029A708E", "0E1CF95E", 30064, null, 0, null], [23, "2B2F3434", "0DD82373", 30016, null, 0, null], [24, "1DC00881", "2EDE3317", 30066, null, 0, null], [25, "36676894", "1F73A63A", 30068, null, 0, null], [26, "1CDE2B65", "39B89333", 30070, null, 0, null], [27, "10896871", "03D689AA", 30018, null, 0, null], [28, "1AA32466", "3F32DF53", 30020, null, 0, null], [29, "37B72C47", "2A744A78", 30022, null, 0, null], [30, "30A942B1", "1142E907", 30008, null, 0, null], [31, "0FD25D88", "01862B9F", 30006, null, 0, null], [32, "114B5C28", "27ADEC9A", 30002, null, 0, null], [33, "02CE9D49", "2311BAB2", 30010, null, 0, null], [34, "2E950C81", "0C6C59A6", 30032, null, 0, null], [35, "11D391D2", "1CBB7B6A", 30034, null, 0, null], [36, "3E1D73CC", "1877B361", 30036, null, 0, null], [37, "3A591F1D", null, 10193, null, 0, null], [38, "11FC2714", null, 10193, null, 0, null], [39, "059DA227", null, 10138, null, 0, null], [40, "3ED043F4", null, 10163, null, 0, null], [50, "1FC1F0EE", null, 10194, null, 0, null], [51, "088F5EE5", null, 10091, null, 0, null], [52, "2C87FD97", null, 10091, null, 0, null], [53, "05FABD75", null, 10430, null, 0, null], [54, "3FE87C24", null, 10431, null, 0, null], [55, "3E0200C0", null, 10432, null, 0, null], [56, "3A8D6DA5", null, 10433, null, 0, null], [57, "06416F41", null, 60005, null, 0, null], [58, "1AD5C96C", null, 10195, null, 0, null], [63, "117E9D97", null, 10420, null, 0, null], [64, "22119BD8", null, 10420, null, 0, null], [65, "2BA03CE9", null, 10420, null, 0, null], [66, "05E360CD", null, 10420, null, 0, null], [67, "36F54E8F", null, 10440, null, 0, null], [68, "140807DC", null, 10440, null, 0, null], [69, "2EE4A29B", null, 10440, null, 0, null], [100, null, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, 0, "2815DDD0", 8, "180891", "被搂"]];
+const EXCELDATA$3 = [["ID", "TriggerGuid", "ModelGuid", "ModelGuid_C", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", ""], [1, "0CD59651", null, null, 60004, null, 0, null, "冲浪-电吉他"], [2, "1BF26C07", null, null, 60005, null, 0, null, "冲浪-跳舞球"], [3, "112E61C1", null, null, 60014, null, 0, null, "鱼冲浪-电吉他"], [4, "3D757718", null, null, 60013, null, 0, null, "御剑-翅膀"], [5, "2A86F403", null, null, 60001, null, 0, null, "滑板-电吉他"], [6, "02502CF9", "1316BF5C", null, 30002, null, 0, null, "烟花"], [8, "0D2A5BAA", "30C9467F", null, 30048, null, 0, null, "呲花"], [9, "3B9F004A", "02D3D0FB", null, 30006, null, 0, null], [10, "30A6E783", "2B6B0FA6", null, 30050, null, 0, null], [11, "1B77E308", "2FEFA7B3", null, 30052, null, 0, null], [12, "2ABFBE64", "3B620F67", null, 30008, null, 0, null], [13, "23C087D3", "01DA388E", null, 30052, null, 0, null], [14, "32D06BAB", "31EDB7B3", null, 30010, null, 0, null], [15, "2A9CA5D5", "3CCD170C", null, 30012, null, 0, null], [16, "2321D6C9", "17F59CCA", null, 30014, null, 0, null], [17, "357B83A4", "2EB80290", null, 30054, null, 0, null], [18, "03196BF5", "04E952B8", null, 30056, null, 0, null], [19, "3D1A7899", "3CD1BBC4", null, 30058, null, 0, null], [20, "1660D04A", "2805AB56", null, 30060, null, 0, null], [21, "2F8E9759", "4398570", null, 30062, null, 0, null], [22, "029A708E", "0E1CF95E", null, 30064, null, 0, null], [23, "2B2F3434", "0DD82373", null, 30016, null, 0, null], [24, "1DC00881", "2EDE3317", null, 30066, null, 0, null], [25, "36676894", "1F73A63A", null, 30068, null, 0, null], [26, "1CDE2B65", "39B89333", null, 30070, null, 0, null], [27, "10896871", "03D689AA", null, 30018, null, 0, null], [28, "1AA32466", "3F32DF53", null, 30020, null, 0, null], [29, "37B72C47", "2A744A78", null, 30022, null, 0, null], [30, "30A942B1", "1142E907", null, 30008, null, 0, null], [31, "0FD25D88", "01862B9F", null, 30006, null, 0, null], [32, "114B5C28", "27ADEC9A", null, 30002, null, 0, null], [33, "02CE9D49", "2311BAB2", null, 30010, null, 0, null], [34, "2E950C81", "0C6C59A6", null, 30032, null, 0, null], [35, "11D391D2", "1CBB7B6A", null, 30034, null, 0, null], [36, "3E1D73CC", "1877B361", null, 30036, null, 0, null], [37, "3A591F1D", null, null, 10193, null, 0, null], [38, "11FC2714", null, null, 10193, null, 0, null], [39, "059DA227", null, null, 10138, null, 0, null], [40, "3ED043F4", null, null, 10163, null, 0, null], [50, "1FC1F0EE", null, null, 10194, null, 0, null], [51, "088F5EE5", null, null, 10091, null, 0, null], [52, "2C87FD97", null, null, 10091, null, 0, null], [53, "05FABD75", null, null, 10430, null, 0, null], [54, "3FE87C24", null, null, 10431, null, 0, null], [55, "3E0200C0", null, null, 10432, null, 0, null], [56, "3A8D6DA5", null, null, 10433, null, 0, null], [57, "06416F41", null, null, 60005, null, 0, null], [58, "1AD5C96C", null, null, 10195, null, 0, null], [63, "117E9D97", null, null, 10420, null, 0, null], [64, "22119BD8", null, null, 10420, null, 0, null], [65, "2BA03CE9", null, null, 10420, null, 0, null], [66, "05E360CD", null, null, 10420, null, 0, null], [67, "36F54E8F", null, null, 10440, null, 0, null], [68, "140807DC", null, null, 10440, null, 0, null], [69, "2EE4A29B", null, null, 10440, null, 0, null], [100, null, null, null, 0, "2C383996", 7, "122231", "被壁咚"], [101, null, null, null, 0, "271ABFD3", 3, "122232", "壁咚"], [102, null, null, null, 0, "10A1DDAA", 2, "180882", "搂着"], [103, null, null, null, 0, "2815DDD0", 8, "180891", "被搂"]];
 class InteractConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$3);
@@ -1587,7 +1587,7 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_GuideTips", "Reach near the target point", "达到目标点附近"]];
+const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n我的樱花小镇"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$2);
@@ -1667,8 +1667,60 @@ class LanguageConfig extends ConfigBase {
     /**时长全服前{0}名*/
     get Text_TopInTermsOfDuration() { return this.getElement(25); }
     ;
+    /**开始游戏*/
+    get Text_StartGame() { return this.getElement(26); }
+    ;
+    /**欢迎来到
+我的樱花小镇*/
+    get Text_WelcomeTo() { return this.getElement(27); }
+    ;
+    /**下一个*/
+    get Text_UpNext() { return this.getElement(28); }
+    ;
+    /**引导结束，开启你的樱花小镇之旅吧*/
+    get Text_GuideEnd() { return this.getElement(29); }
+    ;
+    /**关闭*/
+    get Text_Close() { return this.getElement(30); }
+    ;
+    /**我的角色ID-分享好友试穿*/
+    get Text_MyCharacterId() { return this.getElement(31); }
+    ;
+    /**请输入好友角色ID*/
+    get Text_PleaseEnter() { return this.getElement(32); }
+    ;
+    /**取消*/
+    get Text_Cancel() { return this.getElement(33); }
+    ;
+    /**免费试穿*/
+    get Text_FreeTryOn() { return this.getElement(34); }
+    ;
+    /**免费保存形象*/
+    get Text_SaveImagesForFree() { return this.getElement(35); }
+    ;
+    /**免费试穿好友的角色形象*/
+    get Text_TryOnYourFriendAvatarForFree() { return this.getElement(36); }
+    ;
+    /**复制成功*/
+    get Text_CopySuccessfully() { return this.getElement(37); }
+    ;
+    /**ID无效！*/
+    get Text_InvalidID() { return this.getElement(38); }
+    ;
+    /**加载中*/
+    get Text_Loading() { return this.getElement(39); }
+    ;
+    /**试穿成功*/
+    get Text_TryItOnSuccessfully() { return this.getElement(40); }
+    ;
+    /**复制角色ID分享好友试穿*/
+    get Text_CopyTheCharacterIDShareFriendsTryOn() { return this.getElement(41); }
+    ;
+    /**看广告免费试穿*/
+    get Text_TryItOnForFree() { return this.getElement(42); }
+    ;
     /**达到目标点附近*/
-    get Text_GuideTips() { return this.getElement(26); }
+    get Text_GuideTips() { return this.getElement(43); }
     ;
 }
 
@@ -1795,6 +1847,14 @@ class Utils {
                     character.syncDescription();
                 await character.asyncReady();
                 return resolve(success);
+            });
+        });
+    }
+    static async createSharedId(character) {
+        return new Promise(async (resolve) => {
+            mw.AccountService.createSharedId(character, (dataString) => {
+                console.error(`dataString:${dataString}`);
+                return resolve(dataString);
             });
         });
     }
@@ -1941,7 +2001,7 @@ var foreign46 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2024.12.24-22.15.30
+ * TIME: 2024.12.27-21.54.51
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -1999,7 +2059,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign71 = /*#__PURE__*/Object.freeze({
+var foreign74 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -2175,7 +2235,7 @@ var foreign47 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -2243,7 +2303,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -2326,7 +2386,7 @@ var foreign64 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mOpenSetImage() {
@@ -2340,6 +2400,18 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mOpenSetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage/mOpenSetButton');
         }
         return this.mOpenSetButton_Internal;
+    }
+    get mOpenShareImage() {
+        if (!this.mOpenShareImage_Internal && this.uiWidgetBase) {
+            this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage');
+        }
+        return this.mOpenShareImage_Internal;
+    }
+    get mOpenShareButton() {
+        if (!this.mOpenShareButton_Internal && this.uiWidgetBase) {
+            this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton');
+        }
+        return this.mOpenShareButton_Internal;
     }
     get mOpenClothImage() {
         if (!this.mOpenClothImage_Internal && this.uiWidgetBase) {
@@ -2474,6 +2546,11 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         });
         this.initLanguage(this.mOpenSetButton);
         this.mOpenSetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mOpenShareButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
+        });
+        this.initLanguage(this.mOpenShareButton);
+        this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
         this.mOpenClothButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenClothButton");
         });
@@ -2544,6 +2621,344 @@ var HUDPanel_Generate$1 = HUDPanel_Generate;
 var foreign65 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/ShareModule/SavePanel.ui
+ * TIME: 2024.12.27-21.54.52
+ */
+let SavePanel_Generate = class SavePanel_Generate extends UIScript {
+    get mSaveButton() {
+        if (!this.mSaveButton_Internal && this.uiWidgetBase) {
+            this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton');
+        }
+        return this.mSaveButton_Internal;
+    }
+    get mSaveTipsTextBlock() {
+        if (!this.mSaveTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mSaveTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton/mSaveTipsTextBlock');
+        }
+        return this.mSaveTipsTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSaveButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+        });
+        this.mSaveButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mSaveTipsTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SavePanel_Generate = __decorate([
+    UIBind('UI/module/ShareModule/SavePanel.ui')
+], SavePanel_Generate);
+var SavePanel_Generate$1 = SavePanel_Generate;
+
+var foreign72 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SavePanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/ShareModule/SharePanel.ui
+ * TIME: 2024.12.27-21.54.52
+ */
+let SharePanel_Generate = class SharePanel_Generate extends UIScript {
+    get mMainImage() {
+        if (!this.mMainImage_Internal && this.uiWidgetBase) {
+            this.mMainImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage');
+        }
+        return this.mMainImage_Internal;
+    }
+    get mMyselfTipsTextBlock() {
+        if (!this.mMyselfTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mMyselfTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mMyselfTipsTextBlock');
+        }
+        return this.mMyselfTipsTextBlock_Internal;
+    }
+    get mMyselfTextBlock() {
+        if (!this.mMyselfTextBlock_Internal && this.uiWidgetBase) {
+            this.mMyselfTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mMyselfTextBlock');
+        }
+        return this.mMyselfTextBlock_Internal;
+    }
+    get mCopyButton() {
+        if (!this.mCopyButton_Internal && this.uiWidgetBase) {
+            this.mCopyButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mMyselfTextBlock/mCopyButton');
+        }
+        return this.mCopyButton_Internal;
+    }
+    get mOtherTipsTextBlock() {
+        if (!this.mOtherTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mOtherTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mOtherTipsTextBlock');
+        }
+        return this.mOtherTipsTextBlock_Internal;
+    }
+    get mInputBgImage() {
+        if (!this.mInputBgImage_Internal && this.uiWidgetBase) {
+            this.mInputBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mInputBgImage');
+        }
+        return this.mInputBgImage_Internal;
+    }
+    get mInputBox() {
+        if (!this.mInputBox_Internal && this.uiWidgetBase) {
+            this.mInputBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mInputBgImage/mInputBox');
+        }
+        return this.mInputBox_Internal;
+    }
+    get mCancelButton() {
+        if (!this.mCancelButton_Internal && this.uiWidgetBase) {
+            this.mCancelButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mCancelButton');
+        }
+        return this.mCancelButton_Internal;
+    }
+    get mCancelTextBlock() {
+        if (!this.mCancelTextBlock_Internal && this.uiWidgetBase) {
+            this.mCancelTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mCancelButton/mCancelTextBlock');
+        }
+        return this.mCancelTextBlock_Internal;
+    }
+    get mUseButton() {
+        if (!this.mUseButton_Internal && this.uiWidgetBase) {
+            this.mUseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mUseButton');
+        }
+        return this.mUseButton_Internal;
+    }
+    get mUseTextBlock() {
+        if (!this.mUseTextBlock_Internal && this.uiWidgetBase) {
+            this.mUseTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mUseButton/mUseTextBlock');
+        }
+        return this.mUseTextBlock_Internal;
+    }
+    get mAdsButton() {
+        if (!this.mAdsButton_Internal && this.uiWidgetBase) {
+            this.mAdsButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mAdsButton');
+        }
+        return this.mAdsButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mCopyButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCopyButton");
+        });
+        this.mCopyButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCancelButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCancelButton");
+        });
+        this.mCancelButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mUseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mUseButton");
+        });
+        this.mUseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mMyselfTipsTextBlock);
+        this.initLanguage(this.mMyselfTextBlock);
+        this.initLanguage(this.mOtherTipsTextBlock);
+        this.initLanguage(this.mCancelTextBlock);
+        this.initLanguage(this.mUseTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SharePanel_Generate = __decorate([
+    UIBind('UI/module/ShareModule/SharePanel.ui')
+], SharePanel_Generate);
+var SharePanel_Generate$1 = SharePanel_Generate;
+
+var foreign73 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SharePanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/AdModule/AdPanel.ui
+ * TIME: 2024.12.27-21.54.52
+ */
+let AdPanel_Generate = class AdPanel_Generate extends UIScript {
+    get mCanvas() {
+        if (!this.mCanvas_Internal && this.uiWidgetBase) {
+            this.mCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas');
+        }
+        return this.mCanvas_Internal;
+    }
+    get mTitleTxt() {
+        if (!this.mTitleTxt_Internal && this.uiWidgetBase) {
+            this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mTitleTxt');
+        }
+        return this.mTitleTxt_Internal;
+    }
+    get mContentTxt() {
+        if (!this.mContentTxt_Internal && this.uiWidgetBase) {
+            this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mContentTxt');
+        }
+        return this.mContentTxt_Internal;
+    }
+    get mNoBtn() {
+        if (!this.mNoBtn_Internal && this.uiWidgetBase) {
+            this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mNoBtn');
+        }
+        return this.mNoBtn_Internal;
+    }
+    get mYesBtn() {
+        if (!this.mYesBtn_Internal && this.uiWidgetBase) {
+            this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mYesBtn');
+        }
+        return this.mYesBtn_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        this.mNoBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
+        });
+        this.initLanguage(this.mNoBtn);
+        this.mNoBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mTitleTxt);
+        this.initLanguage(this.mContentTxt);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+AdPanel_Generate = __decorate([
+    UIBind('UI/module/AdModule/AdPanel.ui')
+], AdPanel_Generate);
+var AdPanel_Generate$1 = AdPanel_Generate;
+
+var foreign51 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: AdPanel_Generate$1
+});
+
+class AdPanel extends AdPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.callback = null;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerDialog;
+        this.bindButtons();
+    }
+    bindButtons() {
+        this.mYesBtn.onClose.add(this.onClickYesButton.bind(this));
+        this.mNoBtn.onClicked.add(this.onClickNoButton.bind(this));
+    }
+    onClickYesButton(isSuccess) {
+        if (!isSuccess) {
+            Notice.showDownNotice(GameConfig.Language.Text_Fail.Value);
+            return;
+        }
+        this.hide();
+        if (this.callback)
+            this.callback();
+    }
+    onClickNoButton() {
+        this.hide();
+    }
+    showRewardAd(callback, contentText, noText, yesText, openType = 0) {
+        this.callback = callback;
+        this.mContentTxt.text = contentText;
+        this.mNoBtn.text = noText;
+        this.mYesBtn.text = yesText;
+        setTimeout(() => {
+            if (openType == 1) {
+                this.mCanvas.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+            }
+            else {
+                this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x / 2, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+            }
+        }, 1);
+        this.show();
+    }
+}
+
+var foreign17 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: AdPanel
 });
 
 class HUDItem extends HUDItem_Generate$1 {
@@ -2670,6 +3085,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
     }
     addJumpButton() {
         this.getHUDModuleC.onJumpAction.call();
@@ -2688,6 +3104,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     addOpenRankButton() {
         this.getHUDModuleC.onOpenRankAction.call();
+    }
+    addOpenShareButton() {
+        this.getHUDModuleC.onOpenShareAction.call(1);
     }
     showHideGoodsButton() {
         this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
@@ -2761,6 +3180,9 @@ class HUDModuleC extends ModuleC {
         super(...arguments);
         this.hudPanel = null;
         this.danMuModuleC = null;
+        this.sharePanel = null;
+        this.savePanel = null;
+        this.adPanel = null;
         this.onJumpAction = new Action();
         this.onCrouchAction = new Action();
         this.onExitAction = new Action();
@@ -2772,6 +3194,10 @@ class HUDModuleC extends ModuleC {
         this.onOpenSetAction = new Action();
         this.onOpenClothAction = new Action();
         this.onOpenRankAction = new Action();
+        this.onOpenShareAction = new Action1();
+        this.onUseShareAction = new Action2();
+        this.changeDescription = null;
+        this.isOpenAvatar = false;
     }
     get getHUDPanel() {
         if (!this.hudPanel) {
@@ -2784,6 +3210,24 @@ class HUDModuleC extends ModuleC {
             this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
         }
         return this.danMuModuleC;
+    }
+    get getSharePanel() {
+        if (!this.sharePanel) {
+            this.sharePanel = UIService.getUI(SharePanel);
+        }
+        return this.sharePanel;
+    }
+    get getSavePanel() {
+        if (!this.savePanel) {
+            this.savePanel = UIService.getUI(SavePanel);
+        }
+        return this.savePanel;
+    }
+    get getAdPanel() {
+        if (!this.adPanel) {
+            this.adPanel = UIService.getUI(AdPanel);
+        }
+        return this.adPanel;
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
@@ -2804,8 +3248,11 @@ class HUDModuleC extends ModuleC {
         this.onBagButton.add(this.onBagButtonHandler.bind(this));
         this.onOpenSetAction.add(this.onOpenSetActionHandler.bind(this));
         this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
+        this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
+        this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
     }
     onJumpActionHandler() {
         if (this.localPlayer.character.getCurrentState() != mw.CharacterStateType.Jumping) {
@@ -2832,15 +3279,83 @@ class HUDModuleC extends ModuleC {
             await AvatarEditorService.asyncOpenAvatarEditorModule();
         });
     }
+    onOpenShareActionHandler(openType) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.getSharePanel.show();
+            let sharedId = await Utils.createSharedId(this.localPlayer.character);
+            this.getSharePanel.showPanel(sharedId, openType);
+        });
+    }
+    onUseShareActionHandler(shareId, openType) {
+        if (openType == 1) {
+            if (GlobalData.isOpenIAA) {
+                this.getAdPanel.showRewardAd(() => {
+                    this.useShareId(shareId);
+                }, GameConfig.Language.Text_TryItOnForFree.Value, GameConfig.Language.Text_Cancel.Value, GameConfig.Language.Text_FreeTryOn.Value);
+            }
+            else {
+                this.useShareId(shareId);
+            }
+        }
+        else if (openType == 2) {
+            if (GlobalData.isOpenIAA) {
+                this.getAdPanel.showRewardAd(() => {
+                    AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                        setTimeout(() => {
+                            this.useDescription();
+                        }, 1000);
+                    });
+                }, GameConfig.Language.Text_TryItOnForFree.Value, GameConfig.Language.Text_Cancel.Value, GameConfig.Language.Text_FreeTryOn.Value, 1);
+            }
+            else {
+                AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                    setTimeout(() => {
+                        this.useDescription();
+                    }, 1000);
+                });
+            }
+        }
+    }
+    addDescriptionChange() {
+        this.localPlayer.character.asyncReady().then(() => {
+            console.error(`变化`);
+            this.changeDescription = this.localPlayer.character.getDescription();
+            if (this.isOpenAvatar)
+                this.getSavePanel.show();
+        });
+    }
+    useShareId(shareId) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            let isSuccess = await Utils.applySharedId(this.localPlayer.character, shareId);
+            if (isSuccess) {
+                Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+            }
+            else {
+                Notice.showDownNotice(GameConfig.Language.Text_InvalidID.Value);
+            }
+        });
+    }
+    useDescription() {
+        if (this.changeDescription) {
+            this.localPlayer.character.setDescription(this.changeDescription);
+            this.localPlayer.character.syncDescription();
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+            this.changeDescription = null;
+        }
+    }
     addAvatarServiceDelegate(eventName, ...params) {
         console.error(`eventName: ${eventName}`);
         switch (eventName) {
             case "AE_OnQuit":
                 Event.dispatchToLocal(`OnOffMainUI`, true);
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, true);
+                if (UIService.getUI(SavePanel, false)?.visible)
+                    this.getSavePanel.hide();
+                this.isOpenAvatar = false;
                 break;
             case "AE_OnOpen":
                 Event.dispatchToLocal(`OnOffMainUI`, false);
+                this.isOpenAvatar = true;
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
                 break;
         }
@@ -2876,13 +3391,115 @@ class HUDModuleS extends ModuleS {
     onStart() {
     }
 }
+class SharePanel extends SharePanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.openType = 1;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mMyselfTipsTextBlock.text = GameConfig.Language.Text_MyCharacterId.Value;
+        this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+        this.mInputBox.text = "";
+        this.mInputBox.hintString = GameConfig.Language.Text_PleaseEnter.Value;
+        this.mCancelTextBlock.text = GameConfig.Language.Text_Cancel.Value;
+        this.mUseTextBlock.text = GameConfig.Language.Text_FreeTryOn.Value;
+        this.mAdsButton.text = GameConfig.Language.Text_FreeTryOn.Value;
+        Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
+    }
+    bindButton() {
+        this.mCopyButton.onClicked.add(this.addCopyButton.bind(this));
+        this.mCancelButton.onClicked.add(this.addCancelButton.bind(this));
+        this.mUseButton.onClicked.add(this.addUseButton.bind(this));
+    }
+    addCopyButton() {
+        let copyText = this.mMyselfTextBlock.text;
+        if (!copyText || copyText == "" || copyText.length == 0)
+            return;
+        StringUtil.clipboardCopy(copyText);
+        Notice.showDownNotice(GameConfig.Language.Text_CopySuccessfully.Value);
+    }
+    addCancelButton() {
+        this.hide();
+    }
+    addUseButton() {
+        if (this.openType == 1) {
+            let shareId = this.mInputBox.text;
+            if (!shareId || shareId == "" || shareId.length == 0)
+                return;
+            this.getHUDModuleC.onUseShareAction.call(shareId, this.openType);
+        }
+        else if (this.openType == 2) {
+            this.getHUDModuleC.onUseShareAction.call(null, this.openType);
+        }
+        this.hide();
+    }
+    showPanel(shareId, openType) {
+        this.openType = openType;
+        this.mMyselfTextBlock.text = shareId;
+        if (openType == 1) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+            setTimeout(() => {
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x / 2, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }, 1);
+        }
+        else if (openType == 2) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
+            setTimeout(() => {
+                this.mMainImage.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }, 1);
+        }
+    }
+    onShow(...params) {
+        this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
+    }
+}
+class SavePanel extends SavePanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mSaveTipsTextBlock.text = GameConfig.Language.Text_SaveImagesForFree.Value;
+    }
+    bindButton() {
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+    }
+    addSaveButton() {
+        this.getHUDModuleC.onOpenShareAction.call(2);
+    }
+}
 
 var foreign33 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HUDItem: HUDItem,
     HUDModuleC: HUDModuleC,
     HUDModuleS: HUDModuleS,
-    HUDPanel: HUDPanel
+    HUDPanel: HUDPanel,
+    SavePanel: SavePanel,
+    SharePanel: SharePanel
 });
 
 class Bubble {
@@ -3149,7 +3766,7 @@ var foreign20 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -3487,8 +4104,146 @@ var foreign59 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/InteractionModule/GuidePanel.ui
+ * TIME: 2024.12.27-21.54.52
+ */
+let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
+    get mMainBgImage_0() {
+        if (!this.mMainBgImage_0_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0');
+        }
+        return this.mMainBgImage_0_Internal;
+    }
+    get mItemCanvas() {
+        if (!this.mItemCanvas_Internal && this.uiWidgetBase) {
+            this.mItemCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas');
+        }
+        return this.mItemCanvas_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas/mIconImage');
+        }
+        return this.mIconImage_Internal;
+    }
+    get mTitleImage_0() {
+        if (!this.mTitleImage_0_Internal && this.uiWidgetBase) {
+            this.mTitleImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_0');
+        }
+        return this.mTitleImage_0_Internal;
+    }
+    get mTitleImage_1() {
+        if (!this.mTitleImage_1_Internal && this.uiWidgetBase) {
+            this.mTitleImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_1');
+        }
+        return this.mTitleImage_1_Internal;
+    }
+    get mClickNextStepButton() {
+        if (!this.mClickNextStepButton_Internal && this.uiWidgetBase) {
+            this.mClickNextStepButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton');
+        }
+        return this.mClickNextStepButton_Internal;
+    }
+    get mClickNextStepTextBlock() {
+        if (!this.mClickNextStepTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickNextStepTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton/mClickNextStepTextBlock');
+        }
+        return this.mClickNextStepTextBlock_Internal;
+    }
+    get mMainBgImage_1() {
+        if (!this.mMainBgImage_1_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1');
+        }
+        return this.mMainBgImage_1_Internal;
+    }
+    get mTitleImage_2() {
+        if (!this.mTitleImage_2_Internal && this.uiWidgetBase) {
+            this.mTitleImage_2_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_2');
+        }
+        return this.mTitleImage_2_Internal;
+    }
+    get mTitleImage_3() {
+        if (!this.mTitleImage_3_Internal && this.uiWidgetBase) {
+            this.mTitleImage_3_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_3');
+        }
+        return this.mTitleImage_3_Internal;
+    }
+    get mContentTextBlock() {
+        if (!this.mContentTextBlock_Internal && this.uiWidgetBase) {
+            this.mContentTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mContentTextBlock');
+        }
+        return this.mContentTextBlock_Internal;
+    }
+    get mClickStartButton() {
+        if (!this.mClickStartButton_Internal && this.uiWidgetBase) {
+            this.mClickStartButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton');
+        }
+        return this.mClickStartButton_Internal;
+    }
+    get mClickStartTextBlock() {
+        if (!this.mClickStartTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickStartTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton/mClickStartTextBlock');
+        }
+        return this.mClickStartTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickNextStepButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
+        });
+        this.mClickNextStepButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mClickStartButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
+        });
+        this.mClickStartButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mClickNextStepTextBlock);
+        this.initLanguage(this.mContentTextBlock);
+        this.initLanguage(this.mClickStartTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+GuidePanel_Generate = __decorate([
+    UIBind('UI/module/InteractionModule/GuidePanel.ui')
+], GuidePanel_Generate);
+var GuidePanel_Generate$1 = GuidePanel_Generate;
+
+var foreign66 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: GuidePanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -3543,129 +4298,9 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign66 = /*#__PURE__*/Object.freeze({
+var foreign67 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2024.12.24-22.15.30
- */
-let AdPanel_Generate = class AdPanel_Generate extends UIScript {
-    get mTitleTxt() {
-        if (!this.mTitleTxt_Internal && this.uiWidgetBase) {
-            this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mTitleTxt');
-        }
-        return this.mTitleTxt_Internal;
-    }
-    get mContentTxt() {
-        if (!this.mContentTxt_Internal && this.uiWidgetBase) {
-            this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mContentTxt');
-        }
-        return this.mContentTxt_Internal;
-    }
-    get mNoBtn() {
-        if (!this.mNoBtn_Internal && this.uiWidgetBase) {
-            this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mNoBtn');
-        }
-        return this.mNoBtn_Internal;
-    }
-    get mYesBtn() {
-        if (!this.mYesBtn_Internal && this.uiWidgetBase) {
-            this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/Canvas_1/mYesBtn');
-        }
-        return this.mYesBtn_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        this.mNoBtn.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
-        });
-        this.initLanguage(this.mNoBtn);
-        this.mNoBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮添加点击
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mTitleTxt);
-        this.initLanguage(this.mContentTxt);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-AdPanel_Generate = __decorate([
-    UIBind('UI/module/AdModule/AdPanel.ui')
-], AdPanel_Generate);
-var AdPanel_Generate$1 = AdPanel_Generate;
-
-var foreign51 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: AdPanel_Generate$1
-});
-
-class AdPanel extends AdPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.callback = null;
-    }
-    onStart() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerDialog;
-        this.bindButtons();
-    }
-    bindButtons() {
-        this.mYesBtn.onClose.add(this.onClickYesButton.bind(this));
-        this.mNoBtn.onClicked.add(this.onClickNoButton.bind(this));
-    }
-    onClickYesButton(isSuccess) {
-        if (!isSuccess) {
-            Notice.showDownNotice(GameConfig.Language.Text_Fail.Value);
-            return;
-        }
-        this.hide();
-        if (this.callback)
-            this.callback();
-    }
-    onClickNoButton() {
-        this.hide();
-    }
-    showRewardAd(callback, contentText, noText, yesText) {
-        this.callback = callback;
-        this.mContentTxt.text = contentText;
-        this.mNoBtn.text = noText;
-        this.mYesBtn.text = yesText;
-        this.show();
-    }
-}
-
-var foreign17 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: AdPanel
 });
 
 class RoomData {
@@ -4008,6 +4643,95 @@ var foreign38 = /*#__PURE__*/Object.freeze({
     default: RankModuleS
 });
 
+class GuidePanel extends GuidePanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.clickNextStepCallBack = null;
+        this.clickStartCallBack = null;
+    }
+    onStart() {
+        this.initUI();
+        this.binButtons();
+    }
+    initUI() {
+        if (GlobalData.languageId == 0) {
+            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.Collapsed);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.SelfHitTestInvisible);
+        }
+    }
+    binButtons() {
+        this.mClickNextStepButton.onClicked.add(this.onClickNextStepButton.bind(this));
+        this.mClickStartButton.onClicked.add(this.onClickStartButton.bind(this));
+    }
+    onClickNextStepButton() {
+        if (this.clickNextStepCallBack)
+            this.clickNextStepCallBack();
+        this.hide();
+    }
+    onClickStartButton() {
+        if (this.clickStartCallBack)
+            this.clickStartCallBack();
+        this.hide();
+    }
+    showStepTips(bagId, clickCallBack, clickTextBlock) {
+        this.setIcon(bagId);
+        this.clickNextStepCallBack = clickCallBack;
+        this.mClickNextStepTextBlock.text = clickTextBlock;
+        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.Collapsed);
+        this.show();
+    }
+    setIcon(bagId) {
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+            }
+        }
+        else {
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+            }
+        }
+        if (actionPropElement.VehiclesIcon) {
+            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
+        }
+        else if (actionPropElement.Icon) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
+        }
+        else if (actionPropElement.AssetId) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
+        }
+        else if (bagId == actionPropElement.NextId) {
+            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
+            if (nextActionPropElement.VehiclesIcon) {
+                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
+            }
+            else if (nextActionPropElement.Icon) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
+            }
+            else if (nextActionPropElement.AssetId) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
+            }
+        }
+    }
+    showStartTips(clickStartCallBack, clickStartTextBlock, contentTextBlock) {
+        this.clickStartCallBack = clickStartCallBack;
+        this.mClickStartTextBlock.text = clickStartTextBlock;
+        this.mContentTextBlock.text = contentTextBlock;
+        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.Collapsed);
+        this.show();
+    }
+}
 class OnClickPanel extends OnClickPanel_Generate$1 {
     constructor() {
         super(...arguments);
@@ -4099,6 +4823,9 @@ class InteractionModuleC extends ModuleC {
         this.currentDescription = null;
         this.triggerLocMap = new Map();
         this.bagIds = [];
+        this.guidePanel = null;
+        this.guideStep = 0;
+        this.guideBagIds = [];
     }
     get getOnClickPanel() {
         if (this.onClickPanel == null) {
@@ -4124,6 +4851,7 @@ class InteractionModuleC extends ModuleC {
     }
     onEnterScene(sceneType) {
         this.initBagIds();
+        this.initGuide();
         this.findTriggers();
     }
     bindEvent() {
@@ -4149,6 +4877,13 @@ class InteractionModuleC extends ModuleC {
                     bagId = actionPropElement.NextId;
                 }
                 this.triggerLocMap.set(bagId, trigger.worldTransform.position);
+                if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
+                    GameObject.asyncSpawn(value.ModelGuid_C).then((model) => {
+                        model.worldTransform.position = trigger.worldTransform.position;
+                        // model.worldTransform.rotation = trigger.worldTransform.rotation;
+                        // model.worldTransform.scale = trigger.worldTransform.scale;
+                    });
+                }
             }
             let npcId = value.NpcId;
             if (npcId && npcId.length > 0) {
@@ -4254,6 +4989,83 @@ class InteractionModuleC extends ModuleC {
     }
     get getBagIds() {
         return this.bagIds;
+    }
+    get getGuidePanel() {
+        if (this.guidePanel == null) {
+            this.guidePanel = mw.UIService.getUI(GuidePanel);
+        }
+        return this.guidePanel;
+    }
+    initGuide() {
+        this.guideStep = this.data.guideStep;
+        this.startGuide();
+    }
+    setGuideStep(addStep) {
+        this.guideStep += addStep;
+        this.server.net_setGuideStep(addStep);
+    }
+    startGuide() {
+        if (!this.guideBagIds || this.guideBagIds.length == 0)
+            return;
+        if (this.guideStep >= this.guideBagIds.length - 1)
+            return;
+        this.getGuidePanel.showStartTips(() => {
+            let bagId = this.guideBagIds[this.guideStep++];
+            if (!this.triggerLocMap.has(bagId))
+                return;
+            let targetLoc = this.triggerLocMap.get(bagId);
+            Utils.startGuide(targetLoc, () => {
+                this.setGuideStep(1);
+                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                    if (this.guideStep >= this.guideBagIds.length)
+                        return;
+                    bagId = this.guideBagIds[this.guideStep++];
+                    if (!this.triggerLocMap.has(bagId))
+                        return;
+                    targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => {
+                        this.setGuideStep(1);
+                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                            if (this.guideStep >= this.guideBagIds.length)
+                                return;
+                            bagId = this.guideBagIds[this.guideStep++];
+                            if (!this.triggerLocMap.has(bagId))
+                                return;
+                            targetLoc = this.triggerLocMap.get(bagId);
+                            Utils.startGuide(targetLoc, () => {
+                                this.setGuideStep(1);
+                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                    if (this.guideStep >= this.guideBagIds.length)
+                                        return;
+                                    bagId = this.guideBagIds[this.guideStep++];
+                                    if (!this.triggerLocMap.has(bagId))
+                                        return;
+                                    targetLoc = this.triggerLocMap.get(bagId);
+                                    Utils.startGuide(targetLoc, () => {
+                                        this.setGuideStep(1);
+                                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                            if (this.guideStep >= this.guideBagIds.length)
+                                                return;
+                                            bagId = this.guideBagIds[this.guideStep++];
+                                            if (!this.triggerLocMap.has(bagId))
+                                                return;
+                                            targetLoc = this.triggerLocMap.get(bagId);
+                                            Utils.startGuide(targetLoc, () => {
+                                                this.setGuideStep(1);
+                                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                                    this.getGuidePanel.showStartTips(() => {
+                                                    }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+                                                }, GameConfig.Language.Text_UpNext.Value);
+                                            });
+                                        }, GameConfig.Language.Text_UpNext.Value);
+                                    });
+                                }, GameConfig.Language.Text_UpNext.Value);
+                            });
+                        }, GameConfig.Language.Text_UpNext.Value);
+                    });
+                }, GameConfig.Language.Text_UpNext.Value);
+            });
+        }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
     }
 }
 class InteractionModuleS extends ModuleS {
@@ -4376,10 +5188,16 @@ class InteractionModuleS extends ModuleS {
         let score = this.currentData.bagIds.length;
         this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
     }
+    net_setGuideStep(addStep) {
+        this.currentData.setGuideStep(addStep);
+    }
 }
 __decorate([
     Decorator.noReply()
 ], InteractionModuleS.prototype, "net_setBagId", null);
+__decorate([
+    Decorator.noReply()
+], InteractionModuleS.prototype, "net_setGuideStep", null);
 class PlayerInteractor {
     constructor() {
         this.isCanSit = true;
@@ -4396,6 +5214,7 @@ class InteractionData extends Subdata {
     constructor() {
         super(...arguments);
         this.bagIds = [];
+        this.guideStep = 0;
     }
     setBagId(bagId) {
         if (this.bagIds.includes(bagId))
@@ -4403,13 +5222,21 @@ class InteractionData extends Subdata {
         this.bagIds.push(bagId);
         this.save(false);
     }
+    setGuideStep(addStep) {
+        this.guideStep += addStep;
+        this.save(false);
+    }
 }
 __decorate([
     Decorator.persistence()
 ], InteractionData.prototype, "bagIds", void 0);
+__decorate([
+    Decorator.persistence()
+], InteractionData.prototype, "guideStep", void 0);
 
 var foreign34 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    GuidePanel: GuidePanel,
     InteractionData: InteractionData,
     InteractionModuleC: InteractionModuleC,
     InteractionModuleS: InteractionModuleS,
@@ -4423,7 +5250,7 @@ var foreign34 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -4545,7 +5372,7 @@ var foreign23 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -4673,7 +5500,7 @@ var foreign24 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -4688,9 +5515,15 @@ let BagItem_Generate = class BagItem_Generate extends UIScript {
         }
         return this.mClickButton_Internal;
     }
+    get mLockCanvas() {
+        if (!this.mLockCanvas_Internal && this.uiWidgetBase) {
+            this.mLockCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockCanvas');
+        }
+        return this.mLockCanvas_Internal;
+    }
     get mLockImage() {
         if (!this.mLockImage_Internal && this.uiWidgetBase) {
-            this.mLockImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockImage');
+            this.mLockImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockCanvas/mLockImage');
         }
         return this.mLockImage_Internal;
     }
@@ -4816,7 +5649,7 @@ var foreign25 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -4947,7 +5780,7 @@ var foreign26 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -5050,7 +5883,7 @@ var foreign27 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -5155,7 +5988,7 @@ var foreign28 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -5620,7 +6453,7 @@ var foreign29 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -7349,7 +8182,7 @@ var foreign35 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -7531,7 +8364,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign67 = /*#__PURE__*/Object.freeze({
+var foreign68 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -7541,7 +8374,7 @@ var foreign67 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -7601,7 +8434,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign68 = /*#__PURE__*/Object.freeze({
+var foreign69 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -7636,7 +8469,7 @@ var foreign40 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -7696,7 +8529,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign69 = /*#__PURE__*/Object.freeze({
+var foreign70 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -7763,7 +8596,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
-        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
@@ -7899,9 +8732,14 @@ class RankModuleC extends ModuleC {
     }
     initEventAction() {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
+        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
+    }
+    addOnOffMainUI(isShow) {
+        console.error(`isShow: ${isShow}`);
+        isShow ? this.getRankPanel.show() : this.getRankPanel.hide();
     }
     onEnterScene(sceneType) {
         let nickName = mw.AccountService.getNickName();
@@ -8021,7 +8859,7 @@ var foreign37 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -8269,7 +9107,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign70 = /*#__PURE__*/Object.freeze({
+var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -8764,7 +9602,7 @@ var foreign15 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -8854,7 +9692,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -9359,7 +10197,7 @@ var foreign44 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2024.12.24-22.15.30
+ * TIME: 2024.12.27-21.54.51
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -9488,12 +10326,15 @@ const MWModuleMap = {
      '95C84A464FBF396210D6DAB0DFAF53C3': foreign63,
      'C067E1F649184B0F7FC5E0B9456BC72C': foreign64,
      '337A59B14A237973EEB178A260344C21': foreign65,
-     'C4E377B14812C09429E28988E62907DB': foreign66,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign67,
-     'A8E0593D477EC697B2559789990E0882': foreign68,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign69,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign70,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign71,
+     'B9D019D74067C8F762132698D474BF63': foreign66,
+     'C4E377B14812C09429E28988E62907DB': foreign67,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign68,
+     'A8E0593D477EC697B2559789990E0882': foreign69,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign70,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign71,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign72,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign73,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign74,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -9560,12 +10401,15 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign63 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
 [foreign64 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
 [foreign65 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign66 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign67 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign68 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign69 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign70 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign71 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign66 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign67 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign68 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign69 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign70 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign71 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign72 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign73 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign74 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

@@ -4,10 +4,102 @@ import { IInteractElement } from "../../configs/Interact";
 import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
+import GuidePanel_Generate from "../../ui-generate/module/InteractionModule/GuidePanel_generate";
 import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/OnClickPanel_generate";
 import AdPanel from "../AdModule/ui/AdPanel";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import RankModuleS from "../RankModule/RankModuleS";
+
+export class GuidePanel extends GuidePanel_Generate {
+    protected onStart(): void {
+        this.initUI();
+        this.binButtons();
+    }
+
+    private initUI(): void {
+        if (GlobalData.languageId == 0) {
+            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.Collapsed);
+
+            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.Collapsed);
+        } else {
+            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+
+            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.SelfHitTestInvisible);
+        }
+    }
+
+    private binButtons(): void {
+        this.mClickNextStepButton.onClicked.add(this.onClickNextStepButton.bind(this));
+        this.mClickStartButton.onClicked.add(this.onClickStartButton.bind(this));
+    }
+
+    private onClickNextStepButton(): void {
+        if (this.clickNextStepCallBack) this.clickNextStepCallBack();
+        this.hide();
+    }
+
+    private onClickStartButton(): void {
+        if (this.clickStartCallBack) this.clickStartCallBack();
+        this.hide();
+    }
+
+    private clickNextStepCallBack: () => void = null;
+    public showStepTips(bagId: number, clickCallBack: () => void, clickTextBlock: string): void {
+        this.setIcon(bagId);
+        this.clickNextStepCallBack = clickCallBack;
+        this.mClickNextStepTextBlock.text = clickTextBlock;
+
+        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.Collapsed);
+        this.show();
+    }
+
+    private setIcon(bagId: number): void {
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+            } else {
+            }
+        } else {
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+            } else {
+            }
+        }
+        if (actionPropElement.VehiclesIcon) {
+            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
+        } else if (actionPropElement.Icon) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
+        } else if (actionPropElement.AssetId) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
+        } else if (bagId == actionPropElement.NextId) {
+            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
+            if (nextActionPropElement.VehiclesIcon) {
+                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
+            } else if (nextActionPropElement.Icon) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
+            } else if (nextActionPropElement.AssetId) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
+            }
+        }
+    }
+
+    private clickStartCallBack: () => void = null;
+    public showStartTips(clickStartCallBack: () => void, clickStartTextBlock: string, contentTextBlock: string): void {
+        this.clickStartCallBack = clickStartCallBack;
+        this.mClickStartTextBlock.text = clickStartTextBlock;
+        this.mContentTextBlock.text = contentTextBlock;
+
+        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.Collapsed);
+        this.show();
+    }
+}
 
 export class OnClickPanel extends OnClickPanel_Generate {
     private hudModuleC: HUDModuleC = null;
@@ -130,6 +222,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
 
     protected onEnterScene(sceneType: number): void {
         this.initBagIds();
+        this.initGuide();
         this.findTriggers();
     }
 
@@ -158,6 +251,14 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                     bagId = actionPropElement.NextId;
                 }
                 this.triggerLocMap.set(bagId, trigger.worldTransform.position);
+
+                if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
+                    GameObject.asyncSpawn(value.ModelGuid_C).then((model: mw.GameObject) => {
+                        model.worldTransform.position = trigger.worldTransform.position;
+                        // model.worldTransform.rotation = trigger.worldTransform.rotation;
+                        // model.worldTransform.scale = trigger.worldTransform.scale;
+                    });
+                }
             }
             let npcId = value.NpcId;
             if (npcId && npcId.length > 0) {
@@ -268,6 +369,79 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
 
     public get getBagIds(): number[] {
         return this.bagIds;
+    }
+
+    private guidePanel: GuidePanel = null;
+    private get getGuidePanel(): GuidePanel {
+        if (this.guidePanel == null) {
+            this.guidePanel = mw.UIService.getUI(GuidePanel);
+        }
+        return this.guidePanel;
+    }
+    private initGuide(): void {
+        this.guideStep = this.data.guideStep;
+        this.startGuide();
+    }
+
+    private guideStep: number = 0;
+    public setGuideStep(addStep: number): void {
+        this.guideStep += addStep;
+        this.server.net_setGuideStep(addStep);
+    }
+
+    private guideBagIds: number[] = [];
+    private startGuide(): void {
+        if (!this.guideBagIds || this.guideBagIds.length == 0) return;
+        if (this.guideStep >= this.guideBagIds.length - 1) return;
+        this.getGuidePanel.showStartTips(() => {
+            let bagId = this.guideBagIds[this.guideStep++];
+            if (!this.triggerLocMap.has(bagId)) return;
+            let targetLoc = this.triggerLocMap.get(bagId);
+            Utils.startGuide(targetLoc, () => {
+                this.setGuideStep(1);
+                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                    if (this.guideStep >= this.guideBagIds.length) return;
+                    bagId = this.guideBagIds[this.guideStep++];
+                    if (!this.triggerLocMap.has(bagId)) return;
+                    targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => {
+                        this.setGuideStep(1);
+                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                            if (this.guideStep >= this.guideBagIds.length) return;
+                            bagId = this.guideBagIds[this.guideStep++];
+                            if (!this.triggerLocMap.has(bagId)) return;
+                            targetLoc = this.triggerLocMap.get(bagId);
+                            Utils.startGuide(targetLoc, () => {
+                                this.setGuideStep(1);
+                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                    if (this.guideStep >= this.guideBagIds.length) return;
+                                    bagId = this.guideBagIds[this.guideStep++];
+                                    if (!this.triggerLocMap.has(bagId)) return;
+                                    targetLoc = this.triggerLocMap.get(bagId);
+                                    Utils.startGuide(targetLoc, () => {
+                                        this.setGuideStep(1);
+                                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                            if (this.guideStep >= this.guideBagIds.length) return;
+                                            bagId = this.guideBagIds[this.guideStep++];
+                                            if (!this.triggerLocMap.has(bagId)) return;
+                                            targetLoc = this.triggerLocMap.get(bagId);
+                                            Utils.startGuide(targetLoc, () => {
+                                                this.setGuideStep(1);
+                                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                                    this.getGuidePanel.showStartTips(() => {
+
+                                                    }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+                                                }, GameConfig.Language.Text_UpNext.Value);
+                                            });
+                                        }, GameConfig.Language.Text_UpNext.Value);
+                                    });
+                                }, GameConfig.Language.Text_UpNext.Value);
+                            });
+                        }, GameConfig.Language.Text_UpNext.Value);
+                    });
+                }, GameConfig.Language.Text_UpNext.Value);
+            });
+        }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
     }
 }
 
@@ -394,6 +568,11 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, InteractionD
         let score = this.currentData.bagIds.length;
         this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
     }
+
+    @Decorator.noReply()
+    public net_setGuideStep(addStep: number): void {
+        this.currentData.setGuideStep(addStep);
+    }
 }
 
 export class PlayerInteractor {
@@ -411,9 +590,17 @@ export class InteractionData extends Subdata {
     @Decorator.persistence()
     public bagIds: number[] = [];
 
+    @Decorator.persistence()
+    public guideStep: number = 0;
+
     public setBagId(bagId: number): void {
         if (this.bagIds.includes(bagId)) return;
         this.bagIds.push(bagId);
+        this.save(false);
+    }
+
+    public setGuideStep(addStep: number): void {
+        this.guideStep += addStep;
         this.save(false);
     }
 }

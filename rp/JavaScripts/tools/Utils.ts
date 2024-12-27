@@ -54,6 +54,15 @@ export default class Utils {
         });
     }
 
+    public static async createSharedId(character: mw.Character): Promise<string> {
+        return new Promise(async (resolve: (isSuccess: string) => void) => {
+            mw.AccountService.createSharedId(character, (dataString: string) => {
+                console.error(`dataString:${dataString}`);
+                return resolve(dataString);
+            });
+        });
+    }
+
     /**引导目标点特效ID */
     private static targetGuideEffectId: number = null;
     /**引导间隔标识 */

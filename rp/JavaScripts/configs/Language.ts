@@ -1,5 +1,5 @@
 import { ConfigBase, IElementBase } from "./ConfigBase";
-const EXCELDATA:Array<Array<any>> = [["ID","Name","Value","Value_Ch"],["","Key|ReadByName","MainLanguage","ChildLanguage"],[1,"Text_TheItemBarIsFull","The item bar is full","道具栏已满"],[2,"Text_ThisItemIsInUse","This item is in use","正在使用此道具"],[3,"Text_Tips1","Someone is using it, please try another one","有人正在使用，请换个试试"],[4,"Text_SetUp1","Base Setup","基础设置"],[5,"Text_PictureQuality","Picture Quality","画质"],[6,"Text_SoundEffects","Sound Effects","音效"],[7,"Text_BackgroundMusic","Background Music","背景音乐"],[8,"Text_ViewAngleScaling","View Angle Scaling","视角缩放"],[9,"Text_DisplayNicknames","Display Nicknames","显示昵称"],[10,"Text_ResetLocation","Reset Location","重置位置"],[11,"Text_RestoringSettings","Restoring Settings","还原设置"],[12,"Text_On","ON","开"],[13,"Text_Off","OFF","关"],[14,"Text_ObtainedTips","Obtained, open the knapsack to use","已获得，打开背包使用"],[15,"Text_Advertising","Advertising","广告奖励"],[16,"Text_ADGetTips","See the AD for free guide you get","看广告免费指引你获得"],[17,"Text_Dont","Don't","不要"],[18,"Text_Free","free","免费获得"],[19,"Text_Fail","Fail","指引失败，请重试"],[20,"Text_NoOnTheList","Not","未上榜"],[21,"Text_Ranking","Ranking","排名"],[22,"Text_Nickname","Nickname","昵称"],[23,"Text_Score","Score","分数"],[24,"Text_Duration","Duration","时长"],[25,"Text_TopInTermsOfDuration","Top {0} In Terms Of Duration","时长全服前{0}名"],[26,"Text_GuideTips","Reach near the target point","达到目标点附近"]];
+const EXCELDATA:Array<Array<any>> = [["ID","Name","Value","Value_Ch"],["","Key|ReadByName","MainLanguage","ChildLanguage"],[1,"Text_TheItemBarIsFull","The item bar is full","道具栏已满"],[2,"Text_ThisItemIsInUse","This item is in use","正在使用此道具"],[3,"Text_Tips1","Someone is using it, please try another one","有人正在使用，请换个试试"],[4,"Text_SetUp1","Base Setup","基础设置"],[5,"Text_PictureQuality","Picture Quality","画质"],[6,"Text_SoundEffects","Sound Effects","音效"],[7,"Text_BackgroundMusic","Background Music","背景音乐"],[8,"Text_ViewAngleScaling","View Angle Scaling","视角缩放"],[9,"Text_DisplayNicknames","Display Nicknames","显示昵称"],[10,"Text_ResetLocation","Reset Location","重置位置"],[11,"Text_RestoringSettings","Restoring Settings","还原设置"],[12,"Text_On","ON","开"],[13,"Text_Off","OFF","关"],[14,"Text_ObtainedTips","Obtained, open the knapsack to use","已获得，打开背包使用"],[15,"Text_Advertising","Advertising","广告奖励"],[16,"Text_ADGetTips","See the AD for free guide you get","看广告免费指引你获得"],[17,"Text_Dont","Don't","不要"],[18,"Text_Free","free","免费获得"],[19,"Text_Fail","Fail","指引失败，请重试"],[20,"Text_NoOnTheList","Not","未上榜"],[21,"Text_Ranking","Ranking","排名"],[22,"Text_Nickname","Nickname","昵称"],[23,"Text_Score","Score","分数"],[24,"Text_Duration","Duration","时长"],[25,"Text_TopInTermsOfDuration","Top {0} In Terms Of Duration","时长全服前{0}名"],[26,"Text_StartGame","Start the game","开始游戏"],[27,"Text_WelcomeTo","Welcome to\nMy Cherry blossom town","欢迎来到\n我的樱花小镇"],[28,"Text_UpNext","Up next","下一个"],[29,"Text_GuideEnd","With the guide over, start your trip to the cherry blossom town","引导结束，开启你的樱花小镇之旅吧"],[30,"Text_Close","Close","关闭"],[31,"Text_MyCharacterId","My Character ID- Share Friend Try On","我的角色ID-分享好友试穿"],[32,"Text_PleaseEnter","Please Enter The Friend Role ID","请输入好友角色ID"],[33,"Text_Cancel","Cancel","取消"],[34,"Text_FreeTryOn","Free Try On","免费试穿"],[35,"Text_SaveImagesForFree","Save images for free","免费保存形象"],[36,"Text_TryOnYourFriendAvatarForFree","Try On Your Friend's Avatar For Free","免费试穿好友的角色形象"],[37,"Text_CopySuccessfully","Copy Successfully","复制成功"],[38,"Text_InvalidID","Invalid ID!","ID无效！"],[39,"Text_Loading","Loading","加载中"],[40,"Text_TryItOnSuccessfully","Try it on successfully","试穿成功"],[41,"Text_CopyTheCharacterIDShareFriendsTryOn","Copy the character ID share friends try on","复制角色ID分享好友试穿"],[42,"Text_TryItOnForFree","Try it on for free","看广告免费试穿"],[43,"Text_GuideTips","Reach near the target point","达到目标点附近"]];
 export interface ILanguageElement extends IElementBase{
  	/**唯一ID*/
 	ID:number
@@ -62,7 +62,42 @@ export class LanguageConfig extends ConfigBase<ILanguageElement>{
 	get Text_Duration():ILanguageElement{return this.getElement(24)};
 	/**时长全服前{0}名*/
 	get Text_TopInTermsOfDuration():ILanguageElement{return this.getElement(25)};
+	/**开始游戏*/
+	get Text_StartGame():ILanguageElement{return this.getElement(26)};
+	/**欢迎来到
+我的樱花小镇*/
+	get Text_WelcomeTo():ILanguageElement{return this.getElement(27)};
+	/**下一个*/
+	get Text_UpNext():ILanguageElement{return this.getElement(28)};
+	/**引导结束，开启你的樱花小镇之旅吧*/
+	get Text_GuideEnd():ILanguageElement{return this.getElement(29)};
+	/**关闭*/
+	get Text_Close():ILanguageElement{return this.getElement(30)};
+	/**我的角色ID-分享好友试穿*/
+	get Text_MyCharacterId():ILanguageElement{return this.getElement(31)};
+	/**请输入好友角色ID*/
+	get Text_PleaseEnter():ILanguageElement{return this.getElement(32)};
+	/**取消*/
+	get Text_Cancel():ILanguageElement{return this.getElement(33)};
+	/**免费试穿*/
+	get Text_FreeTryOn():ILanguageElement{return this.getElement(34)};
+	/**免费保存形象*/
+	get Text_SaveImagesForFree():ILanguageElement{return this.getElement(35)};
+	/**免费试穿好友的角色形象*/
+	get Text_TryOnYourFriendAvatarForFree():ILanguageElement{return this.getElement(36)};
+	/**复制成功*/
+	get Text_CopySuccessfully():ILanguageElement{return this.getElement(37)};
+	/**ID无效！*/
+	get Text_InvalidID():ILanguageElement{return this.getElement(38)};
+	/**加载中*/
+	get Text_Loading():ILanguageElement{return this.getElement(39)};
+	/**试穿成功*/
+	get Text_TryItOnSuccessfully():ILanguageElement{return this.getElement(40)};
+	/**复制角色ID分享好友试穿*/
+	get Text_CopyTheCharacterIDShareFriendsTryOn():ILanguageElement{return this.getElement(41)};
+	/**看广告免费试穿*/
+	get Text_TryItOnForFree():ILanguageElement{return this.getElement(42)};
 	/**达到目标点附近*/
-	get Text_GuideTips():ILanguageElement{return this.getElement(26)};
+	get Text_GuideTips():ILanguageElement{return this.getElement(43)};
 
 }

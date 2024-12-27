@@ -29,11 +29,18 @@ export default class AdPanel extends AdPanel_Generate {
     }
 
     private callback: () => void = null;
-    public showRewardAd(callback: () => void, contentText: string, noText: string, yesText: string): void {
+    public showRewardAd(callback: () => void, contentText: string, noText: string, yesText: string, openType: number = 0): void {
         this.callback = callback;
         this.mContentTxt.text = contentText;
         this.mNoBtn.text = noText;
         this.mYesBtn.text = yesText;
+        setTimeout(() => {
+            if (openType == 1) {
+                this.mCanvas.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+            } else {
+                this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x / 2, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+            }
+        }, 1);
         this.show();
     }
 }

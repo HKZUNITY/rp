@@ -46,10 +46,16 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
 
     private initEventAction(): void {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
+        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
     }
 
     private addOnOffRankPanelAction(): void {
         this.onOpenWorldRankAction.call();
+    }
+
+    private addOnOffMainUI(isShow: boolean): void {
+        console.error(`isShow: ${isShow}`);
+        isShow ? this.getRankPanel.show() : this.getRankPanel.hide();
     }
 
     protected onEnterScene(sceneType: number): void {

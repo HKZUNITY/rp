@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -21,6 +21,20 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenSetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage/mOpenSetButton') as mw.StaleButton
 		}
 		return this.mOpenSetButton_Internal
+	}
+	private mOpenShareImage_Internal: mw.Image
+	public get mOpenShareImage(): mw.Image {
+		if(!this.mOpenShareImage_Internal&&this.uiWidgetBase) {
+			this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage') as mw.Image
+		}
+		return this.mOpenShareImage_Internal
+	}
+	private mOpenShareButton_Internal: mw.StaleButton
+	public get mOpenShareButton(): mw.StaleButton {
+		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
+			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton') as mw.StaleButton
+		}
+		return this.mOpenShareButton_Internal
 	}
 	private mOpenClothImage_Internal: mw.Image
 	public get mOpenClothImage(): mw.Image {
@@ -178,6 +192,13 @@ export default class HUDPanel_Generate extends UIScript {
 		});
 		this.initLanguage(this.mOpenSetButton);
 		this.mOpenSetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenShareButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
+		});
+		this.initLanguage(this.mOpenShareButton);
+		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mOpenClothButton.onClicked.add(()=>{

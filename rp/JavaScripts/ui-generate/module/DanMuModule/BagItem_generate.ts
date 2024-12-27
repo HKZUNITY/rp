@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2024.12.24-22.15.31
+ * TIME: 2024.12.27-21.54.52
  */
  
 @UIBind('UI/module/DanMuModule/BagItem.ui')
@@ -22,10 +22,17 @@ export default class BagItem_Generate extends UIScript {
 		}
 		return this.mClickButton_Internal
 	}
+	private mLockCanvas_Internal: mw.Canvas
+	public get mLockCanvas(): mw.Canvas {
+		if(!this.mLockCanvas_Internal&&this.uiWidgetBase) {
+			this.mLockCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockCanvas') as mw.Canvas
+		}
+		return this.mLockCanvas_Internal
+	}
 	private mLockImage_Internal: mw.Image
 	public get mLockImage(): mw.Image {
 		if(!this.mLockImage_Internal&&this.uiWidgetBase) {
-			this.mLockImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockImage') as mw.Image
+			this.mLockImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLockCanvas/mLockImage') as mw.Image
 		}
 		return this.mLockImage_Internal
 	}

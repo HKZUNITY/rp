@@ -1,9 +1,13 @@
-﻿import { GameConfig } from "../../configs/GameConfig";
+﻿import { Notice } from "../../common/notice/Notice";
+import { GameConfig } from "../../configs/GameConfig";
 import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import HUDItem_Generate from "../../ui-generate/module/HUDModule/HUDItem_generate";
 import HUDPanel_Generate from "../../ui-generate/module/HUDModule/HUDPanel_generate";
+import SavePanel_Generate from "../../ui-generate/module/ShareModule/SavePanel_generate";
+import SharePanel_Generate from "../../ui-generate/module/ShareModule/SharePanel_generate";
+import AdPanel from "../AdModule/ui/AdPanel";
 import DanMuModuleC from "../DanMuModule/DanMuModuleC";
 
 export class HUDItem extends HUDItem_Generate {
@@ -126,6 +130,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -150,6 +155,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenRankButton(): void {
         this.getHUDModuleC.onOpenRankAction.call();
+    }
+
+    private addOpenShareButton(): void {
+        this.getHUDModuleC.onOpenShareAction.call(1);
     }
 
     private showHideGoodsButton(): void {
@@ -244,6 +253,30 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         return this.danMuModuleC;
     }
 
+    private sharePanel: SharePanel = null;
+    private get getSharePanel(): SharePanel {
+        if (!this.sharePanel) {
+            this.sharePanel = UIService.getUI(SharePanel);
+        }
+        return this.sharePanel;
+    }
+
+    private savePanel: SavePanel = null;
+    private get getSavePanel(): SavePanel {
+        if (!this.savePanel) {
+            this.savePanel = UIService.getUI(SavePanel);
+        }
+        return this.savePanel;
+    }
+
+    private adPanel: AdPanel = null;
+    private get getAdPanel(): AdPanel {
+        if (!this.adPanel) {
+            this.adPanel = UIService.getUI(AdPanel);
+        }
+        return this.adPanel;
+    }
+
     public onJumpAction: Action = new Action();
     public onCrouchAction: Action = new Action();
     public onExitAction: Action = new Action();
@@ -255,6 +288,8 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenSetAction: Action = new Action();
     public onOpenClothAction: Action = new Action();
     public onOpenRankAction: Action = new Action();
+    public onOpenShareAction: Action1<number> = new Action1<number>();
+    public onUseShareAction: Action2<string, number> = new Action2<string, number>();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -278,8 +313,11 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.onBagButton.add(this.onBagButtonHandler.bind(this));
         this.onOpenSetAction.add(this.onOpenSetActionHandler.bind(this));
         this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
+        this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
+        this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
     }
 
     private onJumpActionHandler(): void {
@@ -312,15 +350,89 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         });
     }
 
+    private onOpenShareActionHandler(openType: number): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.getSharePanel.show();
+            let sharedId = await Utils.createSharedId(this.localPlayer.character);
+            this.getSharePanel.showPanel(sharedId, openType);
+        });
+    }
+
+    private onUseShareActionHandler(shareId: string, openType: number): void {
+        if (openType == 1) {
+            if (GlobalData.isOpenIAA) {
+                this.getAdPanel.showRewardAd(() => {
+                    this.useShareId(shareId);
+                }, GameConfig.Language.Text_TryItOnForFree.Value
+                    , GameConfig.Language.Text_Cancel.Value
+                    , GameConfig.Language.Text_FreeTryOn.Value);
+            } else {
+                this.useShareId(shareId);
+            }
+        } else if (openType == 2) {
+            if (GlobalData.isOpenIAA) {
+                this.getAdPanel.showRewardAd(() => {
+                    AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                        setTimeout(() => {
+                            this.useDescription();
+                        }, 1000);
+                    });
+                }, GameConfig.Language.Text_TryItOnForFree.Value
+                    , GameConfig.Language.Text_Cancel.Value
+                    , GameConfig.Language.Text_FreeTryOn.Value
+                    , 1);
+            } else {
+                AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                    setTimeout(() => {
+                        this.useDescription();
+                    }, 1000);
+                });
+            }
+        }
+    }
+
+    private changeDescription: mw.CharacterDescription = null;
+    private addDescriptionChange(): void {
+        this.localPlayer.character.asyncReady().then(() => {
+            console.error(`变化`);
+            this.changeDescription = this.localPlayer.character.getDescription();
+            if (this.isOpenAvatar) this.getSavePanel.show();
+        });
+    }
+
+    private useShareId(shareId: string): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            let isSuccess = await Utils.applySharedId(this.localPlayer.character, shareId);
+            if (isSuccess) {
+                Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+            } else {
+                Notice.showDownNotice(GameConfig.Language.Text_InvalidID.Value);
+            }
+        });
+    }
+
+    private useDescription(): void {
+        if (this.changeDescription) {
+            this.localPlayer.character.setDescription(this.changeDescription);
+            this.localPlayer.character.syncDescription();
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+            this.changeDescription = null;
+        }
+    }
+
+    private isOpenAvatar: boolean = false;
     private addAvatarServiceDelegate(eventName: string, ...params: unknown[]): void {
         console.error(`eventName: ${eventName}`);
         switch (eventName) {
             case "AE_OnQuit":
                 Event.dispatchToLocal(`OnOffMainUI`, true);
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, true);
+                if (UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.hide();
+                this.isOpenAvatar = false;
                 break;
             case "AE_OnOpen":
                 Event.dispatchToLocal(`OnOffMainUI`, false);
+                this.isOpenAvatar = true;
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
                 break;
         }
@@ -369,4 +481,108 @@ export class HUDModuleS extends ModuleS<HUDModuleC, null> {
     }
 
 
+}
+
+export class SharePanel extends SharePanel_Generate {
+    private hudModuleC: HUDModuleC = null;
+    private get getHUDModuleC(): HUDModuleC {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+
+    protected onStart(): void {
+        this.initUI();
+        this.bindButton();
+    }
+
+    private initUI(): void {
+        this.mMyselfTipsTextBlock.text = GameConfig.Language.Text_MyCharacterId.Value;
+        this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+        this.mInputBox.text = "";
+        this.mInputBox.hintString = GameConfig.Language.Text_PleaseEnter.Value;
+        this.mCancelTextBlock.text = GameConfig.Language.Text_Cancel.Value;
+        this.mUseTextBlock.text = GameConfig.Language.Text_FreeTryOn.Value;
+        this.mAdsButton.text = GameConfig.Language.Text_FreeTryOn.Value;
+
+        Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
+    }
+
+    private bindButton(): void {
+        this.mCopyButton.onClicked.add(this.addCopyButton.bind(this));
+        this.mCancelButton.onClicked.add(this.addCancelButton.bind(this));
+        this.mUseButton.onClicked.add(this.addUseButton.bind(this));
+    }
+
+    private addCopyButton(): void {
+        let copyText = this.mMyselfTextBlock.text;
+        if (!copyText || copyText == "" || copyText.length == 0) return;
+        StringUtil.clipboardCopy(copyText);
+        Notice.showDownNotice(GameConfig.Language.Text_CopySuccessfully.Value);
+    }
+
+    private addCancelButton(): void {
+        this.hide();
+    }
+
+    private addUseButton(): void {
+        if (this.openType == 1) {
+            let shareId = this.mInputBox.text;
+            if (!shareId || shareId == "" || shareId.length == 0) return;
+            this.getHUDModuleC.onUseShareAction.call(shareId, this.openType);
+        } else if (this.openType == 2) {
+            this.getHUDModuleC.onUseShareAction.call(null, this.openType);
+        }
+        this.hide();
+    }
+
+    private openType: number = 1;
+    public showPanel(shareId: string, openType: number): void {
+        this.openType = openType;
+        this.mMyselfTextBlock.text = shareId;
+        if (openType == 1) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+            setTimeout(() => {
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x / 2, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }, 1);
+        } else if (openType == 2) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
+            setTimeout(() => {
+                this.mMainImage.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }, 1);
+        }
+    }
+
+    protected onShow(...params: any[]): void {
+        this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
+    }
+}
+
+export class SavePanel extends SavePanel_Generate {
+    private hudModuleC: HUDModuleC = null;
+    private get getHUDModuleC(): HUDModuleC {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    protected onStart(): void {
+        this.initUI();
+        this.bindButton();
+    }
+
+    private initUI(): void {
+        this.mSaveTipsTextBlock.text = GameConfig.Language.Text_SaveImagesForFree.Value;
+    }
+
+    private bindButton(): void {
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+    }
+
+    private addSaveButton(): void {
+        this.getHUDModuleC.onOpenShareAction.call(2);
+    }
 }
