@@ -80,9 +80,9 @@ export class NavigationModuleC extends ModuleC<NavigationModuleS, null> {
 
 const navigationConfigs: NavigationConfig[] = [
     { modelId: "040055A6", pathId: "356DCBF1", speed: 10 },
-    { modelId: "348F4F22", pathId: "01087776", speed: 15 },
-    { modelId: "289E46DE", pathId: "340AFE18", speed: 20 },
-    { modelId: "1CD6E58A", pathId: "03498777", speed: 10 },
+    { modelId: "348F4F22", pathId: "01087776", speed: 10 },
+    { modelId: "289E46DE", pathId: "340AFE18", speed: 10 },
+    // { modelId: "1CD6E58A", pathId: "03498777", speed: 10 },
     { modelId: "2963B95A", pathId: "1D44FD67", speed: 10 },
 ];
 

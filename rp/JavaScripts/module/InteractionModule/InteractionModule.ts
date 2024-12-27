@@ -49,6 +49,11 @@ export class GuidePanel extends GuidePanel_Generate {
 
     private clickNextStepCallBack: () => void = null;
     public showStepTips(bagId: number, clickCallBack: () => void, clickTextBlock: string): void {
+        if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        if (!actionPropElement.AssetId) {
+            bagId = actionPropElement.NextId;
+        }
         this.setIcon(bagId);
         this.clickNextStepCallBack = clickCallBack;
         this.mClickNextStepTextBlock.text = clickTextBlock;
@@ -150,7 +155,7 @@ export class OnClickPanel extends OnClickPanel_Generate {
     }
 
     private onExitHandler(): void {
-        this.getInteractionModuleC.interact(false, this.id);
+        // this.getInteractionModuleC.interact(false, this.id);
     }
 
     private onClickButtons(): void {
@@ -245,12 +250,12 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 });
 
                 let bagId = value.BagId;
-                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
-                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-                if (!actionPropElement.AssetId) {
-                    bagId = actionPropElement.NextId;
-                }
                 this.triggerLocMap.set(bagId, trigger.worldTransform.position);
+                // if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+                // let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+                // if (!actionPropElement.AssetId) {
+                //     bagId = actionPropElement.NextId;
+                // }
 
                 if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
                     GameObject.asyncSpawn(value.ModelGuid_C).then((model: mw.GameObject) => {
@@ -280,8 +285,12 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 if (npcAnimationId && npcAnimationId.length > 0) {
                     await Utils.asyncDownloadAsset(npcAnimationId);
                     npc.loadSubStance(npcAnimationId).play();
+                    setTimeout(() => {
+                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
+                    }, 1000);
                 }
             }
+            console.error(this.triggerLocMap.size);
         });
     }
 
@@ -389,45 +398,55 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         this.server.net_setGuideStep(addStep);
     }
 
-    private guideBagIds: number[] = [];
+    private guideBagIds: number[] = [60004, 20002, 10106, 30002, 30004];
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
         if (this.guideStep >= this.guideBagIds.length - 1) return;
         this.getGuidePanel.showStartTips(() => {
-            let bagId = this.guideBagIds[this.guideStep++];
-            if (!this.triggerLocMap.has(bagId)) return;
+            let bagId = this.guideBagIds[0];
+            console.error(`bagId1:${bagId}`);
+            if (!this.triggerLocMap.has(bagId)) {
+                console.error(`bagId2:${bagId}`);
+                return;
+            }
             let targetLoc = this.triggerLocMap.get(bagId);
+            console.error(`targetLoc:${targetLoc}`);
             Utils.startGuide(targetLoc, () => {
                 this.setGuideStep(1);
-                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                this.getGuidePanel.showStepTips(bagId, () => {
+                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                     if (this.guideStep >= this.guideBagIds.length) return;
-                    bagId = this.guideBagIds[this.guideStep++];
+                    bagId = this.guideBagIds[1];
                     if (!this.triggerLocMap.has(bagId)) return;
                     targetLoc = this.triggerLocMap.get(bagId);
                     Utils.startGuide(targetLoc, () => {
                         this.setGuideStep(1);
-                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                        this.getGuidePanel.showStepTips(bagId, () => {
+                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                             if (this.guideStep >= this.guideBagIds.length) return;
-                            bagId = this.guideBagIds[this.guideStep++];
+                            bagId = this.guideBagIds[2];
                             if (!this.triggerLocMap.has(bagId)) return;
                             targetLoc = this.triggerLocMap.get(bagId);
                             Utils.startGuide(targetLoc, () => {
                                 this.setGuideStep(1);
-                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                this.getGuidePanel.showStepTips(bagId, () => {
+                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                                     if (this.guideStep >= this.guideBagIds.length) return;
-                                    bagId = this.guideBagIds[this.guideStep++];
+                                    bagId = this.guideBagIds[3];
                                     if (!this.triggerLocMap.has(bagId)) return;
                                     targetLoc = this.triggerLocMap.get(bagId);
                                     Utils.startGuide(targetLoc, () => {
                                         this.setGuideStep(1);
-                                        this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                        this.getGuidePanel.showStepTips(bagId, () => {
+                                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                                             if (this.guideStep >= this.guideBagIds.length) return;
-                                            bagId = this.guideBagIds[this.guideStep++];
+                                            bagId = this.guideBagIds[4];
                                             if (!this.triggerLocMap.has(bagId)) return;
                                             targetLoc = this.triggerLocMap.get(bagId);
                                             Utils.startGuide(targetLoc, () => {
                                                 this.setGuideStep(1);
-                                                this.getGuidePanel.showStepTips(this.guideBagIds[this.guideStep], () => {
+                                                this.getGuidePanel.showStepTips(bagId, () => {
+                                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                                                     this.getGuidePanel.showStartTips(() => {
 
                                                     }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);

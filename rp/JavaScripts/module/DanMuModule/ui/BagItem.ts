@@ -60,11 +60,11 @@ export default class BagItem extends BagItem_Generate {
 
 	private updateState(): void {
 		if (this.isHas) {
-			Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.Collapsed);
-			this.mIconImage.setImageColorByHex("FFFFFFFF");
+			Utils.setWidgetVisibility(this.mLockCanvas, mw.SlateVisibility.Collapsed);
+			// this.mIconImage.setImageColorByHex("FFFFFFFF");
 		} else {
-			Utils.setWidgetVisibility(this.mLockImage, mw.SlateVisibility.SelfHitTestInvisible);
-			this.mIconImage.setImageColorByHex("646464FF");
+			Utils.setWidgetVisibility(this.mLockCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+			// this.mIconImage.setImageColorByHex("646464FF");
 		}
 	}
 }
