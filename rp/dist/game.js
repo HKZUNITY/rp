@@ -2946,7 +2946,7 @@ class AdPanel extends AdPanel_Generate$1 {
         this.mYesBtn.text = yesText;
         setTimeout(() => {
             if (openType == 1) {
-                this.mCanvas.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+                this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
             }
             else {
                 this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x / 2, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
@@ -3301,17 +3301,19 @@ class HUDModuleC extends ModuleC {
             if (GlobalData.isOpenIAA) {
                 this.getAdPanel.showRewardAd(() => {
                     AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                        setTimeout(() => {
-                            this.useDescription();
-                        }, 1000);
+                        ExecutorManager.instance.pushAsyncExecutor(async () => {
+                            await TimeUtil.delaySecond(5);
+                            await this.useDescription();
+                        });
                     });
                 }, GameConfig.Language.Text_TryItOnForFree.Value, GameConfig.Language.Text_Cancel.Value, GameConfig.Language.Text_FreeTryOn.Value, 1);
             }
             else {
                 AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                    setTimeout(() => {
-                        this.useDescription();
-                    }, 1000);
+                    ExecutorManager.instance.pushAsyncExecutor(async () => {
+                        await TimeUtil.delaySecond(5);
+                        await this.useDescription();
+                    });
                 });
             }
         }
@@ -3335,13 +3337,16 @@ class HUDModuleC extends ModuleC {
             }
         });
     }
-    useDescription() {
-        if (this.changeDescription) {
-            this.localPlayer.character.setDescription(this.changeDescription);
-            this.localPlayer.character.syncDescription();
-            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-            this.changeDescription = null;
-        }
+    async useDescription() {
+        // if (this.changeDescription) {
+        await this.localPlayer.character.asyncReady();
+        let shareId = this.getSharePanel.mMyselfTextBlock.text;
+        Utils.applySharedId(this.localPlayer.character, shareId);
+        // this.localPlayer.character.setDescription(this.changeDescription);
+        // this.localPlayer.character.syncDescription();
+        Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        // this.changeDescription = null;
+        // }
     }
     addAvatarServiceDelegate(eventName, ...params) {
         console.error(`eventName: ${eventName}`);
@@ -3458,12 +3463,13 @@ class SharePanel extends SharePanel_Generate$1 {
             Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
             this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
             setTimeout(() => {
-                this.mMainImage.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
             }, 1);
         }
     }
     onShow(...params) {
         this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
+        this.mInputBox.text = ``;
     }
 }
 class SavePanel extends SavePanel_Generate$1 {
@@ -4831,7 +4837,7 @@ class InteractionModuleC extends ModuleC {
         this.bagIds = [];
         this.guidePanel = null;
         this.guideStep = 0;
-        this.guideBagIds = [60004, 20002, 10106, 30002, 30004];
+        this.guideBagIds = [60004, 20002, 10106, 30002];
     }
     get getOnClickPanel() {
         if (this.onClickPanel == null) {
@@ -4971,6 +4977,9 @@ class InteractionModuleC extends ModuleC {
     addClickBagItemAction(bagId) {
         if (this.bagIds.includes(bagId))
             return;
+        let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
+        if (nextId && nextId > 0)
+            bagId = nextId;
         if (GlobalData.isOpenIAA) {
             this.getAdPanel.showRewardAd(() => {
                 if (this.triggerLocMap.has(bagId)) {
@@ -5061,20 +5070,10 @@ class InteractionModuleC extends ModuleC {
                                         this.setGuideStep(1);
                                         this.getGuidePanel.showStepTips(bagId, () => {
                                             this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            if (this.guideStep >= this.guideBagIds.length)
-                                                return;
-                                            bagId = this.guideBagIds[4];
-                                            if (!this.triggerLocMap.has(bagId))
-                                                return;
-                                            targetLoc = this.triggerLocMap.get(bagId);
-                                            Utils.startGuide(targetLoc, () => {
-                                                this.setGuideStep(1);
-                                                this.getGuidePanel.showStepTips(bagId, () => {
-                                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                                    this.getGuidePanel.showStartTips(() => {
-                                                    }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                                }, GameConfig.Language.Text_UpNext.Value);
-                                            });
+                                            this.getGuidePanel.showStepTips(bagId, () => {
+                                                this.getGuidePanel.showStartTips(() => {
+                                                }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+                                            }, GameConfig.Language.Text_UpNext.Value);
                                         }, GameConfig.Language.Text_UpNext.Value);
                                     });
                                 }, GameConfig.Language.Text_UpNext.Value);

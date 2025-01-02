@@ -373,9 +373,10 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
             if (GlobalData.isOpenIAA) {
                 this.getAdPanel.showRewardAd(() => {
                     AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                        setTimeout(() => {
-                            this.useDescription();
-                        }, 1000);
+                        ExecutorManager.instance.pushAsyncExecutor(async () => {
+                            await TimeUtil.delaySecond(5);
+                            await this.useDescription();
+                        });
                     });
                 }, GameConfig.Language.Text_TryItOnForFree.Value
                     , GameConfig.Language.Text_Cancel.Value
@@ -383,9 +384,10 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
                     , 1);
             } else {
                 AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                    setTimeout(() => {
-                        this.useDescription();
-                    }, 1000);
+                    ExecutorManager.instance.pushAsyncExecutor(async () => {
+                        await TimeUtil.delaySecond(5);
+                        await this.useDescription();
+                    });
                 });
             }
         }
@@ -411,13 +413,16 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         });
     }
 
-    private useDescription(): void {
-        if (this.changeDescription) {
-            this.localPlayer.character.setDescription(this.changeDescription);
-            this.localPlayer.character.syncDescription();
-            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-            this.changeDescription = null;
-        }
+    private async useDescription(): Promise<void> {
+        // if (this.changeDescription) {
+        await this.localPlayer.character.asyncReady();
+        let shareId = this.getSharePanel.mMyselfTextBlock.text;
+        Utils.applySharedId(this.localPlayer.character, shareId);
+        // this.localPlayer.character.setDescription(this.changeDescription);
+        // this.localPlayer.character.syncDescription();
+        Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        // this.changeDescription = null;
+        // }
     }
 
     private isOpenAvatar: boolean = false;
@@ -551,13 +556,14 @@ export class SharePanel extends SharePanel_Generate {
             Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
             this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
             setTimeout(() => {
-                this.mMainImage.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
             }, 1);
         }
     }
 
     protected onShow(...params: any[]): void {
         this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
+        this.mInputBox.text = ``;
     }
 }
 

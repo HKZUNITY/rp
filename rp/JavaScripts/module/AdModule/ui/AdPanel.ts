@@ -36,7 +36,7 @@ export default class AdPanel extends AdPanel_Generate {
         this.mYesBtn.text = yesText;
         setTimeout(() => {
             if (openType == 1) {
-                this.mCanvas.position = new mw.Vector2(0, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
+                this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
             } else {
                 this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x / 2, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
             }

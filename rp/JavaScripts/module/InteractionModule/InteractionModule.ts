@@ -347,6 +347,8 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
 
     private addClickBagItemAction(bagId: number): void {
         if (this.bagIds.includes(bagId)) return;
+        let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
+        if (nextId && nextId > 0) bagId = nextId;
         if (GlobalData.isOpenIAA) {
             this.getAdPanel.showRewardAd(() => {
                 if (this.triggerLocMap.has(bagId)) {
@@ -398,7 +400,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         this.server.net_setGuideStep(addStep);
     }
 
-    private guideBagIds: number[] = [60004, 20002, 10106, 30002, 30004];
+    private guideBagIds: number[] = [60004, 20002, 10106, 30002];
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
         if (this.guideStep >= this.guideBagIds.length - 1) return;
@@ -439,19 +441,11 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                                         this.setGuideStep(1);
                                         this.getGuidePanel.showStepTips(bagId, () => {
                                             this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            if (this.guideStep >= this.guideBagIds.length) return;
-                                            bagId = this.guideBagIds[4];
-                                            if (!this.triggerLocMap.has(bagId)) return;
-                                            targetLoc = this.triggerLocMap.get(bagId);
-                                            Utils.startGuide(targetLoc, () => {
-                                                this.setGuideStep(1);
-                                                this.getGuidePanel.showStepTips(bagId, () => {
-                                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                                    this.getGuidePanel.showStartTips(() => {
+                                            this.getGuidePanel.showStepTips(bagId, () => {
+                                                this.getGuidePanel.showStartTips(() => {
 
-                                                    }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                                }, GameConfig.Language.Text_UpNext.Value);
-                                            });
+                                                }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+                                            }, GameConfig.Language.Text_UpNext.Value);
                                         }, GameConfig.Language.Text_UpNext.Value);
                                     });
                                 }, GameConfig.Language.Text_UpNext.Value);
