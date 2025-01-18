@@ -403,8 +403,12 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
     private guideBagIds: number[] = [60004, 20002, 10106, 30002];
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
-        if (this.guideStep >= this.guideBagIds.length - 1) return;
+        if (this.guideStep >= this.guideBagIds.length - 1) {
+            this.getHUDModuleC.onOpenClothAction.call();
+            return;
+        }
         this.getGuidePanel.showStartTips(() => {
+            this.getHUDModuleC.onOpenClothAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {
@@ -443,7 +447,6 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                                             this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                                             this.getGuidePanel.showStepTips(bagId, () => {
                                                 this.getGuidePanel.showStartTips(() => {
-
                                                 }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
                                             }, GameConfig.Language.Text_UpNext.Value);
                                         }, GameConfig.Language.Text_UpNext.Value);

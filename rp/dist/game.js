@@ -3288,34 +3288,37 @@ class HUDModuleC extends ModuleC {
     }
     onUseShareActionHandler(shareId, openType) {
         if (openType == 1) {
-            if (GlobalData.isOpenIAA) {
-                this.getAdPanel.showRewardAd(() => {
-                    this.useShareId(shareId);
-                }, GameConfig.Language.Text_TryItOnForFree.Value, GameConfig.Language.Text_Cancel.Value, GameConfig.Language.Text_FreeTryOn.Value);
-            }
-            else {
-                this.useShareId(shareId);
-            }
+            // if (GlobalData.isOpenIAA) {
+            //     this.getAdPanel.showRewardAd(() => {
+            //         this.useShareId(shareId);
+            //     }, GameConfig.Language.Text_TryItOnForFree.Value
+            //         , GameConfig.Language.Text_Cancel.Value
+            //         , GameConfig.Language.Text_FreeTryOn.Value);
+            // } else {
+            // }
+            this.useShareId(shareId);
         }
         else if (openType == 2) {
-            if (GlobalData.isOpenIAA) {
-                this.getAdPanel.showRewardAd(() => {
-                    AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                        ExecutorManager.instance.pushAsyncExecutor(async () => {
-                            await TimeUtil.delaySecond(5);
-                            await this.useDescription();
-                        });
-                    });
-                }, GameConfig.Language.Text_TryItOnForFree.Value, GameConfig.Language.Text_Cancel.Value, GameConfig.Language.Text_FreeTryOn.Value, 1);
-            }
-            else {
-                AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
-                    ExecutorManager.instance.pushAsyncExecutor(async () => {
-                        await TimeUtil.delaySecond(5);
-                        await this.useDescription();
-                    });
+            // if (GlobalData.isOpenIAA) {
+            //     this.getAdPanel.showRewardAd(() => {
+            //         AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+            //             ExecutorManager.instance.pushAsyncExecutor(async () => {
+            //                 await TimeUtil.delaySecond(5);
+            //                 await this.useDescription();
+            //             });
+            //         });
+            //     }, GameConfig.Language.Text_TryItOnForFree.Value
+            //         , GameConfig.Language.Text_Cancel.Value
+            //         , GameConfig.Language.Text_FreeTryOn.Value
+            //         , 1);
+            // } else {
+            // }
+            AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    await TimeUtil.delaySecond(5);
+                    await this.useDescription();
                 });
-            }
+            });
         }
     }
     addDescriptionChange() {
@@ -5025,9 +5028,12 @@ class InteractionModuleC extends ModuleC {
     startGuide() {
         if (!this.guideBagIds || this.guideBagIds.length == 0)
             return;
-        if (this.guideStep >= this.guideBagIds.length - 1)
+        if (this.guideStep >= this.guideBagIds.length - 1) {
+            this.getHUDModuleC.onOpenClothAction.call();
             return;
+        }
         this.getGuidePanel.showStartTips(() => {
+            this.getHUDModuleC.onOpenClothAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {
