@@ -30,7 +30,8 @@ export default class GameStart extends Script {
     }
 
     private onStartCS(): void {
-        GlobalData.isOpenIAA = !mw.SystemUtil.isPIE || this.isOpenIAA;
+        // GlobalData.isOpenIAA = !mw.SystemUtil.isPIE || this.isOpenIAA;
+        GlobalData.isOpenIAA = false;
         this.registerModule();
     }
 

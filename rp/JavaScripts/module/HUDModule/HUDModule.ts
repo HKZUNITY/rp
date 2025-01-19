@@ -235,6 +235,14 @@ export class HUDPanel extends HUDPanel_Generate {
         }
         this.constollerGoodsContentCanvasVisible(bagIds.length > 0, true);
     }
+
+    protected onShow(...params: any[]): void {
+        this.mVirtualJoystickPanel.resetJoyStick();
+    }
+
+    protected onHide(): void {
+        this.mVirtualJoystickPanel.resetJoyStick();
+    }
 }
 
 export class HUDModuleC extends ModuleC<HUDModuleS, null> {
@@ -398,7 +406,9 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.localPlayer.character.asyncReady().then(() => {
             console.error(`变化`);
             this.changeDescription = this.localPlayer.character.getDescription();
-            if (this.isOpenAvatar) this.getSavePanel.show();
+            if (this.isOpenAvatar) {
+                if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
+            }
         });
     }
 
@@ -417,7 +427,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         // if (this.changeDescription) {
         await this.localPlayer.character.asyncReady();
         let shareId = this.getSharePanel.mMyselfTextBlock.text;
-        Utils.applySharedId(this.localPlayer.character, shareId);
+        if (shareId && shareId?.length > 0) Utils.applySharedId(this.localPlayer.character, shareId);
         // this.localPlayer.character.setDescription(this.changeDescription);
         // this.localPlayer.character.syncDescription();
         Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
@@ -438,6 +448,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
             case "AE_OnOpen":
                 Event.dispatchToLocal(`OnOffMainUI`, false);
                 this.isOpenAvatar = true;
+                if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
                 break;
         }

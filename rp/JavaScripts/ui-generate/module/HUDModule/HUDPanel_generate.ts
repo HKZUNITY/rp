@@ -3,12 +3,19 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2024.12.27-21.54.52
+ * TIME: 2025.01.19-19.39.09
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
 export default class HUDPanel_Generate extends UIScript {
-		private mOpenSetImage_Internal: mw.Image
+		private mVirtualJoystickPanel_Internal: mw.VirtualJoystickPanel
+	public get mVirtualJoystickPanel(): mw.VirtualJoystickPanel {
+		if(!this.mVirtualJoystickPanel_Internal&&this.uiWidgetBase) {
+			this.mVirtualJoystickPanel_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mVirtualJoystickPanel') as mw.VirtualJoystickPanel
+		}
+		return this.mVirtualJoystickPanel_Internal
+	}
+	private mOpenSetImage_Internal: mw.Image
 	public get mOpenSetImage(): mw.Image {
 		if(!this.mOpenSetImage_Internal&&this.uiWidgetBase) {
 			this.mOpenSetImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage') as mw.Image
@@ -266,6 +273,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 		//文本多语言
 		
+		this.initLanguage(this.uiWidgetBase.findChildByPath("RootCanvas/UpperRightCanvas/mOpenClothImage/TextBlock") as any);
+		
+	
 	}
 	
 	/*初始化多语言*/
