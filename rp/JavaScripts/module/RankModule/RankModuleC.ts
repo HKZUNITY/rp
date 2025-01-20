@@ -59,12 +59,15 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
     }
 
     protected onEnterScene(sceneType: number): void {
-        let nickName = mw.AccountService.getNickName();
-        nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-        let bagIds = this.getInteractionData.bagIds;
-        let score = (!bagIds) ? 0 : bagIds.length;
-        this.server.net_onEnterScene(nickName, score);
-        TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+        TimeUtil.delaySecond(5).then(() => {
+            let nickName = mw.AccountService.getNickName();
+            nickName = nickName ? nickName : "UserId：" + this.currentUserId;
+            let bagIds = this.getInteractionData.bagIds;
+            let score = (!bagIds) ? 0 : bagIds.length;
+            let time = this.data.time;
+            this.server.net_onEnterScene(nickName, score, time);
+            TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+        });
     }
 
     private roomDatas: RoomData[] = [];
@@ -139,7 +142,7 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             this.curWorldIndex = i;
             break;
         }
-        this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex + 1);
+        this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
 
     public net_syncRoomRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[]): void {

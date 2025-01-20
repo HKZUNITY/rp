@@ -141,6 +141,10 @@ export default class RankPanel extends RankPanel_Generate {
 	}
 
 	public refreshSelfWorldRankUI(ranking: number): void {
-		this.mSelfWorldRankTextBlock.text = (ranking <= GlobalData.worldCount) ? ranking.toString() : GameConfig.Language.Text_NoOnTheList.Value;
+		if (ranking == -1) {
+			this.mSelfWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
+		} else {
+			this.mSelfWorldRankTextBlock.text = (ranking + 1).toString();
+		}
 	}
 }

@@ -1551,7 +1551,7 @@ var foreign6 = /*#__PURE__*/Object.freeze({
     ActionPropConfig: ActionPropConfig
 });
 
-const EXCELDATA$5 = [["Id", "Chats", "ChatChilds"], ["", "", ""], [1, ["I Am {0}", "我是{0}"], [["Student", "学生"], ["Detective", "侦探"], ["Murderer", "凶手"]]], [2, ["Who Is The Murderer?", "凶手是谁？"], null], [3, ["It Ticks Me Off", "0.o 气死我了"], null], [4, ["Help!", "救命啊！"], null], [5, ["Thank You!", "谢谢你 ^_^"], null], [6, ["Hello!", "你好！"], null], [7, ["Don't Kill Me :(((", "别刀我 QAQ"], null], [8, ["Stay Away From Me!", "<--退！<--退！<--退！"], null], [9, ["Perfect!", "*0* 满分操作！"], null], [10, ["Show Time!", ")*o*( 我要开始表演了~"], null]];
+const EXCELDATA$5 = [["Id", "Chats", "ChatChilds"], ["", "", ""], [1, ["Praise", "赞美"], [["Your outfit looks great!", "你的搭配真好看！"], ["This dress fits you well!", "这件衣服好适合你！"], ["Hair and makeup match!", "发型和妆容绝配！"], ["You're so good!", "你太会搭了！"]]], [2, ["Help", "求助"], [["How about looking at this set for me?", "帮我看看这套怎么样？"], ["What shoes would go with this dress?", "这件衣服配什么鞋子好？"], ["Are there any recommended color combinations?", "有没有推荐的颜色搭配？"], ["Does this hairstyle suit me?", "这个发型适合我吗？"]]], [3, ["Interaction", "互动"], [["Share your outfit!", "分享一下穿搭吧！"], ["PK to match it!", "来PK一下搭配吧！"], ["What style do you prefer?", "你喜欢什么风格？"], ["We can try each other on!", "我们可以互相试穿哦！"]]], [4, ["Thank you", "感谢"], [["Thanks for the advice!", "谢谢你的建议！"], ["Thanks for sharing!", "感谢你的分享！"], ["Thanks for the compliment!", "谢谢夸奖！"], ["Thanks for your help!", "感谢你的帮助！"]]], [5, ["Make fun of", "吐槽"], [["This dress is so hard to match!", "这件衣服太难搭了！"], ["You are out of line!", "你好过分！"], ["No hee hee!", "不嘻嘻！"]]], [6, ["Invitation", "邀请"], [["Add a friend!", "加个好友吧！"], ["Team up!", "一起组队吧！"], ["Come on, my dress!", "试穿我的穿搭！"]]], [7, ["Show Time!", ")*o*( 我要开始表演了~"], null]];
 class ChatConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$5);
@@ -4431,11 +4431,10 @@ class RankModuleS extends ModuleS {
         if (isSync)
             this.synchrodata_aRoomWorld(player);
     }
-    net_onEnterScene(playerName, score) {
+    net_onEnterScene(playerName, score, time) {
         this.syncPlayerMap.set(this.currentPlayer, false);
         let userId = this.currentPlayer.userId;
         this.currentPlayer.character.displayName = playerName;
-        let time = this.currentData.time;
         this.onEnterScene(userId, playerName, score, time);
     }
     async onEnterScene(userId, playerName, score, time) {
@@ -6274,10 +6273,10 @@ class ChatPanel extends ChatPanel_Generate$1 {
             let chatData = chatDatas[i];
             let chatItem1 = mw.UIService.create(ChatItem1);
             let text = chatData.chats[GlobalData.languageId];
-            if (chatData.chatChilds && chatData.chatChilds.length > 0) {
-                let reg = /\{[\d]\}/;
-                text = text.replace(reg, "...");
-            }
+            // if (chatData.chatChilds && chatData.chatChilds.length > 0) {
+            // 	let reg = /\{[\d]\}/;
+            // 	text = text.replace(reg, "...");
+            // }
             chatItem1.setData(i, text);
             this.mChatList1ContentCanvas.addChild(chatItem1.uiObject);
         }
@@ -6831,7 +6830,7 @@ class DanMuModuleC extends ModuleC {
             return;
         if (chatData.chatChilds && chatData.chatChilds.length > childIndex) {
             let text = chatData.chatChilds[childIndex][GlobalData.languageId];
-            text = StringUtil.format(chatData.chats[GlobalData.languageId], text);
+            // text = StringUtil.format(chatData.chats[GlobalData.languageId], text);
             Event.dispatchToLocal(DanmuSyncServer, text);
             this.showBubbleText(text);
             // this.getChatPanel.closeChatList1List2();
@@ -8719,7 +8718,12 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
     }
     refreshSelfWorldRankUI(ranking) {
-        this.mSelfWorldRankTextBlock.text = (ranking <= GlobalData.worldCount) ? ranking.toString() : GameConfig.Language.Text_NoOnTheList.Value;
+        if (ranking == -1) {
+            this.mSelfWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
+        }
+        else {
+            this.mSelfWorldRankTextBlock.text = (ranking + 1).toString();
+        }
     }
 }
 
@@ -8783,12 +8787,15 @@ class RankModuleC extends ModuleC {
         isShow ? this.getRankPanel.show() : this.getRankPanel.hide();
     }
     onEnterScene(sceneType) {
-        let nickName = mw.AccountService.getNickName();
-        nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-        let bagIds = this.getInteractionData.bagIds;
-        let score = (!bagIds) ? 0 : bagIds.length;
-        this.server.net_onEnterScene(nickName, score);
-        TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+        TimeUtil.delaySecond(5).then(() => {
+            let nickName = mw.AccountService.getNickName();
+            nickName = nickName ? nickName : "UserId：" + this.currentUserId;
+            let bagIds = this.getInteractionData.bagIds;
+            let score = (!bagIds) ? 0 : bagIds.length;
+            let time = this.data.time;
+            this.server.net_onEnterScene(nickName, score, time);
+            TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+        });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
         if (this.roomDatas.length > roomUserIds.length) {
@@ -8861,7 +8868,7 @@ class RankModuleC extends ModuleC {
             this.curWorldIndex = i;
             break;
         }
-        this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex + 1);
+        this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
     net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes) {
         // console.error("wfz = " + roomUserIds.length);

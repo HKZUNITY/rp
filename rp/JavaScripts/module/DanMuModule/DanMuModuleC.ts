@@ -179,7 +179,7 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
         if (!chatData) return;
         if (chatData.chatChilds && chatData.chatChilds.length > childIndex) {
             let text = chatData.chatChilds[childIndex][GlobalData.languageId];
-            text = StringUtil.format(chatData.chats[GlobalData.languageId], text);
+            // text = StringUtil.format(chatData.chats[GlobalData.languageId], text);
             Event.dispatchToLocal(DanmuSyncServer, text);
             this.showBubbleText(text);
             // this.getChatPanel.closeChatList1List2();

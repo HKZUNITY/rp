@@ -150,10 +150,10 @@ export default class ChatPanel extends ChatPanel_Generate {
 			let chatItem1 = mw.UIService.create(ChatItem1);
 
 			let text: string = chatData.chats[GlobalData.languageId];
-			if (chatData.chatChilds && chatData.chatChilds.length > 0) {
-				let reg = /\{[\d]\}/;
-				text = text.replace(reg, "...");
-			}
+			// if (chatData.chatChilds && chatData.chatChilds.length > 0) {
+			// 	let reg = /\{[\d]\}/;
+			// 	text = text.replace(reg, "...");
+			// }
 
 			chatItem1.setData(i, text);
 			this.mChatList1ContentCanvas.addChild(chatItem1.uiObject);

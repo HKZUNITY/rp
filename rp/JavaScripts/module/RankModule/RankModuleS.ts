@@ -37,13 +37,12 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
 
     private roomDataMap: Map<string, RoomData> = new Map<string, RoomData>();
     @Decorator.noReply()
-    public net_onEnterScene(playerName: string, score: number): void {
+    public net_onEnterScene(playerName: string, score: number, time: number): void {
         this.syncPlayerMap.set(this.currentPlayer, false);
 
         let userId = this.currentPlayer.userId;
         this.currentPlayer.character.displayName = playerName;
 
-        let time = this.currentData.time;
         this.onEnterScene(userId, playerName, score, time);
     }
 
