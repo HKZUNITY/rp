@@ -2,12 +2,12 @@
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.01.21-19.42.19
+ * UI: UI/module/AdModule/TipsPanel.ui
+ * TIME: 2025.01.21-19.42.20
  */
  
-@UIBind('UI/module/AdModule/AdPanel.ui')
-export default class AdPanel_Generate extends UIScript {
+@UIBind('UI/module/AdModule/TipsPanel.ui')
+export default class TipsPanel_Generate extends UIScript {
 		private mCanvas_Internal: mw.Canvas
 	public get mCanvas(): mw.Canvas {
 		if(!this.mCanvas_Internal&&this.uiWidgetBase) {
@@ -36,10 +36,10 @@ export default class AdPanel_Generate extends UIScript {
 		}
 		return this.mNoBtn_Internal
 	}
-	private mYesBtn_Internal: mw.AdsButton
-	public get mYesBtn(): mw.AdsButton {
+	private mYesBtn_Internal: mw.StaleButton
+	public get mYesBtn(): mw.StaleButton {
 		if(!this.mYesBtn_Internal&&this.uiWidgetBase) {
-			this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mYesBtn') as mw.AdsButton
+			this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mYesBtn') as mw.StaleButton
 		}
 		return this.mYesBtn_Internal
 	}
@@ -59,6 +59,13 @@ export default class AdPanel_Generate extends UIScript {
 		});
 		this.initLanguage(this.mNoBtn);
 		this.mNoBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mYesBtn.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mYesBtn");
+		});
+		this.initLanguage(this.mYesBtn);
+		this.mYesBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		//按钮添加点击

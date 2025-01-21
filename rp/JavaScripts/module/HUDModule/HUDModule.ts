@@ -325,7 +325,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
-        this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
+        // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
     }
 
     private onJumpActionHandler(): void {

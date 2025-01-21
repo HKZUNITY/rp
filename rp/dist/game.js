@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.19
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign48 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.19
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1587,7 +1587,7 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n我的樱花小镇"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"]];
+const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n我的樱花小镇"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$2);
@@ -1721,6 +1721,12 @@ class LanguageConfig extends ConfigBase {
     ;
     /**达到目标点附近*/
     get Text_GuideTips() { return this.getElement(43); }
+    ;
+    /**引导提示*/
+    get Text_BootPrompt() { return this.getElement(44); }
+    ;
+    /**免费指引你获得*/
+    get Text_FreeGuideYouGet() { return this.getElement(45); }
     ;
 }
 
@@ -2001,7 +2007,7 @@ var foreign46 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.19
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -2059,7 +2065,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign74 = /*#__PURE__*/Object.freeze({
+var foreign75 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -2235,7 +2241,7 @@ var foreign47 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -2293,7 +2299,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign56 = /*#__PURE__*/Object.freeze({
+var foreign57 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -2303,7 +2309,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -2376,7 +2382,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign64 = /*#__PURE__*/Object.freeze({
+var foreign65 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -2386,7 +2392,7 @@ var foreign64 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -2625,7 +2631,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign65 = /*#__PURE__*/Object.freeze({
+var foreign66 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -2635,7 +2641,7 @@ var foreign65 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -2691,7 +2697,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign72 = /*#__PURE__*/Object.freeze({
+var foreign73 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -2701,7 +2707,7 @@ var foreign72 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -2829,7 +2835,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign73 = /*#__PURE__*/Object.freeze({
+var foreign74 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -2839,7 +2845,7 @@ var foreign73 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.19
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -2920,6 +2926,97 @@ var foreign51 = /*#__PURE__*/Object.freeze({
     default: AdPanel_Generate$1
 });
 
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/AdModule/TipsPanel.ui
+ * TIME: 2025.01.21-19.42.20
+ */
+let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
+    get mCanvas() {
+        if (!this.mCanvas_Internal && this.uiWidgetBase) {
+            this.mCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas');
+        }
+        return this.mCanvas_Internal;
+    }
+    get mTitleTxt() {
+        if (!this.mTitleTxt_Internal && this.uiWidgetBase) {
+            this.mTitleTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mTitleTxt');
+        }
+        return this.mTitleTxt_Internal;
+    }
+    get mContentTxt() {
+        if (!this.mContentTxt_Internal && this.uiWidgetBase) {
+            this.mContentTxt_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mContentTxt');
+        }
+        return this.mContentTxt_Internal;
+    }
+    get mNoBtn() {
+        if (!this.mNoBtn_Internal && this.uiWidgetBase) {
+            this.mNoBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mNoBtn');
+        }
+        return this.mNoBtn_Internal;
+    }
+    get mYesBtn() {
+        if (!this.mYesBtn_Internal && this.uiWidgetBase) {
+            this.mYesBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCanvas/Canvas_1/mYesBtn');
+        }
+        return this.mYesBtn_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        this.mNoBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
+        });
+        this.initLanguage(this.mNoBtn);
+        this.mNoBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mYesBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mYesBtn");
+        });
+        this.initLanguage(this.mYesBtn);
+        this.mYesBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mTitleTxt);
+        this.initLanguage(this.mContentTxt);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+TipsPanel_Generate = __decorate([
+    UIBind('UI/module/AdModule/TipsPanel.ui')
+], TipsPanel_Generate);
+var TipsPanel_Generate$1 = TipsPanel_Generate;
+
+var foreign52 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: TipsPanel_Generate$1
+});
+
 class AdPanel extends AdPanel_Generate$1 {
     constructor() {
         super(...arguments);
@@ -2962,9 +3059,41 @@ class AdPanel extends AdPanel_Generate$1 {
         this.show();
     }
 }
+class TipsPanel extends TipsPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.callback = null;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerDialog;
+        this.bindButtons();
+    }
+    bindButtons() {
+        this.mYesBtn.onClicked.add(this.onClickYesButton.bind(this));
+        this.mNoBtn.onClicked.add(this.onClickNoButton.bind(this));
+    }
+    onClickYesButton() {
+        if (this.callback)
+            this.callback();
+        this.hide();
+    }
+    onClickNoButton() {
+        this.hide();
+    }
+    showTips(callback, titleText, contentText, noText, yesText) {
+        this.callback = callback;
+        this.mTitleTxt.text = titleText;
+        this.mContentTxt.text = contentText;
+        this.mNoBtn.text = noText;
+        this.mYesBtn.text = yesText;
+        this.show();
+    }
+}
 
 var foreign17 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    TipsPanel: TipsPanel,
     default: AdPanel
 });
 
@@ -3265,7 +3394,7 @@ class HUDModuleC extends ModuleC {
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
-        this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
+        // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
     }
     onJumpActionHandler() {
         if (this.localPlayer.character.getCurrentState() != mw.CharacterStateType.Jumping) {
@@ -3793,7 +3922,7 @@ var foreign20 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -4122,7 +4251,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign59 = /*#__PURE__*/Object.freeze({
+var foreign60 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -4132,7 +4261,7 @@ var foreign59 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -4260,7 +4389,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign66 = /*#__PURE__*/Object.freeze({
+var foreign67 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -4270,7 +4399,7 @@ var foreign66 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -4325,7 +4454,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign67 = /*#__PURE__*/Object.freeze({
+var foreign68 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -4391,6 +4520,7 @@ class RankModuleS extends ModuleS {
     constructor() {
         super(...arguments);
         this.worldDatas = [];
+        this.isInitWorldDatas = false;
         this.time = 60;
         this.timer = 0;
         this.syncPlayerMap = new Map();
@@ -4407,6 +4537,11 @@ class RankModuleS extends ModuleS {
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
+        this.initData();
+    }
+    async initData() {
+        this.worldDatas = (await this.getCustomdata("WorldData"));
+        this.isInitWorldDatas = true;
     }
     onUpdate(dt) {
         this.timer += dt;
@@ -4437,11 +4572,10 @@ class RankModuleS extends ModuleS {
         this.currentPlayer.character.displayName = playerName;
         this.onEnterScene(userId, playerName, score, time);
     }
-    async onEnterScene(userId, playerName, score, time) {
+    onEnterScene(userId, playerName, score, time) {
         let roomData = new RoomData(userId, playerName, score, time);
         this.roomDataMap.set(userId, roomData);
         let worldData = new WorldData(userId, playerName, time);
-        this.worldDatas = (await this.getCustomdata("WorldData"));
         this.isRefreshWorldData([worldData]);
         this.synchrodata_onEnterScene(userId);
     }
@@ -4471,9 +4605,10 @@ class RankModuleS extends ModuleS {
         this.synchrodata_World();
     }
     isRefreshWorldData(tmpWorldDatas) {
-        if (this.worldDatas == null) {
+        if (!this.isInitWorldDatas)
+            return false;
+        if (this.worldDatas == null)
             this.worldDatas = [];
-        }
         let isNeedSave = false;
         for (let k = 0; k < tmpWorldDatas.length; ++k) {
             let isPush = false;
@@ -4851,6 +4986,7 @@ class InteractionModuleC extends ModuleC {
         this.onClickPanel = null;
         this.hudModuleC = null;
         this.adPanel = null;
+        this.tipsPanel = null;
         this.onClickBagItemAction = new Action1();
         this.currentDescription = null;
         this.triggerLocMap = new Map();
@@ -4876,6 +5012,12 @@ class InteractionModuleC extends ModuleC {
             this.adPanel = mw.UIService.getUI(AdPanel);
         }
         return this.adPanel;
+    }
+    get getTipsPanel() {
+        if (this.tipsPanel == null) {
+            this.tipsPanel = mw.UIService.getUI(TipsPanel);
+        }
+        return this.tipsPanel;
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
@@ -5009,10 +5151,12 @@ class InteractionModuleC extends ModuleC {
             }, GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
         }
         else {
-            if (this.triggerLocMap.has(bagId)) {
-                let targetLoc = this.triggerLocMap.get(bagId);
-                Utils.startGuide(targetLoc, () => { });
-            }
+            this.getTipsPanel.showTips(() => {
+                if (this.triggerLocMap.has(bagId)) {
+                    let targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => { });
+                }
+            }, GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
         }
     }
     initBagIds() {
@@ -5290,7 +5434,7 @@ var foreign34 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -5358,7 +5502,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign52 = /*#__PURE__*/Object.freeze({
+var foreign53 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -5412,7 +5556,7 @@ var foreign23 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -5468,7 +5612,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign53 = /*#__PURE__*/Object.freeze({
+var foreign54 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -5540,7 +5684,7 @@ var foreign24 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -5607,7 +5751,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign54 = /*#__PURE__*/Object.freeze({
+var foreign55 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -5689,7 +5833,7 @@ var foreign25 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -5745,7 +5889,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign55 = /*#__PURE__*/Object.freeze({
+var foreign56 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -5820,7 +5964,7 @@ var foreign26 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -5870,7 +6014,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign57 = /*#__PURE__*/Object.freeze({
+var foreign58 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -5923,7 +6067,7 @@ var foreign27 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -5973,7 +6117,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign58 = /*#__PURE__*/Object.freeze({
+var foreign59 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -6028,7 +6172,7 @@ var foreign28 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -6083,7 +6227,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign61 = /*#__PURE__*/Object.freeze({
+var foreign62 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -6493,7 +6637,7 @@ var foreign29 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -6538,7 +6682,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign60 = /*#__PURE__*/Object.freeze({
+var foreign61 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -8107,6 +8251,8 @@ class NavigationConfig {
 class NavigationModel {
     constructor() {
         this.model = null;
+        this.interactor = null;
+        this.npc = null;
         this.pathVecs = [];
         this.speed = 10;
         this.isInitComplete = false;
@@ -8161,6 +8307,18 @@ class NavigationModel {
         this.currentLocation.z += this.stride.z;
         this.model.worldTransform.position = this.currentLocation;
     }
+    async enterInteractor() {
+        if (!this.interactor || !this.npc)
+            return;
+        await this.interactor.asyncReady();
+        await this.npc.asyncReady();
+        this.interactor.onEnter.clear();
+        this.interactor.onEnter.add(() => {
+            this.npc.localTransform.position = mw.Vector.zero;
+            this.npc.localTransform.rotation = mw.Rotation.zero;
+        });
+        this.interactor.enter(this.npc, mw.HumanoidSlotType.Root);
+    }
 }
 class NavigationModuleC extends ModuleC {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
@@ -8168,11 +8326,10 @@ class NavigationModuleC extends ModuleC {
     }
 }
 const navigationConfigs = [
-    { modelId: "040055A6", pathId: "356DCBF1", speed: 10 },
-    { modelId: "348F4F22", pathId: "01087776", speed: 10 },
-    { modelId: "289E46DE", pathId: "340AFE18", speed: 10 },
-    // { modelId: "1CD6E58A", pathId: "03498777", speed: 10 },
-    { modelId: "2963B95A", pathId: "1D44FD67", speed: 10 },
+    { modelId: "040055A6", interactionObjId: "0A394447", npcId: "39AB2FB0", pathId: "356DCBF1", speed: 10 },
+    { modelId: "348F4F22", interactionObjId: "048FB28D", npcId: "254A21DD", pathId: "01087776", speed: 10 },
+    { modelId: "289E46DE", interactionObjId: "09295629", npcId: "31DE1825", pathId: "340AFE18", speed: 10 },
+    { modelId: "2963B95A", interactionObjId: "1CEC6972", npcId: "0A031A75", pathId: "1D44FD67", speed: 10 },
 ];
 class NavigationModuleS extends ModuleS {
     constructor() {
@@ -8181,7 +8338,12 @@ class NavigationModuleS extends ModuleS {
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
-        this.initNavigationModels();
+        this.initNavigation();
+    }
+    initNavigation() {
+        TimeUtil.delaySecond(15).then(() => {
+            this.initNavigationModels();
+        });
     }
     initNavigationModels() {
         navigationConfigs.forEach((navigationConfig) => {
@@ -8189,13 +8351,20 @@ class NavigationModuleS extends ModuleS {
             navigationModel.speed = navigationConfig.speed;
             GameObject.asyncFindGameObjectById(navigationConfig.modelId).then((model) => {
                 navigationModel.model = model;
-                GameObject.asyncFindGameObjectById(navigationConfig.pathId).then((pathModel) => {
-                    let path = pathModel.getChildren();
-                    path.forEach((pathNode) => {
-                        navigationModel.pathVecs.push(pathNode.worldTransform.position);
+                GameObject.asyncFindGameObjectById(navigationConfig.npcId).then(async (npcModel) => {
+                    navigationModel.npc = npcModel;
+                    GameObject.asyncFindGameObjectById(navigationConfig.interactionObjId).then(async (interactorModel) => {
+                        navigationModel.interactor = interactorModel;
+                        navigationModel.enterInteractor();
+                        GameObject.asyncFindGameObjectById(navigationConfig.pathId).then((pathModel) => {
+                            let path = pathModel.getChildren();
+                            path.forEach((pathNode) => {
+                                navigationModel.pathVecs.push(pathNode.worldTransform.position);
+                            });
+                            navigationModel.prepareMove();
+                            this.navigationModels.push(navigationModel);
+                        });
                     });
-                    navigationModel.prepareMove();
-                    this.navigationModels.push(navigationModel);
                 });
             });
         });
@@ -8222,7 +8391,7 @@ var foreign35 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -8404,7 +8573,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign68 = /*#__PURE__*/Object.freeze({
+var foreign69 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -8414,7 +8583,7 @@ var foreign68 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -8474,7 +8643,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign69 = /*#__PURE__*/Object.freeze({
+var foreign70 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -8509,7 +8678,7 @@ var foreign40 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -8569,7 +8738,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign70 = /*#__PURE__*/Object.freeze({
+var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -8907,7 +9076,7 @@ var foreign37 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -9155,7 +9324,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign71 = /*#__PURE__*/Object.freeze({
+var foreign72 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -9651,7 +9820,7 @@ var foreign15 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -9731,7 +9900,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign62 = /*#__PURE__*/Object.freeze({
+var foreign63 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -9741,7 +9910,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.20
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -9791,7 +9960,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign63 = /*#__PURE__*/Object.freeze({
+var foreign64 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -10246,7 +10415,7 @@ var foreign44 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.01.19-19.39.09
+ * TIME: 2025.01.21-19.42.19
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -10361,29 +10530,30 @@ const MWModuleMap = {
      'EE3F354349BB041CD741FF84B745B113': foreign49,
      '8FA0EC3E442A57C1B550BB833E68DA90': foreign50,
      '100DA6744367634E7FFC0895CD98DDB9': foreign51,
-     '486071A84887288700A7E297CBF6B438': foreign52,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign53,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign54,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign55,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign56,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign57,
-     '827757834BCFC569771BCB84A3609238': foreign58,
-     'F58702064960960163820CB9C8D0F3C1': foreign59,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign60,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign61,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign62,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign63,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign64,
-     '337A59B14A237973EEB178A260344C21': foreign65,
-     'B9D019D74067C8F762132698D474BF63': foreign66,
-     'C4E377B14812C09429E28988E62907DB': foreign67,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign68,
-     'A8E0593D477EC697B2559789990E0882': foreign69,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign70,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign71,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign72,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign73,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign74,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign52,
+     '486071A84887288700A7E297CBF6B438': foreign53,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign54,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign55,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign56,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign57,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign58,
+     '827757834BCFC569771BCB84A3609238': foreign59,
+     'F58702064960960163820CB9C8D0F3C1': foreign60,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign61,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign62,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign63,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign64,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign65,
+     '337A59B14A237973EEB178A260344C21': foreign66,
+     'B9D019D74067C8F762132698D474BF63': foreign67,
+     'C4E377B14812C09429E28988E62907DB': foreign68,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign69,
+     'A8E0593D477EC697B2559789990E0882': foreign70,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign71,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign72,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign73,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign74,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign75,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -10436,29 +10606,30 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign49 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
 [foreign50 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
 [foreign51 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign52 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign53 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign54 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign55 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign56 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign57 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign58 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign59 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign60 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign61 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign62 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign63 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign64 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign65 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign66 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign67 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign68 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign69 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign70 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign71 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign72 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign73 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign74 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign52 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign53 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign54 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign55 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign56 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign57 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign58 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign59 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign60 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign61 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign62 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign63 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign64 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign65 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign66 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign67 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign68 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign69 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign70 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign71 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign72 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign73 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign74 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign75 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

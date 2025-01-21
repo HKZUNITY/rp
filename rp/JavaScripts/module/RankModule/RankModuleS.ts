@@ -7,6 +7,13 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
+        this.initData();
+    }
+
+    private isInitWorldDatas: boolean = false;
+    private async initData(): Promise<void> {
+        this.worldDatas = (await this.getCustomdata("WorldData")) as WorldData[];
+        this.isInitWorldDatas = true;
     }
 
     private time: number = 60;
@@ -46,11 +53,10 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.onEnterScene(userId, playerName, score, time);
     }
 
-    private async onEnterScene(userId: string, playerName: string, score: number, time: number): Promise<void> {
+    private onEnterScene(userId: string, playerName: string, score: number, time: number): void {
         let roomData = new RoomData(userId, playerName, score, time);
         this.roomDataMap.set(userId, roomData);
         let worldData: WorldData = new WorldData(userId, playerName, time);
-        this.worldDatas = (await this.getCustomdata("WorldData")) as WorldData[];
         this.isRefreshWorldData([worldData]);
         this.synchrodata_onEnterScene(userId);
     }
@@ -81,9 +87,8 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     }
 
     private isRefreshWorldData(tmpWorldDatas: WorldData[]): boolean {
-        if (this.worldDatas == null) {
-            this.worldDatas = [];
-        }
+        if (!this.isInitWorldDatas) return false;
+        if (this.worldDatas == null) this.worldDatas = [];
         let isNeedSave = false;
         for (let k = 0; k < tmpWorldDatas.length; ++k) {
             let isPush = false;

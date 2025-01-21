@@ -1,10 +1,14 @@
 ﻿export class NavigationConfig {
     public modelId: string;
+    public interactionObjId: string;
+    public npcId: string;
     public pathId: string;
     public speed: number = 10;
 }
 export class NavigationModel {
     public model: GameObject = null;
+    public interactor: mw.Interactor = null;
+    public npc: mw.Character = null;
     public pathVecs: mw.Vector[] = [];
     public speed: number = 10;
     public isInitComplete: boolean = false;
@@ -67,6 +71,18 @@ export class NavigationModel {
         this.currentLocation.z += this.stride.z;
         this.model.worldTransform.position = this.currentLocation;
     }
+
+    public async enterInteractor(): Promise<void> {
+        if (!this.interactor || !this.npc) return;
+        await this.interactor.asyncReady();
+        await this.npc.asyncReady();
+        this.interactor.onEnter.clear();
+        this.interactor.onEnter.add(() => {
+            this.npc.localTransform.position = mw.Vector.zero;
+            this.npc.localTransform.rotation = mw.Rotation.zero;
+        });
+        this.interactor.enter(this.npc, mw.HumanoidSlotType.Root);
+    }
 }
 
 export class NavigationModuleC extends ModuleC<NavigationModuleS, null> {
@@ -79,17 +95,22 @@ export class NavigationModuleC extends ModuleC<NavigationModuleS, null> {
 }
 
 const navigationConfigs: NavigationConfig[] = [
-    { modelId: "040055A6", pathId: "356DCBF1", speed: 10 },
-    { modelId: "348F4F22", pathId: "01087776", speed: 10 },
-    { modelId: "289E46DE", pathId: "340AFE18", speed: 10 },
-    // { modelId: "1CD6E58A", pathId: "03498777", speed: 10 },
-    { modelId: "2963B95A", pathId: "1D44FD67", speed: 10 },
+    { modelId: "040055A6", interactionObjId: "0A394447", npcId: "39AB2FB0", pathId: "356DCBF1", speed: 10 },
+    { modelId: "348F4F22", interactionObjId: "048FB28D", npcId: "254A21DD", pathId: "01087776", speed: 10 },
+    { modelId: "289E46DE", interactionObjId: "09295629", npcId: "31DE1825", pathId: "340AFE18", speed: 10 },
+    { modelId: "2963B95A", interactionObjId: "1CEC6972", npcId: "0A031A75", pathId: "1D44FD67", speed: 10 },
 ];
 
 export class NavigationModuleS extends ModuleS<NavigationModuleC, null> {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
-        this.initNavigationModels();
+        this.initNavigation();
+    }
+
+    private initNavigation(): void {
+        TimeUtil.delaySecond(15).then(() => {
+            this.initNavigationModels();
+        });
     }
 
     private navigationModels: NavigationModel[] = [];
@@ -99,13 +120,20 @@ export class NavigationModuleS extends ModuleS<NavigationModuleC, null> {
             navigationModel.speed = navigationConfig.speed;
             GameObject.asyncFindGameObjectById(navigationConfig.modelId).then((model: GameObject) => {
                 navigationModel.model = model;
-                GameObject.asyncFindGameObjectById(navigationConfig.pathId).then((pathModel: GameObject) => {
-                    let path = pathModel.getChildren();
-                    path.forEach((pathNode: GameObject) => {
-                        navigationModel.pathVecs.push(pathNode.worldTransform.position);
+                GameObject.asyncFindGameObjectById(navigationConfig.npcId).then(async (npcModel: GameObject) => {
+                    navigationModel.npc = npcModel as mw.Character;
+                    GameObject.asyncFindGameObjectById(navigationConfig.interactionObjId).then(async (interactorModel: GameObject) => {
+                        navigationModel.interactor = interactorModel as mw.Interactor;
+                        navigationModel.enterInteractor();
+                        GameObject.asyncFindGameObjectById(navigationConfig.pathId).then((pathModel: GameObject) => {
+                            let path = pathModel.getChildren();
+                            path.forEach((pathNode: GameObject) => {
+                                navigationModel.pathVecs.push(pathNode.worldTransform.position);
+                            });
+                            navigationModel.prepareMove();
+                            this.navigationModels.push(navigationModel);
+                        });
                     });
-                    navigationModel.prepareMove();
-                    this.navigationModels.push(navigationModel);
                 });
             });
         });

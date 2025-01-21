@@ -6,7 +6,7 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import GuidePanel_Generate from "../../ui-generate/module/InteractionModule/GuidePanel_generate";
 import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/OnClickPanel_generate";
-import AdPanel from "../AdModule/ui/AdPanel";
+import AdPanel, { TipsPanel } from "../AdModule/ui/AdPanel";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import RankModuleS from "../RankModule/RankModuleS";
 
@@ -217,6 +217,13 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         }
         return this.adPanel;
     }
+    private tipsPanel: TipsPanel = null;
+    private get getTipsPanel(): TipsPanel {
+        if (this.tipsPanel == null) {
+            this.tipsPanel = mw.UIService.getUI(TipsPanel);
+        }
+        return this.tipsPanel;
+    }
     public onClickBagItemAction: Action1<number> = new Action1<number>();
 
     private currentDescription: mw.CharacterDescription = null;
@@ -359,10 +366,15 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 , GameConfig.Language.Text_Dont.Value
                 , GameConfig.Language.Text_Free.Value);
         } else {
-            if (this.triggerLocMap.has(bagId)) {
-                let targetLoc = this.triggerLocMap.get(bagId);
-                Utils.startGuide(targetLoc, () => { });
-            }
+            this.getTipsPanel.showTips(() => {
+                if (this.triggerLocMap.has(bagId)) {
+                    let targetLoc = this.triggerLocMap.get(bagId);
+                    Utils.startGuide(targetLoc, () => { });
+                }
+            }, GameConfig.Language.Text_BootPrompt.Value,
+                GameConfig.Language.Text_FreeGuideYouGet.Value,
+                GameConfig.Language.Text_Dont.Value,
+                GameConfig.Language.Text_Free.Value);
         }
     }
 
