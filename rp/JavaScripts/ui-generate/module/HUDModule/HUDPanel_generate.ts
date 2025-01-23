@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.21-19.42.20
+ * TIME: 2025.01.23-20.11.12
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -57,6 +57,13 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mOpenClothButton_Internal
 	}
+	private mOpenClothTextBlock_Internal: mw.TextBlock
+	public get mOpenClothTextBlock(): mw.TextBlock {
+		if(!this.mOpenClothTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenClothTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothTextBlock') as mw.TextBlock
+		}
+		return this.mOpenClothTextBlock_Internal
+	}
 	private mOpenRankImage_Internal: mw.Image
 	public get mOpenRankImage(): mw.Image {
 		if(!this.mOpenRankImage_Internal&&this.uiWidgetBase) {
@@ -70,6 +77,27 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton') as mw.StaleButton
 		}
 		return this.mOpenRankButton_Internal
+	}
+	private mOpenSignInImage_Internal: mw.Image
+	public get mOpenSignInImage(): mw.Image {
+		if(!this.mOpenSignInImage_Internal&&this.uiWidgetBase) {
+			this.mOpenSignInImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage') as mw.Image
+		}
+		return this.mOpenSignInImage_Internal
+	}
+	private mOpenSignInButton_Internal: mw.StaleButton
+	public get mOpenSignInButton(): mw.StaleButton {
+		if(!this.mOpenSignInButton_Internal&&this.uiWidgetBase) {
+			this.mOpenSignInButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage/mOpenSignInButton') as mw.StaleButton
+		}
+		return this.mOpenSignInButton_Internal
+	}
+	private mOpenSignInTextBlock_Internal: mw.TextBlock
+	public get mOpenSignInTextBlock(): mw.TextBlock {
+		if(!this.mOpenSignInTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage/mOpenSignInTextBlock') as mw.TextBlock
+		}
+		return this.mOpenSignInTextBlock_Internal
 	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
@@ -222,6 +250,13 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenRankButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mOpenSignInButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenSignInButton");
+		});
+		this.initLanguage(this.mOpenSignInButton);
+		this.mOpenSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
 		});
@@ -271,11 +306,14 @@ export default class HUDPanel_Generate extends UIScript {
 		
 		//文本多语言
 		
-		//文本多语言
-		
-		this.initLanguage(this.uiWidgetBase.findChildByPath("RootCanvas/UpperRightCanvas/mOpenClothImage/TextBlock") as any);
+		this.initLanguage(this.mOpenClothTextBlock)
 		
 	
+		this.initLanguage(this.mOpenSignInTextBlock)
+		
+	
+		//文本多语言
+		
 	}
 	
 	/*初始化多语言*/

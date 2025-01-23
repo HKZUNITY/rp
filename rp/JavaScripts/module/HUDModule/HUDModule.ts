@@ -114,6 +114,8 @@ export class HUDPanel extends HUDPanel_Generate {
         this.controllerActionUIVisible(false);
         this.constollerGoodsCanvasVisible(false);
 
+        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
@@ -131,6 +133,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
         this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
+        this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -159,6 +162,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenShareButton(): void {
         this.getHUDModuleC.onOpenShareAction.call(1);
+    }
+
+    private addOpenSignInButton(): void {
+        this.getHUDModuleC.onOpenSignInAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -298,6 +305,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenRankAction: Action = new Action();
     public onOpenShareAction: Action1<number> = new Action1<number>();
     public onUseShareAction: Action2<string, number> = new Action2<string, number>();
+    public onOpenSignInAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

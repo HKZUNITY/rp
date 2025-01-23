@@ -10,6 +10,9 @@ import { RankData } from "./module/RankModule/RankData";
 import RankModuleC from "./module/RankModule/RankModuleC";
 import RankModuleS from "./module/RankModule/RankModuleS";
 import { SetModuleS, SetModuleC, SetData } from "./module/SetModule/SetModule";
+import SignInData from "./module/SignInModule/SignInData";
+import SignInModuleC from "./module/SignInModule/SignInModuleC";
+import SignInModuleS from "./module/SignInModule/SignInModuleS";
 
 @Component
 export default class GameStart extends Script {
@@ -42,6 +45,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
         ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
+        ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
     }
 
     /**

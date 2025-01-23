@@ -1,4 +1,5 @@
 ﻿import GlobalData from "../../GlobalData";
+import Utils from "../../tools/Utils";
 import { RankData, RoomData, WorldData } from "./RankData";
 import RankModuleC from "./RankModuleC";
 
@@ -12,7 +13,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
 
     private isInitWorldDatas: boolean = false;
     private async initData(): Promise<void> {
-        this.worldDatas = (await this.getCustomdata("WorldData")) as WorldData[];
+        this.worldDatas = (await Utils.getCustomdata("WorldData")) as WorldData[];
         this.isInitWorldDatas = true;
     }
 
@@ -81,7 +82,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             let worldData: WorldData = new WorldData(userId, roomData.playerName, roomData.time);
             tmpWorldDatas.push(worldData);
         });
-        this.worldDatas = (await this.getCustomdata("WorldData")) as WorldData[];
+        this.worldDatas = (await Utils.getCustomdata("WorldData")) as WorldData[];
         this.isRefreshWorldData(tmpWorldDatas);
         this.synchrodata_World();
     }
@@ -158,7 +159,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             }
         }
         if (isNeedSave) {
-            this.setCustomData("WorldData", this.worldDatas);
+            Utils.setCustomData("WorldData", this.worldDatas);
         }
         return isNeedSave;
     }
@@ -238,16 +239,6 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private synchrodata_aRoomWorld(player: mw.Player): void {
         this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
             this.worldUserIds, this.worldNames, this.worldTimes);
-    }
-
-    public async getCustomdata(key: string): Promise<any> {
-        return (await DataStorage.asyncGetData(key)).data;
-    }
-
-    public async setCustomData(saveKey: string, dataInfo: any): Promise<boolean> {
-        let code: mw.DataStorageResultCode = null;
-        code = await DataStorage.asyncSetData(saveKey, dataInfo);
-        return code == mw.DataStorageResultCode.Success;
     }
 
     public getNamesByUserId(userId1: string, userId2: string): string[] {

@@ -206,4 +206,14 @@ export default class Utils {
             return new mw.Vector(points[0].x, points[0].y, points[0].z);
         }
     }
+
+    public static async getCustomdata(key: string): Promise<any> {
+        return (await DataStorage.asyncGetData(key)).data;
+    }
+
+    public static async setCustomData(saveKey: string, dataInfo: any): Promise<boolean> {
+        let code: mw.DataStorageResultCode = null;
+        code = await DataStorage.asyncSetData(saveKey, dataInfo);
+        return code == mw.DataStorageResultCode.Success;
+    }
 }

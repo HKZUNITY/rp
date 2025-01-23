@@ -318,7 +318,7 @@ class NoticeView extends NoticeView_Generate {
         this.topNoticeComponent2.init(this.con_top_notice_2)
 
         this.canUpdate = true
-        this.layer = mw.UILayerTop
+        this.layer = mw.UILayerDialog
     }
 
     onUpdate() {
