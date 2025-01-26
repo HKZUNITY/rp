@@ -1846,7 +1846,7 @@ GlobalData.languageId = 1;
 GlobalData.isOpenIAA = false;
 GlobalData.bagCount = 5;
 GlobalData.worldCount = 500;
-GlobalData.freeTime = 10;
+GlobalData.freeTime = 8;
 
 var foreign16 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -3600,9 +3600,14 @@ class HUDModuleC extends ModuleC {
             await this.freeNpc.asyncReady();
             await TimeUtil.delaySecond(1);
             await AvatarEditorService.asyncCloseAvatarEditorModule();
+            TimeUtil.delaySecond(2).then(() => {
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                TimeUtil.delaySecond(2).then(() => {
+                    Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                });
+            });
             Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             await TimeUtil.delaySecond(5);
-            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             await this.useDescription();
         });
     }

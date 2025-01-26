@@ -449,9 +449,14 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
             await this.freeNpc.asyncReady();
             await TimeUtil.delaySecond(1);
             await AvatarEditorService.asyncCloseAvatarEditorModule();
+            TimeUtil.delaySecond(2).then(() => {
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                TimeUtil.delaySecond(2).then(() => {
+                    Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                });
+            });
             Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             await TimeUtil.delaySecond(5);
-            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             await this.useDescription();
         });
     }
