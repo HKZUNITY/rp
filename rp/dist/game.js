@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign53 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1587,7 +1587,7 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_FreeChangeOfClothes", "Free change of clothes", "免费换装"]];
+const EXCELDATA$2 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_FreeChangeOfClothes", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$2);
@@ -1761,6 +1761,15 @@ class LanguageConfig extends ConfigBase {
     /**免费换装*/
     get Text_FreeChangeOfClothes() { return this.getElement(56); }
     ;
+    /**试穿中，请耐心等待。*/
+    get Text_FreeChangeOfClothes1() { return this.getElement(57); }
+    ;
+    /**免费试穿{0}分钟*/
+    get Text_FreeChangeOfClothes2() { return this.getElement(58); }
+    ;
+    /**试穿结束，请打开商店重新试穿*/
+    get Text_FreeChangeOfClothes3() { return this.getElement(59); }
+    ;
 }
 
 var foreign12 = /*#__PURE__*/Object.freeze({
@@ -1837,6 +1846,7 @@ GlobalData.languageId = 1;
 GlobalData.isOpenIAA = false;
 GlobalData.bagCount = 5;
 GlobalData.worldCount = 500;
+GlobalData.freeTime = 10;
 
 var foreign16 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -2048,7 +2058,7 @@ var foreign51 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -2282,7 +2292,7 @@ var foreign52 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -2350,7 +2360,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.54
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -2433,7 +2443,7 @@ var foreign70 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.54
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -2483,6 +2493,12 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mOpenClothTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothTextBlock');
         }
         return this.mOpenClothTextBlock_Internal;
+    }
+    get mFreeTextBlock() {
+        if (!this.mFreeTextBlock_Internal && this.uiWidgetBase) {
+            this.mFreeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mFreeTextBlock');
+        }
+        return this.mFreeTextBlock_Internal;
     }
     get mOpenRankImage() {
         if (!this.mOpenRankImage_Internal && this.uiWidgetBase) {
@@ -2676,6 +2692,7 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         //按钮多语言
         //文本多语言
         this.initLanguage(this.mOpenClothTextBlock);
+        this.initLanguage(this.mFreeTextBlock);
         this.initLanguage(this.mOpenSignInTextBlock);
         //文本多语言
     }
@@ -2712,7 +2729,7 @@ var foreign71 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -2778,7 +2795,7 @@ var foreign78 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -2916,7 +2933,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3002,7 +3019,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3279,6 +3296,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.constollerGoodsCanvasVisible(false);
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
+        this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
@@ -3416,8 +3434,13 @@ class HUDModuleC extends ModuleC {
         this.onOpenShareAction = new Action1();
         this.onUseShareAction = new Action2();
         this.onOpenSignInAction = new Action();
+        this.onFreeTryOnAction = new Action();
+        this.freeNpc = null;
         this.changeDescription = null;
+        this.resetDecriptionTimeoutId = null;
         this.isOpenAvatar = false;
+        /**全局UI点击音效唯一标识 */
+        this.uiClickSoundId = null;
     }
     get getHUDPanel() {
         if (!this.hudPanel) {
@@ -3457,7 +3480,13 @@ class HUDModuleC extends ModuleC {
     onEnterScene(sceneType) {
         this.getHUDPanel.show();
         this.playBgMusic();
+        this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true); // 设置“去装扮”按钮隐藏
+        this.initFreeNpc();
+    }
+    async initFreeNpc() {
+        if (!this.freeNpc)
+            this.freeNpc = await mw.GameObject.asyncFindGameObjectById("3CD2E610");
     }
     initUI() {
     }
@@ -3470,6 +3499,7 @@ class HUDModuleC extends ModuleC {
         this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
         this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
+        this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
@@ -3562,17 +3592,43 @@ class HUDModuleC extends ModuleC {
             }
         });
     }
+    addFreeTryOnAction() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.initFreeNpc();
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            this.freeNpc.setDescription(this.localPlayer.character.getDescription());
+            await this.freeNpc.asyncReady();
+            await TimeUtil.delaySecond(1);
+            await AvatarEditorService.asyncCloseAvatarEditorModule();
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            await TimeUtil.delaySecond(5);
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            await this.useDescription();
+        });
+    }
     async useDescription() {
-        // if (this.changeDescription) {
         await this.localPlayer.character.asyncReady();
-        let shareId = this.getSharePanel.mMyselfTextBlock.text;
-        if (shareId && shareId?.length > 0)
-            Utils.applySharedId(this.localPlayer.character, shareId);
-        // this.localPlayer.character.setDescription(this.changeDescription);
-        // this.localPlayer.character.syncDescription();
+        this.localPlayer.character.setDescription(this.freeNpc.getDescription());
+        await this.localPlayer.character.asyncReady();
+        this.localPlayer.character.syncDescription();
         Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-        // this.changeDescription = null;
-        // }
+        this.resetDecription();
+    }
+    resetDecription() {
+        this.clearResetDecriptionTimeoutId();
+        this.resetDecriptionTimeoutId = setTimeout(() => {
+            AccountService.downloadData(this.localPlayer.character, (success) => {
+                if (!success)
+                    return;
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes3.Value);
+            });
+        }, GlobalData.freeTime * 60 * 1000);
+    }
+    clearResetDecriptionTimeoutId() {
+        if (this.resetDecriptionTimeoutId) {
+            clearTimeout(this.resetDecriptionTimeoutId);
+            this.resetDecriptionTimeoutId = null;
+        }
     }
     addAvatarServiceDelegate(eventName, ...params) {
         console.error(`eventName: ${eventName}`);
@@ -3617,6 +3673,18 @@ class HUDModuleC extends ModuleC {
     }
     playBgMusic() {
         SoundService.playBGM(`63341`);
+    }
+    /**注册全局点击音效 */
+    registerGlobalClickSound() {
+        /**全局UI点击音效 */
+        Event.addLocalListener("PlayButtonClick", (v) => {
+            // if (v == "mJumpButton") return;
+            if (this.uiClickSoundId) {
+                SoundService.stopSound(this.uiClickSoundId);
+                this.uiClickSoundId = null;
+            }
+            this.uiClickSoundId = SoundService.playSound(`12723`);
+        });
     }
 }
 class HUDModuleS extends ModuleS {
@@ -3722,7 +3790,7 @@ class SavePanel extends SavePanel_Generate$1 {
         this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
     }
     addSaveButton() {
-        this.getHUDModuleC.onOpenShareAction.call(2);
+        this.getHUDModuleC.onFreeTryOnAction.call();
     }
 }
 
@@ -4000,7 +4068,7 @@ var foreign20 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -4339,7 +4407,7 @@ var foreign65 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -4477,7 +4545,7 @@ var foreign72 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -5506,7 +5574,7 @@ var foreign34 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -5628,7 +5696,7 @@ var foreign23 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -5756,7 +5824,7 @@ var foreign24 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -5905,7 +5973,7 @@ var foreign25 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6036,7 +6104,7 @@ var foreign26 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -6139,7 +6207,7 @@ var foreign27 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -6244,7 +6312,7 @@ var foreign28 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -6709,7 +6777,7 @@ var foreign29 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -8463,7 +8531,7 @@ var foreign35 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -8655,7 +8723,7 @@ var foreign74 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -8750,7 +8818,7 @@ var foreign40 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -9148,7 +9216,7 @@ var foreign37 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.54
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -9820,7 +9888,7 @@ var foreign44 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -9905,7 +9973,7 @@ var foreign81 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -10147,7 +10215,7 @@ class SignInModuleC extends ModuleC {
     net_syncSignInConfigData(signInConfigData, day) {
         this.signInConfigData = signInConfigData;
         this.day = day;
-        if (this.signInConfigData && this.signInConfigData?.isOpen)
+        if (this.signInConfigData)
             return;
         let data = {
             "isOpen": true,
@@ -10354,7 +10422,7 @@ var foreign15 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -10444,7 +10512,7 @@ var foreign68 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -10949,7 +11017,7 @@ var foreign49 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.53
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {

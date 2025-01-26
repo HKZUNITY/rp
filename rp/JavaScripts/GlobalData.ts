@@ -8,4 +8,6 @@ export default class GlobalData {
     public static bagCount: number = 5;
 
     public static worldCount: number = 500;
+
+    public static freeTime: number = 10;
 }

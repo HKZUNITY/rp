@@ -116,6 +116,7 @@ export class HUDPanel extends HUDPanel_Generate {
 
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
+        this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
@@ -306,6 +307,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenShareAction: Action1<number> = new Action1<number>();
     public onUseShareAction: Action2<string, number> = new Action2<string, number>();
     public onOpenSignInAction: Action = new Action();
+    public onFreeTryOnAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -313,10 +315,17 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.bindAction();
     }
 
+    private freeNpc: mw.Character = null;
     protected onEnterScene(sceneType: number): void {
         this.getHUDPanel.show();
         this.playBgMusic();
+        this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
+        this.initFreeNpc();
+    }
+
+    private async initFreeNpc(): Promise<void> {
+        if (!this.freeNpc) this.freeNpc = await mw.GameObject.asyncFindGameObjectById("3CD2E610") as mw.Character;
     }
 
     private initUI(): void {
@@ -331,6 +340,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
         this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
+        this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
@@ -431,16 +441,46 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         });
     }
 
+    private addFreeTryOnAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.initFreeNpc();
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            this.freeNpc.setDescription(this.localPlayer.character.getDescription());
+            await this.freeNpc.asyncReady();
+            await TimeUtil.delaySecond(1);
+            await AvatarEditorService.asyncCloseAvatarEditorModule();
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            await TimeUtil.delaySecond(5);
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            await this.useDescription();
+        });
+    }
+
     private async useDescription(): Promise<void> {
-        // if (this.changeDescription) {
         await this.localPlayer.character.asyncReady();
-        let shareId = this.getSharePanel.mMyselfTextBlock.text;
-        if (shareId && shareId?.length > 0) Utils.applySharedId(this.localPlayer.character, shareId);
-        // this.localPlayer.character.setDescription(this.changeDescription);
-        // this.localPlayer.character.syncDescription();
+        this.localPlayer.character.setDescription(this.freeNpc.getDescription());
+        await this.localPlayer.character.asyncReady();
+        this.localPlayer.character.syncDescription();
         Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-        // this.changeDescription = null;
-        // }
+        this.resetDecription();
+    }
+
+    private resetDecriptionTimeoutId: any = null;
+    private resetDecription(): void {
+        this.clearResetDecriptionTimeoutId();
+        this.resetDecriptionTimeoutId = setTimeout(() => {
+            AccountService.downloadData(this.localPlayer.character, (success: boolean) => {
+                if (!success) return;
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes3.Value);
+            });
+        }, GlobalData.freeTime * 60 * 1000);
+    }
+
+    private clearResetDecriptionTimeoutId(): void {
+        if (this.resetDecriptionTimeoutId) {
+            clearTimeout(this.resetDecriptionTimeoutId);
+            this.resetDecriptionTimeoutId = null;
+        }
     }
 
     private isOpenAvatar: boolean = false;
@@ -493,6 +533,21 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
     private playBgMusic(): void {
         SoundService.playBGM(`63341`);
+    }
+
+    /**全局UI点击音效唯一标识 */
+    private uiClickSoundId: string = null;
+    /**注册全局点击音效 */
+    private registerGlobalClickSound(): void {
+        /**全局UI点击音效 */
+        Event.addLocalListener("PlayButtonClick", (v: string) => {
+            // if (v == "mJumpButton") return;
+            if (this.uiClickSoundId) {
+                SoundService.stopSound(this.uiClickSoundId);
+                this.uiClickSoundId = null;
+            }
+            this.uiClickSoundId = SoundService.playSound(`12723`);
+        });
     }
 }
 
@@ -608,6 +663,6 @@ export class SavePanel extends SavePanel_Generate {
     }
 
     private addSaveButton(): void {
-        this.getHUDModuleC.onOpenShareAction.call(2);
+        this.getHUDModuleC.onFreeTryOnAction.call();
     }
 }

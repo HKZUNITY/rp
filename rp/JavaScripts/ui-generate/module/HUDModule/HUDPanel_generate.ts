@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.23-20.11.12
+ * TIME: 2025.01.25-12.45.54
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -63,6 +63,13 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenClothTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mOpenClothTextBlock') as mw.TextBlock
 		}
 		return this.mOpenClothTextBlock_Internal
+	}
+	private mFreeTextBlock_Internal: mw.TextBlock
+	public get mFreeTextBlock(): mw.TextBlock {
+		if(!this.mFreeTextBlock_Internal&&this.uiWidgetBase) {
+			this.mFreeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenClothImage/mFreeTextBlock') as mw.TextBlock
+		}
+		return this.mFreeTextBlock_Internal
 	}
 	private mOpenRankImage_Internal: mw.Image
 	public get mOpenRankImage(): mw.Image {
@@ -307,6 +314,9 @@ export default class HUDPanel_Generate extends UIScript {
 		//文本多语言
 		
 		this.initLanguage(this.mOpenClothTextBlock)
+		
+	
+		this.initLanguage(this.mFreeTextBlock)
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)
