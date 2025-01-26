@@ -79,6 +79,7 @@ export default class Utils {
 
     /**开始引导 */
     public static startGuide(targetLoc: mw.Vector, onComplete: () => void = null): void {
+        if (!mw.SystemUtil.isClient()) return;
         if (!targetLoc) return;
 
         if (this.targetGuideEffectId) {
@@ -94,7 +95,10 @@ export default class Utils {
         }
 
         this.guideIntervalId = TimeUtil.setInterval(() => {
-            let playerLoc = Player.localPlayer.character.worldTransform.position;
+            let character = Player.localPlayer?.character;
+            if (!character) return;
+            let playerLoc = character?.worldTransform?.position;
+            if (!playerLoc) return;
             if (Math.abs(playerLoc.x - this.prePlayerLoc.x) < 0.1 && Math.abs(playerLoc.y - this.prePlayerLoc.y) < 0.1 && Math.abs(playerLoc.z - this.prePlayerLoc.z) < 0.1) return;
             this.prePlayerLoc = playerLoc;
 
