@@ -9,5 +9,10 @@ export default class GlobalData {
 
     public static worldCount: number = 500;
 
-    public static freeTime: number = 8;
+    public static freeTime: number = 10;
+
+    /**关闭背景音乐图标Guid */
+    public static offMusicIconGuid: string = `133403`;
+    /**打开背景音乐图标Guid */
+    public static onMusicIconGuid: string = `133445`;
 }

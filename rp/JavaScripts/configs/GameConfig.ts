@@ -5,6 +5,7 @@ import {ChatConfig} from "./Chat";
 import {ExpressionConfig} from "./Expression";
 import {InteractConfig} from "./Interact";
 import {LanguageConfig} from "./Language";
+import {MusicConfig} from "./Music";
 import {ShareIdConfig} from "./ShareId";
 
 export class GameConfig{
@@ -30,5 +31,6 @@ export class GameConfig{
 	public static get Expression():ExpressionConfig{ return this.getConfig(ExpressionConfig) };
 	public static get Interact():InteractConfig{ return this.getConfig(InteractConfig) };
 	public static get Language():LanguageConfig{ return this.getConfig(LanguageConfig) };
+	public static get Music():MusicConfig{ return this.getConfig(MusicConfig) };
 	public static get ShareId():ShareIdConfig{ return this.getConfig(ShareIdConfig) };
 }

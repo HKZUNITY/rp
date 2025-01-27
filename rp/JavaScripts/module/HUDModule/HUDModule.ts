@@ -1,5 +1,6 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
+import { IMusicElement } from "../../configs/Music";
 import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
@@ -113,6 +114,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.controllerBagUIVisible(false);
         this.controllerActionUIVisible(false);
         this.constollerGoodsCanvasVisible(false);
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
 
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
@@ -135,6 +137,11 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
         this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
         this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
+        this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
+        this.mOnOffMusicBtn.onClicked.add(this.addOnOffMusicButton.bind(this));
+        this.mLeftMusicBtn.onClicked.add(this.addPreMusicButton.bind(this));
+        this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
+        this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -167,6 +174,32 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenSignInButton(): void {
         this.getHUDModuleC.onOpenSignInAction.call();
+    }
+
+    private addOpenMusicButton(): void {
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+
+    private isOpenBGM: boolean = true;
+    private addOnOffMusicButton(): void {
+        this.isOpenBGM = !this.isOpenBGM;
+        this.getHUDModuleC.onOnOffMusicAction.call(this.isOpenBGM);
+        let offOnIcon = (this.isOpenBGM) ? GlobalData.onMusicIconGuid : GlobalData.offMusicIconGuid;
+        this.mOnOffMusicBtn.normalImageGuid = offOnIcon;
+        this.mOnOffMusicBtn.pressedImageGuid = offOnIcon;
+        this.mOnOffMusicBtn.disableImageGuid = offOnIcon;
+    }
+
+    private addNextMusicButton(): void {
+        this.getHUDModuleC.onSwitchBgmAction.call(1);
+    }
+
+    private addPreMusicButton(): void {
+        this.getHUDModuleC.onSwitchBgmAction.call(-1);
+    }
+
+    private addCloseMusicButton(): void {
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
     }
 
     private showHideGoodsButton(): void {
@@ -309,6 +342,11 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenSignInAction: Action = new Action();
     public onFreeTryOnAction: Action = new Action();
 
+    /**背景音乐按钮事件（true-打开|false-关闭） */
+    public onOnOffMusicAction: Action1<boolean> = new Action1<boolean>();
+    /**切换背景音乐（-1前一首|1下一首） */
+    public onSwitchBgmAction: Action1<number> = new Action1<number>();
+
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         this.initUI();
@@ -318,7 +356,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     private freeNpc: mw.Character = null;
     protected onEnterScene(sceneType: number): void {
         this.getHUDPanel.show();
-        this.playBgMusic();
+        this.playBGMusic(0);
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
         this.initFreeNpc();
@@ -344,6 +382,31 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
         Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
+        this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
+        this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
+    }
+
+    private addOnOffMusicAction(isOpenBGM: boolean): void {
+        isOpenBGM ? this.playBGMusic(0) : SoundService.stopBGM();
+    }
+
+    /**当前播放的背景音乐 */
+    private currentBgmIndex: number = 1;
+    /**背景音乐 */
+    private bgmMusics: IMusicElement[] = [];
+    /**播放背景音乐 */
+    private playBGMusic(bgmIndex: number): void {
+        if (!this.bgmMusics || this.bgmMusics?.length == 0) this.bgmMusics = GameConfig.Music.getAllElement();
+
+        this.currentBgmIndex = this.currentBgmIndex + bgmIndex;
+        if (this.currentBgmIndex > this.bgmMusics.length) {
+            this.currentBgmIndex = 1;
+        } else if (this.currentBgmIndex < 1) {
+            this.currentBgmIndex = this.bgmMusics.length;
+        }
+        let bgmId = this.bgmMusics[this.currentBgmIndex - 1].Guid;
+        SoundService.playBGM(bgmId);
+        this.getHUDPanel.mMusicText.text = this.bgmMusics[this.currentBgmIndex - 1].Annotation;
     }
 
     private onJumpActionHandler(): void {
@@ -534,10 +597,6 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
     public action(bagId: number): void {
         this.getDanMuModuleC.onClickBagItemAction.call(bagId);
-    }
-
-    private playBgMusic(): void {
-        SoundService.playBGM(`63341`);
     }
 
     /**全局UI点击音效唯一标识 */

@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.25-12.45.54
+ * TIME: 2025.01.27-15.06.29
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -105,6 +105,20 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage/mOpenSignInTextBlock') as mw.TextBlock
 		}
 		return this.mOpenSignInTextBlock_Internal
+	}
+	private mOpenMusicImage_Internal: mw.Image
+	public get mOpenMusicImage(): mw.Image {
+		if(!this.mOpenMusicImage_Internal&&this.uiWidgetBase) {
+			this.mOpenMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage') as mw.Image
+		}
+		return this.mOpenMusicImage_Internal
+	}
+	private mOpenMusicButton_Internal: mw.StaleButton
+	public get mOpenMusicButton(): mw.StaleButton {
+		if(!this.mOpenMusicButton_Internal&&this.uiWidgetBase) {
+			this.mOpenMusicButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage/mOpenMusicButton') as mw.StaleButton
+		}
+		return this.mOpenMusicButton_Internal
 	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
@@ -218,6 +232,48 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mShowHideGoodsButton_Internal
 	}
+	private mMusicCanvas_Internal: mw.Canvas
+	public get mMusicCanvas(): mw.Canvas {
+		if(!this.mMusicCanvas_Internal&&this.uiWidgetBase) {
+			this.mMusicCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas') as mw.Canvas
+		}
+		return this.mMusicCanvas_Internal
+	}
+	private mCloseMusicBtn_Internal: mw.Button
+	public get mCloseMusicBtn(): mw.Button {
+		if(!this.mCloseMusicBtn_Internal&&this.uiWidgetBase) {
+			this.mCloseMusicBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas/mCloseMusicBtn') as mw.Button
+		}
+		return this.mCloseMusicBtn_Internal
+	}
+	private mMusicText_Internal: mw.TextBlock
+	public get mMusicText(): mw.TextBlock {
+		if(!this.mMusicText_Internal&&this.uiWidgetBase) {
+			this.mMusicText_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas/Canvas/mMusicText') as mw.TextBlock
+		}
+		return this.mMusicText_Internal
+	}
+	private mLeftMusicBtn_Internal: mw.Button
+	public get mLeftMusicBtn(): mw.Button {
+		if(!this.mLeftMusicBtn_Internal&&this.uiWidgetBase) {
+			this.mLeftMusicBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas/Canvas/mLeftMusicBtn') as mw.Button
+		}
+		return this.mLeftMusicBtn_Internal
+	}
+	private mOnOffMusicBtn_Internal: mw.Button
+	public get mOnOffMusicBtn(): mw.Button {
+		if(!this.mOnOffMusicBtn_Internal&&this.uiWidgetBase) {
+			this.mOnOffMusicBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas/Canvas/mOnOffMusicBtn') as mw.Button
+		}
+		return this.mOnOffMusicBtn_Internal
+	}
+	private mRightMusicBtn_Internal: mw.Button
+	public get mRightMusicBtn(): mw.Button {
+		if(!this.mRightMusicBtn_Internal&&this.uiWidgetBase) {
+			this.mRightMusicBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMusicCanvas/Canvas/mRightMusicBtn') as mw.Button
+		}
+		return this.mRightMusicBtn_Internal
+	}
 
 
 	protected onAwake() {
@@ -262,6 +318,13 @@ export default class HUDPanel_Generate extends UIScript {
 		});
 		this.initLanguage(this.mOpenSignInButton);
 		this.mOpenSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenMusicButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenMusicButton");
+		});
+		this.initLanguage(this.mOpenMusicButton);
+		this.mOpenMusicButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
@@ -309,6 +372,30 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mShowHideGoodsButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mCloseMusicBtn.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mCloseMusicBtn");
+		});
+		this.mCloseMusicBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mLeftMusicBtn.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mLeftMusicBtn");
+		});
+		this.mLeftMusicBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOnOffMusicBtn.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOnOffMusicBtn");
+		});
+		this.mOnOffMusicBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mRightMusicBtn.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mRightMusicBtn");
+		});
+		this.mRightMusicBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		//按钮多语言
 		
 		//文本多语言
@@ -320,6 +407,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)
+		
+	
+		this.initLanguage(this.mMusicText)
 		
 	
 		//文本多语言

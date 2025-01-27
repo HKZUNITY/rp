@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.01.25-12.45.54
+ * TIME: 2025.01.27-15.06.29
  */
  
 @UIBind('UI/module/HUDModule/HUDItem.ui')
