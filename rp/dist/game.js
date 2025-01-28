@@ -1860,7 +1860,7 @@ GlobalData.languageId = 1;
 GlobalData.isOpenIAA = false;
 GlobalData.bagCount = 5;
 GlobalData.worldCount = 500;
-GlobalData.freeTime = 10;
+GlobalData.freeTime = 999;
 /**关闭背景音乐图标Guid */
 GlobalData.offMusicIconGuid = `133403`;
 /**打开背景音乐图标Guid */
@@ -3394,6 +3394,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
+        Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
@@ -10981,7 +10982,7 @@ let CopyCharacter = class CopyCharacter extends Script {
             if (!this.isCanTrigger)
                 return;
             this.isCanTrigger = false;
-            TimeUtil.delaySecond(10).then(() => { this.isCanTrigger = true; });
+            TimeUtil.delaySecond(60).then(() => { this.isCanTrigger = true; });
             console.error(`aaaaaaa2`);
             character.setDescription(this.gameObject.parent.getDescription());
             character.asyncReady().then(() => {

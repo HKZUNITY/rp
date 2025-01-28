@@ -11,7 +11,7 @@ export default class CopyCharacter extends Script {
 
             if (!this.isCanTrigger) return;
             this.isCanTrigger = false;
-            TimeUtil.delaySecond(10).then(() => { this.isCanTrigger = true; });
+            TimeUtil.delaySecond(60).then(() => { this.isCanTrigger = true; });
             console.error(`aaaaaaa2`);
 
             character.setDescription((this.gameObject.parent as mw.Character).getDescription());

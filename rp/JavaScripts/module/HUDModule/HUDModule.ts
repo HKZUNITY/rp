@@ -119,6 +119,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
+        Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
