@@ -125,6 +125,16 @@ export class HUDPanel extends HUDPanel_Generate {
         }
     }
 
+    public updateFreeTime(): void {
+        console.error(`wfz - freeTime:${GlobalData.freeTime}`);
+        if (GlobalData.freeTime <= 0 || GlobalData.freeTime >= 999) {
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
+        } else {
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
+        }
+    }
+
     private bindButton(): void {
         this.mJumpButton.onClicked.add(this.addJumpButton.bind(this));
         this.mCrouchButton.onClicked.add(this.addCrouchButton.bind(this));
@@ -361,6 +371,17 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
         this.initFreeNpc();
+    }
+
+    public net_syncFreeTime(freeTime: number): void {
+        if (!isNaN(freeTime) && freeTime > 0) GlobalData.freeTime = freeTime;
+        if (mw.UIService.getUI(HUDPanel, false)?.visible) {
+            this.getHUDPanel.updateFreeTime();
+        } else {
+            TimeUtil.delaySecond(10).then(() => {
+                this.getHUDPanel.updateFreeTime();
+            });
+        }
     }
 
     private async initFreeNpc(): Promise<void> {
@@ -624,7 +645,15 @@ export class HUDModuleS extends ModuleS<HUDModuleC, null> {
 
     }
 
+    protected onPlayerEnterGame(player: mw.Player): void {
+        this.initFreeTime(player);
+    }
 
+    private initFreeTime(player: mw.Player): void {
+        Utils.getCustomdata(`FreeTime`).then((freeTime: number) => {
+            this.getClient(player).net_syncFreeTime(freeTime);
+        });
+    }
 }
 
 export class SharePanel extends SharePanel_Generate {

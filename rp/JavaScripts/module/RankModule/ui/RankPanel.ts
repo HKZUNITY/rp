@@ -1,4 +1,5 @@
-﻿import { GameConfig } from "../../../configs/GameConfig";
+﻿import { Notice } from "../../../common/notice/Notice";
+import { GameConfig } from "../../../configs/GameConfig";
 import GlobalData from "../../../GlobalData";
 import Utils from "../../../tools/Utils";
 import RankPanel_Generate from "../../../ui-generate/module/RankModule/RankPanel_generate";
@@ -54,6 +55,10 @@ export default class RankPanel extends RankPanel_Generate {
 	}
 
 	private bindOpenRoomRankButton(): void {
+		if (!this.roomItems || this.roomItems?.length == 0) {
+			Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+			return;
+		}
 		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
 	}

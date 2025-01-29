@@ -1587,7 +1587,7 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$3 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_FreeChangeOfClothes", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"]];
+const EXCELDATA$3 = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_FreeChangeOfClothes", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$3);
@@ -1769,6 +1769,9 @@ class LanguageConfig extends ConfigBase {
     ;
     /**试穿结束，请打开商店重新试穿*/
     get Text_FreeChangeOfClothes3() { return this.getElement(59); }
+    ;
+    /**排行榜出错啦*/
+    get Text_Rank1() { return this.getElement(60); }
     ;
 }
 
@@ -3399,6 +3402,16 @@ class HUDPanel extends HUDPanel_Generate$1 {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
     }
+    updateFreeTime() {
+        console.error(`wfz - freeTime:${GlobalData.freeTime}`);
+        if (GlobalData.freeTime <= 0 || GlobalData.freeTime >= 999) {
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
+        }
+    }
     bindButton() {
         this.mJumpButton.onClicked.add(this.addJumpButton.bind(this));
         this.mCrouchButton.onClicked.add(this.addCrouchButton.bind(this));
@@ -3614,6 +3627,18 @@ class HUDModuleC extends ModuleC {
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true); // 设置“去装扮”按钮隐藏
         this.initFreeNpc();
+    }
+    net_syncFreeTime(freeTime) {
+        if (!isNaN(freeTime) && freeTime > 0)
+            GlobalData.freeTime = freeTime;
+        if (mw.UIService.getUI(HUDPanel, false)?.visible) {
+            this.getHUDPanel.updateFreeTime();
+        }
+        else {
+            TimeUtil.delaySecond(10).then(() => {
+                this.getHUDPanel.updateFreeTime();
+            });
+        }
     }
     async initFreeNpc() {
         if (!this.freeNpc)
@@ -3843,6 +3868,14 @@ class HUDModuleC extends ModuleC {
 class HUDModuleS extends ModuleS {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
+    }
+    onPlayerEnterGame(player) {
+        this.initFreeTime(player);
+    }
+    initFreeTime(player) {
+        Utils.getCustomdata(`FreeTime`).then((freeTime) => {
+            this.getClient(player).net_syncFreeTime(freeTime);
+        });
     }
 }
 class SharePanel extends SharePanel_Generate$1 {
@@ -9104,6 +9137,10 @@ class RankPanel extends RankPanel_Generate$1 {
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
     }
     bindOpenRoomRankButton() {
+        if (!this.roomItems || this.roomItems?.length == 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+            return;
+        }
         Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
     }
@@ -9246,7 +9283,16 @@ class RankModuleC extends ModuleC {
     }
     addOnOffMainUI(isShow) {
         console.error(`isShow: ${isShow}`);
-        isShow ? this.getRankPanel.show() : this.getRankPanel.hide();
+        if (isShow) {
+            if (!this.roomDatas || this.roomDatas?.length == 0) {
+                Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+                return;
+            }
+            this.getRankPanel.show();
+        }
+        else {
+            this.getRankPanel.hide();
+        }
     }
     onEnterScene(sceneType) {
         TimeUtil.delaySecond(5).then(() => {
@@ -9256,7 +9302,13 @@ class RankModuleC extends ModuleC {
             let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
-            TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+            TimeUtil.delaySecond(5).then(() => {
+                if (!this.roomDatas || this.roomDatas?.length == 0) {
+                    Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+                    return;
+                }
+                this.getRankPanel.show();
+            });
         });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {

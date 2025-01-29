@@ -1,4 +1,6 @@
-﻿import { HUDModuleC } from "../HUDModule/HUDModule";
+﻿import { Notice } from "../../common/notice/Notice";
+import { GameConfig } from "../../configs/GameConfig";
+import { HUDModuleC } from "../HUDModule/HUDModule";
 import { InteractionData } from "../InteractionModule/InteractionModule";
 import { RankData, RoomData, WorldData } from "./RankData";
 import RankModuleS from "./RankModuleS";
@@ -55,7 +57,15 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
 
     private addOnOffMainUI(isShow: boolean): void {
         console.error(`isShow: ${isShow}`);
-        isShow ? this.getRankPanel.show() : this.getRankPanel.hide();
+        if (isShow) {
+            if (!this.roomDatas || this.roomDatas?.length == 0) {
+                Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+                return;
+            }
+            this.getRankPanel.show();
+        } else {
+            this.getRankPanel.hide();
+        }
     }
 
     protected onEnterScene(sceneType: number): void {
@@ -66,7 +76,13 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
-            TimeUtil.delaySecond(5).then(() => { this.getRankPanel.show(); });
+            TimeUtil.delaySecond(5).then(() => {
+                if (!this.roomDatas || this.roomDatas?.length == 0) {
+                    Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
+                    return;
+                }
+                this.getRankPanel.show();
+            });
         });
     }
 
