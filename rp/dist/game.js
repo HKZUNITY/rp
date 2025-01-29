@@ -9131,8 +9131,8 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
-        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
-        Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
     }
@@ -9157,11 +9157,17 @@ class RankPanel extends RankPanel_Generate$1 {
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
     }
     refreshRankPanel_RoomWorld(roomDatas, curRoomIndex, worldDatas, curWorldIndex) {
-        this.refreshRoomRankPanel(roomDatas, curRoomIndex);
-        this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+        if (roomDatas && roomDatas?.length > 0) {
+            this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+            Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+        }
+        if (worldDatas && worldDatas?.length > 0)
+            this.refreshWorldRankPanel(worldDatas, curWorldIndex);
     }
     refreshRankPanel_Room(roomDatas, curRoomIndex) {
-        this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+        if (roomDatas && roomDatas?.length > 0)
+            this.refreshRoomRankPanel(roomDatas, curRoomIndex);
     }
     refreshRoomRankPanel(roomDatas, curRoomIndex) {
         if (roomDatas.length > this.roomItems.length) {
@@ -9187,7 +9193,8 @@ class RankPanel extends RankPanel_Generate$1 {
         }
     }
     refreshRankPanel_World(worldDatas, curWorldIndex) {
-        this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+        if (worldDatas && worldDatas?.length > 0)
+            this.refreshWorldRankPanel(worldDatas, curWorldIndex);
     }
     refreshWorldRankPanel(worldDatas, curWorldIndex) {
         if (worldDatas.length > this.worldItems.length) {
@@ -9284,10 +9291,6 @@ class RankModuleC extends ModuleC {
     addOnOffMainUI(isShow) {
         console.error(`isShow: ${isShow}`);
         if (isShow) {
-            if (!this.roomDatas || this.roomDatas?.length == 0) {
-                Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
-                return;
-            }
             this.getRankPanel.show();
         }
         else {
@@ -9303,10 +9306,6 @@ class RankModuleC extends ModuleC {
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
             TimeUtil.delaySecond(5).then(() => {
-                if (!this.roomDatas || this.roomDatas?.length == 0) {
-                    Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
-                    return;
-                }
                 this.getRankPanel.show();
             });
         });

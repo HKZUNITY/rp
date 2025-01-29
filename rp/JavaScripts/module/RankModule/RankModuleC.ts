@@ -58,10 +58,6 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
     private addOnOffMainUI(isShow: boolean): void {
         console.error(`isShow: ${isShow}`);
         if (isShow) {
-            if (!this.roomDatas || this.roomDatas?.length == 0) {
-                Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
-                return;
-            }
             this.getRankPanel.show();
         } else {
             this.getRankPanel.hide();
@@ -77,10 +73,6 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
             TimeUtil.delaySecond(5).then(() => {
-                if (!this.roomDatas || this.roomDatas?.length == 0) {
-                    Notice.showDownNotice(GameConfig.Language.Text_Rank1.Value);
-                    return;
-                }
                 this.getRankPanel.show();
             });
         });

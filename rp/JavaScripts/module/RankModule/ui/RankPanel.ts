@@ -47,8 +47,8 @@ export default class RankPanel extends RankPanel_Generate {
 		this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
 
-		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
-		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
 
 		Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
@@ -80,12 +80,16 @@ export default class RankPanel extends RankPanel_Generate {
 
 	public refreshRankPanel_RoomWorld(roomDatas: RoomData[], curRoomIndex: number,
 		worldDatas: WorldData[], curWorldIndex: number): void {
-		this.refreshRoomRankPanel(roomDatas, curRoomIndex);
-		this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+		if (roomDatas && roomDatas?.length > 0) {
+			this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+			Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
+			Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+		}
+		if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
 	}
 
 	public refreshRankPanel_Room(roomDatas: RoomData[], curRoomIndex: number): void {
-		this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+		if (roomDatas && roomDatas?.length > 0) this.refreshRoomRankPanel(roomDatas, curRoomIndex);
 	}
 
 	private roomItems: RoomItem[] = [];
@@ -113,7 +117,7 @@ export default class RankPanel extends RankPanel_Generate {
 	}
 
 	public refreshRankPanel_World(worldDatas: WorldData[], curWorldIndex: number): void {
-		this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+		if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
 	}
 
 	private worldItems: WorldItem[] = [];
