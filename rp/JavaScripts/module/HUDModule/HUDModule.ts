@@ -117,7 +117,8 @@ export class HUDPanel extends HUDPanel_Generate {
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
 
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
-        this.mOpenClothTextBlock.text = GameConfig.Language.Text_FreeChangeOfClothes.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_OpenClothTextBlock.Value;
+        this.mOpenMallTextBlock.text = GameConfig.Language.Text_OpenMallTextBlock.Value;
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
@@ -153,6 +154,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mLeftMusicBtn.onClicked.add(this.addPreMusicButton.bind(this));
         this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
+        this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -211,6 +213,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addCloseMusicButton(): void {
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
+    }
+
+    private addOpenMallButton(): void {
+        this.getHUDModuleC.onOpenMallAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -357,6 +363,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOnOffMusicAction: Action1<boolean> = new Action1<boolean>();
     /**切换背景音乐（-1前一首|1下一首） */
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
+    public onOpenMallAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

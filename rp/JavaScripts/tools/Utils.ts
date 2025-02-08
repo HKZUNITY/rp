@@ -220,4 +220,12 @@ export default class Utils {
         code = await DataStorage.asyncSetData(saveKey, dataInfo);
         return code == mw.DataStorageResultCode.Success;
     }
+
+    public static copyArray(array: any[]): any[] {
+        let newArray: any[] = [];
+        for (let i = 0; i < array.length; ++i) {
+            newArray.push(array[i]);
+        }
+        return newArray;
+    }
 }

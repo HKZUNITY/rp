@@ -5,6 +5,9 @@ import DanMuModuleC from "./module/DanMuModule/DanMuModuleC";
 import DanMuModuleS from "./module/DanMuModule/DanMuModuleS";
 import { HUDModuleC, HUDModuleS } from "./module/HUDModule/HUDModule";
 import { InteractionData, InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
+import MallData from "./module/MallModule/MallData";
+import MallModuleC from "./module/MallModule/MallModuleC";
+import MallModuleS from "./module/MallModule/MallModuleS";
 import { NavigationModuleC, NavigationModuleS } from "./module/NavigationModule/NavigationModule";
 import { RankData } from "./module/RankModule/RankData";
 import RankModuleC from "./module/RankModule/RankModuleC";
@@ -46,6 +49,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
+        ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
     }
 
     /**

@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.01.27-15.06.29
+ * TIME: 2025.02.08-23.46.32
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -14,6 +14,20 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mVirtualJoystickPanel_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mVirtualJoystickPanel') as mw.VirtualJoystickPanel
 		}
 		return this.mVirtualJoystickPanel_Internal
+	}
+	private mOpenShareImage_Internal: mw.Image
+	public get mOpenShareImage(): mw.Image {
+		if(!this.mOpenShareImage_Internal&&this.uiWidgetBase) {
+			this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage') as mw.Image
+		}
+		return this.mOpenShareImage_Internal
+	}
+	private mOpenShareButton_Internal: mw.StaleButton
+	public get mOpenShareButton(): mw.StaleButton {
+		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
+			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton') as mw.StaleButton
+		}
+		return this.mOpenShareButton_Internal
 	}
 	private mOpenSetImage_Internal: mw.Image
 	public get mOpenSetImage(): mw.Image {
@@ -29,19 +43,33 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mOpenSetButton_Internal
 	}
-	private mOpenShareImage_Internal: mw.Image
-	public get mOpenShareImage(): mw.Image {
-		if(!this.mOpenShareImage_Internal&&this.uiWidgetBase) {
-			this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage') as mw.Image
+	private mOpenMusicImage_Internal: mw.Image
+	public get mOpenMusicImage(): mw.Image {
+		if(!this.mOpenMusicImage_Internal&&this.uiWidgetBase) {
+			this.mOpenMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage') as mw.Image
 		}
-		return this.mOpenShareImage_Internal
+		return this.mOpenMusicImage_Internal
 	}
-	private mOpenShareButton_Internal: mw.StaleButton
-	public get mOpenShareButton(): mw.StaleButton {
-		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
-			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton') as mw.StaleButton
+	private mOpenMusicButton_Internal: mw.StaleButton
+	public get mOpenMusicButton(): mw.StaleButton {
+		if(!this.mOpenMusicButton_Internal&&this.uiWidgetBase) {
+			this.mOpenMusicButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage/mOpenMusicButton') as mw.StaleButton
 		}
-		return this.mOpenShareButton_Internal
+		return this.mOpenMusicButton_Internal
+	}
+	private mOpenRankImage_Internal: mw.Image
+	public get mOpenRankImage(): mw.Image {
+		if(!this.mOpenRankImage_Internal&&this.uiWidgetBase) {
+			this.mOpenRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage') as mw.Image
+		}
+		return this.mOpenRankImage_Internal
+	}
+	private mOpenRankButton_Internal: mw.StaleButton
+	public get mOpenRankButton(): mw.StaleButton {
+		if(!this.mOpenRankButton_Internal&&this.uiWidgetBase) {
+			this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton') as mw.StaleButton
+		}
+		return this.mOpenRankButton_Internal
 	}
 	private mOpenClothImage_Internal: mw.Image
 	public get mOpenClothImage(): mw.Image {
@@ -71,19 +99,26 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mFreeTextBlock_Internal
 	}
-	private mOpenRankImage_Internal: mw.Image
-	public get mOpenRankImage(): mw.Image {
-		if(!this.mOpenRankImage_Internal&&this.uiWidgetBase) {
-			this.mOpenRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage') as mw.Image
+	private mOpenMallImage_Internal: mw.Image
+	public get mOpenMallImage(): mw.Image {
+		if(!this.mOpenMallImage_Internal&&this.uiWidgetBase) {
+			this.mOpenMallImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMallImage') as mw.Image
 		}
-		return this.mOpenRankImage_Internal
+		return this.mOpenMallImage_Internal
 	}
-	private mOpenRankButton_Internal: mw.StaleButton
-	public get mOpenRankButton(): mw.StaleButton {
-		if(!this.mOpenRankButton_Internal&&this.uiWidgetBase) {
-			this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton') as mw.StaleButton
+	private mOpenMallButton_Internal: mw.StaleButton
+	public get mOpenMallButton(): mw.StaleButton {
+		if(!this.mOpenMallButton_Internal&&this.uiWidgetBase) {
+			this.mOpenMallButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMallImage/mOpenMallButton') as mw.StaleButton
 		}
-		return this.mOpenRankButton_Internal
+		return this.mOpenMallButton_Internal
+	}
+	private mOpenMallTextBlock_Internal: mw.TextBlock
+	public get mOpenMallTextBlock(): mw.TextBlock {
+		if(!this.mOpenMallTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenMallTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMallImage/mOpenMallTextBlock') as mw.TextBlock
+		}
+		return this.mOpenMallTextBlock_Internal
 	}
 	private mOpenSignInImage_Internal: mw.Image
 	public get mOpenSignInImage(): mw.Image {
@@ -105,20 +140,6 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage/mOpenSignInTextBlock') as mw.TextBlock
 		}
 		return this.mOpenSignInTextBlock_Internal
-	}
-	private mOpenMusicImage_Internal: mw.Image
-	public get mOpenMusicImage(): mw.Image {
-		if(!this.mOpenMusicImage_Internal&&this.uiWidgetBase) {
-			this.mOpenMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage') as mw.Image
-		}
-		return this.mOpenMusicImage_Internal
-	}
-	private mOpenMusicButton_Internal: mw.StaleButton
-	public get mOpenMusicButton(): mw.StaleButton {
-		if(!this.mOpenMusicButton_Internal&&this.uiWidgetBase) {
-			this.mOpenMusicButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage/mOpenMusicButton') as mw.StaleButton
-		}
-		return this.mOpenMusicButton_Internal
 	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
@@ -285,13 +306,6 @@ export default class HUDPanel_Generate extends UIScript {
 	protected initButtons() {
 		//按钮添加点击
 		
-		this.mOpenSetButton.onClicked.add(()=>{
-			Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
-		});
-		this.initLanguage(this.mOpenSetButton);
-		this.mOpenSetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-		
-	
 		this.mOpenShareButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
 		});
@@ -299,11 +313,18 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
-		this.mOpenClothButton.onClicked.add(()=>{
-			Event.dispatchToLocal("PlayButtonClick", "mOpenClothButton");
+		this.mOpenSetButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
 		});
-		this.initLanguage(this.mOpenClothButton);
-		this.mOpenClothButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		this.initLanguage(this.mOpenSetButton);
+		this.mOpenSetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenMusicButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenMusicButton");
+		});
+		this.initLanguage(this.mOpenMusicButton);
+		this.mOpenMusicButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mOpenRankButton.onClicked.add(()=>{
@@ -313,18 +334,25 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenRankButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mOpenClothButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenClothButton");
+		});
+		this.initLanguage(this.mOpenClothButton);
+		this.mOpenClothButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenMallButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenMallButton");
+		});
+		this.initLanguage(this.mOpenMallButton);
+		this.mOpenMallButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mOpenSignInButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mOpenSignInButton");
 		});
 		this.initLanguage(this.mOpenSignInButton);
 		this.mOpenSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-		
-	
-		this.mOpenMusicButton.onClicked.add(()=>{
-			Event.dispatchToLocal("PlayButtonClick", "mOpenMusicButton");
-		});
-		this.initLanguage(this.mOpenMusicButton);
-		this.mOpenMusicButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
@@ -404,6 +432,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mFreeTextBlock)
+		
+	
+		this.initLanguage(this.mOpenMallTextBlock)
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)

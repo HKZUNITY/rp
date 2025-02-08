@@ -7,6 +7,9 @@ import {InteractConfig} from "./Interact";
 import {LanguageConfig} from "./Language";
 import {MusicConfig} from "./Music";
 import {ShareIdConfig} from "./ShareId";
+import {Tab1Config} from "./Tab1";
+import {Tab2Config} from "./Tab2";
+import {Tab3Config} from "./Tab3";
 
 export class GameConfig{
 	private static configMap:Map<string, ConfigBase<IElementBase>> = new Map();
@@ -33,4 +36,7 @@ export class GameConfig{
 	public static get Language():LanguageConfig{ return this.getConfig(LanguageConfig) };
 	public static get Music():MusicConfig{ return this.getConfig(MusicConfig) };
 	public static get ShareId():ShareIdConfig{ return this.getConfig(ShareIdConfig) };
+	public static get Tab1():Tab1Config{ return this.getConfig(Tab1Config) };
+	public static get Tab2():Tab2Config{ return this.getConfig(Tab2Config) };
+	public static get Tab3():Tab3Config{ return this.getConfig(Tab3Config) };
 }
