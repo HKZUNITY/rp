@@ -586,7 +586,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
             case "AE_OnOpen":
                 Event.dispatchToLocal(`OnOffMainUI`, false);
                 this.isOpenAvatar = true;
-                if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
+                // if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
                 break;
         }
@@ -646,7 +646,7 @@ export class HUDModuleS extends ModuleS<HUDModuleC, null> {
     }
 
     protected onPlayerEnterGame(player: mw.Player): void {
-        this.initFreeTime(player);
+        // this.initFreeTime(player);
     }
 
     private initFreeTime(player: mw.Player): void {

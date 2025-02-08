@@ -416,13 +416,13 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
         if (this.guideStep >= this.guideBagIds.length - 1) {
-            this.localPlayer.character.asyncReady().then(() => {
-                this.getHUDModuleC.onOpenClothAction.call();
-            });
+            // this.localPlayer.character.asyncReady().then(() => {
+            //     this.getHUDModuleC.onOpenClothAction.call();
+            // });
             return;
         }
         this.getGuidePanel.showStartTips(() => {
-            this.getHUDModuleC.onOpenClothAction.call();
+            // this.getHUDModuleC.onOpenClothAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {
