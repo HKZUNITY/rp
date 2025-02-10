@@ -1,9 +1,17 @@
-﻿import { GameConfig } from "../../../configs/GameConfig";
+﻿import { IBackHairElement } from "../../../configs/BackHair";
+import { IBodyTypeElement } from "../../../configs/BodyType";
+import { IFrontHairElement } from "../../../configs/FrontHair";
+import { IFullHairElement } from "../../../configs/FullHair";
+import { GameConfig } from "../../../configs/GameConfig";
+import { IOutfitElement } from "../../../configs/Outfit";
 import { ITab1Element } from "../../../configs/Tab1";
+import { ITopElement } from "../../../configs/Top";
 import Utils from "../../../tools/Utils";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
-import { TabType, TabIdData } from "../MallData";
+import { Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
+import MallItem_Big from "./MallItem_Big";
+import MallItem_Small from "./MallItem_Small";
 import MallTab1 from "./MallTab1";
 import MallTab2 from "./MallTab2";
 import MallTab3 from "./MallTab3";
@@ -108,7 +116,9 @@ export default class MallPanel extends MallPanel_Generate {
 		this.initItem(TabType.Tab3);
 	}
 
+	private currentTabType: TabType = TabType.None;
 	private initItem(tabType: TabType): void {
+		this.currentTabType = tabType;
 		this.calculateItemCanvas(tabType);
 		switch (tabType) {
 			case TabType.None:
@@ -121,18 +131,20 @@ export default class MallPanel extends MallPanel_Generate {
 			case TabType.Tab2:
 				this.initTab2IdDataMap();
 				console.error(`tab2Id:${this.tab2Id}`);
+				this.initTab2Item();
 				break;
 			case TabType.Tab3:
 				this.initTab3IdDataMap();
 				console.error(`tab3Id:${this.tab3Id}`);
+				this.initTab3Item();
 				break;
 			default:
 				break;
 		}
-		console.error(this.tabIdDataMap.size);
-		this.tabIdDataMap.forEach((value: TabIdData) => {
-			console.error(JSON.stringify(value));
-		});
+		// console.error(this.tabIdDataMap.size);
+		// this.tabIdDataMap.forEach((value: TabIdData) => {
+		// 	console.error(JSON.stringify(value));
+		// });
 	}
 
 	private calculateItemCanvas(tabType: TabType): void {
@@ -157,6 +169,7 @@ export default class MallPanel extends MallPanel_Generate {
 				break;
 		}
 		this.mItemScrollBox.position = new mw.Vector(0, positionY + sizeY);
+		this.mItemScrollBox.size = new mw.Vector(this.mItemScrollBox.size.x, this.rootCanvas.size.y - this.mItemScrollBox.position.y);
 	}
 
 	private tabIdDataMap: Map<number, TabIdData> = new Map<number, TabIdData>();
@@ -292,6 +305,120 @@ export default class MallPanel extends MallPanel_Generate {
 				value.isOn = (key == this.tab1Id);
 			});
 		}
+	}
+
+	private mallItem_Small: MallItem_Small[] = [];
+	private mallItem_Big: MallItem_Big[] = [];
+	private mallItemAssetIds: string[] = [];
+	private mallItemMap: Map<string, MallItem_Small | MallItem_Big> = new Map<string, MallItem_Small | MallItem_Big>();
+	private mallItem2Types: number[] = [Tab2Type.Tab2_Outfit, Tab2Type.Tab2_Outfit_Collection];
+	private currentConfigId: number = 0;
+	private clearMallItemData(): void {
+		this.mallItemMap.clear();
+		this.mallItemAssetIds.length = 0;
+	}
+	private initTab2Item(): void {
+		this.clearMallItemData();
+		switch (this.tab2Id) {
+			case Tab2Type.Tab2_BodyType:
+				// GameConfig.BodyType.getAllElement().forEach((value: IBodyTypeElement) => { this.mallItemAssetIds.push(value.Scale); });
+				break;
+			case Tab2Type.Tab2_Outfit:
+				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Top:
+				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			default:
+				break;
+		}
+		this.currentConfigId = this.tab2Id;
+		this.initMallItem();
+	}
+
+	private initTab3Item(): void {
+		this.clearMallItemData();
+		switch (this.tab3Id) {
+			case Tab3Type.Tab3_FullHair:
+				GameConfig.FullHair.getAllElement().forEach((value: IFullHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_FrontHair:
+				GameConfig.FrontHair.getAllElement().forEach((value: IFrontHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_BackHair:
+				GameConfig.BackHair.getAllElement().forEach((value: IBackHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			default:
+				break;
+		}
+		this.currentConfigId = this.tab3Id;
+		this.initMallItem();
+	}
+
+	private initMallItem(): void {
+		if (!this.mallItemAssetIds || this.mallItemAssetIds.length == 0) return;
+		if (this.mallItem2Types.includes(this.currentConfigId)) {
+			this.mallItem_Small.forEach((value: MallItem_Small) => {
+				Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+			});
+			if (this.mallItemAssetIds.length > this.mallItem_Big.length) {
+				for (let i = 0; i < this.mallItem_Big.length; ++i) {
+					this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
+				}
+				for (let i = this.mallItem_Big.length; i < this.mallItemAssetIds.length; ++i) {
+					let mallItem_Big = UIService.create(MallItem_Big);
+					mallItem_Big.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					this.mItemContentCanvas.addChild(mallItem_Big.uiObject);
+					this.mallItem_Big.push(mallItem_Big);
+					this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Big);
+				}
+			} else {
+				for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+					this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
+				}
+				for (let i = this.mallItemAssetIds.length; i < this.mallItem_Big.length; ++i) {
+					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.Collapsed);
+				}
+			}
+		} else {
+			this.mallItem_Big.forEach((value: MallItem_Big) => {
+				Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+			});
+			if (this.mallItemAssetIds.length > this.mallItem_Small.length) {
+				for (let i = 0; i < this.mallItem_Small.length; ++i) {
+					this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
+				}
+				for (let i = this.mallItem_Small.length; i < this.mallItemAssetIds.length; ++i) {
+					let mallItem_Small = UIService.create(MallItem_Small);
+					mallItem_Small.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					this.mItemContentCanvas.addChild(mallItem_Small.uiObject);
+					this.mallItem_Small.push(mallItem_Small);
+					this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Small);
+				}
+			} else {
+				for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+					this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
+				}
+				for (let i = this.mallItemAssetIds.length; i < this.mallItem_Small.length; ++i) {
+					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.Collapsed);
+				}
+			}
+		}
+		this.checkMallItemState();
+	}
+
+	private checkMallItemState(): void {
+		let assetId = this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
+		if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId)) return;
+		this.mallItemMap.get(assetId).updateSelectState(true);
 	}
 
 	private hideTab123Canvas(): void {

@@ -392,7 +392,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     }
 
     private async initFreeNpc(): Promise<void> {
-        if (!this.freeNpc) this.freeNpc = await mw.GameObject.asyncFindGameObjectById("3CD2E610") as mw.Character;
+        // if (!this.freeNpc) this.freeNpc = await mw.GameObject.asyncFindGameObjectById("3CD2E610") as mw.Character;
     }
 
     private initUI(): void {

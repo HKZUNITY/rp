@@ -1,4 +1,3 @@
-﻿
-export default class Mall {
+﻿export default class Mall {
 
 }
