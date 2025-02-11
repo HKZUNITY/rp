@@ -228,4 +228,12 @@ export default class Utils {
         }
         return newArray;
     }
+
+    private static inColorHexStrMap: Map<string, string> = new Map<string, string>();
+    public static colorHexToLinearColorToString(inColorHex: string): string {
+        if (this.inColorHexStrMap.has(inColorHex)) return this.inColorHexStrMap.get(inColorHex);
+        let inColorHexStr = mw.LinearColor.colorHexToLinearColor(inColorHex).toString();
+        this.inColorHexStrMap.set(inColorHex, inColorHexStr);
+        return inColorHexStr;
+    }
 }

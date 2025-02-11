@@ -1,16 +1,34 @@
-﻿import { IBackHairElement } from "../../../configs/BackHair";
+﻿import { Notice } from "../../../common/notice/Notice";
+import { IBackHairElement } from "../../../configs/BackHair";
+import { IBlushElement } from "../../../configs/Blush";
 import { IBodyTypeElement } from "../../../configs/BodyType";
+import { IBottomElement } from "../../../configs/Bottom";
+import { IEyebrowsElement } from "../../../configs/Eyebrows";
+import { IEyelashesElement } from "../../../configs/Eyelashes";
+import { IEyeshadowElement } from "../../../configs/Eyeshadow";
+import { IFaceElement } from "../../../configs/Face";
+import { IFaceExpressionElement } from "../../../configs/FaceExpression";
 import { IFrontHairElement } from "../../../configs/FrontHair";
 import { IFullHairElement } from "../../../configs/FullHair";
 import { GameConfig } from "../../../configs/GameConfig";
+import { IGlovesElement } from "../../../configs/Gloves";
+import { ILensElement } from "../../../configs/Lens";
+import { ILipMakeupElement } from "../../../configs/LipMakeup";
+import { ILowerHighlightElement } from "../../../configs/LowerHighlight";
 import { IOutfitElement } from "../../../configs/Outfit";
+import { IPupilStyleElement } from "../../../configs/PupilStyle";
+import { IShoesElement } from "../../../configs/Shoes";
+import { ISkinToneElement } from "../../../configs/SkinTone";
 import { ITab1Element } from "../../../configs/Tab1";
 import { ITopElement } from "../../../configs/Top";
+import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
 import Utils from "../../../tools/Utils";
+import ExecutorManager from "../../../tools/WaitingQueue";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
 import { Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 import MallItem_Big from "./MallItem_Big";
+import MallItem_Color from "./MallItem_Color";
 import MallItem_Small from "./MallItem_Small";
 import MallTab1 from "./MallTab1";
 import MallTab2 from "./MallTab2";
@@ -307,11 +325,13 @@ export default class MallPanel extends MallPanel_Generate {
 		}
 	}
 
+	private mallItem_Color: MallItem_Color[] = [];
 	private mallItem_Small: MallItem_Small[] = [];
 	private mallItem_Big: MallItem_Big[] = [];
 	private mallItemAssetIds: string[] = [];
-	private mallItemMap: Map<string, MallItem_Small | MallItem_Big> = new Map<string, MallItem_Small | MallItem_Big>();
-	private mallItem2Types: number[] = [Tab2Type.Tab2_Outfit, Tab2Type.Tab2_Outfit_Collection];
+	private mallItemMap: Map<string, MallItem_Small | MallItem_Big | MallItem_Color> = new Map<string, MallItem_Small | MallItem_Big | MallItem_Color>();
+	private mallItemHasBig: number[] = [Tab2Type.Tab2_BodyType, Tab2Type.Tab2_Outfit];
+	private mallItemHasColor: number[] = [Tab2Type.Tab2_SkinTone];
 	private currentConfigId: number = 0;
 	private clearMallItemData(): void {
 		this.mallItemMap.clear();
@@ -321,13 +341,37 @@ export default class MallPanel extends MallPanel_Generate {
 		this.clearMallItemData();
 		switch (this.tab2Id) {
 			case Tab2Type.Tab2_BodyType:
-				// GameConfig.BodyType.getAllElement().forEach((value: IBodyTypeElement) => { this.mallItemAssetIds.push(value.Scale); });
+				GameConfig.BodyType.getAllElement().forEach((value: IBodyTypeElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab2Type.Tab2_SkinTone:
+				GameConfig.SkinTone.getAllElement().forEach((value: ISkinToneElement) => { this.mallItemAssetIds.push(value.SkinTone); });
+				break;
+			case Tab2Type.Tab2_Face:
+				GameConfig.Face.getAllElement().forEach((value: IFaceElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Eyebrows:
+				GameConfig.Eyebrows.getAllElement().forEach((value: IEyebrowsElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Expression:
+				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_Outfit:
-				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				// GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Top:
 				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Bottom:
+				GameConfig.Bottom.getAllElement().forEach((value: IBottomElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Shoes:
+				GameConfig.Shoes.getAllElement().forEach((value: IShoesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Gloves:
+				GameConfig.Gloves.getAllElement().forEach((value: IGlovesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab2Type.Tab2_Pet:
+				// GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			default:
 				break;
@@ -339,6 +383,33 @@ export default class MallPanel extends MallPanel_Generate {
 	private initTab3Item(): void {
 		this.clearMallItemData();
 		switch (this.tab3Id) {
+			case Tab3Type.Tab3_PupilStyle:
+				GameConfig.PupilStyle.getAllElement().forEach((value: IPupilStyleElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_Lens:
+				GameConfig.Lens.getAllElement().forEach((value: ILensElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_UpperHighlight:
+				GameConfig.UpperHighlight.getAllElement().forEach((value: IUpperHighlightElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_LowerHighlight:
+				GameConfig.LowerHighlight.getAllElement().forEach((value: ILowerHighlightElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_Eyelashes:
+				GameConfig.Eyelashes.getAllElement().forEach((value: IEyelashesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_Eyeshadow:
+				GameConfig.Eyeshadow.getAllElement().forEach((value: IEyeshadowElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_Blush:
+				GameConfig.Blush.getAllElement().forEach((value: IBlushElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_LipMakeup:
+				GameConfig.LipMakeup.getAllElement().forEach((value: ILipMakeupElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
+			case Tab3Type.Tab3_FaceTattoo:
+				// GameConfig.Eyelashes.getAllElement().forEach((value: IEyelashesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				break;
 			case Tab3Type.Tab3_FullHair:
 				GameConfig.FullHair.getAllElement().forEach((value: IFullHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
@@ -348,6 +419,30 @@ export default class MallPanel extends MallPanel_Generate {
 			case Tab3Type.Tab3_BackHair:
 				GameConfig.BackHair.getAllElement().forEach((value: IBackHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
+			case Tab3Type.Tab3_LeftHand:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_RightHand:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Back:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Ear:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Face:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Hip:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Shoulder:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
+			case Tab3Type.Tab3_Effects:
+				// GameConfig.Eyelashes.getAllElement().forEach
+				break;
 			default:
 				break;
 		}
@@ -355,70 +450,153 @@ export default class MallPanel extends MallPanel_Generate {
 		this.initMallItem();
 	}
 
+	private thisFeatureIsNotEnabled(): void {
+		if (!this.mallItemAssetIds || this.mallItemAssetIds.length == 0) {
+			Notice.showDownNotice(GameConfig.Language.Text_ThisFeatureIsNotEnabled.Value);
+		}
+	}
+
+	private hideMallItemSmallAndBig(): void {
+		this.mallItem_Small.forEach((value: MallItem_Small) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+		this.mallItem_Big.forEach((value: MallItem_Big) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+	}
+
+	private hideMallItemSamllAndColor(): void {
+		this.mallItem_Small.forEach((value: MallItem_Small) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+		this.mallItem_Color.forEach((value: MallItem_Color) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+	}
+
+	private hideMallItemBigAndColor(): void {
+		this.mallItem_Big.forEach((value: MallItem_Big) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+		this.mallItem_Color.forEach((value: MallItem_Color) => {
+			Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+		});
+	}
+
 	private initMallItem(): void {
-		if (!this.mallItemAssetIds || this.mallItemAssetIds.length == 0) return;
-		if (this.mallItem2Types.includes(this.currentConfigId)) {
-			this.mallItem_Small.forEach((value: MallItem_Small) => {
-				Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-			});
-			if (this.mallItemAssetIds.length > this.mallItem_Big.length) {
-				for (let i = 0; i < this.mallItem_Big.length; ++i) {
-					this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
-				}
-				for (let i = this.mallItem_Big.length; i < this.mallItemAssetIds.length; ++i) {
-					let mallItem_Big = UIService.create(MallItem_Big);
-					mallItem_Big.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					this.mItemContentCanvas.addChild(mallItem_Big.uiObject);
-					this.mallItem_Big.push(mallItem_Big);
-					this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Big);
-				}
-			} else {
-				for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
-					this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
-				}
-				for (let i = this.mallItemAssetIds.length; i < this.mallItem_Big.length; ++i) {
-					Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.Collapsed);
-				}
-			}
+		this.thisFeatureIsNotEnabled();
+		if (this.mallItemHasBig.includes(this.currentConfigId)) {
+			this.hideMallItemSamllAndColor();
+			this.initMallItemBig();
+		} else if (this.mallItemHasColor.includes(this.currentConfigId)) {
+			this.hideMallItemSmallAndBig();
+			this.initMallItemColor();
 		} else {
-			this.mallItem_Big.forEach((value: MallItem_Big) => {
-				Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-			});
-			if (this.mallItemAssetIds.length > this.mallItem_Small.length) {
-				for (let i = 0; i < this.mallItem_Small.length; ++i) {
-					this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
-				}
-				for (let i = this.mallItem_Small.length; i < this.mallItemAssetIds.length; ++i) {
-					let mallItem_Small = UIService.create(MallItem_Small);
-					mallItem_Small.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					this.mItemContentCanvas.addChild(mallItem_Small.uiObject);
-					this.mallItem_Small.push(mallItem_Small);
-					this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Small);
-				}
-			} else {
-				for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
-					this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
-					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-					this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
-				}
-				for (let i = this.mallItemAssetIds.length; i < this.mallItem_Small.length; ++i) {
-					Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.Collapsed);
-				}
-			}
+			this.hideMallItemBigAndColor();
+			this.initMallItemSmall();
 		}
 		this.checkMallItemState();
 	}
 
+	private initMallItemBig(): void {
+		if (this.mallItemAssetIds.length > this.mallItem_Big.length) {
+			for (let i = 0; i < this.mallItem_Big.length; ++i) {
+				this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
+			}
+			for (let i = this.mallItem_Big.length; i < this.mallItemAssetIds.length; ++i) {
+				let mallItem_Big = UIService.create(MallItem_Big);
+				mallItem_Big.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				this.mItemContentCanvas.addChild(mallItem_Big.uiObject);
+				this.mallItem_Big.push(mallItem_Big);
+				this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Big);
+			}
+		} else {
+			for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+				this.mallItem_Big[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Big[i]);
+			}
+			for (let i = this.mallItemAssetIds.length; i < this.mallItem_Big.length; ++i) {
+				Utils.setWidgetVisibility(this.mallItem_Big[i].uiObject, mw.SlateVisibility.Collapsed);
+			}
+		}
+	}
+
+	private initMallItemSmall(): void {
+		if (this.mallItemAssetIds.length > this.mallItem_Small.length) {
+			for (let i = 0; i < this.mallItem_Small.length; ++i) {
+				this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
+			}
+			for (let i = this.mallItem_Small.length; i < this.mallItemAssetIds.length; ++i) {
+				let mallItem_Small = UIService.create(MallItem_Small);
+				mallItem_Small.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				this.mItemContentCanvas.addChild(mallItem_Small.uiObject);
+				this.mallItem_Small.push(mallItem_Small);
+				this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Small);
+			}
+		} else {
+			for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+				this.mallItem_Small[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Small[i]);
+			}
+			for (let i = this.mallItemAssetIds.length; i < this.mallItem_Small.length; ++i) {
+				Utils.setWidgetVisibility(this.mallItem_Small[i].uiObject, mw.SlateVisibility.Collapsed);
+			}
+		}
+	}
+
+	private initMallItemColor(): void {
+		if (this.mallItemAssetIds.length > this.mallItem_Color.length) {
+			for (let i = 0; i < this.mallItem_Color.length; ++i) {
+				this.mallItem_Color[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Color[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Color[i]);
+			}
+			for (let i = this.mallItem_Color.length; i < this.mallItemAssetIds.length; ++i) {
+				let mallItem_Color = UIService.create(MallItem_Color);
+				mallItem_Color.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				this.mItemContentCanvas.addChild(mallItem_Color.uiObject);
+				this.mallItem_Color.push(mallItem_Color);
+				this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Color);
+			}
+		} else {
+			for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+				this.mallItem_Color[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i]);
+				Utils.setWidgetVisibility(this.mallItem_Color[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Color[i]);
+			}
+			for (let i = this.mallItemAssetIds.length; i < this.mallItem_Color.length; ++i) {
+				Utils.setWidgetVisibility(this.mallItem_Color[i].uiObject, mw.SlateVisibility.Collapsed);
+			}
+		}
+	}
+
 	private checkMallItemState(): void {
-		let assetId = this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
-		if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId)) return;
-		this.mallItemMap.get(assetId).updateSelectState(true);
+		ExecutorManager.instance.pushAsyncExecutor(async () => {
+			let assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
+			switch (this.currentConfigId) {
+				case Tab2Type.Tab2_SkinTone:
+					let colorKey: string = `ColorPick`;
+					for (let key of this.mallItemMap.keys()) {
+						if (assetId == Utils.colorHexToLinearColorToString(key)) {
+							colorKey = key;
+							break;
+						}
+					}
+					if (!this.mallItemMap.has(colorKey)) return;
+					this.mallItemMap.get(colorKey).updateSelectState(true);
+					break;
+				default:
+					if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId)) return;
+					this.mallItemMap.get(assetId).updateSelectState(true);
+					break;
+			}
+		});
 	}
 
 	private hideTab123Canvas(): void {

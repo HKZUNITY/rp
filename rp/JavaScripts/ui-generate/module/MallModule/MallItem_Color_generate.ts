@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.02.11-00.13.48
+ * TIME: 2025.02.11-20.20.20
  */
  
 @UIBind('UI/module/MallModule/MallItem_Color.ui')
@@ -14,6 +14,13 @@ export default class MallItem_Color_Generate extends UIScript {
 			this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage') as mw.Image
 		}
 		return this.mBgImage_Internal
+	}
+	private mSelectImage_Internal: mw.Image
+	public get mSelectImage(): mw.Image {
+		if(!this.mSelectImage_Internal&&this.uiWidgetBase) {
+			this.mSelectImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelectImage') as mw.Image
+		}
+		return this.mSelectImage_Internal
 	}
 	private mSelectButton_Internal: mw.Button
 	public get mSelectButton(): mw.Button {

@@ -1,5 +1,8 @@
-﻿import MallItem_Big_Generate from "../../../ui-generate/module/MallModule/MallItem_Big_generate";
-import { TabType } from "../MallData";
+﻿import { IBodyTypeElement } from "../../../configs/BodyType";
+import { GameConfig } from "../../../configs/GameConfig";
+import Utils from "../../../tools/Utils";
+import MallItem_Big_Generate from "../../../ui-generate/module/MallModule/MallItem_Big_generate";
+import { Tab2Type, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 
 export default class MallItem_Big extends MallItem_Big_Generate {
@@ -47,7 +50,20 @@ export default class MallItem_Big extends MallItem_Big_Generate {
 		this.tabType = tabType;
 		this.tabId = tabId;
 		this.assetId = assetId;
-		this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+		switch (tabId) {
+			case Tab2Type.Tab2_BodyType:
+				let bodyTypeElement: IBodyTypeElement = GameConfig.BodyType.getElement(assetId);
+				this.mIconImage.imageGuid = bodyTypeElement.Icon;
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
+				this.mPriceTextBlock.text = StringUtil.format(GameConfig.Language.Text_BodyTypeDescribe.Value, bodyTypeElement.Scale);
+				break;
+			default:
+				this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+		}
+		this.updateSelectState(false);
 	}
 
 	private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {

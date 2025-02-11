@@ -24,7 +24,7 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 	}
 
 	private initUI(): void {
-		// this.mIconImage.imageGuid = `32115`;
+		// this.mBgImage.imageGuid = `199136`;
 		this.updateSelectStateUI();
 	}
 
@@ -37,7 +37,11 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 	}
 
 	private addItemButton(): void {
-		this.getMallModuleC.onSelectItemAction.call(this.tabType, this.tabId, this.assetId);
+		if (this.assetId == `ColorPick`) {
+			this.getMallModuleC.onOpenSkinToneColorPickAction.call();
+		} else {
+			this.getMallModuleC.onSelectItemAction.call(this.tabType, this.tabId, this.assetId);
+		}
 	}
 
 	private tabType: TabType = TabType.None;
@@ -47,7 +51,12 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 		this.tabType = tabType;
 		this.tabId = tabId;
 		this.assetId = assetId;
-		// this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+		if (assetId == `ColorPick`) {
+			this.mBgImage.imageGuid = `169864`;
+		} else {
+			this.mBgImage.imageGuid = `199136`;
+			this.mBgImage.setImageColorByHex(assetId);
+		}
 	}
 
 	private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {
@@ -63,6 +72,6 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 	}
 
 	public updateSelectStateUI(): void {
-		this.mSelectButton.renderOpacity = this.isSelect ? 1 : 0;
+		this.mSelectImage.renderOpacity = this.isSelect ? 1 : 0;
 	}
 }

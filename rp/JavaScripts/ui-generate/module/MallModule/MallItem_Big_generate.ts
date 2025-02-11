@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.02.11-00.13.48
+ * TIME: 2025.02.11-20.20.20
  */
  
 @UIBind('UI/module/MallModule/MallItem_Big.ui')
@@ -29,6 +29,27 @@ export default class MallItem_Big_Generate extends UIScript {
 		}
 		return this.mSelectButton_Internal
 	}
+	private mCoinCanvas_Internal: mw.Canvas
+	public get mCoinCanvas(): mw.Canvas {
+		if(!this.mCoinCanvas_Internal&&this.uiWidgetBase) {
+			this.mCoinCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCoinCanvas') as mw.Canvas
+		}
+		return this.mCoinCanvas_Internal
+	}
+	private mCoinIconImage_Internal: mw.Image
+	public get mCoinIconImage(): mw.Image {
+		if(!this.mCoinIconImage_Internal&&this.uiWidgetBase) {
+			this.mCoinIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCoinCanvas/mCoinIconImage') as mw.Image
+		}
+		return this.mCoinIconImage_Internal
+	}
+	private mPriceTextBlock_Internal: mw.TextBlock
+	public get mPriceTextBlock(): mw.TextBlock {
+		if(!this.mPriceTextBlock_Internal&&this.uiWidgetBase) {
+			this.mPriceTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCoinCanvas/mPriceTextBlock') as mw.TextBlock
+		}
+		return this.mPriceTextBlock_Internal
+	}
 
 
 	protected onAwake() {
@@ -52,6 +73,9 @@ export default class MallItem_Big_Generate extends UIScript {
 		
 		//文本多语言
 		
+		this.initLanguage(this.mPriceTextBlock)
+		
+	
 		//文本多语言
 		
 	}

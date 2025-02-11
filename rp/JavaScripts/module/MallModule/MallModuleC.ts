@@ -1,4 +1,6 @@
-﻿import { GameConfig } from "../../configs/GameConfig";
+﻿import { IBodyTypeElement } from "../../configs/BodyType";
+import { IFaceExpressionElement } from "../../configs/FaceExpression";
+import { GameConfig } from "../../configs/GameConfig";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { HUDModuleC } from "../HUDModule/HUDModule";
@@ -27,6 +29,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public onSelectTab2Action: Action1<number> = new Action1<number>();
     public onSelectTab3Action: Action1<number> = new Action1<number>();
     public onSelectItemAction: Action3<number, number, string> = new Action3<number, number, string>();
+    public onOpenSkinToneColorPickAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -41,6 +44,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private bindAction(): void {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
         this.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+        this.onOpenSkinToneColorPickAction.add(this.addOpenSkinToneColorPickAction.bind(this));
     }
 
     private bindEvent(): void {
@@ -72,18 +76,72 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     private async changeCharacter(tabId: number, assetId: string): Promise<void> {
-        await Utils.asyncDownloadAsset(assetId);
+        await this.localPlayer.character.asyncReady();
         switch (tabId) {
             case Tab2Type.Tab2_BodyType:
-                let scale: number = Number(assetId);
-                if (typeof scale != `number` || isNaN(scale)) return;
-                this.localPlayer.character.description.advance.bodyFeatures.body.height = scale;
+                let bodyTypeElement: IBodyTypeElement = GameConfig.BodyType.getElement(assetId);
+                if (!bodyTypeElement || bodyTypeElement?.Scale == 0) return;
+                this.localPlayer.character.description.advance.bodyFeatures.body.height = bodyTypeElement.Scale;
+                break;
+            case Tab2Type.Tab2_SkinTone:
+                this.localPlayer.character.description.advance.makeup.skinTone.skinColor = mw.LinearColor.colorHexToLinearColor(assetId);
+                break;
+            case Tab2Type.Tab2_Face:
+                this.localPlayer.character.description.advance.headFeatures.head.style = assetId;
+                break;
+            case Tab2Type.Tab2_Eyebrows:
+                this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                break;
+            case Tab2Type.Tab2_Expression:
+                let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.getElement(assetId);
+                if (!faceExpressionElement || faceExpressionElement?.ExpressionType < 0 || faceExpressionElement?.ExpressionType > 9) return;
+                this.localPlayer.character.description.advance.headFeatures.expressions.changeExpression = faceExpressionElement.ExpressionType;
                 break;
             case Tab2Type.Tab2_Outfit:
-                this.localPlayer.character.setDescription([assetId]);
+                // await Utils.asyncDownloadAsset(assetId);
+                // this.localPlayer.character.setDescription([assetId]);
                 break;
             case Tab2Type.Tab2_Top:
                 this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Bottom:
+                this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Shoes:
+                this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+                break;
+            case Tab2Type.Tab2_Gloves:
+                this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+                break;
+            case Tab2Type.Tab2_Pet:
+                // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Lens:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_UpperHighlight:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LowerHighlight:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyelashes:
+                this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyeshadow:
+                this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Blush:
+                this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LipMakeup:
+                this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                break;
+            case Tab3Type.Tab3_FaceTattoo:
+                // this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
                 break;
             case Tab3Type.Tab3_FullHair:
                 this.localPlayer.character.description.advance.hair.backHair.style = assetId;
@@ -94,31 +152,121 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             case Tab3Type.Tab3_BackHair:
                 this.localPlayer.character.description.advance.hair.backHair.style = assetId;
                 break;
+            case Tab3Type.Tab3_LeftHand:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_RightHand:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Back:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Ear:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Face:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Hip:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Shoulder:
+                // this.localPlayer.character.description.advance
+                break;
+            case Tab3Type.Tab3_Effects:
+                // this.localPlayer.character.description.advance
+                break;
             default:
                 break;
         }
         await this.localPlayer.character.asyncReady();
-        this.localPlayer.character.syncDescription();
+        // this.localPlayer.character.syncDescription();
     }
 
-    public getCharacterAssetId(configId: number): string {
+    public async getCharacterAssetId(configId: number): Promise<string> {
+        await this.localPlayer.character.asyncReady();
         switch (configId) {
             case Tab2Type.Tab2_BodyType:
                 let heightRatio: number = this.localPlayer.character.description.advance.bodyFeatures.body.height;
-                let scale: string = (heightRatio * 10).toFixed(1);
+                let scale: string = heightRatio.toFixed(1);
                 let bodyTypeElement = GameConfig.BodyType.findElement(`Scale`, scale);
                 if (!bodyTypeElement) return null;
-                return scale;
+                return bodyTypeElement.ID.toString();
+            case Tab2Type.Tab2_SkinTone:
+                return (this.localPlayer.character.description.advance.makeup.skinTone.skinColor as mw.LinearColor).toString();
+            case Tab2Type.Tab2_Face:
+                return this.localPlayer.character.description.advance.headFeatures.head.style;
+            case Tab2Type.Tab2_Eyebrows:
+                return this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle;
+            case Tab2Type.Tab2_Expression:
+                let expressionType = this.localPlayer.character.description.advance.headFeatures.expressions.changeExpression;
+                if (expressionType < 0 || expressionType > 9) return null;
+                let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.findElement(`ExpressionType`, expressionType);
+                if (!faceExpressionElement) return null;
+                return faceExpressionElement.ID.toString();
             case Tab2Type.Tab2_Outfit:
-                return null;
+                //return this.localPlayer.character.setDescription([assetId]);
+                break;
             case Tab2Type.Tab2_Top:
                 return this.localPlayer.character.description.advance.clothing.upperCloth.style;
+            case Tab2Type.Tab2_Bottom:
+                return this.localPlayer.character.description.advance.clothing.lowerCloth.style;
+            case Tab2Type.Tab2_Shoes:
+                return this.localPlayer.character.description.advance.clothing.shoes.style;
+            case Tab2Type.Tab2_Gloves:
+                return this.localPlayer.character.description.advance.clothing.gloves.style;
+            case Tab2Type.Tab2_Pet:
+                // return this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                return this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle;
+            case Tab3Type.Tab3_Lens:
+                return this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle;
+            case Tab3Type.Tab3_UpperHighlight:
+                return this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle;
+            case Tab3Type.Tab3_LowerHighlight:
+                return this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle;
+            case Tab3Type.Tab3_Eyelashes:
+                return this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle;
+            case Tab3Type.Tab3_Eyeshadow:
+                return this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle;
+            case Tab3Type.Tab3_Blush:
+                return this.localPlayer.character.description.advance.makeup.blush.blushStyle;
+            case Tab3Type.Tab3_LipMakeup:
+                return this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle;
+            case Tab3Type.Tab3_FaceTattoo:
+                //return this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                break;
             case Tab3Type.Tab3_FullHair:
                 return this.localPlayer.character.description.advance.hair.backHair.style;
             case Tab3Type.Tab3_FrontHair:
                 return this.localPlayer.character.description.advance.hair.frontHair.style;
             case Tab3Type.Tab3_BackHair:
                 return this.localPlayer.character.description.advance.hair.backHair.style;
+            case Tab3Type.Tab3_LeftHand:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_RightHand:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Back:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Ear:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Face:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Hip:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Shoulder:
+                // return this.localPlayer.character.description
+                return null;
+            case Tab3Type.Tab3_Effects:
+                // return this.localPlayer.character.description
+                return null;
             default:
                 return null;
         }
@@ -138,5 +286,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
         });
+    }
+
+    private addOpenSkinToneColorPickAction(): void {
+
     }
 }

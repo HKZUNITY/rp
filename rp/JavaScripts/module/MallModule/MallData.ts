@@ -52,10 +52,10 @@ export enum Tab2Type {
     Tab2_Top,
     /**下衣 */
     Tab2_Bottom,
-    /**手套 */
-    Tab2_Gloves,
     /**鞋子 */
     Tab2_Shoes,
+    /**手套 */
+    Tab2_Gloves,
     /**宠物 */
     Tab2_Pet,
     /**饰品 */

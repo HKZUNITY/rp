@@ -1,6 +1,8 @@
-﻿import Utils from "../../../tools/Utils";
+﻿import { IFaceExpressionElement } from "../../../configs/FaceExpression";
+import { GameConfig } from "../../../configs/GameConfig";
+import Utils from "../../../tools/Utils";
 import MallItem_Small_Generate from "../../../ui-generate/module/MallModule/MallItem_Small_generate";
-import { TabType } from "../MallData";
+import { Tab2Type, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 
 export default class MallItem_Small extends MallItem_Small_Generate {
@@ -26,6 +28,7 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 
 	private initUI(): void {
 		this.mIconImage.imageGuid = `32115`;
+		this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 		this.updateSelectStateUI();
 	}
 
@@ -48,7 +51,19 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 		this.tabType = tabType;
 		this.tabId = tabId;
 		this.assetId = assetId;
-		this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+		switch (tabId) {
+			case Tab2Type.Tab2_Expression:
+				let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.getElement(assetId);
+				this.mIconImage.imageGuid = faceExpressionElement.Icon;
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
+				this.mPriceTextBlock.text = faceExpressionElement.Name;
+				break;
+			default:
+				this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+		}
 		this.updateSelectState(false);
 	}
 
