@@ -1,5 +1,6 @@
 ﻿import { IBodyTypeElement } from "../../../configs/BodyType";
 import { GameConfig } from "../../../configs/GameConfig";
+import { IOutfitElement } from "../../../configs/Outfit";
 import Utils from "../../../tools/Utils";
 import MallItem_Big_Generate from "../../../ui-generate/module/MallModule/MallItem_Big_generate";
 import { Tab2Type, TabType } from "../MallData";
@@ -56,6 +57,12 @@ export default class MallItem_Big extends MallItem_Big_Generate {
 				this.mIconImage.imageGuid = bodyTypeElement.Icon;
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
 				this.mPriceTextBlock.text = StringUtil.format(GameConfig.Language.Text_BodyTypeDescribe.Value, bodyTypeElement.Scale);
+				break;
+			case Tab2Type.Tab2_Outfit:
+				let outfitElement: IOutfitElement = GameConfig.Outfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(outfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
 			default:
 				this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);

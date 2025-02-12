@@ -24,6 +24,13 @@ export default class Utils {
         }
     }
 
+    public static async asyncDownloadAssets(InAssetIds: string[]): Promise<void> {
+        for (let i = 0; i < InAssetIds.length; ++i) {
+            if (mw.AssetUtil.assetLoaded(InAssetIds[i])) continue;
+            await mw.AssetUtil.asyncDownloadAsset(InAssetIds[i]);
+        }
+    }
+
     public static setWidgetVisibility(ui: mw.Widget, visibility: mw.SlateVisibility): void {
         if (ui.visibility != visibility) ui.visibility = visibility;
     }

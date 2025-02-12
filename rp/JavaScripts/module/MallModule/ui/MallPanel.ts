@@ -356,7 +356,7 @@ export default class MallPanel extends MallPanel_Generate {
 				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_Outfit:
-				// GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_Top:
 				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });

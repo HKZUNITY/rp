@@ -1,9 +1,11 @@
 ﻿import { IBodyTypeElement } from "../../configs/BodyType";
 import { IFaceExpressionElement } from "../../configs/FaceExpression";
 import { GameConfig } from "../../configs/GameConfig";
+import { IOutfitElement } from "../../configs/Outfit";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import Mall from "./Mall";
 import MallData, { TabType, Tab2Type, Tab3Type } from "./MallData";
 import MallModuleS from "./MallModuleS";
 import MallPanel from "./ui/MallPanel";
@@ -30,6 +32,8 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public onSelectTab3Action: Action1<number> = new Action1<number>();
     public onSelectItemAction: Action3<number, number, string> = new Action3<number, number, string>();
     public onOpenSkinToneColorPickAction: Action = new Action();
+    public onSaveAction: Action = new Action();
+    public onCloseAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -38,6 +42,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     protected onEnterScene(sceneType: number): void {
+
         this.initShopCamera();
     }
 
@@ -45,6 +50,8 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
         this.onSelectItemAction.add(this.addSelectItemAction.bind(this));
         this.onOpenSkinToneColorPickAction.add(this.addOpenSkinToneColorPickAction.bind(this));
+        this.onSaveAction.add(this.addSaveAction.bind(this));
+        this.onCloseAction.add(this.addCloseAction.bind(this));
     }
 
     private bindEvent(): void {
@@ -65,6 +72,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.getMallPanel.initMallPanel();
             }
             this.getMallPanel.show();
+            this.initNpc();
         });
     }
 
@@ -87,9 +95,11 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.localPlayer.character.description.advance.makeup.skinTone.skinColor = mw.LinearColor.colorHexToLinearColor(assetId);
                 break;
             case Tab2Type.Tab2_Face:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.headFeatures.head.style = assetId;
                 break;
             case Tab2Type.Tab2_Eyebrows:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
                 break;
             case Tab2Type.Tab2_Expression:
@@ -98,58 +108,71 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.localPlayer.character.description.advance.headFeatures.expressions.changeExpression = faceExpressionElement.ExpressionType;
                 break;
             case Tab2Type.Tab2_Outfit:
-                // await Utils.asyncDownloadAsset(assetId);
-                // this.localPlayer.character.setDescription([assetId]);
+                await this.changeOutfit(assetId);
                 break;
             case Tab2Type.Tab2_Top:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
                 break;
             case Tab2Type.Tab2_Bottom:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
                 break;
             case Tab2Type.Tab2_Shoes:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
                 break;
             case Tab2Type.Tab2_Gloves:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
                 break;
             case Tab2Type.Tab2_Pet:
                 // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
                 break;
             case Tab3Type.Tab3_PupilStyle:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
                 break;
             case Tab3Type.Tab3_Lens:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
                 break;
             case Tab3Type.Tab3_UpperHighlight:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
                 break;
             case Tab3Type.Tab3_LowerHighlight:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
                 break;
             case Tab3Type.Tab3_Eyelashes:
                 this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
                 break;
             case Tab3Type.Tab3_Eyeshadow:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
                 break;
             case Tab3Type.Tab3_Blush:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
                 break;
             case Tab3Type.Tab3_LipMakeup:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
                 break;
             case Tab3Type.Tab3_FaceTattoo:
                 // this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
                 break;
             case Tab3Type.Tab3_FullHair:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.hair.backHair.style = assetId;
                 break;
             case Tab3Type.Tab3_FrontHair:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.hair.frontHair.style = assetId;
                 break;
             case Tab3Type.Tab3_BackHair:
+                await Utils.asyncDownloadAsset(assetId);
                 this.localPlayer.character.description.advance.hair.backHair.style = assetId;
                 break;
             case Tab3Type.Tab3_LeftHand:
@@ -183,6 +206,43 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         // this.localPlayer.character.syncDescription();
     }
 
+    private async changeOutfit(configId: string): Promise<void> {
+        let outfitElement: IOutfitElement = GameConfig.Outfit.getElement(configId);
+        let currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        await Utils.asyncDownloadAsset(outfitElement.AssetId);
+        if (currentSomatotype == outfitElement.SexType) {
+            if (outfitElement.IsTransition > 0) {
+                await this.changeOutfitTransition(outfitElement.AssetId);
+            } else {
+                this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            }
+        } else {
+            if (outfitElement.SexType % 2 == 0) {
+                this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+            } else {
+                this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+            }
+            await this.localPlayer.character.asyncReady();
+            if (outfitElement.IsTransition > 0) {
+                await this.changeOutfitTransition(outfitElement.AssetId);
+            } else {
+                this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            }
+            await this.localPlayer.character.asyncReady();
+            currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            if (currentSomatotype != outfitElement.SexType) this.localPlayer.character.description.advance.base.characterSetting.somatotype = outfitElement.SexType;
+        }
+        await this.localPlayer.character.asyncReady();
+    }
+
+    private async changeOutfitTransition(assetId: string): Promise<void> {
+        if (!this.transitionNpc) await this.initTransitionNpc();
+        this.transitionNpc.setDescription([assetId]);
+        await this.transitionNpc.asyncReady();
+        await Mall.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
+        await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
+    }
+
     public async getCharacterAssetId(configId: number): Promise<string> {
         await this.localPlayer.character.asyncReady();
         switch (configId) {
@@ -205,8 +265,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (!faceExpressionElement) return null;
                 return faceExpressionElement.ID.toString();
             case Tab2Type.Tab2_Outfit:
-                //return this.localPlayer.character.setDescription([assetId]);
-                break;
+                return null;
             case Tab2Type.Tab2_Top:
                 return this.localPlayer.character.description.advance.clothing.upperCloth.style;
             case Tab2Type.Tab2_Bottom:
@@ -288,7 +347,64 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         });
     }
 
+    private maleNpc: mw.Character = null;
+    private feMaleNpc: mw.Character = null;
+    private transitionNpc: mw.Character = null;
+    private copyNpc: mw.Character = null;
+    private async initNpc(): Promise<void> {
+        this.maleNpc = await mw.GameObject.asyncFindGameObjectById(`3A3B7F1A`) as mw.Character;
+        this.feMaleNpc = await mw.GameObject.asyncFindGameObjectById(`047AA580`) as mw.Character;
+        this.transitionNpc = await mw.GameObject.asyncFindGameObjectById(`1D9FAAD2`) as mw.Character;
+        this.copyNpc = await mw.GameObject.asyncFindGameObjectById(`118AA52F`) as mw.Character;
+        await this.localPlayer.character.asyncReady();
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.recordSex(somatotype);
+        if (somatotype % 2 == 0) {
+            await this.feMaleNpc.asyncReady();
+            this.feMaleNpc.setDescription(this.localPlayer.character.getDescription());
+        } else {
+            await this.maleNpc.asyncReady();
+            this.maleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+    }
+
+    private saveSomatotype: number = 2;
+    private recordSex(somatotype: number): void {
+        this.saveSomatotype = somatotype;
+    }
+
+    private async initTransitionNpc(): Promise<void> {
+        this.transitionNpc = await mw.GameObject.asyncSpawn(`Character`) as mw.Character;
+        await this.transitionNpc.asyncReady();
+    }
+
     private addOpenSkinToneColorPickAction(): void {
 
+    }
+
+    private addSaveAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            this.recordSex(somatotype);
+            if (somatotype % 2 == 0) {
+                this.feMaleNpc.setDescription(this.localPlayer.character.getDescription());
+                await this.feMaleNpc.asyncReady();
+            } else {
+                this.maleNpc.setDescription(this.localPlayer.character.getDescription());
+                await this.maleNpc.asyncReady();
+            }
+        });
+    }
+
+    private addCloseAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (this.saveSomatotype % 2 == 0) {
+                this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+            } else {
+                this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+            }
+            await this.localPlayer.character.asyncReady();
+        });
     }
 }
