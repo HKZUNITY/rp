@@ -42,7 +42,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     protected onEnterScene(sceneType: number): void {
-
+        this.initNpc();
         this.initShopCamera();
     }
 
@@ -72,7 +72,6 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.getMallPanel.initMallPanel();
             }
             this.getMallPanel.show();
-            this.initNpc();
         });
     }
 
@@ -176,28 +175,49 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.localPlayer.character.description.advance.hair.backHair.style = assetId;
                 break;
             case Tab3Type.Tab3_LeftHand:
-                // this.localPlayer.character.description.advance
+                let leftHandElement = GameConfig.LeftHand.getElement(assetId);
+                if (!leftHandElement) return;
+                await this.changeSlotAndDecoration(tabId, leftHandElement.AssetId, Utils.stringArrayToTransform(leftHandElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_RightHand:
-                // this.localPlayer.character.description.advance
+                let rightHandElement = GameConfig.RightHand.getElement(assetId);
+                if (!rightHandElement) return;
+                await this.changeSlotAndDecoration(tabId, rightHandElement.AssetId, Utils.stringArrayToTransform(rightHandElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Back:
-                // this.localPlayer.character.description.advance
+                let backElement = GameConfig.Back.getElement(assetId);
+                if (!backElement) return;
+                await this.changeSlotAndDecoration(tabId, backElement.AssetId, Utils.stringArrayToTransform(backElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Ear:
-                // this.localPlayer.character.description.advance
+                let earElement = GameConfig.Ear.getElement(assetId);
+                if (!earElement) return;
+                await this.changeSlotAndDecoration(tabId, earElement.AssetId, Utils.stringArrayToTransform(earElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Face:
-                // this.localPlayer.character.description.advance
+                let facingElement = GameConfig.Facing.getElement(assetId);
+                if (!facingElement) return;
+                await this.changeSlotAndDecoration(tabId, facingElement.AssetId, Utils.stringArrayToTransform(facingElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Hip:
-                // this.localPlayer.character.description.advance
+                let hipElement = GameConfig.Hip.getElement(assetId);
+                if (!hipElement) return;
+                await this.changeSlotAndDecoration(tabId, hipElement.AssetId, Utils.stringArrayToTransform(hipElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Shoulder:
-                // this.localPlayer.character.description.advance
+                let shoulderElement = GameConfig.Shoulder.getElement(assetId);
+                if (!shoulderElement) return;
+                await this.changeSlotAndDecoration(tabId, shoulderElement.AssetId, Utils.stringArrayToTransform(shoulderElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_Effects:
-                // this.localPlayer.character.description.advance
+                let effectsElement = GameConfig.Effects.getElement(assetId);
+                if (!effectsElement) return;
+                await this.changeSlotAndDecoration(tabId, effectsElement.AssetId, Utils.stringArrayToTransform(effectsElement.Transform), mw.HumanoidSlotType.Root);
+                break;
+            case Tab3Type.Tab3_Trailing:
+                let trailingElement = GameConfig.Trailing.getElement(assetId);
+                if (!trailingElement) return;
+                await this.changeSlotAndDecoration(tabId, trailingElement.AssetId, Utils.stringArrayToTransform(trailingElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             default:
                 break;
@@ -241,6 +261,32 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await this.transitionNpc.asyncReady();
         await Mall.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
         await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
+    }
+
+    private decorationIndexMap: Map<number, number> = new Map<number, number>();
+    private async changeSlotAndDecoration(tagId: number, assetId: string, transform: mw.Transform, slotIndex: number): Promise<void> {
+        await Utils.asyncDownloadAsset(assetId);
+        let decorationIndex: number = -1;
+        if (this.decorationIndexMap.has(tagId)) {
+            decorationIndex = this.decorationIndexMap.get(tagId);
+            let decoration = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
+            this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(decoration, true);
+        } else {
+        }
+        let model = await GameObject.asyncSpawn(assetId) as mw.Model;
+        if (!model) return;
+        model.setCollision(mw.PropertyStatus.Off, true);
+        decorationIndex = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, transform);
+        this.decorationIndexMap.set(tagId, decorationIndex);
+    }
+
+    private getSlotAndDecoration(tagId: number, slotIndex: number): string {
+        if (this.decorationIndexMap.has(tagId)) {
+            let decorationIndex = this.decorationIndexMap.get(tagId);
+            return this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
+        } else {
+            return null;
+        }
     }
 
     public async getCharacterAssetId(configId: number): Promise<string> {
@@ -303,29 +349,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             case Tab3Type.Tab3_BackHair:
                 return this.localPlayer.character.description.advance.hair.backHair.style;
             case Tab3Type.Tab3_LeftHand:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHand);
             case Tab3Type.Tab3_RightHand:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightHand);
             case Tab3Type.Tab3_Back:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
             case Tab3Type.Tab3_Ear:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHead);
             case Tab3Type.Tab3_Face:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.FaceOrnamental);
             case Tab3Type.Tab3_Hip:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Buttocks);
             case Tab3Type.Tab3_Shoulder:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightBack);
             case Tab3Type.Tab3_Effects:
-                // return this.localPlayer.character.description
-                return null;
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+            case Tab3Type.Tab3_Trailing:
+                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
             default:
                 return null;
         }

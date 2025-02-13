@@ -243,4 +243,13 @@ export default class Utils {
         this.inColorHexStrMap.set(inColorHex, inColorHexStr);
         return inColorHexStr;
     }
+
+    public static stringArrayToTransform(strArray: string[]): mw.Transform {
+        let transform = new mw.Transform();
+        if (!strArray || strArray.length != 9) return transform;
+        transform.position = new mw.Vector(Number(strArray[0]), Number(strArray[1]), Number(strArray[2]));
+        transform.rotation = new mw.Rotation(Number(strArray[3]), Number(strArray[4]), Number(strArray[5]));
+        transform.scale = new mw.Vector(Number(strArray[6]), Number(strArray[7]), Number(strArray[8]));
+        return transform;
+    }
 }

@@ -1,5 +1,7 @@
-﻿import { IFaceExpressionElement } from "../../../configs/FaceExpression";
+﻿import { IEffectsElement } from "../../../configs/Effects";
+import { IFaceExpressionElement } from "../../../configs/FaceExpression";
 import { GameConfig } from "../../../configs/GameConfig";
+import { ITrailingElement } from "../../../configs/Trailing";
 import Utils from "../../../tools/Utils";
 import MallItem_Small_Generate from "../../../ui-generate/module/MallModule/MallItem_Small_generate";
 import { Tab2Type, Tab3Type, TabType } from "../MallData";
@@ -67,6 +69,18 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 				this.mIconImage.imageGuid = faceExpressionElement.Icon;
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
 				this.mPriceTextBlock.text = faceExpressionElement.Name;
+				break;
+			case Tab3Type.Tab3_Effects:
+				let effectsElement: IEffectsElement = GameConfig.Effects.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(effectsElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Trailing:
+				let trailingElement: ITrailingElement = GameConfig.Trailing.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(trailingElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
 			default:
 				this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);

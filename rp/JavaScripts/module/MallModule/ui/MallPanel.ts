@@ -1,26 +1,35 @@
 ﻿import { Notice } from "../../../common/notice/Notice";
+import { IBackElement } from "../../../configs/Back";
 import { IBackHairElement } from "../../../configs/BackHair";
 import { IBlushElement } from "../../../configs/Blush";
 import { IBodyTypeElement } from "../../../configs/BodyType";
 import { IBottomElement } from "../../../configs/Bottom";
+import { IEarElement } from "../../../configs/Ear";
+import { IEffectsElement } from "../../../configs/Effects";
 import { IEyebrowsElement } from "../../../configs/Eyebrows";
 import { IEyelashesElement } from "../../../configs/Eyelashes";
 import { IEyeshadowElement } from "../../../configs/Eyeshadow";
 import { IFaceElement } from "../../../configs/Face";
 import { IFaceExpressionElement } from "../../../configs/FaceExpression";
+import { IFacingElement } from "../../../configs/Facing";
 import { IFrontHairElement } from "../../../configs/FrontHair";
 import { IFullHairElement } from "../../../configs/FullHair";
 import { GameConfig } from "../../../configs/GameConfig";
 import { IGlovesElement } from "../../../configs/Gloves";
+import { IHipElement } from "../../../configs/Hip";
+import { ILeftHandElement } from "../../../configs/LeftHand";
 import { ILensElement } from "../../../configs/Lens";
 import { ILipMakeupElement } from "../../../configs/LipMakeup";
 import { ILowerHighlightElement } from "../../../configs/LowerHighlight";
 import { IOutfitElement } from "../../../configs/Outfit";
 import { IPupilStyleElement } from "../../../configs/PupilStyle";
+import { IRightHandElement } from "../../../configs/RightHand";
 import { IShoesElement } from "../../../configs/Shoes";
+import { IShoulderElement } from "../../../configs/Shoulder";
 import { ISkinToneElement } from "../../../configs/SkinTone";
 import { ITab1Element } from "../../../configs/Tab1";
 import { ITopElement } from "../../../configs/Top";
+import { ITrailingElement } from "../../../configs/Trailing";
 import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
 import Utils from "../../../tools/Utils";
 import ExecutorManager from "../../../tools/WaitingQueue";
@@ -163,6 +172,7 @@ export default class MallPanel extends MallPanel_Generate {
 		// this.tabIdDataMap.forEach((value: TabIdData) => {
 		// 	console.error(JSON.stringify(value));
 		// });
+		this.mItemScrollBox.scrollOffset = 0;
 	}
 
 	private calculateItemCanvas(tabType: TabType): void {
@@ -420,28 +430,31 @@ export default class MallPanel extends MallPanel_Generate {
 				GameConfig.BackHair.getAllElement().forEach((value: IBackHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_LeftHand:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.LeftHand.getAllElement().forEach((value: ILeftHandElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_RightHand:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.RightHand.getAllElement().forEach((value: IRightHandElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Back:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Back.getAllElement().forEach((value: IBackElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Ear:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Ear.getAllElement().forEach((value: IEarElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Face:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Facing.getAllElement().forEach((value: IFacingElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Hip:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Hip.getAllElement().forEach((value: IHipElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Shoulder:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Shoulder.getAllElement().forEach((value: IShoulderElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Effects:
-				// GameConfig.Eyelashes.getAllElement().forEach
+				GameConfig.Effects.getAllElement().forEach((value: IEffectsElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Trailing:
+				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			default:
 				break;

@@ -134,6 +134,8 @@ export enum Tab3Type {
     Tab3_Shoulder,
     /**特效 */
     Tab3_Effects,
+    /**拖尾 */
+    Tab3_Trailing,
     /**瞳孔样式_收藏 */
     Tab3_PupilStyle_Collection = 2001,
     /**瞳孔贴画_收藏 */
@@ -174,4 +176,6 @@ export enum Tab3Type {
     Tab3_Shoulder_Collection,
     /**特效_收藏 */
     Tab3_Effects_Collection,
+    /**拖尾_收藏 */
+    Tab3_Trailing_Collection,
 }
