@@ -9,6 +9,16 @@ export class TabIdData {
     public tabIdDataMap: Map<number, TabIdData> = new Map<number, TabIdData>;
 }
 
+export class ColorPickTab2Data {
+    public text: string = null;
+    public color: mw.LinearColor = null;
+
+    public constructor(text: string, color: mw.LinearColor) {
+        this.text = text;
+        this.color = color;
+    }
+}
+
 export enum TabType {
     None,
     Tab1,

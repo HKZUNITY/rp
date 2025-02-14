@@ -38,7 +38,7 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 
 	private addItemButton(): void {
 		if (this.assetId == `ColorPick`) {
-			this.getMallModuleC.onOpenSkinToneColorPickAction.call();
+			this.getMallModuleC.onOpenColorPickAction.call(this.tabType, this.tabId);
 		} else {
 			this.getMallModuleC.onSelectItemAction.call(this.tabType, this.tabId, this.assetId);
 		}
@@ -57,6 +57,7 @@ export default class MallItem_Color extends MallItem_Color_Generate {
 			this.mBgImage.imageGuid = `199136`;
 			this.mBgImage.setImageColorByHex(assetId);
 		}
+		this.updateSelectState(false);
 	}
 
 	private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {

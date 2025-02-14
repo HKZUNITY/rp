@@ -78,6 +78,11 @@ export default class MallPanel extends MallPanel_Generate {
 		this.getMallModuleC.onSelectTab3Action.add(this.addSelectTab3Action.bind(this));
 	}
 
+	public closeColorPickPanelShow(): void {
+		this.show();
+		this.checkSkinToneMallItemState();
+	}
+
 	public initMallPanel(): void {
 		this.initTab1();
 	}
@@ -172,7 +177,7 @@ export default class MallPanel extends MallPanel_Generate {
 		// this.tabIdDataMap.forEach((value: TabIdData) => {
 		// 	console.error(JSON.stringify(value));
 		// });
-		this.mItemScrollBox.scrollOffset = 0;
+		// this.mItemScrollBox.scrollOffset = 0;
 	}
 
 	private calculateItemCanvas(tabType: TabType): void {
@@ -591,12 +596,13 @@ export default class MallPanel extends MallPanel_Generate {
 
 	private checkMallItemState(): void {
 		ExecutorManager.instance.pushAsyncExecutor(async () => {
-			let assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
+			let assetId: string | mw.LinearColor = null;
 			switch (this.currentConfigId) {
 				case Tab2Type.Tab2_SkinTone:
+					assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId) as mw.LinearColor;
 					let colorKey: string = `ColorPick`;
 					for (let key of this.mallItemMap.keys()) {
-						if (assetId == Utils.colorHexToLinearColorToString(key)) {
+						if (Utils.isEqulaLinearColor(assetId, Utils.colorHexToLinearColorToString(key))) {
 							colorKey = key;
 							break;
 						}
@@ -605,10 +611,28 @@ export default class MallPanel extends MallPanel_Generate {
 					this.mallItemMap.get(colorKey).updateSelectState(true);
 					break;
 				default:
+					assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId) as string;
 					if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId)) return;
 					this.mallItemMap.get(assetId).updateSelectState(true);
 					break;
 			}
+		});
+	}
+
+	public checkSkinToneMallItemState(): void {
+		if (this.currentConfigId != Tab2Type.Tab2_SkinTone) return;
+		ExecutorManager.instance.pushAsyncExecutor(async () => {
+			let assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId) as mw.LinearColor;
+			let isHasSelect: boolean = false;
+			this.mallItemMap.forEach((value: MallItem_Small | MallItem_Big | MallItem_Color, key: string) => {
+				if (Utils.isEqulaLinearColor(Utils.colorHexToLinearColorToString(key), assetId)) {
+					isHasSelect = true;
+					value.updateSelectState(true);
+				} else {
+					value.updateSelectState(false);
+				}
+			});
+			if (!isHasSelect) this.mallItemMap.get(`ColorPick`).updateSelectState(true);
 		});
 	}
 

@@ -36,6 +36,7 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 
 	private bindButton(): void {
 		this.mSelectButton.onClicked.add(this.addItemButton.bind(this));
+		this.mColorButton.onClicked.add(this.addColorButton.bind(this));
 	}
 
 	private bindAction(): void {
@@ -44,6 +45,10 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 
 	private addItemButton(): void {
 		this.getMallModuleC.onSelectItemAction.call(this.tabType, this.tabId, this.assetId);
+	}
+
+	private addColorButton(): void {
+		this.getMallModuleC.onOpenColorPickAction.call(this.tabType, this.tabId);
 	}
 
 	private tabType: TabType = TabType.None;

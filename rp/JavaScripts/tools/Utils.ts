@@ -236,12 +236,20 @@ export default class Utils {
         return newArray;
     }
 
-    private static inColorHexStrMap: Map<string, string> = new Map<string, string>();
-    public static colorHexToLinearColorToString(inColorHex: string): string {
+    private static inColorHexStrMap: Map<string, mw.LinearColor> = new Map<string, mw.LinearColor>();
+    public static colorHexToLinearColorToString(inColorHex: string): mw.LinearColor {
         if (this.inColorHexStrMap.has(inColorHex)) return this.inColorHexStrMap.get(inColorHex);
-        let inColorHexStr = mw.LinearColor.colorHexToLinearColor(inColorHex).toString();
-        this.inColorHexStrMap.set(inColorHex, inColorHexStr);
-        return inColorHexStr;
+        let inColorHexLinearColor = mw.LinearColor.colorHexToLinearColor(inColorHex);
+        this.inColorHexStrMap.set(inColorHex, inColorHexLinearColor);
+        return inColorHexLinearColor;
+    }
+
+    public static isEqulaLinearColor(linearColor1: mw.LinearColor, linearColor2: mw.LinearColor): boolean {
+        if (linearColor1.r.toFixed(5) != linearColor2.r.toFixed(5)) return false;
+        if (linearColor1.g.toFixed(5) != linearColor2.g.toFixed(5)) return false;
+        if (linearColor1.b.toFixed(5) != linearColor2.b.toFixed(5)) return false;
+        if (linearColor1.a.toFixed(5) != linearColor2.a.toFixed(5)) return false;
+        return true;
     }
 
     public static stringArrayToTransform(strArray: string[]): mw.Transform {

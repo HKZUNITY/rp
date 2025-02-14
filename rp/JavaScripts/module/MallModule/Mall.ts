@@ -1,4 +1,5 @@
 ﻿import Utils from "../../tools/Utils";
+import { Tab2Type } from "./MallData";
 
 export default class Mall {
     public static async copyCharacterSlot(fromCharacter: mw.Character, toCharacter: mw.Character): Promise<void> {
@@ -74,4 +75,8 @@ export default class Mall {
         await Utils.asyncDownloadAsset(fromClothing.gloves.style);
         toClothing.gloves.style = fromClothing.gloves.style;
     }
+
+    public static colorPickTabIds: number[] = [
+        Tab2Type.Tab2_Accessory
+    ];
 }

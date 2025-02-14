@@ -1,4 +1,6 @@
-﻿import { IBodyTypeElement } from "../../configs/BodyType";
+﻿import { Notice } from "../../common/notice/Notice";
+import { IBodyTypeElement } from "../../configs/BodyType";
+import { IColorValueElement } from "../../configs/ColorValue";
 import { IFaceExpressionElement } from "../../configs/FaceExpression";
 import { GameConfig } from "../../configs/GameConfig";
 import { IOutfitElement } from "../../configs/Outfit";
@@ -6,8 +8,9 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
-import MallData, { TabType, Tab2Type, Tab3Type } from "./MallData";
+import MallData, { TabType, Tab2Type, Tab3Type, ColorPickTab2Data } from "./MallData";
 import MallModuleS from "./MallModuleS";
+import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
 
 export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
@@ -27,13 +30,25 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         return this.mallPanel;
     }
 
+    private colorPickPanel: ColorPickPanel = null;
+    private get getColorPickPanel(): ColorPickPanel {
+        if (!this.colorPickPanel) {
+            this.colorPickPanel = UIService.getUI(ColorPickPanel);
+        }
+        return this.colorPickPanel;
+    }
+
     public onSelectTab1Action: Action1<number> = new Action1<number>();
     public onSelectTab2Action: Action1<number> = new Action1<number>();
     public onSelectTab3Action: Action1<number> = new Action1<number>();
     public onSelectItemAction: Action3<number, number, string> = new Action3<number, number, string>();
-    public onOpenSkinToneColorPickAction: Action = new Action();
+    public onOpenColorPickAction: Action2<number, number> = new Action2<number, number>();
     public onSaveAction: Action = new Action();
-    public onCloseAction: Action = new Action();
+    public onCloseMallPanelAction: Action = new Action();
+    public onSelectColorPickTab2Action: Action1<number> = new Action1<number>();
+    public onSelectColorPickTab3Action: Action1<number> = new Action1<number>();
+    public onColorPickChangedAction: Action1<mw.LinearColor> = new Action1<mw.LinearColor>();
+    public onCloseColorPickPanelAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -49,9 +64,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private bindAction(): void {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
         this.onSelectItemAction.add(this.addSelectItemAction.bind(this));
-        this.onOpenSkinToneColorPickAction.add(this.addOpenSkinToneColorPickAction.bind(this));
+        this.onOpenColorPickAction.add(this.addOpenColorPickAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
-        this.onCloseAction.add(this.addCloseAction.bind(this));
+        this.onCloseMallPanelAction.add(this.addCloseAction.bind(this));
+        this.onSelectColorPickTab2Action.add(this.addSelectColorPickTab2Action.bind(this));
+        this.onSelectColorPickTab3Action.add(this.addSelectColorPickTab3Action.bind(this));
+        this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
+        this.onCloseColorPickPanelAction.add(this.addCloseColorPickPanelAction.bind(this));
     }
 
     private bindEvent(): void {
@@ -62,6 +81,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.getMallPanel.hide();
             this.onSwitchCameraAction.call(0);
         });
+    }
+
+    private addCloseColorPickPanelAction(): void {
+        this.getMallPanel.closeColorPickPanelShow();
     }
 
     private addOpenMallAction(): void {
@@ -289,7 +312,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         }
     }
 
-    public async getCharacterAssetId(configId: number): Promise<string> {
+    public async getCharacterAssetId(configId: number): Promise<string | mw.LinearColor> {
         await this.localPlayer.character.asyncReady();
         switch (configId) {
             case Tab2Type.Tab2_BodyType:
@@ -299,7 +322,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (!bodyTypeElement) return null;
                 return bodyTypeElement.ID.toString();
             case Tab2Type.Tab2_SkinTone:
-                return (this.localPlayer.character.description.advance.makeup.skinTone.skinColor as mw.LinearColor).toString();
+                return this.localPlayer.character.description.advance.makeup.skinTone.skinColor;
             case Tab2Type.Tab2_Face:
                 return this.localPlayer.character.description.advance.headFeatures.head.style;
             case Tab2Type.Tab2_Eyebrows:
@@ -418,8 +441,11 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await this.transitionNpc.asyncReady();
     }
 
-    private addOpenSkinToneColorPickAction(): void {
-
+    private addOpenColorPickAction(tabType: TabType, tabId: number): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            this.openColorPickPanel(tabId);
+        });
     }
 
     private addSaveAction(): void {
@@ -446,5 +472,156 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             }
             await this.localPlayer.character.asyncReady();
         });
+    }
+
+    private colorPickTabId: number = -1;
+    private colorPickTab2Datas: ColorPickTab2Data[] = [];
+    private colorPickTab3Colors: string[] = [];
+    private openColorPickPanel(tabId: number): void {
+        this.colorPickTabId = tabId;
+
+        this.colorPickTab2Index = 0;
+        this.colorPickTab2Datas.length = 0;
+
+        this.colorPickTab3Colors.length = 0;
+        switch (tabId) {
+            case Tab2Type.Tab2_SkinTone:
+                this.openSkinToneColorPickPanel();
+                break;
+            case Tab2Type.Tab2_Eyebrows:
+                this.openEyebrowsColorPickPanel();
+                break;
+            case Tab2Type.Tab2_Top:
+                this.openTopColorPickPanel();
+                break;
+            case Tab3Type.Tab3_FrontHair:
+                this.openFrontHairColorPickPanel();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private colorPickTab2Index: number = 0;
+    private addSelectColorPickTab2Action(index: number): void {
+        if (this.colorPickTab2Index == index) return;
+        this.colorPickTab2Index = index;
+        this.getColorPickPanel.checkColorPickTab3AndColorPick(this.colorPickTab2Datas[this.colorPickTab2Index].color);
+    }
+
+    private addSelectColorPickTab3Action(index: number): void {
+        let color = mw.LinearColor.colorHexToLinearColor(this.colorPickTab3Colors[index]);
+        this.getColorPickPanel.refreshColorPickTab2AndColorPick(color);
+        this.changeCharacterColor(color);
+    }
+
+    private openSkinToneColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_102.Value}`;
+
+        let colorPickTab2Data = new ColorPickTab2Data(GameConfig.Language.Text_Tab2_102.Value,
+            this.localPlayer.character.description.advance.makeup.skinTone.skinColor as mw.LinearColor);
+        this.colorPickTab2Datas.push(colorPickTab2Data);
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.SkinToneColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openEyebrowsColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_105.Value}`;
+
+        let colorPickTab2Data = new ColorPickTab2Data(GameConfig.Language.Text_Tab2_105.Value,
+            this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowColor as mw.LinearColor);
+        this.colorPickTab2Datas.push(colorPickTab2Data);
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.EyebrowsColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openTopColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_110.Value}`;
+
+        let part = this.localPlayer.character.description.advance.clothing.upperCloth?.part;
+        if (!part || part.length == 0) {
+            Notice.showDownNotice(`不能调色`);
+            return;
+        }
+        for (let i = 0; i < part.length; ++i) {
+            let color: mw.LinearColor = mw.LinearColor.white;
+            if (part[i]?.color?.areaColor) color = part[i]?.color?.areaColor as mw.LinearColor;
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(`不能调色`);
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.TopColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openFrontHairColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1011.Value}`;
+
+        let hairColor = this.localPlayer.character.description.advance.hair.frontHair.color;
+        if (!hairColor) {
+            Notice.showDownNotice(`不能调色`);
+            return;
+        }
+        if (hairColor?.color && hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(`单色`, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.color) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(`发顶色`, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(`发尾色`, hairColor?.gradientColor as mw.LinearColor));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(`不能调色`);
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.HairColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private changeCharacterColor(color: mw.LinearColor): void {
+        switch (this.colorPickTabId) {
+            case Tab2Type.Tab2_SkinTone:
+                this.localPlayer.character.description.advance.makeup.skinTone.skinColor = color;
+                break;
+            case Tab2Type.Tab2_Eyebrows:
+                this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowColor = color;
+                break;
+            case Tab2Type.Tab2_Top:
+                this.localPlayer.character.description.advance.clothing.upperCloth.part[this.colorPickTab2Index].color.areaColor = color;
+                break;
+            case Tab3Type.Tab3_FrontHair:
+                switch (this.colorPickTab2Index) {
+                    case 0:
+                        this.localPlayer.character.description.advance.hair.frontHair.color.color = color;
+                        this.localPlayer.character.description.advance.hair.frontHair.color.gradientColor = color;
+                        break;
+                    case 1:
+                        this.localPlayer.character.description.advance.hair.frontHair.color.color = color;
+                        break;
+                    case 2:
+                        this.localPlayer.character.description.advance.hair.frontHair.color.gradientColor = color;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
     }
 }

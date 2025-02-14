@@ -7,6 +7,7 @@ import {BlushConfig} from "./Blush";
 import {BodyTypeConfig} from "./BodyType";
 import {BottomConfig} from "./Bottom";
 import {ChatConfig} from "./Chat";
+import {ColorValueConfig} from "./ColorValue";
 import {EarConfig} from "./Ear";
 import {EffectsConfig} from "./Effects";
 import {ExpressionConfig} from "./Expression";
@@ -67,6 +68,7 @@ export class GameConfig{
 	public static get BodyType():BodyTypeConfig{ return this.getConfig(BodyTypeConfig) };
 	public static get Bottom():BottomConfig{ return this.getConfig(BottomConfig) };
 	public static get Chat():ChatConfig{ return this.getConfig(ChatConfig) };
+	public static get ColorValue():ColorValueConfig{ return this.getConfig(ColorValueConfig) };
 	public static get Ear():EarConfig{ return this.getConfig(EarConfig) };
 	public static get Effects():EffectsConfig{ return this.getConfig(EffectsConfig) };
 	public static get Expression():ExpressionConfig{ return this.getConfig(ExpressionConfig) };
