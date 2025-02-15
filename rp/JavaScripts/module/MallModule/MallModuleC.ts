@@ -494,8 +494,47 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             case Tab2Type.Tab2_Top:
                 this.openTopColorPickPanel();
                 break;
+            case Tab2Type.Tab2_Bottom:
+                this.openBottomColorPickPanel();
+                break;
+            case Tab2Type.Tab2_Shoes:
+                this.openShoesColorPickPanel();
+                break;
+            case Tab2Type.Tab2_Gloves:
+                this.openGlovesColorPickPanel();
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                this.openPupilStyleColorPickPanel();
+                break;
+            case Tab3Type.Tab3_Lens:
+                this.openLensColorPickPanel();
+                break;
+            case Tab3Type.Tab3_UpperHighlight:
+                this.openUpperHighlightColorPickPanel();
+                break;
+            case Tab3Type.Tab3_LowerHighlight:
+                this.openLowerHighlightColorPickPanel();
+                break;
+            case Tab3Type.Tab3_Eyelashes:
+                this.openEyelashesColorPickPanel();
+                break;
+            case Tab3Type.Tab3_Eyeshadow:
+                this.openEyeshadowColorPickPanel();
+                break;
+            case Tab3Type.Tab3_Blush:
+                this.openBlushColorPickPanel();
+                break;
+            case Tab3Type.Tab3_LipMakeup:
+                this.openLipMakeupColorPickPanel();
+                break;
+            case Tab3Type.Tab3_FullHair:
+                this.openFullHairColorPickPanel();
+                break;
             case Tab3Type.Tab3_FrontHair:
                 this.openFrontHairColorPickPanel();
+                break;
+            case Tab3Type.Tab3_BackHair:
+                this.openBackHairColorPickPanel();
                 break;
             default:
                 break;
@@ -531,9 +570,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private openEyebrowsColorPickPanel(): void {
         let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_105.Value}`;
 
-        let colorPickTab2Data = new ColorPickTab2Data(GameConfig.Language.Text_Tab2_105.Value,
-            this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowColor as mw.LinearColor);
-        this.colorPickTab2Datas.push(colorPickTab2Data);
+        let eyebrows = this.localPlayer.character.description.advance.makeup.eyebrows;
+        let eyebrowColor: mw.LinearColor = mw.LinearColor.white;
+        if (eyebrows?.eyebrowColor) eyebrowColor = eyebrows?.eyebrowColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Tab2_105.Value, eyebrowColor));
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.EyebrowsColor);
@@ -546,7 +586,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
         let part = this.localPlayer.character.description.advance.clothing.upperCloth?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(`不能调色`);
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -555,7 +595,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(`不能调色`);
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
             return;
         }
 
@@ -565,25 +605,352 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
+    private openBottomColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_111.Value}`;
+
+        let part = this.localPlayer.character.description.advance.clothing.lowerCloth?.part;
+        if (!part || part.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            return;
+        }
+        for (let i = 0; i < part.length; ++i) {
+            let color: mw.LinearColor = mw.LinearColor.white;
+            if (part[i]?.color?.areaColor) color = part[i]?.color?.areaColor as mw.LinearColor;
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.BottomColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openShoesColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_112.Value}`;
+
+        let part = this.localPlayer.character.description.advance.clothing.shoes?.part;
+        if (!part || part.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            return;
+        }
+        for (let i = 0; i < part.length; ++i) {
+            let color: mw.LinearColor = mw.LinearColor.white;
+            if (part[i]?.color?.areaColor) color = part[i]?.color?.areaColor as mw.LinearColor;
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.ShoeColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openGlovesColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_113.Value}`;
+
+        let part = this.localPlayer.character.description.advance.clothing.gloves?.part;
+        if (!part || part.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            return;
+        }
+        for (let i = 0; i < part.length; ++i) {
+            let color: mw.LinearColor = mw.LinearColor.white;
+            if (part[i]?.color?.areaColor) color = part[i]?.color?.areaColor as mw.LinearColor;
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.GloveColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openPupilStyleColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1001.Value}`;
+
+        let coloredContactsStyle = this.localPlayer.character.description.advance.makeup.coloredContacts.style;
+        if (!coloredContactsStyle || !coloredContactsStyle?.pupilStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            return;
+        }
+        let pupilColor: mw.LinearColor = mw.LinearColor.white;
+        if (coloredContactsStyle?.pupilColor) pupilColor = coloredContactsStyle?.pupilColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_PupilColor.Value, pupilColor));
+
+        let leftPupilColor: mw.LinearColor = mw.LinearColor.white;
+        if (coloredContactsStyle?.leftPupilColor) leftPupilColor = coloredContactsStyle?.leftPupilColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LeftPupilColor.Value, leftPupilColor));
+
+        let rightPupilColor: mw.LinearColor = mw.LinearColor.white;
+        if (coloredContactsStyle?.rightPupilColor) rightPupilColor = coloredContactsStyle?.rightPupilColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_RightPupilColor.Value, rightPupilColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.PupilStyleColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openLensColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1002.Value}`;
+
+        let coloredContactsDecal = this.localPlayer.character.description.advance.makeup.coloredContacts.decal;
+        if (!coloredContactsDecal || !coloredContactsDecal?.pupilStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            return;
+        }
+
+        let decalPupilColor: mw.LinearColor = mw.LinearColor.white;
+        if (coloredContactsDecal?.pupilColor) decalPupilColor = coloredContactsDecal?.pupilColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_DecalColor.Value, decalPupilColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.PupilStyleColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openUpperHighlightColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1003.Value}`;
+
+        let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
+        if (!highlight || !highlight?.upperHighlightStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            return;
+        }
+
+        let upperHighlightColor: mw.LinearColor = mw.LinearColor.white;
+        if (highlight?.upperHighlightColor) upperHighlightColor = highlight?.upperHighlightColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_UpperHighlightColor.Value, upperHighlightColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.PupilStyleColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openLowerHighlightColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1004.Value}`;
+
+        let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
+        if (!highlight || !highlight?.lowerHighlightStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            return;
+        }
+
+        let lowerHighlightColor: mw.LinearColor = mw.LinearColor.white;
+        if (highlight?.lowerHighlightColor) lowerHighlightColor = highlight?.lowerHighlightColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LowerHighlightColor.Value, lowerHighlightColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.PupilStyleColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openEyelashesColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1005.Value}`;
+
+        let eyelashes = this.localPlayer.character.description.advance.makeup.eyelashes;
+        if (!eyelashes || !eyelashes?.eyelashStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            return;
+        }
+
+        let eyelashColor: mw.LinearColor = mw.LinearColor.white;
+        if (eyelashes?.eyelashColor) eyelashColor = eyelashes?.eyelashColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyelashColor.Value, eyelashColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.EyeLashColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openEyeshadowColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1006.Value}`;
+
+        let eyeShadow = this.localPlayer.character.description.advance.makeup.eyeShadow;
+        if (!eyeShadow || !eyeShadow?.eyeshadowStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            return;
+        }
+
+        let eyeshaowColor: mw.LinearColor = mw.LinearColor.white;
+        if (eyeShadow?.eyeshaowColor) eyeshaowColor = eyeShadow?.eyeshaowColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyeshaowColor.Value, eyeshaowColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.EyeShadow);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openBlushColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1007.Value}`;
+
+        let blush = this.localPlayer.character.description.advance.makeup.blush;
+        if (!blush || !blush?.blushStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            return;
+        }
+
+        let blushColor: mw.LinearColor = mw.LinearColor.white;
+        if (blush?.blushColor) blushColor = blush?.blushColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_BlushColor.Value, blushColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.BlushColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openLipMakeupColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1008.Value}`;
+
+        let lipstick = this.localPlayer.character.description.advance.makeup.lipstick;
+        if (!lipstick || !lipstick?.lipstickStyle) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            return;
+        }
+
+        let lipstickColor: mw.LinearColor = mw.LinearColor.white;
+        if (lipstick?.lipstickColor) lipstickColor = lipstick?.lipstickColor as mw.LinearColor;
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LipstickColor.Value, lipstickColor));
+
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.LipstickColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openFullHairColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1010.Value}`;
+
+        let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
+        if (!hairColor) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            return;
+        }
+        if (hairColor?.color && hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Monochrome.Value, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.color) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TopColor.Value, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.HairColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
     private openFrontHairColorPickPanel(): void {
         let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1011.Value}`;
 
         let hairColor = this.localPlayer.character.description.advance.hair.frontHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(`不能调色`);
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
-            this.colorPickTab2Datas.push(new ColorPickTab2Data(`单色`, hairColor?.color as mw.LinearColor));
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Monochrome.Value, hairColor?.color as mw.LinearColor));
         }
         if (hairColor?.color) {
-            this.colorPickTab2Datas.push(new ColorPickTab2Data(`发顶色`, hairColor?.color as mw.LinearColor));
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TopColor.Value, hairColor?.color as mw.LinearColor));
         }
         if (hairColor?.gradientColor) {
-            this.colorPickTab2Datas.push(new ColorPickTab2Data(`发尾色`, hairColor?.gradientColor as mw.LinearColor));
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(`不能调色`);
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
+            return;
+        }
+
+        GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
+            this.colorPickTab3Colors.push(value.HairColor);
+        });
+        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+    }
+
+    private openBackHairColorPickPanel(): void {
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1012.Value}`;
+
+        let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
+        if (!hairColor) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
+            return;
+        }
+        if (hairColor?.color && hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Monochrome.Value, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.color) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TopColor.Value, hairColor?.color as mw.LinearColor));
+        }
+        if (hairColor?.gradientColor) {
+            this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
+        }
+        if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
             return;
         }
 
@@ -604,6 +971,67 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             case Tab2Type.Tab2_Top:
                 this.localPlayer.character.description.advance.clothing.upperCloth.part[this.colorPickTab2Index].color.areaColor = color;
                 break;
+            case Tab2Type.Tab2_Bottom:
+                this.localPlayer.character.description.advance.clothing.lowerCloth.part[this.colorPickTab2Index].color.areaColor = color;
+                break;
+            case Tab2Type.Tab2_Shoes:
+                this.localPlayer.character.description.advance.clothing.shoes.part[this.colorPickTab2Index].color.areaColor = color;
+                break;
+            case Tab2Type.Tab2_Gloves:
+                this.localPlayer.character.description.advance.clothing.gloves.part[this.colorPickTab2Index].color.areaColor = color;
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                switch (this.colorPickTab2Index) {
+                    case 0:
+                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilColor = color;
+                        break;
+                    case 1:
+                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.leftPupilColor = color;
+                        break;
+                    case 2:
+                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.rightPupilColor = color;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case Tab3Type.Tab3_Lens:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilColor = color;
+                break;
+            case Tab3Type.Tab3_UpperHighlight:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightColor = color;
+                break;
+            case Tab3Type.Tab3_LowerHighlight:
+                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightColor = color;
+                break;
+            case Tab3Type.Tab3_Eyelashes:
+                this.localPlayer.character.description.advance.makeup.eyelashes.eyelashColor = color;
+                break;
+            case Tab3Type.Tab3_Eyeshadow:
+                this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshaowColor = color;
+                break;
+            case Tab3Type.Tab3_Blush:
+                this.localPlayer.character.description.advance.makeup.blush.blushColor = color;
+                break;
+            case Tab3Type.Tab3_LipMakeup:
+                this.localPlayer.character.description.advance.makeup.lipstick.lipstickColor = color;
+                break;
+            case Tab3Type.Tab3_FullHair:
+                switch (this.colorPickTab2Index) {
+                    case 0:
+                        this.localPlayer.character.description.advance.hair.backHair.color.color = color;
+                        this.localPlayer.character.description.advance.hair.backHair.color.gradientColor = color;
+                        break;
+                    case 1:
+                        this.localPlayer.character.description.advance.hair.backHair.color.color = color;
+                        break;
+                    case 2:
+                        this.localPlayer.character.description.advance.hair.backHair.color.gradientColor = color;
+                        break;
+                    default:
+                        break;
+                }
+                break;
             case Tab3Type.Tab3_FrontHair:
                 switch (this.colorPickTab2Index) {
                     case 0:
@@ -615,6 +1043,22 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                         break;
                     case 2:
                         this.localPlayer.character.description.advance.hair.frontHair.color.gradientColor = color;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            case Tab3Type.Tab3_BackHair:
+                switch (this.colorPickTab2Index) {
+                    case 0:
+                        this.localPlayer.character.description.advance.hair.backHair.color.color = color;
+                        this.localPlayer.character.description.advance.hair.backHair.color.gradientColor = color;
+                        break;
+                    case 1:
+                        this.localPlayer.character.description.advance.hair.backHair.color.color = color;
+                        break;
+                    case 2:
+                        this.localPlayer.character.description.advance.hair.backHair.color.gradientColor = color;
                         break;
                     default:
                         break;

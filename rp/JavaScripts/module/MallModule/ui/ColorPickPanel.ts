@@ -49,8 +49,8 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 		this.colorPickTab2Datas = colorPickTab2Datas;
 		this.refreshColorPickTab2();
 		this.colorPickTab3Colors = colorPickTab3Colors;
-		this.refreshColorPick();
 		this.refreshColorPickTab3();
+		this.refreshColorPick();
 		this.show();
 	}
 
@@ -141,7 +141,9 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 
 	private refreshColorPick(): void {
 		if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) return;
+		this.isLockColorPick = true;
 		this.mColorPick.color = this.colorPickTab2Datas[this.currenrColorPickTab2Index].color;
+		this.isLockColorPick = false;
 	}
 
 	public checkColorPickTab3AndColorPick(color: mw.LinearColor): void {
@@ -149,17 +151,23 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 		this.colorPickTab3Map.forEach((value: ColorPickTab3, key: string) => {
 			value.updateSelectState(Utils.isEqulaLinearColor(Utils.colorHexToLinearColorToString(key), color));
 		});
+		this.isLockColorPick = true;
 		this.mColorPick.color = color;
+		this.isLockColorPick = false;
 	}
 
 	public refreshColorPickTab2AndColorPick(color: mw.LinearColor): void {
 		if (!color) return;
+		this.isLockColorPick = true;
 		this.mColorPick.color = color;
+		this.isLockColorPick = false;
 		if (this.currenrColorPickTab2Index < 0 || !this.colorPickTab2s || this.currenrColorPickTab2Index >= this.colorPickTab2s.length) return;
 		this.colorPickTab2s[this.currenrColorPickTab2Index].refreshColorImage(color);
 	}
 
+	private isLockColorPick: boolean = false;
 	private addColorChanged(Content: mw.LinearColor): void {
+		if (this.isLockColorPick) return;
 		this.getMallModuleC.onColorPickChangedAction.call(Content);
 		this.colorPickTab3Map.forEach((value: ColorPickTab3, key: string) => {
 			value.updateSelectState(false);

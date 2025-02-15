@@ -1,5 +1,5 @@
 import { ConfigBase, IElementBase } from "./ConfigBase";
-const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","SexType"],["","","",""],[1,"露指手套","60384",1],[2,"绣花薄手套","60081",2]];
+const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","SexType"],["","","",""],[1,"翻毛黄金首饰","137386",1],[2,"清洁手套","119254",2]];
 export interface IGlovesElement extends IElementBase{
  	/**undefined*/
 	ID:number
