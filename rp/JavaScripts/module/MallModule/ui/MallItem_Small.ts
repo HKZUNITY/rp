@@ -4,6 +4,7 @@ import { GameConfig } from "../../../configs/GameConfig";
 import { ITrailingElement } from "../../../configs/Trailing";
 import Utils from "../../../tools/Utils";
 import MallItem_Small_Generate from "../../../ui-generate/module/MallModule/MallItem_Small_generate";
+import Mall from "../Mall";
 import { Tab2Type, Tab3Type, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 
@@ -54,11 +55,13 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 	private tabType: TabType = TabType.None;
 	private tabId: number = 0;
 	private assetId: string = null;
+	private isSupportColor: boolean = false;
 	public initItem(tabType: TabType, tabId: number, assetId: string): void {
 		this.tabType = tabType;
 		this.tabId = tabId;
 		this.assetId = assetId;
 		this.mIconImage.imageColor = mw.LinearColor.white;
+		this.isSupportColor = Mall.isSupportColorPick(tabId);
 		switch (tabId) {
 			case Tab3Type.Tab3_Lens:
 			case Tab3Type.Tab3_UpperHighlight:
@@ -111,7 +114,11 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 	public updateSelectStateUI(): void {
 		if (this.isSelect) {
 			this.mSelectButton.renderOpacity = 1;
-			Utils.setWidgetVisibility(this.mColorButton, mw.SlateVisibility.Visible);
+			if (this.isSupportColor) {
+				Utils.setWidgetVisibility(this.mColorButton, mw.SlateVisibility.Visible);
+			} else {
+				Utils.setWidgetVisibility(this.mColorButton, mw.SlateVisibility.Collapsed);
+			}
 		} else {
 			this.mSelectButton.renderOpacity = 0;
 			Utils.setWidgetVisibility(this.mColorButton, mw.SlateVisibility.Collapsed);

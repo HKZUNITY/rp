@@ -1,4 +1,5 @@
-﻿import Utils from "../../../tools/Utils";
+﻿import { GameConfig } from "../../../configs/GameConfig";
+import Utils from "../../../tools/Utils";
 import ColorPickPanel_Generate from "../../../ui-generate/module/MallModule/ColorPickPanel_generate";
 import { ColorPickTab2Data } from "../MallData";
 import MallModuleC from "../MallModuleC";
@@ -28,14 +29,22 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 	}
 
 	private initUI(): void {
-
+		this.mSaveTextBlock.text = GameConfig.Language.Text_SaveColor.Value;
 	}
 
 	private bindButton(): void {
-		this.mCloseButton.onClicked.add(() => {
-			this.hide();
-			this.getMallModuleC.onCloseColorPickPanelAction.call();
-		});
+		this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+		this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+	}
+
+	private addCloseButton(): void {
+		this.hide();
+		this.getMallModuleC.onCloseColorPickPanelAction.call();
+	}
+
+	private addSaveButton(): void {
+		this.hide();
+		this.getMallModuleC.onSaveColorPickPanelAction.call();
 	}
 
 	private bindAction(): void {

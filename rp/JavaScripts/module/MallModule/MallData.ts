@@ -19,6 +19,14 @@ export class ColorPickTab2Data {
     }
 }
 
+export class AssetIdInfoData {
+    public assetType: number = null;
+    public assetId: string = null;
+    public isPendant: boolean = false;
+    public slotType: number = -1;
+    public slotIndex: number = -1;
+}
+
 export enum TabType {
     None,
     Tab1,

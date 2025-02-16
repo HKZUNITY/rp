@@ -8,10 +8,11 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
-import MallData, { TabType, Tab2Type, Tab3Type, ColorPickTab2Data } from "./MallData";
+import MallData, { TabType, Tab2Type, Tab3Type, ColorPickTab2Data, AssetIdInfoData } from "./MallData";
 import MallModuleS from "./MallModuleS";
 import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
+import MallTipsPanel from "./ui/MallTipsPanel";
 
 export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private hudModuleC: HUDModuleC = null;
@@ -38,17 +39,29 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         return this.colorPickPanel;
     }
 
+    private mallTipsPanel: MallTipsPanel = null;
+    private get getMallTipsPanel(): MallTipsPanel {
+        if (!this.mallTipsPanel) {
+            this.mallTipsPanel = UIService.getUI(MallTipsPanel);
+        }
+        return this.mallTipsPanel;
+    }
+
     public onSelectTab1Action: Action1<number> = new Action1<number>();
     public onSelectTab2Action: Action1<number> = new Action1<number>();
     public onSelectTab3Action: Action1<number> = new Action1<number>();
     public onSelectItemAction: Action3<number, number, string> = new Action3<number, number, string>();
     public onOpenColorPickAction: Action2<number, number> = new Action2<number, number>();
+    public onResetAction: Action = new Action();
     public onSaveAction: Action = new Action();
+    public onSexAction: Action = new Action();
     public onCloseMallPanelAction: Action = new Action();
     public onSelectColorPickTab2Action: Action1<number> = new Action1<number>();
     public onSelectColorPickTab3Action: Action1<number> = new Action1<number>();
     public onColorPickChangedAction: Action1<mw.LinearColor> = new Action1<mw.LinearColor>();
     public onCloseColorPickPanelAction: Action = new Action();
+    public onSaveColorPickPanelAction: Action = new Action();
+    public onCloseMallItemSelfAction: Action2<number, string> = new Action2<number, string>();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -67,35 +80,86 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.onOpenColorPickAction.add(this.addOpenColorPickAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
         this.onCloseMallPanelAction.add(this.addCloseAction.bind(this));
+        this.onResetAction.add(this.addResetAction.bind(this));
+        this.onSexAction.add(this.addSexAction.bind(this));
         this.onSelectColorPickTab2Action.add(this.addSelectColorPickTab2Action.bind(this));
         this.onSelectColorPickTab3Action.add(this.addSelectColorPickTab3Action.bind(this));
         this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
         this.onCloseColorPickPanelAction.add(this.addCloseColorPickPanelAction.bind(this));
+        this.onSaveColorPickPanelAction.add(this.addSaveColorPickPanelAction.bind(this));
     }
 
     private bindEvent(): void {
         InputUtil.onKeyDown(mw.Keys.O, () => {
             this.addOpenMallAction();
         });
-        InputUtil.onKeyDown(mw.Keys.P, () => {
-            this.getMallPanel.hide();
-            this.onSwitchCameraAction.call(0);
-        });
+    }
+
+    private addSaveColorPickPanelAction(): void {
+        this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
     }
 
     private addCloseColorPickPanelAction(): void {
-        this.getMallPanel.closeColorPickPanelShow();
+        this.getMallTipsPanel.showTips(() => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
+                await this.copyNpc.asyncReady();
+                this.localPlayer.character.setDescription(this.copyNpc.getDescription());
+                await this.localPlayer.character.asyncReady();
+                this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
+            });
+        }, () => {
+            this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
+        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
     }
 
     private addOpenMallAction(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            await this.refreshUsingCharacterData();
             this.onSwitchCameraAction.call(1);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
-                this.getMallPanel.initMallPanel();
+                this.getMallPanel.initMallPanel(this.saveSomatotype);
             }
             this.getMallPanel.show();
         });
+    }
+
+    private closeMallPanel(): void {
+        this.getMallPanel.hide();
+        this.onSwitchCameraAction.call(0);
+    }
+
+    private saveUsingAssetIdMap: Map<number, AssetIdInfoData> = new Map<number, AssetIdInfoData>();
+    private usingAssetIdMap: Map<number, AssetIdInfoData> = new Map<number, AssetIdInfoData>();
+    private async refreshUsingCharacterData(): Promise<void> {
+        this.usingAssetIdMap.clear();
+        this.saveUsingAssetIdMap.clear();
+
+        let npc = (this.saveSomatotype % 2 == 0) ? this.feMaleNpc : this.maleNpc;
+        await npc.asyncReady();
+
+        let faceAssetIdInfoData1: AssetIdInfoData = new AssetIdInfoData();
+        faceAssetIdInfoData1.assetType = Tab2Type.Tab2_Face;
+        faceAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.headFeatures.head.style;
+        faceAssetIdInfoData1.isPendant = false;
+        this.usingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData1);
+        let faceAssetIdInfoData2: AssetIdInfoData = new AssetIdInfoData();
+        faceAssetIdInfoData2.assetType = Tab2Type.Tab2_Face;
+        faceAssetIdInfoData2.assetId = npc.description.advance.headFeatures.head.style;
+        faceAssetIdInfoData2.isPendant = false;
+        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData2);
+
+        let eryebrowsAssetIdInfoData1: AssetIdInfoData = new AssetIdInfoData();
+        eryebrowsAssetIdInfoData1.assetType = Tab2Type.Tab2_Eyebrows;
+        eryebrowsAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle
+        eryebrowsAssetIdInfoData1.isPendant = false;
+        this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData1);
+        let eryebrowsAssetIdInfoData2: AssetIdInfoData = new AssetIdInfoData();
+        eryebrowsAssetIdInfoData2.assetType = Tab2Type.Tab2_Eyebrows;
+        eryebrowsAssetIdInfoData2.assetId = npc.description.advance.makeup.eyebrows.eyebrowStyle
+        eryebrowsAssetIdInfoData2.isPendant = false;
+        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData2);
     }
 
     private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {
@@ -292,8 +356,8 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let decorationIndex: number = -1;
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
-            let decoration = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
-            this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(decoration, true);
+            let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
+            this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
         } else {
         }
         let model = await GameObject.asyncSpawn(assetId) as mw.Model;
@@ -444,11 +508,17 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private addOpenColorPickAction(tabType: TabType, tabId: number): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
+            this.copyNpc.setDescription(this.localPlayer.character.getDescription());
+            await this.copyNpc.asyncReady();
             this.openColorPickPanel(tabId);
         });
     }
 
     private addSaveAction(): void {
+        this.saveCharacterDescription();
+    }
+
+    private saveCharacterDescription(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
@@ -460,17 +530,59 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.maleNpc.setDescription(this.localPlayer.character.getDescription());
                 await this.maleNpc.asyncReady();
             }
+            this.localPlayer.character.syncDescription();
         });
     }
 
     private addCloseAction(): void {
+        this.getMallTipsPanel.showTips(() => {
+            this.saveCharacterDescription();
+            this.closeMallPanel();
+        }, () => {
+            this.recoverCharacter();
+            this.closeMallPanel();
+        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+    }
+
+    private recoverCharacter(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.getMallPanel.hide();
+            this.onSwitchCameraAction.call(0);
             if (this.saveSomatotype % 2 == 0) {
                 this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
             } else {
                 this.localPlayer.character.setDescription(this.maleNpc.getDescription());
             }
             await this.localPlayer.character.asyncReady();
+            // this.localPlayer.character.syncDescription();
+        });
+    }
+
+    private addResetAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            let isSuccess = await Utils.accountServiceDownloadData(this.localPlayer.character);
+            if (!isSuccess) {
+                Notice.showDownNotice(GameConfig.Language.Text_ResetImageFaild.Value);
+                return;
+            }
+            await this.localPlayer.character.asyncReady();
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype);
+        });
+    }
+
+    private addSexAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            if (somatotype % 2 == 0) {
+                this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+            } else {
+                this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+            }
+            await this.localPlayer.character.asyncReady();
+            somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype);
         });
     }
 

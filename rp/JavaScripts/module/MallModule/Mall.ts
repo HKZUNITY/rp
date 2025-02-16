@@ -1,5 +1,5 @@
 ﻿import Utils from "../../tools/Utils";
-import { Tab2Type } from "./MallData";
+import { Tab2Type, Tab3Type } from "./MallData";
 
 export default class Mall {
     public static async copyCharacterSlot(fromCharacter: mw.Character, toCharacter: mw.Character): Promise<void> {
@@ -76,7 +76,25 @@ export default class Mall {
         toClothing.gloves.style = fromClothing.gloves.style;
     }
 
-    public static colorPickTabIds: number[] = [
-        Tab2Type.Tab2_Accessory
+    private static colorPickTabIds: number[] = [
+        Tab2Type.Tab2_Eyebrows,
+        Tab2Type.Tab2_Top,
+        Tab2Type.Tab2_Bottom,
+        Tab2Type.Tab2_Shoes,
+        Tab2Type.Tab2_Gloves,
+        Tab3Type.Tab3_PupilStyle,
+        Tab3Type.Tab3_Lens,
+        Tab3Type.Tab3_UpperHighlight,
+        Tab3Type.Tab3_LowerHighlight,
+        Tab3Type.Tab3_Eyelashes,
+        Tab3Type.Tab3_Eyeshadow,
+        Tab3Type.Tab3_Blush,
+        Tab3Type.Tab3_LipMakeup,
+        Tab3Type.Tab3_FullHair,
+        Tab3Type.Tab3_FrontHair,
+        Tab3Type.Tab3_BackHair
     ];
+    public static isSupportColorPick(tabId: number): boolean {
+        return this.colorPickTabIds.includes(tabId);
+    }
 }

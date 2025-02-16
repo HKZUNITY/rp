@@ -3,12 +3,68 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.14-21.00.50
+ * TIME: 2025.02.16-23.58.50
  */
  
 @UIBind('UI/module/MallModule/MallPanel.ui')
 export default class MallPanel_Generate extends UIScript {
-		private mListBgImage_Internal: mw.Image
+		private mResetButton_Internal: mw.Button
+	public get mResetButton(): mw.Button {
+		if(!this.mResetButton_Internal&&this.uiWidgetBase) {
+			this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton') as mw.Button
+		}
+		return this.mResetButton_Internal
+	}
+	private mResetTextBlock_Internal: mw.TextBlock
+	public get mResetTextBlock(): mw.TextBlock {
+		if(!this.mResetTextBlock_Internal&&this.uiWidgetBase) {
+			this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton/mResetTextBlock') as mw.TextBlock
+		}
+		return this.mResetTextBlock_Internal
+	}
+	private mSaveButton_Internal: mw.Button
+	public get mSaveButton(): mw.Button {
+		if(!this.mSaveButton_Internal&&this.uiWidgetBase) {
+			this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton') as mw.Button
+		}
+		return this.mSaveButton_Internal
+	}
+	private mSaveTextBlock_Internal: mw.TextBlock
+	public get mSaveTextBlock(): mw.TextBlock {
+		if(!this.mSaveTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton/mSaveTextBlock') as mw.TextBlock
+		}
+		return this.mSaveTextBlock_Internal
+	}
+	private mSexButton_Internal: mw.Button
+	public get mSexButton(): mw.Button {
+		if(!this.mSexButton_Internal&&this.uiWidgetBase) {
+			this.mSexButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSexButton') as mw.Button
+		}
+		return this.mSexButton_Internal
+	}
+	private mSexImage_Internal: mw.Image
+	public get mSexImage(): mw.Image {
+		if(!this.mSexImage_Internal&&this.uiWidgetBase) {
+			this.mSexImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSexButton/mSexImage') as mw.Image
+		}
+		return this.mSexImage_Internal
+	}
+	private mSelfScrollBox_Internal: mw.ScrollBox
+	public get mSelfScrollBox(): mw.ScrollBox {
+		if(!this.mSelfScrollBox_Internal&&this.uiWidgetBase) {
+			this.mSelfScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/SelfCanvas/mSelfScrollBox') as mw.ScrollBox
+		}
+		return this.mSelfScrollBox_Internal
+	}
+	private mSelfContentCanvas_Internal: mw.Canvas
+	public get mSelfContentCanvas(): mw.Canvas {
+		if(!this.mSelfContentCanvas_Internal&&this.uiWidgetBase) {
+			this.mSelfContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/SelfCanvas/mSelfScrollBox/mSelfContentCanvas') as mw.Canvas
+		}
+		return this.mSelfContentCanvas_Internal
+	}
+	private mListBgImage_Internal: mw.Image
 	public get mListBgImage(): mw.Image {
 		if(!this.mListBgImage_Internal&&this.uiWidgetBase) {
 			this.mListBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListBgImage') as mw.Image
@@ -99,6 +155,20 @@ export default class MallPanel_Generate extends UIScript {
 		}
 		return this.mItemContentCanvas_Internal
 	}
+	private mCloseButton_Internal: mw.Button
+	public get mCloseButton(): mw.Button {
+		if(!this.mCloseButton_Internal&&this.uiWidgetBase) {
+			this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton') as mw.Button
+		}
+		return this.mCloseButton_Internal
+	}
+	private mCloseImage_Internal: mw.Image
+	public get mCloseImage(): mw.Image {
+		if(!this.mCloseImage_Internal&&this.uiWidgetBase) {
+			this.mCloseImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton/mCloseImage') as mw.Image
+		}
+		return this.mCloseImage_Internal
+	}
 
 
 	protected onAwake() {
@@ -112,10 +182,40 @@ export default class MallPanel_Generate extends UIScript {
 		
 		//按钮添加点击
 		
+		this.mResetButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mResetButton");
+		});
+		this.mResetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mSaveButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+		});
+		this.mSaveButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mSexButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mSexButton");
+		});
+		this.mSexButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mCloseButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+		});
+		this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		//按钮多语言
 		
 		//文本多语言
 		
+		this.initLanguage(this.mResetTextBlock)
+		
+	
+		this.initLanguage(this.mSaveTextBlock)
+		
+	
 		//文本多语言
 		
 	}

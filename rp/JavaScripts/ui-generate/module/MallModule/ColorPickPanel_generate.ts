@@ -3,12 +3,33 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.02.14-21.00.50
+ * TIME: 2025.02.16-23.58.50
  */
  
 @UIBind('UI/module/MallModule/ColorPickPanel.ui')
 export default class ColorPickPanel_Generate extends UIScript {
-		private mListBgImage_Internal: mw.Image
+		private mSaveCanvas_Internal: mw.Canvas
+	public get mSaveCanvas(): mw.Canvas {
+		if(!this.mSaveCanvas_Internal&&this.uiWidgetBase) {
+			this.mSaveCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveCanvas') as mw.Canvas
+		}
+		return this.mSaveCanvas_Internal
+	}
+	private mSaveButton_Internal: mw.Button
+	public get mSaveButton(): mw.Button {
+		if(!this.mSaveButton_Internal&&this.uiWidgetBase) {
+			this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveCanvas/SaveCanvas/mSaveButton') as mw.Button
+		}
+		return this.mSaveButton_Internal
+	}
+	private mSaveTextBlock_Internal: mw.TextBlock
+	public get mSaveTextBlock(): mw.TextBlock {
+		if(!this.mSaveTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveCanvas/SaveCanvas/mSaveTextBlock') as mw.TextBlock
+		}
+		return this.mSaveTextBlock_Internal
+	}
+	private mListBgImage_Internal: mw.Image
 	public get mListBgImage(): mw.Image {
 		if(!this.mListBgImage_Internal&&this.uiWidgetBase) {
 			this.mListBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListBgImage') as mw.Image
@@ -102,9 +123,16 @@ export default class ColorPickPanel_Generate extends UIScript {
 	private mCloseButton_Internal: mw.Button
 	public get mCloseButton(): mw.Button {
 		if(!this.mCloseButton_Internal&&this.uiWidgetBase) {
-			this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseButton') as mw.Button
+			this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton') as mw.Button
 		}
 		return this.mCloseButton_Internal
+	}
+	private mCloseImage_Internal: mw.Image
+	public get mCloseImage(): mw.Image {
+		if(!this.mCloseImage_Internal&&this.uiWidgetBase) {
+			this.mCloseImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton/mCloseImage') as mw.Image
+		}
+		return this.mCloseImage_Internal
 	}
 
 
@@ -119,6 +147,12 @@ export default class ColorPickPanel_Generate extends UIScript {
 		
 		//按钮添加点击
 		
+		this.mSaveButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+		});
+		this.mSaveButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mCloseButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
 		});
@@ -129,6 +163,9 @@ export default class ColorPickPanel_Generate extends UIScript {
 		
 		//文本多语言
 		
+		this.initLanguage(this.mSaveTextBlock)
+		
+	
 		//文本多语言
 		
 	}

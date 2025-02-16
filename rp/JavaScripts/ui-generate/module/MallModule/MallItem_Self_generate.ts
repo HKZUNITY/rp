@@ -2,32 +2,32 @@
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/HUDModule/HUDItem.ui
+ * UI: UI/module/MallModule/MallItem_Self.ui
  * TIME: 2025.02.16-23.58.50
  */
  
-@UIBind('UI/module/HUDModule/HUDItem.ui')
-export default class HUDItem_Generate extends UIScript {
-		private mIconImage_Internal: mw.Image
+@UIBind('UI/module/MallModule/MallItem_Self.ui')
+export default class MallItem_Self_Generate extends UIScript {
+		private mBgImage_Internal: mw.Image
+	public get mBgImage(): mw.Image {
+		if(!this.mBgImage_Internal&&this.uiWidgetBase) {
+			this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage') as mw.Image
+		}
+		return this.mBgImage_Internal
+	}
+	private mIconImage_Internal: mw.Image
 	public get mIconImage(): mw.Image {
 		if(!this.mIconImage_Internal&&this.uiWidgetBase) {
 			this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage') as mw.Image
 		}
 		return this.mIconImage_Internal
 	}
-	private mSelectImage_Internal: mw.Image
-	public get mSelectImage(): mw.Image {
-		if(!this.mSelectImage_Internal&&this.uiWidgetBase) {
-			this.mSelectImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelectImage') as mw.Image
+	private mMaskImage_Internal: mw.Image
+	public get mMaskImage(): mw.Image {
+		if(!this.mMaskImage_Internal&&this.uiWidgetBase) {
+			this.mMaskImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMaskImage') as mw.Image
 		}
-		return this.mSelectImage_Internal
-	}
-	private mClickButton_Internal: mw.StaleButton
-	public get mClickButton(): mw.StaleButton {
-		if(!this.mClickButton_Internal&&this.uiWidgetBase) {
-			this.mClickButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickButton') as mw.StaleButton
-		}
-		return this.mClickButton_Internal
+		return this.mMaskImage_Internal
 	}
 	private mCloseButton_Internal: mw.StaleButton
 	public get mCloseButton(): mw.StaleButton {
@@ -47,13 +47,6 @@ export default class HUDItem_Generate extends UIScript {
 	protected initButtons() {
 		//按钮添加点击
 		
-		this.mClickButton.onClicked.add(()=>{
-			Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-		});
-		this.initLanguage(this.mClickButton);
-		this.mClickButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-		
-	
 		this.mCloseButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
 		});

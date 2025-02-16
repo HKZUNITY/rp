@@ -38,6 +38,7 @@ import { Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 import MallItem_Big from "./MallItem_Big";
 import MallItem_Color from "./MallItem_Color";
+import MallItem_Self from "./MallItem_Self";
 import MallItem_Small from "./MallItem_Small";
 import MallTab1 from "./MallTab1";
 import MallTab2 from "./MallTab2";
@@ -65,11 +66,42 @@ export default class MallPanel extends MallPanel_Generate {
 	}
 
 	private initUI(): void {
-
+		this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
+		this.mResetTextBlock.text = GameConfig.Language.Text_ResetImage.Value;
 	}
 
 	private bindButton(): void {
+		this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+		this.mResetButton.onClicked.add(this.addResetButton.bind(this));
+		this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+		this.mSexButton.onClicked.add(this.addSexButton.bind(this));
+	}
 
+	private addCloseButton(): void {
+		this.getMallModuleC.onCloseMallPanelAction.call();
+	}
+
+	private addResetButton(): void {
+		this.getMallModuleC.onResetAction.call();
+	}
+
+	private addSaveButton(): void {
+		this.getMallModuleC.onSaveAction.call();
+	}
+
+	private addSexButton(): void {
+		this.getMallModuleC.onSexAction.call();
+	}
+
+	private currentSomatotype: number = -1;
+	private switchSexImage(somatotype: number): void {
+		if (this.currentSomatotype == somatotype) return;
+		this.currentSomatotype = somatotype;
+		if (somatotype % 2 == 0) {
+			this.mSexButton.normalImageGuid = `311549`;
+		} else {
+			this.mSexButton.normalImageGuid = `311563`;
+		}
 	}
 
 	private bindAction(): void {
@@ -78,12 +110,13 @@ export default class MallPanel extends MallPanel_Generate {
 		this.getMallModuleC.onSelectTab3Action.add(this.addSelectTab3Action.bind(this));
 	}
 
-	public closeColorPickPanelShow(): void {
+	public checkSkinToneMallItemStateAndShowMallPanel(): void {
 		this.show();
 		this.checkSkinToneMallItemState();
 	}
 
-	public initMallPanel(): void {
+	public initMallPanel(somatotype: number): void {
+		this.switchSexImage(somatotype);
 		this.initTab1();
 	}
 
@@ -356,34 +389,34 @@ export default class MallPanel extends MallPanel_Generate {
 		this.clearMallItemData();
 		switch (this.tab2Id) {
 			case Tab2Type.Tab2_BodyType:
-				GameConfig.BodyType.getAllElement().forEach((value: IBodyTypeElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.BodyType.getAllElement().forEach((value: IBodyTypeElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_SkinTone:
-				GameConfig.SkinTone.getAllElement().forEach((value: ISkinToneElement) => { this.mallItemAssetIds.push(value.SkinTone); });
+				GameConfig.SkinTone.getAllElement().forEach((value: ISkinToneElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.SkinTone); });
 				break;
 			case Tab2Type.Tab2_Face:
-				GameConfig.Face.getAllElement().forEach((value: IFaceElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Face.getAllElement().forEach((value: IFaceElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Eyebrows:
-				GameConfig.Eyebrows.getAllElement().forEach((value: IEyebrowsElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Eyebrows.getAllElement().forEach((value: IEyebrowsElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Expression:
-				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_Outfit:
-				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab2Type.Tab2_Top:
-				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Bottom:
-				GameConfig.Bottom.getAllElement().forEach((value: IBottomElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Bottom.getAllElement().forEach((value: IBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Shoes:
-				GameConfig.Shoes.getAllElement().forEach((value: IShoesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Shoes.getAllElement().forEach((value: IShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Gloves:
-				GameConfig.Gloves.getAllElement().forEach((value: IGlovesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Gloves.getAllElement().forEach((value: IGlovesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Pet:
 				// GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
@@ -399,67 +432,67 @@ export default class MallPanel extends MallPanel_Generate {
 		this.clearMallItemData();
 		switch (this.tab3Id) {
 			case Tab3Type.Tab3_PupilStyle:
-				GameConfig.PupilStyle.getAllElement().forEach((value: IPupilStyleElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.PupilStyle.getAllElement().forEach((value: IPupilStyleElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_Lens:
-				GameConfig.Lens.getAllElement().forEach((value: ILensElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Lens.getAllElement().forEach((value: ILensElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_UpperHighlight:
-				GameConfig.UpperHighlight.getAllElement().forEach((value: IUpperHighlightElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.UpperHighlight.getAllElement().forEach((value: IUpperHighlightElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_LowerHighlight:
-				GameConfig.LowerHighlight.getAllElement().forEach((value: ILowerHighlightElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.LowerHighlight.getAllElement().forEach((value: ILowerHighlightElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_Eyelashes:
-				GameConfig.Eyelashes.getAllElement().forEach((value: IEyelashesElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Eyelashes.getAllElement().forEach((value: IEyelashesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_Eyeshadow:
-				GameConfig.Eyeshadow.getAllElement().forEach((value: IEyeshadowElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Eyeshadow.getAllElement().forEach((value: IEyeshadowElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_Blush:
-				GameConfig.Blush.getAllElement().forEach((value: IBlushElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Blush.getAllElement().forEach((value: IBlushElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_LipMakeup:
-				GameConfig.LipMakeup.getAllElement().forEach((value: ILipMakeupElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.LipMakeup.getAllElement().forEach((value: ILipMakeupElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_FaceTattoo:
 				// GameConfig.Eyelashes.getAllElement().forEach((value: IEyelashesElement) => { this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_FullHair:
-				GameConfig.FullHair.getAllElement().forEach((value: IFullHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.FullHair.getAllElement().forEach((value: IFullHairElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_FrontHair:
-				GameConfig.FrontHair.getAllElement().forEach((value: IFrontHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.FrontHair.getAllElement().forEach((value: IFrontHairElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_BackHair:
-				GameConfig.BackHair.getAllElement().forEach((value: IBackHairElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.BackHair.getAllElement().forEach((value: IBackHairElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab3Type.Tab3_LeftHand:
-				GameConfig.LeftHand.getAllElement().forEach((value: ILeftHandElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.LeftHand.getAllElement().forEach((value: ILeftHandElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_RightHand:
-				GameConfig.RightHand.getAllElement().forEach((value: IRightHandElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.RightHand.getAllElement().forEach((value: IRightHandElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Back:
-				GameConfig.Back.getAllElement().forEach((value: IBackElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Back.getAllElement().forEach((value: IBackElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Ear:
-				GameConfig.Ear.getAllElement().forEach((value: IEarElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Ear.getAllElement().forEach((value: IEarElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Face:
-				GameConfig.Facing.getAllElement().forEach((value: IFacingElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Facing.getAllElement().forEach((value: IFacingElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Hip:
-				GameConfig.Hip.getAllElement().forEach((value: IHipElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Hip.getAllElement().forEach((value: IHipElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Shoulder:
-				GameConfig.Shoulder.getAllElement().forEach((value: IShoulderElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Shoulder.getAllElement().forEach((value: IShoulderElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Effects:
-				GameConfig.Effects.getAllElement().forEach((value: IEffectsElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Effects.getAllElement().forEach((value: IEffectsElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_Trailing:
-				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { this.mallItemAssetIds.push(`${value.ID}`); });
+				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			default:
 				break;
@@ -619,7 +652,7 @@ export default class MallPanel extends MallPanel_Generate {
 		});
 	}
 
-	public checkSkinToneMallItemState(): void {
+	private checkSkinToneMallItemState(): void {
 		if (this.currentConfigId != Tab2Type.Tab2_SkinTone) return;
 		ExecutorManager.instance.pushAsyncExecutor(async () => {
 			let assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId) as mw.LinearColor;
@@ -751,5 +784,10 @@ export default class MallPanel extends MallPanel_Generate {
 				Utils.setWidgetVisibility(this.mallTab3s[i].uiObject, mw.SlateVisibility.Collapsed);
 			}
 		}
+	}
+
+	private mallItem_Self: MallItem_Self[] = [];
+	private updateMallItemSelf(): void {
+
 	}
 }

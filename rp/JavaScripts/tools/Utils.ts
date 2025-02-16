@@ -260,4 +260,12 @@ export default class Utils {
         transform.scale = new mw.Vector(Number(strArray[6]), Number(strArray[7]), Number(strArray[8]));
         return transform;
     }
+
+    public static accountServiceDownloadData(character: mw.Character): Promise<boolean> {
+        return new Promise(async (resolve: (isSuccess: boolean) => void) => {
+            mw.AccountService.downloadData(character, async (success: boolean) => {
+                return resolve(success);
+            });
+        });
+    }
 }
