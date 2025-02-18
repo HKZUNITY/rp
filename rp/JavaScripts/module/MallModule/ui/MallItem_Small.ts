@@ -1,6 +1,12 @@
-﻿import { IEffectsElement } from "../../../configs/Effects";
+﻿import { IBackElement } from "../../../configs/Back";
+import { IEarElement } from "../../../configs/Ear";
+import { IEffectsElement } from "../../../configs/Effects";
 import { IFaceExpressionElement } from "../../../configs/FaceExpression";
+import { IFacingElement } from "../../../configs/Facing";
 import { GameConfig } from "../../../configs/GameConfig";
+import { IHipElement } from "../../../configs/Hip";
+import { IRightHandElement } from "../../../configs/RightHand";
+import { IShoulderElement } from "../../../configs/Shoulder";
 import { ITrailingElement } from "../../../configs/Trailing";
 import Utils from "../../../tools/Utils";
 import MallItem_Small_Generate from "../../../ui-generate/module/MallModule/MallItem_Small_generate";
@@ -56,12 +62,14 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 	private tabId: number = 0;
 	private assetId: string = null;
 	private isSupportColor: boolean = false;
+	private isRemovableTabId: boolean = false;
 	public initItem(tabType: TabType, tabId: number, assetId: string): void {
 		this.tabType = tabType;
 		this.tabId = tabId;
 		this.assetId = assetId;
 		this.mIconImage.imageColor = mw.LinearColor.white;
 		this.isSupportColor = Mall.isSupportColorPick(tabId);
+		this.isRemovableTabId = Mall.isRemovableTabId(tabId);
 		switch (tabId) {
 			case Tab3Type.Tab3_Lens:
 			case Tab3Type.Tab3_UpperHighlight:
@@ -77,6 +85,48 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 				this.mIconImage.imageGuid = faceExpressionElement.Icon;
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
 				this.mPriceTextBlock.text = faceExpressionElement.Name;
+				break;
+			case Tab3Type.Tab3_LeftHand:
+				let leftHandElement: IEffectsElement = GameConfig.LeftHand.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(leftHandElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_RightHand:
+				let rightHandElement: IRightHandElement = GameConfig.RightHand.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(rightHandElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Back:
+				let backElement: IBackElement = GameConfig.Back.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(backElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Ear:
+				let earElement: IEarElement = GameConfig.Ear.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(earElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Face:
+				let facingElement: IFacingElement = GameConfig.Facing.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(facingElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Hip:
+				let hipElement: IHipElement = GameConfig.Hip.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(hipElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Shoulder:
+				let shoulderElement: IShoulderElement = GameConfig.Shoulder.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(shoulderElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
 			case Tab3Type.Tab3_Effects:
 				let effectsElement: IEffectsElement = GameConfig.Effects.getElement(assetId);
@@ -106,8 +156,19 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 
 	private isSelect: boolean = false;
 	public updateSelectState(isSelect: boolean): void {
-		if (this.isSelect == isSelect) return;
-		this.isSelect = isSelect;
+		if (this.isRemovableTabId) {
+			if (!this.isSelect && this.isSelect == isSelect) {
+				return;
+			} else if (!this.isSelect && this.isSelect != isSelect) {
+				this.isSelect = isSelect;
+			} else if (this.isSelect && this.isSelect == isSelect) {
+				this.isSelect = false;
+			} else if (this.isSelect && this.isSelect != isSelect) {
+				this.isSelect = isSelect;
+			}
+		} else {
+			if (this.isSelect == isSelect) return;
+		}
 		this.updateSelectStateUI();
 	}
 

@@ -97,4 +97,197 @@ export default class Mall {
     public static isSupportColorPick(tabId: number): boolean {
         return this.colorPickTabIds.includes(tabId);
     }
+
+    private static removableTabIds: number[] = [
+        Tab2Type.Tab2_Eyebrows,
+        Tab2Type.Tab2_Top,
+        Tab2Type.Tab2_Bottom,
+        Tab2Type.Tab2_Shoes,
+        Tab2Type.Tab2_Gloves,
+        Tab3Type.Tab3_PupilStyle,
+        Tab3Type.Tab3_Lens,
+        Tab3Type.Tab3_UpperHighlight,
+        Tab3Type.Tab3_LowerHighlight,
+        Tab3Type.Tab3_Eyelashes,
+        Tab3Type.Tab3_Eyeshadow,
+        Tab3Type.Tab3_Blush,
+        Tab3Type.Tab3_LipMakeup,
+        Tab3Type.Tab3_FullHair,
+        Tab3Type.Tab3_FrontHair,
+        Tab3Type.Tab3_BackHair,
+        Tab3Type.Tab3_LeftHand,
+        Tab3Type.Tab3_RightHand,
+        Tab3Type.Tab3_Back,
+        Tab3Type.Tab3_Ear,
+        Tab3Type.Tab3_Face,
+        Tab3Type.Tab3_Hip,
+        Tab3Type.Tab3_Shoulder,
+        Tab3Type.Tab3_Effects,
+        Tab3Type.Tab3_Trailing,
+    ];
+    public static isRemovableTabId(tabId: number): boolean {
+        return this.removableTabIds.includes(tabId);
+    }
+
+    private static slotTabIds: number[] = [
+        Tab3Type.Tab3_LeftHand,
+        Tab3Type.Tab3_RightHand,
+        Tab3Type.Tab3_Back,
+        Tab3Type.Tab3_Ear,
+        Tab3Type.Tab3_Face,
+        Tab3Type.Tab3_Hip,
+        Tab3Type.Tab3_Shoulder,
+        Tab3Type.Tab3_Effects,
+        Tab3Type.Tab3_Trailing
+    ];
+    public static isSlot(tabId: number): boolean {
+        return this.slotTabIds.includes(tabId);
+    }
+
+    private static clothingTabIds: number[] = [
+        Tab2Type.Tab2_Eyebrows,
+        Tab2Type.Tab2_Top,
+        Tab2Type.Tab2_Bottom,
+        Tab2Type.Tab2_Shoes,
+        Tab2Type.Tab2_Gloves,
+        Tab3Type.Tab3_PupilStyle,
+        Tab3Type.Tab3_Lens,
+        Tab3Type.Tab3_UpperHighlight,
+        Tab3Type.Tab3_LowerHighlight,
+        Tab3Type.Tab3_Eyelashes,
+        Tab3Type.Tab3_Eyeshadow,
+        Tab3Type.Tab3_Blush,
+        Tab3Type.Tab3_LipMakeup,
+        Tab3Type.Tab3_FullHair,
+        Tab3Type.Tab3_FrontHair,
+        Tab3Type.Tab3_BackHair
+    ];
+    public static isClothingTabId(tabId: number): boolean {
+        return this.clothingTabIds.includes(tabId);
+    }
+
+    private static defaultAssetIds: string[] = [
+        `398608`,
+        `77763`,
+        `292004`,
+        `343474`,
+        `292002`,
+        `343467`,
+        `66505`,
+        `343475`,
+        `75663`,
+        `343466`,
+        `398609`,
+        `47968`,
+        `48041`,
+        `32112`,
+        `48026`,
+        `32098`,
+        `398607`,
+        `48062`,
+        `292003`,
+        `292001`,
+        `343471`,
+        `343476`
+    ];
+    public static isDefaultAssetId(assetId: string): boolean {
+        return this.defaultAssetIds.includes(assetId);
+    }
+
+    public static getAssetId(type: number, character?: mw.Character): string {
+        if (!character) character = Player.localPlayer.character;
+        switch (type) {
+            case Tab2Type.Tab2_Face:
+                return character.description.advance.headFeatures.head.style;
+            case Tab2Type.Tab2_Eyebrows:
+                return character.description.advance.makeup.eyebrows.eyebrowStyle;
+            case Tab2Type.Tab2_Top:
+                return character.description.advance.clothing.upperCloth.style;
+            case Tab2Type.Tab2_Bottom:
+                return character.description.advance.clothing.lowerCloth.style;
+            case Tab2Type.Tab2_Shoes:
+                return character.description.advance.clothing.shoes.style;
+            case Tab2Type.Tab2_Gloves:
+                return character.description.advance.clothing.gloves.style;
+            case Tab3Type.Tab3_PupilStyle:
+                return character.description.advance.makeup.coloredContacts.style.pupilStyle;
+            case Tab3Type.Tab3_Lens:
+                return character.description.advance.makeup.coloredContacts.decal.pupilStyle;
+            case Tab3Type.Tab3_UpperHighlight:
+                return character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle;
+            case Tab3Type.Tab3_LowerHighlight:
+                return character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle;
+            case Tab3Type.Tab3_Eyelashes:
+                return character.description.advance.makeup.eyelashes.eyelashStyle;
+            case Tab3Type.Tab3_Eyeshadow:
+                return character.description.advance.makeup.eyeShadow.eyeshadowStyle;
+            case Tab3Type.Tab3_Blush:
+                return character.description.advance.makeup.blush.blushStyle;
+            case Tab3Type.Tab3_LipMakeup:
+                return character.description.advance.makeup.lipstick.lipstickStyle;
+            case Tab3Type.Tab3_FullHair:
+                return character.description.advance.hair.backHair.style;
+            case Tab3Type.Tab3_FrontHair:
+                return character.description.advance.hair.frontHair.style;
+            case Tab3Type.Tab3_BackHair:
+                return character.description.advance.hair.backHair.style;
+        }
+    }
+
+    public static setAssetId(character: mw.Character, type: number, assetId: string): void {
+        switch (type) {
+            case Tab2Type.Tab2_Face:
+                character.description.advance.headFeatures.head.style = assetId;
+                break;
+            case Tab2Type.Tab2_Eyebrows:
+                character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                break;
+            case Tab2Type.Tab2_Top:
+                character.description.advance.clothing.upperCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Bottom:
+                character.description.advance.clothing.lowerCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Shoes:
+                character.description.advance.clothing.shoes.style = assetId;
+                break;
+            case Tab2Type.Tab2_Gloves:
+                character.description.advance.clothing.gloves.style = assetId;
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Lens:
+                character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_UpperHighlight:
+                character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LowerHighlight:
+                character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyelashes:
+                character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyeshadow:
+                character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Blush:
+                character.description.advance.makeup.blush.blushStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LipMakeup:
+                character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                break;
+            case Tab3Type.Tab3_FullHair:
+                character.description.advance.hair.backHair.style = assetId;
+                break;
+            case Tab3Type.Tab3_FrontHair:
+                character.description.advance.hair.frontHair.style = assetId;
+                break;
+            case Tab3Type.Tab3_BackHair:
+                character.description.advance.hair.backHair.style = assetId;
+                break;
+        }
+    }
+
 }

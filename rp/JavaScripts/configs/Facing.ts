@@ -1,5 +1,5 @@
 import { ConfigBase, IElementBase } from "./ConfigBase";
-const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"光束拖尾","88442",null,0],[2,"彩虹拖尾","88824",null,0]];
+const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"眼镜","324491",["-13","0","-6","0","0","-90","1","1","1"],0],[2,"眼镜","225166",["-10","0","-5","0","0","-90","1","1","1"],0],[3,"眼镜","366489",["-11","0","-7","0","0","-90","1","1","1"],0],[4,"眼镜","225171",["-4","0","0","0","0","-90","1","1","1"],0],[5,"眼罩","278280",["-13","0","-5","0","0","-90","1","1","1"],0]];
 export interface IFacingElement extends IElementBase{
  	/**undefined*/
 	ID:number

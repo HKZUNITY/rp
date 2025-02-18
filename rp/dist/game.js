@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1551,7 +1551,7 @@ var foreign6 = /*#__PURE__*/Object.freeze({
     ActionPropConfig: ActionPropConfig
 });
 
-const EXCELDATA$F = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$F = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "双层翅膀", "334814", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [2, "翅膀", "135851", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [3, "翅膀", "452702", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [4, "翅膀", "449687", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [5, "翅膀", "449694", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [6, "翅膀", "375152", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [7, "六翼翅膀", "399002", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [8, "飞行背包", "131208", ["-6", "0", "-123", "0", "0", "90", "1", "1", "1"], 0], [9, "小熊背包", "454815", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [10, "小熊背包", "454822", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [11, "小熊背包", "454833", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [12, "小熊背包", "454834", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [13, "棺材", "117847", ["0", "0", "-132", "0", "0", "90", "1", "1", "1"], 0]];
 class BackConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$F);
@@ -1605,14 +1605,14 @@ class ColorValueConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$y = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$y = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "狐狸耳朵", "226479", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "围巾", "295506", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "双马尾辫子", "352615", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "狐耳朵", "404433", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "猫耳", "404473", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星星", "441348", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "问号", "441349", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [8, "梦幻泡泡蝴蝶结", "452232", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [9, "梦幻泡泡蝴蝶结", "452233", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [10, "梦幻泡泡蝴蝶结", "452234", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [11, "梦幻泡泡蝴蝶结", "452235", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [12, "道具", "471540", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [13, "道具", "471541", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [14, "道具", "471542", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [15, "道具", "471543", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [16, "绿蛇头发", "502350", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [17, "青蛇头发", "502351", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [18, "红蛇头发", "502352", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [19, "龙角", "266596", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [20, "龙角", "266597", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [21, "龙角", "266598", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [22, "龙角", "266600", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [23, "龙角", "266601", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [24, "龙角", "266602", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [25, "龙角", "266610", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [26, "犄角", "467603", ["0", "0", "16", "0", "0", "0", "1", "1", "1"], 0], [27, "发光恶魔角", "266332", ["0", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [28, "帽子", "457013", ["0", "0", "12", "0", "0", "0", "1", "1", "1"], 0], [29, "护目眼镜", "209534", ["0", "5", "15", "-45", "0", "0", "1", "1", "1"], 0], [30, "泳镜", "112801", ["0", "5", "17", "-45", "0", "0", "1", "1", "1"], 0], [31, "男帽子", "173867", ["0", "0", "0", "0", "0", "0", "1.2", "1.2", "1.2"], 0]];
 class EarConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$y);
     }
 }
 
-const EXCELDATA$x = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "法阵", "31645", null, 0], [2, "光环", "32240", null, 0]];
+const EXCELDATA$x = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "法阵", "31645", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "光环", "32240", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "光环", "59956", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "传送门", "88757", ["-30", "0", "100", "0", "0", "-90", "1", "1", "1"], 0]];
 class EffectsConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$x);
@@ -1673,7 +1673,7 @@ class FaceTattooConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$p = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$p = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "眼镜", "324491", ["-13", "0", "-6", "0", "0", "-90", "1", "1", "1"], 0], [2, "眼镜", "225166", ["-10", "0", "-5", "0", "0", "-90", "1", "1", "1"], 0], [3, "眼镜", "366489", ["-11", "0", "-7", "0", "0", "-90", "1", "1", "1"], 0], [4, "眼镜", "225171", ["-4", "0", "0", "0", "0", "-90", "1", "1", "1"], 0], [5, "眼罩", "278280", ["-13", "0", "-5", "0", "0", "-90", "1", "1", "1"], 0]];
 class FacingConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$p);
@@ -1701,7 +1701,7 @@ class GlovesConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$l = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$l = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "尾巴", "136179", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "孔雀尾巴", "292600", ["0", "0", "0", "-90", "0", "90", "1", "1", "1"], 0], [3, "尾巴", "136173", ["0", "0", "0", "-90", "0", "-90", "1", "1", "1"], 0], [4, "尾巴", "453459", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "尾巴", "453460", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "尾巴", "404432", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "狐狸尾巴", "226476", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [8, "人鱼尾巴", "493583", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [9, "尾巴", "323388", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class HipConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$l);
@@ -1720,7 +1720,7 @@ var foreign30 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$j = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Ear", "耳饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"]];
+const EXCELDATA$j = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$j);
@@ -2053,7 +2053,7 @@ class LanguageConfig extends ConfigBase {
     /**背饰*/
     get Text_Tab3_1015() { return this.getElement(109); }
     ;
-    /**耳饰*/
+    /**头饰*/
     get Text_Tab3_1016() { return this.getElement(110); }
     ;
     /**面饰*/
@@ -2248,6 +2248,27 @@ class LanguageConfig extends ConfigBase {
     /**是否保存当前角色形象*/
     get Text_WhetherSaveImage() { return this.getElement(174); }
     ;
+    /**关闭提示*/
+    get Text_CloseTips() { return this.getElement(175); }
+    ;
+    /**保存成功*/
+    get Text_SaveSuccessfully() { return this.getElement(176); }
+    ;
+    /**重置成功*/
+    get Text_ResetSuccessfully() { return this.getElement(177); }
+    ;
+    /**切换成功*/
+    get Text_SwitchSuccessfully() { return this.getElement(178); }
+    ;
+    /**是否保留当前颜色*/
+    get Text_WhetherToKeepTheCurrentColor() { return this.getElement(179); }
+    ;
+    /**保留*/
+    get Text_Retain() { return this.getElement(180); }
+    ;
+    /**不保留*/
+    get Text_NoRetain() { return this.getElement(181); }
+    ;
 }
 
 var foreign31 = /*#__PURE__*/Object.freeze({
@@ -2255,7 +2276,7 @@ var foreign31 = /*#__PURE__*/Object.freeze({
     LanguageConfig: LanguageConfig
 });
 
-const EXCELDATA$i = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$i = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "单手刀", "334208", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "星月魔杖", "291285", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "散弹喷枪", "155702", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "紫光剑", "304952", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "弓箭", "304643", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星月魔杖", "304949", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "法杖", "304953", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class LeftHandConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$i);
@@ -2309,7 +2330,7 @@ class PupilStyleConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$b = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$b = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "单手刀", "334208", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "星月魔杖", "291285", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "散弹喷枪", "155702", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "紫光剑", "304952", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "弓箭", "304643", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星月魔杖", "304949", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "法杖", "304953", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class RightHandConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$b);
@@ -2335,7 +2356,7 @@ class ShoesConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$8 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$8 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "宠物", "152395", ["0", "-35", "-25", "0", "0", "0", "0.1", "0.1", "0.1"], 0], [2, "宠物", "152404", ["0", "-35", "-25", "0", "0", "0", "0.1", "0.1", "0.1"], 0], [3, "僵尸猫", "217695", ["0", "-35", "-35", "0", "0", "0", "1", "1", "1"], 0], [4, "僵尸狗", "217700", ["0", "-35", "-35", "0", "0", "0", "1", "1", "1"], 0]];
 class ShoulderConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$8);
@@ -2349,14 +2370,14 @@ class SkinToneConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$6 = [["ID", "Describe", "Text", "Tab2"], ["", "", "Language", ""], [1, "捏脸", "Text_Tab1_1", [101, 102, 103, 104, 105, 106, 107]], [2, "换装", "Text_Tab1_2", [108, 109, 110, 111, 112, 113, 114, 115]], [3, "收藏", "Text_Tab1_3", [501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515]], [4, "测试", "Text_Tab1_4", null]];
+const EXCELDATA$6 = [["ID", "Describe", "Text", "Tab2"], ["", "", "Language", ""], [1, "捏脸", "Text_Tab1_1", [101, 102, 103, 104, 105, 106, 107]], [2, "换装", "Text_Tab1_2", [108, 109, 110, 111, 112, 113, 114, 115]], [3, "收藏", "Text_Tab1_3", null], [4, "测试", "Text_Tab1_4", null]];
 class Tab1Config extends ConfigBase {
     constructor() {
         super(EXCELDATA$6);
     }
 }
 
-const EXCELDATA$5 = [["ID", "Describe", "Text", "Tab3"], ["", "", "Language", ""], [101, "体型", "Text_Tab2_101", null], [102, "肤色", "Text_Tab2_102", null], [103, "脸型", "Text_Tab2_103", null], [104, "眼睛", "Text_Tab2_104", [1001, 1002, 1003, 1004, 1005]], [105, "眉毛", "Text_Tab2_105", null], [106, "妆容", "Text_Tab2_106", [1006, 1007, 1008, 1009]], [107, "表情", "Text_Tab2_107", null], [108, "套装", "Text_Tab2_108", null], [109, "头发", "Text_Tab2_109", [1010, 1011, 1012]], [110, "上衣", "Text_Tab2_110", null], [111, "下衣", "Text_Tab2_111", null], [112, "鞋子", "Text_Tab2_112", null], [113, "手套", "Text_Tab2_113", null], [114, "宠物", "Text_Tab2_114", null], [115, "饰品", "Text_Tab2_115", [1013, 1014, 1015, 1016, 1017, 1018, 1019, 1020, 1021]], [501, "体型_收藏", "Text_Tab2_501", null], [502, "肤色_收藏", "Text_Tab2_502", null], [503, "脸型_收藏", "Text_Tab2_503", null], [504, "眼睛_收藏", "Text_Tab2_504", [2001, 2002, 2003, 2004, 2005]], [505, "眉毛_收藏", "Text_Tab2_505", null], [506, "妆容_收藏", "Text_Tab2_506", [2006, 2007, 2008, 2009]], [507, "表情_收藏", "Text_Tab2_507", null], [508, "套装_收藏", "Text_Tab2_508", null], [509, "头发_收藏", "Text_Tab2_509", [2010, 2011, 2012]], [510, "上衣_收藏", "Text_Tab2_510", null], [511, "下衣_收藏", "Text_Tab2_511", null], [512, "鞋子_收藏", "Text_Tab2_512", null], [513, "手套_收藏", "Text_Tab2_513", null], [514, "宠物_收藏", "Text_Tab2_514", null], [515, "饰品_收藏", "Text_Tab2_515", [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]]];
+const EXCELDATA$5 = [["ID", "Describe", "Text", "Tab3"], ["", "", "Language", ""], [101, "体型", "Text_Tab2_101", null], [102, "肤色", "Text_Tab2_102", null], [103, "脸型", "Text_Tab2_103", null], [104, "眼睛", "Text_Tab2_104", [1001, 1002, 1003, 1004, 1005]], [105, "眉毛", "Text_Tab2_105", null], [106, "妆容", "Text_Tab2_106", [1006, 1007, 1008, 1009]], [107, "表情", "Text_Tab2_107", null], [108, "套装", "Text_Tab2_108", null], [109, "头发", "Text_Tab2_109", [1010, 1011, 1012]], [110, "上衣", "Text_Tab2_110", null], [111, "下衣", "Text_Tab2_111", null], [112, "鞋子", "Text_Tab2_112", null], [113, "手套", "Text_Tab2_113", null], [114, "宠物", "Text_Tab2_114", null], [115, "饰品", "Text_Tab2_115", [1020, 1015, 1014, 1018, 1016, 1017, 1019, 1021]], [501, "体型_收藏", "Text_Tab2_501", null], [502, "肤色_收藏", "Text_Tab2_502", null], [503, "脸型_收藏", "Text_Tab2_503", null], [504, "眼睛_收藏", "Text_Tab2_504", [2001, 2002, 2003, 2004, 2005]], [505, "眉毛_收藏", "Text_Tab2_505", null], [506, "妆容_收藏", "Text_Tab2_506", [2006, 2007, 2008, 2009]], [507, "表情_收藏", "Text_Tab2_507", null], [508, "套装_收藏", "Text_Tab2_508", null], [509, "头发_收藏", "Text_Tab2_509", [2010, 2011, 2012]], [510, "上衣_收藏", "Text_Tab2_510", null], [511, "下衣_收藏", "Text_Tab2_511", null], [512, "鞋子_收藏", "Text_Tab2_512", null], [513, "手套_收藏", "Text_Tab2_513", null], [514, "宠物_收藏", "Text_Tab2_514", null], [515, "饰品_收藏", "Text_Tab2_515", [2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]]];
 class Tab2Config extends ConfigBase {
     constructor() {
         super(EXCELDATA$5);
@@ -2377,7 +2398,7 @@ class TopConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$2 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", null, 0], [2, "彩虹拖尾", "88824", null, 0]];
+const EXCELDATA$2 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "光束拖尾", "88442", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "彩虹拖尾", "88824", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class TrailingConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$2);
@@ -2792,7 +2813,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -3026,7 +3047,7 @@ var foreign106 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3094,7 +3115,7 @@ var foreign116 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3177,7 +3198,7 @@ var foreign124 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -3557,7 +3578,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -3623,7 +3644,7 @@ var foreign145 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -3761,7 +3782,7 @@ var foreign146 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.46
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3847,7 +3868,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.46
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4988,7 +5009,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -5327,7 +5348,7 @@ var foreign119 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -5465,7 +5486,7 @@ var foreign126 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -6494,7 +6515,7 @@ var foreign70 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -6616,7 +6637,7 @@ var foreign59 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6744,7 +6765,7 @@ var foreign60 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -6893,7 +6914,7 @@ var foreign61 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7024,7 +7045,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -7127,7 +7148,7 @@ var foreign63 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -7232,7 +7253,7 @@ var foreign64 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -7697,7 +7718,7 @@ var foreign65 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -9321,12 +9342,13 @@ class ColorPickTab2Data {
     }
 }
 class AssetIdInfoData {
-    constructor() {
-        this.assetType = null;
+    constructor(assetId, slotType, slotIndex) {
         this.assetId = null;
-        this.isPendant = false;
         this.slotType = -1;
         this.slotIndex = -1;
+        this.assetId = assetId;
+        this.slotType = slotType;
+        this.slotIndex = slotIndex;
     }
 }
 var TabType;
@@ -9591,6 +9613,113 @@ class Mall {
     static isSupportColorPick(tabId) {
         return this.colorPickTabIds.includes(tabId);
     }
+    static isRemovableTabId(tabId) {
+        return this.removableTabIds.includes(tabId);
+    }
+    static isSlot(tabId) {
+        return this.slotTabIds.includes(tabId);
+    }
+    static isClothingTabId(tabId) {
+        return this.clothingTabIds.includes(tabId);
+    }
+    static isDefaultAssetId(assetId) {
+        return this.defaultAssetIds.includes(assetId);
+    }
+    static getAssetId(type, character) {
+        if (!character)
+            character = Player.localPlayer.character;
+        switch (type) {
+            case Tab2Type.Tab2_Face:
+                return character.description.advance.headFeatures.head.style;
+            case Tab2Type.Tab2_Eyebrows:
+                return character.description.advance.makeup.eyebrows.eyebrowStyle;
+            case Tab2Type.Tab2_Top:
+                return character.description.advance.clothing.upperCloth.style;
+            case Tab2Type.Tab2_Bottom:
+                return character.description.advance.clothing.lowerCloth.style;
+            case Tab2Type.Tab2_Shoes:
+                return character.description.advance.clothing.shoes.style;
+            case Tab2Type.Tab2_Gloves:
+                return character.description.advance.clothing.gloves.style;
+            case Tab3Type.Tab3_PupilStyle:
+                return character.description.advance.makeup.coloredContacts.style.pupilStyle;
+            case Tab3Type.Tab3_Lens:
+                return character.description.advance.makeup.coloredContacts.decal.pupilStyle;
+            case Tab3Type.Tab3_UpperHighlight:
+                return character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle;
+            case Tab3Type.Tab3_LowerHighlight:
+                return character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle;
+            case Tab3Type.Tab3_Eyelashes:
+                return character.description.advance.makeup.eyelashes.eyelashStyle;
+            case Tab3Type.Tab3_Eyeshadow:
+                return character.description.advance.makeup.eyeShadow.eyeshadowStyle;
+            case Tab3Type.Tab3_Blush:
+                return character.description.advance.makeup.blush.blushStyle;
+            case Tab3Type.Tab3_LipMakeup:
+                return character.description.advance.makeup.lipstick.lipstickStyle;
+            case Tab3Type.Tab3_FullHair:
+                return character.description.advance.hair.backHair.style;
+            case Tab3Type.Tab3_FrontHair:
+                return character.description.advance.hair.frontHair.style;
+            case Tab3Type.Tab3_BackHair:
+                return character.description.advance.hair.backHair.style;
+        }
+    }
+    static setAssetId(character, type, assetId) {
+        switch (type) {
+            case Tab2Type.Tab2_Face:
+                character.description.advance.headFeatures.head.style = assetId;
+                break;
+            case Tab2Type.Tab2_Eyebrows:
+                character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                break;
+            case Tab2Type.Tab2_Top:
+                character.description.advance.clothing.upperCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Bottom:
+                character.description.advance.clothing.lowerCloth.style = assetId;
+                break;
+            case Tab2Type.Tab2_Shoes:
+                character.description.advance.clothing.shoes.style = assetId;
+                break;
+            case Tab2Type.Tab2_Gloves:
+                character.description.advance.clothing.gloves.style = assetId;
+                break;
+            case Tab3Type.Tab3_PupilStyle:
+                character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Lens:
+                character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                break;
+            case Tab3Type.Tab3_UpperHighlight:
+                character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LowerHighlight:
+                character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyelashes:
+                character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Eyeshadow:
+                character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                break;
+            case Tab3Type.Tab3_Blush:
+                character.description.advance.makeup.blush.blushStyle = assetId;
+                break;
+            case Tab3Type.Tab3_LipMakeup:
+                character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                break;
+            case Tab3Type.Tab3_FullHair:
+                character.description.advance.hair.backHair.style = assetId;
+                break;
+            case Tab3Type.Tab3_FrontHair:
+                character.description.advance.hair.frontHair.style = assetId;
+                break;
+            case Tab3Type.Tab3_BackHair:
+                character.description.advance.hair.backHair.style = assetId;
+                break;
+        }
+    }
 }
 Mall.slotSplit = "$";
 Mall.colorPickTabIds = [
@@ -9611,6 +9740,86 @@ Mall.colorPickTabIds = [
     Tab3Type.Tab3_FrontHair,
     Tab3Type.Tab3_BackHair
 ];
+Mall.removableTabIds = [
+    Tab2Type.Tab2_Eyebrows,
+    Tab2Type.Tab2_Top,
+    Tab2Type.Tab2_Bottom,
+    Tab2Type.Tab2_Shoes,
+    Tab2Type.Tab2_Gloves,
+    Tab3Type.Tab3_PupilStyle,
+    Tab3Type.Tab3_Lens,
+    Tab3Type.Tab3_UpperHighlight,
+    Tab3Type.Tab3_LowerHighlight,
+    Tab3Type.Tab3_Eyelashes,
+    Tab3Type.Tab3_Eyeshadow,
+    Tab3Type.Tab3_Blush,
+    Tab3Type.Tab3_LipMakeup,
+    Tab3Type.Tab3_FullHair,
+    Tab3Type.Tab3_FrontHair,
+    Tab3Type.Tab3_BackHair,
+    Tab3Type.Tab3_LeftHand,
+    Tab3Type.Tab3_RightHand,
+    Tab3Type.Tab3_Back,
+    Tab3Type.Tab3_Ear,
+    Tab3Type.Tab3_Face,
+    Tab3Type.Tab3_Hip,
+    Tab3Type.Tab3_Shoulder,
+    Tab3Type.Tab3_Effects,
+    Tab3Type.Tab3_Trailing,
+];
+Mall.slotTabIds = [
+    Tab3Type.Tab3_LeftHand,
+    Tab3Type.Tab3_RightHand,
+    Tab3Type.Tab3_Back,
+    Tab3Type.Tab3_Ear,
+    Tab3Type.Tab3_Face,
+    Tab3Type.Tab3_Hip,
+    Tab3Type.Tab3_Shoulder,
+    Tab3Type.Tab3_Effects,
+    Tab3Type.Tab3_Trailing
+];
+Mall.clothingTabIds = [
+    Tab2Type.Tab2_Eyebrows,
+    Tab2Type.Tab2_Top,
+    Tab2Type.Tab2_Bottom,
+    Tab2Type.Tab2_Shoes,
+    Tab2Type.Tab2_Gloves,
+    Tab3Type.Tab3_PupilStyle,
+    Tab3Type.Tab3_Lens,
+    Tab3Type.Tab3_UpperHighlight,
+    Tab3Type.Tab3_LowerHighlight,
+    Tab3Type.Tab3_Eyelashes,
+    Tab3Type.Tab3_Eyeshadow,
+    Tab3Type.Tab3_Blush,
+    Tab3Type.Tab3_LipMakeup,
+    Tab3Type.Tab3_FullHair,
+    Tab3Type.Tab3_FrontHair,
+    Tab3Type.Tab3_BackHair
+];
+Mall.defaultAssetIds = [
+    `398608`,
+    `77763`,
+    `292004`,
+    `343474`,
+    `292002`,
+    `343467`,
+    `66505`,
+    `343475`,
+    `75663`,
+    `343466`,
+    `398609`,
+    `47968`,
+    `48041`,
+    `32112`,
+    `48026`,
+    `32098`,
+    `398607`,
+    `48062`,
+    `292003`,
+    `292001`,
+    `343471`,
+    `343476`
+];
 
 var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -9622,7 +9831,7 @@ var foreign71 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -9788,7 +9997,7 @@ var foreign128 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -9863,7 +10072,7 @@ var foreign76 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -10028,7 +10237,7 @@ var foreign77 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -10343,7 +10552,7 @@ var foreign75 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mResetButton() {
@@ -10548,7 +10757,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -10723,7 +10932,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -10871,8 +11080,141 @@ var foreign80 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/MallModule/MallItem_Self.ui
+ * TIME: 2025.02.18-23.09.46
+ */
+let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage');
+        }
+        return this.mIconImage_Internal;
+    }
+    get mMaskImage() {
+        if (!this.mMaskImage_Internal && this.uiWidgetBase) {
+            this.mMaskImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMaskImage');
+        }
+        return this.mMaskImage_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.initLanguage(this.mCloseButton);
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+MallItem_Self_Generate = __decorate([
+    UIBind('UI/module/MallModule/MallItem_Self.ui')
+], MallItem_Self_Generate);
+var MallItem_Self_Generate$1 = MallItem_Self_Generate;
+
+var foreign134 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: MallItem_Self_Generate$1
+});
+
+class MallItem_Self extends MallItem_Self_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.mallModuleC = null;
+        this.assetType = 0;
+        this.assetId = null;
+        this.isDefault = false;
+    }
+    get getMallModuleC() {
+        if (!this.mallModuleC) {
+            this.mallModuleC = ModuleService.getModule(MallModuleC);
+        }
+        return this.mallModuleC;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mIconImage.imageGuid = `32115`;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+    }
+    addCloseButton() {
+        this.getMallModuleC.onCloseMallItemSelfAction.call(this.assetType, this.assetId);
+    }
+    initItem(assetType, assetIdInfoData) {
+        this.assetType = assetType;
+        this.assetId = assetIdInfoData.assetId;
+        this.mIconImage.imageInfo.setByAssetIcon(this.assetId, mw.AssetIconSize.Icon_128px);
+        this.mIconImage.imageColor = mw.LinearColor.white;
+        switch (assetType) {
+            case Tab3Type.Tab3_Lens:
+            case Tab3Type.Tab3_UpperHighlight:
+            case Tab3Type.Tab3_LowerHighlight:
+                this.mIconImage.imageColor = new mw.LinearColor(0.3098, 0.1921, 0.7176);
+                break;
+        }
+        this.isDefault = Mall.isDefaultAssetId(this.assetId);
+        Utils.setWidgetVisibility(this.mCloseButton, this.isDefault ? mw.SlateVisibility.Collapsed : mw.SlateVisibility.Visible);
+    }
+}
+
+var foreign81 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: MallItem_Self
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -10981,6 +11323,7 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
         this.tabId = 0;
         this.assetId = null;
         this.isSupportColor = false;
+        this.isRemovableTabId = false;
         this.isSelect = false;
     }
     get getMallModuleC() {
@@ -11024,6 +11367,7 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
         this.assetId = assetId;
         this.mIconImage.imageColor = mw.LinearColor.white;
         this.isSupportColor = Mall.isSupportColorPick(tabId);
+        this.isRemovableTabId = Mall.isRemovableTabId(tabId);
         switch (tabId) {
             case Tab3Type.Tab3_Lens:
             case Tab3Type.Tab3_UpperHighlight:
@@ -11039,6 +11383,48 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
                 this.mIconImage.imageGuid = faceExpressionElement.Icon;
                 Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
                 this.mPriceTextBlock.text = faceExpressionElement.Name;
+                break;
+            case Tab3Type.Tab3_LeftHand:
+                let leftHandElement = GameConfig.LeftHand.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(leftHandElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_RightHand:
+                let rightHandElement = GameConfig.RightHand.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(rightHandElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_Back:
+                let backElement = GameConfig.Back.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(backElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_Ear:
+                let earElement = GameConfig.Ear.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(earElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_Face:
+                let facingElement = GameConfig.Facing.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(facingElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_Hip:
+                let hipElement = GameConfig.Hip.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(hipElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+                break;
+            case Tab3Type.Tab3_Shoulder:
+                let shoulderElement = GameConfig.Shoulder.getElement(assetId);
+                this.mIconImage.imageInfo.setByAssetIcon(shoulderElement.AssetId, mw.AssetIconSize.Icon_128px);
+                Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
                 break;
             case Tab3Type.Tab3_Effects:
                 let effectsElement = GameConfig.Effects.getElement(assetId);
@@ -11066,9 +11452,24 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
         this.updateSelectState(this.assetId == assetId);
     }
     updateSelectState(isSelect) {
-        if (this.isSelect == isSelect)
-            return;
-        this.isSelect = isSelect;
+        if (this.isRemovableTabId) {
+            if (!this.isSelect && this.isSelect == isSelect) {
+                return;
+            }
+            else if (!this.isSelect && this.isSelect != isSelect) {
+                this.isSelect = isSelect;
+            }
+            else if (this.isSelect && this.isSelect == isSelect) {
+                this.isSelect = false;
+            }
+            else if (this.isSelect && this.isSelect != isSelect) {
+                this.isSelect = isSelect;
+            }
+        }
+        else {
+            if (this.isSelect == isSelect)
+                return;
+        }
         this.updateSelectStateUI();
     }
     updateSelectStateUI() {
@@ -11098,7 +11499,7 @@ var foreign82 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -11250,7 +11651,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11388,7 +11789,7 @@ var foreign85 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -11546,7 +11947,7 @@ class MallPanel extends MallPanel_Generate$1 {
         this.mallTab1s = [];
         this.mallTab2s = [];
         this.mallTab3s = [];
-        this.mallItem_Self = [];
+        this.mallItem_Selfs = [];
     }
     get getMallModuleC() {
         if (!this.mallModuleC) {
@@ -11607,8 +12008,10 @@ class MallPanel extends MallPanel_Generate$1 {
         this.show();
         this.checkSkinToneMallItemState();
     }
-    initMallPanel(somatotype) {
+    initMallPanel(somatotype, usingAssetIdMap) {
+        this.clearTabIdDataMap();
         this.switchSexImage(somatotype);
+        this.refreshMallItemSelf(usingAssetIdMap);
         this.initTab1();
     }
     initTab1() {
@@ -12268,7 +12671,31 @@ class MallPanel extends MallPanel_Generate$1 {
             }
         }
     }
-    updateMallItemSelf() {
+    refreshMallItemSelf(usingAssetIdMap, isCheck = false) {
+        let valueArr = Array.from(usingAssetIdMap);
+        if (this.mallItem_Selfs.length > valueArr.length) {
+            for (let i = 0; i < valueArr.length; ++i) {
+                this.mallItem_Selfs[i].initItem(valueArr[i][0], valueArr[i][1]);
+                Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = valueArr.length; i < this.mallItem_Selfs.length; ++i) {
+                Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+        else {
+            for (let i = 0; i < this.mallItem_Selfs.length; ++i) {
+                this.mallItem_Selfs[i].initItem(valueArr[i][0], valueArr[i][1]);
+                Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.mallItem_Selfs.length; i < valueArr.length; ++i) {
+                let mallItem_Self = UIService.create(MallItem_Self);
+                mallItem_Self.initItem(valueArr[i][0], valueArr[i][1]);
+                this.mSelfContentCanvas.addChild(mallItem_Self.uiObject);
+                this.mallItem_Selfs.push(mallItem_Self);
+            }
+        }
+        if (isCheck)
+            this.checkMallItemState();
     }
 }
 
@@ -12282,7 +12709,7 @@ var foreign83 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -12452,8 +12879,9 @@ class MallModuleC extends ModuleC {
         this.onCloseColorPickPanelAction = new Action();
         this.onSaveColorPickPanelAction = new Action();
         this.onCloseMallItemSelfAction = new Action2();
-        this.saveUsingAssetIdMap = new Map();
         this.usingAssetIdMap = new Map();
+        this.usingAssetIds = [];
+        this.isNeedSaveCharacter = false;
         this.decorationIndexMap = new Map();
         this.onSwitchCameraAction = new Action1();
         this.maleNpc = null;
@@ -12465,6 +12893,7 @@ class MallModuleC extends ModuleC {
         this.colorPickTab2Datas = [];
         this.colorPickTab3Colors = [];
         this.colorPickTab2Index = 0;
+        this.isNeedSaveColor = false;
     }
     get getHUDModuleC() {
         if (!this.hudModuleC) {
@@ -12512,6 +12941,7 @@ class MallModuleC extends ModuleC {
         this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
         this.onCloseColorPickPanelAction.add(this.addCloseColorPickPanelAction.bind(this));
         this.onSaveColorPickPanelAction.add(this.addSaveColorPickPanelAction.bind(this));
+        this.onCloseMallItemSelfAction.add(this.addCloseMallItemSelfAction.bind(this));
     }
     bindEvent() {
         InputUtil.onKeyDown(mw.Keys.O, () => {
@@ -12519,28 +12949,36 @@ class MallModuleC extends ModuleC {
         });
     }
     addSaveColorPickPanelAction() {
+        this.isNeedSaveColor = false;
         this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
     }
     addCloseColorPickPanelAction() {
-        this.getMallTipsPanel.showTips(() => {
-            ExecutorManager.instance.pushAsyncExecutor(async () => {
-                await this.copyNpc.asyncReady();
-                this.localPlayer.character.setDescription(this.copyNpc.getDescription());
-                await this.localPlayer.character.asyncReady();
+        if (this.isNeedSaveColor) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveColor = false;
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    await this.copyNpc.asyncReady();
+                    this.localPlayer.character.setDescription(this.copyNpc.getDescription());
+                    await this.localPlayer.character.asyncReady();
+                    this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
+                });
+            }, () => {
+                this.isNeedSaveColor = false;
                 this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-            });
-        }, () => {
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherToKeepTheCurrentColor.Value, GameConfig.Language.Text_NoRetain.Value, GameConfig.Language.Text_Retain.Value);
+        }
+        else {
             this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
     }
     addOpenMallAction() {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
-            await this.refreshUsingCharacterData();
+            this.initUsingCharacterData();
             this.onSwitchCameraAction.call(1);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
-                this.getMallPanel.initMallPanel(this.saveSomatotype);
+                this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap);
             }
             this.getMallPanel.show();
         });
@@ -12549,37 +12987,141 @@ class MallModuleC extends ModuleC {
         this.getMallPanel.hide();
         this.onSwitchCameraAction.call(0);
     }
-    async refreshUsingCharacterData() {
+    initUsingCharacterData() {
         this.usingAssetIdMap.clear();
-        this.saveUsingAssetIdMap.clear();
-        let npc = (this.saveSomatotype % 2 == 0) ? this.feMaleNpc : this.maleNpc;
-        await npc.asyncReady();
-        let faceAssetIdInfoData1 = new AssetIdInfoData();
-        faceAssetIdInfoData1.assetType = Tab2Type.Tab2_Face;
-        faceAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.headFeatures.head.style;
-        faceAssetIdInfoData1.isPendant = false;
-        this.usingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData1);
-        let faceAssetIdInfoData2 = new AssetIdInfoData();
-        faceAssetIdInfoData2.assetType = Tab2Type.Tab2_Face;
-        faceAssetIdInfoData2.assetId = npc.description.advance.headFeatures.head.style;
-        faceAssetIdInfoData2.isPendant = false;
-        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData2);
-        let eryebrowsAssetIdInfoData1 = new AssetIdInfoData();
-        eryebrowsAssetIdInfoData1.assetType = Tab2Type.Tab2_Eyebrows;
-        eryebrowsAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle;
-        eryebrowsAssetIdInfoData1.isPendant = false;
-        this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData1);
-        let eryebrowsAssetIdInfoData2 = new AssetIdInfoData();
-        eryebrowsAssetIdInfoData2.assetType = Tab2Type.Tab2_Eyebrows;
-        eryebrowsAssetIdInfoData2.assetId = npc.description.advance.makeup.eyebrows.eyebrowStyle;
-        eryebrowsAssetIdInfoData2.isPendant = false;
-        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData2);
+        this.usingAssetIds.length = 0;
+        let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
+        if (frontHair && frontHair.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
+        let fullHair = Mall.getAssetId(Tab3Type.Tab3_FullHair);
+        if (fullHair && fullHair.length > 0) {
+            let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, fullHair);
+            if (fullHairElement) {
+                this.usingAssetIdMap.set(Tab3Type.Tab3_FullHair, new AssetIdInfoData(fullHair));
+            }
+            else {
+                this.usingAssetIdMap.set(Tab3Type.Tab3_BackHair, new AssetIdInfoData(fullHair));
+            }
+        }
+        //#region 
+        let top = Mall.getAssetId(Tab2Type.Tab2_Top);
+        if (top && top.length > 0)
+            this.usingAssetIdMap.set(Tab2Type.Tab2_Top, new AssetIdInfoData(top));
+        let bottom = Mall.getAssetId(Tab2Type.Tab2_Bottom);
+        if (bottom && bottom.length > 0)
+            this.usingAssetIdMap.set(Tab2Type.Tab2_Bottom, new AssetIdInfoData(bottom));
+        let shoes = Mall.getAssetId(Tab2Type.Tab2_Shoes);
+        if (shoes && shoes.length > 0)
+            this.usingAssetIdMap.set(Tab2Type.Tab2_Shoes, new AssetIdInfoData(shoes));
+        let gloves = Mall.getAssetId(Tab2Type.Tab2_Gloves);
+        if (gloves && gloves.length > 0)
+            this.usingAssetIdMap.set(Tab2Type.Tab2_Gloves, new AssetIdInfoData(gloves));
+        let eyebrows = Mall.getAssetId(Tab2Type.Tab2_Eyebrows);
+        if (eyebrows && eyebrows.length > 0)
+            this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
+        let PupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
+        if (PupilStyle && PupilStyle.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(PupilStyle));
+        let Lens = Mall.getAssetId(Tab3Type.Tab3_Lens);
+        if (Lens && Lens.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
+        let UpperHighlight = Mall.getAssetId(Tab3Type.Tab3_UpperHighlight);
+        if (UpperHighlight && UpperHighlight.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
+        let LowerHighlight = Mall.getAssetId(Tab3Type.Tab3_LowerHighlight);
+        if (LowerHighlight && LowerHighlight.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
+        let Eyelashes = Mall.getAssetId(Tab3Type.Tab3_Eyelashes);
+        if (Eyelashes && Eyelashes.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
+        let Eyeshadow = Mall.getAssetId(Tab3Type.Tab3_Eyeshadow);
+        if (Eyeshadow && Eyeshadow.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
+        let Blush = Mall.getAssetId(Tab3Type.Tab3_Blush);
+        if (Blush && Blush.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
+        let LipMakeup = Mall.getAssetId(Tab3Type.Tab3_LipMakeup);
+        if (LipMakeup && LipMakeup.length > 0)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
+        //#endregion
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset)
+                    continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
+    }
+    refreshUsingCharacterDataByTabId(tabId) {
+        let assetId = Mall.getAssetId(tabId);
+        if (assetId && assetId.length > 0) {
+            this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
+        }
+        else {
+            if (this.usingAssetIdMap.has(tabId))
+                this.usingAssetIdMap.delete(tabId);
+        }
+    }
+    refreshUsingCharacterDataByAssetId() {
+        if (this.usingAssetIds && this.usingAssetIds.length > 0) {
+            this.usingAssetIds.forEach((value) => {
+                if (this.usingAssetIdMap.has(value))
+                    this.usingAssetIdMap.delete(value);
+            });
+        }
+        this.usingAssetIds.length = 0;
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset)
+                    continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
+    }
+    addCloseMallItemSelfAction(tabId, assetId) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (Mall.isClothingTabId(tabId)) {
+                await this.changeCharacter(tabId, assetId);
+                this.refreshUsingCharacterDataByTabId(tabId);
+            }
+            else {
+                if (!this.usingAssetIdMap.has(Number(assetId)))
+                    return;
+                let assetIdInfoData = this.usingAssetIdMap.get(Number(assetId));
+                await this.localPlayer.character.asyncReady();
+                let attachmentGameObject = this.localPlayer.character.description.advance
+                    ?.slotAndDecoration?.slot[assetIdInfoData.slotType]?.decoration[assetIdInfoData.slotIndex]?.attachmentGameObject;
+                if (!attachmentGameObject)
+                    return;
+                this.localPlayer.character.description.advance.slotAndDecoration.slot[assetIdInfoData.slotType].decoration.delete(attachmentGameObject, true);
+                this.usingAssetIdMap.delete(Number(assetId));
+                if (this.usingAssetIds.indexOf(Number(assetId)) != -1)
+                    this.usingAssetIds.splice(this.usingAssetIds.indexOf(Number(assetId)), 1);
+                await this.localPlayer.character.asyncReady();
+            }
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, true);
+        });
     }
     addSelectItemAction(tabType, tabId, assetId) {
         if (tabType == TabType.None)
             return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
+            if (!Mall.isRemovableTabId(tabId))
+                return;
+            if (Mall.isClothingTabId(tabId)) {
+                this.refreshUsingCharacterDataByTabId(tabId);
+            }
+            else {
+                this.refreshUsingCharacterDataByAssetId();
+            }
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap);
         });
     }
     async changeCharacter(tabId, assetId) {
@@ -12599,8 +13141,22 @@ class MallModuleC extends ModuleC {
                 this.localPlayer.character.description.advance.headFeatures.head.style = assetId;
                 break;
             case Tab2Type.Tab2_Eyebrows:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let eyebrowStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        eyebrowStyle = `398608`;
+                    }
+                    else {
+                        eyebrowStyle = `77763`;
+                    }
+                    await Utils.asyncDownloadAsset(eyebrowStyle);
+                    this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = eyebrowStyle;
+                }
                 break;
             case Tab2Type.Tab2_Expression:
                 let faceExpressionElement = GameConfig.FaceExpression.getElement(assetId);
@@ -12612,111 +13168,323 @@ class MallModuleC extends ModuleC {
                 await this.changeOutfit(assetId);
                 break;
             case Tab2Type.Tab2_Top:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.upperCloth.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let upperClothStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        upperClothStyle = `292004`;
+                    }
+                    else {
+                        upperClothStyle = `343474`;
+                    }
+                    await Utils.asyncDownloadAsset(upperClothStyle);
+                    this.localPlayer.character.description.advance.clothing.upperCloth.style = upperClothStyle;
+                }
                 break;
             case Tab2Type.Tab2_Bottom:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.lowerCloth.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let lowerClothStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        lowerClothStyle = `292002`;
+                    }
+                    else {
+                        lowerClothStyle = `343467`;
+                    }
+                    await Utils.asyncDownloadAsset(lowerClothStyle);
+                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = lowerClothStyle;
+                }
                 break;
             case Tab2Type.Tab2_Shoes:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.shoes.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let shoesStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        shoesStyle = `66505`;
+                    }
+                    else {
+                        shoesStyle = `343475`;
+                    }
+                    await Utils.asyncDownloadAsset(shoesStyle);
+                    this.localPlayer.character.description.advance.clothing.shoes.style = shoesStyle;
+                }
                 break;
             case Tab2Type.Tab2_Gloves:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.gloves.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let glovesStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        glovesStyle = `75663`;
+                    }
+                    else {
+                        glovesStyle = `343466`;
+                    }
+                    await Utils.asyncDownloadAsset(glovesStyle);
+                    this.localPlayer.character.description.advance.clothing.gloves.style = glovesStyle;
+                }
                 break;
             case Tab2Type.Tab2_Pet:
                 // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
                 break;
             case Tab3Type.Tab3_PupilStyle:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let pupilStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        pupilStyle = `398609`;
+                    }
+                    else {
+                        pupilStyle = `47968`;
+                    }
+                    await Utils.asyncDownloadAsset(pupilStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = pupilStyle;
+                }
                 break;
             case Tab3Type.Tab3_Lens:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                }
+                else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_UpperHighlight:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let upperHighlightStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        upperHighlightStyle = `48041`;
+                    }
+                    else {
+                        upperHighlightStyle = `32112`;
+                    }
+                    await Utils.asyncDownloadAsset(upperHighlightStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = upperHighlightStyle;
+                }
                 break;
             case Tab3Type.Tab3_LowerHighlight:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let lowerHighlightStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        lowerHighlightStyle = `48026`;
+                    }
+                    else {
+                        lowerHighlightStyle = `32098`;
+                    }
+                    await Utils.asyncDownloadAsset(lowerHighlightStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = lowerHighlightStyle;
+                }
                 break;
             case Tab3Type.Tab3_Eyelashes:
-                this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let eyelashStyle = ``;
+                    if (somatotype % 2 == 0) {
+                        eyelashStyle = `398607`;
+                    }
+                    else {
+                        eyelashStyle = `48062`;
+                    }
+                    await Utils.asyncDownloadAsset(eyelashStyle);
+                    this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = eyelashStyle;
+                }
                 break;
             case Tab3Type.Tab3_Eyeshadow:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                }
+                else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_Blush:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.blush.blushStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
+                }
+                else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.blush.blushStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_LipMakeup:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                }
+                else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_FaceTattoo:
                 // this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
                 break;
             case Tab3Type.Tab3_FullHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.backHair.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                    this.localPlayer.character.description.advance.hair.frontHair.style = ``;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let frontHair = ``;
+                    let backHair = ``;
+                    if (somatotype % 2 == 0) {
+                        frontHair = `292003`;
+                        backHair = `292001`;
+                    }
+                    else {
+                        frontHair = `343471`;
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAssets([frontHair, backHair]);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                }
                 break;
             case Tab3Type.Tab3_FrontHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.frontHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.frontHair.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let frontHair = ``;
+                    if (somatotype % 2 == 0) {
+                        frontHair = `292003`;
+                    }
+                    else {
+                        frontHair = `343471`;
+                    }
+                    await Utils.asyncDownloadAsset(frontHair);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                }
+                let backHair = this.localPlayer.character.description.advance.hair.backHair.style;
+                let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, backHair);
+                if (fullHairElement) {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let backHair = ``;
+                    if (somatotype % 2 == 0) {
+                        backHair = `292001`;
+                    }
+                    else {
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAsset(backHair);
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                }
                 break;
             case Tab3Type.Tab3_BackHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.backHair.style != assetId) {
+                    let backHair = this.localPlayer.character.description.advance.hair.backHair.style;
+                    let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, backHair);
+                    if (fullHairElement) {
+                        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                        let frontHair = ``;
+                        if (somatotype % 2 == 0) {
+                            frontHair = `292003`;
+                        }
+                        else {
+                            frontHair = `343471`;
+                        }
+                        await Utils.asyncDownloadAsset(frontHair);
+                        this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                    }
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                }
+                else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let backHair = ``;
+                    if (somatotype % 2 == 0) {
+                        backHair = `292001`;
+                    }
+                    else {
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAsset(backHair);
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                }
                 break;
             case Tab3Type.Tab3_LeftHand:
                 let leftHandElement = GameConfig.LeftHand.getElement(assetId);
                 if (!leftHandElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, leftHandElement.AssetId, Utils.stringArrayToTransform(leftHandElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, leftHandElement.AssetId, Utils.stringArrayToTransform(leftHandElement.Transform), mw.HumanoidSlotType.LeftHand);
                 break;
             case Tab3Type.Tab3_RightHand:
                 let rightHandElement = GameConfig.RightHand.getElement(assetId);
                 if (!rightHandElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, rightHandElement.AssetId, Utils.stringArrayToTransform(rightHandElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, rightHandElement.AssetId, Utils.stringArrayToTransform(rightHandElement.Transform), mw.HumanoidSlotType.RightHand);
                 break;
             case Tab3Type.Tab3_Back:
                 let backElement = GameConfig.Back.getElement(assetId);
                 if (!backElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, backElement.AssetId, Utils.stringArrayToTransform(backElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, backElement.AssetId, Utils.stringArrayToTransform(backElement.Transform), mw.HumanoidSlotType.BackOrnamental);
                 break;
             case Tab3Type.Tab3_Ear:
                 let earElement = GameConfig.Ear.getElement(assetId);
                 if (!earElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, earElement.AssetId, Utils.stringArrayToTransform(earElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, earElement.AssetId, Utils.stringArrayToTransform(earElement.Transform), mw.HumanoidSlotType.Head);
                 break;
             case Tab3Type.Tab3_Face:
                 let facingElement = GameConfig.Facing.getElement(assetId);
                 if (!facingElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, facingElement.AssetId, Utils.stringArrayToTransform(facingElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, facingElement.AssetId, Utils.stringArrayToTransform(facingElement.Transform), mw.HumanoidSlotType.FaceOrnamental);
                 break;
             case Tab3Type.Tab3_Hip:
                 let hipElement = GameConfig.Hip.getElement(assetId);
                 if (!hipElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, hipElement.AssetId, Utils.stringArrayToTransform(hipElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, hipElement.AssetId, Utils.stringArrayToTransform(hipElement.Transform), mw.HumanoidSlotType.Buttocks);
                 break;
             case Tab3Type.Tab3_Shoulder:
                 let shoulderElement = GameConfig.Shoulder.getElement(assetId);
                 if (!shoulderElement)
                     return;
-                await this.changeSlotAndDecoration(tabId, shoulderElement.AssetId, Utils.stringArrayToTransform(shoulderElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, shoulderElement.AssetId, Utils.stringArrayToTransform(shoulderElement.Transform), mw.HumanoidSlotType.Rings);
                 break;
             case Tab3Type.Tab3_Effects:
                 let effectsElement = GameConfig.Effects.getElement(assetId);
@@ -12732,6 +13500,7 @@ class MallModuleC extends ModuleC {
                 break;
         }
         await this.localPlayer.character.asyncReady();
+        this.isNeedSaveCharacter = true;
         // this.localPlayer.character.syncDescription();
     }
     async changeOutfit(configId) {
@@ -12739,31 +13508,26 @@ class MallModuleC extends ModuleC {
         let currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
         await Utils.asyncDownloadAsset(outfitElement.AssetId);
         if (currentSomatotype == outfitElement.SexType) {
-            if (outfitElement.IsTransition > 0) {
-                await this.changeOutfitTransition(outfitElement.AssetId);
-            }
-            else {
-                this.localPlayer.character.setDescription([outfitElement.AssetId]);
-            }
-        }
-        else {
-            if (outfitElement.SexType % 2 == 0) {
-                this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
-            }
-            else {
-                this.localPlayer.character.setDescription(this.maleNpc.getDescription());
-            }
-            await this.localPlayer.character.asyncReady();
-            if (outfitElement.IsTransition > 0) {
-                await this.changeOutfitTransition(outfitElement.AssetId);
-            }
-            else {
-                this.localPlayer.character.setDescription([outfitElement.AssetId]);
-            }
-            await this.localPlayer.character.asyncReady();
-            currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-            if (currentSomatotype != outfitElement.SexType)
-                this.localPlayer.character.description.advance.base.characterSetting.somatotype = outfitElement.SexType;
+            await this.changeOutfitTransition(outfitElement.AssetId);
+            // if (outfitElement.IsTransition > 0) {
+            // } else {
+            //     this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            // }
+            // } else {
+            //     if (outfitElement.SexType % 2 == 0) {
+            //         this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+            //     } else {
+            //         this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+            //     }
+            //     await this.localPlayer.character.asyncReady();
+            //     if (outfitElement.IsTransition > 0) {
+            //         await this.changeOutfitTransition(outfitElement.AssetId);
+            //     } else {
+            //         this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            //     }
+            //     await this.localPlayer.character.asyncReady();
+            //     currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            //     if (currentSomatotype != outfitElement.SexType) this.localPlayer.character.description.advance.base.characterSetting.somatotype = outfitElement.SexType;
         }
         await this.localPlayer.character.asyncReady();
     }
@@ -12773,7 +13537,7 @@ class MallModuleC extends ModuleC {
         this.transitionNpc.setDescription([assetId]);
         await this.transitionNpc.asyncReady();
         await Mall.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
-        await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
+        // await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
     }
     async changeSlotAndDecoration(tagId, assetId, transform, slotIndex) {
         await Utils.asyncDownloadAsset(assetId);
@@ -12781,7 +13545,12 @@ class MallModuleC extends ModuleC {
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
             let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
+            let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
             this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
+            if (assetId == attachmentAssetId) {
+                this.decorationIndexMap.delete(tagId);
+                return;
+            }
         }
         let model = await GameObject.asyncSpawn(assetId);
         if (!model)
@@ -12798,6 +13567,8 @@ class MallModuleC extends ModuleC {
         else {
             return null;
         }
+    }
+    async deleteDecoration() {
     }
     async getCharacterAssetId(configId) {
         await this.localPlayer.character.asyncReady();
@@ -12886,7 +13657,7 @@ class MallModuleC extends ModuleC {
     async initShopCamera() {
         let myCamera = Camera.currentCamera;
         let shopCamera = await GameObject.asyncSpawn(`Camera`);
-        shopCamera.parent = Player.localPlayer.character;
+        shopCamera.parent = this.localPlayer.character;
         shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
         shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
         this.onSwitchCameraAction.add((cameraType) => {
@@ -12947,16 +13718,25 @@ class MallModuleC extends ModuleC {
                 await this.maleNpc.asyncReady();
             }
             this.localPlayer.character.syncDescription();
+            this.isNeedSaveCharacter = false;
+            Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
         });
     }
     addCloseAction() {
-        this.getMallTipsPanel.showTips(() => {
-            this.saveCharacterDescription();
+        if (this.isNeedSaveCharacter) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveCharacter = false;
+                this.saveCharacterDescription();
+                this.closeMallPanel();
+            }, () => {
+                this.isNeedSaveCharacter = false;
+                this.recoverCharacter();
+                this.closeMallPanel();
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
+        else {
             this.closeMallPanel();
-        }, () => {
-            this.recoverCharacter();
-            this.closeMallPanel();
-        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
     }
     recoverCharacter() {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
@@ -12981,8 +13761,10 @@ class MallModuleC extends ModuleC {
             }
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            this.initUsingCharacterData();
             if (mw.UIService.getUI(MallPanel, false)?.visible)
-                this.getMallPanel.initMallPanel(somatotype);
+                this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            Notice.showDownNotice(GameConfig.Language.Text_ResetSuccessfully.Value);
         });
     }
     addSexAction() {
@@ -12997,8 +13779,10 @@ class MallModuleC extends ModuleC {
             }
             await this.localPlayer.character.asyncReady();
             somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            this.initUsingCharacterData();
             if (mw.UIService.getUI(MallPanel, false)?.visible)
-                this.getMallPanel.initMallPanel(somatotype);
+                this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
         });
     }
     openColorPickPanel(tabId) {
@@ -13520,6 +14304,8 @@ class MallModuleC extends ModuleC {
                 }
                 break;
         }
+        this.isNeedSaveColor = true;
+        this.isNeedSaveCharacter = true;
     }
 }
 
@@ -13687,7 +14473,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -13879,7 +14665,7 @@ var foreign141 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -13974,7 +14760,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -14390,7 +15176,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.46
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -15062,7 +15848,7 @@ var foreign97 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -15147,7 +15933,7 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -15597,7 +16383,7 @@ var foreign51 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -15687,7 +16473,7 @@ var foreign122 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.02.16-23.58.50
+ * TIME: 2025.02.18-23.09.45
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -15989,128 +16775,6 @@ var foreign68 = /*#__PURE__*/Object.freeze({
     default: GMService$1
 });
 
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.02.16-23.58.50
- */
-let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
-        }
-        return this.mBgImage_Internal;
-    }
-    get mIconImage() {
-        if (!this.mIconImage_Internal && this.uiWidgetBase) {
-            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage');
-        }
-        return this.mIconImage_Internal;
-    }
-    get mMaskImage() {
-        if (!this.mMaskImage_Internal && this.uiWidgetBase) {
-            this.mMaskImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMaskImage');
-        }
-        return this.mMaskImage_Internal;
-    }
-    get mCloseButton() {
-        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
-            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseButton');
-        }
-        return this.mCloseButton_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        this.mCloseButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        });
-        this.initLanguage(this.mCloseButton);
-        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮添加点击
-        //按钮多语言
-        //文本多语言
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-MallItem_Self_Generate = __decorate([
-    UIBind('UI/module/MallModule/MallItem_Self.ui')
-], MallItem_Self_Generate);
-var MallItem_Self_Generate$1 = MallItem_Self_Generate;
-
-var foreign134 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: MallItem_Self_Generate$1
-});
-
-class MallItem_Self extends MallItem_Self_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.mallModuleC = null;
-        this.assetType = 0;
-        this.assetId = null;
-    }
-    get getMallModuleC() {
-        if (!this.mallModuleC) {
-            this.mallModuleC = ModuleService.getModule(MallModuleC);
-        }
-        return this.mallModuleC;
-    }
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = UILayerMiddle;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mIconImage.imageGuid = `32115`;
-    }
-    bindButton() {
-        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
-    }
-    addCloseButton() {
-        this.getMallModuleC.onCloseMallItemSelfAction.call(this.assetType, this.assetId);
-    }
-    initItem(assetType, assetId) {
-        this.assetType = assetType;
-        this.assetId = assetId;
-        this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
-    }
-}
-
-var foreign81 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: MallItem_Self
-});
-
 let CopyCharacter = class CopyCharacter extends Script {
     constructor() {
         super(...arguments);
@@ -16348,7 +17012,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.02.16-23.58.49
+ * TIME: 2025.02.18-23.09.45
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {

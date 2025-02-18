@@ -1,5 +1,5 @@
 import { ConfigBase, IElementBase } from "./ConfigBase";
-const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"光束拖尾","88442",null,0],[2,"彩虹拖尾","88824",null,0]];
+const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"宠物","152395",["0","-35","-25","0","0","0","0.1","0.1","0.1"],0],[2,"宠物","152404",["0","-35","-25","0","0","0","0.1","0.1","0.1"],0],[3,"僵尸猫","217695",["0","-35","-35","0","0","0","1","1","1"],0],[4,"僵尸狗","217700",["0","-35","-35","0","0","0","1","1","1"],0]];
 export interface IShoulderElement extends IElementBase{
  	/**undefined*/
 	ID:number

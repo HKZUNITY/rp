@@ -87,6 +87,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
         this.onCloseColorPickPanelAction.add(this.addCloseColorPickPanelAction.bind(this));
         this.onSaveColorPickPanelAction.add(this.addSaveColorPickPanelAction.bind(this));
+        this.onCloseMallItemSelfAction.add(this.addCloseMallItemSelfAction.bind(this));
     }
 
     private bindEvent(): void {
@@ -96,30 +97,40 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     private addSaveColorPickPanelAction(): void {
+        this.isNeedSaveColor = false;
         this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
     }
 
     private addCloseColorPickPanelAction(): void {
-        this.getMallTipsPanel.showTips(() => {
-            ExecutorManager.instance.pushAsyncExecutor(async () => {
-                await this.copyNpc.asyncReady();
-                this.localPlayer.character.setDescription(this.copyNpc.getDescription());
-                await this.localPlayer.character.asyncReady();
+        if (this.isNeedSaveColor) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveColor = false;
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    await this.copyNpc.asyncReady();
+                    this.localPlayer.character.setDescription(this.copyNpc.getDescription());
+                    await this.localPlayer.character.asyncReady();
+                    this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
+                });
+            }, () => {
+                this.isNeedSaveColor = false;
                 this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-            });
-        }, () => {
+            }, GameConfig.Language.Text_CloseTips.Value
+                , GameConfig.Language.Text_WhetherToKeepTheCurrentColor.Value
+                , GameConfig.Language.Text_NoRetain.Value
+                , GameConfig.Language.Text_Retain.Value);
+        } else {
             this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
     }
 
     private addOpenMallAction(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
-            await this.refreshUsingCharacterData();
+            this.initUsingCharacterData();
             this.onSwitchCameraAction.call(1);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
-                this.getMallPanel.initMallPanel(this.saveSomatotype);
+                this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap);
             }
             this.getMallPanel.show();
         });
@@ -130,45 +141,128 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.onSwitchCameraAction.call(0);
     }
 
-    private saveUsingAssetIdMap: Map<number, AssetIdInfoData> = new Map<number, AssetIdInfoData>();
     private usingAssetIdMap: Map<number, AssetIdInfoData> = new Map<number, AssetIdInfoData>();
-    private async refreshUsingCharacterData(): Promise<void> {
+    private usingAssetIds: number[] = [];
+    private initUsingCharacterData(): void {
         this.usingAssetIdMap.clear();
-        this.saveUsingAssetIdMap.clear();
+        this.usingAssetIds.length = 0;
 
-        let npc = (this.saveSomatotype % 2 == 0) ? this.feMaleNpc : this.maleNpc;
-        await npc.asyncReady();
+        let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
+        if (frontHair && frontHair.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
+        let fullHair = Mall.getAssetId(Tab3Type.Tab3_FullHair);
+        if (fullHair && fullHair.length > 0) {
+            let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, fullHair);
+            if (fullHairElement) {
+                this.usingAssetIdMap.set(Tab3Type.Tab3_FullHair, new AssetIdInfoData(fullHair));
+            } else {
+                this.usingAssetIdMap.set(Tab3Type.Tab3_BackHair, new AssetIdInfoData(fullHair));
+            }
+        }
 
-        let faceAssetIdInfoData1: AssetIdInfoData = new AssetIdInfoData();
-        faceAssetIdInfoData1.assetType = Tab2Type.Tab2_Face;
-        faceAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.headFeatures.head.style;
-        faceAssetIdInfoData1.isPendant = false;
-        this.usingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData1);
-        let faceAssetIdInfoData2: AssetIdInfoData = new AssetIdInfoData();
-        faceAssetIdInfoData2.assetType = Tab2Type.Tab2_Face;
-        faceAssetIdInfoData2.assetId = npc.description.advance.headFeatures.head.style;
-        faceAssetIdInfoData2.isPendant = false;
-        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Face, faceAssetIdInfoData2);
+        //#region 
+        let top = Mall.getAssetId(Tab2Type.Tab2_Top);
+        if (top && top.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Top, new AssetIdInfoData(top));
+        let bottom = Mall.getAssetId(Tab2Type.Tab2_Bottom);
+        if (bottom && bottom.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Bottom, new AssetIdInfoData(bottom));
+        let shoes = Mall.getAssetId(Tab2Type.Tab2_Shoes);
+        if (shoes && shoes.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Shoes, new AssetIdInfoData(shoes));
+        let gloves = Mall.getAssetId(Tab2Type.Tab2_Gloves);
+        if (gloves && gloves.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Gloves, new AssetIdInfoData(gloves));
 
-        let eryebrowsAssetIdInfoData1: AssetIdInfoData = new AssetIdInfoData();
-        eryebrowsAssetIdInfoData1.assetType = Tab2Type.Tab2_Eyebrows;
-        eryebrowsAssetIdInfoData1.assetId = this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle
-        eryebrowsAssetIdInfoData1.isPendant = false;
-        this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData1);
-        let eryebrowsAssetIdInfoData2: AssetIdInfoData = new AssetIdInfoData();
-        eryebrowsAssetIdInfoData2.assetType = Tab2Type.Tab2_Eyebrows;
-        eryebrowsAssetIdInfoData2.assetId = npc.description.advance.makeup.eyebrows.eyebrowStyle
-        eryebrowsAssetIdInfoData2.isPendant = false;
-        this.saveUsingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, eryebrowsAssetIdInfoData2);
+        let eyebrows = Mall.getAssetId(Tab2Type.Tab2_Eyebrows);
+        if (eyebrows && eyebrows.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
+        let PupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
+        if (PupilStyle && PupilStyle.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(PupilStyle));
+        let Lens = Mall.getAssetId(Tab3Type.Tab3_Lens);
+        if (Lens && Lens.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
+        let UpperHighlight = Mall.getAssetId(Tab3Type.Tab3_UpperHighlight);
+        if (UpperHighlight && UpperHighlight.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
+        let LowerHighlight = Mall.getAssetId(Tab3Type.Tab3_LowerHighlight);
+        if (LowerHighlight && LowerHighlight.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
+        let Eyelashes = Mall.getAssetId(Tab3Type.Tab3_Eyelashes);
+        if (Eyelashes && Eyelashes.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
+        let Eyeshadow = Mall.getAssetId(Tab3Type.Tab3_Eyeshadow);
+        if (Eyeshadow && Eyeshadow.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
+        let Blush = Mall.getAssetId(Tab3Type.Tab3_Blush);
+        if (Blush && Blush.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
+        let LipMakeup = Mall.getAssetId(Tab3Type.Tab3_LipMakeup);
+        if (LipMakeup && LipMakeup.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
+        //#endregion
+
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
+    }
+
+    private refreshUsingCharacterDataByTabId(tabId: number): void {
+        let assetId = Mall.getAssetId(tabId);
+        if (assetId && assetId.length > 0) {
+            this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
+        } else {
+            if (this.usingAssetIdMap.has(tabId)) this.usingAssetIdMap.delete(tabId);
+        }
+    }
+
+    private refreshUsingCharacterDataByAssetId(): void {
+        if (this.usingAssetIds && this.usingAssetIds.length > 0) {
+            this.usingAssetIds.forEach((value: number) => {
+                if (this.usingAssetIdMap.has(value)) this.usingAssetIdMap.delete(value);
+            });
+        }
+        this.usingAssetIds.length = 0;
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
+    }
+
+    private addCloseMallItemSelfAction(tabId: number, assetId: string): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (Mall.isClothingTabId(tabId)) {
+                await this.changeCharacter(tabId, assetId);
+                this.refreshUsingCharacterDataByTabId(tabId);
+            } else {
+                if (!this.usingAssetIdMap.has(Number(assetId))) return;
+                let assetIdInfoData = this.usingAssetIdMap.get(Number(assetId));
+                await this.localPlayer.character.asyncReady();
+                let attachmentGameObject = this.localPlayer.character.description.advance
+                    ?.slotAndDecoration?.slot[assetIdInfoData.slotType]?.decoration[assetIdInfoData.slotIndex]?.attachmentGameObject;
+                if (!attachmentGameObject) return;
+                this.localPlayer.character.description.advance.slotAndDecoration.slot[assetIdInfoData.slotType].decoration.delete(attachmentGameObject, true);
+                this.usingAssetIdMap.delete(Number(assetId));
+                if (this.usingAssetIds.indexOf(Number(assetId)) != -1) this.usingAssetIds.splice(this.usingAssetIds.indexOf(Number(assetId)), 1);
+                await this.localPlayer.character.asyncReady();
+            }
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, true);
+        });
     }
 
     private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {
         if (tabType == TabType.None) return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
+            if (!Mall.isRemovableTabId(tabId)) return;
+            if (Mall.isClothingTabId(tabId)) {
+                this.refreshUsingCharacterDataByTabId(tabId);
+            } else {
+                this.refreshUsingCharacterDataByAssetId();
+            }
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap);
         });
     }
 
+    private isNeedSaveCharacter: boolean = false;
     private async changeCharacter(tabId: number, assetId: string): Promise<void> {
         await this.localPlayer.character.asyncReady();
         switch (tabId) {
@@ -185,8 +279,20 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.localPlayer.character.description.advance.headFeatures.head.style = assetId;
                 break;
             case Tab2Type.Tab2_Eyebrows:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let eyebrowStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        eyebrowStyle = `398608`;
+                    } else {
+                        eyebrowStyle = `77763`;
+                    }
+                    await Utils.asyncDownloadAsset(eyebrowStyle);
+                    this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowStyle = eyebrowStyle;
+                }
                 break;
             case Tab2Type.Tab2_Expression:
                 let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.getElement(assetId);
@@ -197,104 +303,288 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 await this.changeOutfit(assetId);
                 break;
             case Tab2Type.Tab2_Top:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.upperCloth.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let upperClothStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        upperClothStyle = `292004`;
+                    } else {
+                        upperClothStyle = `343474`;
+                    }
+                    await Utils.asyncDownloadAsset(upperClothStyle);
+                    this.localPlayer.character.description.advance.clothing.upperCloth.style = upperClothStyle;
+                }
                 break;
             case Tab2Type.Tab2_Bottom:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.lowerCloth.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let lowerClothStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        lowerClothStyle = `292002`;
+                    } else {
+                        lowerClothStyle = `343467`;
+                    }
+                    await Utils.asyncDownloadAsset(lowerClothStyle);
+                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = lowerClothStyle;
+                }
                 break;
             case Tab2Type.Tab2_Shoes:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.shoes.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let shoesStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        shoesStyle = `66505`;
+                    } else {
+                        shoesStyle = `343475`;
+                    }
+                    await Utils.asyncDownloadAsset(shoesStyle);
+                    this.localPlayer.character.description.advance.clothing.shoes.style = shoesStyle;
+                }
                 break;
             case Tab2Type.Tab2_Gloves:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+                if (this.localPlayer.character.description.advance.clothing.gloves.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let glovesStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        glovesStyle = `75663`;
+                    } else {
+                        glovesStyle = `343466`;
+                    }
+                    await Utils.asyncDownloadAsset(glovesStyle);
+                    this.localPlayer.character.description.advance.clothing.gloves.style = glovesStyle;
+                }
                 break;
             case Tab2Type.Tab2_Pet:
                 // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
                 break;
             case Tab3Type.Tab3_PupilStyle:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let pupilStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        pupilStyle = `398609`;
+                    } else {
+                        pupilStyle = `47968`;
+                    }
+                    await Utils.asyncDownloadAsset(pupilStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle = pupilStyle;
+                }
                 break;
             case Tab3Type.Tab3_Lens:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = assetId;
+                } else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.decal.pupilStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_UpperHighlight:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let upperHighlightStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        upperHighlightStyle = `48041`;
+                    } else {
+                        upperHighlightStyle = `32112`;
+                    }
+                    await Utils.asyncDownloadAsset(upperHighlightStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.upperHighlightStyle = upperHighlightStyle;
+                }
                 break;
             case Tab3Type.Tab3_LowerHighlight:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let lowerHighlightStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        lowerHighlightStyle = `48026`;
+                    } else {
+                        lowerHighlightStyle = `32098`;
+                    }
+                    await Utils.asyncDownloadAsset(lowerHighlightStyle);
+                    this.localPlayer.character.description.advance.makeup.coloredContacts.highlight.lowerHighlightStyle = lowerHighlightStyle;
+                }
                 break;
             case Tab3Type.Tab3_Eyelashes:
-                this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let eyelashStyle: string = ``;
+                    if (somatotype % 2 == 0) {
+                        eyelashStyle = `398607`;
+                    } else {
+                        eyelashStyle = `48062`;
+                    }
+                    await Utils.asyncDownloadAsset(eyelashStyle);
+                    this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = eyelashStyle;
+                }
                 break;
             case Tab3Type.Tab3_Eyeshadow:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = assetId;
+                } else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.eyeShadow.eyeshadowStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_Blush:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.blush.blushStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.blush.blushStyle = assetId;
+                } else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.blush.blushStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_LipMakeup:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                if (this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = assetId;
+                } else {
+                    await Utils.asyncDownloadAsset(`32115`);
+                    this.localPlayer.character.description.advance.makeup.lipstick.lipstickStyle = `32115`;
+                }
                 break;
             case Tab3Type.Tab3_FaceTattoo:
                 // this.localPlayer.character.description.advance.makeup.eyelashes.eyelashStyle = assetId;
                 break;
             case Tab3Type.Tab3_FullHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.backHair.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                    this.localPlayer.character.description.advance.hair.frontHair.style = ``;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let frontHair: string = ``;
+                    let backHair: string = ``;
+                    if (somatotype % 2 == 0) {
+                        frontHair = `292003`;
+                        backHair = `292001`;
+                    } else {
+                        frontHair = `343471`;
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAssets([frontHair, backHair]);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                }
                 break;
             case Tab3Type.Tab3_FrontHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.frontHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.frontHair.style != assetId) {
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let frontHair: string = ``;
+                    if (somatotype % 2 == 0) {
+                        frontHair = `292003`;
+                    } else {
+                        frontHair = `343471`;
+                    }
+                    await Utils.asyncDownloadAsset(frontHair);
+                    this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                }
+                let backHair = this.localPlayer.character.description.advance.hair.backHair.style;
+                let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, backHair);
+                if (fullHairElement) {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let backHair: string = ``;
+                    if (somatotype % 2 == 0) {
+                        backHair = `292001`;
+                    } else {
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAsset(backHair);
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                } else { }
                 break;
             case Tab3Type.Tab3_BackHair:
-                await Utils.asyncDownloadAsset(assetId);
-                this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                if (this.localPlayer.character.description.advance.hair.backHair.style != assetId) {
+                    let backHair = this.localPlayer.character.description.advance.hair.backHair.style;
+                    let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, backHair);
+                    if (fullHairElement) {
+                        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                        let frontHair: string = ``;
+                        if (somatotype % 2 == 0) {
+                            frontHair = `292003`;
+                        } else {
+                            frontHair = `343471`;
+                        }
+                        await Utils.asyncDownloadAsset(frontHair);
+                        this.localPlayer.character.description.advance.hair.frontHair.style = frontHair;
+                    } else { }
+                    await Utils.asyncDownloadAsset(assetId);
+                    this.localPlayer.character.description.advance.hair.backHair.style = assetId;
+                } else {
+                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+                    let backHair: string = ``;
+                    if (somatotype % 2 == 0) {
+                        backHair = `292001`;
+                    } else {
+                        backHair = `343476`;
+                    }
+                    await Utils.asyncDownloadAsset(backHair);
+                    this.localPlayer.character.description.advance.hair.backHair.style = backHair;
+                }
                 break;
             case Tab3Type.Tab3_LeftHand:
                 let leftHandElement = GameConfig.LeftHand.getElement(assetId);
                 if (!leftHandElement) return;
-                await this.changeSlotAndDecoration(tabId, leftHandElement.AssetId, Utils.stringArrayToTransform(leftHandElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, leftHandElement.AssetId, Utils.stringArrayToTransform(leftHandElement.Transform), mw.HumanoidSlotType.LeftHand);
                 break;
             case Tab3Type.Tab3_RightHand:
                 let rightHandElement = GameConfig.RightHand.getElement(assetId);
                 if (!rightHandElement) return;
-                await this.changeSlotAndDecoration(tabId, rightHandElement.AssetId, Utils.stringArrayToTransform(rightHandElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, rightHandElement.AssetId, Utils.stringArrayToTransform(rightHandElement.Transform), mw.HumanoidSlotType.RightHand);
                 break;
             case Tab3Type.Tab3_Back:
                 let backElement = GameConfig.Back.getElement(assetId);
                 if (!backElement) return;
-                await this.changeSlotAndDecoration(tabId, backElement.AssetId, Utils.stringArrayToTransform(backElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, backElement.AssetId, Utils.stringArrayToTransform(backElement.Transform), mw.HumanoidSlotType.BackOrnamental);
                 break;
             case Tab3Type.Tab3_Ear:
                 let earElement = GameConfig.Ear.getElement(assetId);
                 if (!earElement) return;
-                await this.changeSlotAndDecoration(tabId, earElement.AssetId, Utils.stringArrayToTransform(earElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, earElement.AssetId, Utils.stringArrayToTransform(earElement.Transform), mw.HumanoidSlotType.Head);
                 break;
             case Tab3Type.Tab3_Face:
                 let facingElement = GameConfig.Facing.getElement(assetId);
                 if (!facingElement) return;
-                await this.changeSlotAndDecoration(tabId, facingElement.AssetId, Utils.stringArrayToTransform(facingElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, facingElement.AssetId, Utils.stringArrayToTransform(facingElement.Transform), mw.HumanoidSlotType.FaceOrnamental);
                 break;
             case Tab3Type.Tab3_Hip:
                 let hipElement = GameConfig.Hip.getElement(assetId);
                 if (!hipElement) return;
-                await this.changeSlotAndDecoration(tabId, hipElement.AssetId, Utils.stringArrayToTransform(hipElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, hipElement.AssetId, Utils.stringArrayToTransform(hipElement.Transform), mw.HumanoidSlotType.Buttocks);
                 break;
             case Tab3Type.Tab3_Shoulder:
                 let shoulderElement = GameConfig.Shoulder.getElement(assetId);
                 if (!shoulderElement) return;
-                await this.changeSlotAndDecoration(tabId, shoulderElement.AssetId, Utils.stringArrayToTransform(shoulderElement.Transform), mw.HumanoidSlotType.Root);
+                await this.changeSlotAndDecoration(tabId, shoulderElement.AssetId, Utils.stringArrayToTransform(shoulderElement.Transform), mw.HumanoidSlotType.Rings);
                 break;
             case Tab3Type.Tab3_Effects:
                 let effectsElement = GameConfig.Effects.getElement(assetId);
@@ -310,6 +600,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 break;
         }
         await this.localPlayer.character.asyncReady();
+        this.isNeedSaveCharacter = true;
         // this.localPlayer.character.syncDescription();
     }
 
@@ -318,26 +609,26 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
         await Utils.asyncDownloadAsset(outfitElement.AssetId);
         if (currentSomatotype == outfitElement.SexType) {
-            if (outfitElement.IsTransition > 0) {
-                await this.changeOutfitTransition(outfitElement.AssetId);
-            } else {
-                this.localPlayer.character.setDescription([outfitElement.AssetId]);
-            }
-        } else {
-            if (outfitElement.SexType % 2 == 0) {
-                this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
-            } else {
-                this.localPlayer.character.setDescription(this.maleNpc.getDescription());
-            }
-            await this.localPlayer.character.asyncReady();
-            if (outfitElement.IsTransition > 0) {
-                await this.changeOutfitTransition(outfitElement.AssetId);
-            } else {
-                this.localPlayer.character.setDescription([outfitElement.AssetId]);
-            }
-            await this.localPlayer.character.asyncReady();
-            currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-            if (currentSomatotype != outfitElement.SexType) this.localPlayer.character.description.advance.base.characterSetting.somatotype = outfitElement.SexType;
+            await this.changeOutfitTransition(outfitElement.AssetId);
+            // if (outfitElement.IsTransition > 0) {
+            // } else {
+            //     this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            // }
+            // } else {
+            //     if (outfitElement.SexType % 2 == 0) {
+            //         this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+            //     } else {
+            //         this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+            //     }
+            //     await this.localPlayer.character.asyncReady();
+            //     if (outfitElement.IsTransition > 0) {
+            //         await this.changeOutfitTransition(outfitElement.AssetId);
+            //     } else {
+            //         this.localPlayer.character.setDescription([outfitElement.AssetId]);
+            //     }
+            //     await this.localPlayer.character.asyncReady();
+            //     currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            //     if (currentSomatotype != outfitElement.SexType) this.localPlayer.character.description.advance.base.characterSetting.somatotype = outfitElement.SexType;
         }
         await this.localPlayer.character.asyncReady();
     }
@@ -347,7 +638,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.transitionNpc.setDescription([assetId]);
         await this.transitionNpc.asyncReady();
         await Mall.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
-        await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
+        // await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
     }
 
     private decorationIndexMap: Map<number, number> = new Map<number, number>();
@@ -357,7 +648,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
             let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
+            let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
             this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
+            if (assetId == attachmentAssetId) {
+                this.decorationIndexMap.delete(tagId);
+                return;
+            }
         } else {
         }
         let model = await GameObject.asyncSpawn(assetId) as mw.Model;
@@ -374,6 +670,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         } else {
             return null;
         }
+    }
+
+    private async deleteDecoration(): Promise<void> {
+
     }
 
     public async getCharacterAssetId(configId: number): Promise<string | mw.LinearColor> {
@@ -462,7 +762,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private async initShopCamera(): Promise<void> {
         let myCamera = Camera.currentCamera;
         let shopCamera: mw.Camera = await GameObject.asyncSpawn<mw.Camera>(`Camera`);
-        shopCamera.parent = Player.localPlayer.character;
+        shopCamera.parent = this.localPlayer.character;
         shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
         shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
         this.onSwitchCameraAction.add((cameraType: number) => {
@@ -531,17 +831,28 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 await this.maleNpc.asyncReady();
             }
             this.localPlayer.character.syncDescription();
+            this.isNeedSaveCharacter = false;
+            Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
         });
     }
 
     private addCloseAction(): void {
-        this.getMallTipsPanel.showTips(() => {
-            this.saveCharacterDescription();
+        if (this.isNeedSaveCharacter) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveCharacter = false;
+                this.saveCharacterDescription();
+                this.closeMallPanel();
+            }, () => {
+                this.isNeedSaveCharacter = false;
+                this.recoverCharacter();
+                this.closeMallPanel();
+            }, GameConfig.Language.Text_CloseTips.Value
+                , GameConfig.Language.Text_WhetherSaveImage.Value
+                , GameConfig.Language.Text_NoSave.Value
+                , GameConfig.Language.Text_Save.Value);
+        } else {
             this.closeMallPanel();
-        }, () => {
-            this.recoverCharacter();
-            this.closeMallPanel();
-        }, GameConfig.Language.Text_SaveTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
     }
 
     private recoverCharacter(): void {
@@ -567,7 +878,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             }
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype);
+            this.initUsingCharacterData();
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            Notice.showDownNotice(GameConfig.Language.Text_ResetSuccessfully.Value);
         });
     }
 
@@ -582,7 +895,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             }
             await this.localPlayer.character.asyncReady();
             somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype);
+            this.initUsingCharacterData();
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
         });
     }
 
@@ -1072,6 +1387,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
+    private isNeedSaveColor: boolean = false;
     private changeCharacterColor(color: mw.LinearColor): void {
         switch (this.colorPickTabId) {
             case Tab2Type.Tab2_SkinTone:
@@ -1179,5 +1495,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             default:
                 break;
         }
+        this.isNeedSaveColor = true;
+        this.isNeedSaveCharacter = true;
     }
 }

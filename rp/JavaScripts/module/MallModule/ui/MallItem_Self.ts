@@ -1,4 +1,7 @@
-﻿import MallItem_Self_Generate from "../../../ui-generate/module/MallModule/MallItem_Self_generate";
+﻿import Utils from "../../../tools/Utils";
+import MallItem_Self_Generate from "../../../ui-generate/module/MallModule/MallItem_Self_generate";
+import Mall from "../Mall";
+import { AssetIdInfoData, Tab3Type } from "../MallData";
 import MallModuleC from "../MallModuleC";
 
 export default class MallItem_Self extends MallItem_Self_Generate {
@@ -35,9 +38,22 @@ export default class MallItem_Self extends MallItem_Self_Generate {
 
 	private assetType: number = 0;
 	private assetId: string = null;
-	public initItem(assetType: number, assetId: string): void {
+	private isDefault: boolean = false;
+	public initItem(assetType: number, assetIdInfoData: AssetIdInfoData): void {
 		this.assetType = assetType;
-		this.assetId = assetId;
-		this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);
+		this.assetId = assetIdInfoData.assetId;
+		this.mIconImage.imageInfo.setByAssetIcon(this.assetId, mw.AssetIconSize.Icon_128px);
+		this.mIconImage.imageColor = mw.LinearColor.white;
+		switch (assetType) {
+			case Tab3Type.Tab3_Lens:
+			case Tab3Type.Tab3_UpperHighlight:
+			case Tab3Type.Tab3_LowerHighlight:
+				this.mIconImage.imageColor = new mw.LinearColor(0.3098, 0.1921, 0.7176);
+				break;
+			default:
+				break;
+		}
+		this.isDefault = Mall.isDefaultAssetId(this.assetId);
+		Utils.setWidgetVisibility(this.mCloseButton, this.isDefault ? mw.SlateVisibility.Collapsed : mw.SlateVisibility.Visible);
 	}
 }

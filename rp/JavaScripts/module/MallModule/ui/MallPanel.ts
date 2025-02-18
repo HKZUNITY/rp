@@ -34,7 +34,7 @@ import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
 import Utils from "../../../tools/Utils";
 import ExecutorManager from "../../../tools/WaitingQueue";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
-import { Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
+import { AssetIdInfoData, Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 import MallItem_Big from "./MallItem_Big";
 import MallItem_Color from "./MallItem_Color";
@@ -115,8 +115,10 @@ export default class MallPanel extends MallPanel_Generate {
 		this.checkSkinToneMallItemState();
 	}
 
-	public initMallPanel(somatotype: number): void {
+	public initMallPanel(somatotype: number, usingAssetIdMap: Map<number, AssetIdInfoData>): void {
+		this.clearTabIdDataMap();
 		this.switchSexImage(somatotype);
+		this.refreshMallItemSelf(usingAssetIdMap);
 		this.initTab1();
 	}
 
@@ -786,8 +788,30 @@ export default class MallPanel extends MallPanel_Generate {
 		}
 	}
 
-	private mallItem_Self: MallItem_Self[] = [];
-	private updateMallItemSelf(): void {
+	private mallItem_Selfs: MallItem_Self[] = [];
+	public refreshMallItemSelf(usingAssetIdMap: Map<number, AssetIdInfoData>, isCheck: boolean = false): void {
+		let valueArr = Array.from(usingAssetIdMap);
+		if (this.mallItem_Selfs.length > valueArr.length) {
+			for (let i = 0; i < valueArr.length; ++i) {
+				this.mallItem_Selfs[i].initItem(valueArr[i][0], valueArr[i][1]);
+				Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+			}
+			for (let i = valueArr.length; i < this.mallItem_Selfs.length; ++i) {
+				Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.Collapsed);
+			}
+		} else {
+			for (let i = 0; i < this.mallItem_Selfs.length; ++i) {
+				this.mallItem_Selfs[i].initItem(valueArr[i][0], valueArr[i][1]);
+				Utils.setWidgetVisibility(this.mallItem_Selfs[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+			}
+			for (let i = this.mallItem_Selfs.length; i < valueArr.length; ++i) {
+				let mallItem_Self = UIService.create(MallItem_Self);
+				mallItem_Self.initItem(valueArr[i][0], valueArr[i][1]);
+				this.mSelfContentCanvas.addChild(mallItem_Self.uiObject);
+				this.mallItem_Selfs.push(mallItem_Self);
+			}
+		}
 
+		if (isCheck) this.checkMallItemState();
 	}
 }

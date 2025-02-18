@@ -1,5 +1,5 @@
 import { ConfigBase, IElementBase } from "./ConfigBase";
-const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"光束拖尾","88442",null,0],[2,"彩虹拖尾","88824",null,0]];
+const EXCELDATA:Array<Array<any>> = [["ID","Describe","AssetId","Transform","SexType"],["","","","",""],[1,"光束拖尾","88442",["0","0","0","0","0","0","1","1","1"],0],[2,"彩虹拖尾","88824",["0","0","0","0","0","0","1","1","1"],0]];
 export interface ITrailingElement extends IElementBase{
  	/**undefined*/
 	ID:number

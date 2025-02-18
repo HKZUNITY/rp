@@ -20,11 +20,15 @@ export class ColorPickTab2Data {
 }
 
 export class AssetIdInfoData {
-    public assetType: number = null;
     public assetId: string = null;
-    public isPendant: boolean = false;
     public slotType: number = -1;
     public slotIndex: number = -1;
+
+    public constructor(assetId: string, slotType?: number, slotIndex?: number) {
+        this.assetId = assetId;
+        this.slotType = slotType;
+        this.slotIndex = slotIndex;
+    }
 }
 
 export enum TabType {
