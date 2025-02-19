@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -2546,9 +2546,14 @@ GlobalData.freeTime = 999;
 GlobalData.offMusicIconGuid = `133403`;
 /**打开背景音乐图标Guid */
 GlobalData.onMusicIconGuid = `133445`;
+var EventType;
+(function (EventType) {
+    EventType["OnOffMainUI"] = "OnOffMainUI";
+})(EventType || (EventType = {}));
 
 var foreign52 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    get EventType () { return EventType; },
     default: GlobalData
 });
 
@@ -2813,7 +2818,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -3047,7 +3052,7 @@ var foreign106 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3115,7 +3120,7 @@ var foreign116 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3198,7 +3203,7 @@ var foreign124 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -3578,7 +3583,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -3644,7 +3649,7 @@ var foreign145 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -3782,7 +3787,7 @@ var foreign146 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.52
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3868,7 +3873,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.52
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4413,7 +4418,7 @@ class HUDModuleC extends ModuleC {
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
         this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
         this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
@@ -4571,14 +4576,14 @@ class HUDModuleC extends ModuleC {
         console.error(`eventName: ${eventName}`);
         switch (eventName) {
             case "AE_OnQuit":
-                Event.dispatchToLocal(`OnOffMainUI`, true);
+                Event.dispatchToLocal(EventType.OnOffMainUI, true);
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, true);
                 if (UIService.getUI(SavePanel, false)?.visible)
                     this.getSavePanel.hide();
                 this.isOpenAvatar = false;
                 break;
             case "AE_OnOpen":
-                Event.dispatchToLocal(`OnOffMainUI`, false);
+                Event.dispatchToLocal(EventType.OnOffMainUI, false);
                 this.isOpenAvatar = true;
                 // if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);
@@ -5009,7 +5014,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -5348,7 +5353,7 @@ var foreign119 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -5486,7 +5491,7 @@ var foreign126 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -6269,13 +6274,17 @@ class InteractionModuleC extends ModuleC {
         if (!this.guideBagIds || this.guideBagIds.length == 0)
             return;
         if (this.guideStep >= this.guideBagIds.length - 1) {
-            // this.localPlayer.character.asyncReady().then(() => {
-            //     this.getHUDModuleC.onOpenClothAction.call();
-            // });
+            this.localPlayer.character.asyncReady().then(() => {
+                TimeUtil.delaySecond(1).then(() => {
+                    // this.getHUDModuleC.onOpenClothAction.call();
+                    this.getHUDModuleC.onOpenMallAction.call();
+                });
+            });
             return;
         }
         this.getGuidePanel.showStartTips(() => {
             // this.getHUDModuleC.onOpenClothAction.call();
+            this.getHUDModuleC.onOpenMallAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {
@@ -6515,7 +6524,7 @@ var foreign70 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -6637,7 +6646,7 @@ var foreign59 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6765,7 +6774,7 @@ var foreign60 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -6914,7 +6923,7 @@ var foreign61 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7045,7 +7054,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -7148,7 +7157,7 @@ var foreign63 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.52
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -7253,7 +7262,7 @@ var foreign64 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -7718,7 +7727,7 @@ var foreign65 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -7993,7 +8002,7 @@ class DanMuModuleC extends ModuleC {
         this.getHudModuleC.clickGoodItemAction.add(this.addClickGoodItemAction.bind(this));
         this.getHudModuleC.clickCloseGoodItemAction.add(this.addClickCloseGoodItemAction.bind(this));
         this.getHudModuleC.deleteAllGoodsAction.add(this.addDeleteAllGoodsAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
     addOnOffMainUI(isShow) {
         console.error(`wfz - addOnOffMainUI - isShow:${isShow}`);
@@ -9766,6 +9775,7 @@ Mall.removableTabIds = [
     Tab3Type.Tab3_Shoulder,
     Tab3Type.Tab3_Effects,
     Tab3Type.Tab3_Trailing,
+    Tab2Type.Tab2_Outfit,
 ];
 Mall.slotTabIds = [
     Tab3Type.Tab3_LeftHand,
@@ -9831,7 +9841,7 @@ var foreign71 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -9997,7 +10007,7 @@ var foreign128 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -10072,7 +10082,7 @@ var foreign76 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -10237,7 +10247,7 @@ var foreign77 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -10552,7 +10562,7 @@ var foreign75 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mResetButton() {
@@ -10757,7 +10767,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -10932,7 +10942,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -11081,7 +11091,7 @@ var foreign80 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -11214,7 +11224,7 @@ var foreign81 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -11449,26 +11459,33 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
     addSelectItemAction(tabType, tabId, assetId) {
         if (this.tabType != tabType || this.tabId != tabId)
             return;
-        this.updateSelectState(this.assetId == assetId);
+        this.updateSelectState(this.assetId == assetId, false);
     }
-    updateSelectState(isSelect) {
-        if (this.isRemovableTabId) {
-            if (!this.isSelect && this.isSelect == isSelect) {
-                return;
-            }
-            else if (!this.isSelect && this.isSelect != isSelect) {
-                this.isSelect = isSelect;
-            }
-            else if (this.isSelect && this.isSelect == isSelect) {
-                this.isSelect = false;
-            }
-            else if (this.isSelect && this.isSelect != isSelect) {
-                this.isSelect = isSelect;
-            }
-        }
-        else {
+    updateSelectState(isSelect, isDriectUpdate = true) {
+        if (isDriectUpdate) {
             if (this.isSelect == isSelect)
                 return;
+            this.isSelect = isSelect;
+        }
+        else {
+            if (this.isRemovableTabId) {
+                if (!this.isSelect && this.isSelect == isSelect) {
+                    return;
+                }
+                else if (!this.isSelect && this.isSelect != isSelect) {
+                    this.isSelect = isSelect;
+                }
+                else if (this.isSelect && this.isSelect == isSelect) {
+                    this.isSelect = false;
+                }
+                else if (this.isSelect && this.isSelect != isSelect) {
+                    this.isSelect = isSelect;
+                }
+            }
+            else {
+                if (this.isSelect == isSelect)
+                    return;
+            }
         }
         this.updateSelectStateUI();
     }
@@ -11499,7 +11516,7 @@ var foreign82 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -11651,7 +11668,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11789,7 +11806,7 @@ var foreign85 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -12027,7 +12044,7 @@ class MallPanel extends MallPanel_Generate$1 {
         this.tab1Ids.length = 0;
         this.tab1Elements.forEach((value) => { this.tab1Ids.push(value.ID); });
         this.updateTab1();
-        this.tab1Id = this.tab1Ids[0]; //可修改默认
+        this.tab1Id = this.tab1Ids[1]; //可修改默认
         this.getMallModuleC.onSelectTab1Action.call(this.tab1Id);
         this.initTab2();
     }
@@ -12091,7 +12108,7 @@ class MallPanel extends MallPanel_Generate$1 {
         // this.tabIdDataMap.forEach((value: TabIdData) => {
         // 	console.error(JSON.stringify(value));
         // });
-        // this.mItemScrollBox.scrollOffset = 0;
+        // this.mItemScrollBox.scrollOffset = 1;
     }
     calculateItemCanvas(tabType) {
         let positionY = 0;
@@ -12537,6 +12554,7 @@ class MallPanel extends MallPanel_Generate$1 {
                     break;
                 default:
                     assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
+                    console.error(assetId + "---" + this.mallItemMap.has(assetId));
                     if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId))
                         return;
                     this.mallItemMap.get(assetId).updateSelectState(true);
@@ -12672,6 +12690,8 @@ class MallPanel extends MallPanel_Generate$1 {
         }
     }
     refreshMallItemSelf(usingAssetIdMap, isCheck = false) {
+        if (isCheck)
+            this.checkMallItemState();
         let valueArr = Array.from(usingAssetIdMap);
         if (this.mallItem_Selfs.length > valueArr.length) {
             for (let i = 0; i < valueArr.length; ++i) {
@@ -12694,8 +12714,12 @@ class MallPanel extends MallPanel_Generate$1 {
                 this.mallItem_Selfs.push(mallItem_Self);
             }
         }
-        if (isCheck)
-            this.checkMallItemState();
+    }
+    onShow(...params) {
+        Event.dispatchToLocal(EventType.OnOffMainUI, false);
+    }
+    onHide() {
+        Event.dispatchToLocal(EventType.OnOffMainUI, true);
     }
 }
 
@@ -12709,7 +12733,7 @@ var foreign83 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -12975,12 +12999,13 @@ class MallModuleC extends ModuleC {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             this.initUsingCharacterData();
-            this.onSwitchCameraAction.call(1);
+            this.onSwitchCameraAction.call(2);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
                 this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap);
             }
             this.getMallPanel.show();
+            this.decorationIndexMap.clear(); //TODO-WFZ
         });
     }
     closeMallPanel() {
@@ -12990,9 +13015,6 @@ class MallModuleC extends ModuleC {
     initUsingCharacterData() {
         this.usingAssetIdMap.clear();
         this.usingAssetIds.length = 0;
-        let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
-        if (frontHair && frontHair.length > 0)
-            this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
         let fullHair = Mall.getAssetId(Tab3Type.Tab3_FullHair);
         if (fullHair && fullHair.length > 0) {
             let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, fullHair);
@@ -13000,10 +13022,12 @@ class MallModuleC extends ModuleC {
                 this.usingAssetIdMap.set(Tab3Type.Tab3_FullHair, new AssetIdInfoData(fullHair));
             }
             else {
+                let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
+                if (frontHair && frontHair.length > 0)
+                    this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
                 this.usingAssetIdMap.set(Tab3Type.Tab3_BackHair, new AssetIdInfoData(fullHair));
             }
         }
-        //#region 
         let top = Mall.getAssetId(Tab2Type.Tab2_Top);
         if (top && top.length > 0)
             this.usingAssetIdMap.set(Tab2Type.Tab2_Top, new AssetIdInfoData(top));
@@ -13016,79 +13040,73 @@ class MallModuleC extends ModuleC {
         let gloves = Mall.getAssetId(Tab2Type.Tab2_Gloves);
         if (gloves && gloves.length > 0)
             this.usingAssetIdMap.set(Tab2Type.Tab2_Gloves, new AssetIdInfoData(gloves));
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset)
+                    continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
         let eyebrows = Mall.getAssetId(Tab2Type.Tab2_Eyebrows);
-        if (eyebrows && eyebrows.length > 0)
+        if (eyebrows && eyebrows.length > 0 && eyebrows != `32115`)
             this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
-        let PupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
-        if (PupilStyle && PupilStyle.length > 0)
-            this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(PupilStyle));
+        let pupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
+        if (pupilStyle && pupilStyle.length > 0 && pupilStyle != `32115`)
+            this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(pupilStyle));
         let Lens = Mall.getAssetId(Tab3Type.Tab3_Lens);
-        if (Lens && Lens.length > 0)
+        if (Lens && Lens.length > 0 && Lens != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
         let UpperHighlight = Mall.getAssetId(Tab3Type.Tab3_UpperHighlight);
-        if (UpperHighlight && UpperHighlight.length > 0)
+        if (UpperHighlight && UpperHighlight.length > 0 && UpperHighlight != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
         let LowerHighlight = Mall.getAssetId(Tab3Type.Tab3_LowerHighlight);
-        if (LowerHighlight && LowerHighlight.length > 0)
+        if (LowerHighlight && LowerHighlight.length > 0 && LowerHighlight != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
         let Eyelashes = Mall.getAssetId(Tab3Type.Tab3_Eyelashes);
-        if (Eyelashes && Eyelashes.length > 0)
+        if (Eyelashes && Eyelashes.length > 0 && Eyelashes != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
         let Eyeshadow = Mall.getAssetId(Tab3Type.Tab3_Eyeshadow);
-        if (Eyeshadow && Eyeshadow.length > 0)
+        if (Eyeshadow && Eyeshadow.length > 0 && Eyeshadow != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
         let Blush = Mall.getAssetId(Tab3Type.Tab3_Blush);
-        if (Blush && Blush.length > 0)
+        if (Blush && Blush.length > 0 && Blush != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
         let LipMakeup = Mall.getAssetId(Tab3Type.Tab3_LipMakeup);
-        if (LipMakeup && LipMakeup.length > 0)
+        if (LipMakeup && LipMakeup.length > 0 && LipMakeup != `32115`)
             this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
-        //#endregion
-        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
-        for (let i = 0; i < slot.length; ++i) {
-            for (let j = 0; j < slot[i].decoration.length; ++j) {
-                let decoration = slot[i].decoration[j];
-                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset)
-                    continue;
-                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
-                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
-            }
-        }
     }
-    refreshUsingCharacterDataByTabId(tabId) {
-        let assetId = Mall.getAssetId(tabId);
-        if (assetId && assetId.length > 0) {
-            this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
-        }
-        else {
-            if (this.usingAssetIdMap.has(tabId))
-                this.usingAssetIdMap.delete(tabId);
-        }
-    }
-    refreshUsingCharacterDataByAssetId() {
-        if (this.usingAssetIds && this.usingAssetIds.length > 0) {
-            this.usingAssetIds.forEach((value) => {
-                if (this.usingAssetIdMap.has(value))
-                    this.usingAssetIdMap.delete(value);
-            });
-        }
-        this.usingAssetIds.length = 0;
-        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
-        for (let i = 0; i < slot.length; ++i) {
-            for (let j = 0; j < slot[i].decoration.length; ++j) {
-                let decoration = slot[i].decoration[j];
-                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset)
-                    continue;
-                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
-                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
-            }
-        }
-    }
+    // private refreshUsingCharacterDataByTabId(tabId: number): void {
+    //     let assetId = Mall.getAssetId(tabId);
+    //     if (assetId && assetId.length > 0) {
+    //         this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
+    //     } else {
+    //         if (this.usingAssetIdMap.has(tabId)) this.usingAssetIdMap.delete(tabId);
+    //     }
+    // }
+    // private refreshUsingCharacterDataByAssetId(): void {
+    //     if (this.usingAssetIds && this.usingAssetIds.length > 0) {
+    //         this.usingAssetIds.forEach((value: number) => {
+    //             if (this.usingAssetIdMap.has(value)) this.usingAssetIdMap.delete(value);
+    //         });
+    //     }
+    //     this.usingAssetIds.length = 0;
+    //     let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+    //     for (let i = 0; i < slot.length; ++i) {
+    //         for (let j = 0; j < slot[i].decoration.length; ++j) {
+    //             let decoration = slot[i].decoration[j];
+    //             if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
+    //             this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+    //             this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+    //         }
+    //     }
+    // }
     addCloseMallItemSelfAction(tabId, assetId) {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (Mall.isClothingTabId(tabId)) {
                 await this.changeCharacter(tabId, assetId);
-                this.refreshUsingCharacterDataByTabId(tabId);
             }
             else {
                 if (!this.usingAssetIdMap.has(Number(assetId)))
@@ -13105,6 +13123,7 @@ class MallModuleC extends ModuleC {
                     this.usingAssetIds.splice(this.usingAssetIds.indexOf(Number(assetId)), 1);
                 await this.localPlayer.character.asyncReady();
             }
+            this.initUsingCharacterData();
             this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, true);
         });
     }
@@ -13115,13 +13134,13 @@ class MallModuleC extends ModuleC {
             await this.changeCharacter(tabId, assetId);
             if (!Mall.isRemovableTabId(tabId))
                 return;
-            if (Mall.isClothingTabId(tabId)) {
-                this.refreshUsingCharacterDataByTabId(tabId);
-            }
-            else {
-                this.refreshUsingCharacterDataByAssetId();
-            }
-            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap);
+            // if (Mall.isClothingTabId(tabId)) {
+            //     this.refreshUsingCharacterDataByTabId(tabId);
+            // } else {
+            //     this.refreshUsingCharacterDataByAssetId();
+            // }
+            this.initUsingCharacterData();
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall.isSlot(tabId));
         });
     }
     async changeCharacter(tabId, assetId) {
@@ -13540,7 +13559,6 @@ class MallModuleC extends ModuleC {
         // await Mall.copyCharacterSlot(this.transitionNpc, this.localPlayer.character);
     }
     async changeSlotAndDecoration(tagId, assetId, transform, slotIndex) {
-        await Utils.asyncDownloadAsset(assetId);
         let decorationIndex = -1;
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
@@ -13552,6 +13570,14 @@ class MallModuleC extends ModuleC {
                 return;
             }
         }
+        else {
+            console.error(1111111111111111111);
+        }
+        if (this.isUsingDecoration(assetId)) {
+            this.decorationIndexMap.delete(tagId);
+            return;
+        }
+        await Utils.asyncDownloadAsset(assetId);
         let model = await GameObject.asyncSpawn(assetId);
         if (!model)
             return;
@@ -13559,10 +13585,23 @@ class MallModuleC extends ModuleC {
         decorationIndex = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, transform);
         this.decorationIndexMap.set(tagId, decorationIndex);
     }
+    isUsingDecoration(assetId) {
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        if (!slot || slot.length == 0)
+            return false;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (decoration.attachmentAssetId == assetId)
+                    return true;
+            }
+        }
+        return false;
+    }
     getSlotAndDecoration(tagId, slotIndex) {
         if (this.decorationIndexMap.has(tagId)) {
             let decorationIndex = this.decorationIndexMap.get(tagId);
-            return this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
+            return this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1]?.attachmentAssetId;
         }
         else {
             return null;
@@ -13633,23 +13672,77 @@ class MallModuleC extends ModuleC {
             case Tab3Type.Tab3_BackHair:
                 return this.localPlayer.character.description.advance.hair.backHair.style;
             case Tab3Type.Tab3_LeftHand:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHand);
+                let leftHand = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHand);
+                if (!leftHand)
+                    return null;
+                let leftHandElement = GameConfig.LeftHand.findElement(`AssetId`, leftHand);
+                if (!leftHandElement)
+                    return null;
+                return leftHandElement.ID.toString();
             case Tab3Type.Tab3_RightHand:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightHand);
+                let rightHand = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightHand);
+                if (!rightHand)
+                    return null;
+                let rightHandElement = GameConfig.RightHand.findElement(`AssetId`, rightHand);
+                if (!rightHandElement)
+                    return null;
+                return rightHandElement.ID.toString();
             case Tab3Type.Tab3_Back:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
+                let backOrnamental = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
+                if (!backOrnamental)
+                    return null;
+                let backElement = GameConfig.Back.findElement(`AssetId`, backOrnamental);
+                if (!backElement)
+                    return null;
+                return backElement.ID.toString();
             case Tab3Type.Tab3_Ear:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHead);
+                let ear = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Head);
+                if (!ear)
+                    return null;
+                let earElement = GameConfig.Ear.findElement(`AssetId`, ear);
+                if (!earElement)
+                    return null;
+                return earElement.ID.toString();
             case Tab3Type.Tab3_Face:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.FaceOrnamental);
+                let face = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.FaceOrnamental);
+                if (!face)
+                    return null;
+                let facingElement = GameConfig.Facing.findElement(`AssetId`, face);
+                if (!facingElement)
+                    return null;
+                return facingElement.ID.toString();
             case Tab3Type.Tab3_Hip:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Buttocks);
+                let hip = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Buttocks);
+                if (!hip)
+                    return null;
+                let hipElement = GameConfig.Hip.findElement(`AssetId`, hip);
+                if (!hipElement)
+                    return null;
+                return hipElement.ID.toString();
             case Tab3Type.Tab3_Shoulder:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightBack);
+                let shoulder = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightBack);
+                if (!shoulder)
+                    return null;
+                let shoulderElement = GameConfig.Shoulder.findElement(`AssetId`, shoulder);
+                if (!shoulderElement)
+                    return null;
+                return shoulderElement.ID.toString();
             case Tab3Type.Tab3_Effects:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                let effect = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                if (!effect)
+                    return null;
+                let effectsElement = GameConfig.Effects.findElement(`AssetId`, effect);
+                if (!effectsElement)
+                    return null;
+                return effectsElement.ID.toString();
             case Tab3Type.Tab3_Trailing:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                let trailing = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                if (!trailing)
+                    return null;
+                let trailingElement = GameConfig.Trailing.findElement(`AssetId`, trailing);
+                if (!trailingElement)
+                    return null;
+                return trailingElement.ID.toString();
             default:
                 return null;
         }
@@ -13664,7 +13757,14 @@ class MallModuleC extends ModuleC {
             if (cameraType == 0) {
                 Camera.switch(myCamera);
             }
-            else {
+            else if (cameraType == 1) {
+                shopCamera.localTransform.position = new mw.Vector(47, -8, 71);
+                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+            }
+            else if (cameraType == 2) {
+                shopCamera.localTransform.position = new mw.Vector(211, -40, 30);
+                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
         });
@@ -13719,6 +13819,7 @@ class MallModuleC extends ModuleC {
             }
             this.localPlayer.character.syncDescription();
             this.isNeedSaveCharacter = false;
+            this.closeMallPanel();
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
         });
     }
@@ -14473,7 +14574,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -14665,7 +14766,7 @@ var foreign141 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -14760,7 +14861,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -15039,7 +15140,7 @@ class RankModuleC extends ModuleC {
     }
     initEventAction() {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
@@ -15054,6 +15155,7 @@ class RankModuleC extends ModuleC {
         }
     }
     onEnterScene(sceneType) {
+        this.getRankPanel.show();
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
@@ -15061,9 +15163,6 @@ class RankModuleC extends ModuleC {
             let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
-            TimeUtil.delaySecond(5).then(() => {
-                this.getRankPanel.show();
-            });
         });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
@@ -15176,7 +15275,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.02.18-23.09.46
+ * TIME: 2025.02.20-00.02.53
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -15650,7 +15749,7 @@ class SetModuleC extends ModuleC {
         this.onSaveBgMusicAction.add(this.addSaveBgMusicAction.bind(this));
         this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
         this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
     addOnOffMainUI(isShow) {
         console.warn(`wfz - addOnOffMainUI - isShow:${isShow}`);
@@ -15848,7 +15947,7 @@ var foreign97 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -15933,7 +16032,7 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -16383,7 +16482,7 @@ var foreign51 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -16473,7 +16572,7 @@ var foreign122 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -17012,7 +17111,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.02.18-23.09.45
+ * TIME: 2025.02.20-00.02.53
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {

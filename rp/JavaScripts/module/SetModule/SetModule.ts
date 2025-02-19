@@ -1,4 +1,5 @@
-﻿import Utils from "../../tools/Utils";
+﻿import { EventType } from "../../GlobalData";
+import Utils from "../../tools/Utils";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import SetPanel from "./ui/SetPanel";
 
@@ -114,7 +115,7 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
 
         this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
         this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
 
     private addOnOffMainUI(isShow: boolean): void {

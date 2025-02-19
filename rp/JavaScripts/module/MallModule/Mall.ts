@@ -124,6 +124,8 @@ export default class Mall {
         Tab3Type.Tab3_Shoulder,
         Tab3Type.Tab3_Effects,
         Tab3Type.Tab3_Trailing,
+
+        Tab2Type.Tab2_Outfit,
     ];
     public static isRemovableTabId(tabId: number): boolean {
         return this.removableTabIds.includes(tabId);

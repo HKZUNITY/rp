@@ -1,5 +1,6 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
+import { EventType } from "../../GlobalData";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import { InteractionData } from "../InteractionModule/InteractionModule";
 import { RankData, RoomData, WorldData } from "./RankData";
@@ -48,7 +49,7 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
 
     private initEventAction(): void {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
 
     private addOnOffRankPanelAction(): void {
@@ -65,6 +66,7 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
     }
 
     protected onEnterScene(sceneType: number): void {
+        this.getRankPanel.show();
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
@@ -72,9 +74,6 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
             this.server.net_onEnterScene(nickName, score, time);
-            TimeUtil.delaySecond(5).then(() => {
-                this.getRankPanel.show();
-            });
         });
     }
 

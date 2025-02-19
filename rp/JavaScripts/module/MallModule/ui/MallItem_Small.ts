@@ -151,23 +151,28 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 
 	private addSelectItemAction(tabType: TabType, tabId: number, assetId: string): void {
 		if (this.tabType != tabType || this.tabId != tabId) return;
-		this.updateSelectState(this.assetId == assetId);
+		this.updateSelectState(this.assetId == assetId, false);
 	}
 
 	private isSelect: boolean = false;
-	public updateSelectState(isSelect: boolean): void {
-		if (this.isRemovableTabId) {
-			if (!this.isSelect && this.isSelect == isSelect) {
-				return;
-			} else if (!this.isSelect && this.isSelect != isSelect) {
-				this.isSelect = isSelect;
-			} else if (this.isSelect && this.isSelect == isSelect) {
-				this.isSelect = false;
-			} else if (this.isSelect && this.isSelect != isSelect) {
-				this.isSelect = isSelect;
-			}
-		} else {
+	public updateSelectState(isSelect: boolean, isDriectUpdate: boolean = true): void {
+		if (isDriectUpdate) {
 			if (this.isSelect == isSelect) return;
+			this.isSelect = isSelect;
+		} else {
+			if (this.isRemovableTabId) {
+				if (!this.isSelect && this.isSelect == isSelect) {
+					return;
+				} else if (!this.isSelect && this.isSelect != isSelect) {
+					this.isSelect = isSelect;
+				} else if (this.isSelect && this.isSelect == isSelect) {
+					this.isSelect = false;
+				} else if (this.isSelect && this.isSelect != isSelect) {
+					this.isSelect = isSelect;
+				}
+			} else {
+				if (this.isSelect == isSelect) return;
+			}
 		}
 		this.updateSelectStateUI();
 	}

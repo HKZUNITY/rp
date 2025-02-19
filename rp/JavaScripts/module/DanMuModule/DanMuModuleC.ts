@@ -3,7 +3,7 @@ import { IActionConfigElement } from "../../configs/ActionConfig";
 import { IChatElement } from "../../configs/Chat";
 import { IExpressionElement } from "../../configs/Expression";
 import { GameConfig } from "../../configs/GameConfig";
-import GlobalData from "../../GlobalData";
+import GlobalData, { EventType } from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import BubbleItem_Generate from "../../ui-generate/module/DanMuModule/BubbleItem_generate";
@@ -110,7 +110,7 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
         this.getHudModuleC.clickGoodItemAction.add(this.addClickGoodItemAction.bind(this));
         this.getHudModuleC.clickCloseGoodItemAction.add(this.addClickCloseGoodItemAction.bind(this));
         this.getHudModuleC.deleteAllGoodsAction.add(this.addDeleteAllGoodsAction.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
     }
 
     private addOnOffMainUI(isShow: boolean): void {

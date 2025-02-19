@@ -127,12 +127,14 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             this.initUsingCharacterData();
-            this.onSwitchCameraAction.call(1);
+            this.onSwitchCameraAction.call(2);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
                 this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap);
             }
             this.getMallPanel.show();
+
+            this.decorationIndexMap.clear();//TODO-WFZ
         });
     }
 
@@ -147,19 +149,18 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.usingAssetIdMap.clear();
         this.usingAssetIds.length = 0;
 
-        let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
-        if (frontHair && frontHair.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
         let fullHair = Mall.getAssetId(Tab3Type.Tab3_FullHair);
         if (fullHair && fullHair.length > 0) {
             let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, fullHair);
             if (fullHairElement) {
                 this.usingAssetIdMap.set(Tab3Type.Tab3_FullHair, new AssetIdInfoData(fullHair));
             } else {
+                let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
+                if (frontHair && frontHair.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
                 this.usingAssetIdMap.set(Tab3Type.Tab3_BackHair, new AssetIdInfoData(fullHair));
             }
         }
 
-        //#region 
         let top = Mall.getAssetId(Tab2Type.Tab2_Top);
         if (top && top.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Top, new AssetIdInfoData(top));
         let bottom = Mall.getAssetId(Tab2Type.Tab2_Bottom);
@@ -169,69 +170,67 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let gloves = Mall.getAssetId(Tab2Type.Tab2_Gloves);
         if (gloves && gloves.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Gloves, new AssetIdInfoData(gloves));
 
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
+                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+            }
+        }
+
         let eyebrows = Mall.getAssetId(Tab2Type.Tab2_Eyebrows);
-        if (eyebrows && eyebrows.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
-        let PupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
-        if (PupilStyle && PupilStyle.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(PupilStyle));
+        if (eyebrows && eyebrows.length > 0 && eyebrows != `32115`) this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
+        let pupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
+        if (pupilStyle && pupilStyle.length > 0 && pupilStyle != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(pupilStyle));
         let Lens = Mall.getAssetId(Tab3Type.Tab3_Lens);
-        if (Lens && Lens.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
+        if (Lens && Lens.length > 0 && Lens != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
         let UpperHighlight = Mall.getAssetId(Tab3Type.Tab3_UpperHighlight);
-        if (UpperHighlight && UpperHighlight.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
+        if (UpperHighlight && UpperHighlight.length > 0 && UpperHighlight != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
         let LowerHighlight = Mall.getAssetId(Tab3Type.Tab3_LowerHighlight);
-        if (LowerHighlight && LowerHighlight.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
+        if (LowerHighlight && LowerHighlight.length > 0 && LowerHighlight != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
         let Eyelashes = Mall.getAssetId(Tab3Type.Tab3_Eyelashes);
-        if (Eyelashes && Eyelashes.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
+        if (Eyelashes && Eyelashes.length > 0 && Eyelashes != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
         let Eyeshadow = Mall.getAssetId(Tab3Type.Tab3_Eyeshadow);
-        if (Eyeshadow && Eyeshadow.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
+        if (Eyeshadow && Eyeshadow.length > 0 && Eyeshadow != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
         let Blush = Mall.getAssetId(Tab3Type.Tab3_Blush);
-        if (Blush && Blush.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
+        if (Blush && Blush.length > 0 && Blush != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
         let LipMakeup = Mall.getAssetId(Tab3Type.Tab3_LipMakeup);
-        if (LipMakeup && LipMakeup.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
-        //#endregion
-
-        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
-        for (let i = 0; i < slot.length; ++i) {
-            for (let j = 0; j < slot[i].decoration.length; ++j) {
-                let decoration = slot[i].decoration[j];
-                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
-                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
-                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
-            }
-        }
+        if (LipMakeup && LipMakeup.length > 0 && LipMakeup != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
     }
 
-    private refreshUsingCharacterDataByTabId(tabId: number): void {
-        let assetId = Mall.getAssetId(tabId);
-        if (assetId && assetId.length > 0) {
-            this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
-        } else {
-            if (this.usingAssetIdMap.has(tabId)) this.usingAssetIdMap.delete(tabId);
-        }
-    }
+    // private refreshUsingCharacterDataByTabId(tabId: number): void {
+    //     let assetId = Mall.getAssetId(tabId);
+    //     if (assetId && assetId.length > 0) {
+    //         this.usingAssetIdMap.set(tabId, new AssetIdInfoData(assetId));
+    //     } else {
+    //         if (this.usingAssetIdMap.has(tabId)) this.usingAssetIdMap.delete(tabId);
+    //     }
+    // }
 
-    private refreshUsingCharacterDataByAssetId(): void {
-        if (this.usingAssetIds && this.usingAssetIds.length > 0) {
-            this.usingAssetIds.forEach((value: number) => {
-                if (this.usingAssetIdMap.has(value)) this.usingAssetIdMap.delete(value);
-            });
-        }
-        this.usingAssetIds.length = 0;
-        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
-        for (let i = 0; i < slot.length; ++i) {
-            for (let j = 0; j < slot[i].decoration.length; ++j) {
-                let decoration = slot[i].decoration[j];
-                if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
-                this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
-                this.usingAssetIds.push(Number(decoration.attachmentAssetId));
-            }
-        }
-    }
+    // private refreshUsingCharacterDataByAssetId(): void {
+    //     if (this.usingAssetIds && this.usingAssetIds.length > 0) {
+    //         this.usingAssetIds.forEach((value: number) => {
+    //             if (this.usingAssetIdMap.has(value)) this.usingAssetIdMap.delete(value);
+    //         });
+    //     }
+    //     this.usingAssetIds.length = 0;
+    //     let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+    //     for (let i = 0; i < slot.length; ++i) {
+    //         for (let j = 0; j < slot[i].decoration.length; ++j) {
+    //             let decoration = slot[i].decoration[j];
+    //             if (!decoration.attachmentAssetId || !decoration.attachmentGameObject || !decoration.attachmentOffset) continue;
+    //             this.usingAssetIdMap.set(Number(decoration.attachmentAssetId), new AssetIdInfoData(decoration.attachmentAssetId, i, j));
+    //             this.usingAssetIds.push(Number(decoration.attachmentAssetId));
+    //         }
+    //     }
+    // }
 
     private addCloseMallItemSelfAction(tabId: number, assetId: string): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (Mall.isClothingTabId(tabId)) {
                 await this.changeCharacter(tabId, assetId);
-                this.refreshUsingCharacterDataByTabId(tabId);
             } else {
                 if (!this.usingAssetIdMap.has(Number(assetId))) return;
                 let assetIdInfoData = this.usingAssetIdMap.get(Number(assetId));
@@ -244,6 +243,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (this.usingAssetIds.indexOf(Number(assetId)) != -1) this.usingAssetIds.splice(this.usingAssetIds.indexOf(Number(assetId)), 1);
                 await this.localPlayer.character.asyncReady();
             }
+            this.initUsingCharacterData();
             this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, true);
         });
     }
@@ -253,12 +253,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
             if (!Mall.isRemovableTabId(tabId)) return;
-            if (Mall.isClothingTabId(tabId)) {
-                this.refreshUsingCharacterDataByTabId(tabId);
-            } else {
-                this.refreshUsingCharacterDataByAssetId();
-            }
-            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap);
+            // if (Mall.isClothingTabId(tabId)) {
+            //     this.refreshUsingCharacterDataByTabId(tabId);
+            // } else {
+            //     this.refreshUsingCharacterDataByAssetId();
+            // }
+            this.initUsingCharacterData();
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall.isSlot(tabId));
         });
     }
 
@@ -643,7 +644,6 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
     private decorationIndexMap: Map<number, number> = new Map<number, number>();
     private async changeSlotAndDecoration(tagId: number, assetId: string, transform: mw.Transform, slotIndex: number): Promise<void> {
-        await Utils.asyncDownloadAsset(assetId);
         let decorationIndex: number = -1;
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
@@ -656,6 +656,11 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             }
         } else {
         }
+        if (this.isUsingDecoration(assetId)) {
+            this.decorationIndexMap.delete(tagId);
+            return;
+        }
+        await Utils.asyncDownloadAsset(assetId);
         let model = await GameObject.asyncSpawn(assetId) as mw.Model;
         if (!model) return;
         model.setCollision(mw.PropertyStatus.Off, true);
@@ -663,10 +668,22 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.decorationIndexMap.set(tagId, decorationIndex);
     }
 
+    private isUsingDecoration(assetId: string): boolean {
+        let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
+        if (!slot || slot.length == 0) return false;
+        for (let i = 0; i < slot.length; ++i) {
+            for (let j = 0; j < slot[i].decoration.length; ++j) {
+                let decoration = slot[i].decoration[j];
+                if (decoration.attachmentAssetId == assetId) return true;
+            }
+        }
+        return false;
+    }
+
     private getSlotAndDecoration(tagId: number, slotIndex: number): string {
         if (this.decorationIndexMap.has(tagId)) {
             let decorationIndex = this.decorationIndexMap.get(tagId);
-            return this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
+            return this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1]?.attachmentAssetId;
         } else {
             return null;
         }
@@ -736,23 +753,59 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             case Tab3Type.Tab3_BackHair:
                 return this.localPlayer.character.description.advance.hair.backHair.style;
             case Tab3Type.Tab3_LeftHand:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHand);
+                let leftHand = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHand);
+                if (!leftHand) return null;
+                let leftHandElement = GameConfig.LeftHand.findElement(`AssetId`, leftHand);
+                if (!leftHandElement) return null;
+                return leftHandElement.ID.toString();
             case Tab3Type.Tab3_RightHand:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightHand);
+                let rightHand = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightHand);
+                if (!rightHand) return null;
+                let rightHandElement = GameConfig.RightHand.findElement(`AssetId`, rightHand);
+                if (!rightHandElement) return null;
+                return rightHandElement.ID.toString();
             case Tab3Type.Tab3_Back:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
+                let backOrnamental = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
+                if (!backOrnamental) return null;
+                let backElement = GameConfig.Back.findElement(`AssetId`, backOrnamental);
+                if (!backElement) return null;
+                return backElement.ID.toString();
             case Tab3Type.Tab3_Ear:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.LeftHead);
+                let ear = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Head);
+                if (!ear) return null;
+                let earElement = GameConfig.Ear.findElement(`AssetId`, ear);
+                if (!earElement) return null;
+                return earElement.ID.toString();
             case Tab3Type.Tab3_Face:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.FaceOrnamental);
+                let face = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.FaceOrnamental);
+                if (!face) return null;
+                let facingElement = GameConfig.Facing.findElement(`AssetId`, face);
+                if (!facingElement) return null;
+                return facingElement.ID.toString();
             case Tab3Type.Tab3_Hip:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Buttocks);
+                let hip = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Buttocks);
+                if (!hip) return null;
+                let hipElement = GameConfig.Hip.findElement(`AssetId`, hip);
+                if (!hipElement) return null;
+                return hipElement.ID.toString();
             case Tab3Type.Tab3_Shoulder:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightBack);
+                let shoulder = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.RightBack);
+                if (!shoulder) return null;
+                let shoulderElement = GameConfig.Shoulder.findElement(`AssetId`, shoulder);
+                if (!shoulderElement) return null;
+                return shoulderElement.ID.toString();
             case Tab3Type.Tab3_Effects:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                let effect = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                if (!effect) return null;
+                let effectsElement = GameConfig.Effects.findElement(`AssetId`, effect);
+                if (!effectsElement) return null;
+                return effectsElement.ID.toString();
             case Tab3Type.Tab3_Trailing:
-                return this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                let trailing = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                if (!trailing) return null;
+                let trailingElement = GameConfig.Trailing.findElement(`AssetId`, trailing);
+                if (!trailingElement) return null;
+                return trailingElement.ID.toString();
             default:
                 return null;
         }
@@ -768,7 +821,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.onSwitchCameraAction.add((cameraType: number) => {
             if (cameraType == 0) {
                 Camera.switch(myCamera);
-            } else {
+            } else if (cameraType == 1) {
+                shopCamera.localTransform.position = new mw.Vector(47, -8, 71);
+                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+            } else if (cameraType == 2) {
+                shopCamera.localTransform.position = new mw.Vector(211, -40, 30);
+                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
         });
@@ -832,6 +891,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             }
             this.localPlayer.character.syncDescription();
             this.isNeedSaveCharacter = false;
+            this.closeMallPanel();
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
         });
     }

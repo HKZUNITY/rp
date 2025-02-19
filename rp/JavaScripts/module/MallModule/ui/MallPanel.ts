@@ -31,6 +31,7 @@ import { ITab1Element } from "../../../configs/Tab1";
 import { ITopElement } from "../../../configs/Top";
 import { ITrailingElement } from "../../../configs/Trailing";
 import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
+import { EventType } from "../../../GlobalData";
 import Utils from "../../../tools/Utils";
 import ExecutorManager from "../../../tools/WaitingQueue";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
@@ -138,7 +139,7 @@ export default class MallPanel extends MallPanel_Generate {
 		this.tab1Ids.length = 0;
 		this.tab1Elements.forEach((value: ITab1Element) => { this.tab1Ids.push(value.ID); });
 		this.updateTab1();
-		this.tab1Id = this.tab1Ids[0];//可修改默认
+		this.tab1Id = this.tab1Ids[1];//可修改默认
 		this.getMallModuleC.onSelectTab1Action.call(this.tab1Id);
 		this.initTab2();
 	}
@@ -790,6 +791,8 @@ export default class MallPanel extends MallPanel_Generate {
 
 	private mallItem_Selfs: MallItem_Self[] = [];
 	public refreshMallItemSelf(usingAssetIdMap: Map<number, AssetIdInfoData>, isCheck: boolean = false): void {
+		if (isCheck) this.checkMallItemState();
+
 		let valueArr = Array.from(usingAssetIdMap);
 		if (this.mallItem_Selfs.length > valueArr.length) {
 			for (let i = 0; i < valueArr.length; ++i) {
@@ -811,7 +814,13 @@ export default class MallPanel extends MallPanel_Generate {
 				this.mallItem_Selfs.push(mallItem_Self);
 			}
 		}
+	}
 
-		if (isCheck) this.checkMallItemState();
+	protected onShow(...params: any[]): void {
+		Event.dispatchToLocal(EventType.OnOffMainUI, false);
+	}
+
+	protected onHide(): void {
+		Event.dispatchToLocal(EventType.OnOffMainUI, true);
 	}
 }

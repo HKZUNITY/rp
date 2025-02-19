@@ -1,7 +1,7 @@
 ﻿import { Notice } from "../../common/notice/Notice";
 import { GameConfig } from "../../configs/GameConfig";
 import { IMusicElement } from "../../configs/Music";
-import GlobalData from "../../GlobalData";
+import GlobalData, { EventType } from "../../GlobalData";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import HUDItem_Generate from "../../ui-generate/module/HUDModule/HUDItem_generate";
@@ -409,7 +409,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
         this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
         mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
-        Event.addLocalListener(`OnOffMainUI`, this.addOnOffMainUI.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
         this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
         this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
@@ -585,13 +585,13 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         console.error(`eventName: ${eventName}`);
         switch (eventName) {
             case "AE_OnQuit":
-                Event.dispatchToLocal(`OnOffMainUI`, true);
+                Event.dispatchToLocal(EventType.OnOffMainUI, true);
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, true);
                 if (UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.hide();
                 this.isOpenAvatar = false;
                 break;
             case "AE_OnOpen":
-                Event.dispatchToLocal(`OnOffMainUI`, false);
+                Event.dispatchToLocal(EventType.OnOffMainUI, false);
                 this.isOpenAvatar = true;
                 // if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
                 // Player.localPlayer.character.setStateEnabled(CharacterStateType.Running, false);

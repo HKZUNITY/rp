@@ -16,3 +16,7 @@ export default class GlobalData {
     /**打开背景音乐图标Guid */
     public static onMusicIconGuid: string = `133445`;
 }
+
+export enum EventType {
+    OnOffMainUI = `OnOffMainUI`
+}
