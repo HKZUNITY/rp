@@ -105,15 +105,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         if (this.isNeedSaveColor) {
             this.getMallTipsPanel.showTips(() => {
                 this.isNeedSaveColor = false;
+                this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
+            }, () => {
+                this.isNeedSaveColor = false;
                 ExecutorManager.instance.pushAsyncExecutor(async () => {
                     await this.copyNpc.asyncReady();
                     this.localPlayer.character.setDescription(this.copyNpc.getDescription());
                     await this.localPlayer.character.asyncReady();
                     this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
                 });
-            }, () => {
-                this.isNeedSaveColor = false;
-                this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
             }, GameConfig.Language.Text_CloseTips.Value
                 , GameConfig.Language.Text_WhetherToKeepTheCurrentColor.Value
                 , GameConfig.Language.Text_NoRetain.Value
@@ -300,8 +300,24 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (!faceExpressionElement || faceExpressionElement?.ExpressionType < 0 || faceExpressionElement?.ExpressionType > 9) return;
                 this.localPlayer.character.description.advance.headFeatures.expressions.changeExpression = faceExpressionElement.ExpressionType;
                 break;
-            case Tab2Type.Tab2_Outfit:
-                await this.changeOutfit(assetId);
+            // case Tab2Type.Tab2_Outfit:
+            // await this.changeOutfit(assetId);
+            // break;
+            case Tab3Type.Tab3_DailyStyling:
+                break;
+            case Tab3Type.Tab3_MuppetStyling:
+                await this.changeOutfit(GameConfig.MuppetStylingOutfit.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_HeroStyling:
+                await this.changeOutfit(GameConfig.HeroStylingOutfit.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_FantasyModeling:
+                break;
+            case Tab3Type.Tab3_HolidayStyling:
+                break;
+            case Tab3Type.Tab3_ScienceFictionStyling:
+                break;
+            case Tab3Type.Tab3_AncientMolding:
                 break;
             case Tab2Type.Tab2_Top:
                 if (this.localPlayer.character.description.advance.clothing.upperCloth.style != assetId) {
@@ -605,7 +621,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         // this.localPlayer.character.syncDescription();
     }
 
-    private async changeOutfit(configId: string): Promise<void> {
+    private async changeOutfit(assetId: string): Promise<void> {
+        await Utils.asyncDownloadAsset(assetId);
+        await this.changeOutfitTransition(assetId);
+    }
+
+    private async changeOutfit_abandon(configId: string): Promise<void> {
         let outfitElement: IOutfitElement = GameConfig.Outfit.getElement(configId);
         let currentSomatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
         await Utils.asyncDownloadAsset(outfitElement.AssetId);
@@ -714,7 +735,21 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.findElement(`ExpressionType`, expressionType);
                 if (!faceExpressionElement) return null;
                 return faceExpressionElement.ID.toString();
-            case Tab2Type.Tab2_Outfit:
+            // case Tab2Type.Tab2_Outfit:
+            // return null;
+            case Tab3Type.Tab3_DailyStyling:
+                return null;
+            case Tab3Type.Tab3_MuppetStyling:
+                return null;
+            case Tab3Type.Tab3_HeroStyling:
+                return null;
+            case Tab3Type.Tab3_FantasyModeling:
+                return null;
+            case Tab3Type.Tab3_HolidayStyling:
+                return null;
+            case Tab3Type.Tab3_ScienceFictionStyling:
+                return null;
+            case Tab3Type.Tab3_AncientMolding:
                 return null;
             case Tab2Type.Tab2_Top:
                 return this.localPlayer.character.description.advance.clothing.upperCloth.style;

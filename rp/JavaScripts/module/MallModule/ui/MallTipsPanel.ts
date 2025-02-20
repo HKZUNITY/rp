@@ -36,8 +36,8 @@ export default class MallTipsPanel extends MallTipsPanel_Generate {
 
 	private sureCallback: () => void = null;
 	private cancelCallback: () => void = null;
-	public showTips(callback: () => void, cancelCallback: () => void, titleText: string, contentText: string, noText: string, yesText: string): void {
-		this.sureCallback = callback;
+	public showTips(sureCallback: () => void, cancelCallback: () => void, titleText: string, contentText: string, noText: string, yesText: string): void {
+		this.sureCallback = sureCallback;
 		this.cancelCallback = cancelCallback;
 		this.mTipsTextBlock.text = titleText;
 		this.mContentTextBlock.text = contentText;

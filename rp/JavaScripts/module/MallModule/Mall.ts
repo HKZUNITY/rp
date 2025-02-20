@@ -125,7 +125,13 @@ export default class Mall {
         Tab3Type.Tab3_Effects,
         Tab3Type.Tab3_Trailing,
 
-        Tab2Type.Tab2_Outfit,
+        Tab3Type.Tab3_DailyStyling,
+        Tab3Type.Tab3_MuppetStyling,
+        Tab3Type.Tab3_HeroStyling,
+        Tab3Type.Tab3_FantasyModeling,
+        Tab3Type.Tab3_HolidayStyling,
+        Tab3Type.Tab3_ScienceFictionStyling,
+        Tab3Type.Tab3_AncientMolding,
     ];
     public static isRemovableTabId(tabId: number): boolean {
         return this.removableTabIds.includes(tabId);

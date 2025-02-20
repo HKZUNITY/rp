@@ -16,11 +16,13 @@ import { IFrontHairElement } from "../../../configs/FrontHair";
 import { IFullHairElement } from "../../../configs/FullHair";
 import { GameConfig } from "../../../configs/GameConfig";
 import { IGlovesElement } from "../../../configs/Gloves";
+import { IHeroStylingOutfitElement } from "../../../configs/HeroStylingOutfit";
 import { IHipElement } from "../../../configs/Hip";
 import { ILeftHandElement } from "../../../configs/LeftHand";
 import { ILensElement } from "../../../configs/Lens";
 import { ILipMakeupElement } from "../../../configs/LipMakeup";
 import { ILowerHighlightElement } from "../../../configs/LowerHighlight";
+import { IMuppetStylingOutfitElement } from "../../../configs/MuppetStylingOutfit";
 import { IOutfitElement } from "../../../configs/Outfit";
 import { IPupilStyleElement } from "../../../configs/PupilStyle";
 import { IRightHandElement } from "../../../configs/RightHand";
@@ -384,7 +386,17 @@ export default class MallPanel extends MallPanel_Generate {
 	private mallItem_Big: MallItem_Big[] = [];
 	private mallItemAssetIds: string[] = [];
 	private mallItemMap: Map<string, MallItem_Small | MallItem_Big | MallItem_Color> = new Map<string, MallItem_Small | MallItem_Big | MallItem_Color>();
-	private mallItemHasBig: number[] = [Tab2Type.Tab2_BodyType, Tab2Type.Tab2_Outfit];
+	private mallItemHasBig: number[] = [
+		Tab2Type.Tab2_BodyType,
+		// Tab2Type.Tab2_Outfit,
+		Tab3Type.Tab3_DailyStyling,
+		Tab3Type.Tab3_MuppetStyling,
+		Tab3Type.Tab3_HeroStyling,
+		Tab3Type.Tab3_FantasyModeling,
+		Tab3Type.Tab3_HolidayStyling,
+		Tab3Type.Tab3_ScienceFictionStyling,
+		Tab3Type.Tab3_AncientMolding
+	];
 	private mallItemHasColor: number[] = [Tab2Type.Tab2_SkinTone];
 	private currentConfigId: number = 0;
 	private clearMallItemData(): void {
@@ -409,9 +421,9 @@ export default class MallPanel extends MallPanel_Generate {
 			case Tab2Type.Tab2_Expression:
 				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab2Type.Tab2_Outfit:
-				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
-				break;
+			// case Tab2Type.Tab2_Outfit:
+			// 	GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+			// 	break;
 			case Tab2Type.Tab2_Top:
 				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
@@ -499,6 +511,22 @@ export default class MallPanel extends MallPanel_Generate {
 				break;
 			case Tab3Type.Tab3_Trailing:
 				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_DailyStyling:
+				break;
+			case Tab3Type.Tab3_MuppetStyling:
+				GameConfig.MuppetStylingOutfit.getAllElement().forEach((value: IMuppetStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_HeroStyling:
+				GameConfig.HeroStylingOutfit.getAllElement().forEach((value: IHeroStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_FantasyModeling:
+				break;
+			case Tab3Type.Tab3_HolidayStyling:
+				break;
+			case Tab3Type.Tab3_ScienceFictionStyling:
+				break;
+			case Tab3Type.Tab3_AncientMolding:
 				break;
 			default:
 				break;

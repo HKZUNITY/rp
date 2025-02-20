@@ -158,6 +158,20 @@ export enum Tab3Type {
     Tab3_Effects,
     /**拖尾 */
     Tab3_Trailing,
+    /**日常造型 */
+    Tab3_DailyStyling,
+    /**布偶造型 */
+    Tab3_MuppetStyling,
+    /**英雄造型 */
+    Tab3_HeroStyling,
+    /**幻想造型 */
+    Tab3_FantasyModeling,
+    /**节日造型 */
+    Tab3_HolidayStyling,
+    /**科幻造型 */
+    Tab3_ScienceFictionStyling,
+    /**古代造型 */
+    Tab3_AncientMolding,
     /**瞳孔样式_收藏 */
     Tab3_PupilStyle_Collection = 2001,
     /**瞳孔贴画_收藏 */
