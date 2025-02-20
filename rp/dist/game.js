@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign107 = /*#__PURE__*/Object.freeze({
+var foreign108 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -96,7 +96,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign109 = /*#__PURE__*/Object.freeze({
+var foreign110 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -2370,7 +2370,7 @@ class SkinToneConfig extends ConfigBase {
     }
 }
 
-const EXCELDATA$6 = [["ID", "Describe", "Text", "Tab2"], ["", "", "Language", ""], [1, "捏脸", "Text_Tab1_1", [101, 102, 103, 104, 105, 106, 107]], [2, "换装", "Text_Tab1_2", [108, 109, 110, 111, 112, 113, 114, 115]], [3, "收藏", "Text_Tab1_3", null], [4, "测试", "Text_Tab1_4", null]];
+const EXCELDATA$6 = [["ID", "Describe", "Text", "Tab2"], ["", "", "Language", ""], [1, "捏脸", "Text_Tab1_1", [101, 102, 103, 104, 105, 106, 107]], [2, "换装", "Text_Tab1_2", [108, 109, 110, 111, 112, 113, 115, 114]], [3, "收藏", "Text_Tab1_3", null], [4, "测试", "Text_Tab1_4", null]];
 class Tab1Config extends ConfigBase {
     constructor() {
         super(EXCELDATA$6);
@@ -2808,7 +2808,7 @@ Utils.guideEffectGuid = `146775`;
 Utils.targetEffectGuid = `142962`;
 Utils.inColorHexStrMap = new Map();
 
-var foreign105 = /*#__PURE__*/Object.freeze({
+var foreign106 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Utils
 });
@@ -2818,7 +2818,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -2876,7 +2876,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign149 = /*#__PURE__*/Object.freeze({
+var foreign150 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -2918,7 +2918,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign104 = /*#__PURE__*/Object.freeze({
+var foreign105 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -3042,7 +3042,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign106 = /*#__PURE__*/Object.freeze({
+var foreign107 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -3052,7 +3052,7 @@ var foreign106 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3110,7 +3110,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign116 = /*#__PURE__*/Object.freeze({
+var foreign117 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -3120,7 +3120,7 @@ var foreign116 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3193,7 +3193,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign124 = /*#__PURE__*/Object.freeze({
+var foreign125 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -3203,7 +3203,7 @@ var foreign124 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -3573,7 +3573,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign125 = /*#__PURE__*/Object.freeze({
+var foreign126 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -3583,7 +3583,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -3639,7 +3639,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign145 = /*#__PURE__*/Object.freeze({
+var foreign146 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -3649,7 +3649,7 @@ var foreign145 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -3777,7 +3777,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign146 = /*#__PURE__*/Object.freeze({
+var foreign147 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -3787,7 +3787,7 @@ var foreign146 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3863,7 +3863,7 @@ AdPanel_Generate = __decorate([
 ], AdPanel_Generate);
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign110 = /*#__PURE__*/Object.freeze({
+var foreign111 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -3873,7 +3873,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -3954,7 +3954,7 @@ TipsPanel_Generate = __decorate([
 ], TipsPanel_Generate);
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign111 = /*#__PURE__*/Object.freeze({
+var foreign112 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -5014,7 +5014,7 @@ var foreign56 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -5343,7 +5343,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign119 = /*#__PURE__*/Object.freeze({
+var foreign120 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -5353,7 +5353,7 @@ var foreign119 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -5481,7 +5481,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign126 = /*#__PURE__*/Object.freeze({
+var foreign127 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -5491,7 +5491,7 @@ var foreign126 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -5546,7 +5546,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign127 = /*#__PURE__*/Object.freeze({
+var foreign128 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -6524,7 +6524,7 @@ var foreign70 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -6592,7 +6592,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign112 = /*#__PURE__*/Object.freeze({
+var foreign113 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -6646,7 +6646,7 @@ var foreign59 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6702,7 +6702,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign113 = /*#__PURE__*/Object.freeze({
+var foreign114 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -6774,7 +6774,7 @@ var foreign60 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -6841,7 +6841,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign114 = /*#__PURE__*/Object.freeze({
+var foreign115 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -6923,7 +6923,7 @@ var foreign61 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6979,7 +6979,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign115 = /*#__PURE__*/Object.freeze({
+var foreign116 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -7054,7 +7054,7 @@ var foreign62 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -7104,7 +7104,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign117 = /*#__PURE__*/Object.freeze({
+var foreign118 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -7157,7 +7157,7 @@ var foreign63 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.02.20-00.02.52
+ * TIME: 2025.02.20-20.26.34
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -7207,7 +7207,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign118 = /*#__PURE__*/Object.freeze({
+var foreign119 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -7262,7 +7262,7 @@ var foreign64 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -7317,7 +7317,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign121 = /*#__PURE__*/Object.freeze({
+var foreign122 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -7727,7 +7727,7 @@ var foreign65 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -7772,7 +7772,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign120 = /*#__PURE__*/Object.freeze({
+var foreign121 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -9634,6 +9634,9 @@ class Mall {
     static isDefaultAssetId(assetId) {
         return this.defaultAssetIds.includes(assetId);
     }
+    static isHeadTabId(tabId) {
+        return this.headTabIds.includes(tabId);
+    }
     static getAssetId(type, character) {
         if (!character)
             character = Player.localPlayer.character;
@@ -9830,6 +9833,23 @@ Mall.defaultAssetIds = [
     `343471`,
     `343476`
 ];
+Mall.headTabIds = [
+    Tab2Type.Tab2_Face,
+    Tab2Type.Tab2_Eyebrows,
+    Tab2Type.Tab2_Expression,
+    Tab3Type.Tab3_PupilStyle,
+    Tab3Type.Tab3_Lens,
+    Tab3Type.Tab3_UpperHighlight,
+    Tab3Type.Tab3_LowerHighlight,
+    Tab3Type.Tab3_Eyelashes,
+    Tab3Type.Tab3_Eyeshadow,
+    Tab3Type.Tab3_Blush,
+    Tab3Type.Tab3_LipMakeup,
+    Tab3Type.Tab3_FaceTattoo,
+    Tab3Type.Tab3_FullHair,
+    Tab3Type.Tab3_FrontHair,
+    Tab3Type.Tab3_BackHair,
+];
 
 var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -9841,7 +9861,7 @@ var foreign71 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -9997,7 +10017,7 @@ ColorPickPanel_Generate = __decorate([
 ], ColorPickPanel_Generate);
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign128 = /*#__PURE__*/Object.freeze({
+var foreign129 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -10007,7 +10027,7 @@ var foreign128 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -10053,7 +10073,7 @@ ColorPickTab1_Generate = __decorate([
 ], ColorPickTab1_Generate);
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign129 = /*#__PURE__*/Object.freeze({
+var foreign130 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -10082,7 +10102,7 @@ var foreign76 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -10162,7 +10182,7 @@ ColorPickTab2_Generate = __decorate([
 ], ColorPickTab2_Generate);
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign130 = /*#__PURE__*/Object.freeze({
+var foreign131 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -10247,7 +10267,7 @@ var foreign77 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -10308,7 +10328,7 @@ ColorPickTab3_Generate = __decorate([
 ], ColorPickTab3_Generate);
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign131 = /*#__PURE__*/Object.freeze({
+var foreign132 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -10408,7 +10428,7 @@ class ColorPickPanel extends ColorPickPanel_Generate$1 {
         this.bindAction();
     }
     initUI() {
-        this.mSaveTextBlock.text = GameConfig.Language.Text_SaveColor.Value;
+        this.mSaveTextBlock.text = StringUtil.format(GameConfig.Language.Text_SaveColor.Value, ``);
     }
     bindButton() {
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
@@ -10426,8 +10446,9 @@ class ColorPickPanel extends ColorPickPanel_Generate$1 {
         this.getMallModuleC.onSelectColorPickTab2Action.add(this.addSelectColorPickTab2Action.bind(this));
         this.mColorPick.onColorChanged.add(this.addColorChanged.bind(this));
     }
-    showColorPickPanel(tab1Text, colorPickTab2Datas, colorPickTab3Colors) {
+    showColorPickPanel(tab1Text, name, colorPickTab2Datas, colorPickTab3Colors) {
         this.colorPickText = tab1Text;
+        this.mSaveTextBlock.text = StringUtil.format(GameConfig.Language.Text_SaveColor.Value, name);
         this.refreshColorPickTab1();
         this.colorPickTab2Datas = colorPickTab2Datas;
         this.refreshColorPickTab2();
@@ -10557,14 +10578,91 @@ var foreign75 = /*#__PURE__*/Object.freeze({
     default: ColorPickPanel
 });
 
+var Enums;
+(function (Enums) {
+    (function (TouchEvent) {
+        TouchEvent[TouchEvent["DOWN"] = 0] = "DOWN";
+        TouchEvent[TouchEvent["MOVE"] = 1] = "MOVE";
+        TouchEvent[TouchEvent["UP"] = 2] = "UP";
+    })(Enums.TouchEvent || (Enums.TouchEvent = {}));
+})(Enums || (Enums = {}));
+class TouchScript {
+    constructor() {
+        this.captureMap = new Map();
+        this.screenListeners = [];
+    }
+    onStart() {
+    }
+    static get instance() {
+        if (this._ins == null) {
+            this._ins = new TouchScript();
+        }
+        return this._ins;
+    }
+    addScreenListener(widget, callback, adjuestCenter) {
+        this.screenListeners.push({ widget: widget, callback: callback, adjuestCenter: adjuestCenter });
+    }
+    removeScreenListener(widget) {
+        for (let i = 0; i < this.screenListeners.length; i++) {
+            if (this.screenListeners[i].widget == widget) {
+                this.screenListeners.splice(i, 1);
+                i--;
+            }
+        }
+    }
+    onTouchStarted(inGemory, inPointerEvent) {
+        for (let i = 0; i < this.screenListeners.length; i++) {
+            const position = inPointerEvent.screenSpacePosition;
+            const localPosition = mw.absoluteToLocal(inGemory, position);
+            const pos = new mw.Vector2(this.screenListeners[i].widget.position.x, this.screenListeners[i].widget.position.y);
+            const size = this.screenListeners[i].widget.size;
+            if (localPosition.x > pos.x && localPosition.y > pos.y && localPosition.x < (pos.x + size.x) && localPosition.y < (pos.y + size.y)) {
+                this.captureMap.set(inPointerEvent.pointerIndex, this.screenListeners[i]);
+                this.screenListeners[i].callback(this.screenListeners[i].widget, Enums.TouchEvent.DOWN, localPosition.x, localPosition.y, inPointerEvent);
+                return mw.EventReply.handled;
+            }
+        }
+        return mw.EventReply.handled;
+    }
+    onTouchMoved(inGemory, inPointerEvent) {
+        if (this.captureMap.has(inPointerEvent.pointerIndex)) {
+            const position = inPointerEvent.screenSpacePosition;
+            const localPosition = mw.absoluteToLocal(inGemory, position);
+            let capture = this.captureMap.get(inPointerEvent.pointerIndex);
+            const pos = new mw.Vector2(capture.widget.position.x, capture.widget.position.y);
+            const size = capture.widget.size;
+            if (localPosition.x > pos.x && localPosition.y > pos.y && localPosition.x < (pos.x + size.x) && localPosition.y < (pos.y + size.y)) {
+                capture.callback(capture.widget, Enums.TouchEvent.MOVE, localPosition.x, localPosition.y, inPointerEvent);
+            }
+        }
+        return mw.EventReply.handled;
+    }
+    onTouchEnded(inGemory, inPointerEvent) {
+        if (this.captureMap.has(inPointerEvent.pointerIndex)) {
+            const position = inPointerEvent.screenSpacePosition;
+            const localPosition = mw.absoluteToLocal(inGemory, position);
+            let capture = this.captureMap.get(inPointerEvent.pointerIndex);
+            capture.callback(capture.widget, Enums.TouchEvent.UP, localPosition.x, localPosition.y, inPointerEvent);
+            this.captureMap.delete(inPointerEvent.pointerIndex);
+        }
+        return mw.EventReply.handled;
+    }
+}
+
 /**
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
+    get mTouchImage() {
+        if (!this.mTouchImage_Internal && this.uiWidgetBase) {
+            this.mTouchImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTouchImage');
+        }
+        return this.mTouchImage_Internal;
+    }
     get mResetButton() {
         if (!this.mResetButton_Internal && this.uiWidgetBase) {
             this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton');
@@ -10757,7 +10855,7 @@ MallPanel_Generate = __decorate([
 ], MallPanel_Generate);
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign136 = /*#__PURE__*/Object.freeze({
+var foreign137 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -10767,7 +10865,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -10847,7 +10945,7 @@ MallItem_Big_Generate = __decorate([
 ], MallItem_Big_Generate);
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign132 = /*#__PURE__*/Object.freeze({
+var foreign133 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -10942,7 +11040,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -11003,7 +11101,7 @@ MallItem_Color_Generate = __decorate([
 ], MallItem_Color_Generate);
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign133 = /*#__PURE__*/Object.freeze({
+var foreign134 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -11091,7 +11189,7 @@ var foreign80 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -11159,7 +11257,7 @@ MallItem_Self_Generate = __decorate([
 ], MallItem_Self_Generate);
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign134 = /*#__PURE__*/Object.freeze({
+var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -11224,7 +11322,7 @@ var foreign81 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -11320,7 +11418,7 @@ MallItem_Small_Generate = __decorate([
 ], MallItem_Small_Generate);
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign135 = /*#__PURE__*/Object.freeze({
+var foreign136 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -11516,7 +11614,7 @@ var foreign82 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -11590,7 +11688,7 @@ MallTab1_Generate = __decorate([
 ], MallTab1_Generate);
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign137 = /*#__PURE__*/Object.freeze({
+var foreign138 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -11668,7 +11766,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11730,7 +11828,7 @@ MallTab2_Generate = __decorate([
 ], MallTab2_Generate);
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign138 = /*#__PURE__*/Object.freeze({
+var foreign139 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -11806,7 +11904,7 @@ var foreign85 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -11868,7 +11966,7 @@ MallTab3_Generate = __decorate([
 ], MallTab3_Generate);
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign139 = /*#__PURE__*/Object.freeze({
+var foreign140 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -11947,6 +12045,7 @@ class MallPanel extends MallPanel_Generate$1 {
         this.tab1Elements = [];
         this.tab1Ids = [];
         this.tab1Id = 0;
+        this.isFirstTab1Id = 0;
         this.tab2Ids = [];
         this.tab2Id = 0;
         this.tab3Ids = [];
@@ -11965,6 +12064,39 @@ class MallPanel extends MallPanel_Generate$1 {
         this.mallTab2s = [];
         this.mallTab3s = [];
         this.mallItem_Selfs = [];
+        this.moveId = -1;
+        this.moveVec = [];
+        this.dir = 0;
+        this.onMoveTouchEvent = (widget, event, x, y, inPointerEvent) => {
+            if (this.movePos) {
+                if (event == Enums.TouchEvent.DOWN) {
+                    if (this.moveId < 0) {
+                        this.moveId = inPointerEvent.pointerIndex;
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.MOVE) {
+                    if (this.moveId >= 0) {
+                        let xoffset = x - this.moveVec[0];
+                        let yoffset = y - this.moveVec[1];
+                        this.dir = 0;
+                        if (Math.abs(xoffset) > Math.abs(yoffset)) {
+                            this.dir = Math.floor(xoffset);
+                        }
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.UP) {
+                    if (this.moveId >= 0) {
+                        this.moveId = -1;
+                        this.dir = 0;
+                    }
+                }
+            }
+        };
+        //#endregion
     }
     get getMallModuleC() {
         if (!this.mallModuleC) {
@@ -11982,6 +12114,7 @@ class MallPanel extends MallPanel_Generate$1 {
         this.initUI();
         this.bindButton();
         this.bindAction();
+        this.initMallRot();
     }
     initUI() {
         this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
@@ -12044,9 +12177,11 @@ class MallPanel extends MallPanel_Generate$1 {
         this.tab1Ids.length = 0;
         this.tab1Elements.forEach((value) => { this.tab1Ids.push(value.ID); });
         this.updateTab1();
-        this.tab1Id = this.tab1Ids[1]; //可修改默认
+        this.tab1Id = this.tab1Ids[this.isFirstTab1Id]; //可修改默认
         this.getMallModuleC.onSelectTab1Action.call(this.tab1Id);
         this.initTab2();
+        if (this.isFirstTab1Id == 0)
+            this.isFirstTab1Id = 1;
     }
     initTab2() {
         let tab1Element = GameConfig.Tab1.getElement(this.tab1Id);
@@ -12108,7 +12243,7 @@ class MallPanel extends MallPanel_Generate$1 {
         // this.tabIdDataMap.forEach((value: TabIdData) => {
         // 	console.error(JSON.stringify(value));
         // });
-        // this.mItemScrollBox.scrollOffset = 1;
+        // this.mItemScrollBox.scrollOffset = 0;
     }
     calculateItemCanvas(tabType) {
         let positionY = 0;
@@ -12456,6 +12591,7 @@ class MallPanel extends MallPanel_Generate$1 {
             this.initMallItemSmall();
         }
         this.checkMallItemState();
+        this.getMallModuleC.onSwitchCameraAction.call(Mall.isHeadTabId(this.currentConfigId) ? 1 : 2);
     }
     initMallItemBig() {
         if (this.mallItemAssetIds.length > this.mallItem_Big.length) {
@@ -12554,7 +12690,6 @@ class MallPanel extends MallPanel_Generate$1 {
                     break;
                 default:
                     assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
-                    console.error(assetId + "---" + this.mallItemMap.has(assetId));
                     if (!assetId || assetId.length == 0 || !this.mallItemMap.has(assetId))
                         return;
                     this.mallItemMap.get(assetId).updateSelectState(true);
@@ -12717,9 +12852,35 @@ class MallPanel extends MallPanel_Generate$1 {
     }
     onShow(...params) {
         Event.dispatchToLocal(EventType.OnOffMainUI, false);
+        this.canUpdate = true;
+        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
     }
     onHide() {
         Event.dispatchToLocal(EventType.OnOffMainUI, true);
+        this.canUpdate = false;
+        TouchScript.instance.removeScreenListener(this.mTouchImage);
+    }
+    //#region Rotate-Camera
+    initMallRot() {
+        this.moveVec = [];
+        mw.TimeUtil.delayExecute(() => {
+            this.movePos = this.mTouchImage.position.multiply(1);
+        }, 3);
+    }
+    onUpdate(dt) {
+        if (this.dir != 0) {
+            this.getMallModuleC.addRoatation(this.dir * dt);
+            this.dir = 0;
+        }
+    }
+    onTouchStarted(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchStarted(inGemory, inPointerEvent);
+    }
+    onTouchMoved(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchMoved(inGemory, inPointerEvent);
+    }
+    onTouchEnded(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchEnded(inGemory, inPointerEvent);
     }
 }
 
@@ -12733,7 +12894,7 @@ var foreign83 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -12826,7 +12987,7 @@ MallTipsPanel_Generate = __decorate([
 ], MallTipsPanel_Generate);
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign140 = /*#__PURE__*/Object.freeze({
+var foreign141 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -12903,11 +13064,14 @@ class MallModuleC extends ModuleC {
         this.onCloseColorPickPanelAction = new Action();
         this.onSaveColorPickPanelAction = new Action();
         this.onCloseMallItemSelfAction = new Action2();
+        this.isFirst = true;
         this.usingAssetIdMap = new Map();
         this.usingAssetIds = [];
         this.isNeedSaveCharacter = false;
         this.decorationIndexMap = new Map();
         this.onSwitchCameraAction = new Action1();
+        this.lastCameraType = -1;
+        this.mallCharacterRotSpeed = 30;
         this.maleNpc = null;
         this.feMaleNpc = null;
         this.transitionNpc = null;
@@ -13006,6 +13170,10 @@ class MallModuleC extends ModuleC {
             }
             this.getMallPanel.show();
             this.decorationIndexMap.clear(); //TODO-WFZ
+            if (this.isFirst) {
+                this.onSelectTab1Action.call(Tab1Type.Tab1_Clothing);
+                this.isFirst = false;
+            }
         });
     }
     closeMallPanel() {
@@ -13570,9 +13738,6 @@ class MallModuleC extends ModuleC {
                 return;
             }
         }
-        else {
-            console.error(1111111111111111111);
-        }
         if (this.isUsingDecoration(assetId)) {
             this.decorationIndexMap.delete(tagId);
             return;
@@ -13748,26 +13913,48 @@ class MallModuleC extends ModuleC {
         }
     }
     async initShopCamera() {
+        // let myCamera = Camera.currentCamera;
+        // let shopCamera: mw.Camera = await GameObject.asyncSpawn<mw.Camera>(`Camera`);
+        // shopCamera.parent = this.localPlayer.character;
+        // shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
+        // shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+        // this.onSwitchCameraAction.add((cameraType: number) => {
+        //     if (cameraType == 0) {
+        //         Camera.switch(myCamera);
+        //     } else {
+        //         Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+        //     }
+        // });
         let myCamera = Camera.currentCamera;
         let shopCamera = await GameObject.asyncSpawn(`Camera`);
-        shopCamera.parent = this.localPlayer.character;
-        shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
-        shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+        shopCamera.worldTransform.rotation = mw.Rotation.zero;
         this.onSwitchCameraAction.add((cameraType) => {
+            if (this.lastCameraType == cameraType)
+                return;
             if (cameraType == 0) {
                 Camera.switch(myCamera);
             }
             else if (cameraType == 1) {
-                shopCamera.localTransform.position = new mw.Vector(47, -8, 71);
-                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
+                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 55, rootLoc.y + 32, rootLoc.z + 10);
+                let offsetZ = this.localPlayer.character.collisionExtent.z;
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ / 3, rootLoc.y + offsetZ / 5.3, rootLoc.z + offsetZ / 16);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
             else if (cameraType == 2) {
-                shopCamera.localTransform.position = new mw.Vector(211, -40, 30);
-                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
+                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 174, rootLoc.y + 102, rootLoc.z - 54);
+                let offsetZ = this.localPlayer.character.collisionExtent.z;
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.1, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
+            this.lastCameraType = cameraType;
         });
+    }
+    addRoatation(dir) {
+        if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform)
+            return;
+        this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
     }
     async initNpc() {
         this.maleNpc = await mw.GameObject.asyncFindGameObjectById(`3A3B7F1A`);
@@ -13957,31 +14144,34 @@ class MallModuleC extends ModuleC {
         this.changeCharacterColor(color);
     }
     openSkinToneColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_102.Value}`;
-        let colorPickTab2Data = new ColorPickTab2Data(GameConfig.Language.Text_Tab2_102.Value, this.localPlayer.character.description.advance.makeup.skinTone.skinColor);
+        let name = GameConfig.Language.Text_Tab2_102.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
+        let colorPickTab2Data = new ColorPickTab2Data(name, this.localPlayer.character.description.advance.makeup.skinTone.skinColor);
         this.colorPickTab2Datas.push(colorPickTab2Data);
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.SkinToneColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyebrowsColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_105.Value}`;
+        let name = GameConfig.Language.Text_Tab2_105.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let eyebrows = this.localPlayer.character.description.advance.makeup.eyebrows;
         let eyebrowColor = mw.LinearColor.white;
         if (eyebrows?.eyebrowColor)
             eyebrowColor = eyebrows?.eyebrowColor;
-        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Tab2_105.Value, eyebrowColor));
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(name, eyebrowColor));
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.EyebrowsColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openTopColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_110.Value}`;
+        let name = GameConfig.Language.Text_Tab2_110.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let part = this.localPlayer.character.description.advance.clothing.upperCloth?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -13991,19 +14181,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.TopColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBottomColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_111.Value}`;
+        let name = GameConfig.Language.Text_Tab2_111.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let part = this.localPlayer.character.description.advance.clothing.lowerCloth?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -14013,19 +14204,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.BottomColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openShoesColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_112.Value}`;
+        let name = GameConfig.Language.Text_Tab2_112.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let part = this.localPlayer.character.description.advance.clothing.shoes?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -14035,19 +14227,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.ShoeColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openGlovesColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_113.Value}`;
+        let name = GameConfig.Language.Text_Tab2_113.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let part = this.localPlayer.character.description.advance.clothing.gloves?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -14057,19 +14250,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.GloveColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openPupilStyleColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1001.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1001.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let coloredContactsStyle = this.localPlayer.character.description.advance.makeup.coloredContacts.style;
         if (!coloredContactsStyle || !coloredContactsStyle?.pupilStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let pupilColor = mw.LinearColor.white;
@@ -14085,19 +14279,20 @@ class MallModuleC extends ModuleC {
             rightPupilColor = coloredContactsStyle?.rightPupilColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_RightPupilColor.Value, rightPupilColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLensColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1002.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1002.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let coloredContactsDecal = this.localPlayer.character.description.advance.makeup.coloredContacts.decal;
         if (!coloredContactsDecal || !coloredContactsDecal?.pupilStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let decalPupilColor = mw.LinearColor.white;
@@ -14105,19 +14300,20 @@ class MallModuleC extends ModuleC {
             decalPupilColor = coloredContactsDecal?.pupilColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_DecalColor.Value, decalPupilColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openUpperHighlightColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1003.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1003.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
         if (!highlight || !highlight?.upperHighlightStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let upperHighlightColor = mw.LinearColor.white;
@@ -14125,19 +14321,20 @@ class MallModuleC extends ModuleC {
             upperHighlightColor = highlight?.upperHighlightColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_UpperHighlightColor.Value, upperHighlightColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLowerHighlightColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1004.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1004.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
         if (!highlight || !highlight?.lowerHighlightStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let lowerHighlightColor = mw.LinearColor.white;
@@ -14145,19 +14342,20 @@ class MallModuleC extends ModuleC {
             lowerHighlightColor = highlight?.lowerHighlightColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LowerHighlightColor.Value, lowerHighlightColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyelashesColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1005.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1005.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let eyelashes = this.localPlayer.character.description.advance.makeup.eyelashes;
         if (!eyelashes || !eyelashes?.eyelashStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let eyelashColor = mw.LinearColor.white;
@@ -14165,19 +14363,20 @@ class MallModuleC extends ModuleC {
             eyelashColor = eyelashes?.eyelashColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyelashColor.Value, eyelashColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.EyeLashColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyeshadowColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1006.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1006.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let eyeShadow = this.localPlayer.character.description.advance.makeup.eyeShadow;
         if (!eyeShadow || !eyeShadow?.eyeshadowStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let eyeshaowColor = mw.LinearColor.white;
@@ -14185,19 +14384,20 @@ class MallModuleC extends ModuleC {
             eyeshaowColor = eyeShadow?.eyeshaowColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyeshaowColor.Value, eyeshaowColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.EyeShadow);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBlushColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1007.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1007.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let blush = this.localPlayer.character.description.advance.makeup.blush;
         if (!blush || !blush?.blushStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let blushColor = mw.LinearColor.white;
@@ -14205,19 +14405,20 @@ class MallModuleC extends ModuleC {
             blushColor = blush?.blushColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_BlushColor.Value, blushColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.BlushColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLipMakeupColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1008.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1008.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let lipstick = this.localPlayer.character.description.advance.makeup.lipstick;
         if (!lipstick || !lipstick?.lipstickStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let lipstickColor = mw.LinearColor.white;
@@ -14225,19 +14426,20 @@ class MallModuleC extends ModuleC {
             lipstickColor = lipstick?.lipstickColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LipstickColor.Value, lipstickColor));
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.LipstickColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openFullHairColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1010.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1010.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -14250,19 +14452,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openFrontHairColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1011.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1011.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let hairColor = this.localPlayer.character.description.advance.hair.frontHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -14275,19 +14478,20 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBackHairColorPickPanel() {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1012.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1012.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -14300,13 +14504,13 @@ class MallModuleC extends ModuleC {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         GameConfig.ColorValue.getAllElement().forEach((value) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     changeCharacterColor(color) {
         switch (this.colorPickTabId) {
@@ -14574,7 +14778,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -14756,7 +14960,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign141 = /*#__PURE__*/Object.freeze({
+var foreign142 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -14766,7 +14970,7 @@ var foreign141 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -14826,7 +15030,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign142 = /*#__PURE__*/Object.freeze({
+var foreign143 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -14861,7 +15065,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -14921,7 +15125,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign143 = /*#__PURE__*/Object.freeze({
+var foreign144 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -15275,7 +15479,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -15523,7 +15727,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign144 = /*#__PURE__*/Object.freeze({
+var foreign145 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -15947,7 +16151,7 @@ var foreign97 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -16022,7 +16226,7 @@ SignInPanel_Generate = __decorate([
 ], SignInPanel_Generate);
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign148 = /*#__PURE__*/Object.freeze({
+var foreign149 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -16032,7 +16236,7 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -16108,7 +16312,7 @@ SignInItem_Generate = __decorate([
 ], SignInItem_Generate);
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign147 = /*#__PURE__*/Object.freeze({
+var foreign148 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -16482,7 +16686,7 @@ var foreign51 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -16562,7 +16766,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign122 = /*#__PURE__*/Object.freeze({
+var foreign123 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -16572,7 +16776,7 @@ var foreign122 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -16622,7 +16826,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign123 = /*#__PURE__*/Object.freeze({
+var foreign124 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -17111,7 +17315,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.34
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -17169,7 +17373,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign108 = /*#__PURE__*/Object.freeze({
+var foreign109 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -17243,52 +17447,52 @@ const MWModuleMap = {
      '1D10F64B4D38229D7655CC923071E9B2': foreign101,
      'BC6767CF4240176E5C9B6984BB540726': foreign102,
      '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign103,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign104,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign105,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign106,
-     '741B06144E25B4753E8005985816DAF8': foreign107,
-     'EE3F354349BB041CD741FF84B745B113': foreign108,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign109,
-     '100DA6744367634E7FFC0895CD98DDB9': foreign110,
-     '67892EC847DCDABBB14451A8CDFD526C': foreign111,
-     '486071A84887288700A7E297CBF6B438': foreign112,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign113,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign114,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign115,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign116,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign117,
-     '827757834BCFC569771BCB84A3609238': foreign118,
-     'F58702064960960163820CB9C8D0F3C1': foreign119,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign120,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign121,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign122,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign123,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign124,
-     '337A59B14A237973EEB178A260344C21': foreign125,
-     'B9D019D74067C8F762132698D474BF63': foreign126,
-     'C4E377B14812C09429E28988E62907DB': foreign127,
-     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign128,
-     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign129,
-     '06CF574844634CC9C0793EA8847C6FE2': foreign130,
-     '27DEB6624F87673F14AA499E8A3A7DD3': foreign131,
-     'CEE9E492480CEF69BF9291BA357C9AC1': foreign132,
-     '713A8E764F3DAC8A8AD1BEB382C46158': foreign133,
-     '5E6E0BFE48C322071930C2B8DD56E900': foreign134,
-     'C381E72F409A02A45B69B9BC32F4FCAF': foreign135,
-     'FADB775E4F203C2565D31A9AA31E22D1': foreign136,
-     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign137,
-     'F3E9117C4C567C26689F08B919B7E7DA': foreign138,
-     'AF5DEB904C817468E94BAA9265F23AF7': foreign139,
-     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign140,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign141,
-     'A8E0593D477EC697B2559789990E0882': foreign142,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign143,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign144,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign145,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign146,
-     '14F8E49D4B31DFAA50548BA206585CCA': foreign147,
-     '656033E844C70FD925FC8F887EA9FA46': foreign148,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign149,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign105,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign106,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign107,
+     '741B06144E25B4753E8005985816DAF8': foreign108,
+     'EE3F354349BB041CD741FF84B745B113': foreign109,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign110,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign111,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign112,
+     '486071A84887288700A7E297CBF6B438': foreign113,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign114,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign115,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign116,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign117,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign118,
+     '827757834BCFC569771BCB84A3609238': foreign119,
+     'F58702064960960163820CB9C8D0F3C1': foreign120,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign121,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign122,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign123,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign124,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign125,
+     '337A59B14A237973EEB178A260344C21': foreign126,
+     'B9D019D74067C8F762132698D474BF63': foreign127,
+     'C4E377B14812C09429E28988E62907DB': foreign128,
+     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign129,
+     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign130,
+     '06CF574844634CC9C0793EA8847C6FE2': foreign131,
+     '27DEB6624F87673F14AA499E8A3A7DD3': foreign132,
+     'CEE9E492480CEF69BF9291BA357C9AC1': foreign133,
+     '713A8E764F3DAC8A8AD1BEB382C46158': foreign134,
+     '5E6E0BFE48C322071930C2B8DD56E900': foreign135,
+     'C381E72F409A02A45B69B9BC32F4FCAF': foreign136,
+     'FADB775E4F203C2565D31A9AA31E22D1': foreign137,
+     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign138,
+     'F3E9117C4C567C26689F08B919B7E7DA': foreign139,
+     'AF5DEB904C817468E94BAA9265F23AF7': foreign140,
+     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign141,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign142,
+     'A8E0593D477EC697B2559789990E0882': foreign143,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign144,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign145,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign146,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign147,
+     '14F8E49D4B31DFAA50548BA206585CCA': foreign148,
+     '656033E844C70FD925FC8F887EA9FA46': foreign149,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign150,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -17358,52 +17562,52 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign101 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
 [foreign102 || {}, "JavaScripts/tools/CopyCharacter"],
 [foreign103 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign104 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign105 || {}, "JavaScripts/tools/Utils"],
-[foreign106 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign107 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign108 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign109 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign110 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign111 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
-[foreign112 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign113 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign114 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign115 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign116 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign117 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign118 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign119 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign120 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign121 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign122 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign123 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign124 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign125 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign126 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign127 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign128 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
-[foreign129 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
-[foreign130 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
-[foreign131 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
-[foreign132 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
-[foreign133 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
-[foreign134 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
-[foreign135 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
-[foreign136 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
-[foreign137 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
-[foreign138 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
-[foreign139 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
-[foreign140 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
-[foreign141 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign142 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign143 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign144 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign145 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign146 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign147 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
-[foreign148 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign149 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign105 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign106 || {}, "JavaScripts/tools/Utils"],
+[foreign107 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign108 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign109 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign110 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign111 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign112 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign113 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign114 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign115 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign116 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign117 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign118 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign119 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign120 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign121 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign122 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign123 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign124 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign125 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign126 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign127 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign128 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign129 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
+[foreign130 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
+[foreign131 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
+[foreign132 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
+[foreign133 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
+[foreign134 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
+[foreign135 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
+[foreign136 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
+[foreign137 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
+[foreign138 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
+[foreign139 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
+[foreign140 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
+[foreign141 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
+[foreign142 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign143 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign144 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign145 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign146 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign147 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign148 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
+[foreign149 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
+[foreign150 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

@@ -3,12 +3,19 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.20-00.02.53
+ * TIME: 2025.02.20-20.26.35
  */
  
 @UIBind('UI/module/MallModule/MallPanel.ui')
 export default class MallPanel_Generate extends UIScript {
-		private mResetButton_Internal: mw.Button
+		private mTouchImage_Internal: mw.Image
+	public get mTouchImage(): mw.Image {
+		if(!this.mTouchImage_Internal&&this.uiWidgetBase) {
+			this.mTouchImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTouchImage') as mw.Image
+		}
+		return this.mTouchImage_Internal
+	}
+	private mResetButton_Internal: mw.Button
 	public get mResetButton(): mw.Button {
 		if(!this.mResetButton_Internal&&this.uiWidgetBase) {
 			this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton') as mw.Button

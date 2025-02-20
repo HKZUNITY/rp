@@ -8,7 +8,7 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
-import MallData, { TabType, Tab2Type, Tab3Type, ColorPickTab2Data, AssetIdInfoData } from "./MallData";
+import MallData, { TabType, Tab2Type, Tab3Type, ColorPickTab2Data, AssetIdInfoData, Tab1Type } from "./MallData";
 import MallModuleS from "./MallModuleS";
 import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
@@ -812,25 +812,49 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     public onSwitchCameraAction: Action1<number> = new Action1<number>();
+    private lastCameraType: number = -1;
     private async initShopCamera(): Promise<void> {
+        // let myCamera = Camera.currentCamera;
+        // let shopCamera: mw.Camera = await GameObject.asyncSpawn<mw.Camera>(`Camera`);
+        // shopCamera.parent = this.localPlayer.character;
+        // shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
+        // shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+        // this.onSwitchCameraAction.add((cameraType: number) => {
+        //     if (cameraType == 0) {
+        //         Camera.switch(myCamera);
+        //     } else {
+        //         Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+        //     }
+        // });
+
         let myCamera = Camera.currentCamera;
         let shopCamera: mw.Camera = await GameObject.asyncSpawn<mw.Camera>(`Camera`);
-        shopCamera.parent = this.localPlayer.character;
-        shopCamera.localTransform.position = new mw.Vector(200, -10, 30);
-        shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+        shopCamera.worldTransform.rotation = mw.Rotation.zero;
         this.onSwitchCameraAction.add((cameraType: number) => {
+            if (this.lastCameraType == cameraType) return;
             if (cameraType == 0) {
                 Camera.switch(myCamera);
             } else if (cameraType == 1) {
-                shopCamera.localTransform.position = new mw.Vector(47, -8, 71);
-                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
+                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 55, rootLoc.y + 32, rootLoc.z + 10);
+                let offsetZ = this.localPlayer.character.collisionExtent.z;
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ / 3, rootLoc.y + offsetZ / 5.3, rootLoc.z + offsetZ / 16);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             } else if (cameraType == 2) {
-                shopCamera.localTransform.position = new mw.Vector(211, -40, 30);
-                shopCamera.localTransform.rotation = new mw.Rotation(0, -5, 200);
+                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
+                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 174, rootLoc.y + 102, rootLoc.z - 54);
+                let offsetZ = this.localPlayer.character.collisionExtent.z;
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.1, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
+            this.lastCameraType = cameraType;
         });
+    }
+
+    private mallCharacterRotSpeed: number = 30;
+    public addRoatation(dir: number) {
+        if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform) return;
+        this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)))
     }
 
     private maleNpc: mw.Character = null;
@@ -1042,38 +1066,41 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     private openSkinToneColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_102.Value}`;
+        let name = GameConfig.Language.Text_Tab2_102.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
-        let colorPickTab2Data = new ColorPickTab2Data(GameConfig.Language.Text_Tab2_102.Value,
+        let colorPickTab2Data = new ColorPickTab2Data(name,
             this.localPlayer.character.description.advance.makeup.skinTone.skinColor as mw.LinearColor);
         this.colorPickTab2Datas.push(colorPickTab2Data);
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.SkinToneColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openEyebrowsColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_105.Value}`;
+        let name = GameConfig.Language.Text_Tab2_105.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let eyebrows = this.localPlayer.character.description.advance.makeup.eyebrows;
         let eyebrowColor: mw.LinearColor = mw.LinearColor.white;
         if (eyebrows?.eyebrowColor) eyebrowColor = eyebrows?.eyebrowColor as mw.LinearColor;
-        this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_Tab2_105.Value, eyebrowColor));
+        this.colorPickTab2Datas.push(new ColorPickTab2Data(name, eyebrowColor));
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.EyebrowsColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openTopColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_110.Value}`;
+        let name = GameConfig.Language.Text_Tab2_110.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let part = this.localPlayer.character.description.advance.clothing.upperCloth?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -1082,22 +1109,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_110.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.TopColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openBottomColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_111.Value}`;
+        let name = GameConfig.Language.Text_Tab2_111.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let part = this.localPlayer.character.description.advance.clothing.lowerCloth?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -1106,22 +1134,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_111.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.BottomColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openShoesColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_112.Value}`;
+        let name = GameConfig.Language.Text_Tab2_112.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let part = this.localPlayer.character.description.advance.clothing.shoes?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -1130,22 +1159,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_112.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.ShoeColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openGlovesColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab2_113.Value}`;
+        let name = GameConfig.Language.Text_Tab2_113.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let part = this.localPlayer.character.description.advance.clothing.gloves?.part;
         if (!part || part.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         for (let i = 0; i < part.length; ++i) {
@@ -1154,22 +1184,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(StringUtil.format(GameConfig.Language.Text_ColorPart.Value, i + 1), color));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab2_113.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.GloveColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openPupilStyleColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1001.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1001.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let coloredContactsStyle = this.localPlayer.character.description.advance.makeup.coloredContacts.style;
         if (!coloredContactsStyle || !coloredContactsStyle?.pupilStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         let pupilColor: mw.LinearColor = mw.LinearColor.white;
@@ -1185,22 +1216,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_RightPupilColor.Value, rightPupilColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1001.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openLensColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1002.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1002.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let coloredContactsDecal = this.localPlayer.character.description.advance.makeup.coloredContacts.decal;
         if (!coloredContactsDecal || !coloredContactsDecal?.pupilStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1209,22 +1241,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_DecalColor.Value, decalPupilColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1002.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openUpperHighlightColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1003.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1003.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
         if (!highlight || !highlight?.upperHighlightStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1233,22 +1266,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_UpperHighlightColor.Value, upperHighlightColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1003.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openLowerHighlightColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1004.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1004.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let highlight = this.localPlayer.character.description.advance.makeup.coloredContacts.highlight;
         if (!highlight || !highlight?.lowerHighlightStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1257,22 +1291,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LowerHighlightColor.Value, lowerHighlightColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1004.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openEyelashesColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1005.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1005.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let eyelashes = this.localPlayer.character.description.advance.makeup.eyelashes;
         if (!eyelashes || !eyelashes?.eyelashStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1281,22 +1316,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyelashColor.Value, eyelashColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1005.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.EyeLashColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openEyeshadowColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1006.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1006.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let eyeShadow = this.localPlayer.character.description.advance.makeup.eyeShadow;
         if (!eyeShadow || !eyeShadow?.eyeshadowStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1305,22 +1341,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_EyeshaowColor.Value, eyeshaowColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1006.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.EyeShadow);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openBlushColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1007.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1007.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let blush = this.localPlayer.character.description.advance.makeup.blush;
         if (!blush || !blush?.blushStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1329,22 +1366,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_BlushColor.Value, blushColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1007.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.BlushColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openLipMakeupColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1008.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1008.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let lipstick = this.localPlayer.character.description.advance.makeup.lipstick;
         if (!lipstick || !lipstick?.lipstickStyle) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
@@ -1353,22 +1391,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_LipstickColor.Value, lipstickColor));
 
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1008.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.LipstickColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openFullHairColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1010.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1010.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -1381,22 +1420,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1010.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openFrontHairColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1011.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1011.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let hairColor = this.localPlayer.character.description.advance.hair.frontHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -1409,22 +1449,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1011.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private openBackHairColorPickPanel(): void {
-        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${GameConfig.Language.Text_Tab3_1012.Value}`;
+        let name = GameConfig.Language.Text_Tab3_1012.Value;
+        let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
 
         let hairColor = this.localPlayer.character.description.advance.hair.backHair.color;
         if (!hairColor) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
         if (hairColor?.color && hairColor?.gradientColor) {
@@ -1437,14 +1478,14 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_TailColor.Value, hairColor?.gradientColor as mw.LinearColor));
         }
         if (!this.colorPickTab2Datas || this.colorPickTab2Datas.length == 0) {
-            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, GameConfig.Language.Text_Tab3_1012.Value));
+            Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
 
         GameConfig.ColorValue.getAllElement().forEach((value: IColorValueElement) => {
             this.colorPickTab3Colors.push(value.HairColor);
         });
-        this.getColorPickPanel.showColorPickPanel(tab1Text, this.colorPickTab2Datas, this.colorPickTab3Colors);
+        this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
 
     private isNeedSaveColor: boolean = false;

@@ -32,9 +32,11 @@ import { ITopElement } from "../../../configs/Top";
 import { ITrailingElement } from "../../../configs/Trailing";
 import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
 import { EventType } from "../../../GlobalData";
+import { Enums, TouchScript } from "../../../tools/TouchScript";
 import Utils from "../../../tools/Utils";
 import ExecutorManager from "../../../tools/WaitingQueue";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
+import Mall from "../Mall";
 import { AssetIdInfoData, Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 import MallItem_Big from "./MallItem_Big";
@@ -64,6 +66,7 @@ export default class MallPanel extends MallPanel_Generate {
 		this.initUI();
 		this.bindButton();
 		this.bindAction();
+		this.initMallRot();
 	}
 
 	private initUI(): void {
@@ -550,6 +553,7 @@ export default class MallPanel extends MallPanel_Generate {
 			this.initMallItemSmall();
 		}
 		this.checkMallItemState();
+		this.getMallModuleC.onSwitchCameraAction.call(Mall.isHeadTabId(this.currentConfigId) ? 1 : 2);
 	}
 
 	private initMallItemBig(): void {
@@ -818,9 +822,73 @@ export default class MallPanel extends MallPanel_Generate {
 
 	protected onShow(...params: any[]): void {
 		Event.dispatchToLocal(EventType.OnOffMainUI, false);
+		this.canUpdate = true;
+		TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
 	}
 
 	protected onHide(): void {
 		Event.dispatchToLocal(EventType.OnOffMainUI, true);
+		this.canUpdate = false;
+		TouchScript.instance.removeScreenListener(this.mTouchImage);
 	}
+
+	//#region Rotate-Camera
+	private initMallRot(): void {
+		this.moveVec = [];
+		mw.TimeUtil.delayExecute(() => {
+			this.movePos = this.mTouchImage.position.multiply(1);
+		}, 3)
+	}
+
+	private moveId: number = -1;
+	private moveVec: number[] = [];
+	private dir: number = 0;
+	private movePos: mw.Vector2;
+	private onMoveTouchEvent = (widget: mw.Widget, event: Enums.TouchEvent, x: number, y: number, inPointerEvent: mw.PointerEvent) => {
+		if (this.movePos) {
+			if (event == Enums.TouchEvent.DOWN) {
+				if (this.moveId < 0) {
+					this.moveId = inPointerEvent.pointerIndex;
+					this.moveVec[0] = x;
+					this.moveVec[1] = y;
+				}
+			} else if (event == Enums.TouchEvent.MOVE) {
+				if (this.moveId >= 0) {
+					let xoffset = x - this.moveVec[0];
+					let yoffset = y - this.moveVec[1];
+					this.dir = 0;
+					if (Math.abs(xoffset) > Math.abs(yoffset)) {
+						this.dir = Math.floor(xoffset);
+					}
+					this.moveVec[0] = x;
+					this.moveVec[1] = y;
+				}
+			} else if (event == Enums.TouchEvent.UP) {
+				if (this.moveId >= 0) {
+					this.moveId = -1;
+					this.dir = 0;
+				}
+			}
+		}
+	}
+
+	protected onUpdate(dt: number): void {
+		if (this.dir != 0) {
+			this.getMallModuleC.addRoatation(this.dir * dt);
+			this.dir = 0;
+		}
+	}
+
+	onTouchStarted(inGemory: mw.Geometry, inPointerEvent: mw.PointerEvent): mw.EventReply {
+		return TouchScript.instance.onTouchStarted(inGemory, inPointerEvent);
+	}
+
+	onTouchMoved(inGemory: mw.Geometry, inPointerEvent: mw.PointerEvent): mw.EventReply {
+		return TouchScript.instance.onTouchMoved(inGemory, inPointerEvent);
+	}
+
+	onTouchEnded(inGemory: mw.Geometry, inPointerEvent: mw.PointerEvent): mw.EventReply {
+		return TouchScript.instance.onTouchEnded(inGemory, inPointerEvent);
+	}
+	//#endregion
 }

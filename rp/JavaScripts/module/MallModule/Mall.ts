@@ -196,6 +196,27 @@ export default class Mall {
         return this.defaultAssetIds.includes(assetId);
     }
 
+    private static headTabIds: number[] = [
+        Tab2Type.Tab2_Face,
+        Tab2Type.Tab2_Eyebrows,
+        Tab2Type.Tab2_Expression,
+        Tab3Type.Tab3_PupilStyle,
+        Tab3Type.Tab3_Lens,
+        Tab3Type.Tab3_UpperHighlight,
+        Tab3Type.Tab3_LowerHighlight,
+        Tab3Type.Tab3_Eyelashes,
+        Tab3Type.Tab3_Eyeshadow,
+        Tab3Type.Tab3_Blush,
+        Tab3Type.Tab3_LipMakeup,
+        Tab3Type.Tab3_FaceTattoo,
+        Tab3Type.Tab3_FullHair,
+        Tab3Type.Tab3_FrontHair,
+        Tab3Type.Tab3_BackHair,
+    ];
+    public static isHeadTabId(tabId: number): boolean {
+        return this.headTabIds.includes(tabId);
+    }
+
     public static getAssetId(type: number, character?: mw.Character): string {
         if (!character) character = Player.localPlayer.character;
         switch (type) {

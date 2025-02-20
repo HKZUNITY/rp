@@ -29,7 +29,7 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 	}
 
 	private initUI(): void {
-		this.mSaveTextBlock.text = GameConfig.Language.Text_SaveColor.Value;
+		this.mSaveTextBlock.text = StringUtil.format(GameConfig.Language.Text_SaveColor.Value, ``);
 	}
 
 	private bindButton(): void {
@@ -52,8 +52,9 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 		this.mColorPick.onColorChanged.add(this.addColorChanged.bind(this));
 	}
 
-	public showColorPickPanel(tab1Text: string, colorPickTab2Datas: ColorPickTab2Data[], colorPickTab3Colors: string[]): void {
+	public showColorPickPanel(tab1Text: string, name: string, colorPickTab2Datas: ColorPickTab2Data[], colorPickTab3Colors: string[]): void {
 		this.colorPickText = tab1Text;
+		this.mSaveTextBlock.text = StringUtil.format(GameConfig.Language.Text_SaveColor.Value, name);
 		this.refreshColorPickTab1();
 		this.colorPickTab2Datas = colorPickTab2Datas;
 		this.refreshColorPickTab2();
