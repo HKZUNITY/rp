@@ -1,12 +1,30 @@
-﻿import { IBackElement } from "../../../configs/Back";
+﻿import { IAccessoriesGlovesElement } from "../../../configs/AccessoriesGloves";
+import { IALongCoatTopElement } from "../../../configs/ALongCoatTop";
+import { IBackElement } from "../../../configs/Back";
+import { IBootsShoesElement } from "../../../configs/BootsShoes";
 import { IEarElement } from "../../../configs/Ear";
 import { IEffectsElement } from "../../../configs/Effects";
+import { IEverydayShoesElement } from "../../../configs/EverydayShoes";
 import { IFaceExpressionElement } from "../../../configs/FaceExpression";
 import { IFacingElement } from "../../../configs/Facing";
+import { IFootCoverShoesElement } from "../../../configs/FootCoverShoes";
 import { GameConfig } from "../../../configs/GameConfig";
+import { IGlovesGlovesElement } from "../../../configs/GlovesGloves";
+import { IHighHeelsShoesElement } from "../../../configs/HighHeelsShoes";
 import { IHipElement } from "../../../configs/Hip";
+import { ILongPantsBottomElement } from "../../../configs/LongPantsBottom";
+import { ILongSinglePieceTopElement } from "../../../configs/LongSinglePieceTop";
+import { ILongSkirtBottomElement } from "../../../configs/LongSkirtBottom";
+import { INakedDressShoesElement } from "../../../configs/NakedDressShoes";
 import { IRightHandElement } from "../../../configs/RightHand";
+import { IShortJacketTopElement } from "../../../configs/ShortJacketTop";
+import { IShortsBottomElement } from "../../../configs/ShortsBottom";
+import { IShortSinglePieceTopElement } from "../../../configs/ShortSinglePieceTop";
+import { IShortSkirtBottomElement } from "../../../configs/ShortSkirtBottom";
 import { IShoulderElement } from "../../../configs/Shoulder";
+import { ISportsShoesShoesElement } from "../../../configs/SportsShoesShoes";
+import { ISuitTopElement } from "../../../configs/SuitTop";
+import { ITightsBottomElement } from "../../../configs/TightsBottom";
 import { ITrailingElement } from "../../../configs/Trailing";
 import Utils from "../../../tools/Utils";
 import MallItem_Small_Generate from "../../../ui-generate/module/MallModule/MallItem_Small_generate";
@@ -137,6 +155,114 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 			case Tab3Type.Tab3_Trailing:
 				let trailingElement: ITrailingElement = GameConfig.Trailing.getElement(assetId);
 				this.mIconImage.imageInfo.setByAssetIcon(trailingElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_LongSinglePiece_Top:
+				let longSinglePieceTopElement: ILongSinglePieceTopElement = GameConfig.LongSinglePieceTop.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(longSinglePieceTopElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_ShortJacket_Top:
+				let shortJacketTopElement: IShortJacketTopElement = GameConfig.ShortJacketTop.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(shortJacketTopElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_ShortSinglePiece_Top:
+				let shortSinglePieceTopElement: IShortSinglePieceTopElement = GameConfig.ShortSinglePieceTop.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(shortSinglePieceTopElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Suit_Top:
+				let suitTopElement: ISuitTopElement = GameConfig.SuitTop.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(suitTopElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_ALongCoat_Top:
+				let aLongCoatTopElement: IALongCoatTopElement = GameConfig.ALongCoatTop.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(aLongCoatTopElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_ShortSkirt_Bottom:
+				let shortSkirtBottomElement: IShortSkirtBottomElement = GameConfig.ShortSkirtBottom.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(shortSkirtBottomElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_LongPants_Bottom:
+				let longPantsBottomElement: ILongPantsBottomElement = GameConfig.LongPantsBottom.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(longPantsBottomElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Shorts_Bottom:
+				let shortsBottomElement: IShortsBottomElement = GameConfig.ShortsBottom.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(shortsBottomElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_LongSkirt_Bottom:
+				let longSkirtBottomElement: ILongSkirtBottomElement = GameConfig.LongSkirtBottom.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(longSkirtBottomElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Tights_Bottom:
+				let tightsBottomElement: ITightsBottomElement = GameConfig.TightsBottom.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(tightsBottomElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Gloves_Gloves:
+				let glovesGlovesElement: IGlovesGlovesElement = GameConfig.GlovesGloves.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(glovesGlovesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Accessories_Gloves:
+				let accessoriesGlovesElement: IAccessoriesGlovesElement = GameConfig.AccessoriesGloves.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(accessoriesGlovesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Everyday_Shoes:
+				let everydayShoesElement: IEverydayShoesElement = GameConfig.EverydayShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(everydayShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_Boots_Shoes:
+				let bootsShoesElement: IBootsShoesElement = GameConfig.BootsShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(bootsShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_FootCover_Shoes:
+				let footCoverShoesElement: IFootCoverShoesElement = GameConfig.FootCoverShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(footCoverShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_NakedDress_Shoes:
+				let nakedDressShoesElement: INakedDressShoesElement = GameConfig.NakedDressShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(nakedDressShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_HighHeels_Shoes:
+				let highHeelsShoesElement: IHighHeelsShoesElement = GameConfig.HighHeelsShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(highHeelsShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_SportsShoes_Shoes:
+				let sportsShoesShoesElement: ISportsShoesShoesElement = GameConfig.SportsShoesShoes.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(sportsShoesShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
 				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;

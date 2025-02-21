@@ -158,20 +158,59 @@ export enum Tab3Type {
     Tab3_Effects,
     /**拖尾 */
     Tab3_Trailing,
-    /**日常造型 */
-    Tab3_DailyStyling,
+    /**日常造型1 */
+    Tab3_DailyStyling_Suit1,
     /**布偶造型 */
-    Tab3_MuppetStyling,
+    Tab3_MuppetStyling_Suit,
     /**英雄造型 */
-    Tab3_HeroStyling,
+    Tab3_HeroStyling_Suit,
     /**幻想造型 */
-    Tab3_FantasyModeling,
+    Tab3_FantasyModeling_Suit,
     /**节日造型 */
-    Tab3_HolidayStyling,
+    Tab3_HolidayStyling_Suit,
     /**科幻造型 */
-    Tab3_ScienceFictionStyling,
+    Tab3_ScienceFictionStyling_Suit,
     /**古代造型 */
-    Tab3_AncientMolding,
+    Tab3_AncientMolding_Suit,
+    /**长单件 */
+    Tab3_LongSinglePiece_Top,
+    /**短外套 */
+    Tab3_ShortJacket_Top,
+    /**短单件 */
+    Tab3_ShortSinglePiece_Top,
+    /**套装 */
+    Tab3_Suit_Top,
+    /**长外套 */
+    Tab3_ALongCoat_Top,
+    /**短裙 */
+    Tab3_ShortSkirt_Bottom,
+    /**长裤 */
+    Tab3_LongPants_Bottom,
+    /**短裤 */
+    Tab3_Shorts_Bottom,
+    /**长裙 */
+    Tab3_LongSkirt_Bottom,
+    /**裤袜 */
+    Tab3_Tights_Bottom,
+    /**手套 */
+    Tab3_Gloves_Gloves,
+    /**手套饰品 */
+    Tab3_Accessories_Gloves,
+    /**日常鞋 */
+    Tab3_Everyday_Shoes,
+    /**靴子 */
+    Tab3_Boots_Shoes,
+    /**足套 */
+    Tab3_FootCover_Shoes,
+    /**裸饰 */
+    Tab3_NakedDress_Shoes,
+    /**高跟鞋 */
+    Tab3_HighHeels_Shoes,
+    /**运动鞋 */
+    Tab3_SportsShoes_Shoes,
+    /**日常造型2 */
+    Tab3_DailyStyling_Suit2,
+
     /**瞳孔样式_收藏 */
     Tab3_PupilStyle_Collection = 2001,
     /**瞳孔贴画_收藏 */

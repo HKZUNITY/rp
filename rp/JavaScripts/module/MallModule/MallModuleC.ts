@@ -138,7 +138,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         });
     }
 
-    private closeMallPanel(): void {
+    public closeMallPanel(): void {
         this.getMallPanel.hide();
         this.onSwitchCameraAction.call(0);
     }
@@ -300,88 +300,98 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (!faceExpressionElement || faceExpressionElement?.ExpressionType < 0 || faceExpressionElement?.ExpressionType > 9) return;
                 this.localPlayer.character.description.advance.headFeatures.expressions.changeExpression = faceExpressionElement.ExpressionType;
                 break;
-            // case Tab2Type.Tab2_Outfit:
-            // await this.changeOutfit(assetId);
-            // break;
-            case Tab3Type.Tab3_DailyStyling:
+            case Tab2Type.Tab2_Outfit:
+                await this.changeOutfit(GameConfig.Outfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_MuppetStyling:
+            case Tab3Type.Tab3_DailyStyling_Suit1:
+                await this.changeOutfit(GameConfig.DailyStylingOutfit1.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_DailyStyling_Suit2:
+                await this.changeOutfit(GameConfig.DailyStylingOutfit2.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_MuppetStyling_Suit:
                 await this.changeOutfit(GameConfig.MuppetStylingOutfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_HeroStyling:
+            case Tab3Type.Tab3_HeroStyling_Suit:
                 await this.changeOutfit(GameConfig.HeroStylingOutfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_FantasyModeling:
+            case Tab3Type.Tab3_FantasyModeling_Suit:
+                await this.changeOutfit(GameConfig.FantasyModelingOutfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_HolidayStyling:
+            case Tab3Type.Tab3_HolidayStyling_Suit:
+                await this.changeOutfit(GameConfig.HolidayStylingOutfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_ScienceFictionStyling:
+            case Tab3Type.Tab3_ScienceFictionStyling_Suit:
+                await this.changeOutfit(GameConfig.ScienceFictionStylingOutfit.getElement(assetId).AssetId);
                 break;
-            case Tab3Type.Tab3_AncientMolding:
+            case Tab3Type.Tab3_AncientMolding_Suit:
+                await this.changeOutfit(GameConfig.AncientMoldingOutfit.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Top:
-                if (this.localPlayer.character.description.advance.clothing.upperCloth.style != assetId) {
-                    await Utils.asyncDownloadAsset(assetId);
-                    this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
-                } else {
-                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-                    let upperClothStyle: string = ``;
-                    if (somatotype % 2 == 0) {
-                        upperClothStyle = `292004`;
-                    } else {
-                        upperClothStyle = `343474`;
-                    }
-                    await Utils.asyncDownloadAsset(upperClothStyle);
-                    this.localPlayer.character.description.advance.clothing.upperCloth.style = upperClothStyle;
-                }
+                await this.changeTop(assetId);
+                break;
+            case Tab3Type.Tab3_LongSinglePiece_Top:
+                await this.changeTop(GameConfig.LongSinglePieceTop.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_ShortJacket_Top:
+                await this.changeTop(GameConfig.ShortJacketTop.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_ShortSinglePiece_Top:
+                await this.changeTop(GameConfig.ShortSinglePieceTop.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_Suit_Top:
+                await this.changeTop(GameConfig.SuitTop.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_ALongCoat_Top:
+                await this.changeTop(GameConfig.ALongCoatTop.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Bottom:
-                if (this.localPlayer.character.description.advance.clothing.lowerCloth.style != assetId) {
-                    await Utils.asyncDownloadAsset(assetId);
-                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
-                } else {
-                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-                    let lowerClothStyle: string = ``;
-                    if (somatotype % 2 == 0) {
-                        lowerClothStyle = `292002`;
-                    } else {
-                        lowerClothStyle = `343467`;
-                    }
-                    await Utils.asyncDownloadAsset(lowerClothStyle);
-                    this.localPlayer.character.description.advance.clothing.lowerCloth.style = lowerClothStyle;
-                }
+                await this.changeBottom(assetId);
+                break;
+            case Tab3Type.Tab3_ShortSkirt_Bottom:
+                await this.changeBottom(GameConfig.ShortSkirtBottom.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_LongPants_Bottom:
+                await this.changeBottom(GameConfig.LongPantsBottom.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_Shorts_Bottom:
+                await this.changeBottom(GameConfig.ShortsBottom.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_LongSkirt_Bottom:
+                await this.changeBottom(GameConfig.LongSkirtBottom.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_Tights_Bottom:
+                await this.changeBottom(GameConfig.TightsBottom.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Shoes:
-                if (this.localPlayer.character.description.advance.clothing.shoes.style != assetId) {
-                    await Utils.asyncDownloadAsset(assetId);
-                    this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
-                } else {
-                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-                    let shoesStyle: string = ``;
-                    if (somatotype % 2 == 0) {
-                        shoesStyle = `66505`;
-                    } else {
-                        shoesStyle = `343475`;
-                    }
-                    await Utils.asyncDownloadAsset(shoesStyle);
-                    this.localPlayer.character.description.advance.clothing.shoes.style = shoesStyle;
-                }
+                await this.changeShoes(assetId);
+                break;
+            case Tab3Type.Tab3_Everyday_Shoes:
+                await this.changeShoes(GameConfig.EverydayShoes.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_Boots_Shoes:
+                await this.changeShoes(GameConfig.BootsShoes.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_FootCover_Shoes:
+                await this.changeShoes(GameConfig.FootCoverShoes.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_NakedDress_Shoes:
+                await this.changeShoes(GameConfig.NakedDressShoes.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_HighHeels_Shoes:
+                await this.changeShoes(GameConfig.HighHeelsShoes.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_SportsShoes_Shoes:
+                await this.changeShoes(GameConfig.SportsShoesShoes.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Gloves:
-                if (this.localPlayer.character.description.advance.clothing.gloves.style != assetId) {
-                    await Utils.asyncDownloadAsset(assetId);
-                    this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
-                } else {
-                    let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
-                    let glovesStyle: string = ``;
-                    if (somatotype % 2 == 0) {
-                        glovesStyle = `75663`;
-                    } else {
-                        glovesStyle = `343466`;
-                    }
-                    await Utils.asyncDownloadAsset(glovesStyle);
-                    this.localPlayer.character.description.advance.clothing.gloves.style = glovesStyle;
-                }
+                await this.changeGloves(assetId);
+                break;
+            case Tab3Type.Tab3_Gloves_Gloves:
+                await this.changeGloves(GameConfig.GlovesGloves.getElement(assetId).AssetId);
+                break;
+            case Tab3Type.Tab3_Accessories_Gloves:
+                await this.changeGloves(GameConfig.AccessoriesGloves.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Pet:
                 // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
@@ -621,6 +631,74 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         // this.localPlayer.character.syncDescription();
     }
 
+    private async changeTop(assetId: string): Promise<void> {
+        if (this.localPlayer.character.description.advance.clothing.upperCloth.style != assetId) {
+            await Utils.asyncDownloadAsset(assetId);
+            this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+        } else {
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            let upperClothStyle: string = ``;
+            if (somatotype % 2 == 0) {
+                upperClothStyle = `292004`;
+            } else {
+                upperClothStyle = `343474`;
+            }
+            await Utils.asyncDownloadAsset(upperClothStyle);
+            this.localPlayer.character.description.advance.clothing.upperCloth.style = upperClothStyle;
+        }
+    }
+
+    private async changeBottom(assetId: string): Promise<void> {
+        if (this.localPlayer.character.description.advance.clothing.lowerCloth.style != assetId) {
+            await Utils.asyncDownloadAsset(assetId);
+            this.localPlayer.character.description.advance.clothing.lowerCloth.style = assetId;
+        } else {
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            let lowerClothStyle: string = ``;
+            if (somatotype % 2 == 0) {
+                lowerClothStyle = `292002`;
+            } else {
+                lowerClothStyle = `343467`;
+            }
+            await Utils.asyncDownloadAsset(lowerClothStyle);
+            this.localPlayer.character.description.advance.clothing.lowerCloth.style = lowerClothStyle;
+        }
+    }
+
+    private async changeShoes(assetId: string): Promise<void> {
+        if (this.localPlayer.character.description.advance.clothing.shoes.style != assetId) {
+            await Utils.asyncDownloadAsset(assetId);
+            this.localPlayer.character.description.advance.clothing.shoes.style = assetId;
+        } else {
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            let shoesStyle: string = ``;
+            if (somatotype % 2 == 0) {
+                shoesStyle = `66505`;
+            } else {
+                shoesStyle = `343475`;
+            }
+            await Utils.asyncDownloadAsset(shoesStyle);
+            this.localPlayer.character.description.advance.clothing.shoes.style = shoesStyle;
+        }
+    }
+
+    private async changeGloves(assetId: string): Promise<void> {
+        if (this.localPlayer.character.description.advance.clothing.gloves.style != assetId) {
+            await Utils.asyncDownloadAsset(assetId);
+            this.localPlayer.character.description.advance.clothing.gloves.style = assetId;
+        } else {
+            let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+            let glovesStyle: string = ``;
+            if (somatotype % 2 == 0) {
+                glovesStyle = `75663`;
+            } else {
+                glovesStyle = `343466`;
+            }
+            await Utils.asyncDownloadAsset(glovesStyle);
+            this.localPlayer.character.description.advance.clothing.gloves.style = glovesStyle;
+        }
+    }
+
     private async changeOutfit(assetId: string): Promise<void> {
         await Utils.asyncDownloadAsset(assetId);
         await this.changeOutfitTransition(assetId);
@@ -684,7 +762,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await Utils.asyncDownloadAsset(assetId);
         let model = await GameObject.asyncSpawn(assetId) as mw.Model;
         if (!model) return;
-        model.setCollision(mw.PropertyStatus.Off, true);
+        if (model instanceof mw.Effect) {
+            let effect = model as mw.Effect;
+            effect.loop = true;
+            effect.play();
+        } else {
+            model.setCollision(mw.PropertyStatus.Off, true);
+        }
         decorationIndex = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, transform);
         this.decorationIndexMap.set(tagId, decorationIndex);
     }
@@ -735,29 +819,49 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let faceExpressionElement: IFaceExpressionElement = GameConfig.FaceExpression.findElement(`ExpressionType`, expressionType);
                 if (!faceExpressionElement) return null;
                 return faceExpressionElement.ID.toString();
-            // case Tab2Type.Tab2_Outfit:
-            // return null;
-            case Tab3Type.Tab3_DailyStyling:
+            case Tab2Type.Tab2_Outfit:
                 return null;
-            case Tab3Type.Tab3_MuppetStyling:
+            case Tab3Type.Tab3_DailyStyling_Suit1:
                 return null;
-            case Tab3Type.Tab3_HeroStyling:
+            case Tab3Type.Tab3_DailyStyling_Suit2:
                 return null;
-            case Tab3Type.Tab3_FantasyModeling:
+            case Tab3Type.Tab3_MuppetStyling_Suit:
                 return null;
-            case Tab3Type.Tab3_HolidayStyling:
+            case Tab3Type.Tab3_HeroStyling_Suit:
                 return null;
-            case Tab3Type.Tab3_ScienceFictionStyling:
+            case Tab3Type.Tab3_FantasyModeling_Suit:
                 return null;
-            case Tab3Type.Tab3_AncientMolding:
+            case Tab3Type.Tab3_HolidayStyling_Suit:
+                return null;
+            case Tab3Type.Tab3_ScienceFictionStyling_Suit:
+                return null;
+            case Tab3Type.Tab3_AncientMolding_Suit:
                 return null;
             case Tab2Type.Tab2_Top:
+            case Tab3Type.Tab3_LongSinglePiece_Top:
+            case Tab3Type.Tab3_ShortJacket_Top:
+            case Tab3Type.Tab3_ShortSinglePiece_Top:
+            case Tab3Type.Tab3_Suit_Top:
+            case Tab3Type.Tab3_ALongCoat_Top:
                 return this.localPlayer.character.description.advance.clothing.upperCloth.style;
             case Tab2Type.Tab2_Bottom:
+            case Tab3Type.Tab3_ShortSkirt_Bottom:
+            case Tab3Type.Tab3_LongPants_Bottom:
+            case Tab3Type.Tab3_Shorts_Bottom:
+            case Tab3Type.Tab3_LongSkirt_Bottom:
+            case Tab3Type.Tab3_Tights_Bottom:
                 return this.localPlayer.character.description.advance.clothing.lowerCloth.style;
             case Tab2Type.Tab2_Shoes:
+            case Tab3Type.Tab3_Everyday_Shoes:
+            case Tab3Type.Tab3_Boots_Shoes:
+            case Tab3Type.Tab3_FootCover_Shoes:
+            case Tab3Type.Tab3_NakedDress_Shoes:
+            case Tab3Type.Tab3_HighHeels_Shoes:
+            case Tab3Type.Tab3_SportsShoes_Shoes:
                 return this.localPlayer.character.description.advance.clothing.shoes.style;
             case Tab2Type.Tab2_Gloves:
+            case Tab3Type.Tab3_Gloves_Gloves:
+            case Tab3Type.Tab3_Accessories_Gloves:
                 return this.localPlayer.character.description.advance.clothing.gloves.style;
             case Tab2Type.Tab2_Pet:
                 // return this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
@@ -879,7 +983,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
                 // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 174, rootLoc.y + 102, rootLoc.z - 54);
                 let offsetZ = this.localPlayer.character.collisionExtent.z;
-                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.1, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.3, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
             this.lastCameraType = cameraType;
@@ -1038,15 +1142,33 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.openEyebrowsColorPickPanel();
                 break;
             case Tab2Type.Tab2_Top:
+            case Tab3Type.Tab3_LongSinglePiece_Top:
+            case Tab3Type.Tab3_ShortJacket_Top:
+            case Tab3Type.Tab3_ShortSinglePiece_Top:
+            case Tab3Type.Tab3_Suit_Top:
+            case Tab3Type.Tab3_ALongCoat_Top:
                 this.openTopColorPickPanel();
                 break;
             case Tab2Type.Tab2_Bottom:
+            case Tab3Type.Tab3_ShortSkirt_Bottom:
+            case Tab3Type.Tab3_LongPants_Bottom:
+            case Tab3Type.Tab3_Shorts_Bottom:
+            case Tab3Type.Tab3_LongSkirt_Bottom:
+            case Tab3Type.Tab3_Tights_Bottom:
                 this.openBottomColorPickPanel();
                 break;
             case Tab2Type.Tab2_Shoes:
+            case Tab3Type.Tab3_Everyday_Shoes:
+            case Tab3Type.Tab3_Boots_Shoes:
+            case Tab3Type.Tab3_FootCover_Shoes:
+            case Tab3Type.Tab3_NakedDress_Shoes:
+            case Tab3Type.Tab3_HighHeels_Shoes:
+            case Tab3Type.Tab3_SportsShoes_Shoes:
                 this.openShoesColorPickPanel();
                 break;
             case Tab2Type.Tab2_Gloves:
+            case Tab3Type.Tab3_Gloves_Gloves:
+            case Tab3Type.Tab3_Accessories_Gloves:
                 this.openGlovesColorPickPanel();
                 break;
             case Tab3Type.Tab3_PupilStyle:
@@ -1239,7 +1361,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             return;
         }
         let pupilColor: mw.LinearColor = mw.LinearColor.white;
-        if (coloredContactsStyle?.pupilColor) pupilColor = coloredContactsStyle?.pupilColor as mw.LinearColor;
+        if (coloredContactsStyle?.leftPupilColor) pupilColor = coloredContactsStyle?.leftPupilColor as mw.LinearColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(GameConfig.Language.Text_PupilColor.Value, pupilColor));
 
         let leftPupilColor: mw.LinearColor = mw.LinearColor.white;
@@ -1533,21 +1655,41 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 this.localPlayer.character.description.advance.makeup.eyebrows.eyebrowColor = color;
                 break;
             case Tab2Type.Tab2_Top:
+            case Tab3Type.Tab3_LongSinglePiece_Top:
+            case Tab3Type.Tab3_ShortJacket_Top:
+            case Tab3Type.Tab3_ShortSinglePiece_Top:
+            case Tab3Type.Tab3_Suit_Top:
+            case Tab3Type.Tab3_ALongCoat_Top:
                 this.localPlayer.character.description.advance.clothing.upperCloth.part[this.colorPickTab2Index].color.areaColor = color;
                 break;
             case Tab2Type.Tab2_Bottom:
+            case Tab3Type.Tab3_ShortSkirt_Bottom:
+            case Tab3Type.Tab3_LongPants_Bottom:
+            case Tab3Type.Tab3_Shorts_Bottom:
+            case Tab3Type.Tab3_LongSkirt_Bottom:
+            case Tab3Type.Tab3_Tights_Bottom:
                 this.localPlayer.character.description.advance.clothing.lowerCloth.part[this.colorPickTab2Index].color.areaColor = color;
                 break;
             case Tab2Type.Tab2_Shoes:
+            case Tab3Type.Tab3_Everyday_Shoes:
+            case Tab3Type.Tab3_Boots_Shoes:
+            case Tab3Type.Tab3_FootCover_Shoes:
+            case Tab3Type.Tab3_NakedDress_Shoes:
+            case Tab3Type.Tab3_HighHeels_Shoes:
+            case Tab3Type.Tab3_SportsShoes_Shoes:
                 this.localPlayer.character.description.advance.clothing.shoes.part[this.colorPickTab2Index].color.areaColor = color;
                 break;
             case Tab2Type.Tab2_Gloves:
+            case Tab3Type.Tab3_Gloves_Gloves:
+            case Tab3Type.Tab3_Accessories_Gloves:
                 this.localPlayer.character.description.advance.clothing.gloves.part[this.colorPickTab2Index].color.areaColor = color;
                 break;
             case Tab3Type.Tab3_PupilStyle:
                 switch (this.colorPickTab2Index) {
                     case 0:
-                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilColor = color;
+                        // this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilColor = color;
+                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.leftPupilColor = color;
+                        this.localPlayer.character.description.advance.makeup.coloredContacts.style.rightPupilColor = color;
                         break;
                     case 1:
                         this.localPlayer.character.description.advance.makeup.coloredContacts.style.leftPupilColor = color;

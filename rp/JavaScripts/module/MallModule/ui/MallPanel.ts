@@ -1,35 +1,59 @@
 ﻿import { Notice } from "../../../common/notice/Notice";
+import { IAccessoriesGlovesElement } from "../../../configs/AccessoriesGloves";
+import { IALongCoatTopElement } from "../../../configs/ALongCoatTop";
+import { IAncientMoldingOutfitElement } from "../../../configs/AncientMoldingOutfit";
 import { IBackElement } from "../../../configs/Back";
 import { IBackHairElement } from "../../../configs/BackHair";
 import { IBlushElement } from "../../../configs/Blush";
 import { IBodyTypeElement } from "../../../configs/BodyType";
+import { IBootsShoesElement } from "../../../configs/BootsShoes";
 import { IBottomElement } from "../../../configs/Bottom";
+import { IDailyStylingOutfit1Element } from "../../../configs/DailyStylingOutfit1";
+import { IDailyStylingOutfit2Element } from "../../../configs/DailyStylingOutfit2";
 import { IEarElement } from "../../../configs/Ear";
 import { IEffectsElement } from "../../../configs/Effects";
+import { IEverydayShoesElement } from "../../../configs/EverydayShoes";
 import { IEyebrowsElement } from "../../../configs/Eyebrows";
 import { IEyelashesElement } from "../../../configs/Eyelashes";
 import { IEyeshadowElement } from "../../../configs/Eyeshadow";
 import { IFaceElement } from "../../../configs/Face";
 import { IFaceExpressionElement } from "../../../configs/FaceExpression";
 import { IFacingElement } from "../../../configs/Facing";
+import { IFantasyModelingOutfitElement } from "../../../configs/FantasyModelingOutfit";
+import { IFootCoverShoesElement } from "../../../configs/FootCoverShoes";
 import { IFrontHairElement } from "../../../configs/FrontHair";
 import { IFullHairElement } from "../../../configs/FullHair";
 import { GameConfig } from "../../../configs/GameConfig";
 import { IGlovesElement } from "../../../configs/Gloves";
+import { IGlovesGlovesElement } from "../../../configs/GlovesGloves";
 import { IHeroStylingOutfitElement } from "../../../configs/HeroStylingOutfit";
+import { IHighHeelsShoesElement } from "../../../configs/HighHeelsShoes";
 import { IHipElement } from "../../../configs/Hip";
+import { IHolidayStylingOutfitElement } from "../../../configs/HolidayStylingOutfit";
 import { ILeftHandElement } from "../../../configs/LeftHand";
 import { ILensElement } from "../../../configs/Lens";
 import { ILipMakeupElement } from "../../../configs/LipMakeup";
+import { ILongPantsBottomElement } from "../../../configs/LongPantsBottom";
+import { ILongSinglePieceTopElement } from "../../../configs/LongSinglePieceTop";
+import { ILongSkirtBottomElement } from "../../../configs/LongSkirtBottom";
 import { ILowerHighlightElement } from "../../../configs/LowerHighlight";
 import { IMuppetStylingOutfitElement } from "../../../configs/MuppetStylingOutfit";
+import { INakedDressShoesElement } from "../../../configs/NakedDressShoes";
 import { IOutfitElement } from "../../../configs/Outfit";
 import { IPupilStyleElement } from "../../../configs/PupilStyle";
 import { IRightHandElement } from "../../../configs/RightHand";
+import { IScienceFictionStylingOutfitElement } from "../../../configs/ScienceFictionStylingOutfit";
 import { IShoesElement } from "../../../configs/Shoes";
+import { IShortJacketTopElement } from "../../../configs/ShortJacketTop";
+import { IShortsBottomElement } from "../../../configs/ShortsBottom";
+import { IShortSinglePieceTopElement } from "../../../configs/ShortSinglePieceTop";
+import { IShortSkirtBottomElement } from "../../../configs/ShortSkirtBottom";
 import { IShoulderElement } from "../../../configs/Shoulder";
 import { ISkinToneElement } from "../../../configs/SkinTone";
+import { ISportsShoesShoesElement } from "../../../configs/SportsShoesShoes";
+import { ISuitTopElement } from "../../../configs/SuitTop";
 import { ITab1Element } from "../../../configs/Tab1";
+import { ITightsBottomElement } from "../../../configs/TightsBottom";
 import { ITopElement } from "../../../configs/Top";
 import { ITrailingElement } from "../../../configs/Trailing";
 import { IUpperHighlightElement } from "../../../configs/UpperHighlight";
@@ -39,7 +63,7 @@ import Utils from "../../../tools/Utils";
 import ExecutorManager from "../../../tools/WaitingQueue";
 import MallPanel_Generate from "../../../ui-generate/module/MallModule/MallPanel_generate";
 import Mall from "../Mall";
-import { AssetIdInfoData, Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
+import { AssetIdInfoData, Tab1Type, Tab2Type, Tab3Type, TabIdData, TabType } from "../MallData";
 import MallModuleC from "../MallModuleC";
 import MallItem_Big from "./MallItem_Big";
 import MallItem_Color from "./MallItem_Color";
@@ -117,7 +141,7 @@ export default class MallPanel extends MallPanel_Generate {
 	}
 
 	public checkSkinToneMallItemStateAndShowMallPanel(): void {
-		this.show();
+		this.onOffLeftCanvas(true);
 		this.checkSkinToneMallItemState();
 	}
 
@@ -144,7 +168,7 @@ export default class MallPanel extends MallPanel_Generate {
 		this.tab1Ids.length = 0;
 		this.tab1Elements.forEach((value: ITab1Element) => { this.tab1Ids.push(value.ID); });
 		this.updateTab1();
-		this.tab1Id = this.tab1Ids[1];//可修改默认
+		this.tab1Id = this.tab1Ids[0];//可修改默认
 		this.getMallModuleC.onSelectTab1Action.call(this.tab1Id);
 		this.initTab2();
 	}
@@ -252,7 +276,7 @@ export default class MallPanel extends MallPanel_Generate {
 	}
 
 	private getTab2(): number {
-		let tab2Id: number = this.tab2Ids[0];//可修改默认
+		let tab2Id: number = this.tab2Ids[this.getDefaultTab2Index];//可修改默认
 		if (this.tabIdDataMap.has(this.tab1Id)) {
 			let tab2IdDataMap = this.tabIdDataMap.get(this.tab1Id).tabIdDataMap;
 			if (!tab2IdDataMap || tab2IdDataMap.size == 0) return tab2Id;
@@ -263,6 +287,12 @@ export default class MallPanel extends MallPanel_Generate {
 		} else {
 			return tab2Id;
 		}
+	}
+
+	private get getDefaultTab2Index(): number {
+		if (this.tab1Id == Tab1Type.Tab1_Appearance) return 5;
+		if (this.tab1Id == Tab1Type.Tab1_Clothing) return 0;
+		return 0;
 	}
 
 	private getTab3(): number {
@@ -388,14 +418,15 @@ export default class MallPanel extends MallPanel_Generate {
 	private mallItemMap: Map<string, MallItem_Small | MallItem_Big | MallItem_Color> = new Map<string, MallItem_Small | MallItem_Big | MallItem_Color>();
 	private mallItemHasBig: number[] = [
 		Tab2Type.Tab2_BodyType,
-		// Tab2Type.Tab2_Outfit,
-		Tab3Type.Tab3_DailyStyling,
-		Tab3Type.Tab3_MuppetStyling,
-		Tab3Type.Tab3_HeroStyling,
-		Tab3Type.Tab3_FantasyModeling,
-		Tab3Type.Tab3_HolidayStyling,
-		Tab3Type.Tab3_ScienceFictionStyling,
-		Tab3Type.Tab3_AncientMolding
+		Tab2Type.Tab2_Outfit,
+		Tab3Type.Tab3_DailyStyling_Suit1,
+		Tab3Type.Tab3_DailyStyling_Suit2,
+		Tab3Type.Tab3_MuppetStyling_Suit,
+		Tab3Type.Tab3_HeroStyling_Suit,
+		Tab3Type.Tab3_FantasyModeling_Suit,
+		Tab3Type.Tab3_HolidayStyling_Suit,
+		Tab3Type.Tab3_ScienceFictionStyling_Suit,
+		Tab3Type.Tab3_AncientMolding_Suit
 	];
 	private mallItemHasColor: number[] = [Tab2Type.Tab2_SkinTone];
 	private currentConfigId: number = 0;
@@ -421,9 +452,9 @@ export default class MallPanel extends MallPanel_Generate {
 			case Tab2Type.Tab2_Expression:
 				GameConfig.FaceExpression.getAllElement().forEach((value: IFaceExpressionElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			// case Tab2Type.Tab2_Outfit:
-			// 	GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
-			// 	break;
+			case Tab2Type.Tab2_Outfit:
+				GameConfig.Outfit.getAllElement().forEach((value: IOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
 			case Tab2Type.Tab2_Top:
 				GameConfig.Top.getAllElement().forEach((value: ITopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
@@ -512,21 +543,83 @@ export default class MallPanel extends MallPanel_Generate {
 			case Tab3Type.Tab3_Trailing:
 				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_DailyStyling:
+			case Tab3Type.Tab3_DailyStyling_Suit1:
+				GameConfig.DailyStylingOutfit1.getAllElement().forEach((value: IDailyStylingOutfit1Element) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_MuppetStyling:
+			case Tab3Type.Tab3_DailyStyling_Suit2:
+				GameConfig.DailyStylingOutfit2.getAllElement().forEach((value: IDailyStylingOutfit2Element) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_MuppetStyling_Suit:
 				GameConfig.MuppetStylingOutfit.getAllElement().forEach((value: IMuppetStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_HeroStyling:
+			case Tab3Type.Tab3_HeroStyling_Suit:
 				GameConfig.HeroStylingOutfit.getAllElement().forEach((value: IHeroStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_FantasyModeling:
+			case Tab3Type.Tab3_FantasyModeling_Suit:
+				GameConfig.FantasyModelingOutfit.getAllElement().forEach((value: IFantasyModelingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_HolidayStyling:
+			case Tab3Type.Tab3_HolidayStyling_Suit:
+				GameConfig.HolidayStylingOutfit.getAllElement().forEach((value: IHolidayStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_ScienceFictionStyling:
+			case Tab3Type.Tab3_ScienceFictionStyling_Suit:
+				GameConfig.ScienceFictionStylingOutfit.getAllElement().forEach((value: IScienceFictionStylingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
-			case Tab3Type.Tab3_AncientMolding:
+			case Tab3Type.Tab3_AncientMolding_Suit:
+				GameConfig.AncientMoldingOutfit.getAllElement().forEach((value: IAncientMoldingOutfitElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_LongSinglePiece_Top:
+				GameConfig.LongSinglePieceTop.getAllElement().forEach((value: ILongSinglePieceTopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_ShortJacket_Top:
+				GameConfig.ShortJacketTop.getAllElement().forEach((value: IShortJacketTopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_ShortSinglePiece_Top:
+				GameConfig.ShortSinglePieceTop.getAllElement().forEach((value: IShortSinglePieceTopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Suit_Top:
+				GameConfig.SuitTop.getAllElement().forEach((value: ISuitTopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_ALongCoat_Top:
+				GameConfig.ALongCoatTop.getAllElement().forEach((value: IALongCoatTopElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_ShortSkirt_Bottom:
+				GameConfig.ShortSkirtBottom.getAllElement().forEach((value: IShortSkirtBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_LongPants_Bottom:
+				GameConfig.LongPantsBottom.getAllElement().forEach((value: ILongPantsBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Shorts_Bottom:
+				GameConfig.ShortsBottom.getAllElement().forEach((value: IShortsBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_LongSkirt_Bottom:
+				GameConfig.LongSkirtBottom.getAllElement().forEach((value: ILongSkirtBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Tights_Bottom:
+				GameConfig.TightsBottom.getAllElement().forEach((value: ITightsBottomElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Gloves_Gloves:
+				GameConfig.GlovesGloves.getAllElement().forEach((value: IGlovesGlovesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Accessories_Gloves:
+				GameConfig.AccessoriesGloves.getAllElement().forEach((value: IAccessoriesGlovesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Everyday_Shoes:
+				GameConfig.EverydayShoes.getAllElement().forEach((value: IEverydayShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_Boots_Shoes:
+				GameConfig.BootsShoes.getAllElement().forEach((value: IBootsShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_FootCover_Shoes:
+				GameConfig.FootCoverShoes.getAllElement().forEach((value: IFootCoverShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_NakedDress_Shoes:
+				GameConfig.NakedDressShoes.getAllElement().forEach((value: INakedDressShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_HighHeels_Shoes:
+				GameConfig.HighHeelsShoes.getAllElement().forEach((value: IHighHeelsShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_SportsShoes_Shoes:
+				GameConfig.SportsShoesShoes.getAllElement().forEach((value: ISportsShoesShoesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			default:
 				break;
@@ -858,6 +951,11 @@ export default class MallPanel extends MallPanel_Generate {
 		Event.dispatchToLocal(EventType.OnOffMainUI, true);
 		this.canUpdate = false;
 		TouchScript.instance.removeScreenListener(this.mTouchImage);
+	}
+
+	public onOffLeftCanvas(isOpen: boolean): void {
+		Utils.setWidgetVisibility(this.mLeftCanvas, isOpen ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+		Utils.setWidgetVisibility(this.mSelfCanvas, isOpen ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
 	}
 
 	//#region Rotate-Camera

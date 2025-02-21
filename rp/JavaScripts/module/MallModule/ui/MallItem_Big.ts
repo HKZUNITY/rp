@@ -1,8 +1,14 @@
-﻿import { IBodyTypeElement } from "../../../configs/BodyType";
+﻿import { IAncientMoldingOutfitElement } from "../../../configs/AncientMoldingOutfit";
+import { IBodyTypeElement } from "../../../configs/BodyType";
+import { IDailyStylingOutfit1Element } from "../../../configs/DailyStylingOutfit1";
+import { IDailyStylingOutfit2Element } from "../../../configs/DailyStylingOutfit2";
+import { IFantasyModelingOutfitElement } from "../../../configs/FantasyModelingOutfit";
 import { GameConfig } from "../../../configs/GameConfig";
 import { IHeroStylingOutfitElement } from "../../../configs/HeroStylingOutfit";
+import { IHolidayStylingOutfitElement } from "../../../configs/HolidayStylingOutfit";
 import { IMuppetStylingOutfitElement } from "../../../configs/MuppetStylingOutfit";
 import { IOutfitElement } from "../../../configs/Outfit";
+import { IScienceFictionStylingOutfitElement } from "../../../configs/ScienceFictionStylingOutfit";
 import Utils from "../../../tools/Utils";
 import MallItem_Big_Generate from "../../../ui-generate/module/MallModule/MallItem_Big_generate";
 import { Tab2Type, Tab3Type, TabType } from "../MallData";
@@ -60,38 +66,59 @@ export default class MallItem_Big extends MallItem_Big_Generate {
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.Collapsed);
 				this.mPriceTextBlock.text = StringUtil.format(GameConfig.Language.Text_BodyTypeDescribe.Value, bodyTypeElement.Scale);
 				break;
-			// case Tab2Type.Tab2_Outfit:
-			// 	let outfitElement: IOutfitElement = GameConfig.Outfit.getElement(assetId);
-			// 	this.mIconImage.imageInfo.setByAssetIcon(outfitElement.AssetId, mw.AssetIconSize.Icon_128px);
-			// 	Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
-			// 	this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
-			// 	break;
-			case Tab3Type.Tab3_DailyStyling:
-
+			case Tab2Type.Tab2_Outfit:
+				let outfitElement: IOutfitElement = GameConfig.Outfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(outfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_MuppetStyling:
+			case Tab3Type.Tab3_DailyStyling_Suit1:
+				let dailyStylingOutfit1Element: IDailyStylingOutfit1Element = GameConfig.DailyStylingOutfit1.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(dailyStylingOutfit1Element.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_DailyStyling_Suit2:
+				let dailyStylingOutfit2Element: IDailyStylingOutfit2Element = GameConfig.DailyStylingOutfit2.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(dailyStylingOutfit2Element.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab3Type.Tab3_MuppetStyling_Suit:
 				let muppetStylingOutfitElement: IMuppetStylingOutfitElement = GameConfig.MuppetStylingOutfit.getElement(assetId);
 				this.mIconImage.imageInfo.setByAssetIcon(muppetStylingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
 				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_HeroStyling:
+			case Tab3Type.Tab3_HeroStyling_Suit:
 				let heroStylingOutfitElement: IHeroStylingOutfitElement = GameConfig.HeroStylingOutfit.getElement(assetId);
 				this.mIconImage.imageInfo.setByAssetIcon(heroStylingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
 				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_FantasyModeling:
-
+			case Tab3Type.Tab3_FantasyModeling_Suit:
+				let fantasyModelingOutfitElement: IFantasyModelingOutfitElement = GameConfig.FantasyModelingOutfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(fantasyModelingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_HolidayStyling:
-
+			case Tab3Type.Tab3_HolidayStyling_Suit:
+				let holidayStylingOutfitElement: IHolidayStylingOutfitElement = GameConfig.HolidayStylingOutfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(holidayStylingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_ScienceFictionStyling:
-
+			case Tab3Type.Tab3_ScienceFictionStyling_Suit:
+				let scienceFictionStylingOutfitElement: IScienceFictionStylingOutfitElement = GameConfig.ScienceFictionStylingOutfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(scienceFictionStylingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
-			case Tab3Type.Tab3_AncientMolding:
-
+			case Tab3Type.Tab3_AncientMolding_Suit:
+				let ancientMoldingOutfitElement: IAncientMoldingOutfitElement = GameConfig.AncientMoldingOutfit.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(ancientMoldingOutfitElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;
 			default:
 				this.mIconImage.imageInfo.setByAssetIcon(assetId, mw.AssetIconSize.Icon_128px);

@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.20-20.26.35
+ * TIME: 2025.02.21-22.36.41
  */
  
 @UIBind('UI/module/MallModule/MallPanel.ui')
@@ -15,59 +15,73 @@ export default class MallPanel_Generate extends UIScript {
 		}
 		return this.mTouchImage_Internal
 	}
+	private mLeftCanvas_Internal: mw.Canvas
+	public get mLeftCanvas(): mw.Canvas {
+		if(!this.mLeftCanvas_Internal&&this.uiWidgetBase) {
+			this.mLeftCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas') as mw.Canvas
+		}
+		return this.mLeftCanvas_Internal
+	}
 	private mResetButton_Internal: mw.Button
 	public get mResetButton(): mw.Button {
 		if(!this.mResetButton_Internal&&this.uiWidgetBase) {
-			this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton') as mw.Button
+			this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mResetButton') as mw.Button
 		}
 		return this.mResetButton_Internal
 	}
 	private mResetTextBlock_Internal: mw.TextBlock
 	public get mResetTextBlock(): mw.TextBlock {
 		if(!this.mResetTextBlock_Internal&&this.uiWidgetBase) {
-			this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mResetButton/mResetTextBlock') as mw.TextBlock
+			this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mResetButton/mResetTextBlock') as mw.TextBlock
 		}
 		return this.mResetTextBlock_Internal
 	}
 	private mSaveButton_Internal: mw.Button
 	public get mSaveButton(): mw.Button {
 		if(!this.mSaveButton_Internal&&this.uiWidgetBase) {
-			this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton') as mw.Button
+			this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton') as mw.Button
 		}
 		return this.mSaveButton_Internal
 	}
 	private mSaveTextBlock_Internal: mw.TextBlock
 	public get mSaveTextBlock(): mw.TextBlock {
 		if(!this.mSaveTextBlock_Internal&&this.uiWidgetBase) {
-			this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSaveButton/mSaveTextBlock') as mw.TextBlock
+			this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton/mSaveTextBlock') as mw.TextBlock
 		}
 		return this.mSaveTextBlock_Internal
 	}
 	private mSexButton_Internal: mw.Button
 	public get mSexButton(): mw.Button {
 		if(!this.mSexButton_Internal&&this.uiWidgetBase) {
-			this.mSexButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSexButton') as mw.Button
+			this.mSexButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSexButton') as mw.Button
 		}
 		return this.mSexButton_Internal
 	}
 	private mSexImage_Internal: mw.Image
 	public get mSexImage(): mw.Image {
 		if(!this.mSexImage_Internal&&this.uiWidgetBase) {
-			this.mSexImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSexButton/mSexImage') as mw.Image
+			this.mSexImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSexButton/mSexImage') as mw.Image
 		}
 		return this.mSexImage_Internal
+	}
+	private mSelfCanvas_Internal: mw.Canvas
+	public get mSelfCanvas(): mw.Canvas {
+		if(!this.mSelfCanvas_Internal&&this.uiWidgetBase) {
+			this.mSelfCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelfCanvas') as mw.Canvas
+		}
+		return this.mSelfCanvas_Internal
 	}
 	private mSelfScrollBox_Internal: mw.ScrollBox
 	public get mSelfScrollBox(): mw.ScrollBox {
 		if(!this.mSelfScrollBox_Internal&&this.uiWidgetBase) {
-			this.mSelfScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/SelfCanvas/mSelfScrollBox') as mw.ScrollBox
+			this.mSelfScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelfCanvas/mSelfScrollBox') as mw.ScrollBox
 		}
 		return this.mSelfScrollBox_Internal
 	}
 	private mSelfContentCanvas_Internal: mw.Canvas
 	public get mSelfContentCanvas(): mw.Canvas {
 		if(!this.mSelfContentCanvas_Internal&&this.uiWidgetBase) {
-			this.mSelfContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/SelfCanvas/mSelfScrollBox/mSelfContentCanvas') as mw.Canvas
+			this.mSelfContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelfCanvas/mSelfScrollBox/mSelfContentCanvas') as mw.Canvas
 		}
 		return this.mSelfContentCanvas_Internal
 	}

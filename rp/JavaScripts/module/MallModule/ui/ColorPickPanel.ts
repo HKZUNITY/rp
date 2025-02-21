@@ -6,6 +6,7 @@ import MallModuleC from "../MallModuleC";
 import ColorPickTab1 from "./ColorPickTab1";
 import ColorPickTab2 from "./ColorPickTab2";
 import ColorPickTab3 from "./ColorPickTab3";
+import MallPanel from "./MallPanel";
 
 export default class ColorPickPanel extends ColorPickPanel_Generate {
 	private mallModuleC: MallModuleC = null;
@@ -14,6 +15,14 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 			this.mallModuleC = ModuleService.getModule(MallModuleC);
 		}
 		return this.mallModuleC;
+	}
+
+	private mallPanel: MallPanel = null;
+	private get getMallPanel(): MallPanel {
+		if (!this.mallPanel) {
+			this.mallPanel = UIService.getUI(MallPanel);
+		}
+		return this.mallPanel;
 	}
 
 	/** 
@@ -62,6 +71,7 @@ export default class ColorPickPanel extends ColorPickPanel_Generate {
 		this.refreshColorPickTab3();
 		this.refreshColorPick();
 		this.show();
+		this.getMallPanel.onOffLeftCanvas(false);
 	}
 
 	private colorPickText: string = null;
