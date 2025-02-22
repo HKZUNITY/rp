@@ -224,6 +224,7 @@ export default class MallPanel extends MallPanel_Generate {
 			case TabType.Tab1:
 				this.initTab1IdDataMap();
 				console.error(`tab1Id:${this.tab1Id}`);
+				this.initTab1Item();
 				break;
 			case TabType.Tab2:
 				this.initTab2IdDataMap();
@@ -625,6 +626,12 @@ export default class MallPanel extends MallPanel_Generate {
 				break;
 		}
 		this.currentConfigId = this.tab3Id;
+		this.initMallItem();
+	}
+
+	private initTab1Item(): void {
+		this.clearMallItemData();
+		this.currentConfigId = this.tab1Id;
 		this.initMallItem();
 	}
 

@@ -762,13 +762,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await Utils.asyncDownloadAsset(assetId);
         let model = await GameObject.asyncSpawn(assetId) as mw.Model;
         if (!model) return;
-        if (model instanceof mw.Effect) {
-            let effect = model as mw.Effect;
-            effect.loop = true;
-            effect.play();
-        } else {
-            model.setCollision(mw.PropertyStatus.Off, true);
-        }
+        model.setCollision(mw.PropertyStatus.Off, true);
         decorationIndex = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, transform);
         this.decorationIndexMap.set(tagId, decorationIndex);
     }
@@ -977,7 +971,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
                 // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 55, rootLoc.y + 32, rootLoc.z + 10);
                 let offsetZ = this.localPlayer.character.collisionExtent.z;
-                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ / 3, rootLoc.y + offsetZ / 5.3, rootLoc.z + offsetZ / 16);
+                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ / 2.8, rootLoc.y + offsetZ / 5.3, rootLoc.z + offsetZ / 16);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             } else if (cameraType == 2) {
                 let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
