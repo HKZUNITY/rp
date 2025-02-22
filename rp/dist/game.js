@@ -1971,7 +1971,7 @@ var foreign43 = /*#__PURE__*/Object.freeze({
     HolidayStylingOutfitConfig: HolidayStylingOutfitConfig
 });
 
-const EXCELDATA$y = [["ID", "TriggerGuid", "ModelGuid", "ModelGuid_C", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", ""], [1, "224AC214", null, null, 10106, null, 0, null, "电吉他"], [2, "35CDCC44", null, null, 10193, null, 0, null, "电吉他"], [3, "34350953", null, null, 10194, null, 0, null, "吉他"], [4, "3EA51D09", null, null, 10195, null, 0, null, "吉他"], [5, "04AEE481", null, null, 10420, null, 0, null, "钢琴"], [6, "05ED08EB", null, null, 10440, null, 0, null, "架子鼓"], [7, "0CAEBC7B", null, null, 10438, null, 0, null, "灯球"], [8, "1B1B284C", null, null, 10439, null, 0, null, "灯球"], [9, "3B1D90D9", null, null, 10441, null, 0, null, "沙发"], [10, "38A812F7", null, null, 10429, null, 0, null, "卡通小人"], [11, "2D253DE4", null, "198914", 10430, null, 0, null, "L"], [12, "1F461FC1", null, "199057", 10431, null, 0, null, "O"], [13, "122CF8D0", null, "199090", 10432, null, 0, null, "V"], [14, "135CB222", null, "198991", 10433, null, 0, null, "E"], [15, "13F0153C", null, "198902", 10434, null, 0, null, "F"], [16, "2B380279", null, "198968", 10435, null, 0, null, "U"], [17, "323796B5", null, "198896", 10436, null, 0, null, "C"], [18, "0BFB2115", null, "198912", 10437, null, 0, null, "K"], [19, "025E8339", null, null, 10442, null, 0, null, "箱子"], [20, "1CB8B39E", null, "121354", 10443, null, 0, null, "红手牌(笑脸)"], [21, "3218B841", null, "121351", 10444, null, 0, null, "蓝手牌(委屈脸)"], [22, "3FC7844F", null, "198892", 10445, null, 0, null, "A"], [23, "3A0B1AA4", null, "198894", 10446, null, 0, null, "B"], [24, "289874F8", null, "198898", 10447, null, 0, null, "D"], [25, "2D35158F", null, "198904", 10448, null, 0, null, "G"], [26, "37179069", null, null, 10449, null, 0, null, "凳子"], [27, "06A7F0E5", null, null, 10412, null, 0, null, "蓝色法杖"], [28, "22E2E57A", null, null, 10413, null, 0, null, "红色法杖"], [29, "2826DD99", null, null, 10414, null, 0, null, "扫帚法杖"], [30, "2A198EFA", null, null, 10415, null, 0, null, "魔法仗"], [31, "1E555942", null, null, 10416, null, 0, null, "地毯"], [32, "2D19DF6C", null, null, 10417, null, 0, null, "足球筐"], [33, "32A7A7B8", null, null, 10418, null, 0, null, "纸板箱"], [34, "34F4253C", null, null, 10419, null, 0, null, "热狗摊"], [35, "3D84B039", null, null, 10421, null, 0, null, "妲己耳朵"], [36, "3AA417A1", null, null, 10422, null, 0, null, "长耳兔灰耳朵"], [37, "3A0611CB", null, null, 10423, null, 0, null, "黑狼耳朵"], [38, "3AC125DE", null, null, 10424, null, 0, null, "气球"], [39, "32B8310E", null, null, 10425, null, 0, null, "卡通小人"], [40, "3E3B0A9B", null, null, 10426, null, 0, null, "卡通小人"], [41, "1A0BA065", null, null, 10406, null, 0, null, "凳子"], [42, "16726419", null, null, 10192, null, 0, null, "女帽子"], [43, "17FB3B3A", null, null, 10174, null, 0, null, "法杖"], [44, "359709F3", null, null, 10151, null, 0, null, "射灯"], [45, "39365A4F", null, "87019", 10152, null, 0, null, "喷火枪"], [46, "2B34AD30", null, null, 10147, null, 0, null, "尖叫鸡"], [47, "0E045A2F", null, null, 10105, null, 0, null, "荧光棒"], [48, "3DFE17A3", null, "175291", 10107, null, 0, null, "左轮手枪"], [49, "26253FF9", null, "176450", 10108, null, 0, null, "散弹枪"], [50, "2DA1B897", null, "176541", 10109, null, 0, null, "步枪"], [51, "31CB4D13", null, "176320", 10112, null, 0, null, "美元"], [52, "20002110", null, null, 10101, null, 0, null, "洋娃娃"], [53, "253BA295", null, "176521", 10102, null, 0, null, "娃娃"], [54, "03839C6A", null, null, 10103, null, 0, null, "书本"], [55, "364243CD", null, "176511", 10104, null, 0, null, "相机"], [56, "39E41FEF", null, "176265", 10111, null, 0, null, "笔记本电脑"], [57, "282CC813", null, "176478", 10114, null, 0, null, "手机"], [58, "09E06B43", null, "162188", 10116, null, 0, null, "手捧鲜花"], [59, "0B2EE355", null, "176260", 10117, null, 0, null, "购物车"], [60, "37CE4DD0", null, "176266", 10119, null, 0, null, "婴儿车"], [61, "2C2B7A39", null, "176501", 10120, null, 0, null, "行李箱"], [62, "0EC71B70", null, "176321", 10121, null, 0, null, "黑色雨伞"], [63, "170B6165", null, null, 10146, null, 0, null, "气球"], [64, "0C858992", null, null, 10148, null, 0, null, "小白兔玩偶"], [65, "1C3B1716", null, null, 10149, null, 0, null, "玩偶"], [66, "3099F378", null, null, 10164, null, 0, null, "杠铃"], [67, "1A6AA485", null, null, 10165, null, 0, null, "杠铃"], [68, "22A2C3CA", null, null, 10166, null, 0, null, "玩偶"], [69, "29C87271", null, null, 10167, null, 0, null, "玩偶"], [70, "22E0C2A0", null, null, 10169, null, 0, null, "奖杯"], [71, "317994EA", null, null, 10170, null, 0, null, "靠垫"], [72, "173E9CED", null, null, 10171, null, 0, null, "靠垫"], [73, "1F7EF865", null, null, 10173, null, 0, null, "游戏机"], [74, "1A4DEA4F", null, null, 10175, null, 0, null, "鲤鱼"], [75, "30DCA4CE", null, null, 10176, null, 0, null, "龙虾"], [76, "30DFB9BA", null, null, 10177, null, 0, null, "金龙鱼"], [77, "124A25AC", null, null, 10178, null, 0, null, "毛鼻鲶"], [78, "3A948C2D", null, null, 10179, null, 0, null, "尖吻鲈"], [79, "1A1960EC", null, null, 10180, null, 0, null, "蓝鳍金枪鱼"], [80, "137C3DFC", null, null, 10181, null, 0, null, "大眼鲤鱼"], [81, "3517B1C8", null, null, 10182, null, 0, null, "大口副鲈"], [82, "1B7F2A56", null, null, 10183, null, 0, null, "皇带鱼"], [83, "0F885A8D", null, null, 10184, null, 0, null, "鲸鱼"], [84, "033F8BC7", null, null, 10185, null, 0, null, "孔雀鱼"], [85, "2BBA0926", null, null, 10186, null, 0, null, "笛鲷"], [86, "0115C5D2", null, null, 10187, null, 0, null, "平颌鱲"], [87, "27471C8D", null, null, 10188, null, 0, null, "鲨鱼"], [88, "3D53903B", null, null, 10189, null, 0, null, "樱花枝"], [89, "3FC58217", null, null, 10190, null, 0, null, "咖啡"], [90, "011F309B", null, null, 10191, null, 0, null, "女帽子"], [91, "279B18E5", null, null, 10197, null, 0, null, "角色模型"], [92, "2ED0380E", null, null, 10198, null, 0, null, "背带鲨鱼"], [93, "0B82C187", null, null, 10199, null, 0, null, "埃及鲨鱼"], [94, "222E5F2C", null, null, 10400, null, 0, null, "埃及章鱼"], [95, "2B30B91A", null, null, 10401, null, 0, null, "埃及金鱼"], [96, "13072EE6", null, null, 10402, null, 0, null, "天使章鱼"], [97, "0EF164F2", null, null, 10403, null, 0, null, "嘟嘟嘴金鱼"], [98, "0A1F52D5", null, null, 10404, null, 0, null, "嘟嘟嘴红金鱼"], [99, "136497DE", null, null, 10405, null, 0, null, "灯笼鱼形态的宠物"], [100, "3F965EAA", null, "172199", 10407, null, 0, null, "紫阳春剑"], [101, "2EA2AC85", null, null, 10408, null, 0, null, "剑"], [102, "218D8D42", null, null, 10409, null, 0, null, "大剑"], [103, "08BA2210", null, null, 10410, null, 0, null, "樱花枝"], [104, "209DADD3", null, null, 10411, null, 0, null, "樱花枝"], [105, "26F28CC5", null, null, 10427, null, 0, null, "卡通小人"], [106, "080EB5B4", null, null, 10428, null, 0, null, "甜品店吉祥物"], [107, "050F3F49", null, null, 10122, null, 0, null, "汉堡"], [108, "103D03C0", null, null, 10123, null, 0, null, "羊奶"], [109, "2083D818", null, null, 10124, null, 0, null, "面包"], [110, "10A78A34", null, null, 10125, null, 0, null, "面包"], [111, "2A879D5B", null, null, 10127, null, 0, null, "饮料"], [112, "1A5C96B8", null, null, 10128, null, 0, null, "饮料"], [113, "004E4C1F", null, null, 10129, null, 0, null, "饮料"], [114, "1C676A4A", null, null, 10131, null, 0, null, "酒"], [115, "2300CB9F", null, null, 10133, null, 0, null, "奶昔"], [116, "214CD6A8", null, null, 10134, null, 0, null, "冰淇淋"], [117, "2B6173AC", null, null, 10138, null, 0, null, "烧烤"], [118, "192EEF1B", null, null, 10141, null, 0, null, "奶茶"], [119, "129123ED", null, null, 10143, null, 0, null, "猫粮"], [120, "2DDFA879", null, null, 10154, null, 0, null, "蛋糕"], [121, "1F5D16DF", null, "23116", 10157, null, 0, null, "一盘蛋糕"], [122, "2DBA3007", null, null, 10159, null, 0, null, "咖啡"], [123, "11DE3617", null, null, 10162, null, 0, null, "清酒"], [124, "1F8B4506", null, null, 10163, null, 0, null, "清酒"], [125, "1D2C18D1", null, null, 20002, null, 0, null, "火焰翅膀"], [126, "2916ADF8", null, null, 20004, null, 0, null, "翅膀"], [127, "06C9F1FE", null, null, 20006, null, 0, null, "翅膀"], [128, "142E03ED", null, null, 20008, null, 0, null, "翅膀"], [129, "26D884D0", null, null, 20010, null, 0, null, "双层翅膀"], [130, "1145F838", null, null, 20012, null, 0, null, "翅膀"], [131, "0DA363C5", null, null, 20014, null, 0, null, "翅膀"], [132, "18F12461", null, null, 20016, null, 0, null, "翅膀"], [133, "09A98640", null, null, 20018, null, 0, null, "翅膀"], [134, "29259717", null, null, 20020, null, 0, null, "翅膀"], [135, "18263521", null, null, 20022, null, 0, null, "翅膀"], [136, "2FEA3789", null, null, 20024, null, 0, null, "翅膀"], [137, "014FF45D", null, null, 20026, null, 0, null, "翅膀"], [138, "0405BC9D", null, null, 20028, null, 0, null, "翅膀"], [139, "094A02FA", null, null, 20030, null, 0, null, "翅膀"], [140, "299D82EF", null, null, 20032, null, 0, null, "翅膀"], [141, "3FAFE6CC", null, null, 20034, null, 0, null, "翅膀"], [142, "2AD6A4AE", null, null, 20036, null, 0, null, "翅膀"], [143, "36C39B14", null, null, 20038, null, 0, null, "翅膀"], [144, "3522E74F", null, null, 20040, null, 0, null, "翅膀"], [145, "2FE7B16D", null, null, 20042, null, 0, null, "翅膀"], [146, "37DAF393", null, null, 20044, null, 0, null, "翅膀"], [147, "3E372B7B", null, null, 20046, null, 0, null, "六翼翅膀"], [148, "2C44780B", null, null, 20048, null, 0, null, "翅膀"], [149, "3BE2742B", null, null, 20050, null, 0, null, "翅膀"], [150, "2D5EE2BA", null, null, 20052, null, 0, null, "翅膀"], [151, "21667B97", null, null, 20054, null, 0, null, "翅膀"], [152, "1BA1097C", null, null, 20056, null, 0, null, "翅膀"], [153, "01DAA052", null, null, 20058, null, 0, null, "翅膀"], [154, "0079B931", null, null, 20060, null, 0, null, "翅膀"], [155, "0A6CF066", null, null, 20062, null, 0, null, "火焰翅膀"], [156, "0170FAC5", "10EE2A0C", null, 30002, null, 0, null, "烟花筒"], [157, "26A8A892", null, null, 30004, null, 0, null, "炮弹"], [158, "17A75E0B", "11FC9E63", null, 30006, null, 0, null, "烟花筒"], [159, "00C80687", "009A5BCB", null, 30008, null, 0, null, "烟花筒"], [160, "35CFC979", "0BABC56F", null, 30010, null, 0, null, "烟花筒"], [161, "282879EE", "086F059A", null, 30012, null, 0, null, "烟花筒"], [162, "1348916C", "2CE0DFEA", null, 30014, null, 0, null, "烟花筒"], [163, "14BC2A1E", "1C4054BD", null, 30016, null, 0, null, "烟花筒"], [164, "351C315A", "0C3BA4A7", null, 30018, null, 0, null, "烟花筒"], [165, "1851FD98", "2BF65CD0", null, 30020, null, 0, null, "烟花筒"], [166, "0BC4E95E", "1FBB9B3D", null, 30022, null, 0, null, "烟花筒"], [167, "1926D26C", "1AD6F243", null, 30024, null, 0, null, "烟花筒"], [168, "3BE44928", "0CA04CBA", null, 30026, null, 0, null, "烟花筒"], [169, "3731FC4C", "1E7500AE", null, 30028, null, 0, null, "烟花筒"], [170, "2AB82CCF", "0DEDEC96", null, 30030, null, 0, null, "烟花筒"], [171, "23E53611", "29469B64", null, 30032, null, 0, null, "烟花筒"], [172, "09D6F64A", "038E0DE6", null, 30034, null, 0, null, "烟花筒"], [173, "21EBA335", "02D1FC4B", null, 30036, null, 0, null, "烟花筒"], [174, "0AEFD6F9", "1C1338D2", null, 30038, null, 0, null, "烟花筒"], [175, "2CEB6159", "0F8364EB", null, 30040, null, 0, null, "烟花筒"], [176, "3B8E291C", "2B16F449", null, 30042, null, 0, null, "烟花筒"], [177, "0942A9BF", "2A1D15C4", null, 30044, null, 0, null, "烟花筒"], [178, "0C77E34B", "2D266A62", null, 30046, null, 0, null, "炮竹"], [179, "03AABEC8", "19765D9B", null, 30048, null, 0, null, "炮竹"], [180, "0BAE4938", "224D3EAB", null, 30050, null, 0, null, "炮竹"], [181, "2072060C", "2B5E0169", null, 30052, null, 0, null, "炮竹"], [182, "125FDADA", "2BDB0504", null, 30054, null, 0, null, "炮竹"], [183, "0CEBF7F6", "0972F491", null, 30056, null, 0, null, "炮竹"], [184, "0CBA3B39", "03CA58A6", null, 30058, null, 0, null, "炮竹"], [185, "3C02005B", "3846CB30", null, 30060, null, 0, null, "炮竹"], [186, "197982A9", "249786AD", null, 30062, null, 0, null, "炮竹"], [187, "0C2A81EC", "22179468", null, 30064, null, 0, null, "炮竹"], [188, "385D9FB5", "04B8B96E", null, 30066, null, 0, null, "炮竹"], [189, "3684FDBA", "3DCE0055", null, 30068, null, 0, null, "炮竹"], [190, "30776600", "05A9EE0A", null, 30070, null, 0, null, "炮竹"], [191, "2FE9605C", "069FA242", null, 30072, null, 0, null, "炮竹"], [192, "3E3F8384", "38A2E844", null, 30074, null, 0, null, "炮竹"], [193, "2897C252", null, null, 60001, null, 0, null, "滑板"], [194, "0B49E4CA", null, null, 60002, null, 0, null, "滑板2"], [195, "046CC428", null, null, 60003, null, 0, null, "滑板3"], [196, "15F06D91", null, null, 60004, null, 0, null, "冲浪板"], [197, "33053BEF", null, null, 60005, null, 0, null, "冲浪板_1"], [198, "0074DBFD", null, null, 60006, null, 0, null, "自行车"], [199, "182128DB", null, null, 60007, null, 0, null, "自行车1"], [200, "2A6DF1E4", null, "159590", 60008, null, 0, null, "花猪"], [201, "17410470", null, "160319", 60009, null, 0, null, "狗儿子"], [202, "0A5C1D80", null, "174968", 60010, null, 0, null, "彩虹马"], [203, "071E50F6", null, "159933", 60011, null, 0, null, "熊猫"], [204, "08EF9811", null, "160634", 60012, null, 0, null, "小龙"], [205, "3A194CF5", null, null, 60013, null, 0, null, "御剑"], [206, "300D2EC9", null, null, 60014, null, 0, null, "鱼"], [207, null, null, null, 0, "39AB2FB0", 2, "151060", "冲浪板"], [208, null, null, null, 0, "254A21DD", 3, "151060", "冲浪板"], [209, null, null, null, 0, "31DE1825", 7, "151060", "鱼"], [210, null, null, null, 0, "0A031A75", 8, "151060", "滑板"]];
+const EXCELDATA$y = [["ID", "TriggerGuid", "ModelGuid", "ModelGuid_C", "BagId", "NpcId", "ShareId", "NpcAnimationId"], ["", "", "", "", "", "", "", ""], [1, null, null, null, 0, "31DE1825", 7, "151060", "鱼"], [2, null, null, null, 0, "0A031A75", 8, "151060", "滑板"]];
 class InteractConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$y);
@@ -5995,1177 +5995,6 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.02.21-22.36.41
- */
-let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
-    get mMainBgImage_0() {
-        if (!this.mMainBgImage_0_Internal && this.uiWidgetBase) {
-            this.mMainBgImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0');
-        }
-        return this.mMainBgImage_0_Internal;
-    }
-    get mItemCanvas() {
-        if (!this.mItemCanvas_Internal && this.uiWidgetBase) {
-            this.mItemCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas');
-        }
-        return this.mItemCanvas_Internal;
-    }
-    get mIconImage() {
-        if (!this.mIconImage_Internal && this.uiWidgetBase) {
-            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas/mIconImage');
-        }
-        return this.mIconImage_Internal;
-    }
-    get mTitleImage_0() {
-        if (!this.mTitleImage_0_Internal && this.uiWidgetBase) {
-            this.mTitleImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_0');
-        }
-        return this.mTitleImage_0_Internal;
-    }
-    get mTitleImage_1() {
-        if (!this.mTitleImage_1_Internal && this.uiWidgetBase) {
-            this.mTitleImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_1');
-        }
-        return this.mTitleImage_1_Internal;
-    }
-    get mClickNextStepButton() {
-        if (!this.mClickNextStepButton_Internal && this.uiWidgetBase) {
-            this.mClickNextStepButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton');
-        }
-        return this.mClickNextStepButton_Internal;
-    }
-    get mClickNextStepTextBlock() {
-        if (!this.mClickNextStepTextBlock_Internal && this.uiWidgetBase) {
-            this.mClickNextStepTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton/mClickNextStepTextBlock');
-        }
-        return this.mClickNextStepTextBlock_Internal;
-    }
-    get mMainBgImage_1() {
-        if (!this.mMainBgImage_1_Internal && this.uiWidgetBase) {
-            this.mMainBgImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1');
-        }
-        return this.mMainBgImage_1_Internal;
-    }
-    get mTitleImage_2() {
-        if (!this.mTitleImage_2_Internal && this.uiWidgetBase) {
-            this.mTitleImage_2_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_2');
-        }
-        return this.mTitleImage_2_Internal;
-    }
-    get mTitleImage_3() {
-        if (!this.mTitleImage_3_Internal && this.uiWidgetBase) {
-            this.mTitleImage_3_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_3');
-        }
-        return this.mTitleImage_3_Internal;
-    }
-    get mContentTextBlock() {
-        if (!this.mContentTextBlock_Internal && this.uiWidgetBase) {
-            this.mContentTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mContentTextBlock');
-        }
-        return this.mContentTextBlock_Internal;
-    }
-    get mClickStartButton() {
-        if (!this.mClickStartButton_Internal && this.uiWidgetBase) {
-            this.mClickStartButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton');
-        }
-        return this.mClickStartButton_Internal;
-    }
-    get mClickStartTextBlock() {
-        if (!this.mClickStartTextBlock_Internal && this.uiWidgetBase) {
-            this.mClickStartTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton/mClickStartTextBlock');
-        }
-        return this.mClickStartTextBlock_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mClickNextStepButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
-        });
-        this.mClickNextStepButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mClickStartButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
-        });
-        this.mClickStartButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mClickNextStepTextBlock);
-        this.initLanguage(this.mContentTextBlock);
-        this.initLanguage(this.mClickStartTextBlock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-GuidePanel_Generate = __decorate([
-    UIBind('UI/module/InteractionModule/GuidePanel.ui')
-], GuidePanel_Generate);
-var GuidePanel_Generate$1 = GuidePanel_Generate;
-
-var foreign155 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: GuidePanel_Generate$1
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.02.21-22.36.41
- */
-let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
-        }
-        return this.mBgImage_Internal;
-    }
-    get mClickBtn() {
-        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
-            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickBtn');
-        }
-        return this.mClickBtn_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mClickBtn.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
-        });
-        this.mClickBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-OnClickPanel_Generate = __decorate([
-    UIBind('UI/module/InteractionModule/OnClickPanel.ui')
-], OnClickPanel_Generate);
-var OnClickPanel_Generate$1 = OnClickPanel_Generate;
-
-var foreign156 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: OnClickPanel_Generate$1
-});
-
-class RoomData {
-    constructor(userId, name, killCount, time) {
-        this.userId = "";
-        this.playerName = "";
-        this.score = 0;
-        this.time = 0;
-        this.userId = userId;
-        this.playerName = name;
-        this.score = killCount;
-        this.time = time;
-    }
-    setData(userId, name, killCount, time) {
-        this.userId = userId;
-        this.playerName = name;
-        this.score = killCount;
-        this.time = time;
-    }
-}
-class WorldData {
-    constructor(userId, name, time) {
-        this.userId = "";
-        this.playerName = "";
-        this.time = 0;
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
-    }
-    setData(userId, name, time) {
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
-    }
-}
-class RankData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.time = 0;
-    }
-    setTime(addTime) {
-        this.time += addTime;
-        this.save(false);
-    }
-    get getTime() {
-        return this.time;
-    }
-}
-__decorate([
-    Decorator.persistence()
-], RankData.prototype, "time", void 0);
-
-var foreign117 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    RankData: RankData,
-    RoomData: RoomData,
-    WorldData: WorldData
-});
-
-class RankModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.worldDatas = [];
-        this.isInitWorldDatas = false;
-        this.time = 60;
-        this.timer = 0;
-        this.syncPlayerMap = new Map();
-        this.roomDataMap = new Map();
-        this.roomUserIds = [];
-        this.roomNames = [];
-        this.roomScores = [];
-        this.roomTimes = [];
-        this.worldUserIds = [];
-        this.worldNames = [];
-        this.worldTimes = [];
-        this.redFirstModel = null;
-        this.blueFirstModel = null;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.initData();
-    }
-    async initData() {
-        this.worldDatas = (await Utils.getCustomdata("WorldData"));
-        this.isInitWorldDatas = true;
-    }
-    onUpdate(dt) {
-        this.timer += dt;
-        if (this.timer >= this.time) {
-            this.timer = 0;
-            this.refreshTime();
-        }
-    }
-    onPlayerLeft(player) {
-        let userId = player.userId;
-        if (this.roomDataMap.has(userId))
-            this.roomDataMap.delete(userId);
-        if (this.syncPlayerMap.has(player))
-            this.syncPlayerMap.delete(player);
-        this.synchrodata_Room();
-    }
-    net_updateSyncPlayer(isSync) {
-        let player = this.currentPlayer;
-        if (!this.syncPlayerMap.has(player))
-            return;
-        this.syncPlayerMap.set(player, isSync);
-        if (isSync)
-            this.synchrodata_aRoomWorld(player);
-    }
-    net_onEnterScene(playerName, score, time) {
-        this.syncPlayerMap.set(this.currentPlayer, false);
-        let userId = this.currentPlayer.userId;
-        this.currentPlayer.character.displayName = playerName;
-        this.onEnterScene(userId, playerName, score, time);
-    }
-    onEnterScene(userId, playerName, score, time) {
-        let roomData = new RoomData(userId, playerName, score, time);
-        this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time);
-        this.isRefreshWorldData([worldData]);
-        this.synchrodata_onEnterScene(userId);
-    }
-    refreshScore(userId, score) {
-        if (!this.roomDataMap.has(userId))
-            return;
-        let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
-        this.synchrodata_Room();
-    }
-    async refreshTime() {
-        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
-            return;
-        let tmpWorldDatas = [];
-        this.syncPlayerMap.forEach((value, key) => {
-            DataCenterS.getData(key, RankData).setTime(1);
-            let userId = key.userId;
-            if (!this.roomDataMap.has(userId))
-                return;
-            let roomData = this.roomDataMap.get(userId);
-            roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
-            tmpWorldDatas.push(worldData);
-        });
-        this.worldDatas = (await Utils.getCustomdata("WorldData"));
-        this.isRefreshWorldData(tmpWorldDatas);
-        this.synchrodata_World();
-    }
-    isRefreshWorldData(tmpWorldDatas) {
-        if (!this.isInitWorldDatas)
-            return false;
-        if (this.worldDatas == null)
-            this.worldDatas = [];
-        let isNeedSave = false;
-        for (let k = 0; k < tmpWorldDatas.length; ++k) {
-            let isPush = false;
-            let ishasDelete = false;
-            let ishasData = false;
-            let worldData = tmpWorldDatas[k];
-            if (this.worldDatas.length < GlobalData.worldCount) {
-                if (this.worldDatas.length == 0) {
-                    this.worldDatas.push(worldData);
-                    isPush = true;
-                    isNeedSave = true;
-                }
-                else {
-                    for (let i = 0; i < this.worldDatas.length; ++i) {
-                        if (this.worldDatas[i].userId != worldData.userId)
-                            continue;
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 1);
-                            break;
-                        }
-                        else {
-                            ishasData = true;
-                            break;
-                        }
-                    }
-                    if (ishasData)
-                        continue;
-                    for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 0, worldData);
-                            isPush = true;
-                            isNeedSave = true;
-                            break;
-                        }
-                    }
-                    if (!isPush) {
-                        this.worldDatas.push(worldData);
-                        isPush = true;
-                        isNeedSave = true;
-                    }
-                }
-            }
-            else {
-                for (let i = 0; i < this.worldDatas.length; ++i) {
-                    if (this.worldDatas[i].userId != worldData.userId)
-                        continue;
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 1);
-                        ishasDelete = true;
-                        break;
-                    }
-                    else {
-                        ishasData = true;
-                        break;
-                    }
-                }
-                if (ishasData)
-                    continue;
-                for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 0, worldData);
-                        if (!ishasDelete) {
-                            this.worldDatas.pop();
-                        }
-                        isPush = true;
-                        isNeedSave = true;
-                        break;
-                    }
-                }
-            }
-        }
-        if (isNeedSave) {
-            Utils.setCustomData("WorldData", this.worldDatas);
-        }
-        return isNeedSave;
-    }
-    updateRoomData() {
-        if (this.roomDataMap.size == 0 || !this.roomDataMap)
-            return;
-        this.roomUserIds.length = 0;
-        this.roomNames.length = 0;
-        this.roomScores.length = 0;
-        this.roomDataMap.forEach((value, key) => {
-            this.roomUserIds.push(value.userId);
-            this.roomNames.push(value.playerName);
-            this.roomScores.push(value.score);
-            this.roomTimes.push(value.time);
-        });
-    }
-    updateWorldData() {
-        if (!this.worldDatas || this.worldDatas.length == 0)
-            return;
-        this.worldUserIds.length = 0;
-        this.worldNames.length = 0;
-        this.worldTimes.length = 0;
-        for (let i = 0; i < this.worldDatas.length; i++) {
-            this.worldUserIds.push(this.worldDatas[i].userId);
-            this.worldNames.push(this.worldDatas[i].playerName);
-            this.worldTimes.push(this.worldDatas[i].time);
-        }
-    }
-    synchrodata_onEnterScene(sendUserId) {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
-            }
-            else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
-            }
-        });
-    }
-    synchrodata_Room() {
-        this.updateRoomData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
-        });
-    }
-    synchrodata_World() {
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
-        });
-    }
-    synchrodata_RoomWorld() {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
-        });
-    }
-    synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
-    }
-    getNamesByUserId(userId1, userId2) {
-        if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
-            return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
-        }
-        return null;
-    }
-    getNameByUserId(userId) {
-        if (this.roomDataMap.has(userId)) {
-            return this.roomDataMap.get(userId).playerName;
-        }
-        return null;
-    }
-    net_setFirstModel(isRed) {
-        let character = this.currentPlayer.character;
-        this.setFirstModel(character, isRed);
-    }
-    async setFirstModel(character, isRed) {
-        if (isRed) {
-            if (!this.redFirstModel)
-                this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        }
-        else {
-            if (!this.blueFirstModel)
-                this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        }
-    }
-}
-__decorate([
-    Decorator.noReply()
-], RankModuleS.prototype, "net_updateSyncPlayer", null);
-__decorate([
-    Decorator.noReply()
-], RankModuleS.prototype, "net_onEnterScene", null);
-__decorate([
-    Decorator.noReply()
-], RankModuleS.prototype, "net_setFirstModel", null);
-
-var foreign119 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: RankModuleS
-});
-
-class GuidePanel extends GuidePanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.clickNextStepCallBack = null;
-        this.clickStartCallBack = null;
-    }
-    onStart() {
-        this.initUI();
-        this.binButtons();
-    }
-    initUI() {
-        if (GlobalData.languageId == 0) {
-            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.Collapsed);
-        }
-        else {
-            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.SelfHitTestInvisible);
-        }
-    }
-    binButtons() {
-        this.mClickNextStepButton.onClicked.add(this.onClickNextStepButton.bind(this));
-        this.mClickStartButton.onClicked.add(this.onClickStartButton.bind(this));
-    }
-    onClickNextStepButton() {
-        if (this.clickNextStepCallBack)
-            this.clickNextStepCallBack();
-        this.hide();
-    }
-    onClickStartButton() {
-        if (this.clickStartCallBack)
-            this.clickStartCallBack();
-        this.hide();
-    }
-    showStepTips(bagId, clickCallBack, clickTextBlock) {
-        if (GameConfig.ActionProp.getElement(bagId).NextId == bagId)
-            bagId -= 1;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        if (!actionPropElement.AssetId) {
-            bagId = actionPropElement.NextId;
-        }
-        this.setIcon(bagId);
-        this.clickNextStepCallBack = clickCallBack;
-        this.mClickNextStepTextBlock.text = clickTextBlock;
-        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.SelfHitTestInvisible);
-        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.Collapsed);
-        this.show();
-    }
-    setIcon(bagId) {
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-            }
-        }
-        else {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-            }
-        }
-        if (actionPropElement.VehiclesIcon) {
-            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
-        }
-        else if (actionPropElement.Icon) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
-        }
-        else if (actionPropElement.AssetId) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
-        }
-        else if (bagId == actionPropElement.NextId) {
-            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
-            if (nextActionPropElement.VehiclesIcon) {
-                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
-            }
-            else if (nextActionPropElement.Icon) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
-            }
-            else if (nextActionPropElement.AssetId) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
-            }
-        }
-    }
-    showStartTips(clickStartCallBack, clickStartTextBlock, contentTextBlock) {
-        this.clickStartCallBack = clickStartCallBack;
-        this.mClickStartTextBlock.text = clickStartTextBlock;
-        this.mContentTextBlock.text = contentTextBlock;
-        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.SelfHitTestInvisible);
-        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.Collapsed);
-        this.show();
-    }
-}
-class OnClickPanel extends OnClickPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.interactionModuleC = null;
-        this.id = -1;
-        this.offset = new mw.Vector(0, 0, 0);
-        this.obj = null;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getInteractionModuleC() {
-        if (this.interactionModuleC == null) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
-    }
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerMiddle;
-        this.initUI();
-        this.bindButtons();
-        this.registerActions();
-    }
-    initUI() {
-        // Utils.setWidgetVisibility(this.mBgImage, mw.SlateVisibility.Collapsed);
-    }
-    /**按钮绑定 */
-    bindButtons() {
-        this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
-    }
-    /**注册事件 */
-    registerActions() {
-        this.getHUDModuleC.onExitAction.add(this.onExitHandler.bind(this));
-    }
-    onExitHandler() {
-        // this.getInteractionModuleC.interact(false, this.id);
-    }
-    onClickButtons() {
-        if (!this.id)
-            return;
-        console.warn("OnClickPanel-this.id = " + this.id);
-        this.canUpdate = false;
-        this.hide();
-        if (this.id <= 0)
-            return;
-        this.getInteractionModuleC.interact(true, this.id);
-    }
-    /**显示NPC按钮 */
-    showBtn(id, obj) {
-        this.id = id;
-        this.canUpdate = true;
-        this.obj = obj;
-        let pos = InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
-        this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
-        this.show();
-    }
-    /**隐藏NPC按钮 */
-    hideBtn() {
-        this.canUpdate = false;
-        this.hide();
-    }
-    onShow(...params) {
-        console.error("[OnClickPanel-onShow]");
-    }
-    onUpdate(dt) {
-        if (!this.obj)
-            return;
-        let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
-    }
-}
-class InteractionModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.onClickPanel = null;
-        this.hudModuleC = null;
-        this.adPanel = null;
-        this.tipsPanel = null;
-        this.onClickBagItemAction = new Action1();
-        this.currentDescription = null;
-        this.triggerLocMap = new Map();
-        this.bagIds = [];
-        this.guidePanel = null;
-        this.guideStep = 0;
-        this.guideBagIds = [60004, 20002, 10106, 30002];
-    }
-    get getOnClickPanel() {
-        if (this.onClickPanel == null) {
-            this.onClickPanel = mw.UIService.getUI(OnClickPanel);
-        }
-        return this.onClickPanel;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getAdPanel() {
-        if (this.adPanel == null) {
-            this.adPanel = mw.UIService.getUI(AdPanel);
-        }
-        return this.adPanel;
-    }
-    get getTipsPanel() {
-        if (this.tipsPanel == null) {
-            this.tipsPanel = mw.UIService.getUI(TipsPanel);
-        }
-        return this.tipsPanel;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.bindEvent();
-    }
-    onEnterScene(sceneType) {
-        this.initBagIds();
-        this.initGuide();
-        this.findTriggers();
-    }
-    bindEvent() {
-        this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
-    }
-    findTriggers() {
-        GameConfig.Interact.getAllElement().forEach(async (value) => {
-            let triggerGuid = value.TriggerGuid;
-            if (triggerGuid && triggerGuid.length > 0) {
-                let trigger = await GameObject.asyncFindGameObjectById(triggerGuid);
-                await trigger.asyncReady();
-                trigger.onEnter.add((char) => {
-                    this.onEnterTrigger(char, value.ID, trigger);
-                });
-                trigger.onLeave.add((char) => {
-                    this.onLeaveTrigger(char);
-                });
-                let bagId = value.BagId;
-                this.triggerLocMap.set(bagId, trigger.worldTransform.position);
-                // if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
-                // let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-                // if (!actionPropElement.AssetId) {
-                //     bagId = actionPropElement.NextId;
-                // }
-                if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
-                    GameObject.asyncSpawn(value.ModelGuid_C).then((model) => {
-                        model.worldTransform.position = trigger.worldTransform.position;
-                        // model.worldTransform.rotation = trigger.worldTransform.rotation;
-                        // model.worldTransform.scale = trigger.worldTransform.scale;
-                    });
-                }
-            }
-            let npcId = value.NpcId;
-            if (npcId && npcId.length > 0) {
-                let npc = await GameObject.asyncFindGameObjectById(npcId);
-                await npc.asyncReady();
-                npc.complexMovementEnabled = false;
-                npc.collisionWithOtherCharacterEnabled = false;
-                let shareId = value.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        Utils.applySharedId(npc, shareIdStr);
-                    }
-                }
-                else {
-                    this.currentDescription = this.localPlayer.character.getDescription();
-                    npc.setDescription(this.currentDescription);
-                }
-                let npcAnimationId = value.NpcAnimationId;
-                if (npcAnimationId && npcAnimationId.length > 0) {
-                    await Utils.asyncDownloadAsset(npcAnimationId);
-                    npc.loadSubStance(npcAnimationId).play();
-                    setTimeout(() => {
-                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
-                    }, 1000);
-                }
-            }
-            console.error(this.triggerLocMap.size);
-        });
-    }
-    onEnterTrigger(char, id, go) {
-        if (char != Player.localPlayer.character)
-            return;
-        this.getOnClickPanel.showBtn(id, go);
-    }
-    onLeaveTrigger(char) {
-        if (char != Player.localPlayer.character)
-            return;
-        this.getOnClickPanel.hideBtn();
-    }
-    interact(isInteract, id) {
-        ExecutorManager.instance.pushAsyncExecutor(async () => {
-            let interact = GameConfig.Interact.getElement(id);
-            let bagId = interact.BagId;
-            if (bagId && bagId > 0) {
-                let modelGuid = interact.ModelGuid;
-                if (modelGuid && modelGuid.length > 0) {
-                    this.server.net_playInteract(bagId, modelGuid).then((interactCode) => {
-                        if (interactCode == 0) {
-                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                        }
-                    });
-                }
-                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId)
-                    bagId -= 1;
-                this.getHUDModuleC.action(bagId);
-                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-                if (!actionPropElement.AssetId) {
-                    bagId = actionPropElement.NextId;
-                }
-                this.setBagId(bagId);
-            }
-            let npcId = interact.NpcId;
-            if (npcId && npcId.length > 0) {
-                let shareId = interact.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
-                    }
-                }
-                else {
-                    this.localPlayer.character.setDescription(this.currentDescription);
-                    await this.localPlayer.character.asyncReady();
-                    this.localPlayer.character.syncDescription();
-                }
-            }
-        });
-    }
-    addClickBagItemAction(bagId) {
-        if (this.bagIds.includes(bagId))
-            return;
-        let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
-        if (nextId && nextId > 0)
-            bagId = nextId;
-        if (GlobalData.isOpenIAA) {
-            this.getAdPanel.showRewardAd(() => {
-                if (this.triggerLocMap.has(bagId)) {
-                    let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, () => { });
-                }
-            }, GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
-        }
-        else {
-            this.getTipsPanel.showTips(() => {
-                if (this.triggerLocMap.has(bagId)) {
-                    let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, () => { });
-                }
-            }, GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
-        }
-    }
-    initBagIds() {
-        this.bagIds = this.data.bagIds;
-    }
-    setBagId(bagId) {
-        if (this.bagIds.includes(bagId))
-            return;
-        Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
-        this.bagIds.push(bagId);
-        this.server.net_setBagId(bagId);
-    }
-    get getBagIds() {
-        return this.bagIds;
-    }
-    get getGuidePanel() {
-        if (this.guidePanel == null) {
-            this.guidePanel = mw.UIService.getUI(GuidePanel);
-        }
-        return this.guidePanel;
-    }
-    initGuide() {
-        this.guideStep = this.data.guideStep;
-        this.startGuide();
-    }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.server.net_setGuideStep(addStep);
-    }
-    startGuide() {
-        if (!this.guideBagIds || this.guideBagIds.length == 0)
-            return;
-        if (this.guideStep >= this.guideBagIds.length - 1) {
-            this.localPlayer.character.asyncReady().then(() => {
-                TimeUtil.delaySecond(1).then(() => {
-                    // this.getHUDModuleC.onOpenClothAction.call();
-                    this.getHUDModuleC.onOpenMallAction.call();
-                });
-            });
-            return;
-        }
-        this.getGuidePanel.showStartTips(() => {
-            // this.getHUDModuleC.onOpenClothAction.call();
-            this.getHUDModuleC.onOpenMallAction.call();
-            let bagId = this.guideBagIds[0];
-            console.error(`bagId1:${bagId}`);
-            if (!this.triggerLocMap.has(bagId)) {
-                console.error(`bagId2:${bagId}`);
-                return;
-            }
-            let targetLoc = this.triggerLocMap.get(bagId);
-            console.error(`targetLoc:${targetLoc}`);
-            Utils.startGuide(targetLoc, () => {
-                this.setGuideStep(1);
-                this.getGuidePanel.showStepTips(bagId, () => {
-                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                    if (this.guideStep >= this.guideBagIds.length)
-                        return;
-                    bagId = this.guideBagIds[1];
-                    if (!this.triggerLocMap.has(bagId))
-                        return;
-                    targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, () => {
-                        this.setGuideStep(1);
-                        this.getGuidePanel.showStepTips(bagId, () => {
-                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                            if (this.guideStep >= this.guideBagIds.length)
-                                return;
-                            bagId = this.guideBagIds[2];
-                            if (!this.triggerLocMap.has(bagId))
-                                return;
-                            targetLoc = this.triggerLocMap.get(bagId);
-                            Utils.startGuide(targetLoc, () => {
-                                this.setGuideStep(1);
-                                this.getGuidePanel.showStepTips(bagId, () => {
-                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                    if (this.guideStep >= this.guideBagIds.length)
-                                        return;
-                                    bagId = this.guideBagIds[3];
-                                    if (!this.triggerLocMap.has(bagId))
-                                        return;
-                                    targetLoc = this.triggerLocMap.get(bagId);
-                                    Utils.startGuide(targetLoc, () => {
-                                        this.setGuideStep(1);
-                                        this.getGuidePanel.showStepTips(bagId, () => {
-                                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            this.getGuidePanel.showStepTips(bagId, () => {
-                                                this.getGuidePanel.showStartTips(() => {
-                                                }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                            }, GameConfig.Language.Text_UpNext.Value);
-                                        }, GameConfig.Language.Text_UpNext.Value);
-                                    });
-                                }, GameConfig.Language.Text_UpNext.Value);
-                            });
-                        }, GameConfig.Language.Text_UpNext.Value);
-                    });
-                }, GameConfig.Language.Text_UpNext.Value);
-            });
-        }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
-    }
-}
-class InteractionModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.rankModuleS = null;
-        this.modelGuidMap = new Map();
-        this.usingBagIdMap = new Map();
-    }
-    get getRankModuleS() {
-        if (this.rankModuleS == null) {
-            this.rankModuleS = ModuleService.getModule(RankModuleS);
-        }
-        return this.rankModuleS;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-    onPlayerLeft(player) {
-    }
-    async net_playInteract(bagId, modelGuid) {
-        let player = this.currentPlayer;
-        let playerId = player.playerId;
-        let usingBagIds = [];
-        if (this.usingBagIdMap.has(playerId)) {
-            usingBagIds = this.usingBagIdMap.get(playerId);
-            if (usingBagIds.includes(bagId))
-                return 0;
-            usingBagIds.push(bagId);
-        }
-        else {
-            usingBagIds.push(bagId);
-            this.usingBagIdMap.set(playerId, usingBagIds);
-        }
-        console.error(`usingBagIds = ${usingBagIds}`);
-        let model = null;
-        if (this.modelGuidMap.has(modelGuid)) {
-            model = this.modelGuidMap.get(modelGuid);
-        }
-        else {
-            model = await mw.GameObject.asyncFindGameObjectById(modelGuid);
-            this.modelGuidMap.set(modelGuid, model);
-        }
-        await model.asyncReady();
-        this.placingItems(player, bagId, model).then(() => {
-            usingBagIds.splice(usingBagIds.indexOf(bagId), 1);
-            console.error(`usingBagIds = ${usingBagIds}`);
-        });
-        return 1;
-    }
-    async placingItems(player, bagId, itemMode) {
-        if (!player)
-            return;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        let animationId = actionPropElement.AnimationId;
-        if (animationId && animationId.length > 0) {
-            await Utils.asyncDownloadAsset(animationId);
-            let animation = player.character.loadAnimation(animationId);
-            if (actionPropElement.AnimationSlot)
-                animation.slot = actionPropElement.AnimationSlot;
-            let parameter = actionPropElement.AnimationParameter;
-            if (parameter && parameter.length > 0) {
-                animation.speed = parameter[0];
-                animation.loop = parameter[1];
-            }
-            animation.play();
-        }
-        let playAnimationTime = 1;
-        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
-            playAnimationTime = actionPropElement.AnimationParameter[0];
-        }
-        await TimeUtil.delaySecond(playAnimationTime);
-        let delayModeEffectId = null;
-        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
-        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
-            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
-            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
-            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
-                loopCount: 0,
-                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
-                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
-                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
-            });
-        }
-        let delayParameter = actionPropElement.DelayParameter;
-        let delayTime = delayParameter[0];
-        let delayCount = delayParameter[1];
-        let delayInterval = delayParameter[2];
-        await TimeUtil.delaySecond(delayTime - playAnimationTime);
-        for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve) => {
-                setTimeout(async () => {
-                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
-                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
-                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
-                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
-                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
-                            loopCount: 1,
-                            rotation: itemMode.worldTransform.rotation,
-                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
-                        });
-                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
-                        if (delayModeSoundId && delayModeSoundId.length > 0) {
-                            await Utils.asyncDownloadAsset(delayModeSoundId);
-                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
-                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], { radius: delayModeSoundParameter[1], falloffDistance: delayModeSoundParameter[1] * 1.2 });
-                        }
-                    }
-                    return resolve();
-                }, delayInterval * 1000);
-            });
-        }
-        if (actionPropElement.ID != 30004)
-            await TimeUtil.delaySecond(delayInterval);
-        if (delayModeEffectId)
-            EffectService.stop(delayModeEffectId);
-    }
-    net_setBagId(bagId) {
-        this.currentData.setBagId(bagId);
-        let score = this.currentData.bagIds.length;
-        this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
-    }
-    net_setGuideStep(addStep) {
-        this.currentData.setGuideStep(addStep);
-    }
-}
-__decorate([
-    Decorator.noReply()
-], InteractionModuleS.prototype, "net_setBagId", null);
-__decorate([
-    Decorator.noReply()
-], InteractionModuleS.prototype, "net_setGuideStep", null);
-class PlayerInteractor {
-    constructor() {
-        this.isCanSit = true;
-        this.interactor = null;
-    }
-}
-var OnClickType;
-(function (OnClickType) {
-    OnClickType[OnClickType["Sit"] = 1] = "Sit";
-    OnClickType[OnClickType["Shake"] = 2] = "Shake";
-    OnClickType[OnClickType["Dance"] = 3] = "Dance";
-})(OnClickType || (OnClickType = {}));
-class InteractionData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.bagIds = [];
-        this.guideStep = 0;
-    }
-    setBagId(bagId) {
-        if (this.bagIds.includes(bagId))
-            return;
-        this.bagIds.push(bagId);
-        this.save(false);
-    }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.save(false);
-    }
-}
-__decorate([
-    Decorator.persistence()
-], InteractionData.prototype, "bagIds", void 0);
-__decorate([
-    Decorator.persistence()
-], InteractionData.prototype, "guideStep", void 0);
-
-var foreign98 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    GuidePanel: GuidePanel,
-    InteractionData: InteractionData,
-    InteractionModuleC: InteractionModuleC,
-    InteractionModuleS: InteractionModuleS,
-    OnClickPanel: OnClickPanel,
-    get OnClickType () { return OnClickType; },
-    PlayerInteractor: PlayerInteractor
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
  * TIME: 2025.02.21-22.36.40
  */
@@ -7493,7 +6322,6 @@ class BagItem extends BagItem_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
-        this.interactionModuleC = null;
         this.bagId = 0;
         this.isHas = false;
     }
@@ -7503,12 +6331,13 @@ class BagItem extends BagItem_Generate$1 {
         }
         return this.danMuModuleC;
     }
-    get getInteractionModuleC() {
-        if (!this.interactionModuleC) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
-    }
+    // private interactionModuleC: InteractionModuleC = null;
+    // private get getInteractionModuleC(): InteractionModuleC {
+    // 	if (!this.interactionModuleC) {
+    // 		this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+    // 	}
+    // 	return this.interactionModuleC;
+    // }
     /**
      * 构造UI文件成功后，在合适的时机最先初始化一次
      */
@@ -7524,9 +6353,6 @@ class BagItem extends BagItem_Generate$1 {
     addClickButton() {
         if (this.isHas) {
             this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
-        }
-        else {
-            this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
         }
     }
     setDatas(bagId, isHas) {
@@ -8012,7 +6838,6 @@ class ChatPanel extends ChatPanel_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
-        this.interactionModuleC = null;
         //#region 聊天列表
         this.chatDatas = []; //聊天列表
         this.chatItems2 = []; //聊天列表
@@ -8043,12 +6868,13 @@ class ChatPanel extends ChatPanel_Generate$1 {
         }
         return this.danMuModuleC;
     }
-    get getInteractionModuleC() {
-        if (!this.interactionModuleC) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
-    }
+    // private interactionModuleC: InteractionModuleC = null;
+    // private get getInteractionModuleC(): InteractionModuleC {
+    // 	if (!this.interactionModuleC) {
+    // 		this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+    // 	}
+    // 	return this.interactionModuleC;
+    // }
     /**
      * 构造UI文件成功后，在合适的时机最先初始化一次
      */
@@ -8332,22 +7158,22 @@ class ChatPanel extends ChatPanel_Generate$1 {
         actionPropElement = actionPropElement.filter((value) => { return value.AssetId && value.AssetId != "" && value.Tab == tabIndex; });
         actionPropElement.sort((a, b) => { return a.Sort - b.Sort; });
         // if (!actionPropElement || actionPropElement.length == 0) return;
-        let bagIds = this.getInteractionModuleC.getBagIds;
+        // let bagIds: number[] = this.getInteractionModuleC.getBagIds;
         if (actionPropElement.length > this.bagItems.length) {
             for (let i = 0; i < this.bagItems.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                this.bagItems[i].setDatas(actionPropElement[i].ID, true);
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = this.bagItems.length; i < actionPropElement.length; ++i) {
                 let bagItem = mw.UIService.create(BagItem);
-                bagItem.setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                bagItem.setDatas(actionPropElement[i].ID, true);
                 this.mBagContentCanvas.addChild(bagItem.uiObject);
                 this.bagItems.push(bagItem);
             }
         }
         else {
             for (let i = 0; i < actionPropElement.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                this.bagItems[i].setDatas(actionPropElement[i].ID, true);
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = actionPropElement.length; i < this.bagItems.length; ++i) {
@@ -9974,6 +8800,476 @@ var foreign86 = /*#__PURE__*/Object.freeze({
     PlayerGlide: PlayerGlide,
     PlayerInteract: PlayerInteract,
     default: DanMuModuleS
+});
+
+// export class GuidePanel extends GuidePanel_Generate {
+//     protected onStart(): void {
+//         this.initUI();
+//         this.binButtons();
+//     }
+//     private initUI(): void {
+//         if (GlobalData.languageId == 0) {
+//             Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+//             Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.Collapsed);
+//             Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.SelfHitTestInvisible);
+//             Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.Collapsed);
+//         } else {
+//             Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.Collapsed);
+//             Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+//             Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.Collapsed);
+//             Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.SelfHitTestInvisible);
+//         }
+//     }
+//     private binButtons(): void {
+//         this.mClickNextStepButton.onClicked.add(this.onClickNextStepButton.bind(this));
+//         this.mClickStartButton.onClicked.add(this.onClickStartButton.bind(this));
+//     }
+//     private onClickNextStepButton(): void {
+//         if (this.clickNextStepCallBack) this.clickNextStepCallBack();
+//         this.hide();
+//     }
+//     private onClickStartButton(): void {
+//         if (this.clickStartCallBack) this.clickStartCallBack();
+//         this.hide();
+//     }
+//     private clickNextStepCallBack: () => void = null;
+//     public showStepTips(bagId: number, clickCallBack: () => void, clickTextBlock: string): void {
+//         if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+//         let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+//         if (!actionPropElement.AssetId) {
+//             bagId = actionPropElement.NextId;
+//         }
+//         this.setIcon(bagId);
+//         this.clickNextStepCallBack = clickCallBack;
+//         this.mClickNextStepTextBlock.text = clickTextBlock;
+//         Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.SelfHitTestInvisible);
+//         Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.Collapsed);
+//         this.show();
+//     }
+//     private setIcon(bagId: number): void {
+//         let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+//         if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
+//             if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+//                 actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+//             } else {
+//             }
+//         } else {
+//             if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+//                 actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+//             } else {
+//             }
+//         }
+//         if (actionPropElement.VehiclesIcon) {
+//             this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
+//         } else if (actionPropElement.Icon) {
+//             Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
+//         } else if (actionPropElement.AssetId) {
+//             Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
+//         } else if (bagId == actionPropElement.NextId) {
+//             let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
+//             if (nextActionPropElement.VehiclesIcon) {
+//                 this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
+//             } else if (nextActionPropElement.Icon) {
+//                 Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
+//             } else if (nextActionPropElement.AssetId) {
+//                 Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
+//             }
+//         }
+//     }
+//     private clickStartCallBack: () => void = null;
+//     public showStartTips(clickStartCallBack: () => void, clickStartTextBlock: string, contentTextBlock: string): void {
+//         this.clickStartCallBack = clickStartCallBack;
+//         this.mClickStartTextBlock.text = clickStartTextBlock;
+//         this.mContentTextBlock.text = contentTextBlock;
+//         Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.SelfHitTestInvisible);
+//         Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.Collapsed);
+//         this.show();
+//     }
+// }
+// export class OnClickPanel extends OnClickPanel_Generate {
+//     private hudModuleC: HUDModuleC = null;
+//     private get getHUDModuleC(): HUDModuleC {
+//         if (this.hudModuleC == null) {
+//             this.hudModuleC = ModuleService.getModule(HUDModuleC);
+//         }
+//         return this.hudModuleC;
+//     }
+//     private interactionModuleC: InteractionModuleC = null;
+//     private get getInteractionModuleC(): InteractionModuleC {
+//         if (this.interactionModuleC == null) {
+//             this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+//         }
+//         return this.interactionModuleC;
+//     }
+//     private id: number = -1;
+//     private offset: mw.Vector = new mw.Vector(0, 0, 0);
+//     private obj: mw.GameObject = null;
+//     /**
+//      * 构造UI文件成功后，在合适的时机最先初始化一次
+//      */
+//     protected onStart() {
+//         //设置能否每帧触发onUpdate
+//         this.canUpdate = false;
+//         this.layer = mw.UILayerMiddle;
+//         this.initUI();
+//         this.bindButtons();
+//         this.registerActions();
+//     }
+//     private initUI(): void {
+//         // Utils.setWidgetVisibility(this.mBgImage, mw.SlateVisibility.Collapsed);
+//     }
+//     /**按钮绑定 */
+//     private bindButtons(): void {
+//         this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
+//     }
+//     /**注册事件 */
+//     private registerActions(): void {
+//         this.getHUDModuleC.onExitAction.add(this.onExitHandler.bind(this));
+//     }
+//     private onExitHandler(): void {
+//         // this.getInteractionModuleC.interact(false, this.id);
+//     }
+//     private onClickButtons(): void {
+//         if (!this.id) return;
+//         console.warn("OnClickPanel-this.id = " + this.id);
+//         this.canUpdate = false;
+//         this.hide();
+//         if (this.id <= 0) return;
+//         this.getInteractionModuleC.interact(true, this.id);
+//     }
+//     /**显示NPC按钮 */
+//     public showBtn(id: number, obj: mw.GameObject): void {
+//         this.id = id;
+//         this.canUpdate = true;
+//         this.obj = obj;
+//         let pos = InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
+//         this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
+//         this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
+//         this.show();
+//     }
+//     /**隐藏NPC按钮 */
+//     public hideBtn(): void {
+//         this.canUpdate = false;
+//         this.hide();
+//     }
+//     protected onShow(...params: any[]): void {
+//         console.error("[OnClickPanel-onShow]");
+//     }
+//     protected onUpdate(dt: number) {
+//         if (!this.obj) return;
+//         let pos: mw.Vector2 = mw.InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
+//         this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(0.5));
+//     }
+// }
+class InteractionModuleC extends ModuleC {
+    constructor() {
+        // private onClickPanel: OnClickPanel = null;
+        // private get getOnClickPanel(): OnClickPanel {
+        //     if (this.onClickPanel == null) {
+        //         this.onClickPanel = mw.UIService.getUI(OnClickPanel);
+        //     }
+        //     return this.onClickPanel;
+        // }
+        // private hudModuleC: HUDModuleC = null;
+        // private get getHUDModuleC(): HUDModuleC {
+        //     if (this.hudModuleC == null) {
+        //         this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        //     }
+        //     return this.hudModuleC;
+        // }
+        // private adPanel: AdPanel = null;
+        // private get getAdPanel(): AdPanel {
+        //     if (this.adPanel == null) {
+        //         this.adPanel = mw.UIService.getUI(AdPanel);
+        //     }
+        //     return this.adPanel;
+        // }
+        // private tipsPanel: TipsPanel = null;
+        // private get getTipsPanel(): TipsPanel {
+        //     if (this.tipsPanel == null) {
+        //         this.tipsPanel = mw.UIService.getUI(TipsPanel);
+        //     }
+        //     return this.tipsPanel;
+        // }
+        // public onClickBagItemAction: Action1<number> = new Action1<number>();
+        super(...arguments);
+        this.currentDescription = null;
+        this.triggerLocMap = new Map();
+        // private onEnterTrigger(char: mw.Character, id: number, go: mw.GameObject): void {
+        //     if (char != Player.localPlayer.character) return;
+        //     // this.getOnClickPanel.showBtn(id, go);
+        // }
+        // private onLeaveTrigger(char: mw.Character): void {
+        //     if (char != Player.localPlayer.character) return;
+        //     // this.getOnClickPanel.hideBtn();
+        // }
+        // public interact(isInteract: boolean, id: number): void {
+        //     ExecutorManager.instance.pushAsyncExecutor(async () => {
+        //         let interact = GameConfig.Interact.getElement(id);
+        //         let bagId = interact.BagId;
+        //         if (bagId && bagId > 0) {
+        //             let modelGuid = interact.ModelGuid;
+        //             if (modelGuid && modelGuid.length > 0) {
+        //                 this.server.net_playInteract(bagId, modelGuid).then((interactCode: number) => {
+        //                     if (interactCode == 0) {
+        //                         Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
+        //                     }
+        //                 });
+        //             }
+        //             if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+        //             this.getHUDModuleC.action(bagId);
+        //             let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        //             if (!actionPropElement.AssetId) {
+        //                 bagId = actionPropElement.NextId;
+        //             }
+        //             this.setBagId(bagId);
+        //         }
+        //         let npcId = interact.NpcId;
+        //         if (npcId && npcId.length > 0) {
+        //             let shareId = interact.ShareId;
+        //             if (shareId > 0) {
+        //                 let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+        //                 if (shareIdStr && shareIdStr.length > 0) {
+        //                     await Utils.applySharedId(this.localPlayer.character, shareIdStr);
+        //                 }
+        //             } else {
+        //                 this.localPlayer.character.setDescription(this.currentDescription);
+        //                 await this.localPlayer.character.asyncReady();
+        //                 this.localPlayer.character.syncDescription();
+        //             }
+        //         }
+        //     });
+        // }
+        // private addClickBagItemAction(bagId: number): void {
+        //     if (this.bagIds.includes(bagId)) return;
+        //     let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
+        //     if (nextId && nextId > 0) bagId = nextId;
+        //     if (GlobalData.isOpenIAA) {
+        //         this.getAdPanel.showRewardAd(() => {
+        //             if (this.triggerLocMap.has(bagId)) {
+        //                 let targetLoc = this.triggerLocMap.get(bagId);
+        //                 Utils.startGuide(targetLoc, () => { });
+        //             }
+        //         }, GameConfig.Language.Text_ADGetTips.Value
+        //             , GameConfig.Language.Text_Dont.Value
+        //             , GameConfig.Language.Text_Free.Value);
+        //     } else {
+        //         this.getTipsPanel.showTips(() => {
+        //             if (this.triggerLocMap.has(bagId)) {
+        //                 let targetLoc = this.triggerLocMap.get(bagId);
+        //                 Utils.startGuide(targetLoc, () => { });
+        //             }
+        //         }, GameConfig.Language.Text_BootPrompt.Value,
+        //             GameConfig.Language.Text_FreeGuideYouGet.Value,
+        //             GameConfig.Language.Text_Dont.Value,
+        //             GameConfig.Language.Text_Free.Value);
+        //     }
+        // }
+        // private initBagIds(): void {
+        //     this.bagIds = this.data.bagIds;
+        // }
+        // private bagIds: number[] = [];
+        // public setBagId(bagId: number): void {
+        //     if (this.bagIds.includes(bagId)) return;
+        //     Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
+        //     this.bagIds.push(bagId);
+        //     this.server.net_setBagId(bagId);
+        // }
+        // public get getBagIds(): number[] {
+        //     return this.bagIds;
+        // }
+        // private guidePanel: GuidePanel = null;
+        // private get getGuidePanel(): GuidePanel {
+        //     if (this.guidePanel == null) {
+        //         this.guidePanel = mw.UIService.getUI(GuidePanel);
+        //     }
+        //     return this.guidePanel;
+        // }
+        // private initGuide(): void {
+        //     this.guideStep = this.data.guideStep;
+        //     this.startGuide();
+        // }
+        // private guideStep: number = 0;
+        // public setGuideStep(addStep: number): void {
+        //     this.guideStep += addStep;
+        //     this.server.net_setGuideStep(addStep);
+        // }
+        // private guideBagIds: number[] = [60004, 20002, 10106, 30002];
+        // private startGuide(): void {
+        //     if (!this.guideBagIds || this.guideBagIds.length == 0) return;
+        //     if (this.guideStep >= this.guideBagIds.length - 1) {
+        //         this.localPlayer.character.asyncReady().then(() => {
+        //             TimeUtil.delaySecond(1).then(() => {
+        //                 // this.getHUDModuleC.onOpenClothAction.call();
+        //                 this.getHUDModuleC.onOpenMallAction.call();
+        //             });
+        //         });
+        //         return;
+        //     }
+        //     this.getGuidePanel.showStartTips(() => {
+        //         // this.getHUDModuleC.onOpenClothAction.call();
+        //         this.getHUDModuleC.onOpenMallAction.call();
+        //         let bagId = this.guideBagIds[0];
+        //         console.error(`bagId1:${bagId}`);
+        //         if (!this.triggerLocMap.has(bagId)) {
+        //             console.error(`bagId2:${bagId}`);
+        //             return;
+        //         }
+        //         let targetLoc = this.triggerLocMap.get(bagId);
+        //         console.error(`targetLoc:${targetLoc}`);
+        //         Utils.startGuide(targetLoc, () => {
+        //             this.setGuideStep(1);
+        //             this.getGuidePanel.showStepTips(bagId, () => {
+        //                 this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
+        //                 if (this.guideStep >= this.guideBagIds.length) return;
+        //                 bagId = this.guideBagIds[1];
+        //                 if (!this.triggerLocMap.has(bagId)) return;
+        //                 targetLoc = this.triggerLocMap.get(bagId);
+        //                 Utils.startGuide(targetLoc, () => {
+        //                     this.setGuideStep(1);
+        //                     this.getGuidePanel.showStepTips(bagId, () => {
+        //                         this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
+        //                         if (this.guideStep >= this.guideBagIds.length) return;
+        //                         bagId = this.guideBagIds[2];
+        //                         if (!this.triggerLocMap.has(bagId)) return;
+        //                         targetLoc = this.triggerLocMap.get(bagId);
+        //                         Utils.startGuide(targetLoc, () => {
+        //                             this.setGuideStep(1);
+        //                             this.getGuidePanel.showStepTips(bagId, () => {
+        //                                 this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
+        //                                 if (this.guideStep >= this.guideBagIds.length) return;
+        //                                 bagId = this.guideBagIds[3];
+        //                                 if (!this.triggerLocMap.has(bagId)) return;
+        //                                 targetLoc = this.triggerLocMap.get(bagId);
+        //                                 Utils.startGuide(targetLoc, () => {
+        //                                     this.setGuideStep(1);
+        //                                     this.getGuidePanel.showStepTips(bagId, () => {
+        //                                         this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
+        //                                         this.getGuidePanel.showStepTips(bagId, () => {
+        //                                             this.getGuidePanel.showStartTips(() => {
+        //                                             }, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+        //                                         }, GameConfig.Language.Text_UpNext.Value);
+        //                                     }, GameConfig.Language.Text_UpNext.Value);
+        //                                 });
+        //                             }, GameConfig.Language.Text_UpNext.Value);
+        //                         });
+        //                     }, GameConfig.Language.Text_UpNext.Value);
+        //                 });
+        //             }, GameConfig.Language.Text_UpNext.Value);
+        //         });
+        //     }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
+        // }
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.bindEvent();
+    }
+    onEnterScene(sceneType) {
+        // this.initBagIds();
+        // this.initGuide();
+        this.findTriggers();
+    }
+    bindEvent() {
+        // this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
+    }
+    findTriggers() {
+        GameConfig.Interact.getAllElement().forEach(async (value) => {
+            // let triggerGuid = value.TriggerGuid;
+            // if (triggerGuid && triggerGuid.length > 0) {
+            //     let trigger = await GameObject.asyncFindGameObjectById(triggerGuid) as mw.Trigger;
+            //     await trigger.asyncReady();
+            //     trigger.onEnter.add((char: mw.Character) => {
+            //         this.onEnterTrigger(char, value.ID, trigger);
+            //     });
+            //     trigger.onLeave.add((char: mw.Character) => {
+            //         this.onLeaveTrigger(char);
+            //     });
+            //     let bagId = value.BagId;
+            //     this.triggerLocMap.set(bagId, trigger.worldTransform.position);
+            //     // if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
+            //     // let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+            //     // if (!actionPropElement.AssetId) {
+            //     //     bagId = actionPropElement.NextId;
+            //     // }
+            //     if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
+            //         GameObject.asyncSpawn(value.ModelGuid_C).then((model: mw.GameObject) => {
+            //             model.worldTransform.position = trigger.worldTransform.position;
+            //             // model.worldTransform.rotation = trigger.worldTransform.rotation;
+            //             // model.worldTransform.scale = trigger.worldTransform.scale;
+            //         });
+            //     }
+            // }
+            let npcId = value.NpcId;
+            if (npcId && npcId.length > 0) {
+                let npc = await GameObject.asyncFindGameObjectById(npcId);
+                await npc.asyncReady();
+                npc.complexMovementEnabled = false;
+                npc.collisionWithOtherCharacterEnabled = false;
+                let shareId = value.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        Utils.applySharedId(npc, shareIdStr);
+                    }
+                }
+                else {
+                    this.currentDescription = this.localPlayer.character.getDescription();
+                    npc.setDescription(this.currentDescription);
+                }
+                let npcAnimationId = value.NpcAnimationId;
+                if (npcAnimationId && npcAnimationId.length > 0) {
+                    await Utils.asyncDownloadAsset(npcAnimationId);
+                    npc.loadSubStance(npcAnimationId).play();
+                    setTimeout(() => {
+                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
+                    }, 1000);
+                }
+            }
+            console.error(this.triggerLocMap.size);
+        });
+    }
+}
+class InteractionModuleS extends ModuleS {
+    // private rankModuleS: RankModuleS = null;
+    // private get getRankModuleS(): RankModuleS {
+    //     if (this.rankModuleS == null) {
+    //         this.rankModuleS = ModuleService.getModule(RankModuleS);
+    //     }
+    //     return this.rankModuleS;
+    // }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+}
+// export class PlayerInteractor {
+//     public isCanSit: boolean = true;
+//     public interactor: mw.Interactor = null;
+// }
+// export enum OnClickType {
+//     Sit = 1,
+//     Shake = 2,
+//     Dance = 3,
+// }
+// export class InteractionData extends Subdata {
+// @Decorator.persistence()
+// public bagIds: number[] = [];
+// @Decorator.persistence()
+// public guideStep: number = 0;
+// public setBagId(bagId: number): void {
+//     if (this.bagIds.includes(bagId)) return;
+//     this.bagIds.push(bagId);
+//     this.save(false);
+// }
+// public setGuideStep(addStep: number): void {
+//     this.guideStep += addStep;
+//     this.save(false);
+// }
+// }
+
+var foreign98 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    InteractionModuleC: InteractionModuleC,
+    InteractionModuleS: InteractionModuleS
 });
 
 class MallData extends Subdata {
@@ -16183,8 +15479,8 @@ class NavigationModuleC extends ModuleC {
     }
 }
 const navigationConfigs = [
-    { modelId: "040055A6", interactionObjId: "0A394447", npcId: "39AB2FB0", pathId: "356DCBF1", speed: 10 },
-    { modelId: "348F4F22", interactionObjId: "048FB28D", npcId: "254A21DD", pathId: "01087776", speed: 10 },
+    // { modelId: "040055A6", interactionObjId: "0A394447", npcId: "39AB2FB0", pathId: "356DCBF1", speed: 10 },
+    // { modelId: "348F4F22", interactionObjId: "048FB28D", npcId: "254A21DD", pathId: "01087776", speed: 10 },
     { modelId: "289E46DE", interactionObjId: "09295629", npcId: "31DE1825", pathId: "340AFE18", speed: 10 },
     { modelId: "2963B95A", interactionObjId: "1CEC6972", npcId: "0A031A75", pathId: "1D44FD67", speed: 10 },
 ];
@@ -16241,6 +15537,63 @@ var foreign116 = /*#__PURE__*/Object.freeze({
     NavigationModel: NavigationModel,
     NavigationModuleC: NavigationModuleC,
     NavigationModuleS: NavigationModuleS
+});
+
+class RoomData {
+    constructor(userId, name, killCount, time) {
+        this.userId = "";
+        this.playerName = "";
+        this.score = 0;
+        this.time = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+    }
+    setData(userId, name, killCount, time) {
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+    }
+}
+class WorldData {
+    constructor(userId, name, time) {
+        this.userId = "";
+        this.playerName = "";
+        this.time = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+    setData(userId, name, time) {
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+}
+class RankData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.time = 0;
+    }
+    setTime(addTime) {
+        this.time += addTime;
+        this.save(false);
+    }
+    get getTime() {
+        return this.time;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], RankData.prototype, "time", void 0);
+
+var foreign117 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    RankData: RankData,
+    RoomData: RoomData,
+    WorldData: WorldData
 });
 
 /**
@@ -16662,7 +16015,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
-        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
@@ -16775,7 +16128,13 @@ class RankModuleC extends ModuleC {
         this.hudModuleC = null;
         this.rankPanel = null;
         this.userId = null;
-        this.interactionData = null;
+        // private interactionData: InteractionData = null;
+        // private get getInteractionData(): InteractionData {
+        //     if (this.interactionData == null) {
+        //         this.interactionData = DataCenterC.getData(InteractionData);
+        //     }
+        //     return this.interactionData;
+        // }
         this.onOpenWorldRankAction = new Action();
         this.roomDatas = [];
         this.recycleRoomDatas = [];
@@ -16802,12 +16161,6 @@ class RankModuleC extends ModuleC {
         }
         return this.userId;
     }
-    get getInteractionData() {
-        if (this.interactionData == null) {
-            this.interactionData = DataCenterC.getData(InteractionData);
-        }
-        return this.interactionData;
-    }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
         this.initEventAction();
@@ -16833,10 +16186,10 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData.bagIds;
-            let score = (!bagIds) ? 0 : bagIds.length;
+            // let bagIds = this.getInteractionData.bagIds;
+            // let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
-            this.server.net_onEnterScene(nickName, score, time);
+            this.server.net_onEnterScene(nickName, 0, time);
         });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
@@ -16942,6 +16295,276 @@ class RankModuleC extends ModuleC {
 var foreign118 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankModuleC
+});
+
+class RankModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.worldDatas = [];
+        this.isInitWorldDatas = false;
+        this.time = 60;
+        this.timer = 0;
+        this.syncPlayerMap = new Map();
+        // @Decorator.noReply()
+        // public net_updateSyncPlayer(isSync: boolean): void {
+        //     let player = this.currentPlayer;
+        //     if (!this.syncPlayerMap.has(player)) return;
+        //     this.syncPlayerMap.set(player, isSync);
+        //     if (isSync) this.synchrodata_aRoomWorld(player);
+        // }
+        this.roomDataMap = new Map();
+        // private roomUserIds: string[] = [];
+        // private roomNames: string[] = [];
+        // private roomScores: number[] = [];
+        // private roomTimes: number[] = [];
+        // private updateRoomData(): void {
+        //     if (this.roomDataMap.size == 0 || !this.roomDataMap) return;
+        //     this.roomUserIds.length = 0;
+        //     this.roomNames.length = 0;
+        //     this.roomScores.length = 0;
+        //     this.roomDataMap.forEach((value: RoomData, key: string) => {
+        //         this.roomUserIds.push(value.userId);
+        //         this.roomNames.push(value.playerName);
+        //         this.roomScores.push(value.score);
+        //         this.roomTimes.push(value.time);
+        //     });
+        // }
+        this.worldUserIds = [];
+        this.worldNames = [];
+        this.worldTimes = [];
+        // private synchrodata_RoomWorld(): void {
+        //     this.updateRoomData();
+        //     this.updateWorldData();
+        //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+        // if (!value) return;
+        //         this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+        //             this.worldUserIds, this.worldNames, this.worldTimes);
+        //     });
+        // }
+        // private synchrodata_aRoomWorld(player: mw.Player): void {
+        //     this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+        //         this.worldUserIds, this.worldNames, this.worldTimes);
+        // }
+        // public getNamesByUserId(userId1: string, userId2: string): string[] {
+        //     if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
+        //         return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
+        //     }
+        //     return null;
+        // }
+        // public getNameByUserId(userId: string): string {
+        //     if (this.roomDataMap.has(userId)) {
+        //         return this.roomDataMap.get(userId).playerName;
+        //     }
+        //     return null;
+        // }
+        // private redFirstModel: mw.Model = null;
+        // private blueFirstModel: mw.Model = null;
+        // @Decorator.noReply()
+        // public net_setFirstModel(isRed: boolean): void {
+        //     let character = this.currentPlayer.character;
+        //     this.setFirstModel(character, isRed);
+        // }
+        // private async setFirstModel(character: mw.Character, isRed: boolean): Promise<void> {
+        //     if (isRed) {
+        //         if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
+        //         character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
+        //         this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+        //         this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        //     } else {
+        //         if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
+        //         character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
+        //         this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+        //         this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        //     }
+        // }
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.initData();
+    }
+    async initData() {
+        this.worldDatas = (await Utils.getCustomdata("WorldData"));
+        this.isInitWorldDatas = true;
+    }
+    onUpdate(dt) {
+        this.timer += dt;
+        if (this.timer >= this.time) {
+            this.timer = 0;
+            this.refreshTime();
+        }
+    }
+    onPlayerLeft(player) {
+        let userId = player.userId;
+        if (this.roomDataMap.has(userId))
+            this.roomDataMap.delete(userId);
+        if (this.syncPlayerMap.has(player))
+            this.syncPlayerMap.delete(player);
+        // this.synchrodata_Room();
+    }
+    net_onEnterScene(playerName, score, time) {
+        this.syncPlayerMap.set(this.currentPlayer, false);
+        let userId = this.currentPlayer.userId;
+        this.currentPlayer.character.displayName = playerName;
+        this.onEnterScene(userId, playerName, score, time);
+    }
+    onEnterScene(userId, playerName, score, time) {
+        let roomData = new RoomData(userId, playerName, score, time);
+        this.roomDataMap.set(userId, roomData);
+        let worldData = new WorldData(userId, playerName, time);
+        this.isRefreshWorldData([worldData]);
+        this.synchrodata_onEnterScene(userId);
+    }
+    // public refreshScore(userId: string, score: number): void {
+    //     if (!this.roomDataMap.has(userId)) return;
+    //     let roomData = this.roomDataMap.get(userId);
+    //     roomData.score = score;
+    //     this.synchrodata_Room();
+    // }
+    async refreshTime() {
+        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
+            return;
+        let tmpWorldDatas = [];
+        this.syncPlayerMap.forEach((value, key) => {
+            DataCenterS.getData(key, RankData).setTime(1);
+            let userId = key.userId;
+            if (!this.roomDataMap.has(userId))
+                return;
+            let roomData = this.roomDataMap.get(userId);
+            roomData.time += 1;
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            tmpWorldDatas.push(worldData);
+        });
+        this.worldDatas = (await Utils.getCustomdata("WorldData"));
+        this.isRefreshWorldData(tmpWorldDatas);
+        this.synchrodata_World();
+    }
+    isRefreshWorldData(tmpWorldDatas) {
+        if (!this.isInitWorldDatas)
+            return false;
+        if (this.worldDatas == null)
+            this.worldDatas = [];
+        let isNeedSave = false;
+        for (let k = 0; k < tmpWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let worldData = tmpWorldDatas[k];
+            if (this.worldDatas.length < GlobalData.worldCount) {
+                if (this.worldDatas.length == 0) {
+                    this.worldDatas.push(worldData);
+                    isPush = true;
+                    isNeedSave = true;
+                }
+                else {
+                    for (let i = 0; i < this.worldDatas.length; ++i) {
+                        if (this.worldDatas[i].userId != worldData.userId)
+                            continue;
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 1);
+                            break;
+                        }
+                        else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+                    if (ishasData)
+                        continue;
+                    for (let i = 0; i < this.worldDatas.length; i++) {
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 0, worldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+                    if (!isPush) {
+                        this.worldDatas.push(worldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            }
+            else {
+                for (let i = 0; i < this.worldDatas.length; ++i) {
+                    if (this.worldDatas[i].userId != worldData.userId)
+                        continue;
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    }
+                    else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+                if (ishasData)
+                    continue;
+                for (let i = 0; i < this.worldDatas.length; i++) {
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 0, worldData);
+                        if (!ishasDelete) {
+                            this.worldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            Utils.setCustomData("WorldData", this.worldDatas);
+        }
+        return isNeedSave;
+    }
+    updateWorldData() {
+        if (!this.worldDatas || this.worldDatas.length == 0)
+            return;
+        this.worldUserIds.length = 0;
+        this.worldNames.length = 0;
+        this.worldTimes.length = 0;
+        for (let i = 0; i < this.worldDatas.length; i++) {
+            this.worldUserIds.push(this.worldDatas[i].userId);
+            this.worldNames.push(this.worldDatas[i].playerName);
+            this.worldTimes.push(this.worldDatas[i].time);
+        }
+    }
+    synchrodata_onEnterScene(sendUserId) {
+        // this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            if (sendUserId == key.userId) {
+                // this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+                //     this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+            }
+        });
+    }
+    // private synchrodata_Room(): void {
+    //     this.updateRoomData();
+    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+    // if (!value) return;
+    // this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+    //     });
+    // }
+    synchrodata_World() {
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+        });
+    }
+}
+__decorate([
+    Decorator.noReply()
+], RankModuleS.prototype, "net_onEnterScene", null);
+
+var foreign119 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankModuleS
 });
 
 /**
@@ -18052,7 +17675,7 @@ let GameStart = class GameStart extends Script {
     registerModule() {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
-        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, InteractionData);
+        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
         ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
@@ -18846,6 +18469,209 @@ var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 var foreign137 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/InteractionModule/GuidePanel.ui
+ * TIME: 2025.02.21-22.36.41
+ */
+let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
+    get mMainBgImage_0() {
+        if (!this.mMainBgImage_0_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0');
+        }
+        return this.mMainBgImage_0_Internal;
+    }
+    get mItemCanvas() {
+        if (!this.mItemCanvas_Internal && this.uiWidgetBase) {
+            this.mItemCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas');
+        }
+        return this.mItemCanvas_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mItemCanvas/mIconImage');
+        }
+        return this.mIconImage_Internal;
+    }
+    get mTitleImage_0() {
+        if (!this.mTitleImage_0_Internal && this.uiWidgetBase) {
+            this.mTitleImage_0_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_0');
+        }
+        return this.mTitleImage_0_Internal;
+    }
+    get mTitleImage_1() {
+        if (!this.mTitleImage_1_Internal && this.uiWidgetBase) {
+            this.mTitleImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mTitleImage_1');
+        }
+        return this.mTitleImage_1_Internal;
+    }
+    get mClickNextStepButton() {
+        if (!this.mClickNextStepButton_Internal && this.uiWidgetBase) {
+            this.mClickNextStepButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton');
+        }
+        return this.mClickNextStepButton_Internal;
+    }
+    get mClickNextStepTextBlock() {
+        if (!this.mClickNextStepTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickNextStepTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_0/mClickNextStepButton/mClickNextStepTextBlock');
+        }
+        return this.mClickNextStepTextBlock_Internal;
+    }
+    get mMainBgImage_1() {
+        if (!this.mMainBgImage_1_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_1_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1');
+        }
+        return this.mMainBgImage_1_Internal;
+    }
+    get mTitleImage_2() {
+        if (!this.mTitleImage_2_Internal && this.uiWidgetBase) {
+            this.mTitleImage_2_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_2');
+        }
+        return this.mTitleImage_2_Internal;
+    }
+    get mTitleImage_3() {
+        if (!this.mTitleImage_3_Internal && this.uiWidgetBase) {
+            this.mTitleImage_3_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mTitleImage_3');
+        }
+        return this.mTitleImage_3_Internal;
+    }
+    get mContentTextBlock() {
+        if (!this.mContentTextBlock_Internal && this.uiWidgetBase) {
+            this.mContentTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mContentTextBlock');
+        }
+        return this.mContentTextBlock_Internal;
+    }
+    get mClickStartButton() {
+        if (!this.mClickStartButton_Internal && this.uiWidgetBase) {
+            this.mClickStartButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton');
+        }
+        return this.mClickStartButton_Internal;
+    }
+    get mClickStartTextBlock() {
+        if (!this.mClickStartTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickStartTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainBgImage_1/mClickStartButton/mClickStartTextBlock');
+        }
+        return this.mClickStartTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickNextStepButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
+        });
+        this.mClickNextStepButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mClickStartButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
+        });
+        this.mClickStartButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mClickNextStepTextBlock);
+        this.initLanguage(this.mContentTextBlock);
+        this.initLanguage(this.mClickStartTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+GuidePanel_Generate = __decorate([
+    UIBind('UI/module/InteractionModule/GuidePanel.ui')
+], GuidePanel_Generate);
+var GuidePanel_Generate$1 = GuidePanel_Generate;
+
+var foreign155 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: GuidePanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/InteractionModule/OnClickPanel.ui
+ * TIME: 2025.02.21-22.36.41
+ */
+let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickBtn() {
+        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
+            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mClickBtn');
+        }
+        return this.mClickBtn_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickBtn.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
+        });
+        this.mClickBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+OnClickPanel_Generate = __decorate([
+    UIBind('UI/module/InteractionModule/OnClickPanel.ui')
+], OnClickPanel_Generate);
+var OnClickPanel_Generate$1 = OnClickPanel_Generate;
+
+var foreign156 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: OnClickPanel_Generate$1
 });
 
 const MWModuleMap = { 

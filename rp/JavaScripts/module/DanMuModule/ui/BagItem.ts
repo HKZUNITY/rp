@@ -1,7 +1,6 @@
 ﻿import { GameConfig } from "../../../configs/GameConfig";
 import Utils from "../../../tools/Utils";
 import BagItem_Generate from "../../../ui-generate/module/DanMuModule/BagItem_generate";
-import { InteractionModuleC } from "../../InteractionModule/InteractionModule";
 import DanMuModuleC from "../DanMuModuleC";
 
 export default class BagItem extends BagItem_Generate {
@@ -12,13 +11,13 @@ export default class BagItem extends BagItem_Generate {
 		}
 		return this.danMuModuleC;
 	}
-	private interactionModuleC: InteractionModuleC = null;
-	private get getInteractionModuleC(): InteractionModuleC {
-		if (!this.interactionModuleC) {
-			this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-		}
-		return this.interactionModuleC;
-	}
+	// private interactionModuleC: InteractionModuleC = null;
+	// private get getInteractionModuleC(): InteractionModuleC {
+	// 	if (!this.interactionModuleC) {
+	// 		this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+	// 	}
+	// 	return this.interactionModuleC;
+	// }
 
 	/** 
 	 * 构造UI文件成功后，在合适的时机最先初始化一次 
@@ -38,7 +37,7 @@ export default class BagItem extends BagItem_Generate {
 		if (this.isHas) {
 			this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
 		} else {
-			this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
+			// this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
 		}
 	}
 

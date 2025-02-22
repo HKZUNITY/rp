@@ -47,7 +47,7 @@ export default class RankPanel extends RankPanel_Generate {
 		this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
 
-		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
+		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
 
 		Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);

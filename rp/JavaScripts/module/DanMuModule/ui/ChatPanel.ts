@@ -3,8 +3,7 @@ import { GameConfig } from "../../../configs/GameConfig";
 import GlobalData from "../../../GlobalData";
 import Utils from "../../../tools/Utils";
 import ChatPanel_Generate from "../../../ui-generate/module/DanMuModule/ChatPanel_generate";
-import { InteractionModuleC } from "../../InteractionModule/InteractionModule";
-import { ChatData, ActionData } from "../DanMuData";
+import { ActionData, ChatData } from "../DanMuData";
 import DanMuModuleC from "../DanMuModuleC";
 import ActionItem from "./ActionItem";
 import ActionTabItem from "./ActionTabItem";
@@ -23,13 +22,13 @@ export default class ChatPanel extends ChatPanel_Generate {
 		return this.danMuModuleC;
 	}
 
-	private interactionModuleC: InteractionModuleC = null;
-	private get getInteractionModuleC(): InteractionModuleC {
-		if (!this.interactionModuleC) {
-			this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-		}
-		return this.interactionModuleC;
-	}
+	// private interactionModuleC: InteractionModuleC = null;
+	// private get getInteractionModuleC(): InteractionModuleC {
+	// 	if (!this.interactionModuleC) {
+	// 		this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
+	// 	}
+	// 	return this.interactionModuleC;
+	// }
 
 	/** 
 	 * 构造UI文件成功后，在合适的时机最先初始化一次 
@@ -358,21 +357,21 @@ export default class ChatPanel extends ChatPanel_Generate {
 		actionPropElement = actionPropElement.filter((value: IActionPropElement) => { return value.AssetId && value.AssetId != "" && value.Tab == tabIndex; });
 		actionPropElement.sort((a: IActionPropElement, b: IActionPropElement) => { return a.Sort - b.Sort; });
 		// if (!actionPropElement || actionPropElement.length == 0) return;
-		let bagIds: number[] = this.getInteractionModuleC.getBagIds;
+		// let bagIds: number[] = this.getInteractionModuleC.getBagIds;
 		if (actionPropElement.length > this.bagItems.length) {
 			for (let i = 0; i < this.bagItems.length; ++i) {
-				this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+				this.bagItems[i].setDatas(actionPropElement[i].ID, true);
 				Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
 			}
 			for (let i = this.bagItems.length; i < actionPropElement.length; ++i) {
 				let bagItem = mw.UIService.create(BagItem);
-				bagItem.setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+				bagItem.setDatas(actionPropElement[i].ID, true);
 				this.mBagContentCanvas.addChild(bagItem.uiObject);
 				this.bagItems.push(bagItem);
 			}
 		} else {
 			for (let i = 0; i < actionPropElement.length; ++i) {
-				this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+				this.bagItems[i].setDatas(actionPropElement[i].ID, true);
 				Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
 			}
 			for (let i = actionPropElement.length; i < this.bagItems.length; ++i) {

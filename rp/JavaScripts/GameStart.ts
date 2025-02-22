@@ -4,7 +4,7 @@ import GlobalData from "./GlobalData";
 import DanMuModuleC from "./module/DanMuModule/DanMuModuleC";
 import DanMuModuleS from "./module/DanMuModule/DanMuModuleS";
 import { HUDModuleC, HUDModuleS } from "./module/HUDModule/HUDModule";
-import { InteractionData, InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
+import { InteractionModuleC, InteractionModuleS } from "./module/InteractionModule/InteractionModule";
 import MallData from "./module/MallModule/MallData";
 import MallModuleC from "./module/MallModule/MallModuleC";
 import MallModuleS from "./module/MallModule/MallModuleS";
@@ -12,7 +12,7 @@ import { NavigationModuleC, NavigationModuleS } from "./module/NavigationModule/
 import { RankData } from "./module/RankModule/RankData";
 import RankModuleC from "./module/RankModule/RankModuleC";
 import RankModuleS from "./module/RankModule/RankModuleS";
-import { SetModuleS, SetModuleC, SetData } from "./module/SetModule/SetModule";
+import { SetData, SetModuleC, SetModuleS } from "./module/SetModule/SetModule";
 import SignInData from "./module/SignInModule/SignInData";
 import SignInModuleC from "./module/SignInModule/SignInModuleC";
 import SignInModuleS from "./module/SignInModule/SignInModuleS";
@@ -44,7 +44,7 @@ export default class GameStart extends Script {
     private registerModule(): void {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
-        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, InteractionData);
+        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
         ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);

@@ -1,8 +1,5 @@
-﻿import { Notice } from "../../common/notice/Notice";
-import { GameConfig } from "../../configs/GameConfig";
-import { EventType } from "../../GlobalData";
+﻿import { EventType } from "../../GlobalData";
 import { HUDModuleC } from "../HUDModule/HUDModule";
-import { InteractionData } from "../InteractionModule/InteractionModule";
 import { RankData, RoomData, WorldData } from "./RankData";
 import RankModuleS from "./RankModuleS";
 import RankPanel from "./ui/RankPanel";
@@ -32,13 +29,13 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         return this.userId;
     }
 
-    private interactionData: InteractionData = null;
-    private get getInteractionData(): InteractionData {
-        if (this.interactionData == null) {
-            this.interactionData = DataCenterC.getData(InteractionData);
-        }
-        return this.interactionData;
-    }
+    // private interactionData: InteractionData = null;
+    // private get getInteractionData(): InteractionData {
+    //     if (this.interactionData == null) {
+    //         this.interactionData = DataCenterC.getData(InteractionData);
+    //     }
+    //     return this.interactionData;
+    // }
 
     public onOpenWorldRankAction: Action = new Action();
 
@@ -70,10 +67,10 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData.bagIds;
-            let score = (!bagIds) ? 0 : bagIds.length;
+            // let bagIds = this.getInteractionData.bagIds;
+            // let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data.time;
-            this.server.net_onEnterScene(nickName, score, time);
+            this.server.net_onEnterScene(nickName, 0, time);
         });
     }
 

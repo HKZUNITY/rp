@@ -31,17 +31,17 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         let userId = player.userId;
         if (this.roomDataMap.has(userId)) this.roomDataMap.delete(userId);
         if (this.syncPlayerMap.has(player)) this.syncPlayerMap.delete(player);
-        this.synchrodata_Room();
+        // this.synchrodata_Room();
     }
 
     private syncPlayerMap: Map<mw.Player, boolean> = new Map<mw.Player, boolean>();
-    @Decorator.noReply()
-    public net_updateSyncPlayer(isSync: boolean): void {
-        let player = this.currentPlayer;
-        if (!this.syncPlayerMap.has(player)) return;
-        this.syncPlayerMap.set(player, isSync);
-        if (isSync) this.synchrodata_aRoomWorld(player);
-    }
+    // @Decorator.noReply()
+    // public net_updateSyncPlayer(isSync: boolean): void {
+    //     let player = this.currentPlayer;
+    //     if (!this.syncPlayerMap.has(player)) return;
+    //     this.syncPlayerMap.set(player, isSync);
+    //     if (isSync) this.synchrodata_aRoomWorld(player);
+    // }
 
     private roomDataMap: Map<string, RoomData> = new Map<string, RoomData>();
     @Decorator.noReply()
@@ -62,12 +62,12 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.synchrodata_onEnterScene(userId);
     }
 
-    public refreshScore(userId: string, score: number): void {
-        if (!this.roomDataMap.has(userId)) return;
-        let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
-        this.synchrodata_Room();
-    }
+    // public refreshScore(userId: string, score: number): void {
+    //     if (!this.roomDataMap.has(userId)) return;
+    //     let roomData = this.roomDataMap.get(userId);
+    //     roomData.score = score;
+    //     this.synchrodata_Room();
+    // }
 
     public async refreshTime(): Promise<void> {
         if (!this.syncPlayerMap || this.syncPlayerMap.size == 0) return;
@@ -164,22 +164,22 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         return isNeedSave;
     }
 
-    private roomUserIds: string[] = [];
-    private roomNames: string[] = [];
-    private roomScores: number[] = [];
-    private roomTimes: number[] = [];
-    private updateRoomData(): void {
-        if (this.roomDataMap.size == 0 || !this.roomDataMap) return;
-        this.roomUserIds.length = 0;
-        this.roomNames.length = 0;
-        this.roomScores.length = 0;
-        this.roomDataMap.forEach((value: RoomData, key: string) => {
-            this.roomUserIds.push(value.userId);
-            this.roomNames.push(value.playerName);
-            this.roomScores.push(value.score);
-            this.roomTimes.push(value.time);
-        });
-    }
+    // private roomUserIds: string[] = [];
+    // private roomNames: string[] = [];
+    // private roomScores: number[] = [];
+    // private roomTimes: number[] = [];
+    // private updateRoomData(): void {
+    //     if (this.roomDataMap.size == 0 || !this.roomDataMap) return;
+    //     this.roomUserIds.length = 0;
+    //     this.roomNames.length = 0;
+    //     this.roomScores.length = 0;
+    //     this.roomDataMap.forEach((value: RoomData, key: string) => {
+    //         this.roomUserIds.push(value.userId);
+    //         this.roomNames.push(value.playerName);
+    //         this.roomScores.push(value.score);
+    //         this.roomTimes.push(value.time);
+    //     });
+    // }
 
     private worldUserIds: string[] = [];
     private worldNames: string[] = [];
@@ -197,26 +197,27 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     }
 
     private synchrodata_onEnterScene(sendUserId: string): void {
-        this.updateRoomData();
+        // this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
-                    this.worldUserIds, this.worldNames, this.worldTimes);
+                // this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+                //     this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+                // this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
             }
         });
     }
 
-    private synchrodata_Room(): void {
-        this.updateRoomData();
-        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
-            // if (!value) return;
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
-        });
-    }
+    // private synchrodata_Room(): void {
+    //     this.updateRoomData();
+    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+    // if (!value) return;
+    // this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+    //     });
+    // }
 
     private synchrodata_World(): void {
         this.updateWorldData();
@@ -226,55 +227,55 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         });
     }
 
-    private synchrodata_RoomWorld(): void {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
-            // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
-                this.worldUserIds, this.worldNames, this.worldTimes);
-        });
-    }
+    // private synchrodata_RoomWorld(): void {
+    //     this.updateRoomData();
+    //     this.updateWorldData();
+    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+    // if (!value) return;
+    //         this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+    //             this.worldUserIds, this.worldNames, this.worldTimes);
+    //     });
+    // }
 
-    private synchrodata_aRoomWorld(player: mw.Player): void {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
-            this.worldUserIds, this.worldNames, this.worldTimes);
-    }
+    // private synchrodata_aRoomWorld(player: mw.Player): void {
+    //     this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+    //         this.worldUserIds, this.worldNames, this.worldTimes);
+    // }
 
-    public getNamesByUserId(userId1: string, userId2: string): string[] {
-        if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
-            return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
-        }
-        return null;
-    }
+    // public getNamesByUserId(userId1: string, userId2: string): string[] {
+    //     if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
+    //         return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
+    //     }
+    //     return null;
+    // }
 
-    public getNameByUserId(userId: string): string {
-        if (this.roomDataMap.has(userId)) {
-            return this.roomDataMap.get(userId).playerName;
-        }
-        return null;
-    }
+    // public getNameByUserId(userId: string): string {
+    //     if (this.roomDataMap.has(userId)) {
+    //         return this.roomDataMap.get(userId).playerName;
+    //     }
+    //     return null;
+    // }
 
-    private redFirstModel: mw.Model = null;
-    private blueFirstModel: mw.Model = null;
+    // private redFirstModel: mw.Model = null;
+    // private blueFirstModel: mw.Model = null;
 
-    @Decorator.noReply()
-    public net_setFirstModel(isRed: boolean): void {
-        let character = this.currentPlayer.character;
-        this.setFirstModel(character, isRed);
-    }
+    // @Decorator.noReply()
+    // public net_setFirstModel(isRed: boolean): void {
+    //     let character = this.currentPlayer.character;
+    //     this.setFirstModel(character, isRed);
+    // }
 
-    private async setFirstModel(character: mw.Character, isRed: boolean): Promise<void> {
-        if (isRed) {
-            if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        } else {
-            if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        }
-    }
+    // private async setFirstModel(character: mw.Character, isRed: boolean): Promise<void> {
+    //     if (isRed) {
+    //         if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
+    //         character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
+    //         this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+    //         this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+    //     } else {
+    //         if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
+    //         character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
+    //         this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+    //         this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+    //     }
+    // }
 }
