@@ -48,6 +48,7 @@ import {MuppetStylingOutfitConfig} from "./MuppetStylingOutfit";
 import {MusicConfig} from "./Music";
 import {NakedDressShoesConfig} from "./NakedDressShoes";
 import {OutfitConfig} from "./Outfit";
+import {PetConfig} from "./Pet";
 import {PupilStyleConfig} from "./PupilStyle";
 import {RightHandConfig} from "./RightHand";
 import {ScienceFictionStylingOutfitConfig} from "./ScienceFictionStylingOutfit";
@@ -135,6 +136,7 @@ export class GameConfig{
 	public static get Music():MusicConfig{ return this.getConfig(MusicConfig) };
 	public static get NakedDressShoes():NakedDressShoesConfig{ return this.getConfig(NakedDressShoesConfig) };
 	public static get Outfit():OutfitConfig{ return this.getConfig(OutfitConfig) };
+	public static get Pet():PetConfig{ return this.getConfig(PetConfig) };
 	public static get PupilStyle():PupilStyleConfig{ return this.getConfig(PupilStyleConfig) };
 	public static get RightHand():RightHandConfig{ return this.getConfig(RightHandConfig) };
 	public static get ScienceFictionStylingOutfit():ScienceFictionStylingOutfitConfig{ return this.getConfig(ScienceFictionStylingOutfitConfig) };

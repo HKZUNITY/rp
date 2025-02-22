@@ -16,6 +16,7 @@ import { ILongPantsBottomElement } from "../../../configs/LongPantsBottom";
 import { ILongSinglePieceTopElement } from "../../../configs/LongSinglePieceTop";
 import { ILongSkirtBottomElement } from "../../../configs/LongSkirtBottom";
 import { INakedDressShoesElement } from "../../../configs/NakedDressShoes";
+import { IPetElement } from "../../../configs/Pet";
 import { IRightHandElement } from "../../../configs/RightHand";
 import { IShortJacketTopElement } from "../../../configs/ShortJacketTop";
 import { IShortsBottomElement } from "../../../configs/ShortsBottom";
@@ -263,6 +264,12 @@ export default class MallItem_Small extends MallItem_Small_Generate {
 			case Tab3Type.Tab3_SportsShoes_Shoes:
 				let sportsShoesShoesElement: ISportsShoesShoesElement = GameConfig.SportsShoesShoes.getElement(assetId);
 				this.mIconImage.imageInfo.setByAssetIcon(sportsShoesShoesElement.AssetId, mw.AssetIconSize.Icon_128px);
+				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
+				break;
+			case Tab2Type.Tab2_Pet:
+				let petElement: IPetElement = GameConfig.Pet.getElement(assetId);
+				this.mIconImage.imageInfo.setByAssetIcon(petElement.AssetId, mw.AssetIconSize.Icon_128px);
 				Utils.setWidgetVisibility(this.mCoinIconImage, mw.SlateVisibility.SelfHitTestInvisible);
 				this.mPriceTextBlock.text = GameConfig.Language.Text_MallItem_Free.Value;
 				break;

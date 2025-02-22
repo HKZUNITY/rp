@@ -394,7 +394,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 await this.changeGloves(GameConfig.AccessoriesGloves.getElement(assetId).AssetId);
                 break;
             case Tab2Type.Tab2_Pet:
-                // this.localPlayer.character.description.advance.clothing.upperCloth.style = assetId;
+                let petElement = GameConfig.Pet.getElement(assetId);
+                if (!petElement) return;
+                await this.changeSlotAndDecoration(tabId, petElement.AssetId, Utils.stringArrayToTransform(petElement.Transform), mw.HumanoidSlotType.Root);
                 break;
             case Tab3Type.Tab3_PupilStyle:
                 if (this.localPlayer.character.description.advance.makeup.coloredContacts.style.pupilStyle != assetId) {
@@ -939,6 +941,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let trailingElement = GameConfig.Trailing.findElement(`AssetId`, trailing);
                 if (!trailingElement) return null;
                 return trailingElement.ID.toString();
+            case Tab2Type.Tab2_Pet:
+                let pet = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
+                if (!pet) return null;
+                let petElement = GameConfig.Pet.findElement(`AssetId`, pet);
+                if (!petElement) return null;
+                return petElement.ID.toString();
             default:
                 return null;
         }

@@ -40,6 +40,7 @@ import { ILowerHighlightElement } from "../../../configs/LowerHighlight";
 import { IMuppetStylingOutfitElement } from "../../../configs/MuppetStylingOutfit";
 import { INakedDressShoesElement } from "../../../configs/NakedDressShoes";
 import { IOutfitElement } from "../../../configs/Outfit";
+import { IPetElement } from "../../../configs/Pet";
 import { IPupilStyleElement } from "../../../configs/PupilStyle";
 import { IRightHandElement } from "../../../configs/RightHand";
 import { IScienceFictionStylingOutfitElement } from "../../../configs/ScienceFictionStylingOutfit";
@@ -469,7 +470,7 @@ export default class MallPanel extends MallPanel_Generate {
 				GameConfig.Gloves.getAllElement().forEach((value: IGlovesElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId); });
 				break;
 			case Tab2Type.Tab2_Pet:
-				// GameConfig.Top.getAllElement().forEach((value: ITopElement) => { this.mallItemAssetIds.push(value.AssetId); });
+				GameConfig.Pet.getAllElement().forEach((value: IPetElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			default:
 				break;

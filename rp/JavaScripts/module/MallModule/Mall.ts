@@ -376,6 +376,8 @@ export default class Mall {
         Tab3Type.Tab3_HolidayStyling_Suit,
         Tab3Type.Tab3_ScienceFictionStyling_Suit,
         Tab3Type.Tab3_AncientMolding_Suit,
+
+        Tab2Type.Tab2_Pet,
     ];
     public static isRemovableTabId(tabId: number): boolean {
         return this.removableTabIds.includes(tabId);
@@ -388,6 +390,7 @@ export default class Mall {
         Tab3Type.Tab3_Ear,
         Tab3Type.Tab3_Face,
         Tab3Type.Tab3_Hip,
+        Tab2Type.Tab2_Pet,
         Tab3Type.Tab3_Shoulder,
         Tab3Type.Tab3_Effects,
         Tab3Type.Tab3_Trailing
