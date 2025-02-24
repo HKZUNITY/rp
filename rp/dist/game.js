@@ -4800,6 +4800,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mOpenMallTextBlock, mw.SlateVisibility.Collapsed);
         }
     }
     updateFreeTime() {
@@ -16671,6 +16672,14 @@ class RankPanel extends RankPanel_Generate$1 {
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+        if (GlobalData.languageId == 0) {
+            this.mRoomRankTextBlock.fontSize = 15;
+            this.mRoomNameTextBlock.fontSize = 15;
+            this.mRoomScoreTextBlock.fontSize = 15;
+            this.mWorldRankTextBlock.fontSize = 15;
+            this.mWorldNameTextBlock.fontSize = 15;
+            this.mWorldTimeTextBlock.fontSize = 15;
+        }
     }
     bindOpenRoomRankButton() {
         if (!this.roomItems || this.roomItems?.length == 0) {

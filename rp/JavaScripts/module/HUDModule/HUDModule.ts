@@ -123,6 +123,7 @@ export class HUDPanel extends HUDPanel_Generate {
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mOpenMallTextBlock, mw.SlateVisibility.Collapsed);
         }
     }
 

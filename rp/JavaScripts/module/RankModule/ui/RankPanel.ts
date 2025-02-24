@@ -52,6 +52,15 @@ export default class RankPanel extends RankPanel_Generate {
 
 		Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+
+		if (GlobalData.languageId == 0) {
+			this.mRoomRankTextBlock.fontSize = 15;
+			this.mRoomNameTextBlock.fontSize = 15;
+			this.mRoomScoreTextBlock.fontSize = 15;
+			this.mWorldRankTextBlock.fontSize = 15;
+			this.mWorldNameTextBlock.fontSize = 15;
+			this.mWorldTimeTextBlock.fontSize = 15;
+		}
 	}
 
 	private bindOpenRoomRankButton(): void {
