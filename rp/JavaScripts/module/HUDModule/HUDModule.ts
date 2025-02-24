@@ -10,6 +10,7 @@ import SavePanel_Generate from "../../ui-generate/module/ShareModule/SavePanel_g
 import SharePanel_Generate from "../../ui-generate/module/ShareModule/SharePanel_generate";
 import AdPanel from "../AdModule/ui/AdPanel";
 import DanMuModuleC from "../DanMuModule/DanMuModuleC";
+import SignInModuleC from "../SignInModule/SignInModuleC";
 
 export class HUDItem extends HUDItem_Generate {
     private hudPanel: HUDPanel = null;
@@ -343,6 +344,14 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         return this.adPanel;
     }
 
+    private signInModuleC: SignInModuleC = null;
+    private get getSignInModuleC(): SignInModuleC {
+        if (!this.signInModuleC) {
+            this.signInModuleC = ModuleService.getModule(SignInModuleC);
+        }
+        return this.signInModuleC;
+    }
+
     public onJumpAction: Action = new Action();
     public onCrouchAction: Action = new Action();
     public onExitAction: Action = new Action();
@@ -463,6 +472,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     private onOpenSetActionHandler(): void { }
 
     private onOpenClothActionHandler(): void {
+        if (!this.getSignInModuleC.isOpen) return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await AvatarEditorService.asyncOpenAvatarEditorModule();
         });

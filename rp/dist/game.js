@@ -4682,6 +4682,436 @@ var foreign81 = /*#__PURE__*/Object.freeze({
     default: AdPanel
 });
 
+class SignInData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.day = 0;
+        this.dayStr = "";
+    }
+    setDay(addDay) {
+        this.day += addDay;
+        this.save(false);
+    }
+    setDayStr(dayStr, addDay) {
+        this.dayStr = dayStr;
+        this.day += addDay;
+        this.save(false);
+    }
+}
+__decorate([
+    Decorator.persistence()
+], SignInData.prototype, "day", void 0);
+__decorate([
+    Decorator.persistence()
+], SignInData.prototype, "dayStr", void 0);
+class SignInUserData {
+    constructor(data) {
+        if (!data)
+            return;
+        this.shareId = data?.shareId;
+        this.icon = data?.icon;
+    }
+}
+class SignInConfigData {
+    constructor(data) {
+        this.signInUserDatas = [];
+        if (!data)
+            return;
+        this.isOpen = data?.isOpen;
+        this.totalDay = data?.totalDay;
+        for (let i = 0; i < data?.signInUserDatas?.length; ++i) {
+            this.signInUserDatas.push(new SignInUserData(data?.signInUserDatas[i]));
+        }
+    }
+}
+
+var foreign125 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    SignInConfigData: SignInConfigData,
+    SignInUserData: SignInUserData,
+    default: SignInData
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/SignInModule/SignInPanel.ui
+ * TIME: 2025.02.21-22.36.41
+ */
+let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
+    get mTitleTextBlock() {
+        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTitleTextBlock');
+        }
+        return this.mTitleTextBlock_Internal;
+    }
+    get mScrollBox() {
+        if (!this.mScrollBox_Internal && this.uiWidgetBase) {
+            this.mScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mScrollBox');
+        }
+        return this.mScrollBox_Internal;
+    }
+    get mContentCanvas() {
+        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
+            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mScrollBox/ContentCanvas/mContentCanvas');
+        }
+        return this.mContentCanvas_Internal;
+    }
+    get mTotalDayTextBlock() {
+        if (!this.mTotalDayTextBlock_Internal && this.uiWidgetBase) {
+            this.mTotalDayTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTotalDayTextBlock');
+        }
+        return this.mTotalDayTextBlock_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mTitleTextBlock);
+        this.initLanguage(this.mTotalDayTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SignInPanel_Generate = __decorate([
+    UIBind('UI/module/SignInModule/SignInPanel.ui')
+], SignInPanel_Generate);
+var SignInPanel_Generate$1 = SignInPanel_Generate;
+
+var foreign177 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SignInPanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/SignInModule/SignInItem.ui
+ * TIME: 2025.02.21-22.36.41
+ */
+let SignInItem_Generate = class SignInItem_Generate extends UIScript {
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage');
+        }
+        return this.mIconImage_Internal;
+    }
+    get mHasTextBlock() {
+        if (!this.mHasTextBlock_Internal && this.uiWidgetBase) {
+            this.mHasTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage/mHasTextBlock');
+        }
+        return this.mHasTextBlock_Internal;
+    }
+    get mDayTextBlock() {
+        if (!this.mDayTextBlock_Internal && this.uiWidgetBase) {
+            this.mDayTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mDayTextBlock');
+        }
+        return this.mDayTextBlock_Internal;
+    }
+    get mSignInButton() {
+        if (!this.mSignInButton_Internal && this.uiWidgetBase) {
+            this.mSignInButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSignInButton');
+        }
+        return this.mSignInButton_Internal;
+    }
+    get mSignInTextBlock() {
+        if (!this.mSignInTextBlock_Internal && this.uiWidgetBase) {
+            this.mSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSignInButton/mSignInTextBlock');
+        }
+        return this.mSignInTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSignInButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSignInButton");
+        });
+        this.mSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mHasTextBlock);
+        this.initLanguage(this.mDayTextBlock);
+        this.initLanguage(this.mSignInTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SignInItem_Generate = __decorate([
+    UIBind('UI/module/SignInModule/SignInItem.ui')
+], SignInItem_Generate);
+var SignInItem_Generate$1 = SignInItem_Generate;
+
+var foreign176 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SignInItem_Generate$1
+});
+
+class SignInItem extends SignInItem_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.signInModuleC = null;
+        this.signInUserData = null;
+        this.day = 0;
+        this.totalDay = 0;
+    }
+    get getSignInModuleC() {
+        if (!this.signInModuleC) {
+            this.signInModuleC = ModuleService.getModule(SignInModuleC);
+        }
+        return this.signInModuleC;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mHasTextBlock.text = GameConfig.Language.Text_SignIn_6.Value;
+    }
+    bindButton() {
+        this.mSignInButton.onClicked.add(this.addSignInButton.bind(this));
+    }
+    addSignInButton() {
+        this.getSignInModuleC.signInAction.call(this.day, this.signInUserData.shareId);
+    }
+    initItem(signInUserData, day, totalDay) {
+        this.signInUserData = signInUserData;
+        this.day = day;
+        this.totalDay = totalDay;
+        this.refreshUI();
+    }
+    refreshUI() {
+        this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
+        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0)
+            this.mIconImage.imageGuid = this.signInUserData.icon;
+        if (this.totalDay >= this.day) {
+            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value;
+        }
+        else {
+            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_8.Value;
+            Utils.setWidgetVisibility(this.mHasTextBlock, mw.SlateVisibility.Collapsed);
+        }
+    }
+}
+
+var foreign128 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SignInItem
+});
+
+class SignInPanel extends SignInPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.signInItems = [];
+        this.signInConfigData = null;
+        this.day = 0;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerDialog;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mTitleTextBlock.text = GameConfig.Language.Text_SignIn_4.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+    }
+    addCloseButton() {
+        this.hide();
+    }
+    initPanel(signInConfigData, day) {
+        this.signInConfigData = signInConfigData;
+        this.day = day;
+        this.mTotalDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_5.Value, this.day);
+        let totalDay = this.signInConfigData.totalDay;
+        let signInUserDatas = this.signInConfigData.signInUserDatas;
+        for (let i = 0; i < totalDay; ++i) {
+            let signInItem = UIService.create(SignInItem);
+            signInItem.initItem(signInUserDatas[i], i + 1, this.day);
+            this.mContentCanvas.addChild(signInItem.uiObject);
+            this.signInItems.push(signInItem);
+        }
+    }
+}
+
+var foreign129 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SignInPanel
+});
+
+class SignInModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.signInPanel = null;
+        this.signInAction = new Action2();
+        this.isInitSignInPanel = false;
+        this.signInConfigData = null;
+        this.day = 0;
+    }
+    get getHUDModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getSignInPanel() {
+        if (!this.signInPanel) {
+            this.signInPanel = UIService.getUI(SignInPanel);
+        }
+        return this.signInPanel;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.bindAction();
+    }
+    bindAction() {
+        this.getHUDModuleC.onOpenSignInAction.add(this.addOpenSignInAction.bind(this));
+        this.signInAction.add(this.addSignInAction.bind(this));
+    }
+    addOpenSignInAction() {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return;
+        }
+        if (!this.isInitSignInPanel) {
+            this.getSignInPanel.initPanel(this.signInConfigData, this.day);
+            this.isInitSignInPanel = true;
+        }
+        this.getSignInPanel.show();
+    }
+    addSignInAction(day, sharedId) {
+        if (day <= this.day) {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
+                this.getSignInPanel.hide();
+                if (sharedId && sharedId?.length > 0)
+                    await Utils.applySharedId(this.localPlayer.character, sharedId);
+                Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
+            });
+        }
+        else {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
+        }
+    }
+    net_syncSignInConfigData(signInConfigData, day) {
+        this.signInConfigData = signInConfigData;
+        this.day = day;
+        if (this.signInConfigData)
+            return;
+        let data = {
+            "isOpen": false,
+            "totalDay": 6,
+            "signInUserDatas": [
+                {
+                    "shareId": "102EH33D",
+                    "icon": ""
+                },
+                {
+                    "shareId": "102EH2HF",
+                    "icon": ""
+                },
+                {
+                    "shareId": "102EH2DZ",
+                    "icon": ""
+                },
+                {
+                    "shareId": "102EH2ZR",
+                    "icon": ""
+                },
+                {
+                    "shareId": "102EH2II",
+                    "icon": ""
+                },
+                {
+                    "shareId": "102EH168",
+                    "icon": ""
+                }
+            ]
+        };
+        this.signInConfigData = new SignInConfigData(data);
+    }
+    get isOpen() {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return false;
+        }
+        return true;
+    }
+}
+
+var foreign126 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SignInModuleC
+});
+
 class HUDItem extends HUDItem_Generate$1 {
     constructor() {
         super(...arguments);
@@ -4960,6 +5390,7 @@ class HUDModuleC extends ModuleC {
         this.sharePanel = null;
         this.savePanel = null;
         this.adPanel = null;
+        this.signInModuleC = null;
         this.onJumpAction = new Action();
         this.onCrouchAction = new Action();
         this.onExitAction = new Action();
@@ -5020,6 +5451,12 @@ class HUDModuleC extends ModuleC {
             this.adPanel = UIService.getUI(AdPanel);
         }
         return this.adPanel;
+    }
+    get getSignInModuleC() {
+        if (!this.signInModuleC) {
+            this.signInModuleC = ModuleService.getModule(SignInModuleC);
+        }
+        return this.signInModuleC;
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
@@ -5105,6 +5542,8 @@ class HUDModuleC extends ModuleC {
     }
     onOpenSetActionHandler() { }
     onOpenClothActionHandler() {
+        if (!this.getSignInModuleC.isOpen)
+            return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await AvatarEditorService.asyncOpenAvatarEditorModule();
         });
@@ -13708,6 +14147,11 @@ class MallModuleC extends ModuleC {
     onEnterScene(sceneType) {
         this.initNpc();
         this.initShopCamera();
+        this.localPlayer.character.asyncReady().then(() => {
+            TimeUtil.delaySecond(1).then(() => {
+                this.addOpenMallAction();
+            });
+        });
     }
     bindAction() {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
@@ -17187,429 +17631,6 @@ var foreign123 = /*#__PURE__*/Object.freeze({
     SetData: SetData,
     SetModuleC: SetModuleC,
     SetModuleS: SetModuleS
-});
-
-class SignInData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.day = 0;
-        this.dayStr = "";
-    }
-    setDay(addDay) {
-        this.day += addDay;
-        this.save(false);
-    }
-    setDayStr(dayStr, addDay) {
-        this.dayStr = dayStr;
-        this.day += addDay;
-        this.save(false);
-    }
-}
-__decorate([
-    Decorator.persistence()
-], SignInData.prototype, "day", void 0);
-__decorate([
-    Decorator.persistence()
-], SignInData.prototype, "dayStr", void 0);
-class SignInUserData {
-    constructor(data) {
-        if (!data)
-            return;
-        this.shareId = data?.shareId;
-        this.icon = data?.icon;
-    }
-}
-class SignInConfigData {
-    constructor(data) {
-        this.signInUserDatas = [];
-        if (!data)
-            return;
-        this.isOpen = data?.isOpen;
-        this.totalDay = data?.totalDay;
-        for (let i = 0; i < data?.signInUserDatas?.length; ++i) {
-            this.signInUserDatas.push(new SignInUserData(data?.signInUserDatas[i]));
-        }
-    }
-}
-
-var foreign125 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    SignInConfigData: SignInConfigData,
-    SignInUserData: SignInUserData,
-    default: SignInData
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.02.21-22.36.41
- */
-let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
-    get mTitleTextBlock() {
-        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
-            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTitleTextBlock');
-        }
-        return this.mTitleTextBlock_Internal;
-    }
-    get mScrollBox() {
-        if (!this.mScrollBox_Internal && this.uiWidgetBase) {
-            this.mScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mScrollBox');
-        }
-        return this.mScrollBox_Internal;
-    }
-    get mContentCanvas() {
-        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
-            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mScrollBox/ContentCanvas/mContentCanvas');
-        }
-        return this.mContentCanvas_Internal;
-    }
-    get mTotalDayTextBlock() {
-        if (!this.mTotalDayTextBlock_Internal && this.uiWidgetBase) {
-            this.mTotalDayTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mTotalDayTextBlock');
-        }
-        return this.mTotalDayTextBlock_Internal;
-    }
-    get mCloseButton() {
-        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
-            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseButton');
-        }
-        return this.mCloseButton_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mCloseButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        });
-        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mTitleTextBlock);
-        this.initLanguage(this.mTotalDayTextBlock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-SignInPanel_Generate = __decorate([
-    UIBind('UI/module/SignInModule/SignInPanel.ui')
-], SignInPanel_Generate);
-var SignInPanel_Generate$1 = SignInPanel_Generate;
-
-var foreign177 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SignInPanel_Generate$1
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.02.21-22.36.41
- */
-let SignInItem_Generate = class SignInItem_Generate extends UIScript {
-    get mIconImage() {
-        if (!this.mIconImage_Internal && this.uiWidgetBase) {
-            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage');
-        }
-        return this.mIconImage_Internal;
-    }
-    get mHasTextBlock() {
-        if (!this.mHasTextBlock_Internal && this.uiWidgetBase) {
-            this.mHasTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconImage/mHasTextBlock');
-        }
-        return this.mHasTextBlock_Internal;
-    }
-    get mDayTextBlock() {
-        if (!this.mDayTextBlock_Internal && this.uiWidgetBase) {
-            this.mDayTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mDayTextBlock');
-        }
-        return this.mDayTextBlock_Internal;
-    }
-    get mSignInButton() {
-        if (!this.mSignInButton_Internal && this.uiWidgetBase) {
-            this.mSignInButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSignInButton');
-        }
-        return this.mSignInButton_Internal;
-    }
-    get mSignInTextBlock() {
-        if (!this.mSignInTextBlock_Internal && this.uiWidgetBase) {
-            this.mSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSignInButton/mSignInTextBlock');
-        }
-        return this.mSignInTextBlock_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mSignInButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mSignInButton");
-        });
-        this.mSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mHasTextBlock);
-        this.initLanguage(this.mDayTextBlock);
-        this.initLanguage(this.mSignInTextBlock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-SignInItem_Generate = __decorate([
-    UIBind('UI/module/SignInModule/SignInItem.ui')
-], SignInItem_Generate);
-var SignInItem_Generate$1 = SignInItem_Generate;
-
-var foreign176 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SignInItem_Generate$1
-});
-
-class SignInItem extends SignInItem_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.signInModuleC = null;
-        this.signInUserData = null;
-        this.day = 0;
-        this.totalDay = 0;
-    }
-    get getSignInModuleC() {
-        if (!this.signInModuleC) {
-            this.signInModuleC = ModuleService.getModule(SignInModuleC);
-        }
-        return this.signInModuleC;
-    }
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = UILayerMiddle;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mHasTextBlock.text = GameConfig.Language.Text_SignIn_6.Value;
-    }
-    bindButton() {
-        this.mSignInButton.onClicked.add(this.addSignInButton.bind(this));
-    }
-    addSignInButton() {
-        this.getSignInModuleC.signInAction.call(this.day, this.signInUserData.shareId);
-    }
-    initItem(signInUserData, day, totalDay) {
-        this.signInUserData = signInUserData;
-        this.day = day;
-        this.totalDay = totalDay;
-        this.refreshUI();
-    }
-    refreshUI() {
-        this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
-        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0)
-            this.mIconImage.imageGuid = this.signInUserData.icon;
-        if (this.totalDay >= this.day) {
-            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value;
-        }
-        else {
-            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_8.Value;
-            Utils.setWidgetVisibility(this.mHasTextBlock, mw.SlateVisibility.Collapsed);
-        }
-    }
-}
-
-var foreign128 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SignInItem
-});
-
-class SignInPanel extends SignInPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.signInItems = [];
-        this.signInConfigData = null;
-        this.day = 0;
-    }
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = UILayerDialog;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mTitleTextBlock.text = GameConfig.Language.Text_SignIn_4.Value;
-    }
-    bindButton() {
-        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
-    }
-    addCloseButton() {
-        this.hide();
-    }
-    initPanel(signInConfigData, day) {
-        this.signInConfigData = signInConfigData;
-        this.day = day;
-        this.mTotalDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_5.Value, this.day);
-        let totalDay = this.signInConfigData.totalDay;
-        let signInUserDatas = this.signInConfigData.signInUserDatas;
-        for (let i = 0; i < totalDay; ++i) {
-            let signInItem = UIService.create(SignInItem);
-            signInItem.initItem(signInUserDatas[i], i + 1, this.day);
-            this.mContentCanvas.addChild(signInItem.uiObject);
-            this.signInItems.push(signInItem);
-        }
-    }
-}
-
-var foreign129 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SignInPanel
-});
-
-class SignInModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.signInPanel = null;
-        this.signInAction = new Action2();
-        this.isInitSignInPanel = false;
-        this.signInConfigData = null;
-        this.day = 0;
-    }
-    get getHUDModuleC() {
-        if (!this.hudModuleC) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getSignInPanel() {
-        if (!this.signInPanel) {
-            this.signInPanel = UIService.getUI(SignInPanel);
-        }
-        return this.signInPanel;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.bindAction();
-    }
-    bindAction() {
-        this.getHUDModuleC.onOpenSignInAction.add(this.addOpenSignInAction.bind(this));
-        this.signInAction.add(this.addSignInAction.bind(this));
-    }
-    addOpenSignInAction() {
-        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
-            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
-            return;
-        }
-        if (!this.isInitSignInPanel) {
-            this.getSignInPanel.initPanel(this.signInConfigData, this.day);
-            this.isInitSignInPanel = true;
-        }
-        this.getSignInPanel.show();
-    }
-    addSignInAction(day, sharedId) {
-        if (day <= this.day) {
-            ExecutorManager.instance.pushAsyncExecutor(async () => {
-                this.getSignInPanel.hide();
-                if (sharedId && sharedId?.length > 0)
-                    await Utils.applySharedId(this.localPlayer.character, sharedId);
-                Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
-            });
-        }
-        else {
-            Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
-        }
-    }
-    net_syncSignInConfigData(signInConfigData, day) {
-        this.signInConfigData = signInConfigData;
-        this.day = day;
-        if (this.signInConfigData)
-            return;
-        let data = {
-            "isOpen": true,
-            "totalDay": 6,
-            "signInUserDatas": [
-                {
-                    "shareId": "102EH33D",
-                    "icon": ""
-                },
-                {
-                    "shareId": "102EH2HF",
-                    "icon": ""
-                },
-                {
-                    "shareId": "102EH2DZ",
-                    "icon": ""
-                },
-                {
-                    "shareId": "102EH2ZR",
-                    "icon": ""
-                },
-                {
-                    "shareId": "102EH2II",
-                    "icon": ""
-                },
-                {
-                    "shareId": "102EH168",
-                    "icon": ""
-                }
-            ]
-        };
-        this.signInConfigData = new SignInConfigData(data);
-    }
-}
-
-var foreign126 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SignInModuleC
 });
 
 class SignInModuleS extends ModuleS {

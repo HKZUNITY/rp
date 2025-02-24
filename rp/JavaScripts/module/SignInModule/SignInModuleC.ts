@@ -68,7 +68,7 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
         this.day = day;
         if (this.signInConfigData) return;
         let data = {
-            "isOpen": true,
+            "isOpen": false,
             "totalDay": 6,
             "signInUserDatas": [
                 {
@@ -98,5 +98,13 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
             ]
         }
         this.signInConfigData = new SignInConfigData(data);
+    }
+
+    public get isOpen(): boolean {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return false;
+        }
+        return true;
     }
 }

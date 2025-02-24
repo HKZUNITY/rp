@@ -72,6 +72,11 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     protected onEnterScene(sceneType: number): void {
         this.initNpc();
         this.initShopCamera();
+        this.localPlayer.character.asyncReady().then(() => {
+            TimeUtil.delaySecond(1).then(() => {
+                this.addOpenMallAction();
+            });
+        });
     }
 
     private bindAction(): void {
