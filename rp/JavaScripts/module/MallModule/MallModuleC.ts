@@ -748,12 +748,16 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let decorationIndex: number = -1;
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
-            let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
-            let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
-            this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
-            if (assetId == attachmentAssetId) {
+            let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1]?.attachmentGameObject;
+            if (attachmentGameObject) {
+                let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
+                this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
+                if (assetId == attachmentAssetId) {
+                    this.decorationIndexMap.delete(tagId);
+                    return;
+                }
+            } else {
                 this.decorationIndexMap.delete(tagId);
-                return;
             }
         } else {
         }
