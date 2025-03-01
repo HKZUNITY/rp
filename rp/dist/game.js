@@ -10401,17 +10401,8 @@ class Mall {
         if (!model)
             return false;
         model.setCollision(mw.PropertyStatus.Off, true);
-        if (model instanceof mw.Effect) {
-            this.clearOneDecoraBySlotIndex(slotIndex, character);
-        }
-        else {
-            this.clearOneDecoraBySlotIndex(slotIndex, character);
-        }
         character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, offset);
         return true;
-    }
-    static clearOneDecoraBySlotIndex(slotIndex, character) {
-        character.description.advance.slotAndDecoration.slot[slotIndex].decoration.clear();
     }
     static async copyCharacterClothingAndHair(fromCharacter, toCharacter) {
         if (!fromCharacter || !toCharacter)
@@ -16955,7 +16946,10 @@ class TryOnModuleC extends ModuleC {
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
                     return;
                 }
+                this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+                await this.localPlayer.character.asyncReady();
                 this.localPlayer.character.setDescription(player.character.getDescription());
+                await this.server.net_tryOnSlotByUserId(roomData.userId);
                 this.isNeedSaveCharacter = true;
             }
             this.tryOnRoomData = roomData;
@@ -16984,6 +16978,19 @@ class TryOnModuleC extends ModuleC {
             return;
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
     }
+    net_tryOnSlotByUserId(userId) {
+        let slotDataArrStr = Mall.getSlotDataArrStr(this.localPlayer.character);
+        console.error(JSON.stringify(slotDataArrStr));
+        if (!slotDataArrStr || slotDataArrStr.length == 0)
+            return;
+        this.server.net_canTryOnSlotByUserId(userId, slotDataArrStr);
+    }
+    net_canTryOnSlotByUserId(slotDataArrStr) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
+        });
+    }
 }
 class TryOnModuleS extends ModuleS {
     constructor() {
@@ -17006,10 +17013,27 @@ class TryOnModuleS extends ModuleS {
         tryOnData.setTryOn(1);
         this.getRankModuleS.refreshTryOn(userId, tryOnData.tryOn);
     }
+    async net_tryOnSlotByUserId(userId) {
+        let currentUserId = this.currentPlayer.userId;
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character)
+            return false;
+        this.getClient(player).net_tryOnSlotByUserId(currentUserId);
+        return true;
+    }
+    async net_canTryOnSlotByUserId(userId, slotDataArrStr) {
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character)
+            return;
+        this.getClient(player).net_canTryOnSlotByUserId(slotDataArrStr);
+    }
 }
 __decorate([
     Decorator.noReply()
 ], TryOnModuleS.prototype, "net_addTryOn", null);
+__decorate([
+    Decorator.noReply()
+], TryOnModuleS.prototype, "net_canTryOnSlotByUserId", null);
 class TryOnData extends Subdata {
     constructor() {
         super(...arguments);

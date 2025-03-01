@@ -7,6 +7,7 @@ import ExecutorManager from "../../tools/WaitingQueue";
 import TryOnItem_Generate from "../../ui-generate/module/TryOnModule/TryOnItem_generate";
 import TryOnPanel_Generate from "../../ui-generate/module/TryOnModule/TryOnPanel_generate";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import Mall from "../MallModule/Mall";
 import MallModuleC from "../MallModule/MallModuleC";
 import MallTipsPanel from "../MallModule/ui/MallTipsPanel";
 import { RoomData } from "../RankModule/RankData";
@@ -339,7 +340,10 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
                     return;
                 }
+                this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+                await this.localPlayer.character.asyncReady();
                 this.localPlayer.character.setDescription(player.character.getDescription());
+                await this.server.net_tryOnSlotByUserId(roomData.userId);
                 this.isNeedSaveCharacter = true;
             }
             this.tryOnRoomData = roomData;
@@ -371,6 +375,20 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
         if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform) return;
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)))
     }
+
+    public net_tryOnSlotByUserId(userId: string): void {
+        let slotDataArrStr = Mall.getSlotDataArrStr(this.localPlayer.character);
+        console.error(JSON.stringify(slotDataArrStr));
+        if (!slotDataArrStr || slotDataArrStr.length == 0) return;
+        this.server.net_canTryOnSlotByUserId(userId, slotDataArrStr);
+    }
+
+    public net_canTryOnSlotByUserId(slotDataArrStr: string[]): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
+        });
+    }
 }
 
 
@@ -394,6 +412,21 @@ export class TryOnModuleS extends ModuleS<TryOnModuleC, TryOnData> {
         if (!tryOnData) return;
         tryOnData.setTryOn(1);
         this.getRankModuleS.refreshTryOn(userId, tryOnData.tryOn);
+    }
+
+    public async net_tryOnSlotByUserId(userId: string): Promise<boolean> {
+        let currentUserId = this.currentPlayer.userId;
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character) return false;
+        this.getClient(player).net_tryOnSlotByUserId(currentUserId);
+        return true;
+    }
+
+    @Decorator.noReply()
+    public async net_canTryOnSlotByUserId(userId: string, slotDataArrStr: string[]): Promise<void> {
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character) return;
+        this.getClient(player).net_canTryOnSlotByUserId(slotDataArrStr);
     }
 }
 
