@@ -107,12 +107,7 @@ export class TryOnPanel extends TryOnPanel_Generate {
     }
 
     private tryOnItems: TryOnItem[] = [];
-    private roomDatas: RoomData[] = [];
     public refreshTryOnPanel(roomDatas: RoomData[], curRoomIndex: number, isShow: boolean = true): void {
-        if (!isShow) {
-            if (Utils.isSameRoomDataTryOn(this.roomDatas, roomDatas)) return;
-        }
-        this.roomDatas = roomDatas;
         if (roomDatas.length > this.tryOnItems.length) {
             for (let i = 0; i < this.tryOnItems.length; ++i) {
                 this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);

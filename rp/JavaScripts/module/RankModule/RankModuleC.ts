@@ -182,27 +182,12 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
-
-        let tmpRoomDatas: RoomData[] = [];
-        this.roomDatas.forEach((value: RoomData) => {
-            tmpRoomDatas.push(value);
-        });
-        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
-            return b.tryOn - a.tryOn;
-        });
-        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
     public net_syncRoomRankData_TryOn(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
-        let tmpRoomDatas: RoomData[] = [];
-        this.roomDatas.forEach((value: RoomData) => {
-            tmpRoomDatas.push(value);
-        });
-        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
-            return b.tryOn - a.tryOn;
-        });
-        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
     public net_syncWorldRankData(worldUserIds: string[], worldNames: string[], worldScores: number[]): void {

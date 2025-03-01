@@ -270,10 +270,14 @@ export default class Utils {
         });
     }
 
-    public static isSameRoomDataTryOn(roomDatas1: RoomData[], roomDatas2: RoomData[]): boolean {
-        if (roomDatas1?.length != roomDatas2?.length) return false;
-        for (let i = 0; i < roomDatas1.length; ++i) {
-            if (roomDatas1[i].userId != roomDatas2[i].userId || roomDatas1[i].tryOn != roomDatas2[i].tryOn) return false;
+    private static tryOnCount: number = -1;
+    public static isSameRoomDataTryOn(roomDatas: RoomData[]): boolean {
+        let tryOnCount: number = 0;
+        if (!roomDatas || roomDatas.length == 0) tryOnCount = 0;
+        roomDatas.forEach((value: RoomData) => { tryOnCount += value.tryOn; });
+        if (this.tryOnCount != tryOnCount) {
+            this.tryOnCount = tryOnCount;
+            return false
         }
         return true;
     }

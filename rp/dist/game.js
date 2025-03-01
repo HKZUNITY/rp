@@ -3475,12 +3475,14 @@ class Utils {
             });
         });
     }
-    static isSameRoomDataTryOn(roomDatas1, roomDatas2) {
-        if (roomDatas1?.length != roomDatas2?.length)
+    static isSameRoomDataTryOn(roomDatas) {
+        let tryOnCount = 0;
+        if (!roomDatas || roomDatas.length == 0)
+            tryOnCount = 0;
+        roomDatas.forEach((value) => { tryOnCount += value.tryOn; });
+        if (this.tryOnCount != tryOnCount) {
+            this.tryOnCount = tryOnCount;
             return false;
-        for (let i = 0; i < roomDatas1.length; ++i) {
-            if (roomDatas1[i].userId != roomDatas2[i].userId || roomDatas1[i].tryOn != roomDatas2[i].tryOn)
-                return false;
         }
         return true;
     }
@@ -3501,6 +3503,7 @@ Utils.guideEffectGuid = `146775`;
 /**引导目标点特效Guid */
 Utils.targetEffectGuid = `142962`;
 Utils.inColorHexStrMap = new Map();
+Utils.tryOnCount = -1;
 
 var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -16701,7 +16704,6 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
         super(...arguments);
         this.tryOnModuleC = null;
         this.tryOnItems = [];
-        this.roomDatas = [];
         this.moveId = -1;
         this.moveVec = [];
         this.dir = 0;
@@ -16766,11 +16768,6 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
         this.getTryOnModuleC.onSaveAction.call();
     }
     refreshTryOnPanel(roomDatas, curRoomIndex, isShow = true) {
-        if (!isShow) {
-            if (Utils.isSameRoomDataTryOn(this.roomDatas, roomDatas))
-                return;
-        }
-        this.roomDatas = roomDatas;
         if (roomDatas.length > this.tryOnItems.length) {
             for (let i = 0; i < this.tryOnItems.length; ++i) {
                 this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
@@ -17746,25 +17743,11 @@ class RankModuleC extends ModuleC {
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
-        let tmpRoomDatas = [];
-        this.roomDatas.forEach((value) => {
-            tmpRoomDatas.push(value);
-        });
-        tmpRoomDatas.sort((a, b) => {
-            return b.tryOn - a.tryOn;
-        });
-        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
     net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
-        let tmpRoomDatas = [];
-        this.roomDatas.forEach((value) => {
-            tmpRoomDatas.push(value);
-        });
-        tmpRoomDatas.sort((a, b) => {
-            return b.tryOn - a.tryOn;
-        });
-        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
     net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
