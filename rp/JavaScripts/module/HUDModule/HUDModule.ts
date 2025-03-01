@@ -116,14 +116,18 @@ export class HUDPanel extends HUDPanel_Generate {
         this.constollerGoodsCanvasVisible(false);
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
 
-        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
-        this.mOpenClothTextBlock.text = GameConfig.Language.Text_OpenClothTextBlock.Value;
-        this.mOpenMallTextBlock.text = GameConfig.Language.Text_OpenMallTextBlock.Value;
+        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
+        this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
+        this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
+        this.mOpenMusicTextBlock.text = GameConfig.Language.Text_HUDPanelTips7.Value;
+        this.mOpenSetTextBlock.text = GameConfig.Language.Text_HUDPanelTips4.Value;
+
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mOpenMallTextBlock, mw.SlateVisibility.Collapsed);
         }
     }
 
@@ -470,6 +474,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     }
 
     private onOpenShareActionHandler(openType: number): void {
+        return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             this.getSharePanel.show();
             let sharedId = await Utils.createSharedId(this.localPlayer.character);

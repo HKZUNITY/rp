@@ -103,7 +103,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         if (!this.roomDataMap.has(userId)) return;
         let roomData = this.roomDataMap.get(userId);
         roomData.tryOn = tryOn;
-        this.synchrodata_Room();
+        this.synchrodata_Room_TryOn();
     }
 
     private isRefreshWorldData(tmpWorldDatas: WorldData[]): boolean {
@@ -239,6 +239,14 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+        });
+    }
+
+    private synchrodata_Room_TryOn(): void {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
         });
     }
 

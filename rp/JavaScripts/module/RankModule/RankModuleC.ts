@@ -1,6 +1,7 @@
 ﻿import { EventType } from "../../GlobalData";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import { InteractionData } from "../InteractionModule/InteractionModule";
+import { TryOnData, TryOnModuleC } from "../TryOnModule/TryOnModule";
 import { RankData, RoomData, WorldData } from "./RankData";
 import RankModuleS from "./RankModuleS";
 import RankPanel from "./ui/RankPanel";
@@ -38,13 +39,21 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         return this.interactionData;
     }
 
-    // private tryOnData: TryOnData = null;
-    // private get getTryOnData(): TryOnData {
-    //     if (this.tryOnData == null) {
-    //         this.tryOnData = DataCenterC.getData(TryOnData);
-    //     }
-    //     return this.tryOnData;
-    // }
+    private tryOnModuleC: TryOnModuleC = null;
+    private get getTryOnModuleC(): TryOnModuleC {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+
+    private tryOnData: TryOnData = null;
+    private get getTryOnData(): TryOnData {
+        if (this.tryOnData == null) {
+            this.tryOnData = DataCenterC.getData(TryOnData);
+        }
+        return this.tryOnData;
+    }
 
     public onOpenWorldRankAction: Action = new Action();
 
@@ -86,9 +95,9 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             let score = (!bagIds) ? 0 : bagIds.length;
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
-            // let tryon = this.getTryOnData?.tryOn;
-            // if (!tryon && tryon != 0) tryon = 0;
-            this.server.net_onEnterScene(nickName, score, time, 0);
+            let tryon = this.getTryOnData?.tryOn;
+            if (!tryon && tryon != 0) tryon = 0;
+            this.server.net_onEnterScene(nickName, score, time, tryon);
         });
     }
 
@@ -114,7 +123,6 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
                 this.roomDatas.push(tmpRoomData);
             }
         }
-        //TODO - 去更新TryOnPanel
     }
 
     private curRoomIndex: number = -1;
@@ -174,6 +182,27 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
+
+        let tmpRoomDatas: RoomData[] = [];
+        this.roomDatas.forEach((value: RoomData) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+    }
+
+    public net_syncRoomRankData_TryOn(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        let tmpRoomDatas: RoomData[] = [];
+        this.roomDatas.forEach((value: RoomData) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
     }
 
     public net_syncWorldRankData(worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
@@ -198,5 +227,16 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.roomDatas.sort((a: RoomData, b: RoomData) => {
             return b.score - a.score;
         });
+    }
+
+    public getRoomDatas(): RoomData[] {
+        let tmpRoomDatas: RoomData[] = [];
+        this.roomDatas.forEach((value: RoomData) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
+            return b.tryOn - a.tryOn;
+        });
+        return tmpRoomDatas;
     }
 }

@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign137 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1983,7 +1983,7 @@ var foreign44 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"]];
+const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"], [208, "Text_HUDPanelTips1", null, "服装签到"], [209, "Text_HUDPanelTips2", null, "试穿排行榜"], [210, "Text_HUDPanelTips3", null, "全服排行榜"], [211, "Text_HUDPanelTips4", null, "设置"], [212, "Text_HUDPanelTips5", null, "免费换装"], [213, "Text_HUDPanelTips6", null, "换装商店"], [214, "Text_HUDPanelTips7", null, "背景音乐"], [215, "Text_TryOnTips1", null, "排名"], [216, "Text_TryOnTips2", null, "昵称"], [217, "Text_TryOnTips3", null, "被试穿次数"], [218, "Text_TryOnTips4", null, "试穿好友形象"], [219, "Text_TryOnTips5", null, "自己的形象"], [220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间"], [221, "Text_TryOnTips7", null, "换个好友试试吧"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$x);
@@ -2609,6 +2609,48 @@ class LanguageConfig extends ConfigBase {
     ;
     /**日常造型2*/
     get Text_Tab3_1047() { return this.getElement(207); }
+    ;
+    /**服装签到*/
+    get Text_HUDPanelTips1() { return this.getElement(208); }
+    ;
+    /**试穿排行榜*/
+    get Text_HUDPanelTips2() { return this.getElement(209); }
+    ;
+    /**全服排行榜*/
+    get Text_HUDPanelTips3() { return this.getElement(210); }
+    ;
+    /**设置*/
+    get Text_HUDPanelTips4() { return this.getElement(211); }
+    ;
+    /**免费换装*/
+    get Text_HUDPanelTips5() { return this.getElement(212); }
+    ;
+    /**换装商店*/
+    get Text_HUDPanelTips6() { return this.getElement(213); }
+    ;
+    /**背景音乐*/
+    get Text_HUDPanelTips7() { return this.getElement(214); }
+    ;
+    /**排名*/
+    get Text_TryOnTips1() { return this.getElement(215); }
+    ;
+    /**昵称*/
+    get Text_TryOnTips2() { return this.getElement(216); }
+    ;
+    /**被试穿次数*/
+    get Text_TryOnTips3() { return this.getElement(217); }
+    ;
+    /**试穿好友形象*/
+    get Text_TryOnTips4() { return this.getElement(218); }
+    ;
+    /**自己的形象*/
+    get Text_TryOnTips5() { return this.getElement(219); }
+    ;
+    /**试穿失败、好友已离开房间*/
+    get Text_TryOnTips6() { return this.getElement(220); }
+    ;
+    /**换个好友试试吧*/
+    get Text_TryOnTips7() { return this.getElement(221); }
     ;
 }
 
@@ -3433,6 +3475,15 @@ class Utils {
             });
         });
     }
+    static isSameRoomDataTryOn(roomDatas1, roomDatas2) {
+        if (roomDatas1?.length != roomDatas2?.length)
+            return false;
+        for (let i = 0; i < roomDatas1.length; ++i) {
+            if (roomDatas1[i].userId != roomDatas2[i].userId || roomDatas1[i].tryOn != roomDatas2[i].tryOn)
+                return false;
+        }
+        return true;
+    }
 }
 Utils.assetIconDataMap = new Map();
 Utils.buffMap = new Map();
@@ -3461,7 +3512,7 @@ var foreign135 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -3519,7 +3570,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign179 = /*#__PURE__*/Object.freeze({
+var foreign181 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -3695,7 +3746,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3763,7 +3814,7 @@ var foreign146 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.02.25-23.59.36
+ * TIME: 2025.03.01-17.47.25
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3846,7 +3897,7 @@ var foreign154 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.02.25-23.59.36
+ * TIME: 2025.03.01-17.47.25
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -3854,18 +3905,6 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mVirtualJoystickPanel_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mVirtualJoystickPanel');
         }
         return this.mVirtualJoystickPanel_Internal;
-    }
-    get mOpenShareImage() {
-        if (!this.mOpenShareImage_Internal && this.uiWidgetBase) {
-            this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage');
-        }
-        return this.mOpenShareImage_Internal;
-    }
-    get mOpenShareButton() {
-        if (!this.mOpenShareButton_Internal && this.uiWidgetBase) {
-            this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton');
-        }
-        return this.mOpenShareButton_Internal;
     }
     get mOpenSetImage() {
         if (!this.mOpenSetImage_Internal && this.uiWidgetBase) {
@@ -3879,6 +3918,12 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         }
         return this.mOpenSetButton_Internal;
     }
+    get mOpenSetTextBlock() {
+        if (!this.mOpenSetTextBlock_Internal && this.uiWidgetBase) {
+            this.mOpenSetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage/mOpenSetTextBlock');
+        }
+        return this.mOpenSetTextBlock_Internal;
+    }
     get mOpenMusicImage() {
         if (!this.mOpenMusicImage_Internal && this.uiWidgetBase) {
             this.mOpenMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage');
@@ -3891,6 +3936,12 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         }
         return this.mOpenMusicButton_Internal;
     }
+    get mOpenMusicTextBlock() {
+        if (!this.mOpenMusicTextBlock_Internal && this.uiWidgetBase) {
+            this.mOpenMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage/mOpenMusicTextBlock');
+        }
+        return this.mOpenMusicTextBlock_Internal;
+    }
     get mOpenRankImage() {
         if (!this.mOpenRankImage_Internal && this.uiWidgetBase) {
             this.mOpenRankImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage');
@@ -3902,6 +3953,12 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton');
         }
         return this.mOpenRankButton_Internal;
+    }
+    get mOpenRankTextBlock() {
+        if (!this.mOpenRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mOpenRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankTextBlock');
+        }
+        return this.mOpenRankTextBlock_Internal;
     }
     get mOpenClothImage() {
         if (!this.mOpenClothImage_Internal && this.uiWidgetBase) {
@@ -3944,6 +4001,24 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             this.mOpenMallTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMallImage/mOpenMallTextBlock');
         }
         return this.mOpenMallTextBlock_Internal;
+    }
+    get mOpenShareImage() {
+        if (!this.mOpenShareImage_Internal && this.uiWidgetBase) {
+            this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage');
+        }
+        return this.mOpenShareImage_Internal;
+    }
+    get mOpenShareButton() {
+        if (!this.mOpenShareButton_Internal && this.uiWidgetBase) {
+            this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton');
+        }
+        return this.mOpenShareButton_Internal;
+    }
+    get mOpenShareTextBlock() {
+        if (!this.mOpenShareTextBlock_Internal && this.uiWidgetBase) {
+            this.mOpenShareTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareTextBlock');
+        }
+        return this.mOpenShareTextBlock_Internal;
     }
     get mOpenSignInImage() {
         if (!this.mOpenSignInImage_Internal && this.uiWidgetBase) {
@@ -4103,11 +4178,6 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     }
     initButtons() {
         //按钮添加点击
-        this.mOpenShareButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
-        });
-        this.initLanguage(this.mOpenShareButton);
-        this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
         this.mOpenSetButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
         });
@@ -4133,6 +4203,11 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         });
         this.initLanguage(this.mOpenMallButton);
         this.mOpenMallButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mOpenShareButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
+        });
+        this.initLanguage(this.mOpenShareButton);
+        this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
         this.mOpenSignInButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenSignInButton");
         });
@@ -4186,9 +4261,13 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         this.mRightMusicBtn.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
         //按钮多语言
         //文本多语言
+        this.initLanguage(this.mOpenSetTextBlock);
+        this.initLanguage(this.mOpenMusicTextBlock);
+        this.initLanguage(this.mOpenRankTextBlock);
         this.initLanguage(this.mOpenClothTextBlock);
         this.initLanguage(this.mFreeTextBlock);
         this.initLanguage(this.mOpenMallTextBlock);
+        this.initLanguage(this.mOpenShareTextBlock);
         this.initLanguage(this.mOpenSignInTextBlock);
         this.initLanguage(this.mMusicText);
         //文本多语言
@@ -4226,7 +4305,7 @@ var foreign155 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -4292,7 +4371,7 @@ var foreign175 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -4430,7 +4509,7 @@ var foreign176 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4516,7 +4595,7 @@ var foreign140 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4793,14 +4872,17 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.controllerActionUIVisible(false);
         this.constollerGoodsCanvasVisible(false);
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
-        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
-        this.mOpenClothTextBlock.text = GameConfig.Language.Text_OpenClothTextBlock.Value;
-        this.mOpenMallTextBlock.text = GameConfig.Language.Text_OpenMallTextBlock.Value;
+        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
+        this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
+        this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
+        this.mOpenMusicTextBlock.text = GameConfig.Language.Text_HUDPanelTips7.Value;
+        this.mOpenSetTextBlock.text = GameConfig.Language.Text_HUDPanelTips4.Value;
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mOpenMallTextBlock, mw.SlateVisibility.Collapsed);
         }
     }
     updateFreeTime() {
@@ -5111,11 +5193,7 @@ class HUDModuleC extends ModuleC {
         });
     }
     onOpenShareActionHandler(openType) {
-        ExecutorManager.instance.pushAsyncExecutor(async () => {
-            this.getSharePanel.show();
-            let sharedId = await Utils.createSharedId(this.localPlayer.character);
-            this.getSharePanel.showPanel(sharedId, openType);
-        });
+        return;
     }
     onUseShareActionHandler(shareId, openType) {
         if (openType == 1) {
@@ -5658,7 +5736,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -5997,7 +6075,7 @@ var foreign149 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -6135,7 +6213,7 @@ var foreign156 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -6363,7 +6441,7 @@ class RankModuleS extends ModuleS {
             return;
         let roomData = this.roomDataMap.get(userId);
         roomData.tryOn = tryOn;
-        this.synchrodata_Room();
+        this.synchrodata_Room_TryOn();
     }
     isRefreshWorldData(tmpWorldDatas) {
         if (!this.isInitWorldDatas)
@@ -6494,6 +6572,13 @@ class RankModuleS extends ModuleS {
         this.syncPlayerMap.forEach((value, key) => {
             // if (!value) return;
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+        });
+    }
+    synchrodata_Room_TryOn() {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
         });
     }
     synchrodata_World() {
@@ -7198,7 +7283,7 @@ var foreign98 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -7320,7 +7405,7 @@ var foreign87 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7448,7 +7533,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -7597,7 +7682,7 @@ var foreign89 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7728,7 +7813,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -7831,7 +7916,7 @@ var foreign91 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -7936,7 +8021,7 @@ var foreign92 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -8401,7 +8486,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -10872,7 +10957,7 @@ var foreign99 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -11038,7 +11123,7 @@ var foreign158 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -11113,7 +11198,7 @@ var foreign104 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11278,7 +11363,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -11489,7 +11574,7 @@ var foreign133 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mTouchImage() {
@@ -11712,7 +11797,7 @@ var foreign166 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -11935,7 +12020,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -12084,7 +12169,7 @@ var foreign108 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -12217,7 +12302,7 @@ var foreign109 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -12623,7 +12708,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -12775,7 +12860,7 @@ var foreign112 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -12913,7 +12998,7 @@ var foreign113 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.02.25-23.59.36
+ * TIME: 2025.03.01-17.47.26
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -14223,7 +14308,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.02.25-23.59.36
+ * TIME: 2025.03.01-17.47.26
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -15424,6 +15509,22 @@ class MallModuleC extends ModuleC {
             return;
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
     }
+    async syncTryOnCharacter() {
+        await this.localPlayer.character.asyncReady();
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.recordSex(somatotype);
+        if (somatotype % 2 == 0) {
+            await this.feMaleNpc.asyncReady();
+            this.feMaleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+        else {
+            await this.maleNpc.asyncReady();
+            this.maleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+    }
+    get getCopyNpc() {
+        return this.copyNpc;
+    }
     async initNpc() {
         this.maleNpc = await mw.GameObject.asyncFindGameObjectById(`3A3B7F1A`);
         this.feMaleNpc = await mw.GameObject.asyncFindGameObjectById(`047AA580`);
@@ -15455,6 +15556,11 @@ class MallModuleC extends ModuleC {
             await this.copyNpc.asyncReady();
             this.openColorPickPanel(tabId);
         });
+    }
+    async openTryOnPanel() {
+        await this.localPlayer.character.asyncReady();
+        this.copyNpc.setDescription(this.localPlayer.character.getDescription());
+        await this.copyNpc.asyncReady();
     }
     addSaveAction() {
         this.saveCharacterDescription();
@@ -16283,8 +16389,662 @@ var foreign116 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/TryOnModule/TryOnItem.ui
+ * TIME: 2025.03.01-17.47.26
+ */
+let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickButton() {
+        if (!this.mClickButton_Internal && this.uiWidgetBase) {
+            this.mClickButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mClickButton');
+        }
+        return this.mClickButton_Internal;
+    }
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mTryOnTextBlock() {
+        if (!this.mTryOnTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnTextBlock');
+        }
+        return this.mTryOnTextBlock_Internal;
+    }
+    get mTryOnBgImage() {
+        if (!this.mTryOnBgImage_Internal && this.uiWidgetBase) {
+            this.mTryOnBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnBgImage');
+        }
+        return this.mTryOnBgImage_Internal;
+    }
+    get mTryOnTipsTextBlock() {
+        if (!this.mTryOnTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnBgImage/mTryOnTipsTextBlock');
+        }
+        return this.mTryOnTipsTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickButton");
+        });
+        this.mClickButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mTryOnTextBlock);
+        this.initLanguage(this.mTryOnTipsTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+TryOnItem_Generate = __decorate([
+    UIBind('UI/module/TryOnModule/TryOnItem.ui')
+], TryOnItem_Generate);
+var TryOnItem_Generate$1 = TryOnItem_Generate;
+
+var foreign179 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: TryOnItem_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/TryOnModule/TryOnPanel.ui
+ * TIME: 2025.03.01-17.47.26
+ */
+let TryOnPanel_Generate = class TryOnPanel_Generate extends UIScript {
+    get mLeftCanvas() {
+        if (!this.mLeftCanvas_Internal && this.uiWidgetBase) {
+            this.mLeftCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas');
+        }
+        return this.mLeftCanvas_Internal;
+    }
+    get mTouchImage() {
+        if (!this.mTouchImage_Internal && this.uiWidgetBase) {
+            this.mTouchImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mTouchImage');
+        }
+        return this.mTouchImage_Internal;
+    }
+    get mSaveButton() {
+        if (!this.mSaveButton_Internal && this.uiWidgetBase) {
+            this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton');
+        }
+        return this.mSaveButton_Internal;
+    }
+    get mSaveTextBlock() {
+        if (!this.mSaveTextBlock_Internal && this.uiWidgetBase) {
+            this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton/mSaveTextBlock');
+        }
+        return this.mSaveTextBlock_Internal;
+    }
+    get mListBgImage() {
+        if (!this.mListBgImage_Internal && this.uiWidgetBase) {
+            this.mListBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListBgImage');
+        }
+        return this.mListBgImage_Internal;
+    }
+    get mListCanvas() {
+        if (!this.mListCanvas_Internal && this.uiWidgetBase) {
+            this.mListCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas');
+        }
+        return this.mListCanvas_Internal;
+    }
+    get mTab1Canvas() {
+        if (!this.mTab1Canvas_Internal && this.uiWidgetBase) {
+            this.mTab1Canvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab1Canvas');
+        }
+        return this.mTab1Canvas_Internal;
+    }
+    get mTitleTextBlock() {
+        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab1Canvas/mTitleTextBlock');
+        }
+        return this.mTitleTextBlock_Internal;
+    }
+    get mTab2Canvas() {
+        if (!this.mTab2Canvas_Internal && this.uiWidgetBase) {
+            this.mTab2Canvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas');
+        }
+        return this.mTab2Canvas_Internal;
+    }
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mTryOnTextBlock() {
+        if (!this.mTryOnTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mTryOnTextBlock');
+        }
+        return this.mTryOnTextBlock_Internal;
+    }
+    get mItemScrollBox() {
+        if (!this.mItemScrollBox_Internal && this.uiWidgetBase) {
+            this.mItemScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mItemScrollBox');
+        }
+        return this.mItemScrollBox_Internal;
+    }
+    get mItemContentCanvas() {
+        if (!this.mItemContentCanvas_Internal && this.uiWidgetBase) {
+            this.mItemContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mItemScrollBox/mItemContentCanvas');
+        }
+        return this.mItemContentCanvas_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    get mCloseImage() {
+        if (!this.mCloseImage_Internal && this.uiWidgetBase) {
+            this.mCloseImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton/mCloseImage');
+        }
+        return this.mCloseImage_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSaveButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+        });
+        this.mSaveButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mSaveTextBlock);
+        this.initLanguage(this.mTitleTextBlock);
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mTryOnTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+TryOnPanel_Generate = __decorate([
+    UIBind('UI/module/TryOnModule/TryOnPanel.ui')
+], TryOnPanel_Generate);
+var TryOnPanel_Generate$1 = TryOnPanel_Generate;
+
+var foreign180 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: TryOnPanel_Generate$1
+});
+
+class TryOnItem extends TryOnItem_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.tryOnModuleC = null;
+        this.index = -1;
+        this.roomData = null;
+        this.isSelf = false;
+    }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips4.Value;
+    }
+    bindButton() {
+        this.mClickButton.onClicked.add(this.addClickButton.bind(this));
+    }
+    addClickButton() {
+        // if (this.isSelf) {
+        //     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips5.Value);
+        //     return;
+        // }
+        this.getTryOnModuleC.onTryOnAction.call(this.roomData);
+    }
+    setData(index, roomData, isSelf) {
+        this.index = index;
+        this.roomData = roomData;
+        this.isSelf = isSelf;
+        this.mRankTextBlock.text = index.toString();
+        this.mNameTextBlock.text = roomData.playerName;
+        this.mTryOnTextBlock.text = roomData.tryOn.toString();
+        if (isSelf) {
+            this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips5.Value;
+            this.mTryOnTipsTextBlock.outlineSize = 1;
+            this.mRankTextBlock.outlineSize = 1;
+            this.mNameTextBlock.outlineSize = 1;
+            this.mTryOnTextBlock.outlineSize = 1;
+        }
+        else {
+            this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips4.Value;
+            this.mTryOnTipsTextBlock.outlineSize = 0;
+            this.mRankTextBlock.outlineSize = 0;
+            this.mNameTextBlock.outlineSize = 0;
+            this.mTryOnTextBlock.outlineSize = 0;
+        }
+    }
+}
+class TryOnPanel extends TryOnPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.tryOnModuleC = null;
+        this.tryOnItems = [];
+        this.roomDatas = [];
+        this.moveId = -1;
+        this.moveVec = [];
+        this.dir = 0;
+        this.onMoveTouchEvent = (widget, event, x, y, inPointerEvent) => {
+            if (this.movePos) {
+                if (event == Enums.TouchEvent.DOWN) {
+                    if (this.moveId < 0) {
+                        this.moveId = inPointerEvent.pointerIndex;
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.MOVE) {
+                    if (this.moveId >= 0) {
+                        let xoffset = x - this.moveVec[0];
+                        let yoffset = y - this.moveVec[1];
+                        this.dir = 0;
+                        if (Math.abs(xoffset) > Math.abs(yoffset)) {
+                            this.dir = Math.floor(xoffset);
+                        }
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.UP) {
+                    if (this.moveId >= 0) {
+                        this.moveId = -1;
+                        this.dir = 0;
+                    }
+                }
+            }
+        };
+        //#endregion
+    }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+        this.initTryOnRot();
+    }
+    initUI() {
+        this.mTitleTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mRankTextBlock.text = GameConfig.Language.Text_TryOnTips1.Value;
+        this.mNameTextBlock.text = GameConfig.Language.Text_TryOnTips2.Value;
+        this.mTryOnTextBlock.text = GameConfig.Language.Text_TryOnTips3.Value;
+        this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+    }
+    addCloseButton() {
+        this.getTryOnModuleC.onCloseAction.call();
+    }
+    addSaveButton() {
+        this.hide();
+        this.getTryOnModuleC.onSaveAction.call();
+    }
+    refreshTryOnPanel(roomDatas, curRoomIndex, isShow = true) {
+        if (!isShow) {
+            if (Utils.isSameRoomDataTryOn(this.roomDatas, roomDatas))
+                return;
+        }
+        this.roomDatas = roomDatas;
+        if (roomDatas.length > this.tryOnItems.length) {
+            for (let i = 0; i < this.tryOnItems.length; ++i) {
+                this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.tryOnItems.length; i < roomDatas.length; ++i) {
+                let tryOnItem = UIService.create(TryOnItem);
+                tryOnItem.setData(i + 1, roomDatas[i], i == curRoomIndex);
+                this.mItemContentCanvas.addChild(tryOnItem.uiObject);
+                this.tryOnItems.push(tryOnItem);
+            }
+        }
+        else {
+            for (let i = 0; i < roomDatas.length; ++i) {
+                this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = roomDatas.length; i < this.tryOnItems.length; ++i) {
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+        if (isShow)
+            this.show();
+    }
+    onShow(...params) {
+        Event.dispatchToLocal(EventType.OnOffMainUI, false);
+        this.canUpdate = true;
+        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+    }
+    onHide() {
+        Event.dispatchToLocal(EventType.OnOffMainUI, true);
+        this.canUpdate = false;
+        TouchScript.instance.removeScreenListener(this.mTouchImage);
+    }
+    //#region Rotate-Camera
+    initTryOnRot() {
+        this.moveVec = [];
+        mw.TimeUtil.delayExecute(() => {
+            this.movePos = this.mTouchImage.position.multiply(1);
+        }, 3);
+    }
+    onUpdate(dt) {
+        if (this.dir != 0) {
+            this.getTryOnModuleC.addRoatation(this.dir * dt);
+            this.dir = 0;
+        }
+    }
+    onTouchStarted(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchStarted(inGemory, inPointerEvent);
+    }
+    onTouchMoved(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchMoved(inGemory, inPointerEvent);
+    }
+    onTouchEnded(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchEnded(inGemory, inPointerEvent);
+    }
+}
+class TryOnModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.mallModuleC = null;
+        this.rankModuleC = null;
+        this.tryOnPanel = null;
+        this.mallTipsPanel = null;
+        this.onTryOnAction = new Action1();
+        this.onCloseAction = new Action();
+        this.onSaveAction = new Action();
+        this.tryOnRoomData = null;
+        this.isNeedSaveCharacter = false;
+        this.mallCharacterRotSpeed = 30;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getMallModuleC() {
+        if (!this.mallModuleC) {
+            this.mallModuleC = ModuleService.getModule(MallModuleC);
+        }
+        return this.mallModuleC;
+    }
+    get getRankModuleC() {
+        if (!this.rankModuleC) {
+            this.rankModuleC = ModuleService.getModule(RankModuleC);
+        }
+        return this.rankModuleC;
+    }
+    get getTryOnPanel() {
+        if (this.tryOnPanel == null) {
+            this.tryOnPanel = UIService.getUI(TryOnPanel);
+        }
+        return this.tryOnPanel;
+    }
+    get getMallTipsPanel() {
+        if (!this.mallTipsPanel) {
+            this.mallTipsPanel = UIService.getUI(MallTipsPanel);
+        }
+        return this.mallTipsPanel;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.bindAction();
+    }
+    bindAction() {
+        this.getHUDModuleC.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
+        this.onCloseAction.add(this.addCloseTryOnPanelAction.bind(this));
+        this.onTryOnAction.add(this.addTryOnAction.bind(this));
+        this.onSaveAction.add(this.addSaveAction.bind(this));
+    }
+    onOpenShareActionHandler() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.tryOnRoomData = null;
+            await this.getMallModuleC.openTryOnPanel();
+            let roomDatas = this.getRankModuleC.getRoomDatas();
+            if (!roomDatas || roomDatas.length == 0) {
+                Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+                return;
+            }
+            let curRoomIndex = -1;
+            for (let i = 0; i < roomDatas.length; ++i) {
+                if (roomDatas[i].userId != this.localPlayer.userId)
+                    continue;
+                curRoomIndex = i;
+                break;
+            }
+            this.getTryOnPanel.refreshTryOnPanel(roomDatas, curRoomIndex);
+            this.getMallModuleC.onSwitchCameraAction.call(2);
+        });
+    }
+    refreshTryOnPanel(roomDatas) {
+        if (!UIService.getUI(TryOnPanel, false)?.visible)
+            return;
+        if (!roomDatas || roomDatas.length == 0)
+            return;
+        let curRoomIndex = -1;
+        for (let i = 0; i < roomDatas.length; ++i) {
+            if (roomDatas[i].userId != this.localPlayer.userId)
+                continue;
+            curRoomIndex = i;
+            break;
+        }
+        this.getTryOnPanel.refreshTryOnPanel(roomDatas, curRoomIndex, false);
+    }
+    addCloseTryOnPanelAction() {
+        if (this.isNeedSaveCharacter) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveCharacter = false;
+                this.saveCharacter();
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
+            }, () => {
+                this.isNeedSaveCharacter = false;
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    let copyNpc = this.getMallModuleC.getCopyNpc;
+                    await copyNpc.asyncReady();
+                    this.localPlayer.character.setDescription(copyNpc.getDescription());
+                    await this.localPlayer.character.asyncReady();
+                });
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
+        else {
+            this.getTryOnPanel.hide();
+            this.getMallModuleC.onSwitchCameraAction.call(0);
+        }
+    }
+    addTryOnAction(roomData) {
+        if (!roomData || !roomData?.userId || roomData.userId == "") {
+            Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
+            Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
+            return;
+        }
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (roomData.userId == this.localPlayer.userId) {
+                this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
+            }
+            else {
+                let player = await Player.asyncGetPlayer(roomData.userId);
+                if (!player || !player.character) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
+                    return;
+                }
+                this.localPlayer.character.setDescription(player.character.getDescription());
+                this.isNeedSaveCharacter = true;
+            }
+            this.tryOnRoomData = roomData;
+            await this.localPlayer.character.asyncReady();
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        });
+    }
+    addSaveAction() {
+        this.getMallModuleC.onSwitchCameraAction.call(0);
+        this.saveCharacter();
+    }
+    saveCharacter() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            this.localPlayer.character.syncDescription();
+            this.isNeedSaveCharacter = false;
+            Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
+            await this.getMallModuleC.syncTryOnCharacter();
+            if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "")
+                return;
+            this.server.net_addTryOn(this.tryOnRoomData.userId);
+        });
+    }
+    addRoatation(dir) {
+        if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform)
+            return;
+        this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
+    }
+}
+class TryOnModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.rankModuleS = null;
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    net_addTryOn(userId) {
+        let tryOnData = DataCenterS.getData(userId, TryOnData);
+        if (!tryOnData)
+            return;
+        tryOnData.setTryOn(1);
+        this.getRankModuleS.refreshTryOn(userId, tryOnData.tryOn);
+    }
+}
+__decorate([
+    Decorator.noReply()
+], TryOnModuleS.prototype, "net_addTryOn", null);
+class TryOnData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.tryOn = 0;
+    }
+    setTryOn(addTryOn) {
+        this.tryOn += addTryOn;
+        this.save(false);
+    }
+    get getTryOn() {
+        return this.tryOn;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], TryOnData.prototype, "tryOn", void 0);
+
+var foreign130 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    TryOnData: TryOnData,
+    TryOnItem: TryOnItem,
+    TryOnModuleC: TryOnModuleC,
+    TryOnModuleS: TryOnModuleS,
+    TryOnPanel: TryOnPanel
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -16476,7 +17236,7 @@ var foreign171 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -16571,7 +17331,7 @@ var foreign121 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -16820,13 +17580,8 @@ class RankModuleC extends ModuleC {
         this.rankPanel = null;
         this.userId = null;
         this.interactionData = null;
-        // private tryOnData: TryOnData = null;
-        // private get getTryOnData(): TryOnData {
-        //     if (this.tryOnData == null) {
-        //         this.tryOnData = DataCenterC.getData(TryOnData);
-        //     }
-        //     return this.tryOnData;
-        // }
+        this.tryOnModuleC = null;
+        this.tryOnData = null;
         this.onOpenWorldRankAction = new Action();
         this.roomDatas = [];
         this.recycleRoomDatas = [];
@@ -16858,6 +17613,18 @@ class RankModuleC extends ModuleC {
             this.interactionData = DataCenterC.getData(InteractionData);
         }
         return this.interactionData;
+    }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    get getTryOnData() {
+        if (this.tryOnData == null) {
+            this.tryOnData = DataCenterC.getData(TryOnData);
+        }
+        return this.tryOnData;
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
@@ -16894,9 +17661,10 @@ class RankModuleC extends ModuleC {
             let time = this.data?.time;
             if (!time && time != 0)
                 time = 0;
-            // let tryon = this.getTryOnData?.tryOn;
-            // if (!tryon && tryon != 0) tryon = 0;
-            this.server.net_onEnterScene(nickName, score, time, 0);
+            let tryon = this.getTryOnData?.tryOn;
+            if (!tryon && tryon != 0)
+                tryon = 0;
+            this.server.net_onEnterScene(nickName, score, time, tryon);
         });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
@@ -16922,7 +17690,6 @@ class RankModuleC extends ModuleC {
                 this.roomDatas.push(tmpRoomData);
             }
         }
-        //TODO - 去更新TryOnPanel
     }
     updateRoomIndex() {
         this.curRoomIndex = -1;
@@ -16979,6 +17746,25 @@ class RankModuleC extends ModuleC {
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a, b) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
+    }
+    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a, b) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
     }
     net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
@@ -16998,6 +17784,16 @@ class RankModuleC extends ModuleC {
             return b.score - a.score;
         });
     }
+    getRoomDatas() {
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a, b) => {
+            return b.tryOn - a.tryOn;
+        });
+        return tmpRoomDatas;
+    }
 }
 
 var foreign118 = /*#__PURE__*/Object.freeze({
@@ -17010,7 +17806,7 @@ var foreign118 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.02.25-23.59.36
+ * TIME: 2025.03.01-17.47.26
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -17682,7 +18478,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -17767,7 +18563,7 @@ var foreign178 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -18119,6 +18915,7 @@ let GameStart = class GameStart extends Script {
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
+        ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
     }
     /**
      * 周期函数 每帧执行
@@ -18217,7 +19014,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -18307,7 +19104,7 @@ var foreign152 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.26
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -18609,40 +19406,6 @@ var foreign96 = /*#__PURE__*/Object.freeze({
     default: GMService$1
 });
 
-class TryOnModuleC extends ModuleC {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-}
-class TryOnModuleS extends ModuleS {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-}
-class TryOnData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.tryOn = 0;
-    }
-    setTryOn(addTryOn) {
-        this.tryOn += addTryOn;
-        this.save(false);
-    }
-    get getTryOn() {
-        return this.tryOn;
-    }
-}
-__decorate([
-    Decorator.persistence()
-], TryOnData.prototype, "tryOn", void 0);
-
-var foreign130 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    TryOnData: TryOnData,
-    TryOnModuleC: TryOnModuleC,
-    TryOnModuleS: TryOnModuleS
-});
-
 let CopyCharacter = class CopyCharacter extends Script {
     constructor() {
         super(...arguments);
@@ -18880,7 +19643,7 @@ var foreign132 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.02.25-23.59.35
+ * TIME: 2025.03.01-17.47.25
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -19122,7 +19885,9 @@ const MWModuleMap = {
      '52E3A8604FC761E6CC747FB22FD7160B': foreign176,
      '14F8E49D4B31DFAA50548BA206585CCA': foreign177,
      '656033E844C70FD925FC8F887EA9FA46': foreign178,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign179,
+     '6B744DEB4703AED17EA7279D0783813A': foreign179,
+     'C6D169354450AEEF12B964B7B3BA8B2D': foreign180,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign181,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -19302,7 +20067,9 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign176 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
 [foreign177 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
 [foreign178 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign179 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign179 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
+[foreign180 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
+[foreign181 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

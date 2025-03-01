@@ -1,6 +1,7 @@
 ﻿import { Notice } from "../common/notice/Notice";
 import { GameConfig } from "../configs/GameConfig";
 import Buff from "../module/DanMuModule/Buff";
+import { RoomData } from "../module/RankModule/RankData";
 
 export default class Utils {
     private static assetIconDataMap: Map<string, mw.AssetIconData> = new Map<string, mw.AssetIconData>();
@@ -267,5 +268,13 @@ export default class Utils {
                 return resolve(success);
             });
         });
+    }
+
+    public static isSameRoomDataTryOn(roomDatas1: RoomData[], roomDatas2: RoomData[]): boolean {
+        if (roomDatas1?.length != roomDatas2?.length) return false;
+        for (let i = 0; i < roomDatas1.length; ++i) {
+            if (roomDatas1[i].userId != roomDatas2[i].userId || roomDatas1[i].tryOn != roomDatas2[i].tryOn) return false;
+        }
+        return true;
     }
 }
