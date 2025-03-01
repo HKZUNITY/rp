@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign136 = /*#__PURE__*/Object.freeze({
+var foreign137 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign138 = /*#__PURE__*/Object.freeze({
+var foreign139 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -1587,7 +1587,7 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     AncientMoldingOutfitConfig: AncientMoldingOutfitConfig
 });
 
-const EXCELDATA$12 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "双层翅膀", "334814", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [2, "翅膀", "135851", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [3, "六翼翅膀", "399002", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [4, "精灵翅膀", "339243", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [5, null, "326976", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [6, null, "211667", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [7, null, "452702", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [8, null, "449694", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [9, null, "449687", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [10, null, "449659", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [11, null, "393543", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [12, null, "375152", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [13, null, "375788", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [14, null, "375145", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [15, null, "375134", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [16, null, "145912", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [17, null, "42805", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [18, null, "42816", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [19, null, "342530", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [20, "棺材", "117847", ["0", "0", "-132", "0", "0", "90", "1", "1", "1"], 0], [21, null, "88757", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [22, null, "88756", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [23, null, "88767", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [24, null, "88770", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [25, null, "88769", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [26, null, "127018", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [27, null, "127019", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [28, null, "155677", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [29, null, "155680", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [30, null, "155682", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [31, null, "155684", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [32, null, "155705", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [33, null, "155706", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [34, null, "155707", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [35, null, "157113", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [36, null, "157118", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [37, null, "157119", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [38, null, "157253", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [39, null, "157254", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [40, null, "160335", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [41, null, "160339", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [42, null, "160340", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [43, null, "160342", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [44, null, "160344", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [45, null, "160347", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [46, null, "160345", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [47, null, "160343", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [48, null, "301947", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [49, null, "326208", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [50, null, "326209", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [51, null, "326306", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [52, null, "328807", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [53, null, "445944", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [54, null, "499861", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [55, null, "517323", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [56, null, "510179", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [57, null, "510182", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [58, null, "510184", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [59, null, "530877", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [60, null, "530878", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [61, null, "530881", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [62, "飞行背包", "131208", ["-6", "0", "-123", "0", "0", "90", "1", "1", "1"], 0], [63, "小熊背包", "454815", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [64, "小熊背包", "454822", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [65, "小熊背包", "454833", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [66, "小熊背包", "454834", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [67, null, "132890", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [68, null, "132891", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [69, null, "132893", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [70, null, "132894", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [71, null, "132892", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [72, null, "402315", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [73, null, "402301", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [74, null, "397447", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [75, null, "409377", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [76, null, "409330", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [77, null, "424761", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [78, null, "348269", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [79, null, "196412", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [80, null, "155703", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0]];
+const EXCELDATA$12 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "双层翅膀", "334814", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [2, "翅膀", "135851", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [3, "六翼翅膀", "399002", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [4, "精灵翅膀", "339243", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [5, null, "326976", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [6, null, "211667", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [7, null, "452702", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [8, null, "449694", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [9, null, "449687", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [10, null, "449659", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [11, null, "393543", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [12, null, "375152", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [13, null, "375788", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [14, null, "375145", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [15, null, "375134", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [16, null, "145912", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [17, null, "42805", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [18, null, "42816", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [19, null, "342530", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [20, "棺材", "117847", ["0", "0", "-132", "0", "0", "90", "1", "1", "1"], 0], [21, "环绕", "146784", ["0", "0", "-18", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [22, null, "88757", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [23, null, "88756", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [24, null, "88767", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [25, null, "88770", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [26, null, "88769", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [27, null, "127018", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [28, null, "127019", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [29, null, "155677", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [30, null, "155680", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [31, null, "155682", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [32, null, "155684", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [33, null, "155705", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [34, null, "155706", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [35, null, "155707", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [36, null, "157113", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [37, null, "157118", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [38, null, "157119", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [39, null, "157253", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [40, null, "157254", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [41, null, "160335", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [42, null, "160339", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [43, null, "160340", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [44, null, "160342", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [45, null, "160344", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [46, null, "160347", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [47, null, "160345", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [48, null, "160343", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [49, null, "301947", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [50, null, "326208", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [51, null, "326209", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [52, null, "326306", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [53, null, "328807", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [54, null, "445944", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [55, null, "499861", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [56, null, "517323", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [57, null, "510179", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [58, null, "510182", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [59, null, "510184", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [60, null, "530877", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [61, null, "530878", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [62, null, "530881", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [63, "闪电", "142950", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [64, "飞行背包", "131208", ["-6", "0", "-123", "0", "0", "90", "1", "1", "1"], 0], [65, "小熊背包", "454815", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [66, "小熊背包", "454822", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [67, "小熊背包", "454833", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [68, "小熊背包", "454834", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [69, null, "132890", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [70, null, "132891", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [71, null, "132893", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [72, null, "132894", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [73, null, "132892", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [74, null, "402315", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [75, null, "402301", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [76, null, "397447", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [77, null, "409377", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [78, null, "409330", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [79, null, "424761", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [80, null, "348269", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [81, null, "196412", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [82, null, "155703", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0]];
 class BackConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$12);
@@ -1719,7 +1719,7 @@ var foreign21 = /*#__PURE__*/Object.freeze({
     DailyStylingOutfit2Config: DailyStylingOutfit2Config
 });
 
-const EXCELDATA$T = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "狐狸耳朵", "226479", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "围巾", "295506", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "双马尾辫子", "352615", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "狐耳朵", "404433", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "猫耳", "404473", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星星", "441348", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "狗头", "462790", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [8, "熊猫头", "462791", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [9, "问号", "441349", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [10, "问号", "13728", ["0", "0", "50", "0", "0", "0", "1", "1", "1"], 0], [11, "梦幻泡泡蝴蝶结", "452232", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [12, "梦幻泡泡蝴蝶结", "452233", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [13, "梦幻泡泡蝴蝶结", "452234", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [14, "梦幻泡泡蝴蝶结", "452235", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [15, "道具", "471540", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [16, "道具", "471541", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [17, "道具", "471542", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [18, "道具", "471543", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [19, "绿蛇头发", "502350", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [20, "青蛇头发", "502351", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [21, "红蛇头发", "502352", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [22, "龙角", "266596", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [23, "龙角", "266597", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [24, "龙角", "266598", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [25, "龙角", "266600", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [26, "龙角", "266601", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [27, "龙角", "266602", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [28, "龙角", "266610", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [29, "犄角", "467603", ["0", "0", "16", "0", "0", "0", "1", "1", "1"], 0], [30, "发光恶魔角", "266332", ["0", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [31, "帽子", "457013", ["0", "0", "12", "0", "0", "0", "1", "1", "1"], 0], [32, "护目眼镜", "209534", ["0", "5", "15", "-45", "0", "0", "1", "1", "1"], 0], [33, "泳镜", "112801", ["0", "5", "17", "-45", "0", "0", "1", "1", "1"], 0], [34, "男帽子", "173867", ["0", "0", "0", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [35, "尴尬", "26146", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [36, "眩晕", "26151", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [37, null, "26155", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [38, "手指", "160743", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [39, "自动寻路图标", "162012", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [40, "子弹", "168959", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [41, "生气", "200925", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [42, "荧光小人", "403000", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [43, "荧光小人", "403004", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [44, "荧光小人", "403012", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [45, "荧光小人", "403014", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [46, "荧光小人", "403015", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [47, "恭喜发财", "506842", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
+const EXCELDATA$T = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "狐狸耳朵", "226479", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "围巾", "295506", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "双马尾辫子", "352615", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "狐耳朵", "404433", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "猫耳", "404473", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星星", "441348", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "眩晕Buff", "142935", ["0", "0", "22", "0", "0", "0", "0.4", "0.4", "0.4"], 0], [8, "狗头", "462790", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [9, "熊猫头", "462791", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [10, "问号", "441349", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [11, "问号", "13728", ["0", "0", "38", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [12, "乌云", "169404", ["0", "0", "47", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [13, "问号", "200911", ["0", "0", "14", "0", "0", "0", "1", "1", "1"], 0], [14, "表情", "88831", ["0", "0", "23", "0", "0", "0", "0.15", "0.15", "0.15"], 0], [15, "表情", "88818", ["0", "0", "23", "0", "0", "0", "0.15", "0.15", "0.15"], 0], [16, "表情", "88825", ["-15", "0", "30", "0", "0", "0", "0.3", "0.3", "0.3"], 0], [17, "睡眠", "287819", ["0", "0", "8", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [18, "恶心", "26155", ["0", "0", "36", "0", "0", "0", "1", "1", "1"], 0], [19, "泡泡", "451246", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [20, "蝙蝠", "452716", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [21, "花瓣环绕", "340179", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [22, "蝴蝶泡泡", "295800", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [23, "星星", "235888", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [24, "五角星泡泡", "295801", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [25, "打瞌睡", "26158", ["0", "10", "5", "0", "0", "0", "0.3", "0.3", "0.3"], 0], [26, "爱心", "184435", ["0", "0", "32", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [27, "梦幻泡泡蝴蝶结", "452232", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [28, "梦幻泡泡蝴蝶结", "452233", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [29, "梦幻泡泡蝴蝶结", "452234", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [30, "梦幻泡泡蝴蝶结", "452235", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [31, "道具", "471540", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [32, "道具", "471541", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [33, "道具", "471542", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [34, "道具", "471543", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [35, "绿蛇头发", "502350", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [36, "青蛇头发", "502351", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [37, "红蛇头发", "502352", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [38, "龙角", "266596", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [39, "龙角", "266597", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [40, "龙角", "266598", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [41, "龙角", "266600", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [42, "龙角", "266601", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [43, "龙角", "266602", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [44, "龙角", "266610", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [45, "犄角", "467603", ["0", "0", "16", "0", "0", "0", "1", "1", "1"], 0], [46, "发光恶魔角", "266332", ["0", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [47, "帽子", "457013", ["0", "0", "12", "0", "0", "0", "1", "1", "1"], 0], [48, "护目眼镜", "209534", ["0", "5", "15", "-45", "0", "0", "1", "1", "1"], 0], [49, "泳镜", "112801", ["0", "5", "17", "-45", "0", "0", "1", "1", "1"], 0], [50, "男帽子", "173867", ["0", "0", "0", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [51, "尴尬", "26146", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [52, "眩晕", "26151", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [53, null, "26155", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [54, "手指", "160743", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [55, "自动寻路图标", "162012", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [56, "子弹", "168959", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [57, "生气", "200925", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [58, "荧光小人", "403000", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [59, "荧光小人", "403004", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [60, "荧光小人", "403012", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [61, "荧光小人", "403014", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [62, "荧光小人", "403015", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [63, "恭喜发财", "506842", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class EarConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$T);
@@ -3451,7 +3451,7 @@ Utils.guideEffectGuid = `146775`;
 Utils.targetEffectGuid = `142962`;
 Utils.inColorHexStrMap = new Map();
 
-var foreign134 = /*#__PURE__*/Object.freeze({
+var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Utils
 });
@@ -3519,7 +3519,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign178 = /*#__PURE__*/Object.freeze({
+var foreign179 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -3561,7 +3561,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign133 = /*#__PURE__*/Object.freeze({
+var foreign134 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -3685,7 +3685,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign135 = /*#__PURE__*/Object.freeze({
+var foreign136 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -3753,7 +3753,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign145 = /*#__PURE__*/Object.freeze({
+var foreign146 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -3836,7 +3836,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign153 = /*#__PURE__*/Object.freeze({
+var foreign154 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -4216,7 +4216,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign154 = /*#__PURE__*/Object.freeze({
+var foreign155 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -4282,7 +4282,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign174 = /*#__PURE__*/Object.freeze({
+var foreign175 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -4420,7 +4420,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign175 = /*#__PURE__*/Object.freeze({
+var foreign176 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -4506,7 +4506,7 @@ AdPanel_Generate = __decorate([
 ], AdPanel_Generate);
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign139 = /*#__PURE__*/Object.freeze({
+var foreign140 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -4597,7 +4597,7 @@ TipsPanel_Generate = __decorate([
 ], TipsPanel_Generate);
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign140 = /*#__PURE__*/Object.freeze({
+var foreign141 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -5987,7 +5987,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign148 = /*#__PURE__*/Object.freeze({
+var foreign149 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -6125,7 +6125,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign155 = /*#__PURE__*/Object.freeze({
+var foreign156 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -6190,27 +6190,30 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign156 = /*#__PURE__*/Object.freeze({
+var foreign157 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
 
 class RoomData {
-    constructor(userId, name, killCount, time) {
+    constructor(userId, name, killCount, time, tryOn) {
         this.userId = "";
         this.playerName = "";
         this.score = 0;
         this.time = 0;
+        this.tryOn = 0;
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
-    setData(userId, name, killCount, time) {
+    setData(userId, name, killCount, time, tryOn) {
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
 }
 class WorldData {
@@ -6265,6 +6268,7 @@ class RankModuleS extends ModuleS {
         this.roomNames = [];
         this.roomScores = [];
         this.roomTimes = [];
+        this.roomTryOn = [];
         this.worldUserIds = [];
         this.worldNames = [];
         this.worldTimes = [];
@@ -6302,18 +6306,25 @@ class RankModuleS extends ModuleS {
         if (isSync)
             this.synchrodata_aRoomWorld(player);
     }
-    net_onEnterScene(playerName, score, time) {
-        this.syncPlayerMap.set(this.currentPlayer, false);
-        let userId = this.currentPlayer.userId;
-        this.currentPlayer.character.displayName = playerName;
-        this.onEnterScene(userId, playerName, score, time);
+    net_onEnterScene(playerName, score, time, tryOn) {
+        let player = this.currentPlayer;
+        this.syncPlayerMap.set(player, false);
+        player.character.displayName = playerName;
+        this.onEnterScene(player.userId, playerName, score, time, tryOn);
     }
-    onEnterScene(userId, playerName, score, time) {
-        let roomData = new RoomData(userId, playerName, score, time);
+    onEnterScene(userId, playerName, score, time, tryOn) {
+        let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
         let worldData = new WorldData(userId, playerName, time);
-        this.isRefreshWorldData([worldData]);
+        try {
+            this.isRefreshWorldData([worldData]);
+        }
+        catch (error) {
+        }
         this.synchrodata_onEnterScene(userId);
+    }
+    net_refreshScore(score) {
+        this.refreshScore(this.currentPlayer.userId, score);
     }
     refreshScore(userId, score) {
         if (!this.roomDataMap.has(userId))
@@ -6323,11 +6334,11 @@ class RankModuleS extends ModuleS {
         this.synchrodata_Room();
     }
     async refreshTime() {
-        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
+        if (!this.syncPlayerMap || this.syncPlayerMap?.size == 0)
             return;
         let tmpWorldDatas = [];
-        this.syncPlayerMap.forEach((value, key) => {
-            DataCenterS.getData(key, RankData).setTime(1);
+        this.syncPlayerMap?.forEach((value, key) => {
+            DataCenterS.getData(key, RankData)?.setTime(1);
             let userId = key.userId;
             if (!this.roomDataMap.has(userId))
                 return;
@@ -6336,14 +6347,30 @@ class RankModuleS extends ModuleS {
             let worldData = new WorldData(userId, roomData.playerName, roomData.time);
             tmpWorldDatas.push(worldData);
         });
-        this.worldDatas = (await Utils.getCustomdata("WorldData"));
-        this.isRefreshWorldData(tmpWorldDatas);
+        try {
+            this.worldDatas = (await Utils.getCustomdata("WorldData"));
+            this.isRefreshWorldData(tmpWorldDatas);
+        }
+        catch (error) {
+        }
         this.synchrodata_World();
+    }
+    net_refreshTryOn(tryOn) {
+        this.refreshTryOn(this.currentPlayer.userId, tryOn);
+    }
+    refreshTryOn(userId, tryOn) {
+        if (!this.roomDataMap.has(userId))
+            return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.tryOn = tryOn;
+        this.synchrodata_Room();
     }
     isRefreshWorldData(tmpWorldDatas) {
         if (!this.isInitWorldDatas)
             return false;
-        if (this.worldDatas == null)
+        if (!tmpWorldDatas || tmpWorldDatas?.length == 0)
+            return false;
+        if (!this.worldDatas || this.worldDatas?.length == 0)
             this.worldDatas = [];
         let isNeedSave = false;
         for (let k = 0; k < tmpWorldDatas.length; ++k) {
@@ -6422,20 +6449,23 @@ class RankModuleS extends ModuleS {
         return isNeedSave;
     }
     updateRoomData() {
-        if (this.roomDataMap.size == 0 || !this.roomDataMap)
+        if (!this.roomDataMap || this.roomDataMap?.size == 0)
             return;
         this.roomUserIds.length = 0;
         this.roomNames.length = 0;
         this.roomScores.length = 0;
-        this.roomDataMap.forEach((value, key) => {
+        this.roomTimes.length = 0;
+        this.roomTryOn.length = 0;
+        this.roomDataMap?.forEach((value, key) => {
             this.roomUserIds.push(value.userId);
             this.roomNames.push(value.playerName);
             this.roomScores.push(value.score);
             this.roomTimes.push(value.time);
+            this.roomTryOn.push(value.tryOn);
         });
     }
     updateWorldData() {
-        if (!this.worldDatas || this.worldDatas.length == 0)
+        if (!this.worldDatas || this.worldDatas?.length == 0)
             return;
         this.worldUserIds.length = 0;
         this.worldNames.length = 0;
@@ -6452,10 +6482,10 @@ class RankModuleS extends ModuleS {
         this.syncPlayerMap.forEach((value, key) => {
             // if (!value) return;
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
             }
             else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         });
     }
@@ -6463,7 +6493,7 @@ class RankModuleS extends ModuleS {
         this.updateRoomData();
         this.syncPlayerMap.forEach((value, key) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
         });
     }
     synchrodata_World() {
@@ -6478,11 +6508,11 @@ class RankModuleS extends ModuleS {
         this.updateWorldData();
         this.syncPlayerMap.forEach((value, key) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
         });
     }
     synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
     }
     getNamesByUserId(userId1, userId2) {
         if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
@@ -7236,7 +7266,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign141 = /*#__PURE__*/Object.freeze({
+var foreign142 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -7346,7 +7376,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign142 = /*#__PURE__*/Object.freeze({
+var foreign143 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -7485,7 +7515,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign143 = /*#__PURE__*/Object.freeze({
+var foreign144 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -7623,7 +7653,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign144 = /*#__PURE__*/Object.freeze({
+var foreign145 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -7748,7 +7778,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign146 = /*#__PURE__*/Object.freeze({
+var foreign147 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -7851,7 +7881,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign147 = /*#__PURE__*/Object.freeze({
+var foreign148 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -7961,7 +7991,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign150 = /*#__PURE__*/Object.freeze({
+var foreign151 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -8416,7 +8446,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign149 = /*#__PURE__*/Object.freeze({
+var foreign150 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -10998,7 +11028,7 @@ ColorPickPanel_Generate = __decorate([
 ], ColorPickPanel_Generate);
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign157 = /*#__PURE__*/Object.freeze({
+var foreign158 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11054,7 +11084,7 @@ ColorPickTab1_Generate = __decorate([
 ], ColorPickTab1_Generate);
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign158 = /*#__PURE__*/Object.freeze({
+var foreign159 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11163,7 +11193,7 @@ ColorPickTab2_Generate = __decorate([
 ], ColorPickTab2_Generate);
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign159 = /*#__PURE__*/Object.freeze({
+var foreign160 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -11309,7 +11339,7 @@ ColorPickTab3_Generate = __decorate([
 ], ColorPickTab3_Generate);
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign160 = /*#__PURE__*/Object.freeze({
+var foreign161 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -11448,7 +11478,7 @@ class TouchScript {
     }
 }
 
-var foreign132 = /*#__PURE__*/Object.freeze({
+var foreign133 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     get Enums () { return Enums; },
     TouchScript: TouchScript
@@ -11672,7 +11702,7 @@ MallPanel_Generate = __decorate([
 ], MallPanel_Generate);
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign165 = /*#__PURE__*/Object.freeze({
+var foreign166 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -11762,7 +11792,7 @@ MallItem_Big_Generate = __decorate([
 ], MallItem_Big_Generate);
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign161 = /*#__PURE__*/Object.freeze({
+var foreign162 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -11966,7 +11996,7 @@ MallItem_Color_Generate = __decorate([
 ], MallItem_Color_Generate);
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign162 = /*#__PURE__*/Object.freeze({
+var foreign163 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12122,7 +12152,7 @@ MallItem_Self_Generate = __decorate([
 ], MallItem_Self_Generate);
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign163 = /*#__PURE__*/Object.freeze({
+var foreign164 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -12283,7 +12313,7 @@ MallItem_Small_Generate = __decorate([
 ], MallItem_Small_Generate);
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign164 = /*#__PURE__*/Object.freeze({
+var foreign165 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -12667,7 +12697,7 @@ MallTab1_Generate = __decorate([
 ], MallTab1_Generate);
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign166 = /*#__PURE__*/Object.freeze({
+var foreign167 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -12807,7 +12837,7 @@ MallTab2_Generate = __decorate([
 ], MallTab2_Generate);
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign167 = /*#__PURE__*/Object.freeze({
+var foreign168 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -12945,7 +12975,7 @@ MallTab3_Generate = __decorate([
 ], MallTab3_Generate);
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign168 = /*#__PURE__*/Object.freeze({
+var foreign169 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -14286,7 +14316,7 @@ MallTipsPanel_Generate = __decorate([
 ], MallTipsPanel_Generate);
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign169 = /*#__PURE__*/Object.freeze({
+var foreign170 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -16436,7 +16466,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign170 = /*#__PURE__*/Object.freeze({
+var foreign171 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -16506,7 +16536,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign171 = /*#__PURE__*/Object.freeze({
+var foreign172 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -16601,7 +16631,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign172 = /*#__PURE__*/Object.freeze({
+var foreign173 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -16790,6 +16820,13 @@ class RankModuleC extends ModuleC {
         this.rankPanel = null;
         this.userId = null;
         this.interactionData = null;
+        // private tryOnData: TryOnData = null;
+        // private get getTryOnData(): TryOnData {
+        //     if (this.tryOnData == null) {
+        //         this.tryOnData = DataCenterC.getData(TryOnData);
+        //     }
+        //     return this.tryOnData;
+        // }
         this.onOpenWorldRankAction = new Action();
         this.roomDatas = [];
         this.recycleRoomDatas = [];
@@ -16829,6 +16866,11 @@ class RankModuleC extends ModuleC {
     initEventAction() {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
+        let score = 0;
+        InputUtil.onKeyDown(mw.Keys.L, () => {
+            score++;
+            this.server.net_refreshScore(score);
+        });
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
@@ -16847,16 +16889,20 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData.bagIds;
+            let bagIds = this.getInteractionData?.bagIds;
             let score = (!bagIds) ? 0 : bagIds.length;
-            let time = this.data.time;
-            this.server.net_onEnterScene(nickName, score, time);
+            let time = this.data?.time;
+            if (!time && time != 0)
+                time = 0;
+            // let tryon = this.getTryOnData?.tryOn;
+            // if (!tryon && tryon != 0) tryon = 0;
+            this.server.net_onEnterScene(nickName, score, time, 0);
         });
     }
-    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
+    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
         if (this.roomDatas.length > roomUserIds.length) {
             for (let i = 0; i < roomUserIds.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
                 this.recycleRoomDatas.push(this.roomDatas[i]);
@@ -16865,17 +16911,18 @@ class RankModuleC extends ModuleC {
         }
         else {
             for (let i = 0; i < this.roomDatas.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
                 let tmpRoomData = null;
                 if (this.recycleRoomDatas.length > 0)
                     tmpRoomData = this.recycleRoomDatas.pop();
                 if (!tmpRoomData)
-                    tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                    tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
                 this.roomDatas.push(tmpRoomData);
             }
         }
+        //TODO - 去更新TryOnPanel
     }
     updateRoomIndex() {
         this.curRoomIndex = -1;
@@ -16926,9 +16973,9 @@ class RankModuleC extends ModuleC {
         }
         this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
-    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes) {
+    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
         // console.error("wfz = " + roomUserIds.length);
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
@@ -16938,8 +16985,8 @@ class RankModuleC extends ModuleC {
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, worldUserIds, worldNames, worldScores) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
@@ -17211,7 +17258,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign173 = /*#__PURE__*/Object.freeze({
+var foreign174 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -17710,7 +17757,7 @@ SignInPanel_Generate = __decorate([
 ], SignInPanel_Generate);
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign177 = /*#__PURE__*/Object.freeze({
+var foreign178 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -17796,7 +17843,7 @@ SignInItem_Generate = __decorate([
 ], SignInItem_Generate);
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign176 = /*#__PURE__*/Object.freeze({
+var foreign177 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -18250,7 +18297,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign151 = /*#__PURE__*/Object.freeze({
+var foreign152 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -18310,7 +18357,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign152 = /*#__PURE__*/Object.freeze({
+var foreign153 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -18562,6 +18609,40 @@ var foreign96 = /*#__PURE__*/Object.freeze({
     default: GMService$1
 });
 
+class TryOnModuleC extends ModuleC {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+}
+class TryOnModuleS extends ModuleS {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+}
+class TryOnData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.tryOn = 0;
+    }
+    setTryOn(addTryOn) {
+        this.tryOn += addTryOn;
+        this.save(false);
+    }
+    get getTryOn() {
+        return this.tryOn;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], TryOnData.prototype, "tryOn", void 0);
+
+var foreign130 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    TryOnData: TryOnData,
+    TryOnModuleC: TryOnModuleC,
+    TryOnModuleS: TryOnModuleS
+});
+
 let CopyCharacter = class CopyCharacter extends Script {
     constructor() {
         super(...arguments);
@@ -18591,7 +18672,7 @@ CopyCharacter = __decorate([
 ], CopyCharacter);
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign130 = /*#__PURE__*/Object.freeze({
+var foreign131 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -18789,7 +18870,7 @@ class KeyActionManager {
     }
 }
 
-var foreign131 = /*#__PURE__*/Object.freeze({
+var foreign132 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -18857,7 +18938,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign137 = /*#__PURE__*/Object.freeze({
+var foreign138 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -18992,55 +19073,56 @@ const MWModuleMap = {
      'B23852CE407E0A008F3BE78DDE49EB51': foreign127,
      'FAAFDA5E4A40291D72B0459742CD601A': foreign128,
      '1D10F64B4D38229D7655CC923071E9B2': foreign129,
-     'BC6767CF4240176E5C9B6984BB540726': foreign130,
-     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign131,
-     '49E1131448695DF591C8DEB790EFC952': foreign132,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign133,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign134,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign135,
-     '741B06144E25B4753E8005985816DAF8': foreign136,
-     'EE3F354349BB041CD741FF84B745B113': foreign137,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign138,
-     '100DA6744367634E7FFC0895CD98DDB9': foreign139,
-     '67892EC847DCDABBB14451A8CDFD526C': foreign140,
-     '486071A84887288700A7E297CBF6B438': foreign141,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign142,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign143,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign144,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign145,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign146,
-     '827757834BCFC569771BCB84A3609238': foreign147,
-     'F58702064960960163820CB9C8D0F3C1': foreign148,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign149,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign150,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign151,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign152,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign153,
-     '337A59B14A237973EEB178A260344C21': foreign154,
-     'B9D019D74067C8F762132698D474BF63': foreign155,
-     'C4E377B14812C09429E28988E62907DB': foreign156,
-     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign157,
-     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign158,
-     '06CF574844634CC9C0793EA8847C6FE2': foreign159,
-     '27DEB6624F87673F14AA499E8A3A7DD3': foreign160,
-     'CEE9E492480CEF69BF9291BA357C9AC1': foreign161,
-     '713A8E764F3DAC8A8AD1BEB382C46158': foreign162,
-     '5E6E0BFE48C322071930C2B8DD56E900': foreign163,
-     'C381E72F409A02A45B69B9BC32F4FCAF': foreign164,
-     'FADB775E4F203C2565D31A9AA31E22D1': foreign165,
-     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign166,
-     'F3E9117C4C567C26689F08B919B7E7DA': foreign167,
-     'AF5DEB904C817468E94BAA9265F23AF7': foreign168,
-     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign169,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign170,
-     'A8E0593D477EC697B2559789990E0882': foreign171,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign172,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign173,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign174,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign175,
-     '14F8E49D4B31DFAA50548BA206585CCA': foreign176,
-     '656033E844C70FD925FC8F887EA9FA46': foreign177,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign178,
+     '2032BEF24550E75CE53EE39AE53150E9': foreign130,
+     'BC6767CF4240176E5C9B6984BB540726': foreign131,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign132,
+     '49E1131448695DF591C8DEB790EFC952': foreign133,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign134,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign135,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign136,
+     '741B06144E25B4753E8005985816DAF8': foreign137,
+     'EE3F354349BB041CD741FF84B745B113': foreign138,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign139,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign140,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign141,
+     '486071A84887288700A7E297CBF6B438': foreign142,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign143,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign144,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign145,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign146,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign147,
+     '827757834BCFC569771BCB84A3609238': foreign148,
+     'F58702064960960163820CB9C8D0F3C1': foreign149,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign150,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign151,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign152,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign153,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign154,
+     '337A59B14A237973EEB178A260344C21': foreign155,
+     'B9D019D74067C8F762132698D474BF63': foreign156,
+     'C4E377B14812C09429E28988E62907DB': foreign157,
+     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign158,
+     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign159,
+     '06CF574844634CC9C0793EA8847C6FE2': foreign160,
+     '27DEB6624F87673F14AA499E8A3A7DD3': foreign161,
+     'CEE9E492480CEF69BF9291BA357C9AC1': foreign162,
+     '713A8E764F3DAC8A8AD1BEB382C46158': foreign163,
+     '5E6E0BFE48C322071930C2B8DD56E900': foreign164,
+     'C381E72F409A02A45B69B9BC32F4FCAF': foreign165,
+     'FADB775E4F203C2565D31A9AA31E22D1': foreign166,
+     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign167,
+     'F3E9117C4C567C26689F08B919B7E7DA': foreign168,
+     'AF5DEB904C817468E94BAA9265F23AF7': foreign169,
+     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign170,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign171,
+     'A8E0593D477EC697B2559789990E0882': foreign172,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign173,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign174,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign175,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign176,
+     '14F8E49D4B31DFAA50548BA206585CCA': foreign177,
+     '656033E844C70FD925FC8F887EA9FA46': foreign178,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign179,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -19171,55 +19253,56 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign127 || {}, "JavaScripts/module/SignInModule/SignInModuleS"],
 [foreign128 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
 [foreign129 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
-[foreign130 || {}, "JavaScripts/tools/CopyCharacter"],
-[foreign131 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign132 || {}, "JavaScripts/tools/TouchScript"],
-[foreign133 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign134 || {}, "JavaScripts/tools/Utils"],
-[foreign135 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign136 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign137 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign138 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign139 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign140 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
-[foreign141 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign142 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign143 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign151 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign152 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign153 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign154 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign155 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign156 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign157 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
-[foreign158 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
-[foreign159 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
-[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
-[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
-[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
-[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
-[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
-[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
-[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
-[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
-[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
-[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
-[foreign170 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign171 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign172 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign173 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign174 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign175 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign176 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
-[foreign177 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign178 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign130 || {}, "JavaScripts/module/TryOnModule/TryOnModule"],
+[foreign131 || {}, "JavaScripts/tools/CopyCharacter"],
+[foreign132 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign133 || {}, "JavaScripts/tools/TouchScript"],
+[foreign134 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign135 || {}, "JavaScripts/tools/Utils"],
+[foreign136 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign137 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign138 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign139 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign140 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign141 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign142 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign143 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign151 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign152 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign153 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign154 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign155 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign156 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign157 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign158 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
+[foreign159 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
+[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
+[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
+[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
+[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
+[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
+[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
+[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
+[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
+[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
+[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
+[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
+[foreign171 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign172 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign173 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign174 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign175 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign176 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign177 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
+[foreign178 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
+[foreign179 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;
