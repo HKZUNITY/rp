@@ -3504,9 +3504,65 @@ Utils.guideEffectGuid = `146775`;
 Utils.targetEffectGuid = `142962`;
 Utils.inColorHexStrMap = new Map();
 Utils.tryOnCount = -1;
+function cubicBezier(p1x, p1y, p2x, p2y) {
+    const ZERO_LIMIT = 1e-6;
+    const ax = 3 * p1x - 3 * p2x + 1;
+    const bx = 3 * p2x - 6 * p1x;
+    const cx = 3 * p1x;
+    const ay = 3 * p1y - 3 * p2y + 1;
+    const by = 3 * p2y - 6 * p1y;
+    const cy = 3 * p1y;
+    function sampleCurveDerivativeX(t) {
+        return (3 * ax * t + 2 * bx) * t + cx;
+    }
+    function sampleCurveX(t) {
+        return ((ax * t + bx) * t + cx) * t;
+    }
+    function sampleCurveY(t) {
+        return ((ay * t + by) * t + cy) * t;
+    }
+    function solveCurveX(x) {
+        let t2 = x;
+        let derivative;
+        let x2;
+        for (let i = 0; i < 8; i++) {
+            x2 = sampleCurveX(t2) - x;
+            if (Math.abs(x2) < ZERO_LIMIT) {
+                return t2;
+            }
+            derivative = sampleCurveDerivativeX(t2);
+            if (Math.abs(derivative) < ZERO_LIMIT) {
+                break;
+            }
+            t2 -= x2 / derivative;
+        }
+        let t1 = 1;
+        let t0 = 0;
+        t2 = x;
+        while (t1 > t0) {
+            x2 = sampleCurveX(t2) - x;
+            if (Math.abs(x2) < ZERO_LIMIT) {
+                return t2;
+            }
+            if (x2 > 0) {
+                t1 = t2;
+            }
+            else {
+                t0 = t2;
+            }
+            t2 = (t1 + t0) / 2;
+        }
+        return t2;
+    }
+    function solve(x) {
+        return sampleCurveY(solveCurveX(x));
+    }
+    return solve;
+}
 
 var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    cubicBezier: cubicBezier,
     default: Utils
 });
 
@@ -4887,6 +4943,8 @@ class HUDPanel extends HUDPanel_Generate$1 {
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
+        this.initShakeMallTween();
+        this.initShakeShareTween();
     }
     updateFreeTime() {
         console.error(`wfz - freeTime:${GlobalData.freeTime}`);
@@ -5036,6 +5094,73 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     onHide() {
         this.mVirtualJoystickPanel.resetJoyStick();
+    }
+    initShakeMallTween() {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.8, 20, -20, 1.4, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.8, -20, 20, 0.9, 1.4);
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            });
+        });
+    }
+    initShakeShareTween() {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenShareButton, 0.8, 20, -20, 1.2, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenShareButton, 0.8, -20, 20, 0.9, 1.2);
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            });
+        });
+    }
+    getShakeTween(widget, angleTime, startAngle, endAngle) {
+        return new Tween({ angle: startAngle })
+            .to({ angle: endAngle }, angleTime * 1000)
+            .onUpdate((v) => {
+            widget.renderTransformAngle = v.angle;
+        })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getScaleTween(widget, scaleTime, startScaleX, startScaleY, endScaleX, endScaleY) {
+        return new Tween({ scaleX: startScaleX, scaleY: startScaleY })
+            .to({ scaleX: endScaleX, scaleY: endScaleY }, scaleTime * 1000)
+            .onUpdate((v) => {
+            widget.renderScale = new mw.Vector2(v.scaleX, v.scaleY);
+        })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getShakeScaleTween(widget, shakeScaleTime, startAngle, endAngle, startScale, endScale) {
+        return new Tween({ angle: startAngle, scale: startScale })
+            .to({ angle: endAngle, scale: endScale }, shakeScaleTime * 1000)
+            .onUpdate((v) => {
+            widget.renderTransformAngle = v.angle;
+            widget.renderScale = new mw.Vector2(v.scale, v.scale);
+        })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getRenderOpacityTween(widget, time, startOpacity, endOpacity) {
+        return new Tween({ opacity: startOpacity })
+            .to({ opacity: endOpacity }, time * 1000)
+            .onUpdate((v) => {
+            widget.renderOpacity = v.opacity;
+        })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getPosTween(widget, posTime, startPosX, startPosY, endPosX, endPosY) {
+        return new Tween({ posX: startPosX, posY: startPosY })
+            .to({ posX: endPosX, posY: endPosY }, posTime * 1000)
+            .onUpdate((v) => {
+            widget.position = new mw.Vector2(v.posX, v.posY);
+        })
+            .easing(cubicBezier(.22, .9, .28, .92));
     }
 }
 class HUDModuleC extends ModuleC {
