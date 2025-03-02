@@ -334,6 +334,7 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
             if (roomData.userId == this.localPlayer.userId) {
                 this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
             } else {
+                await TimeUtil.delaySecond(1);
                 let player = await Player.asyncGetPlayer(roomData.userId);
                 if (!player || !player.character) {
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
