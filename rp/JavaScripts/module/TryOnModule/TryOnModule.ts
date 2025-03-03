@@ -349,6 +349,8 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
             }
             this.tryOnRoomData = roomData;
             await this.localPlayer.character.asyncReady();
+            await TimeUtil.delaySecond(1);
+            this.getMallModuleC.onSwitchCameraAction.call(2);
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
         });
     }
@@ -388,6 +390,7 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
         });
     }
 }

@@ -631,6 +631,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await this.localPlayer.character.asyncReady();
         this.isNeedSaveCharacter = true;
         // this.localPlayer.character.syncDescription();
+        if (tabId == Tab2Type.Tab2_BodyType) {
+            await TimeUtil.delaySecond(1);
+            this.onSwitchCameraAction.call(2);
+        }
     }
 
     private async changeTop(assetId: string): Promise<void> {
@@ -976,7 +980,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let shopCamera: mw.Camera = await GameObject.asyncSpawn<mw.Camera>(`Camera`);
         shopCamera.worldTransform.rotation = mw.Rotation.zero;
         this.onSwitchCameraAction.add((cameraType: number) => {
-            if (this.lastCameraType == cameraType) return;
+            // if (this.lastCameraType == cameraType) return;
             if (cameraType == 0) {
                 Camera.switch(myCamera);
             } else if (cameraType == 1) {
@@ -992,7 +996,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.3, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
                 Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
             }
-            this.lastCameraType = cameraType;
+            // this.lastCameraType = cameraType;
         });
     }
 
