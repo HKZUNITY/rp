@@ -265,6 +265,7 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
 
     private onOpenShareActionHandler(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.getMallModuleC.isAccountServiceDownloadData();
             this.tryOnRoomData = null;
             await this.getMallModuleC.openTryOnPanel();
             let roomDatas = this.getRankModuleC.getRoomDatas();
@@ -339,6 +340,11 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
                 if (!player || !player.character) {
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
+                    return;
+                }
+                await player.character.asyncReady();
+                if (player.character.description.advance.base.characterSetting.somatotype == mw.SomatotypeV2.None) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips8.Value);
                     return;
                 }
                 this.localPlayer.character.detachAllFromSlot({ isDestroy: true });

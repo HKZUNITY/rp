@@ -47,7 +47,11 @@ export default class SignInItem extends SignInItem_Generate {
 
 	private refreshUI(): void {
 		this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
-		if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0) this.mIconImage.imageGuid = this.signInUserData.icon;
+		if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0) {
+			this.mIconImage.imageGuid = this.signInUserData.icon;
+		} else {
+			this.mIconImage.imageInfo.setByAssetIcon(this.signInUserData.shareId, mw.AssetIconSize.Icon_128px);
+		}
 		if (this.totalDay >= this.day) {
 			this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value
 		} else {

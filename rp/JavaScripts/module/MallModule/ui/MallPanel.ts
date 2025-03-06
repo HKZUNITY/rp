@@ -318,10 +318,12 @@ export default class MallPanel extends MallPanel_Generate {
 	}
 
 	private initTab1IdDataMap(): void {
-		if (this.tabIdDataMap.has(this.tab1Id)) return;
-		let tab1IdData: TabIdData = new TabIdData();
-		tab1IdData.tabId = this.tab1Id;
-		this.tabIdDataMap.set(this.tab1Id, tab1IdData);
+		if (this.tabIdDataMap.has(this.tab1Id)) {
+		} else {
+			let tab1IdData: TabIdData = new TabIdData();
+			tab1IdData.tabId = this.tab1Id;
+			this.tabIdDataMap.set(this.tab1Id, tab1IdData);
+		}
 		this.tabIdDataMap.forEach((value: TabIdData, key: number) => {
 			value.isOn = (key == this.tab1Id);
 		});

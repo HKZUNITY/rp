@@ -12,11 +12,12 @@ export default class SignInModuleS extends ModuleS<SignInModuleC, SignInData> {
         this.syncSignInConfigData(player);
     }
 
-    private isInitSignInConfigData: boolean = false;
+    private isContinueInitSignInData: boolean = true;
     private async syncSignInConfigData(player: mw.Player): Promise<void> {
-        if (!this.isInitSignInConfigData) {
-            this.isInitSignInConfigData = true;
+        if (this.isContinueInitSignInData) {
+            this.isContinueInitSignInData = false;
             await this.initSignInConfigData();
+            TimeUtil.delaySecond(5).then(() => { this.isContinueInitSignInData = true; });
         }
         this.getClient(player).net_syncSignInConfigData(this.signInConfigData, this.getDay(player));
     }
@@ -33,5 +34,13 @@ export default class SignInModuleS extends ModuleS<SignInModuleC, SignInData> {
         let currentDayStr = Utils.getDay();
         if (dayStr != currentDayStr) signInData.setDayStr(currentDayStr, 1);
         return signInData.day;
+    }
+
+    public async net_useShareId(shareId: string): Promise<void> {
+        let player = this.currentPlayer;
+        await Utils.asyncDownloadAsset(shareId);
+        player.character.setDescription([shareId]);
+        player.character.description.advance.base.characterSetting.characterTemplate = mw.CharacterTemplate.None;
+        await player.character.asyncReady();
     }
 }
