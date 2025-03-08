@@ -13,6 +13,7 @@ import MallTipsPanel from "../MallModule/ui/MallTipsPanel";
 import { RoomData } from "../RankModule/RankData";
 import RankModuleC from "../RankModule/RankModuleC";
 import RankModuleS from "../RankModule/RankModuleS";
+import { SetData } from "../SetModule/SetModule";
 
 export class TryOnItem extends TryOnItem_Generate {
     private tryOnModuleC: TryOnModuleC = null;
@@ -335,6 +336,11 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
             if (roomData.userId == this.localPlayer.userId) {
                 this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
             } else {
+                let isTryOn = await this.server.net_isTryOnPermission(roomData.userId);
+                if (!isTryOn) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips12.Value);
+                    return;
+                }
                 await TimeUtil.delaySecond(1);
                 let player = await Player.asyncGetPlayer(roomData.userId);
                 if (!player || !player.character) {
@@ -437,6 +443,10 @@ export class TryOnModuleS extends ModuleS<TryOnModuleC, TryOnData> {
         let player = await Player.asyncGetPlayer(userId);
         if (!player || !player.character) return;
         this.getClient(player).net_canTryOnSlotByUserId(slotDataArrStr);
+    }
+
+    public net_isTryOnPermission(userId: string): boolean {
+        return DataCenterS.getData(userId, SetData)?.isTryOn;
     }
 }
 

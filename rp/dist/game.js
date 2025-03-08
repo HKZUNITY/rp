@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -96,7 +96,7 @@ var foreign137 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -1983,7 +1983,7 @@ var foreign44 = /*#__PURE__*/Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"], [208, "Text_HUDPanelTips1", null, "服装签到"], [209, "Text_HUDPanelTips2", null, "试穿排行榜"], [210, "Text_HUDPanelTips3", null, "全服排行榜"], [211, "Text_HUDPanelTips4", null, "设置"], [212, "Text_HUDPanelTips5", null, "免费换装"], [213, "Text_HUDPanelTips6", null, "换装商店"], [214, "Text_HUDPanelTips7", null, "背景音乐"], [215, "Text_TryOnTips1", null, "排名"], [216, "Text_TryOnTips2", null, "昵称"], [217, "Text_TryOnTips3", null, "被试穿次数"], [218, "Text_TryOnTips4", null, "试穿好友形象"], [219, "Text_TryOnTips5", null, "自己的形象"], [220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间"], [221, "Text_TryOnTips7", null, "换个好友试试吧"], [222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范"]];
+const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春节免费换装"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"], [208, "Text_HUDPanelTips1", null, "服装签到"], [209, "Text_HUDPanelTips2", null, "试穿排行榜"], [210, "Text_HUDPanelTips3", null, "全服排行榜"], [211, "Text_HUDPanelTips4", null, "设置"], [212, "Text_HUDPanelTips5", null, "免费换装"], [213, "Text_HUDPanelTips6", null, "换装商店"], [214, "Text_HUDPanelTips7", null, "背景音乐"], [215, "Text_TryOnTips1", null, "排名"], [216, "Text_TryOnTips2", null, "昵称"], [217, "Text_TryOnTips3", null, "被试穿次数"], [218, "Text_TryOnTips4", null, "试穿好友形象"], [219, "Text_TryOnTips5", null, "自己的形象"], [220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间"], [221, "Text_TryOnTips7", null, "换个好友试试吧"], [222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范"], [223, "Text_TryOnTips9", null, "被好友试穿权限"], [224, "Text_TryOnTips10", null, "允许"], [225, "Text_TryOnTips11", null, "不允许"], [226, "Text_TryOnTips12", null, "好友试穿权限已关闭，不允许试穿"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$x);
@@ -2654,6 +2654,18 @@ class LanguageConfig extends ConfigBase {
     ;
     /**试穿失败、好友服装不规范*/
     get Text_TryOnTips8() { return this.getElement(222); }
+    ;
+    /**被好友试穿权限*/
+    get Text_TryOnTips9() { return this.getElement(223); }
+    ;
+    /**允许*/
+    get Text_TryOnTips10() { return this.getElement(224); }
+    ;
+    /**不允许*/
+    get Text_TryOnTips11() { return this.getElement(225); }
+    ;
+    /**好友试穿权限已关闭，不允许试穿*/
+    get Text_TryOnTips12() { return this.getElement(226); }
     ;
 }
 
@@ -3574,7 +3586,7 @@ var foreign135 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -3808,7 +3820,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3876,7 +3888,7 @@ var foreign146 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3959,7 +3971,7 @@ var foreign154 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -4367,7 +4379,7 @@ var foreign155 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -4433,7 +4445,7 @@ var foreign175 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -4571,7 +4583,7 @@ var foreign176 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4657,7 +4669,7 @@ var foreign140 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -5100,8 +5112,8 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mVirtualJoystickPanel.resetJoyStick();
     }
     initShakeMallTween() {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.8, 20, -20, 1.4, 0.9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.8, -20, 20, 0.9, 1.4);
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.5, -20, 20, 0.9, 1.5);
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
                 leftSamllToRightBig.start().onComplete(() => {
@@ -5113,8 +5125,8 @@ class HUDPanel extends HUDPanel_Generate$1 {
         });
     }
     initShakeShareTween() {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenShareButton, 0.8, 20, -20, 1.2, 0.9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenShareButton, 0.8, -20, 20, 0.9, 1.2);
+        let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, 0.3, 0.8, 0.8, 1.2, 1.2);
+        let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, 0.3, 1.2, 1.2, 0.8, 0.8);
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
                 leftSamllToRightBig.start().onComplete(() => {
@@ -5126,8 +5138,8 @@ class HUDPanel extends HUDPanel_Generate$1 {
         });
     }
     initShakeSignInTween() {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenSignInButton, 0.8, 20, -20, 1.2, 0.9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenSignInButton, 0.8, -20, 20, 0.9, 1.2);
+        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 2, 0, 360);
+        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 2, 360, 0);
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
                 leftSamllToRightBig.start().onComplete(() => {
@@ -5881,7 +5893,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -6220,7 +6232,7 @@ var foreign149 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -6358,7 +6370,7 @@ var foreign156 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -7428,7 +7440,7 @@ var foreign98 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -7550,7 +7562,7 @@ var foreign87 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7678,7 +7690,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -7827,7 +7839,7 @@ var foreign89 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7958,7 +7970,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -8061,7 +8073,7 @@ var foreign91 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -8166,7 +8178,7 @@ var foreign92 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -8631,7 +8643,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -11093,7 +11105,7 @@ var foreign99 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -11259,7 +11271,7 @@ var foreign158 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -11334,7 +11346,7 @@ var foreign104 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11499,7 +11511,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -11710,7 +11722,7 @@ var foreign133 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mTouchImage() {
@@ -11933,7 +11945,7 @@ var foreign166 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -12156,7 +12168,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.16
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -12305,7 +12317,7 @@ var foreign108 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -12438,7 +12450,7 @@ var foreign109 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -12844,7 +12856,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -12996,7 +13008,7 @@ var foreign112 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -13134,7 +13146,7 @@ var foreign113 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -14445,7 +14457,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -16540,7 +16552,7 @@ var foreign116 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnItem.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
     get mBgImage() {
@@ -16639,7 +16651,7 @@ var foreign179 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnPanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let TryOnPanel_Generate = class TryOnPanel_Generate extends UIScript {
     get mLeftCanvas() {
@@ -16790,6 +16802,734 @@ var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 var foreign180 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/SetModule/SetPanel.ui
+ * TIME: 2025.03.08-12.30.16
+ */
+let SetPanel_Generate = class SetPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mSet1Button() {
+        if (!this.mSet1Button_Internal && this.uiWidgetBase) {
+            this.mSet1Button_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button');
+        }
+        return this.mSet1Button_Internal;
+    }
+    get mSet1TextBlock() {
+        if (!this.mSet1TextBlock_Internal && this.uiWidgetBase) {
+            this.mSet1TextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button/mSet1TextBlock');
+        }
+        return this.mSet1TextBlock_Internal;
+    }
+    get mContentCanvas() {
+        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
+            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas');
+        }
+        return this.mContentCanvas_Internal;
+    }
+    get mQualityImage() {
+        if (!this.mQualityImage_Internal && this.uiWidgetBase) {
+            this.mQualityImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage');
+        }
+        return this.mQualityImage_Internal;
+    }
+    get mQualityTextBlock() {
+        if (!this.mQualityTextBlock_Internal && this.uiWidgetBase) {
+            this.mQualityTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityTextBlock');
+        }
+        return this.mQualityTextBlock_Internal;
+    }
+    get mQualityProgressBar() {
+        if (!this.mQualityProgressBar_Internal && this.uiWidgetBase) {
+            this.mQualityProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityProgressBar');
+        }
+        return this.mQualityProgressBar_Internal;
+    }
+    get mSoundImage() {
+        if (!this.mSoundImage_Internal && this.uiWidgetBase) {
+            this.mSoundImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage');
+        }
+        return this.mSoundImage_Internal;
+    }
+    get mSoundTextBlock() {
+        if (!this.mSoundTextBlock_Internal && this.uiWidgetBase) {
+            this.mSoundTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundTextBlock');
+        }
+        return this.mSoundTextBlock_Internal;
+    }
+    get mSoundProgressBar() {
+        if (!this.mSoundProgressBar_Internal && this.uiWidgetBase) {
+            this.mSoundProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundProgressBar');
+        }
+        return this.mSoundProgressBar_Internal;
+    }
+    get mBgMusicImage() {
+        if (!this.mBgMusicImage_Internal && this.uiWidgetBase) {
+            this.mBgMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage');
+        }
+        return this.mBgMusicImage_Internal;
+    }
+    get mBgMusicTextBlock() {
+        if (!this.mBgMusicTextBlock_Internal && this.uiWidgetBase) {
+            this.mBgMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicTextBlock');
+        }
+        return this.mBgMusicTextBlock_Internal;
+    }
+    get mBgMusicmProgressBar() {
+        if (!this.mBgMusicmProgressBar_Internal && this.uiWidgetBase) {
+            this.mBgMusicmProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicmProgressBar');
+        }
+        return this.mBgMusicmProgressBar_Internal;
+    }
+    get mViewAngleImage() {
+        if (!this.mViewAngleImage_Internal && this.uiWidgetBase) {
+            this.mViewAngleImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage');
+        }
+        return this.mViewAngleImage_Internal;
+    }
+    get mViewAngleTextBlock() {
+        if (!this.mViewAngleTextBlock_Internal && this.uiWidgetBase) {
+            this.mViewAngleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleTextBlock');
+        }
+        return this.mViewAngleTextBlock_Internal;
+    }
+    get mViewAngleProgressBar() {
+        if (!this.mViewAngleProgressBar_Internal && this.uiWidgetBase) {
+            this.mViewAngleProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleProgressBar');
+        }
+        return this.mViewAngleProgressBar_Internal;
+    }
+    get mShowNickNameImage() {
+        if (!this.mShowNickNameImage_Internal && this.uiWidgetBase) {
+            this.mShowNickNameImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage');
+        }
+        return this.mShowNickNameImage_Internal;
+    }
+    get mShowNickNameTextBlock() {
+        if (!this.mShowNickNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mShowNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameTextBlock');
+        }
+        return this.mShowNickNameTextBlock_Internal;
+    }
+    get mShowNickNameCanvas() {
+        if (!this.mShowNickNameCanvas_Internal && this.uiWidgetBase) {
+            this.mShowNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas');
+        }
+        return this.mShowNickNameCanvas_Internal;
+    }
+    get mShowNickNameButton() {
+        if (!this.mShowNickNameButton_Internal && this.uiWidgetBase) {
+            this.mShowNickNameButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameButton');
+        }
+        return this.mShowNickNameButton_Internal;
+    }
+    get mHideNickNameBgImage() {
+        if (!this.mHideNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mHideNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mHideNickNameBgImage');
+        }
+        return this.mHideNickNameBgImage_Internal;
+    }
+    get mShowNickNameBgImage() {
+        if (!this.mShowNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mShowNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameBgImage');
+        }
+        return this.mShowNickNameBgImage_Internal;
+    }
+    get mOnOffNickNameCanvas() {
+        if (!this.mOnOffNickNameCanvas_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas');
+        }
+        return this.mOnOffNickNameCanvas_Internal;
+    }
+    get mOnOffNickNameBgImage() {
+        if (!this.mOnOffNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameBgImage');
+        }
+        return this.mOnOffNickNameBgImage_Internal;
+    }
+    get mOnOffNickNameTextBlock() {
+        if (!this.mOnOffNickNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameTextBlock');
+        }
+        return this.mOnOffNickNameTextBlock_Internal;
+    }
+    get mTryOnPermissionImage() {
+        if (!this.mTryOnPermissionImage_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage');
+        }
+        return this.mTryOnPermissionImage_Internal;
+    }
+    get mTryOnPermissionTextBlock() {
+        if (!this.mTryOnPermissionTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionTextBlock');
+        }
+        return this.mTryOnPermissionTextBlock_Internal;
+    }
+    get mTryOnPermissionCanvas() {
+        if (!this.mTryOnPermissionCanvas_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas');
+        }
+        return this.mTryOnPermissionCanvas_Internal;
+    }
+    get mTryOnPermissionButton() {
+        if (!this.mTryOnPermissionButton_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mTryOnPermissionButton');
+        }
+        return this.mTryOnPermissionButton_Internal;
+    }
+    get mHideTryOnPermissionBgImage() {
+        if (!this.mHideTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mHideTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mHideTryOnPermissionBgImage');
+        }
+        return this.mHideTryOnPermissionBgImage_Internal;
+    }
+    get mShowTryOnPermissionBgImage() {
+        if (!this.mShowTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mShowTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mShowTryOnPermissionBgImage');
+        }
+        return this.mShowTryOnPermissionBgImage_Internal;
+    }
+    get mOnOffTryOnPermissionCanvas() {
+        if (!this.mOnOffTryOnPermissionCanvas_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas');
+        }
+        return this.mOnOffTryOnPermissionCanvas_Internal;
+    }
+    get mOnOffTryOnPermissionBgImage() {
+        if (!this.mOnOffTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionBgImage');
+        }
+        return this.mOnOffTryOnPermissionBgImage_Internal;
+    }
+    get mOnOffTryOnPermissionTextBlock() {
+        if (!this.mOnOffTryOnPermissionTextBlock_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionTextBlock');
+        }
+        return this.mOnOffTryOnPermissionTextBlock_Internal;
+    }
+    get mResetButton() {
+        if (!this.mResetButton_Internal && this.uiWidgetBase) {
+            this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton');
+        }
+        return this.mResetButton_Internal;
+    }
+    get mResetTextBlock() {
+        if (!this.mResetTextBlock_Internal && this.uiWidgetBase) {
+            this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton/mResetTextBlock');
+        }
+        return this.mResetTextBlock_Internal;
+    }
+    get mResetPosButton() {
+        if (!this.mResetPosButton_Internal && this.uiWidgetBase) {
+            this.mResetPosButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton');
+        }
+        return this.mResetPosButton_Internal;
+    }
+    get mResetPosTextBlock() {
+        if (!this.mResetPosTextBlock_Internal && this.uiWidgetBase) {
+            this.mResetPosTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton/mResetPosTextBlock');
+        }
+        return this.mResetPosTextBlock_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSet1Button.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSet1Button");
+        });
+        this.mSet1Button.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mShowNickNameButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mShowNickNameButton");
+        });
+        this.mShowNickNameButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mTryOnPermissionButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mTryOnPermissionButton");
+        });
+        this.mTryOnPermissionButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mResetButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mResetButton");
+        });
+        this.mResetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mResetPosButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mResetPosButton");
+        });
+        this.mResetPosButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mSet1TextBlock);
+        this.initLanguage(this.mQualityTextBlock);
+        this.initLanguage(this.mSoundTextBlock);
+        this.initLanguage(this.mBgMusicTextBlock);
+        this.initLanguage(this.mViewAngleTextBlock);
+        this.initLanguage(this.mShowNickNameTextBlock);
+        this.initLanguage(this.mOnOffNickNameTextBlock);
+        this.initLanguage(this.mTryOnPermissionTextBlock);
+        this.initLanguage(this.mOnOffTryOnPermissionTextBlock);
+        this.initLanguage(this.mResetTextBlock);
+        this.initLanguage(this.mResetPosTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SetPanel_Generate = __decorate([
+    UIBind('UI/module/SetModule/SetPanel.ui')
+], SetPanel_Generate);
+var SetPanel_Generate$1 = SetPanel_Generate;
+
+var foreign174 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SetPanel_Generate$1
+});
+
+class SetPanel extends SetPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.setModuleC = null;
+    }
+    get getSetModuleC() {
+        if (this.setModuleC == null) {
+            this.setModuleC = ModuleService.getModule(SetModuleC);
+        }
+        return this.setModuleC;
+    }
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mSet1TextBlock.text = GameConfig.Language.Text_SetUp1.Value;
+        this.mQualityTextBlock.text = GameConfig.Language.Text_PictureQuality.Value;
+        this.mSoundTextBlock.text = GameConfig.Language.Text_SoundEffects.Value;
+        this.mBgMusicTextBlock.text = GameConfig.Language.Text_BackgroundMusic.Value;
+        this.mViewAngleTextBlock.text = GameConfig.Language.Text_ViewAngleScaling.Value;
+        this.mShowNickNameTextBlock.text = GameConfig.Language.Text_DisplayNicknames.Value;
+        this.mTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips9.Value;
+        this.mResetPosTextBlock.text = GameConfig.Language.Text_ResetLocation.Value;
+        this.mResetTextBlock.text = GameConfig.Language.Text_RestoringSettings.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.onCloseButtonClick.bind(this));
+        this.mQualityProgressBar.onSliderValueChanged.add(this.onQualityChange.bind(this));
+        this.mQualityProgressBar.sliderButtonReleaseDelegate.add(this.onSaveQuality.bind(this));
+        this.mSoundProgressBar.onSliderValueChanged.add(this.onSoundChange.bind(this));
+        this.mSoundProgressBar.sliderButtonReleaseDelegate.add(this.onSaveSound.bind(this));
+        this.mBgMusicmProgressBar.onSliderValueChanged.add(this.onBgMusicChange.bind(this));
+        this.mBgMusicmProgressBar.sliderButtonReleaseDelegate.add(this.onSaveBgMusic.bind(this));
+        this.mViewAngleProgressBar.onSliderValueChanged.add(this.onViewAngleChange.bind(this));
+        this.mViewAngleProgressBar.sliderButtonReleaseDelegate.add(this.onSaveViewAngle.bind(this));
+        this.mShowNickNameButton.onClicked.add(this.onShowNickNameButtonClick.bind(this));
+        this.mTryOnPermissionButton.onClicked.add(this.onTryOnPermissionButtonClick.bind(this));
+        this.mResetButton.onClicked.add(this.onResetButtonClick.bind(this));
+        this.mResetPosButton.onClicked.add(this.onResetPosButtonClick.bind(this));
+    }
+    onCloseButtonClick() {
+        this.hide();
+    }
+    onShowNickNameButtonClick() {
+        this.getSetModuleC.onShowNickNameAction.call(this.updateNickNameUI.bind(this));
+    }
+    onTryOnPermissionButtonClick() {
+        this.getSetModuleC.onTryOnPermissionAction.call(this.updateTryOnPermissionUI.bind(this));
+    }
+    updateNickNameUI(isShowNickName) {
+        if (isShowNickName) {
+            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.Collapsed);
+            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_On.Value;
+            this.mOnOffNickNameCanvas.position = new Vector2(46, -3.5);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_Off.Value;
+            this.mOnOffNickNameCanvas.position = new Vector2(-14, -3.5);
+        }
+    }
+    updateTryOnPermissionUI(isTryOn) {
+        if (isTryOn) {
+            Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+            this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips10.Value;
+            this.mOnOffTryOnPermissionCanvas.position = new Vector2(75, -3.5);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips11.Value;
+            this.mOnOffTryOnPermissionCanvas.position = new Vector2(-25, -3.5);
+        }
+    }
+    updateViewAngleUI(value) {
+        this.mViewAngleProgressBar.currentValue = value;
+    }
+    onResetButtonClick() {
+        this.getSetModuleC.onResetAction.call();
+    }
+    onResetPosButtonClick() {
+        this.getSetModuleC.onResetPosAction.call();
+    }
+    onQualityChange(value) {
+        this.getSetModuleC.onQualityChangeAction.call(value);
+    }
+    onSaveQuality(value) {
+        this.getSetModuleC.onSaveQualityAction.call();
+    }
+    onSoundChange(value) {
+        this.getSetModuleC.onSoundChangeAction.call(value);
+    }
+    onSaveSound(value) {
+        this.getSetModuleC.onSaveSoundAction.call();
+    }
+    onBgMusicChange(value) {
+        this.getSetModuleC.onBgMusicChangeAction.call(value);
+    }
+    onSaveBgMusic(value) {
+        this.getSetModuleC.onSaveBgMusicAction.call();
+    }
+    onViewAngleChange(value) {
+        this.getSetModuleC.onViewAngleChangeAction.call(value);
+    }
+    onSaveViewAngle(value) {
+        this.getSetModuleC.onSaveViewAngleAction.call();
+    }
+    setDatas(quality, sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        this.updateNickNameUI(isShowNickName);
+        this.updateTryOnPermissionUI(isTryOn);
+        this.mQualityProgressBar.currentValue = quality;
+        this.mSoundProgressBar.currentValue = sound;
+        this.mBgMusicmProgressBar.currentValue = bgMusic;
+        this.mViewAngleProgressBar.currentValue = viewAngle;
+    }
+}
+
+var foreign124 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SetPanel
+});
+
+class SetData extends Subdata {
+    constructor() {
+        super(...arguments);
+        // @Decorator.persistence()
+        // public quality: number = 0;
+        this.sound = 1;
+        this.bgMusic = 1;
+        this.viewAngle = 350;
+        this.isShowNickName = true;
+        this.isTryOn = true;
+    }
+    // public setQuality(value: number): void {
+    //     this.quality = value;
+    //     this.save(false);
+    // }
+    setSound(value) {
+        this.sound = value;
+        this.save(false);
+    }
+    setBgMusic(value) {
+        this.bgMusic = value;
+        this.save(false);
+    }
+    setViewAngle(value) {
+        this.viewAngle = value;
+        this.save(false);
+    }
+    setIsShowNickName(value) {
+        this.isShowNickName = value;
+        this.save(false);
+    }
+    setIsTryOn(value) {
+        this.isTryOn = value;
+        this.save(false);
+    }
+    reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        // this.quality = 0;
+        this.sound = sound;
+        this.bgMusic = bgMusic;
+        this.viewAngle = viewAngle;
+        this.isShowNickName = isShowNickName;
+        this.isTryOn = isTryOn;
+        this.save(false);
+    }
+}
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "sound", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "bgMusic", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "viewAngle", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "isShowNickName", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "isTryOn", void 0);
+class SetModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.setPanel = null;
+        this.hudModuleC = null;
+        this.onShowNickNameAction = new Action1();
+        this.onTryOnPermissionAction = new Action1();
+        this.onResetAction = new Action();
+        this.onResetPosAction = new Action();
+        this.onQualityChangeAction = new Action1();
+        this.onSaveQualityAction = new Action();
+        this.onSoundChangeAction = new Action1();
+        this.onSaveSoundAction = new Action();
+        this.onBgMusicChangeAction = new Action1();
+        this.onSaveBgMusicAction = new Action();
+        this.onViewAngleChangeAction = new Action1();
+        this.onSaveViewAngleAction = new Action();
+        this.isHasSetData = false;
+        this.quality = 0;
+        this.sound = 0;
+        this.bgMusic = 0;
+        this.viewAngle = 0;
+        this.isShowNickName = true;
+        this.isTryOn = true;
+    }
+    get getSetPanel() {
+        if (this.setPanel == null) {
+            this.setPanel = UIService.getUI(SetPanel);
+        }
+        return this.setPanel;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.initEvent();
+        InputUtil.onKeyDown(mw.Keys.K, () => {
+            console.error(GraphicsSettings.getDefaultCPULevel());
+            console.error(GraphicsSettings.getDefaultGPULevel());
+            console.error(GraphicsSettings.getGPULevel());
+            console.error(GraphicsSettings.getCPULevel());
+        });
+    }
+    onEnterScene(sceneType) {
+        this.initSetData();
+    }
+    initEvent() {
+        this.getHUDModuleC.onOpenSetAction.add(this.addOpenSetAction.bind(this));
+        this.onShowNickNameAction.add(this.addShowNickNameAction.bind(this));
+        this.onTryOnPermissionAction.add(this.addTryOnPermissionAction.bind(this));
+        this.onResetAction.add(this.addResetAction.bind(this));
+        this.onResetPosAction.add(this.addResetPosAction.bind(this));
+        this.onQualityChangeAction.add(this.addQualityChangeAction.bind(this));
+        this.onSaveQualityAction.add(this.addSaveQualityAction.bind(this));
+        this.onSoundChangeAction.add(this.addSoundChangeAction.bind(this));
+        this.onSaveSoundAction.add(this.addSaveSoundAction.bind(this));
+        this.onBgMusicChangeAction.add(this.addBgMusicChangeAction.bind(this));
+        this.onSaveBgMusicAction.add(this.addSaveBgMusicAction.bind(this));
+        this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
+        this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
+    }
+    addOnOffMainUI(isShow) {
+        console.warn(`wfz - addOnOffMainUI - isShow:${isShow}`);
+        if (isShow)
+            return;
+        if (UIService.getUI(SetPanel, false)?.visible)
+            this.getSetPanel.hide();
+    }
+    addOpenSetAction() {
+        if (!this.isHasSetData) {
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+            this.isHasSetData = true;
+        }
+        if (Camera.currentCamera.springArm.length != this.viewAngle) {
+            this.viewAngle = Camera.currentCamera.springArm.length;
+            this.getSetPanel.updateViewAngleUI(this.viewAngle);
+            this.server.net_sendSetViewAngle(this.viewAngle);
+        }
+        this.getSetPanel.show();
+    }
+    addShowNickNameAction(callBack) {
+        this.isShowNickName = !this.isShowNickName;
+        Character.nameVisible = this.isShowNickName;
+        this.server.net_sendSetNickName(this.isShowNickName);
+        if (callBack)
+            callBack(this.isShowNickName);
+    }
+    addTryOnPermissionAction(callBack) {
+        this.isTryOn = !this.isTryOn;
+        // Character.nameVisible = this.isShowNickName;
+        this.server.net_sendSetTryOn(this.isTryOn);
+        if (callBack)
+            callBack(this.isTryOn);
+    }
+    addResetAction() {
+        let isReset = false;
+        if (this.quality != GraphicsSettings.getGPULevel()) {
+            this.quality = GraphicsSettings.getDefaultGPULevel();
+            GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+            isReset = true;
+        }
+        if (this.sound != 1) {
+            this.sound = 1;
+            SoundService.volumeScale = this.sound;
+            isReset = true;
+        }
+        if (this.bgMusic != 1) {
+            this.bgMusic = 1;
+            SoundService.BGMVolumeScale = this.bgMusic;
+            isReset = true;
+        }
+        if (this.viewAngle != 350) {
+            this.viewAngle = 350;
+            Camera.currentCamera.springArm.length = this.viewAngle;
+            isReset = true;
+        }
+        if (isReset) {
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+        }
+    }
+    addResetPosAction() {
+        Utils.resetPlayerPos();
+    }
+    addQualityChangeAction(value) {
+        this.quality = value;
+    }
+    addSaveQualityAction() {
+        GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+    }
+    addSoundChangeAction(value) {
+        this.sound = value;
+        SoundService.volumeScale = this.sound;
+    }
+    addSaveSoundAction() {
+        this.server.net_setSound(this.sound);
+    }
+    addBgMusicChangeAction(value) {
+        this.bgMusic = value;
+        SoundService.BGMVolumeScale = this.bgMusic;
+    }
+    addSaveBgMusicAction() {
+        this.server.net_setBgMusic(this.bgMusic);
+    }
+    addViewAngleChangeAction(value) {
+        this.viewAngle = value;
+        Camera.currentCamera.springArm.length = value;
+    }
+    addSaveViewAngleAction() {
+        this.server.net_sendSetViewAngle(this.viewAngle);
+    }
+    initSetData() {
+        // this.quality = this.data.quality;
+        this.quality = GraphicsSettings.getDefaultGPULevel();
+        this.sound = this.data.sound;
+        this.bgMusic = this.data.bgMusic;
+        this.viewAngle = this.data.viewAngle;
+        this.isShowNickName = this.data.isShowNickName;
+        this.isTryOn = this.data.isTryOn;
+        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}, isTryOn:${this.isTryOn}`);
+        // GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+        SoundService.volumeScale = this.sound;
+        SoundService.BGMVolumeScale = this.bgMusic;
+        Camera.currentCamera.springArm.length = this.viewAngle;
+        Character.nameVisible = this.isShowNickName;
+    }
+}
+class SetModuleS extends ModuleS {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    net_sendSetNickName(isShowNickName) {
+        this.currentData.setIsShowNickName(isShowNickName);
+    }
+    net_sendSetTryOn(isTryOn) {
+        this.currentData.setIsTryOn(isTryOn);
+    }
+    net_setSound(sound) {
+        this.currentData.setSound(sound);
+    }
+    net_setBgMusic(bgMusic) {
+        this.currentData.setBgMusic(bgMusic);
+    }
+    net_sendSetViewAngle(viewAngle) {
+        this.currentData.setViewAngle(viewAngle);
+    }
+    net_reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn);
+    }
+}
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetNickName", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetTryOn", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_setSound", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_setBgMusic", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetViewAngle", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_reset", null);
+
+var foreign123 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    SetData: SetData,
+    SetModuleC: SetModuleC,
+    SetModuleS: SetModuleS
 });
 
 class TryOnItem extends TryOnItem_Generate$1 {
@@ -17097,6 +17837,11 @@ class TryOnModuleC extends ModuleC {
                 this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
             }
             else {
+                let isTryOn = await this.server.net_isTryOnPermission(roomData.userId);
+                if (!isTryOn) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips12.Value);
+                    return;
+                }
                 await TimeUtil.delaySecond(1);
                 let player = await Player.asyncGetPlayer(roomData.userId);
                 if (!player || !player.character) {
@@ -17193,6 +17938,9 @@ class TryOnModuleS extends ModuleS {
             return;
         this.getClient(player).net_canTryOnSlotByUserId(slotDataArrStr);
     }
+    net_isTryOnPermission(userId) {
+        return DataCenterS.getData(userId, SetData)?.isTryOn;
+    }
 }
 __decorate([
     Decorator.noReply()
@@ -17231,7 +17979,7 @@ var foreign130 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -17423,7 +18171,7 @@ var foreign171 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -17518,7 +18266,7 @@ var foreign121 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -17974,628 +18722,6 @@ var foreign118 = /*#__PURE__*/Object.freeze({
     default: RankModuleC
 });
 
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.03.01-17.47.26
- */
-let SetPanel_Generate = class SetPanel_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage');
-        }
-        return this.mBgImage_Internal;
-    }
-    get mSet1Button() {
-        if (!this.mSet1Button_Internal && this.uiWidgetBase) {
-            this.mSet1Button_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button');
-        }
-        return this.mSet1Button_Internal;
-    }
-    get mSet1TextBlock() {
-        if (!this.mSet1TextBlock_Internal && this.uiWidgetBase) {
-            this.mSet1TextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button/mSet1TextBlock');
-        }
-        return this.mSet1TextBlock_Internal;
-    }
-    get mContentCanvas() {
-        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
-            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas');
-        }
-        return this.mContentCanvas_Internal;
-    }
-    get mQualityImage() {
-        if (!this.mQualityImage_Internal && this.uiWidgetBase) {
-            this.mQualityImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage');
-        }
-        return this.mQualityImage_Internal;
-    }
-    get mQualityTextBlock() {
-        if (!this.mQualityTextBlock_Internal && this.uiWidgetBase) {
-            this.mQualityTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityTextBlock');
-        }
-        return this.mQualityTextBlock_Internal;
-    }
-    get mQualityProgressBar() {
-        if (!this.mQualityProgressBar_Internal && this.uiWidgetBase) {
-            this.mQualityProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityProgressBar');
-        }
-        return this.mQualityProgressBar_Internal;
-    }
-    get mSoundImage() {
-        if (!this.mSoundImage_Internal && this.uiWidgetBase) {
-            this.mSoundImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage');
-        }
-        return this.mSoundImage_Internal;
-    }
-    get mSoundTextBlock() {
-        if (!this.mSoundTextBlock_Internal && this.uiWidgetBase) {
-            this.mSoundTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundTextBlock');
-        }
-        return this.mSoundTextBlock_Internal;
-    }
-    get mSoundProgressBar() {
-        if (!this.mSoundProgressBar_Internal && this.uiWidgetBase) {
-            this.mSoundProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundProgressBar');
-        }
-        return this.mSoundProgressBar_Internal;
-    }
-    get mBgMusicImage() {
-        if (!this.mBgMusicImage_Internal && this.uiWidgetBase) {
-            this.mBgMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage');
-        }
-        return this.mBgMusicImage_Internal;
-    }
-    get mBgMusicTextBlock() {
-        if (!this.mBgMusicTextBlock_Internal && this.uiWidgetBase) {
-            this.mBgMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicTextBlock');
-        }
-        return this.mBgMusicTextBlock_Internal;
-    }
-    get mBgMusicmProgressBar() {
-        if (!this.mBgMusicmProgressBar_Internal && this.uiWidgetBase) {
-            this.mBgMusicmProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicmProgressBar');
-        }
-        return this.mBgMusicmProgressBar_Internal;
-    }
-    get mViewAngleImage() {
-        if (!this.mViewAngleImage_Internal && this.uiWidgetBase) {
-            this.mViewAngleImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage');
-        }
-        return this.mViewAngleImage_Internal;
-    }
-    get mViewAngleTextBlock() {
-        if (!this.mViewAngleTextBlock_Internal && this.uiWidgetBase) {
-            this.mViewAngleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleTextBlock');
-        }
-        return this.mViewAngleTextBlock_Internal;
-    }
-    get mViewAngleProgressBar() {
-        if (!this.mViewAngleProgressBar_Internal && this.uiWidgetBase) {
-            this.mViewAngleProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleProgressBar');
-        }
-        return this.mViewAngleProgressBar_Internal;
-    }
-    get mShowNickNameImage() {
-        if (!this.mShowNickNameImage_Internal && this.uiWidgetBase) {
-            this.mShowNickNameImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage');
-        }
-        return this.mShowNickNameImage_Internal;
-    }
-    get mShowNickNameTextBlock() {
-        if (!this.mShowNickNameTextBlock_Internal && this.uiWidgetBase) {
-            this.mShowNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameTextBlock');
-        }
-        return this.mShowNickNameTextBlock_Internal;
-    }
-    get mShowNickNameCanvas() {
-        if (!this.mShowNickNameCanvas_Internal && this.uiWidgetBase) {
-            this.mShowNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas');
-        }
-        return this.mShowNickNameCanvas_Internal;
-    }
-    get mShowNickNameButton() {
-        if (!this.mShowNickNameButton_Internal && this.uiWidgetBase) {
-            this.mShowNickNameButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameButton');
-        }
-        return this.mShowNickNameButton_Internal;
-    }
-    get mHideNickNameBgImage() {
-        if (!this.mHideNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mHideNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mHideNickNameBgImage');
-        }
-        return this.mHideNickNameBgImage_Internal;
-    }
-    get mShowNickNameBgImage() {
-        if (!this.mShowNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mShowNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameBgImage');
-        }
-        return this.mShowNickNameBgImage_Internal;
-    }
-    get mOnOffNickNameCanvas() {
-        if (!this.mOnOffNickNameCanvas_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas');
-        }
-        return this.mOnOffNickNameCanvas_Internal;
-    }
-    get mOnOffNickNameBgImage() {
-        if (!this.mOnOffNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameBgImage');
-        }
-        return this.mOnOffNickNameBgImage_Internal;
-    }
-    get mOnOffNickNameTextBlock() {
-        if (!this.mOnOffNickNameTextBlock_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameTextBlock');
-        }
-        return this.mOnOffNickNameTextBlock_Internal;
-    }
-    get mResetButton() {
-        if (!this.mResetButton_Internal && this.uiWidgetBase) {
-            this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton');
-        }
-        return this.mResetButton_Internal;
-    }
-    get mResetTextBlock() {
-        if (!this.mResetTextBlock_Internal && this.uiWidgetBase) {
-            this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton/mResetTextBlock');
-        }
-        return this.mResetTextBlock_Internal;
-    }
-    get mResetPosButton() {
-        if (!this.mResetPosButton_Internal && this.uiWidgetBase) {
-            this.mResetPosButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton');
-        }
-        return this.mResetPosButton_Internal;
-    }
-    get mResetPosTextBlock() {
-        if (!this.mResetPosTextBlock_Internal && this.uiWidgetBase) {
-            this.mResetPosTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton/mResetPosTextBlock');
-        }
-        return this.mResetPosTextBlock_Internal;
-    }
-    get mCloseButton() {
-        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
-            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mCloseButton');
-        }
-        return this.mCloseButton_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mSet1Button.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mSet1Button");
-        });
-        this.mSet1Button.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mShowNickNameButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mShowNickNameButton");
-        });
-        this.mShowNickNameButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mResetButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mResetButton");
-        });
-        this.mResetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mResetPosButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mResetPosButton");
-        });
-        this.mResetPosButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mCloseButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        });
-        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mSet1TextBlock);
-        this.initLanguage(this.mQualityTextBlock);
-        this.initLanguage(this.mSoundTextBlock);
-        this.initLanguage(this.mBgMusicTextBlock);
-        this.initLanguage(this.mViewAngleTextBlock);
-        this.initLanguage(this.mShowNickNameTextBlock);
-        this.initLanguage(this.mOnOffNickNameTextBlock);
-        this.initLanguage(this.mResetTextBlock);
-        this.initLanguage(this.mResetPosTextBlock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-SetPanel_Generate = __decorate([
-    UIBind('UI/module/SetModule/SetPanel.ui')
-], SetPanel_Generate);
-var SetPanel_Generate$1 = SetPanel_Generate;
-
-var foreign174 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SetPanel_Generate$1
-});
-
-class SetPanel extends SetPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.setModuleC = null;
-    }
-    get getSetModuleC() {
-        if (this.setModuleC == null) {
-            this.setModuleC = ModuleService.getModule(SetModuleC);
-        }
-        return this.setModuleC;
-    }
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = UILayerMiddle;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mSet1TextBlock.text = GameConfig.Language.Text_SetUp1.Value;
-        this.mQualityTextBlock.text = GameConfig.Language.Text_PictureQuality.Value;
-        this.mSoundTextBlock.text = GameConfig.Language.Text_SoundEffects.Value;
-        this.mBgMusicTextBlock.text = GameConfig.Language.Text_BackgroundMusic.Value;
-        this.mViewAngleTextBlock.text = GameConfig.Language.Text_ViewAngleScaling.Value;
-        this.mShowNickNameTextBlock.text = GameConfig.Language.Text_DisplayNicknames.Value;
-        this.mResetPosTextBlock.text = GameConfig.Language.Text_ResetLocation.Value;
-        this.mResetTextBlock.text = GameConfig.Language.Text_RestoringSettings.Value;
-    }
-    bindButton() {
-        this.mCloseButton.onClicked.add(this.onCloseButtonClick.bind(this));
-        this.mQualityProgressBar.onSliderValueChanged.add(this.onQualityChange.bind(this));
-        this.mQualityProgressBar.sliderButtonReleaseDelegate.add(this.onSaveQuality.bind(this));
-        this.mSoundProgressBar.onSliderValueChanged.add(this.onSoundChange.bind(this));
-        this.mSoundProgressBar.sliderButtonReleaseDelegate.add(this.onSaveSound.bind(this));
-        this.mBgMusicmProgressBar.onSliderValueChanged.add(this.onBgMusicChange.bind(this));
-        this.mBgMusicmProgressBar.sliderButtonReleaseDelegate.add(this.onSaveBgMusic.bind(this));
-        this.mViewAngleProgressBar.onSliderValueChanged.add(this.onViewAngleChange.bind(this));
-        this.mViewAngleProgressBar.sliderButtonReleaseDelegate.add(this.onSaveViewAngle.bind(this));
-        this.mShowNickNameButton.onClicked.add(this.onShowNickNameButtonClick.bind(this));
-        this.mResetButton.onClicked.add(this.onResetButtonClick.bind(this));
-        this.mResetPosButton.onClicked.add(this.onResetPosButtonClick.bind(this));
-    }
-    onCloseButtonClick() {
-        this.hide();
-    }
-    onShowNickNameButtonClick() {
-        this.getSetModuleC.onShowNickNameAction.call(this.updateNickNameUI.bind(this));
-    }
-    updateNickNameUI(isShowNickName) {
-        if (isShowNickName) {
-            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.Collapsed);
-            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_On.Value;
-            this.mOnOffNickNameCanvas.position = new Vector2(46, -3.5);
-        }
-        else {
-            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
-            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_Off.Value;
-            this.mOnOffNickNameCanvas.position = new Vector2(-14, -3.5);
-        }
-    }
-    updateViewAngleUI(value) {
-        this.mViewAngleProgressBar.currentValue = value;
-    }
-    onResetButtonClick() {
-        this.getSetModuleC.onResetAction.call();
-    }
-    onResetPosButtonClick() {
-        this.getSetModuleC.onResetPosAction.call();
-    }
-    onQualityChange(value) {
-        this.getSetModuleC.onQualityChangeAction.call(value);
-    }
-    onSaveQuality(value) {
-        this.getSetModuleC.onSaveQualityAction.call();
-    }
-    onSoundChange(value) {
-        this.getSetModuleC.onSoundChangeAction.call(value);
-    }
-    onSaveSound(value) {
-        this.getSetModuleC.onSaveSoundAction.call();
-    }
-    onBgMusicChange(value) {
-        this.getSetModuleC.onBgMusicChangeAction.call(value);
-    }
-    onSaveBgMusic(value) {
-        this.getSetModuleC.onSaveBgMusicAction.call();
-    }
-    onViewAngleChange(value) {
-        this.getSetModuleC.onViewAngleChangeAction.call(value);
-    }
-    onSaveViewAngle(value) {
-        this.getSetModuleC.onSaveViewAngleAction.call();
-    }
-    setDatas(quality, sound, bgMusic, viewAngle, isShowNickName) {
-        this.updateNickNameUI(isShowNickName);
-        this.mQualityProgressBar.currentValue = quality;
-        this.mSoundProgressBar.currentValue = sound;
-        this.mBgMusicmProgressBar.currentValue = bgMusic;
-        this.mViewAngleProgressBar.currentValue = viewAngle;
-    }
-}
-
-var foreign124 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SetPanel
-});
-
-class SetData extends Subdata {
-    constructor() {
-        super(...arguments);
-        // @Decorator.persistence()
-        // public quality: number = 0;
-        this.sound = 1;
-        this.bgMusic = 1;
-        this.viewAngle = 350;
-        this.isShowNickName = true;
-    }
-    // public setQuality(value: number): void {
-    //     this.quality = value;
-    //     this.save(false);
-    // }
-    setSound(value) {
-        this.sound = value;
-        this.save(false);
-    }
-    setBgMusic(value) {
-        this.bgMusic = value;
-        this.save(false);
-    }
-    setViewAngle(value) {
-        this.viewAngle = value;
-        this.save(false);
-    }
-    setIsShowNickName(value) {
-        this.isShowNickName = value;
-        this.save(false);
-    }
-    reset(sound, bgMusic, viewAngle, isShowNickName) {
-        // this.quality = 0;
-        this.sound = sound;
-        this.bgMusic = bgMusic;
-        this.viewAngle = viewAngle;
-        this.isShowNickName = isShowNickName;
-        this.save(false);
-    }
-}
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "sound", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "bgMusic", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "viewAngle", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "isShowNickName", void 0);
-class SetModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.setPanel = null;
-        this.hudModuleC = null;
-        this.onShowNickNameAction = new Action1();
-        this.onResetAction = new Action();
-        this.onResetPosAction = new Action();
-        this.onQualityChangeAction = new Action1();
-        this.onSaveQualityAction = new Action();
-        this.onSoundChangeAction = new Action1();
-        this.onSaveSoundAction = new Action();
-        this.onBgMusicChangeAction = new Action1();
-        this.onSaveBgMusicAction = new Action();
-        this.onViewAngleChangeAction = new Action1();
-        this.onSaveViewAngleAction = new Action();
-        this.isHasSetData = false;
-        this.quality = 0;
-        this.sound = 0;
-        this.bgMusic = 0;
-        this.viewAngle = 0;
-        this.isShowNickName = true;
-    }
-    get getSetPanel() {
-        if (this.setPanel == null) {
-            this.setPanel = UIService.getUI(SetPanel);
-        }
-        return this.setPanel;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.initEvent();
-        InputUtil.onKeyDown(mw.Keys.K, () => {
-            console.error(GraphicsSettings.getDefaultCPULevel());
-            console.error(GraphicsSettings.getDefaultGPULevel());
-            console.error(GraphicsSettings.getGPULevel());
-            console.error(GraphicsSettings.getCPULevel());
-        });
-    }
-    onEnterScene(sceneType) {
-        this.initSetData();
-    }
-    initEvent() {
-        this.getHUDModuleC.onOpenSetAction.add(this.addOpenSetAction.bind(this));
-        this.onShowNickNameAction.add(this.addShowNickNameAction.bind(this));
-        this.onResetAction.add(this.addResetAction.bind(this));
-        this.onResetPosAction.add(this.addResetPosAction.bind(this));
-        this.onQualityChangeAction.add(this.addQualityChangeAction.bind(this));
-        this.onSaveQualityAction.add(this.addSaveQualityAction.bind(this));
-        this.onSoundChangeAction.add(this.addSoundChangeAction.bind(this));
-        this.onSaveSoundAction.add(this.addSaveSoundAction.bind(this));
-        this.onBgMusicChangeAction.add(this.addBgMusicChangeAction.bind(this));
-        this.onSaveBgMusicAction.add(this.addSaveBgMusicAction.bind(this));
-        this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
-        this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
-        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
-    }
-    addOnOffMainUI(isShow) {
-        console.warn(`wfz - addOnOffMainUI - isShow:${isShow}`);
-        if (isShow)
-            return;
-        if (UIService.getUI(SetPanel, false)?.visible)
-            this.getSetPanel.hide();
-    }
-    addOpenSetAction() {
-        if (!this.isHasSetData) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-            this.isHasSetData = true;
-        }
-        if (Camera.currentCamera.springArm.length != this.viewAngle) {
-            this.viewAngle = Camera.currentCamera.springArm.length;
-            this.getSetPanel.updateViewAngleUI(this.viewAngle);
-            this.server.net_sendSetViewAngle(this.viewAngle);
-        }
-        this.getSetPanel.show();
-    }
-    addShowNickNameAction(callBack) {
-        this.isShowNickName = !this.isShowNickName;
-        Character.nameVisible = this.isShowNickName;
-        this.server.net_sendSetNickName(this.isShowNickName);
-        if (callBack)
-            callBack(this.isShowNickName);
-    }
-    addResetAction() {
-        let isReset = false;
-        if (this.quality != GraphicsSettings.getGPULevel()) {
-            this.quality = GraphicsSettings.getDefaultGPULevel();
-            GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-            isReset = true;
-        }
-        if (this.sound != 1) {
-            this.sound = 1;
-            SoundService.volumeScale = this.sound;
-            isReset = true;
-        }
-        if (this.bgMusic != 1) {
-            this.bgMusic = 1;
-            SoundService.BGMVolumeScale = this.bgMusic;
-            isReset = true;
-        }
-        if (this.viewAngle != 350) {
-            this.viewAngle = 350;
-            Camera.currentCamera.springArm.length = this.viewAngle;
-            isReset = true;
-        }
-        if (isReset) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-        }
-    }
-    addResetPosAction() {
-        Utils.resetPlayerPos();
-    }
-    addQualityChangeAction(value) {
-        this.quality = value;
-    }
-    addSaveQualityAction() {
-        GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-    }
-    addSoundChangeAction(value) {
-        this.sound = value;
-        SoundService.volumeScale = this.sound;
-    }
-    addSaveSoundAction() {
-        this.server.net_setSound(this.sound);
-    }
-    addBgMusicChangeAction(value) {
-        this.bgMusic = value;
-        SoundService.BGMVolumeScale = this.bgMusic;
-    }
-    addSaveBgMusicAction() {
-        this.server.net_setBgMusic(this.bgMusic);
-    }
-    addViewAngleChangeAction(value) {
-        this.viewAngle = value;
-        Camera.currentCamera.springArm.length = value;
-    }
-    addSaveViewAngleAction() {
-        this.server.net_sendSetViewAngle(this.viewAngle);
-    }
-    initSetData() {
-        // this.quality = this.data.quality;
-        this.quality = GraphicsSettings.getDefaultGPULevel();
-        this.sound = this.data.sound;
-        this.bgMusic = this.data.bgMusic;
-        this.viewAngle = this.data.viewAngle;
-        this.isShowNickName = this.data.isShowNickName;
-        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}`);
-        // GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-        SoundService.volumeScale = this.sound;
-        SoundService.BGMVolumeScale = this.bgMusic;
-        Camera.currentCamera.springArm.length = this.viewAngle;
-        Character.nameVisible = this.isShowNickName;
-    }
-}
-class SetModuleS extends ModuleS {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-    net_sendSetNickName(isShowNickName) {
-        this.currentData.setIsShowNickName(isShowNickName);
-    }
-    net_setSound(sound) {
-        this.currentData.setSound(sound);
-    }
-    net_setBgMusic(bgMusic) {
-        this.currentData.setBgMusic(bgMusic);
-    }
-    net_sendSetViewAngle(viewAngle) {
-        this.currentData.setViewAngle(viewAngle);
-    }
-    net_reset(sound, bgMusic, viewAngle, isShowNickName) {
-        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName);
-    }
-}
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_sendSetNickName", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_setSound", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_setBgMusic", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_sendSetViewAngle", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_reset", null);
-
-var foreign123 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    SetData: SetData,
-    SetModuleC: SetModuleC,
-    SetModuleS: SetModuleS
-});
-
 class SignInData extends Subdata {
     constructor() {
         super(...arguments);
@@ -18652,7 +18778,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -18737,7 +18863,7 @@ var foreign178 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -19237,7 +19363,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -19327,7 +19453,7 @@ var foreign152 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.03.01-17.47.26
+ * TIME: 2025.03.08-12.30.16
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -19866,7 +19992,7 @@ var foreign132 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.03.01-17.47.25
+ * TIME: 2025.03.08-12.30.15
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {

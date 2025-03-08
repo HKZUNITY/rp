@@ -14,6 +14,8 @@ export class SetData extends Subdata {
     public viewAngle: number = 350;
     @Decorator.persistence()
     public isShowNickName: boolean = true;
+    @Decorator.persistence()
+    public isTryOn: boolean = true;
 
     // public setQuality(value: number): void {
     //     this.quality = value;
@@ -40,12 +42,18 @@ export class SetData extends Subdata {
         this.save(false);
     }
 
-    public reset(sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean): void {
+    public setIsTryOn(value: boolean): void {
+        this.isTryOn = value;
+        this.save(false);
+    }
+
+    public reset(sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean, isTryOn: boolean): void {
         // this.quality = 0;
         this.sound = sound;
         this.bgMusic = bgMusic;
         this.viewAngle = viewAngle;
         this.isShowNickName = isShowNickName;
+        this.isTryOn = isTryOn;
         this.save(false);
     }
 }
@@ -68,6 +76,7 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
     }
 
     public onShowNickNameAction: Action1<(isShowNickName: boolean) => void> = new Action1<(isShowNickName: boolean) => void>();
+    public onTryOnPermissionAction: Action1<(isTryOn: boolean) => void> = new Action1<(isTryOn: boolean) => void>();
     public onResetAction: Action = new Action();
     public onResetPosAction: Action = new Action();
 
@@ -101,6 +110,7 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
     private initEvent(): void {
         this.getHUDModuleC.onOpenSetAction.add(this.addOpenSetAction.bind(this));
         this.onShowNickNameAction.add(this.addShowNickNameAction.bind(this));
+        this.onTryOnPermissionAction.add(this.addTryOnPermissionAction.bind(this));
         this.onResetAction.add(this.addResetAction.bind(this));
         this.onResetPosAction.add(this.addResetPosAction.bind(this));
 
@@ -127,7 +137,7 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
     private isHasSetData: boolean = false;
     private addOpenSetAction(): void {
         if (!this.isHasSetData) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
             this.isHasSetData = true;
         }
         if (Camera.currentCamera.springArm.length != this.viewAngle) {
@@ -143,6 +153,13 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
         Character.nameVisible = this.isShowNickName;
         this.server.net_sendSetNickName(this.isShowNickName);
         if (callBack) callBack(this.isShowNickName);
+    }
+
+    private addTryOnPermissionAction(callBack: (isTryOn: boolean) => void): void {
+        this.isTryOn = !this.isTryOn;
+        // Character.nameVisible = this.isShowNickName;
+        this.server.net_sendSetTryOn(this.isTryOn);
+        if (callBack) callBack(this.isTryOn);
     }
 
     private addResetAction(): void {
@@ -172,8 +189,8 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
         }
 
         if (isReset) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
         }
     }
 
@@ -221,6 +238,7 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
     private bgMusic: number = 0;
     private viewAngle: number = 0;
     private isShowNickName: boolean = true;
+    private isTryOn: boolean = true;
     private initSetData(): void {
         // this.quality = this.data.quality;
         this.quality = GraphicsSettings.getDefaultGPULevel();
@@ -228,7 +246,8 @@ export class SetModuleC extends ModuleC<SetModuleS, SetData> {
         this.bgMusic = this.data.bgMusic;
         this.viewAngle = this.data.viewAngle;
         this.isShowNickName = this.data.isShowNickName;
-        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}`);
+        this.isTryOn = this.data.isTryOn;
+        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}, isTryOn:${this.isTryOn}`);
 
         // GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
         SoundService.volumeScale = this.sound;
@@ -252,6 +271,11 @@ export class SetModuleS extends ModuleS<SetModuleC, SetData> {
     }
 
     @Decorator.noReply()
+    public net_sendSetTryOn(isTryOn: boolean): void {
+        this.currentData.setIsTryOn(isTryOn);
+    }
+
+    @Decorator.noReply()
     public net_setSound(sound: number): void {
         this.currentData.setSound(sound);
     }
@@ -267,7 +291,7 @@ export class SetModuleS extends ModuleS<SetModuleC, SetData> {
     }
 
     @Decorator.noReply()
-    public net_reset(sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean): void {
-        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName);
+    public net_reset(sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean, isTryOn: boolean): void {
+        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn);
     }
 }
