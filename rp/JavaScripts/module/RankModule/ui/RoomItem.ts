@@ -15,7 +15,7 @@ export default class RoomItem extends RoomItem_Generate {
 	public setData(ranking: number, roomData: RoomData, isSelf: boolean): void {
 		this.mRankTextBlock.text = ranking.toString();
 		this.mNameTextBlock.text = roomData.playerName;
-		this.mKillCountTextBlock.text = roomData.score.toString();
+		this.mKillCountTextBlock.text = roomData.time.toString();
 
 		let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
 		this.mRankTextBlock.fontColor = fontColor;

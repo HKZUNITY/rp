@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.02.21-22.36.41
+ * TIME: 2025.03.08-11.15.54
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -43,6 +43,13 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mOpenSetButton_Internal
 	}
+	private mOpenSetTextBlock_Internal: mw.TextBlock
+	public get mOpenSetTextBlock(): mw.TextBlock {
+		if(!this.mOpenSetTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenSetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSetImage/mOpenSetTextBlock') as mw.TextBlock
+		}
+		return this.mOpenSetTextBlock_Internal
+	}
 	private mOpenMusicImage_Internal: mw.Image
 	public get mOpenMusicImage(): mw.Image {
 		if(!this.mOpenMusicImage_Internal&&this.uiWidgetBase) {
@@ -57,6 +64,13 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mOpenMusicButton_Internal
 	}
+	private mOpenMusicTextBlock_Internal: mw.TextBlock
+	public get mOpenMusicTextBlock(): mw.TextBlock {
+		if(!this.mOpenMusicTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMusicImage/mOpenMusicTextBlock') as mw.TextBlock
+		}
+		return this.mOpenMusicTextBlock_Internal
+	}
 	private mOpenRankImage_Internal: mw.Image
 	public get mOpenRankImage(): mw.Image {
 		if(!this.mOpenRankImage_Internal&&this.uiWidgetBase) {
@@ -70,6 +84,13 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenRankButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankButton') as mw.StaleButton
 		}
 		return this.mOpenRankButton_Internal
+	}
+	private mOpenRankTextBlock_Internal: mw.TextBlock
+	public get mOpenRankTextBlock(): mw.TextBlock {
+		if(!this.mOpenRankTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenRankImage/mOpenRankTextBlock') as mw.TextBlock
+		}
+		return this.mOpenRankTextBlock_Internal
 	}
 	private mOpenClothImage_Internal: mw.Image
 	public get mOpenClothImage(): mw.Image {
@@ -428,6 +449,15 @@ export default class HUDPanel_Generate extends UIScript {
 		
 		//文本多语言
 		
+		this.initLanguage(this.mOpenSetTextBlock)
+		
+	
+		this.initLanguage(this.mOpenMusicTextBlock)
+		
+	
+		this.initLanguage(this.mOpenRankTextBlock)
+		
+	
 		this.initLanguage(this.mOpenClothTextBlock)
 		
 	

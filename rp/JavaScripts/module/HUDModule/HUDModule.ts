@@ -2,7 +2,7 @@
 import { GameConfig } from "../../configs/GameConfig";
 import { IMusicElement } from "../../configs/Music";
 import GlobalData, { EventType } from "../../GlobalData";
-import Utils from "../../tools/Utils";
+import Utils, { cubicBezier } from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import HUDItem_Generate from "../../ui-generate/module/HUDModule/HUDItem_generate";
 import HUDPanel_Generate from "../../ui-generate/module/HUDModule/HUDPanel_generate";
@@ -117,14 +117,21 @@ export class HUDPanel extends HUDPanel_Generate {
         this.constollerGoodsCanvasVisible(false);
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
 
-        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_SignIn_10.Value;
-        this.mOpenClothTextBlock.text = GameConfig.Language.Text_OpenClothTextBlock.Value;
-        this.mOpenMallTextBlock.text = GameConfig.Language.Text_OpenMallTextBlock.Value;
+        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
+        // this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
+        this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
+        this.mOpenMusicTextBlock.text = GameConfig.Language.Text_HUDPanelTips7.Value;
+        this.mOpenSetTextBlock.text = GameConfig.Language.Text_HUDPanelTips4.Value;
+
         this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
+
+        this.initShakeMallTween();
     }
 
     public updateFreeTime(): void {
@@ -302,6 +309,63 @@ export class HUDPanel extends HUDPanel_Generate {
     protected onHide(): void {
         this.mVirtualJoystickPanel.resetJoyStick();
     }
+
+    public initShakeMallTween(): void {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.8, 20, -20, 1.4, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.8, -20, 20, 0.9, 1.4);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
+    }
+
+    private getShakeTween(widget: Widget, angleTime: number, startAngle: number, endAngle: number): mw.Tween<any> {
+        return new Tween({ angle: startAngle })
+            .to({ angle: endAngle }, angleTime * 1000)
+            .onUpdate((v) => {
+                widget.renderTransformAngle = v.angle;
+            })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    private getScaleTween(widget: Widget, scaleTime: number, startScaleX: number, startScaleY: number, endScaleX: number, endScaleY: number): mw.Tween<any> {
+        return new Tween({ scaleX: startScaleX, scaleY: startScaleY })
+            .to({ scaleX: endScaleX, scaleY: endScaleY }, scaleTime * 1000)
+            .onUpdate((v) => {
+                widget.renderScale = new mw.Vector2(v.scaleX, v.scaleY);
+            })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    private getShakeScaleTween(widget: Widget, shakeScaleTime: number, startAngle: number, endAngle: number, startScale: number, endScale: number): mw.Tween<any> {
+        return new Tween({ angle: startAngle, scale: startScale })
+            .to({ angle: endAngle, scale: endScale }, shakeScaleTime * 1000)
+            .onUpdate((v) => {
+                widget.renderTransformAngle = v.angle;
+                widget.renderScale = new mw.Vector2(v.scale, v.scale);
+            })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    private getRenderOpacityTween(widget: mw.Widget, time: number, startOpacity: number, endOpacity: number): mw.Tween<any> {
+        return new Tween({ opacity: startOpacity })
+            .to({ opacity: endOpacity }, time * 1000)
+            .onUpdate((v) => {
+                widget.renderOpacity = v.opacity;
+            })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
+    private getPosTween(widget: Widget, posTime: number, startPosX: number, startPosY: number, endPosX: number, endPosY: number): mw.Tween<any> {
+        return new Tween({ posX: startPosX, posY: startPosY })
+            .to({ posX: endPosX, posY: endPosY }, posTime * 1000)
+            .onUpdate((v) => {
+                widget.position = new mw.Vector2(v.posX, v.posY);
+            })
+            .easing(cubicBezier(.22, .9, .28, .92));
+    }
 }
 
 export class HUDModuleC extends ModuleC<HUDModuleS, null> {
@@ -472,7 +536,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     private onOpenSetActionHandler(): void { }
 
     private onOpenClothActionHandler(): void {
-        if (!this.getSignInModuleC.isOpen) return;
+        // if (!this.getSignInModuleC.isOpen) return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await AvatarEditorService.asyncOpenAvatarEditorModule();
         });

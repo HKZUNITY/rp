@@ -39,7 +39,7 @@ export default class RankPanel extends RankPanel_Generate {
 	private initUI(): void {
 		this.mRoomRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
 		this.mRoomNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
-		this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
+		this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Duration.Value;
 
 		this.mTitleTextBlock.text = StringUtil.format(GameConfig.Language.Text_TopInTermsOfDuration.Value, GlobalData.worldCount);
 
@@ -47,7 +47,7 @@ export default class RankPanel extends RankPanel_Generate {
 		this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
 
-		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
+		// Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
 
 		Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
