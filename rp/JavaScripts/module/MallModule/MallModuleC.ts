@@ -131,6 +131,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private addOpenMallAction(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
+            await this.isAccountServiceDownloadData();
             this.initUsingCharacterData();
             this.onSwitchCameraAction.call(2);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
@@ -141,6 +142,16 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
             this.decorationIndexMap.clear();//TODO-WFZ
         });
+    }
+
+    public async isAccountServiceDownloadData(): Promise<boolean> {
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        if (somatotype != this.saveSomatotype) {
+            await Utils.accountServiceDownloadData(this.localPlayer.character);
+            await this.localPlayer.character.asyncReady();
+            Notice.showDownNotice(GameConfig.Language.Text_ResetImage.Value);
+        }
+        return true;
     }
 
     public closeMallPanel(): void {

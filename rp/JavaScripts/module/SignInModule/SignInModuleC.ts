@@ -38,7 +38,7 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
 
     private isInitSignInPanel: boolean = false;
     private addOpenSignInAction(): void {
-        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpenVersion2 || this.day <= 0) {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
             return;
         }
@@ -53,11 +53,23 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
         if (day <= this.day) {
             ExecutorManager.instance.pushAsyncExecutor(async () => {
                 this.getSignInPanel.hide();
-                if (sharedId && sharedId?.length > 0) await Utils.applySharedId(this.localPlayer.character, sharedId);
+                await this.useShareId(sharedId);
                 Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
             });
         } else {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
+        }
+    }
+
+    private async useShareId(shareId: string): Promise<void> {
+        if (shareId && shareId?.length > 0) {
+            // await Utils.applySharedId(this.localPlayer.character, sharedId);
+            // await Utils.asyncDownloadAsset(sharedId);
+            // this.localPlayer.character.setDescription([sharedId]);
+            // this.localPlayer.character.description.advance.base.characterSetting.characterTemplate = mw.CharacterTemplate.None;
+            // await this.localPlayer.character.asyncReady();
+            // this.localPlayer.character.syncDescription();
+            await this.server.net_useShareId(shareId);
         }
     }
 
@@ -69,30 +81,55 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
         if (this.signInConfigData) return;
         let data = {
             "isOpen": false,
-            "totalDay": 6,
+            "isOpenVersion2": true,
+            "totalDay": 12,
             "signInUserDatas": [
                 {
-                    "shareId": "102EH33D",
+                    "shareId": "532290",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2HF",
+                    "shareId": "532291",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2DZ",
+                    "shareId": "532292",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2ZR",
+                    "shareId": "540371",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2II",
+                    "shareId": "540373",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH168",
+                    "shareId": "540369",
+                    "icon": ""
+                },
+                {
+                    "shareId": "540372",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532301",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532293",
+                    "icon": ""
+                },
+                {
+                    "shareId": "540370",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532295",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532294",
                     "icon": ""
                 }
             ]

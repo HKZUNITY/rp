@@ -31,12 +31,14 @@ export class SignInUserData {
 
 export class SignInConfigData {
     public isOpen: boolean;
+    public isOpenVersion2: boolean;
     public totalDay: number;
     public signInUserDatas: SignInUserData[] = [];
 
     public constructor(data: any) {
         if (!data) return;
         this.isOpen = data?.isOpen;
+        this.isOpenVersion2 = data?.isOpenVersion2;
         this.totalDay = data?.totalDay;
 
         for (let i = 0; i < data?.signInUserDatas?.length; ++i) {

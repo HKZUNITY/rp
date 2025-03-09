@@ -4840,6 +4840,7 @@ class SignInConfigData {
         if (!data)
             return;
         this.isOpen = data?.isOpen;
+        this.isOpenVersion2 = data?.isOpenVersion2;
         this.totalDay = data?.totalDay;
         for (let i = 0; i < data?.signInUserDatas?.length; ++i) {
             this.signInUserDatas.push(new SignInUserData(data?.signInUserDatas[i]));
@@ -5066,8 +5067,12 @@ class SignInItem extends SignInItem_Generate$1 {
     }
     refreshUI() {
         this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
-        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0)
+        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0) {
             this.mIconImage.imageGuid = this.signInUserData.icon;
+        }
+        else {
+            this.mIconImage.imageInfo.setByAssetIcon(this.signInUserData.shareId, mw.AssetIconSize.Icon_128px);
+        }
         if (this.totalDay >= this.day) {
             this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value;
         }
@@ -5160,7 +5165,7 @@ class SignInModuleC extends ModuleC {
         this.signInAction.add(this.addSignInAction.bind(this));
     }
     addOpenSignInAction() {
-        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpenVersion2 || this.day <= 0) {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
             return;
         }
@@ -5174,13 +5179,23 @@ class SignInModuleC extends ModuleC {
         if (day <= this.day) {
             ExecutorManager.instance.pushAsyncExecutor(async () => {
                 this.getSignInPanel.hide();
-                if (sharedId && sharedId?.length > 0)
-                    await Utils.applySharedId(this.localPlayer.character, sharedId);
+                await this.useShareId(sharedId);
                 Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
             });
         }
         else {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
+        }
+    }
+    async useShareId(shareId) {
+        if (shareId && shareId?.length > 0) {
+            // await Utils.applySharedId(this.localPlayer.character, sharedId);
+            // await Utils.asyncDownloadAsset(sharedId);
+            // this.localPlayer.character.setDescription([sharedId]);
+            // this.localPlayer.character.description.advance.base.characterSetting.characterTemplate = mw.CharacterTemplate.None;
+            // await this.localPlayer.character.asyncReady();
+            // this.localPlayer.character.syncDescription();
+            await this.server.net_useShareId(shareId);
         }
     }
     net_syncSignInConfigData(signInConfigData, day) {
@@ -5190,30 +5205,55 @@ class SignInModuleC extends ModuleC {
             return;
         let data = {
             "isOpen": false,
-            "totalDay": 6,
+            "isOpenVersion2": true,
+            "totalDay": 12,
             "signInUserDatas": [
                 {
-                    "shareId": "102EH33D",
+                    "shareId": "532290",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2HF",
+                    "shareId": "532291",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2DZ",
+                    "shareId": "532292",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2ZR",
+                    "shareId": "540371",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH2II",
+                    "shareId": "540373",
                     "icon": ""
                 },
                 {
-                    "shareId": "102EH168",
+                    "shareId": "540369",
+                    "icon": ""
+                },
+                {
+                    "shareId": "540372",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532301",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532293",
+                    "icon": ""
+                },
+                {
+                    "shareId": "540370",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532295",
+                    "icon": ""
+                },
+                {
+                    "shareId": "532294",
                     "icon": ""
                 }
             ]
@@ -5358,6 +5398,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
             Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
         this.initShakeMallTween();
+        this.initShakeSignInTween();
     }
     updateFreeTime() {
         console.error(`wfz - freeTime:${GlobalData.freeTime}`);
@@ -5509,8 +5550,21 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mVirtualJoystickPanel.resetJoyStick();
     }
     initShakeMallTween() {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.8, 20, -20, 1.4, 0.9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.8, -20, 20, 0.9, 1.4);
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.5, -20, 20, 0.9, 1.5);
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            });
+        });
+    }
+    initShakeSignInTween() {
+        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
+        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
                 leftSamllToRightBig.start().onComplete(() => {
@@ -14379,6 +14433,7 @@ class MallModuleC extends ModuleC {
     addOpenMallAction() {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
+            await this.isAccountServiceDownloadData();
             this.initUsingCharacterData();
             this.onSwitchCameraAction.call(2);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
@@ -14388,6 +14443,15 @@ class MallModuleC extends ModuleC {
             this.getMallPanel.show();
             this.decorationIndexMap.clear(); //TODO-WFZ
         });
+    }
+    async isAccountServiceDownloadData() {
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        if (somatotype != this.saveSomatotype) {
+            await Utils.accountServiceDownloadData(this.localPlayer.character);
+            await this.localPlayer.character.asyncReady();
+            Notice.showDownNotice(GameConfig.Language.Text_ResetImage.Value);
+        }
+        return true;
     }
     closeMallPanel() {
         this.getMallPanel.hide();
@@ -17820,7 +17884,7 @@ var foreign123 = /*#__PURE__*/Object.freeze({
 class SignInModuleS extends ModuleS {
     constructor() {
         super(...arguments);
-        this.isInitSignInConfigData = false;
+        this.isContinueInitSignInData = true;
         this.signInConfigData = null;
     }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
@@ -17830,9 +17894,10 @@ class SignInModuleS extends ModuleS {
         this.syncSignInConfigData(player);
     }
     async syncSignInConfigData(player) {
-        if (!this.isInitSignInConfigData) {
-            this.isInitSignInConfigData = true;
+        if (this.isContinueInitSignInData) {
+            this.isContinueInitSignInData = false;
             await this.initSignInConfigData();
+            TimeUtil.delaySecond(5).then(() => { this.isContinueInitSignInData = true; });
         }
         this.getClient(player).net_syncSignInConfigData(this.signInConfigData, this.getDay(player));
     }
@@ -17847,6 +17912,13 @@ class SignInModuleS extends ModuleS {
         if (dayStr != currentDayStr)
             signInData.setDayStr(currentDayStr, 1);
         return signInData.day;
+    }
+    async net_useShareId(shareId) {
+        let player = this.currentPlayer;
+        await Utils.asyncDownloadAsset(shareId);
+        player.character.setDescription([shareId]);
+        player.character.description.advance.base.characterSetting.characterTemplate = mw.CharacterTemplate.None;
+        await player.character.asyncReady();
     }
 }
 

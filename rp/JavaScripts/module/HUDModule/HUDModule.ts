@@ -132,6 +132,7 @@ export class HUDPanel extends HUDPanel_Generate {
         }
 
         this.initShakeMallTween();
+        this.initShakeSignInTween();
     }
 
     public updateFreeTime(): void {
@@ -311,8 +312,23 @@ export class HUDPanel extends HUDPanel_Generate {
     }
 
     public initShakeMallTween(): void {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.8, 20, -20, 1.4, 0.9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.8, -20, 20, 0.9, 1.4);
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, 0.5, -20, 20, 0.9, 1.5);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
+    }
+
+    private initShakeSignInTween(): void {
+        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
+        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
 
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
