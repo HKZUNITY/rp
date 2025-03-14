@@ -118,7 +118,7 @@ export class HUDPanel extends HUDPanel_Generate {
         Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
 
         this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
-        // this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
         this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
         this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
         this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
@@ -132,6 +132,7 @@ export class HUDPanel extends HUDPanel_Generate {
         }
 
         this.initShakeMallTween();
+        this.initShakeShareTween();
         this.initShakeSignInTween();
     }
 
@@ -326,9 +327,24 @@ export class HUDPanel extends HUDPanel_Generate {
         });
     }
 
+    public initShakeShareTween(): void {
+        let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, 0.3, 0.8, 0.8, 1.2, 1.2);
+        let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, 0.3, 1.2, 1.2, 0.8, 0.8);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
+    }
+
     private initShakeSignInTween(): void {
-        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
-        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 0.8, 0, 360);
+        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 2, 0, 360);
+        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 2, 360, 0);
 
         rightBigToLeftSmall.start().onComplete(() => {
             TimeUtil.delaySecond(0.1).then(() => {
@@ -559,6 +575,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     }
 
     private onOpenShareActionHandler(openType: number): void {
+        return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             this.getSharePanel.show();
             let sharedId = await Utils.createSharedId(this.localPlayer.character);

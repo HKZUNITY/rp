@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.03.14-20.17.56
+ * TIME: 2025.03.14-20.50.34
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -14,20 +14,6 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mVirtualJoystickPanel_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mVirtualJoystickPanel') as mw.VirtualJoystickPanel
 		}
 		return this.mVirtualJoystickPanel_Internal
-	}
-	private mOpenShareImage_Internal: mw.Image
-	public get mOpenShareImage(): mw.Image {
-		if(!this.mOpenShareImage_Internal&&this.uiWidgetBase) {
-			this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage') as mw.Image
-		}
-		return this.mOpenShareImage_Internal
-	}
-	private mOpenShareButton_Internal: mw.StaleButton
-	public get mOpenShareButton(): mw.StaleButton {
-		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
-			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton') as mw.StaleButton
-		}
-		return this.mOpenShareButton_Internal
 	}
 	private mOpenSetImage_Internal: mw.Image
 	public get mOpenSetImage(): mw.Image {
@@ -140,6 +126,27 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenMallTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMallImage/mOpenMallTextBlock') as mw.TextBlock
 		}
 		return this.mOpenMallTextBlock_Internal
+	}
+	private mOpenShareImage_Internal: mw.Image
+	public get mOpenShareImage(): mw.Image {
+		if(!this.mOpenShareImage_Internal&&this.uiWidgetBase) {
+			this.mOpenShareImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage') as mw.Image
+		}
+		return this.mOpenShareImage_Internal
+	}
+	private mOpenShareButton_Internal: mw.StaleButton
+	public get mOpenShareButton(): mw.StaleButton {
+		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
+			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareButton') as mw.StaleButton
+		}
+		return this.mOpenShareButton_Internal
+	}
+	private mOpenShareTextBlock_Internal: mw.TextBlock
+	public get mOpenShareTextBlock(): mw.TextBlock {
+		if(!this.mOpenShareTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenShareTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareTextBlock') as mw.TextBlock
+		}
+		return this.mOpenShareTextBlock_Internal
 	}
 	private mOpenSignInImage_Internal: mw.Image
 	public get mOpenSignInImage(): mw.Image {
@@ -327,13 +334,6 @@ export default class HUDPanel_Generate extends UIScript {
 	protected initButtons() {
 		//按钮添加点击
 		
-		this.mOpenShareButton.onClicked.add(()=>{
-			Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
-		});
-		this.initLanguage(this.mOpenShareButton);
-		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-		
-	
 		this.mOpenSetButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
 		});
@@ -367,6 +367,13 @@ export default class HUDPanel_Generate extends UIScript {
 		});
 		this.initLanguage(this.mOpenMallButton);
 		this.mOpenMallButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mOpenShareButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
+		});
+		this.initLanguage(this.mOpenShareButton);
+		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mOpenSignInButton.onClicked.add(()=>{
@@ -465,6 +472,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOpenMallTextBlock)
+		
+	
+		this.initLanguage(this.mOpenShareTextBlock)
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)
