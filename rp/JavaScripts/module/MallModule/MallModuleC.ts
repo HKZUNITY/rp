@@ -1015,6 +1015,23 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)))
     }
 
+    public async syncTryOnCharacter(): Promise<void> {
+        await this.localPlayer.character.asyncReady();
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.recordSex(somatotype);
+        if (somatotype % 2 == 0) {
+            await this.feMaleNpc.asyncReady();
+            this.feMaleNpc.setDescription(this.localPlayer.character.getDescription());
+        } else {
+            await this.maleNpc.asyncReady();
+            this.maleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+    }
+
+    public get getCopyNpc(): mw.Character {
+        return this.copyNpc;
+    }
+
     private maleNpc: mw.Character = null;
     private feMaleNpc: mw.Character = null;
     private transitionNpc: mw.Character = null;
@@ -1053,6 +1070,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             await this.copyNpc.asyncReady();
             this.openColorPickPanel(tabId);
         });
+    }
+
+    public async openTryOnPanel(): Promise<void> {
+        await this.localPlayer.character.asyncReady();
+        this.copyNpc.setDescription(this.localPlayer.character.getDescription());
+        await this.copyNpc.asyncReady();
     }
 
     private addSaveAction(): void {

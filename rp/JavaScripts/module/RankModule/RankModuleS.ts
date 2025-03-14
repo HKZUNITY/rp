@@ -45,17 +45,17 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
 
     private roomDataMap: Map<string, RoomData> = new Map<string, RoomData>();
     @Decorator.noReply()
-    public net_onEnterScene(playerName: string, score: number, time: number): void {
+    public net_onEnterScene(playerName: string, score: number, time: number, tryon: number): void {
         this.syncPlayerMap.set(this.currentPlayer, false);
 
         let userId = this.currentPlayer.userId;
         this.currentPlayer.character.displayName = playerName;
 
-        this.onEnterScene(userId, playerName, score, time);
+        this.onEnterScene(userId, playerName, score, time, tryon);
     }
 
-    private onEnterScene(userId: string, playerName: string, score: number, time: number): void {
-        let roomData = new RoomData(userId, playerName, score, time);
+    private onEnterScene(userId: string, playerName: string, score: number, time: number, tryon: number): void {
+        let roomData = new RoomData(userId, playerName, score, time, tryon);
         this.roomDataMap.set(userId, roomData);
         let worldData: WorldData = new WorldData(userId, playerName, time);
         this.isRefreshWorldData([worldData]);
@@ -85,6 +85,17 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.worldDatas = (await Utils.getCustomdata("WorldData")) as WorldData[];
         this.isRefreshWorldData(tmpWorldDatas);
         this.synchrodata_RoomWorld();
+    }
+
+    public net_refreshTryOn(tryOn: number): void {
+        this.refreshTryOn(this.currentPlayer.userId, tryOn);
+    }
+
+    public refreshTryOn(userId: string, tryOn: number): void {
+        if (!this.roomDataMap.has(userId)) return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.tryOn = tryOn;
+        this.synchrodata_Room_TryOn();
     }
 
     private isRefreshWorldData(tmpWorldDatas: WorldData[]): boolean {
@@ -168,17 +179,20 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private roomNames: string[] = [];
     private roomScores: number[] = [];
     private roomTimes: number[] = [];
+    private roomTryOn: number[] = [];
     private updateRoomData(): void {
         if (this.roomDataMap.size == 0 || !this.roomDataMap) return;
         this.roomUserIds.length = 0;
         this.roomNames.length = 0;
         this.roomScores.length = 0;
         this.roomTimes.length = 0;
+        this.roomTryOn.length = 0;
         this.roomDataMap.forEach((value: RoomData, key: string) => {
             this.roomUserIds.push(value.userId);
             this.roomNames.push(value.playerName);
             this.roomScores.push(value.score);
             this.roomTimes.push(value.time);
+            this.roomTryOn.push(value.tryOn);
         });
     }
 
@@ -203,11 +217,11 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
                     this.worldUserIds, this.worldNames, this.worldTimes);
                 // this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         });
     }
@@ -233,8 +247,16 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.updateWorldData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
                 this.worldUserIds, this.worldNames, this.worldTimes);
+        });
+    }
+
+    private synchrodata_Room_TryOn(): void {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
         });
     }
 

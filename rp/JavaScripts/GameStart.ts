@@ -16,6 +16,7 @@ import { SetData, SetModuleC, SetModuleS } from "./module/SetModule/SetModule";
 import SignInData from "./module/SignInModule/SignInData";
 import SignInModuleC from "./module/SignInModule/SignInModuleC";
 import SignInModuleS from "./module/SignInModule/SignInModuleS";
+import { TryOnModuleS, TryOnModuleC, TryOnData } from "./module/TryOnModule/TryOnModule";
 
 @Component
 export default class GameStart extends Script {
@@ -50,6 +51,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
+        ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
     }
 
     /**

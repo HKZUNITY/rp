@@ -3,19 +3,22 @@
     public playerName: string = "";
     public score: number = 0;
     public time: number = 0;
+    public tryOn: number = 0;
 
-    public constructor(userId: string, name: string, killCount: number, time: number) {
+    public constructor(userId: string, name: string, killCount: number, time: number, tryOn: number) {
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
 
-    public setData(userId: string, name: string, killCount: number, time: number): void {
+    public setData(userId: string, name: string, killCount: number, time: number, tryOn: number): void {
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
 }
 

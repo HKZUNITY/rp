@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign136 = /*#__PURE__*/Object.freeze({
+var foreign137 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -96,7 +96,7 @@ var foreign136 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign138 = /*#__PURE__*/Object.freeze({
+var foreign139 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -3551,7 +3551,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign134 = /*#__PURE__*/Object.freeze({
+var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -3562,7 +3562,7 @@ var foreign134 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
@@ -3620,7 +3620,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign178 = /*#__PURE__*/Object.freeze({
+var foreign181 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -3662,7 +3662,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign133 = /*#__PURE__*/Object.freeze({
+var foreign134 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -3786,7 +3786,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign135 = /*#__PURE__*/Object.freeze({
+var foreign136 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -3796,7 +3796,7 @@ var foreign135 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3854,7 +3854,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign145 = /*#__PURE__*/Object.freeze({
+var foreign146 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -3864,7 +3864,7 @@ var foreign145 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3937,7 +3937,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign153 = /*#__PURE__*/Object.freeze({
+var foreign154 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -3947,7 +3947,7 @@ var foreign153 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -4338,7 +4338,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign154 = /*#__PURE__*/Object.freeze({
+var foreign155 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -4348,7 +4348,7 @@ var foreign154 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -4404,7 +4404,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign174 = /*#__PURE__*/Object.freeze({
+var foreign175 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -4414,7 +4414,7 @@ var foreign174 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -4542,7 +4542,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign175 = /*#__PURE__*/Object.freeze({
+var foreign176 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -4552,7 +4552,7 @@ var foreign175 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4628,7 +4628,7 @@ AdPanel_Generate = __decorate([
 ], AdPanel_Generate);
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign139 = /*#__PURE__*/Object.freeze({
+var foreign140 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -4638,7 +4638,7 @@ var foreign139 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4719,7 +4719,7 @@ TipsPanel_Generate = __decorate([
 ], TipsPanel_Generate);
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign140 = /*#__PURE__*/Object.freeze({
+var foreign141 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -4860,7 +4860,7 @@ var foreign125 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -4935,7 +4935,7 @@ SignInPanel_Generate = __decorate([
 ], SignInPanel_Generate);
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign177 = /*#__PURE__*/Object.freeze({
+var foreign178 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -4945,7 +4945,7 @@ var foreign177 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -5021,7 +5021,7 @@ SignInItem_Generate = __decorate([
 ], SignInItem_Generate);
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign176 = /*#__PURE__*/Object.freeze({
+var foreign177 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -6330,7 +6330,7 @@ var foreign84 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -6659,7 +6659,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign148 = /*#__PURE__*/Object.freeze({
+var foreign149 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -6669,7 +6669,7 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -6737,7 +6737,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign141 = /*#__PURE__*/Object.freeze({
+var foreign142 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -6791,7 +6791,7 @@ var foreign87 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -6847,7 +6847,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign142 = /*#__PURE__*/Object.freeze({
+var foreign143 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -6919,7 +6919,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -6986,7 +6986,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign143 = /*#__PURE__*/Object.freeze({
+var foreign144 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -7065,7 +7065,7 @@ var foreign89 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7121,7 +7121,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign144 = /*#__PURE__*/Object.freeze({
+var foreign145 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -7196,7 +7196,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -7246,7 +7246,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign146 = /*#__PURE__*/Object.freeze({
+var foreign147 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -7299,7 +7299,7 @@ var foreign91 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -7349,7 +7349,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign147 = /*#__PURE__*/Object.freeze({
+var foreign148 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -7404,7 +7404,7 @@ var foreign92 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -7459,7 +7459,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign150 = /*#__PURE__*/Object.freeze({
+var foreign151 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -7869,7 +7869,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -7914,7 +7914,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign149 = /*#__PURE__*/Object.freeze({
+var foreign150 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -10251,17 +10251,8 @@ class Mall {
         if (!model)
             return false;
         model.setCollision(mw.PropertyStatus.Off, true);
-        if (model instanceof mw.Effect) {
-            this.clearOneDecoraBySlotIndex(slotIndex, character);
-        }
-        else {
-            this.clearOneDecoraBySlotIndex(slotIndex, character);
-        }
         character.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(model, offset);
         return true;
-    }
-    static clearOneDecoraBySlotIndex(slotIndex, character) {
-        character.description.advance.slotAndDecoration.slot[slotIndex].decoration.clear();
     }
     static async copyCharacterClothingAndHair(fromCharacter, toCharacter) {
         if (!fromCharacter || !toCharacter)
@@ -10810,7 +10801,7 @@ var foreign99 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -10966,7 +10957,7 @@ ColorPickPanel_Generate = __decorate([
 ], ColorPickPanel_Generate);
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign157 = /*#__PURE__*/Object.freeze({
+var foreign158 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -10976,7 +10967,7 @@ var foreign157 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -11022,7 +11013,7 @@ ColorPickTab1_Generate = __decorate([
 ], ColorPickTab1_Generate);
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign158 = /*#__PURE__*/Object.freeze({
+var foreign159 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11051,7 +11042,7 @@ var foreign104 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11131,7 +11122,7 @@ ColorPickTab2_Generate = __decorate([
 ], ColorPickTab2_Generate);
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign159 = /*#__PURE__*/Object.freeze({
+var foreign160 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -11216,7 +11207,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -11277,7 +11268,7 @@ ColorPickTab3_Generate = __decorate([
 ], ColorPickTab3_Generate);
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign160 = /*#__PURE__*/Object.freeze({
+var foreign161 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -11416,7 +11407,7 @@ class TouchScript {
     }
 }
 
-var foreign132 = /*#__PURE__*/Object.freeze({
+var foreign133 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     get Enums () { return Enums; },
     TouchScript: TouchScript
@@ -11427,7 +11418,7 @@ var foreign132 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mTouchImage() {
@@ -11640,7 +11631,7 @@ MallPanel_Generate = __decorate([
 ], MallPanel_Generate);
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign165 = /*#__PURE__*/Object.freeze({
+var foreign166 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -11650,7 +11641,7 @@ var foreign165 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -11730,7 +11721,7 @@ MallItem_Big_Generate = __decorate([
 ], MallItem_Big_Generate);
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign161 = /*#__PURE__*/Object.freeze({
+var foreign162 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -11873,7 +11864,7 @@ var foreign107 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -11934,7 +11925,7 @@ MallItem_Color_Generate = __decorate([
 ], MallItem_Color_Generate);
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign162 = /*#__PURE__*/Object.freeze({
+var foreign163 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12022,7 +12013,7 @@ var foreign108 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -12090,7 +12081,7 @@ MallItem_Self_Generate = __decorate([
 ], MallItem_Self_Generate);
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign163 = /*#__PURE__*/Object.freeze({
+var foreign164 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -12155,7 +12146,7 @@ var foreign109 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -12251,7 +12242,7 @@ MallItem_Small_Generate = __decorate([
 ], MallItem_Small_Generate);
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign164 = /*#__PURE__*/Object.freeze({
+var foreign165 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -12561,7 +12552,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -12635,7 +12626,7 @@ MallTab1_Generate = __decorate([
 ], MallTab1_Generate);
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign166 = /*#__PURE__*/Object.freeze({
+var foreign167 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -12713,7 +12704,7 @@ var foreign112 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -12775,7 +12766,7 @@ MallTab2_Generate = __decorate([
 ], MallTab2_Generate);
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign167 = /*#__PURE__*/Object.freeze({
+var foreign168 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -12851,7 +12842,7 @@ var foreign113 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -12913,7 +12904,7 @@ MallTab3_Generate = __decorate([
 ], MallTab3_Generate);
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign168 = /*#__PURE__*/Object.freeze({
+var foreign169 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -14162,7 +14153,7 @@ var foreign103 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -14255,7 +14246,7 @@ MallTipsPanel_Generate = __decorate([
 ], MallTipsPanel_Generate);
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign169 = /*#__PURE__*/Object.freeze({
+var foreign170 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -15373,6 +15364,22 @@ class MallModuleC extends ModuleC {
             return;
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
     }
+    async syncTryOnCharacter() {
+        await this.localPlayer.character.asyncReady();
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.recordSex(somatotype);
+        if (somatotype % 2 == 0) {
+            await this.feMaleNpc.asyncReady();
+            this.feMaleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+        else {
+            await this.maleNpc.asyncReady();
+            this.maleNpc.setDescription(this.localPlayer.character.getDescription());
+        }
+    }
+    get getCopyNpc() {
+        return this.copyNpc;
+    }
     async initNpc() {
         this.maleNpc = await mw.GameObject.asyncFindGameObjectById(`3A3B7F1A`);
         this.feMaleNpc = await mw.GameObject.asyncFindGameObjectById(`047AA580`);
@@ -15404,6 +15411,11 @@ class MallModuleC extends ModuleC {
             await this.copyNpc.asyncReady();
             this.openColorPickPanel(tabId);
         });
+    }
+    async openTryOnPanel() {
+        await this.localPlayer.character.asyncReady();
+        this.copyNpc.setDescription(this.localPlayer.character.getDescription());
+        await this.copyNpc.asyncReady();
     }
     addSaveAction() {
         this.saveCharacterDescription();
@@ -16229,21 +16241,24 @@ var foreign116 = /*#__PURE__*/Object.freeze({
 });
 
 class RoomData {
-    constructor(userId, name, killCount, time) {
+    constructor(userId, name, killCount, time, tryOn) {
         this.userId = "";
         this.playerName = "";
         this.score = 0;
         this.time = 0;
+        this.tryOn = 0;
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
-    setData(userId, name, killCount, time) {
+    setData(userId, name, killCount, time, tryOn) {
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
+        this.tryOn = tryOn;
     }
 }
 class WorldData {
@@ -16289,8 +16304,1719 @@ var foreign117 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/TryOnModule/TryOnItem.ui
+ * TIME: 2025.03.14-20.17.56
+ */
+let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickButton() {
+        if (!this.mClickButton_Internal && this.uiWidgetBase) {
+            this.mClickButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mClickButton');
+        }
+        return this.mClickButton_Internal;
+    }
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mTryOnTextBlock() {
+        if (!this.mTryOnTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnTextBlock');
+        }
+        return this.mTryOnTextBlock_Internal;
+    }
+    get mTryOnBgImage() {
+        if (!this.mTryOnBgImage_Internal && this.uiWidgetBase) {
+            this.mTryOnBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnBgImage');
+        }
+        return this.mTryOnBgImage_Internal;
+    }
+    get mTryOnTipsTextBlock() {
+        if (!this.mTryOnTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage/mTryOnBgImage/mTryOnTipsTextBlock');
+        }
+        return this.mTryOnTipsTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mClickButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickButton");
+        });
+        this.mClickButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mTryOnTextBlock);
+        this.initLanguage(this.mTryOnTipsTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+TryOnItem_Generate = __decorate([
+    UIBind('UI/module/TryOnModule/TryOnItem.ui')
+], TryOnItem_Generate);
+var TryOnItem_Generate$1 = TryOnItem_Generate;
+
+var foreign179 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: TryOnItem_Generate$1
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/TryOnModule/TryOnPanel.ui
+ * TIME: 2025.03.14-20.17.56
+ */
+let TryOnPanel_Generate = class TryOnPanel_Generate extends UIScript {
+    get mLeftCanvas() {
+        if (!this.mLeftCanvas_Internal && this.uiWidgetBase) {
+            this.mLeftCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas');
+        }
+        return this.mLeftCanvas_Internal;
+    }
+    get mTouchImage() {
+        if (!this.mTouchImage_Internal && this.uiWidgetBase) {
+            this.mTouchImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mTouchImage');
+        }
+        return this.mTouchImage_Internal;
+    }
+    get mSaveButton() {
+        if (!this.mSaveButton_Internal && this.uiWidgetBase) {
+            this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton');
+        }
+        return this.mSaveButton_Internal;
+    }
+    get mSaveTextBlock() {
+        if (!this.mSaveTextBlock_Internal && this.uiWidgetBase) {
+            this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton/mSaveTextBlock');
+        }
+        return this.mSaveTextBlock_Internal;
+    }
+    get mListBgImage() {
+        if (!this.mListBgImage_Internal && this.uiWidgetBase) {
+            this.mListBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListBgImage');
+        }
+        return this.mListBgImage_Internal;
+    }
+    get mListCanvas() {
+        if (!this.mListCanvas_Internal && this.uiWidgetBase) {
+            this.mListCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas');
+        }
+        return this.mListCanvas_Internal;
+    }
+    get mTab1Canvas() {
+        if (!this.mTab1Canvas_Internal && this.uiWidgetBase) {
+            this.mTab1Canvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab1Canvas');
+        }
+        return this.mTab1Canvas_Internal;
+    }
+    get mTitleTextBlock() {
+        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab1Canvas/mTitleTextBlock');
+        }
+        return this.mTitleTextBlock_Internal;
+    }
+    get mTab2Canvas() {
+        if (!this.mTab2Canvas_Internal && this.uiWidgetBase) {
+            this.mTab2Canvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas');
+        }
+        return this.mTab2Canvas_Internal;
+    }
+    get mRankTextBlock() {
+        if (!this.mRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mRankTextBlock');
+        }
+        return this.mRankTextBlock_Internal;
+    }
+    get mNameTextBlock() {
+        if (!this.mNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mNameTextBlock');
+        }
+        return this.mNameTextBlock_Internal;
+    }
+    get mTryOnTextBlock() {
+        if (!this.mTryOnTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mTab2Canvas/mTryOnTextBlock');
+        }
+        return this.mTryOnTextBlock_Internal;
+    }
+    get mItemScrollBox() {
+        if (!this.mItemScrollBox_Internal && this.uiWidgetBase) {
+            this.mItemScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mItemScrollBox');
+        }
+        return this.mItemScrollBox_Internal;
+    }
+    get mItemContentCanvas() {
+        if (!this.mItemContentCanvas_Internal && this.uiWidgetBase) {
+            this.mItemContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mListCanvas/mItemScrollBox/mItemContentCanvas');
+        }
+        return this.mItemContentCanvas_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    get mCloseImage() {
+        if (!this.mCloseImage_Internal && this.uiWidgetBase) {
+            this.mCloseImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/ListCanvas/mCloseButton/mCloseImage');
+        }
+        return this.mCloseImage_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSaveButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+        });
+        this.mSaveButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mSaveTextBlock);
+        this.initLanguage(this.mTitleTextBlock);
+        this.initLanguage(this.mRankTextBlock);
+        this.initLanguage(this.mNameTextBlock);
+        this.initLanguage(this.mTryOnTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+TryOnPanel_Generate = __decorate([
+    UIBind('UI/module/TryOnModule/TryOnPanel.ui')
+], TryOnPanel_Generate);
+var TryOnPanel_Generate$1 = TryOnPanel_Generate;
+
+var foreign180 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: TryOnPanel_Generate$1
+});
+
+class RankModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.worldDatas = [];
+        this.isInitWorldDatas = false;
+        this.time = 60;
+        this.timer = 0;
+        this.syncPlayerMap = new Map();
+        // @Decorator.noReply()
+        // public net_updateSyncPlayer(isSync: boolean): void {
+        //     let player = this.currentPlayer;
+        //     if (!this.syncPlayerMap.has(player)) return;
+        //     this.syncPlayerMap.set(player, isSync);
+        //     if (isSync) this.synchrodata_aRoomWorld(player);
+        // }
+        this.roomDataMap = new Map();
+        this.roomUserIds = [];
+        this.roomNames = [];
+        this.roomScores = [];
+        this.roomTimes = [];
+        this.roomTryOn = [];
+        this.worldUserIds = [];
+        this.worldNames = [];
+        this.worldTimes = [];
+        // private synchrodata_aRoomWorld(player: mw.Player): void {
+        //     this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
+        //         this.worldUserIds, this.worldNames, this.worldTimes);
+        // }
+        // public getNamesByUserId(userId1: string, userId2: string): string[] {
+        //     if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
+        //         return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
+        //     }
+        //     return null;
+        // }
+        // public getNameByUserId(userId: string): string {
+        //     if (this.roomDataMap.has(userId)) {
+        //         return this.roomDataMap.get(userId).playerName;
+        //     }
+        //     return null;
+        // }
+        // private redFirstModel: mw.Model = null;
+        // private blueFirstModel: mw.Model = null;
+        // @Decorator.noReply()
+        // public net_setFirstModel(isRed: boolean): void {
+        //     let character = this.currentPlayer.character;
+        //     this.setFirstModel(character, isRed);
+        // }
+        // private async setFirstModel(character: mw.Character, isRed: boolean): Promise<void> {
+        //     if (isRed) {
+        //         if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
+        //         character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
+        //         this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+        //         this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        //     } else {
+        //         if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
+        //         character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
+        //         this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
+        //         this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
+        //     }
+        // }
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.initData();
+    }
+    async initData() {
+        this.worldDatas = (await Utils.getCustomdata("WorldData"));
+        this.isInitWorldDatas = true;
+    }
+    onUpdate(dt) {
+        this.timer += dt;
+        if (this.timer >= this.time) {
+            this.timer = 0;
+            this.refreshTime();
+        }
+    }
+    onPlayerLeft(player) {
+        let userId = player.userId;
+        if (this.roomDataMap.has(userId))
+            this.roomDataMap.delete(userId);
+        if (this.syncPlayerMap.has(player))
+            this.syncPlayerMap.delete(player);
+        // this.synchrodata_Room();
+    }
+    net_onEnterScene(playerName, score, time, tryon) {
+        this.syncPlayerMap.set(this.currentPlayer, false);
+        let userId = this.currentPlayer.userId;
+        this.currentPlayer.character.displayName = playerName;
+        this.onEnterScene(userId, playerName, score, time, tryon);
+    }
+    onEnterScene(userId, playerName, score, time, tryon) {
+        let roomData = new RoomData(userId, playerName, score, time, tryon);
+        this.roomDataMap.set(userId, roomData);
+        let worldData = new WorldData(userId, playerName, time);
+        this.isRefreshWorldData([worldData]);
+        this.synchrodata_onEnterScene(userId);
+    }
+    // public refreshScore(userId: string, score: number): void {
+    //     if (!this.roomDataMap.has(userId)) return;
+    //     let roomData = this.roomDataMap.get(userId);
+    //     roomData.score = score;
+    //     this.synchrodata_Room();
+    // }
+    async refreshTime() {
+        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
+            return;
+        let tmpWorldDatas = [];
+        this.syncPlayerMap.forEach((value, key) => {
+            DataCenterS.getData(key, RankData).setTime(1);
+            let userId = key.userId;
+            if (!this.roomDataMap.has(userId))
+                return;
+            let roomData = this.roomDataMap.get(userId);
+            roomData.time += 1;
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            tmpWorldDatas.push(worldData);
+        });
+        this.worldDatas = (await Utils.getCustomdata("WorldData"));
+        this.isRefreshWorldData(tmpWorldDatas);
+        this.synchrodata_RoomWorld();
+    }
+    net_refreshTryOn(tryOn) {
+        this.refreshTryOn(this.currentPlayer.userId, tryOn);
+    }
+    refreshTryOn(userId, tryOn) {
+        if (!this.roomDataMap.has(userId))
+            return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.tryOn = tryOn;
+        this.synchrodata_Room_TryOn();
+    }
+    isRefreshWorldData(tmpWorldDatas) {
+        if (!this.isInitWorldDatas)
+            return false;
+        if (this.worldDatas == null)
+            this.worldDatas = [];
+        let isNeedSave = false;
+        for (let k = 0; k < tmpWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let worldData = tmpWorldDatas[k];
+            if (this.worldDatas.length < GlobalData.worldCount) {
+                if (this.worldDatas.length == 0) {
+                    this.worldDatas.push(worldData);
+                    isPush = true;
+                    isNeedSave = true;
+                }
+                else {
+                    for (let i = 0; i < this.worldDatas.length; ++i) {
+                        if (this.worldDatas[i].userId != worldData.userId)
+                            continue;
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 1);
+                            break;
+                        }
+                        else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+                    if (ishasData)
+                        continue;
+                    for (let i = 0; i < this.worldDatas.length; i++) {
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 0, worldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+                    if (!isPush) {
+                        this.worldDatas.push(worldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            }
+            else {
+                for (let i = 0; i < this.worldDatas.length; ++i) {
+                    if (this.worldDatas[i].userId != worldData.userId)
+                        continue;
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    }
+                    else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+                if (ishasData)
+                    continue;
+                for (let i = 0; i < this.worldDatas.length; i++) {
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 0, worldData);
+                        if (!ishasDelete) {
+                            this.worldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            Utils.setCustomData("WorldData", this.worldDatas);
+        }
+        return isNeedSave;
+    }
+    updateRoomData() {
+        if (this.roomDataMap.size == 0 || !this.roomDataMap)
+            return;
+        this.roomUserIds.length = 0;
+        this.roomNames.length = 0;
+        this.roomScores.length = 0;
+        this.roomTimes.length = 0;
+        this.roomTryOn.length = 0;
+        this.roomDataMap.forEach((value, key) => {
+            this.roomUserIds.push(value.userId);
+            this.roomNames.push(value.playerName);
+            this.roomScores.push(value.score);
+            this.roomTimes.push(value.time);
+            this.roomTryOn.push(value.tryOn);
+        });
+    }
+    updateWorldData() {
+        if (!this.worldDatas || this.worldDatas.length == 0)
+            return;
+        this.worldUserIds.length = 0;
+        this.worldNames.length = 0;
+        this.worldTimes.length = 0;
+        for (let i = 0; i < this.worldDatas.length; i++) {
+            this.worldUserIds.push(this.worldDatas[i].userId);
+            this.worldNames.push(this.worldDatas[i].playerName);
+            this.worldTimes.push(this.worldDatas[i].time);
+        }
+    }
+    synchrodata_onEnterScene(sendUserId) {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            if (sendUserId == key.userId) {
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+                // this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+            }
+            else {
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            }
+        });
+    }
+    // private synchrodata_Room(): void {
+    //     this.updateRoomData();
+    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+    // if (!value) return;
+    // this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
+    //     });
+    // }
+    // private synchrodata_World(): void {
+    //     this.updateWorldData();
+    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+    //         // if (!value) return;
+    //         this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+    //     });
+    // }
+    synchrodata_RoomWorld() {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+        });
+    }
+    synchrodata_Room_TryOn() {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach((value, key) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+        });
+    }
+}
+__decorate([
+    Decorator.noReply()
+], RankModuleS.prototype, "net_onEnterScene", null);
+
+var foreign119 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: RankModuleS
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/SetModule/SetPanel.ui
+ * TIME: 2025.03.14-20.17.57
+ */
+let SetPanel_Generate = class SetPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mSet1Button() {
+        if (!this.mSet1Button_Internal && this.uiWidgetBase) {
+            this.mSet1Button_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button');
+        }
+        return this.mSet1Button_Internal;
+    }
+    get mSet1TextBlock() {
+        if (!this.mSet1TextBlock_Internal && this.uiWidgetBase) {
+            this.mSet1TextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button/mSet1TextBlock');
+        }
+        return this.mSet1TextBlock_Internal;
+    }
+    get mContentCanvas() {
+        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
+            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas');
+        }
+        return this.mContentCanvas_Internal;
+    }
+    get mQualityImage() {
+        if (!this.mQualityImage_Internal && this.uiWidgetBase) {
+            this.mQualityImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage');
+        }
+        return this.mQualityImage_Internal;
+    }
+    get mQualityTextBlock() {
+        if (!this.mQualityTextBlock_Internal && this.uiWidgetBase) {
+            this.mQualityTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityTextBlock');
+        }
+        return this.mQualityTextBlock_Internal;
+    }
+    get mQualityProgressBar() {
+        if (!this.mQualityProgressBar_Internal && this.uiWidgetBase) {
+            this.mQualityProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityProgressBar');
+        }
+        return this.mQualityProgressBar_Internal;
+    }
+    get mSoundImage() {
+        if (!this.mSoundImage_Internal && this.uiWidgetBase) {
+            this.mSoundImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage');
+        }
+        return this.mSoundImage_Internal;
+    }
+    get mSoundTextBlock() {
+        if (!this.mSoundTextBlock_Internal && this.uiWidgetBase) {
+            this.mSoundTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundTextBlock');
+        }
+        return this.mSoundTextBlock_Internal;
+    }
+    get mSoundProgressBar() {
+        if (!this.mSoundProgressBar_Internal && this.uiWidgetBase) {
+            this.mSoundProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundProgressBar');
+        }
+        return this.mSoundProgressBar_Internal;
+    }
+    get mBgMusicImage() {
+        if (!this.mBgMusicImage_Internal && this.uiWidgetBase) {
+            this.mBgMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage');
+        }
+        return this.mBgMusicImage_Internal;
+    }
+    get mBgMusicTextBlock() {
+        if (!this.mBgMusicTextBlock_Internal && this.uiWidgetBase) {
+            this.mBgMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicTextBlock');
+        }
+        return this.mBgMusicTextBlock_Internal;
+    }
+    get mBgMusicmProgressBar() {
+        if (!this.mBgMusicmProgressBar_Internal && this.uiWidgetBase) {
+            this.mBgMusicmProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicmProgressBar');
+        }
+        return this.mBgMusicmProgressBar_Internal;
+    }
+    get mViewAngleImage() {
+        if (!this.mViewAngleImage_Internal && this.uiWidgetBase) {
+            this.mViewAngleImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage');
+        }
+        return this.mViewAngleImage_Internal;
+    }
+    get mViewAngleTextBlock() {
+        if (!this.mViewAngleTextBlock_Internal && this.uiWidgetBase) {
+            this.mViewAngleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleTextBlock');
+        }
+        return this.mViewAngleTextBlock_Internal;
+    }
+    get mViewAngleProgressBar() {
+        if (!this.mViewAngleProgressBar_Internal && this.uiWidgetBase) {
+            this.mViewAngleProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleProgressBar');
+        }
+        return this.mViewAngleProgressBar_Internal;
+    }
+    get mShowNickNameImage() {
+        if (!this.mShowNickNameImage_Internal && this.uiWidgetBase) {
+            this.mShowNickNameImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage');
+        }
+        return this.mShowNickNameImage_Internal;
+    }
+    get mShowNickNameTextBlock() {
+        if (!this.mShowNickNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mShowNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameTextBlock');
+        }
+        return this.mShowNickNameTextBlock_Internal;
+    }
+    get mShowNickNameCanvas() {
+        if (!this.mShowNickNameCanvas_Internal && this.uiWidgetBase) {
+            this.mShowNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas');
+        }
+        return this.mShowNickNameCanvas_Internal;
+    }
+    get mShowNickNameButton() {
+        if (!this.mShowNickNameButton_Internal && this.uiWidgetBase) {
+            this.mShowNickNameButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameButton');
+        }
+        return this.mShowNickNameButton_Internal;
+    }
+    get mHideNickNameBgImage() {
+        if (!this.mHideNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mHideNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mHideNickNameBgImage');
+        }
+        return this.mHideNickNameBgImage_Internal;
+    }
+    get mShowNickNameBgImage() {
+        if (!this.mShowNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mShowNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameBgImage');
+        }
+        return this.mShowNickNameBgImage_Internal;
+    }
+    get mOnOffNickNameCanvas() {
+        if (!this.mOnOffNickNameCanvas_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas');
+        }
+        return this.mOnOffNickNameCanvas_Internal;
+    }
+    get mOnOffNickNameBgImage() {
+        if (!this.mOnOffNickNameBgImage_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameBgImage');
+        }
+        return this.mOnOffNickNameBgImage_Internal;
+    }
+    get mOnOffNickNameTextBlock() {
+        if (!this.mOnOffNickNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mOnOffNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameTextBlock');
+        }
+        return this.mOnOffNickNameTextBlock_Internal;
+    }
+    get mTryOnPermissionImage() {
+        if (!this.mTryOnPermissionImage_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage');
+        }
+        return this.mTryOnPermissionImage_Internal;
+    }
+    get mTryOnPermissionTextBlock() {
+        if (!this.mTryOnPermissionTextBlock_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionTextBlock');
+        }
+        return this.mTryOnPermissionTextBlock_Internal;
+    }
+    get mTryOnPermissionCanvas() {
+        if (!this.mTryOnPermissionCanvas_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas');
+        }
+        return this.mTryOnPermissionCanvas_Internal;
+    }
+    get mTryOnPermissionButton() {
+        if (!this.mTryOnPermissionButton_Internal && this.uiWidgetBase) {
+            this.mTryOnPermissionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mTryOnPermissionButton');
+        }
+        return this.mTryOnPermissionButton_Internal;
+    }
+    get mHideTryOnPermissionBgImage() {
+        if (!this.mHideTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mHideTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mHideTryOnPermissionBgImage');
+        }
+        return this.mHideTryOnPermissionBgImage_Internal;
+    }
+    get mShowTryOnPermissionBgImage() {
+        if (!this.mShowTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mShowTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mShowTryOnPermissionBgImage');
+        }
+        return this.mShowTryOnPermissionBgImage_Internal;
+    }
+    get mOnOffTryOnPermissionCanvas() {
+        if (!this.mOnOffTryOnPermissionCanvas_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas');
+        }
+        return this.mOnOffTryOnPermissionCanvas_Internal;
+    }
+    get mOnOffTryOnPermissionBgImage() {
+        if (!this.mOnOffTryOnPermissionBgImage_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionBgImage');
+        }
+        return this.mOnOffTryOnPermissionBgImage_Internal;
+    }
+    get mOnOffTryOnPermissionTextBlock() {
+        if (!this.mOnOffTryOnPermissionTextBlock_Internal && this.uiWidgetBase) {
+            this.mOnOffTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionTextBlock');
+        }
+        return this.mOnOffTryOnPermissionTextBlock_Internal;
+    }
+    get mResetButton() {
+        if (!this.mResetButton_Internal && this.uiWidgetBase) {
+            this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton');
+        }
+        return this.mResetButton_Internal;
+    }
+    get mResetTextBlock() {
+        if (!this.mResetTextBlock_Internal && this.uiWidgetBase) {
+            this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton/mResetTextBlock');
+        }
+        return this.mResetTextBlock_Internal;
+    }
+    get mResetPosButton() {
+        if (!this.mResetPosButton_Internal && this.uiWidgetBase) {
+            this.mResetPosButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton');
+        }
+        return this.mResetPosButton_Internal;
+    }
+    get mResetPosTextBlock() {
+        if (!this.mResetPosTextBlock_Internal && this.uiWidgetBase) {
+            this.mResetPosTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton/mResetPosTextBlock');
+        }
+        return this.mResetPosTextBlock_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mCloseButton');
+        }
+        return this.mCloseButton_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSet1Button.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSet1Button");
+        });
+        this.mSet1Button.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mShowNickNameButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mShowNickNameButton");
+        });
+        this.mShowNickNameButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mTryOnPermissionButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mTryOnPermissionButton");
+        });
+        this.mTryOnPermissionButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mResetButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mResetButton");
+        });
+        this.mResetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mResetPosButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mResetPosButton");
+        });
+        this.mResetPosButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mCloseButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        });
+        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mSet1TextBlock);
+        this.initLanguage(this.mQualityTextBlock);
+        this.initLanguage(this.mSoundTextBlock);
+        this.initLanguage(this.mBgMusicTextBlock);
+        this.initLanguage(this.mViewAngleTextBlock);
+        this.initLanguage(this.mShowNickNameTextBlock);
+        this.initLanguage(this.mOnOffNickNameTextBlock);
+        this.initLanguage(this.mTryOnPermissionTextBlock);
+        this.initLanguage(this.mOnOffTryOnPermissionTextBlock);
+        this.initLanguage(this.mResetTextBlock);
+        this.initLanguage(this.mResetPosTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+SetPanel_Generate = __decorate([
+    UIBind('UI/module/SetModule/SetPanel.ui')
+], SetPanel_Generate);
+var SetPanel_Generate$1 = SetPanel_Generate;
+
+var foreign174 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SetPanel_Generate$1
+});
+
+class SetPanel extends SetPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.setModuleC = null;
+    }
+    get getSetModuleC() {
+        if (this.setModuleC == null) {
+            this.setModuleC = ModuleService.getModule(SetModuleC);
+        }
+        return this.setModuleC;
+    }
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mSet1TextBlock.text = GameConfig.Language.Text_SetUp1.Value;
+        this.mQualityTextBlock.text = GameConfig.Language.Text_PictureQuality.Value;
+        this.mSoundTextBlock.text = GameConfig.Language.Text_SoundEffects.Value;
+        this.mBgMusicTextBlock.text = GameConfig.Language.Text_BackgroundMusic.Value;
+        this.mViewAngleTextBlock.text = GameConfig.Language.Text_ViewAngleScaling.Value;
+        this.mShowNickNameTextBlock.text = GameConfig.Language.Text_DisplayNicknames.Value;
+        this.mTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips9.Value;
+        this.mResetPosTextBlock.text = GameConfig.Language.Text_ResetLocation.Value;
+        this.mResetTextBlock.text = GameConfig.Language.Text_RestoringSettings.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.onCloseButtonClick.bind(this));
+        this.mQualityProgressBar.onSliderValueChanged.add(this.onQualityChange.bind(this));
+        this.mQualityProgressBar.sliderButtonReleaseDelegate.add(this.onSaveQuality.bind(this));
+        this.mSoundProgressBar.onSliderValueChanged.add(this.onSoundChange.bind(this));
+        this.mSoundProgressBar.sliderButtonReleaseDelegate.add(this.onSaveSound.bind(this));
+        this.mBgMusicmProgressBar.onSliderValueChanged.add(this.onBgMusicChange.bind(this));
+        this.mBgMusicmProgressBar.sliderButtonReleaseDelegate.add(this.onSaveBgMusic.bind(this));
+        this.mViewAngleProgressBar.onSliderValueChanged.add(this.onViewAngleChange.bind(this));
+        this.mViewAngleProgressBar.sliderButtonReleaseDelegate.add(this.onSaveViewAngle.bind(this));
+        this.mShowNickNameButton.onClicked.add(this.onShowNickNameButtonClick.bind(this));
+        this.mTryOnPermissionButton.onClicked.add(this.onTryOnPermissionButtonClick.bind(this));
+        this.mResetButton.onClicked.add(this.onResetButtonClick.bind(this));
+        this.mResetPosButton.onClicked.add(this.onResetPosButtonClick.bind(this));
+    }
+    onCloseButtonClick() {
+        this.hide();
+    }
+    onShowNickNameButtonClick() {
+        this.getSetModuleC.onShowNickNameAction.call(this.updateNickNameUI.bind(this));
+    }
+    onTryOnPermissionButtonClick() {
+        this.getSetModuleC.onTryOnPermissionAction.call(this.updateTryOnPermissionUI.bind(this));
+    }
+    updateNickNameUI(isShowNickName) {
+        if (isShowNickName) {
+            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.Collapsed);
+            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_On.Value;
+            this.mOnOffNickNameCanvas.position = new Vector2(46, -3.5);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_Off.Value;
+            this.mOnOffNickNameCanvas.position = new Vector2(-14, -3.5);
+        }
+    }
+    updateTryOnPermissionUI(isTryOn) {
+        if (isTryOn) {
+            Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+            this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips10.Value;
+            this.mOnOffTryOnPermissionCanvas.position = new Vector2(75, -3.5);
+        }
+        else {
+            Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips11.Value;
+            this.mOnOffTryOnPermissionCanvas.position = new Vector2(-25, -3.5);
+        }
+    }
+    updateViewAngleUI(value) {
+        this.mViewAngleProgressBar.currentValue = value;
+    }
+    onResetButtonClick() {
+        this.getSetModuleC.onResetAction.call();
+    }
+    onResetPosButtonClick() {
+        this.getSetModuleC.onResetPosAction.call();
+    }
+    onQualityChange(value) {
+        this.getSetModuleC.onQualityChangeAction.call(value);
+    }
+    onSaveQuality(value) {
+        this.getSetModuleC.onSaveQualityAction.call();
+    }
+    onSoundChange(value) {
+        this.getSetModuleC.onSoundChangeAction.call(value);
+    }
+    onSaveSound(value) {
+        this.getSetModuleC.onSaveSoundAction.call();
+    }
+    onBgMusicChange(value) {
+        this.getSetModuleC.onBgMusicChangeAction.call(value);
+    }
+    onSaveBgMusic(value) {
+        this.getSetModuleC.onSaveBgMusicAction.call();
+    }
+    onViewAngleChange(value) {
+        this.getSetModuleC.onViewAngleChangeAction.call(value);
+    }
+    onSaveViewAngle(value) {
+        this.getSetModuleC.onSaveViewAngleAction.call();
+    }
+    setDatas(quality, sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        this.updateNickNameUI(isShowNickName);
+        this.updateTryOnPermissionUI(isTryOn);
+        this.mQualityProgressBar.currentValue = quality;
+        this.mSoundProgressBar.currentValue = sound;
+        this.mBgMusicmProgressBar.currentValue = bgMusic;
+        this.mViewAngleProgressBar.currentValue = viewAngle;
+    }
+}
+
+var foreign124 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: SetPanel
+});
+
+class SetData extends Subdata {
+    constructor() {
+        super(...arguments);
+        // @Decorator.persistence()
+        // public quality: number = 0;
+        this.sound = 1;
+        this.bgMusic = 1;
+        this.viewAngle = 350;
+        this.isShowNickName = true;
+        this.isTryOn = true;
+    }
+    // public setQuality(value: number): void {
+    //     this.quality = value;
+    //     this.save(false);
+    // }
+    setSound(value) {
+        this.sound = value;
+        this.save(false);
+    }
+    setBgMusic(value) {
+        this.bgMusic = value;
+        this.save(false);
+    }
+    setViewAngle(value) {
+        this.viewAngle = value;
+        this.save(false);
+    }
+    setIsShowNickName(value) {
+        this.isShowNickName = value;
+        this.save(false);
+    }
+    setIsTryOn(value) {
+        this.isTryOn = value;
+        this.save(false);
+    }
+    reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        // this.quality = 0;
+        this.sound = sound;
+        this.bgMusic = bgMusic;
+        this.viewAngle = viewAngle;
+        this.isShowNickName = isShowNickName;
+        this.isTryOn = isTryOn;
+        this.save(false);
+    }
+}
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "sound", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "bgMusic", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "viewAngle", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "isShowNickName", void 0);
+__decorate([
+    Decorator.persistence()
+], SetData.prototype, "isTryOn", void 0);
+class SetModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.setPanel = null;
+        this.hudModuleC = null;
+        this.onShowNickNameAction = new Action1();
+        this.onTryOnPermissionAction = new Action1();
+        this.onResetAction = new Action();
+        this.onResetPosAction = new Action();
+        this.onQualityChangeAction = new Action1();
+        this.onSaveQualityAction = new Action();
+        this.onSoundChangeAction = new Action1();
+        this.onSaveSoundAction = new Action();
+        this.onBgMusicChangeAction = new Action1();
+        this.onSaveBgMusicAction = new Action();
+        this.onViewAngleChangeAction = new Action1();
+        this.onSaveViewAngleAction = new Action();
+        this.isHasSetData = false;
+        this.quality = 0;
+        this.sound = 0;
+        this.bgMusic = 0;
+        this.viewAngle = 0;
+        this.isShowNickName = true;
+        this.isTryOn = true;
+    }
+    get getSetPanel() {
+        if (this.setPanel == null) {
+            this.setPanel = UIService.getUI(SetPanel);
+        }
+        return this.setPanel;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.initEvent();
+        InputUtil.onKeyDown(mw.Keys.K, () => {
+            console.error(GraphicsSettings.getDefaultCPULevel());
+            console.error(GraphicsSettings.getDefaultGPULevel());
+            console.error(GraphicsSettings.getGPULevel());
+            console.error(GraphicsSettings.getCPULevel());
+        });
+    }
+    onEnterScene(sceneType) {
+        this.initSetData();
+    }
+    initEvent() {
+        this.getHUDModuleC.onOpenSetAction.add(this.addOpenSetAction.bind(this));
+        this.onShowNickNameAction.add(this.addShowNickNameAction.bind(this));
+        this.onTryOnPermissionAction.add(this.addTryOnPermissionAction.bind(this));
+        this.onResetAction.add(this.addResetAction.bind(this));
+        this.onResetPosAction.add(this.addResetPosAction.bind(this));
+        this.onQualityChangeAction.add(this.addQualityChangeAction.bind(this));
+        this.onSaveQualityAction.add(this.addSaveQualityAction.bind(this));
+        this.onSoundChangeAction.add(this.addSoundChangeAction.bind(this));
+        this.onSaveSoundAction.add(this.addSaveSoundAction.bind(this));
+        this.onBgMusicChangeAction.add(this.addBgMusicChangeAction.bind(this));
+        this.onSaveBgMusicAction.add(this.addSaveBgMusicAction.bind(this));
+        this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
+        this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
+    }
+    addOnOffMainUI(isShow) {
+        console.warn(`wfz - addOnOffMainUI - isShow:${isShow}`);
+        if (isShow)
+            return;
+        if (UIService.getUI(SetPanel, false)?.visible)
+            this.getSetPanel.hide();
+    }
+    addOpenSetAction() {
+        if (!this.isHasSetData) {
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+            this.isHasSetData = true;
+        }
+        if (Camera.currentCamera.springArm.length != this.viewAngle) {
+            this.viewAngle = Camera.currentCamera.springArm.length;
+            this.getSetPanel.updateViewAngleUI(this.viewAngle);
+            this.server.net_sendSetViewAngle(this.viewAngle);
+        }
+        this.getSetPanel.show();
+    }
+    addShowNickNameAction(callBack) {
+        this.isShowNickName = !this.isShowNickName;
+        Character.nameVisible = this.isShowNickName;
+        this.server.net_sendSetNickName(this.isShowNickName);
+        if (callBack)
+            callBack(this.isShowNickName);
+    }
+    addTryOnPermissionAction(callBack) {
+        this.isTryOn = !this.isTryOn;
+        // Character.nameVisible = this.isShowNickName;
+        this.server.net_sendSetTryOn(this.isTryOn);
+        if (callBack)
+            callBack(this.isTryOn);
+    }
+    addResetAction() {
+        let isReset = false;
+        if (this.quality != GraphicsSettings.getGPULevel()) {
+            this.quality = GraphicsSettings.getDefaultGPULevel();
+            GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+            isReset = true;
+        }
+        if (this.sound != 1) {
+            this.sound = 1;
+            SoundService.volumeScale = this.sound;
+            isReset = true;
+        }
+        if (this.bgMusic != 1) {
+            this.bgMusic = 1;
+            SoundService.BGMVolumeScale = this.bgMusic;
+            isReset = true;
+        }
+        if (this.viewAngle != 350) {
+            this.viewAngle = 350;
+            Camera.currentCamera.springArm.length = this.viewAngle;
+            isReset = true;
+        }
+        if (isReset) {
+            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName, this.isTryOn);
+        }
+    }
+    addResetPosAction() {
+        Utils.resetPlayerPos();
+    }
+    addQualityChangeAction(value) {
+        this.quality = value;
+    }
+    addSaveQualityAction() {
+        GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+    }
+    addSoundChangeAction(value) {
+        this.sound = value;
+        SoundService.volumeScale = this.sound;
+    }
+    addSaveSoundAction() {
+        this.server.net_setSound(this.sound);
+    }
+    addBgMusicChangeAction(value) {
+        this.bgMusic = value;
+        SoundService.BGMVolumeScale = this.bgMusic;
+    }
+    addSaveBgMusicAction() {
+        this.server.net_setBgMusic(this.bgMusic);
+    }
+    addViewAngleChangeAction(value) {
+        this.viewAngle = value;
+        Camera.currentCamera.springArm.length = value;
+    }
+    addSaveViewAngleAction() {
+        this.server.net_sendSetViewAngle(this.viewAngle);
+    }
+    initSetData() {
+        // this.quality = this.data.quality;
+        this.quality = GraphicsSettings.getDefaultGPULevel();
+        this.sound = this.data.sound;
+        this.bgMusic = this.data.bgMusic;
+        this.viewAngle = this.data.viewAngle;
+        this.isShowNickName = this.data.isShowNickName;
+        this.isTryOn = this.data.isTryOn;
+        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}, isTryOn:${this.isTryOn}`);
+        // GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
+        SoundService.volumeScale = this.sound;
+        SoundService.BGMVolumeScale = this.bgMusic;
+        Camera.currentCamera.springArm.length = this.viewAngle;
+        Character.nameVisible = this.isShowNickName;
+    }
+}
+class SetModuleS extends ModuleS {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    net_sendSetNickName(isShowNickName) {
+        this.currentData.setIsShowNickName(isShowNickName);
+    }
+    net_sendSetTryOn(isTryOn) {
+        this.currentData.setIsTryOn(isTryOn);
+    }
+    net_setSound(sound) {
+        this.currentData.setSound(sound);
+    }
+    net_setBgMusic(bgMusic) {
+        this.currentData.setBgMusic(bgMusic);
+    }
+    net_sendSetViewAngle(viewAngle) {
+        this.currentData.setViewAngle(viewAngle);
+    }
+    net_reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn) {
+        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName, isTryOn);
+    }
+}
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetNickName", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetTryOn", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_setSound", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_setBgMusic", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_sendSetViewAngle", null);
+__decorate([
+    Decorator.noReply()
+], SetModuleS.prototype, "net_reset", null);
+
+var foreign123 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    SetData: SetData,
+    SetModuleC: SetModuleC,
+    SetModuleS: SetModuleS
+});
+
+class TryOnItem extends TryOnItem_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.tryOnModuleC = null;
+        this.index = -1;
+        this.roomData = null;
+        this.isSelf = false;
+    }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips4.Value;
+    }
+    bindButton() {
+        this.mClickButton.onClicked.add(this.addClickButton.bind(this));
+    }
+    addClickButton() {
+        // if (this.isSelf) {
+        //     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips5.Value);
+        //     return;
+        // }
+        this.getTryOnModuleC.onTryOnAction.call(this.roomData);
+    }
+    setData(index, roomData, isSelf) {
+        this.index = index;
+        this.roomData = roomData;
+        this.isSelf = isSelf;
+        this.mRankTextBlock.text = index.toString();
+        this.mNameTextBlock.text = roomData.playerName;
+        this.mTryOnTextBlock.text = roomData.tryOn.toString();
+        if (isSelf) {
+            this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips5.Value;
+            this.mTryOnTipsTextBlock.outlineSize = 1;
+            this.mRankTextBlock.outlineSize = 1;
+            this.mNameTextBlock.outlineSize = 1;
+            this.mTryOnTextBlock.outlineSize = 1;
+        }
+        else {
+            this.mTryOnTipsTextBlock.text = GameConfig.Language.Text_TryOnTips4.Value;
+            this.mTryOnTipsTextBlock.outlineSize = 0;
+            this.mRankTextBlock.outlineSize = 0;
+            this.mNameTextBlock.outlineSize = 0;
+            this.mTryOnTextBlock.outlineSize = 0;
+        }
+    }
+}
+class TryOnPanel extends TryOnPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.tryOnModuleC = null;
+        this.tryOnItems = [];
+        this.moveId = -1;
+        this.moveVec = [];
+        this.dir = 0;
+        this.onMoveTouchEvent = (widget, event, x, y, inPointerEvent) => {
+            if (this.movePos) {
+                if (event == Enums.TouchEvent.DOWN) {
+                    if (this.moveId < 0) {
+                        this.moveId = inPointerEvent.pointerIndex;
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.MOVE) {
+                    if (this.moveId >= 0) {
+                        let xoffset = x - this.moveVec[0];
+                        let yoffset = y - this.moveVec[1];
+                        this.dir = 0;
+                        if (Math.abs(xoffset) > Math.abs(yoffset)) {
+                            this.dir = Math.floor(xoffset);
+                        }
+                        this.moveVec[0] = x;
+                        this.moveVec[1] = y;
+                    }
+                }
+                else if (event == Enums.TouchEvent.UP) {
+                    if (this.moveId >= 0) {
+                        this.moveId = -1;
+                        this.dir = 0;
+                    }
+                }
+            }
+        };
+        //#endregion
+    }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+        this.initTryOnRot();
+    }
+    initUI() {
+        this.mTitleTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mRankTextBlock.text = GameConfig.Language.Text_TryOnTips1.Value;
+        this.mNameTextBlock.text = GameConfig.Language.Text_TryOnTips2.Value;
+        this.mTryOnTextBlock.text = GameConfig.Language.Text_TryOnTips3.Value;
+        this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+    }
+    addCloseButton() {
+        this.getTryOnModuleC.onCloseAction.call();
+    }
+    addSaveButton() {
+        this.hide();
+        this.getTryOnModuleC.onSaveAction.call();
+    }
+    refreshTryOnPanel(roomDatas, curRoomIndex, isShow = true) {
+        if (roomDatas.length > this.tryOnItems.length) {
+            for (let i = 0; i < this.tryOnItems.length; ++i) {
+                this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.tryOnItems.length; i < roomDatas.length; ++i) {
+                let tryOnItem = UIService.create(TryOnItem);
+                tryOnItem.setData(i + 1, roomDatas[i], i == curRoomIndex);
+                this.mItemContentCanvas.addChild(tryOnItem.uiObject);
+                this.tryOnItems.push(tryOnItem);
+            }
+        }
+        else {
+            for (let i = 0; i < roomDatas.length; ++i) {
+                this.tryOnItems[i].setData(i + 1, roomDatas[i], i == curRoomIndex);
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = roomDatas.length; i < this.tryOnItems.length; ++i) {
+                Utils.setWidgetVisibility(this.tryOnItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+        if (isShow)
+            this.show();
+    }
+    onShow(...params) {
+        Event.dispatchToLocal(EventType.OnOffMainUI, false);
+        this.canUpdate = true;
+        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+    }
+    onHide() {
+        Event.dispatchToLocal(EventType.OnOffMainUI, true);
+        this.canUpdate = false;
+        TouchScript.instance.removeScreenListener(this.mTouchImage);
+    }
+    //#region Rotate-Camera
+    initTryOnRot() {
+        this.moveVec = [];
+        mw.TimeUtil.delayExecute(() => {
+            this.movePos = this.mTouchImage.position.multiply(1);
+        }, 3);
+    }
+    onUpdate(dt) {
+        if (this.dir != 0) {
+            this.getTryOnModuleC.addRoatation(this.dir * dt);
+            this.dir = 0;
+        }
+    }
+    onTouchStarted(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchStarted(inGemory, inPointerEvent);
+    }
+    onTouchMoved(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchMoved(inGemory, inPointerEvent);
+    }
+    onTouchEnded(inGemory, inPointerEvent) {
+        return TouchScript.instance.onTouchEnded(inGemory, inPointerEvent);
+    }
+}
+class TryOnModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.mallModuleC = null;
+        this.rankModuleC = null;
+        this.tryOnPanel = null;
+        this.mallTipsPanel = null;
+        this.onTryOnAction = new Action1();
+        this.onCloseAction = new Action();
+        this.onSaveAction = new Action();
+        this.tryOnRoomData = null;
+        this.isNeedSaveCharacter = false;
+        this.mallCharacterRotSpeed = 30;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getMallModuleC() {
+        if (!this.mallModuleC) {
+            this.mallModuleC = ModuleService.getModule(MallModuleC);
+        }
+        return this.mallModuleC;
+    }
+    get getRankModuleC() {
+        if (!this.rankModuleC) {
+            this.rankModuleC = ModuleService.getModule(RankModuleC);
+        }
+        return this.rankModuleC;
+    }
+    get getTryOnPanel() {
+        if (this.tryOnPanel == null) {
+            this.tryOnPanel = UIService.getUI(TryOnPanel);
+        }
+        return this.tryOnPanel;
+    }
+    get getMallTipsPanel() {
+        if (!this.mallTipsPanel) {
+            this.mallTipsPanel = UIService.getUI(MallTipsPanel);
+        }
+        return this.mallTipsPanel;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+        this.bindAction();
+    }
+    bindAction() {
+        this.getHUDModuleC.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
+        this.onCloseAction.add(this.addCloseTryOnPanelAction.bind(this));
+        this.onTryOnAction.add(this.addTryOnAction.bind(this));
+        this.onSaveAction.add(this.addSaveAction.bind(this));
+    }
+    onOpenShareActionHandler() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.getMallModuleC.isAccountServiceDownloadData();
+            this.tryOnRoomData = null;
+            await this.getMallModuleC.openTryOnPanel();
+            let roomDatas = this.getRankModuleC.getRoomDatas();
+            if (!roomDatas || roomDatas.length == 0) {
+                Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+                return;
+            }
+            let curRoomIndex = -1;
+            for (let i = 0; i < roomDatas.length; ++i) {
+                if (roomDatas[i].userId != this.localPlayer.userId)
+                    continue;
+                curRoomIndex = i;
+                break;
+            }
+            this.getTryOnPanel.refreshTryOnPanel(roomDatas, curRoomIndex);
+            this.getMallModuleC.onSwitchCameraAction.call(2);
+        });
+    }
+    refreshTryOnPanel(roomDatas) {
+        if (!UIService.getUI(TryOnPanel, false)?.visible)
+            return;
+        if (!roomDatas || roomDatas.length == 0)
+            return;
+        let curRoomIndex = -1;
+        for (let i = 0; i < roomDatas.length; ++i) {
+            if (roomDatas[i].userId != this.localPlayer.userId)
+                continue;
+            curRoomIndex = i;
+            break;
+        }
+        this.getTryOnPanel.refreshTryOnPanel(roomDatas, curRoomIndex, false);
+    }
+    addCloseTryOnPanelAction() {
+        if (this.isNeedSaveCharacter) {
+            this.getMallTipsPanel.showTips(() => {
+                this.isNeedSaveCharacter = false;
+                this.saveCharacter();
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
+            }, () => {
+                this.isNeedSaveCharacter = false;
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    let copyNpc = this.getMallModuleC.getCopyNpc;
+                    await copyNpc.asyncReady();
+                    this.localPlayer.character.setDescription(copyNpc.getDescription());
+                    await this.localPlayer.character.asyncReady();
+                });
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+        }
+        else {
+            this.getTryOnPanel.hide();
+            this.getMallModuleC.onSwitchCameraAction.call(0);
+        }
+    }
+    addTryOnAction(roomData) {
+        if (!roomData || !roomData?.userId || roomData.userId == "") {
+            Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
+            Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
+            return;
+        }
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (roomData.userId == this.localPlayer.userId) {
+                this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
+            }
+            else {
+                let isTryOn = await this.server.net_isTryOnPermission(roomData.userId);
+                if (!isTryOn) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips12.Value);
+                    return;
+                }
+                await TimeUtil.delaySecond(1);
+                let player = await Player.asyncGetPlayer(roomData.userId);
+                if (!player || !player.character) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips6.Value);
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
+                    return;
+                }
+                await player.character.asyncReady();
+                if (player.character.description.advance.base.characterSetting.somatotype == mw.SomatotypeV2.None) {
+                    Notice.showDownNotice(GameConfig.Language.Text_TryOnTips8.Value);
+                    return;
+                }
+                this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+                await this.localPlayer.character.asyncReady();
+                this.localPlayer.character.setDescription(player.character.getDescription());
+                await this.server.net_tryOnSlotByUserId(roomData.userId);
+                this.isNeedSaveCharacter = true;
+            }
+            this.tryOnRoomData = roomData;
+            await this.localPlayer.character.asyncReady();
+            await TimeUtil.delaySecond(1);
+            this.getMallModuleC.onSwitchCameraAction.call(2);
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        });
+    }
+    addSaveAction() {
+        this.getMallModuleC.onSwitchCameraAction.call(0);
+        this.saveCharacter();
+    }
+    saveCharacter() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            this.localPlayer.character.syncDescription();
+            this.isNeedSaveCharacter = false;
+            Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
+            await this.getMallModuleC.syncTryOnCharacter();
+            if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "")
+                return;
+            this.server.net_addTryOn(this.tryOnRoomData.userId);
+        });
+    }
+    addRoatation(dir) {
+        if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform)
+            return;
+        this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
+    }
+    net_tryOnSlotByUserId(userId) {
+        let slotDataArrStr = Mall.getSlotDataArrStr(this.localPlayer.character);
+        console.error(JSON.stringify(slotDataArrStr));
+        if (!slotDataArrStr || slotDataArrStr.length == 0)
+            return;
+        this.server.net_canTryOnSlotByUserId(userId, slotDataArrStr);
+    }
+    net_canTryOnSlotByUserId(slotDataArrStr) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
+            Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        });
+    }
+}
+class TryOnModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.rankModuleS = null;
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    net_addTryOn(userId) {
+        let tryOnData = DataCenterS.getData(userId, TryOnData);
+        if (!tryOnData)
+            return;
+        tryOnData.setTryOn(1);
+        this.getRankModuleS.refreshTryOn(userId, tryOnData.tryOn);
+    }
+    async net_tryOnSlotByUserId(userId) {
+        let currentUserId = this.currentPlayer.userId;
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character)
+            return false;
+        this.getClient(player).net_tryOnSlotByUserId(currentUserId);
+        return true;
+    }
+    async net_canTryOnSlotByUserId(userId, slotDataArrStr) {
+        let player = await Player.asyncGetPlayer(userId);
+        if (!player || !player.character)
+            return;
+        this.getClient(player).net_canTryOnSlotByUserId(slotDataArrStr);
+    }
+    net_isTryOnPermission(userId) {
+        return DataCenterS.getData(userId, SetData)?.isTryOn;
+    }
+}
+__decorate([
+    Decorator.noReply()
+], TryOnModuleS.prototype, "net_addTryOn", null);
+__decorate([
+    Decorator.noReply()
+], TryOnModuleS.prototype, "net_canTryOnSlotByUserId", null);
+class TryOnData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.tryOn = 0;
+    }
+    setTryOn(addTryOn) {
+        this.tryOn += addTryOn;
+        this.save(false);
+    }
+    get getTryOn() {
+        return this.tryOn;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], TryOnData.prototype, "tryOn", void 0);
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -16472,7 +18198,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign170 = /*#__PURE__*/Object.freeze({
+var foreign171 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -16482,7 +18208,7 @@ var foreign170 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -16542,7 +18268,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign171 = /*#__PURE__*/Object.freeze({
+var foreign172 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -16577,7 +18303,7 @@ var foreign121 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -16637,7 +18363,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign172 = /*#__PURE__*/Object.freeze({
+var foreign173 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -16817,6 +18543,8 @@ class RankModuleC extends ModuleC {
         this.hudModuleC = null;
         this.rankPanel = null;
         this.userId = null;
+        this.tryOnModuleC = null;
+        this.tryOnData = null;
         // private interactionData: InteractionData = null;
         // private get getInteractionData(): InteractionData {
         //     if (this.interactionData == null) {
@@ -16850,6 +18578,18 @@ class RankModuleC extends ModuleC {
         }
         return this.userId;
     }
+    get getTryOnModuleC() {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+    get getTryOnData() {
+        if (this.tryOnData == null) {
+            this.tryOnData = DataCenterC.getData(TryOnData);
+        }
+        return this.tryOnData;
+    }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
         this.initEventAction();
@@ -16877,14 +18617,19 @@ class RankModuleC extends ModuleC {
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
             // let bagIds = this.getInteractionData.bagIds;
             // let score = (!bagIds) ? 0 : bagIds.length;
-            let time = this.data.time;
-            this.server.net_onEnterScene(nickName, 0, time);
+            let time = this.data?.time;
+            if (!time && time != 0)
+                time = 0;
+            let tryon = this.getTryOnData?.tryOn;
+            if (!tryon && tryon != 0)
+                tryon = 0;
+            this.server.net_onEnterScene(nickName, 0, time, tryon);
         });
     }
-    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes) {
+    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
         if (this.roomDatas.length > roomUserIds.length) {
             for (let i = 0; i < roomUserIds.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
                 this.recycleRoomDatas.push(this.roomDatas[i]);
@@ -16893,14 +18638,14 @@ class RankModuleC extends ModuleC {
         }
         else {
             for (let i = 0; i < this.roomDatas.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
                 let tmpRoomData = null;
                 if (this.recycleRoomDatas.length > 0)
                     tmpRoomData = this.recycleRoomDatas.pop();
                 if (!tmpRoomData)
-                    tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                    tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
                 this.roomDatas.push(tmpRoomData);
             }
         }
@@ -16954,931 +18699,59 @@ class RankModuleC extends ModuleC {
         }
         this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
-    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes) {
+    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
         // console.error("wfz = " + roomUserIds.length);
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
     net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, worldUserIds, worldNames, worldScores) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
+    }
+    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a, b) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
     }
     sortRoomData() {
         this.roomDatas.sort((a, b) => {
-            return b.score - a.score;
+            return b.time - a.time;
         });
+    }
+    getRoomDatas() {
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a, b) => {
+            return b.tryOn - a.tryOn;
+        });
+        return tmpRoomDatas;
     }
 }
 
 var foreign118 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankModuleC
-});
-
-class RankModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.worldDatas = [];
-        this.isInitWorldDatas = false;
-        this.time = 60;
-        this.timer = 0;
-        this.syncPlayerMap = new Map();
-        // @Decorator.noReply()
-        // public net_updateSyncPlayer(isSync: boolean): void {
-        //     let player = this.currentPlayer;
-        //     if (!this.syncPlayerMap.has(player)) return;
-        //     this.syncPlayerMap.set(player, isSync);
-        //     if (isSync) this.synchrodata_aRoomWorld(player);
-        // }
-        this.roomDataMap = new Map();
-        this.roomUserIds = [];
-        this.roomNames = [];
-        this.roomScores = [];
-        this.roomTimes = [];
-        this.worldUserIds = [];
-        this.worldNames = [];
-        this.worldTimes = [];
-        // private synchrodata_aRoomWorld(player: mw.Player): void {
-        //     this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes,
-        //         this.worldUserIds, this.worldNames, this.worldTimes);
-        // }
-        // public getNamesByUserId(userId1: string, userId2: string): string[] {
-        //     if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
-        //         return [this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName];
-        //     }
-        //     return null;
-        // }
-        // public getNameByUserId(userId: string): string {
-        //     if (this.roomDataMap.has(userId)) {
-        //         return this.roomDataMap.get(userId).playerName;
-        //     }
-        //     return null;
-        // }
-        // private redFirstModel: mw.Model = null;
-        // private blueFirstModel: mw.Model = null;
-        // @Decorator.noReply()
-        // public net_setFirstModel(isRed: boolean): void {
-        //     let character = this.currentPlayer.character;
-        //     this.setFirstModel(character, isRed);
-        // }
-        // private async setFirstModel(character: mw.Character, isRed: boolean): Promise<void> {
-        //     if (isRed) {
-        //         if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
-        //         character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
-        //         this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-        //         this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        //     } else {
-        //         if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
-        //         character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
-        //         this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-        //         this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        //     }
-        // }
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.initData();
-    }
-    async initData() {
-        this.worldDatas = (await Utils.getCustomdata("WorldData"));
-        this.isInitWorldDatas = true;
-    }
-    onUpdate(dt) {
-        this.timer += dt;
-        if (this.timer >= this.time) {
-            this.timer = 0;
-            this.refreshTime();
-        }
-    }
-    onPlayerLeft(player) {
-        let userId = player.userId;
-        if (this.roomDataMap.has(userId))
-            this.roomDataMap.delete(userId);
-        if (this.syncPlayerMap.has(player))
-            this.syncPlayerMap.delete(player);
-        // this.synchrodata_Room();
-    }
-    net_onEnterScene(playerName, score, time) {
-        this.syncPlayerMap.set(this.currentPlayer, false);
-        let userId = this.currentPlayer.userId;
-        this.currentPlayer.character.displayName = playerName;
-        this.onEnterScene(userId, playerName, score, time);
-    }
-    onEnterScene(userId, playerName, score, time) {
-        let roomData = new RoomData(userId, playerName, score, time);
-        this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time);
-        this.isRefreshWorldData([worldData]);
-        this.synchrodata_onEnterScene(userId);
-    }
-    // public refreshScore(userId: string, score: number): void {
-    //     if (!this.roomDataMap.has(userId)) return;
-    //     let roomData = this.roomDataMap.get(userId);
-    //     roomData.score = score;
-    //     this.synchrodata_Room();
-    // }
-    async refreshTime() {
-        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0)
-            return;
-        let tmpWorldDatas = [];
-        this.syncPlayerMap.forEach((value, key) => {
-            DataCenterS.getData(key, RankData).setTime(1);
-            let userId = key.userId;
-            if (!this.roomDataMap.has(userId))
-                return;
-            let roomData = this.roomDataMap.get(userId);
-            roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
-            tmpWorldDatas.push(worldData);
-        });
-        this.worldDatas = (await Utils.getCustomdata("WorldData"));
-        this.isRefreshWorldData(tmpWorldDatas);
-        this.synchrodata_RoomWorld();
-    }
-    isRefreshWorldData(tmpWorldDatas) {
-        if (!this.isInitWorldDatas)
-            return false;
-        if (this.worldDatas == null)
-            this.worldDatas = [];
-        let isNeedSave = false;
-        for (let k = 0; k < tmpWorldDatas.length; ++k) {
-            let isPush = false;
-            let ishasDelete = false;
-            let ishasData = false;
-            let worldData = tmpWorldDatas[k];
-            if (this.worldDatas.length < GlobalData.worldCount) {
-                if (this.worldDatas.length == 0) {
-                    this.worldDatas.push(worldData);
-                    isPush = true;
-                    isNeedSave = true;
-                }
-                else {
-                    for (let i = 0; i < this.worldDatas.length; ++i) {
-                        if (this.worldDatas[i].userId != worldData.userId)
-                            continue;
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 1);
-                            break;
-                        }
-                        else {
-                            ishasData = true;
-                            break;
-                        }
-                    }
-                    if (ishasData)
-                        continue;
-                    for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 0, worldData);
-                            isPush = true;
-                            isNeedSave = true;
-                            break;
-                        }
-                    }
-                    if (!isPush) {
-                        this.worldDatas.push(worldData);
-                        isPush = true;
-                        isNeedSave = true;
-                    }
-                }
-            }
-            else {
-                for (let i = 0; i < this.worldDatas.length; ++i) {
-                    if (this.worldDatas[i].userId != worldData.userId)
-                        continue;
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 1);
-                        ishasDelete = true;
-                        break;
-                    }
-                    else {
-                        ishasData = true;
-                        break;
-                    }
-                }
-                if (ishasData)
-                    continue;
-                for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 0, worldData);
-                        if (!ishasDelete) {
-                            this.worldDatas.pop();
-                        }
-                        isPush = true;
-                        isNeedSave = true;
-                        break;
-                    }
-                }
-            }
-        }
-        if (isNeedSave) {
-            Utils.setCustomData("WorldData", this.worldDatas);
-        }
-        return isNeedSave;
-    }
-    updateRoomData() {
-        if (this.roomDataMap.size == 0 || !this.roomDataMap)
-            return;
-        this.roomUserIds.length = 0;
-        this.roomNames.length = 0;
-        this.roomScores.length = 0;
-        this.roomTimes.length = 0;
-        this.roomDataMap.forEach((value, key) => {
-            this.roomUserIds.push(value.userId);
-            this.roomNames.push(value.playerName);
-            this.roomScores.push(value.score);
-            this.roomTimes.push(value.time);
-        });
-    }
-    updateWorldData() {
-        if (!this.worldDatas || this.worldDatas.length == 0)
-            return;
-        this.worldUserIds.length = 0;
-        this.worldNames.length = 0;
-        this.worldTimes.length = 0;
-        for (let i = 0; i < this.worldDatas.length; i++) {
-            this.worldUserIds.push(this.worldDatas[i].userId);
-            this.worldNames.push(this.worldDatas[i].playerName);
-            this.worldTimes.push(this.worldDatas[i].time);
-        }
-    }
-    synchrodata_onEnterScene(sendUserId) {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
-                // this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
-            }
-            else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
-            }
-        });
-    }
-    // private synchrodata_Room(): void {
-    //     this.updateRoomData();
-    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
-    // if (!value) return;
-    // this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes);
-    //     });
-    // }
-    // private synchrodata_World(): void {
-    //     this.updateWorldData();
-    //     this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
-    //         // if (!value) return;
-    //         this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
-    //     });
-    // }
-    synchrodata_RoomWorld() {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach((value, key) => {
-            // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.worldUserIds, this.worldNames, this.worldTimes);
-        });
-    }
-}
-__decorate([
-    Decorator.noReply()
-], RankModuleS.prototype, "net_onEnterScene", null);
-
-var foreign119 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: RankModuleS
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.03.08-11.15.54
- */
-let SetPanel_Generate = class SetPanel_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage');
-        }
-        return this.mBgImage_Internal;
-    }
-    get mSet1Button() {
-        if (!this.mSet1Button_Internal && this.uiWidgetBase) {
-            this.mSet1Button_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button');
-        }
-        return this.mSet1Button_Internal;
-    }
-    get mSet1TextBlock() {
-        if (!this.mSet1TextBlock_Internal && this.uiWidgetBase) {
-            this.mSet1TextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mSet1Button/mSet1TextBlock');
-        }
-        return this.mSet1TextBlock_Internal;
-    }
-    get mContentCanvas() {
-        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
-            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas');
-        }
-        return this.mContentCanvas_Internal;
-    }
-    get mQualityImage() {
-        if (!this.mQualityImage_Internal && this.uiWidgetBase) {
-            this.mQualityImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage');
-        }
-        return this.mQualityImage_Internal;
-    }
-    get mQualityTextBlock() {
-        if (!this.mQualityTextBlock_Internal && this.uiWidgetBase) {
-            this.mQualityTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityTextBlock');
-        }
-        return this.mQualityTextBlock_Internal;
-    }
-    get mQualityProgressBar() {
-        if (!this.mQualityProgressBar_Internal && this.uiWidgetBase) {
-            this.mQualityProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mQualityImage/mQualityProgressBar');
-        }
-        return this.mQualityProgressBar_Internal;
-    }
-    get mSoundImage() {
-        if (!this.mSoundImage_Internal && this.uiWidgetBase) {
-            this.mSoundImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage');
-        }
-        return this.mSoundImage_Internal;
-    }
-    get mSoundTextBlock() {
-        if (!this.mSoundTextBlock_Internal && this.uiWidgetBase) {
-            this.mSoundTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundTextBlock');
-        }
-        return this.mSoundTextBlock_Internal;
-    }
-    get mSoundProgressBar() {
-        if (!this.mSoundProgressBar_Internal && this.uiWidgetBase) {
-            this.mSoundProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mSoundImage/mSoundProgressBar');
-        }
-        return this.mSoundProgressBar_Internal;
-    }
-    get mBgMusicImage() {
-        if (!this.mBgMusicImage_Internal && this.uiWidgetBase) {
-            this.mBgMusicImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage');
-        }
-        return this.mBgMusicImage_Internal;
-    }
-    get mBgMusicTextBlock() {
-        if (!this.mBgMusicTextBlock_Internal && this.uiWidgetBase) {
-            this.mBgMusicTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicTextBlock');
-        }
-        return this.mBgMusicTextBlock_Internal;
-    }
-    get mBgMusicmProgressBar() {
-        if (!this.mBgMusicmProgressBar_Internal && this.uiWidgetBase) {
-            this.mBgMusicmProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mBgMusicImage/mBgMusicmProgressBar');
-        }
-        return this.mBgMusicmProgressBar_Internal;
-    }
-    get mViewAngleImage() {
-        if (!this.mViewAngleImage_Internal && this.uiWidgetBase) {
-            this.mViewAngleImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage');
-        }
-        return this.mViewAngleImage_Internal;
-    }
-    get mViewAngleTextBlock() {
-        if (!this.mViewAngleTextBlock_Internal && this.uiWidgetBase) {
-            this.mViewAngleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleTextBlock');
-        }
-        return this.mViewAngleTextBlock_Internal;
-    }
-    get mViewAngleProgressBar() {
-        if (!this.mViewAngleProgressBar_Internal && this.uiWidgetBase) {
-            this.mViewAngleProgressBar_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mViewAngleImage/mViewAngleProgressBar');
-        }
-        return this.mViewAngleProgressBar_Internal;
-    }
-    get mShowNickNameImage() {
-        if (!this.mShowNickNameImage_Internal && this.uiWidgetBase) {
-            this.mShowNickNameImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage');
-        }
-        return this.mShowNickNameImage_Internal;
-    }
-    get mShowNickNameTextBlock() {
-        if (!this.mShowNickNameTextBlock_Internal && this.uiWidgetBase) {
-            this.mShowNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameTextBlock');
-        }
-        return this.mShowNickNameTextBlock_Internal;
-    }
-    get mShowNickNameCanvas() {
-        if (!this.mShowNickNameCanvas_Internal && this.uiWidgetBase) {
-            this.mShowNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas');
-        }
-        return this.mShowNickNameCanvas_Internal;
-    }
-    get mShowNickNameButton() {
-        if (!this.mShowNickNameButton_Internal && this.uiWidgetBase) {
-            this.mShowNickNameButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameButton');
-        }
-        return this.mShowNickNameButton_Internal;
-    }
-    get mHideNickNameBgImage() {
-        if (!this.mHideNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mHideNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mHideNickNameBgImage');
-        }
-        return this.mHideNickNameBgImage_Internal;
-    }
-    get mShowNickNameBgImage() {
-        if (!this.mShowNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mShowNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mShowNickNameBgImage');
-        }
-        return this.mShowNickNameBgImage_Internal;
-    }
-    get mOnOffNickNameCanvas() {
-        if (!this.mOnOffNickNameCanvas_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas');
-        }
-        return this.mOnOffNickNameCanvas_Internal;
-    }
-    get mOnOffNickNameBgImage() {
-        if (!this.mOnOffNickNameBgImage_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameBgImage');
-        }
-        return this.mOnOffNickNameBgImage_Internal;
-    }
-    get mOnOffNickNameTextBlock() {
-        if (!this.mOnOffNickNameTextBlock_Internal && this.uiWidgetBase) {
-            this.mOnOffNickNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mShowNickNameImage/mShowNickNameCanvas/mOnOffNickNameCanvas/mOnOffNickNameTextBlock');
-        }
-        return this.mOnOffNickNameTextBlock_Internal;
-    }
-    get mResetButton() {
-        if (!this.mResetButton_Internal && this.uiWidgetBase) {
-            this.mResetButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton');
-        }
-        return this.mResetButton_Internal;
-    }
-    get mResetTextBlock() {
-        if (!this.mResetTextBlock_Internal && this.uiWidgetBase) {
-            this.mResetTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetButton/mResetTextBlock');
-        }
-        return this.mResetTextBlock_Internal;
-    }
-    get mResetPosButton() {
-        if (!this.mResetPosButton_Internal && this.uiWidgetBase) {
-            this.mResetPosButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton');
-        }
-        return this.mResetPosButton_Internal;
-    }
-    get mResetPosTextBlock() {
-        if (!this.mResetPosTextBlock_Internal && this.uiWidgetBase) {
-            this.mResetPosTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mResetPosButton/mResetPosTextBlock');
-        }
-        return this.mResetPosTextBlock_Internal;
-    }
-    get mCloseButton() {
-        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
-            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mCloseButton');
-        }
-        return this.mCloseButton_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        this.mSet1Button.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mSet1Button");
-        });
-        this.mSet1Button.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mShowNickNameButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mShowNickNameButton");
-        });
-        this.mShowNickNameButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mResetButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mResetButton");
-        });
-        this.mResetButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mResetPosButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mResetPosButton");
-        });
-        this.mResetPosButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        this.mCloseButton.onClicked.add(() => {
-            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        });
-        this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mSet1TextBlock);
-        this.initLanguage(this.mQualityTextBlock);
-        this.initLanguage(this.mSoundTextBlock);
-        this.initLanguage(this.mBgMusicTextBlock);
-        this.initLanguage(this.mViewAngleTextBlock);
-        this.initLanguage(this.mShowNickNameTextBlock);
-        this.initLanguage(this.mOnOffNickNameTextBlock);
-        this.initLanguage(this.mResetTextBlock);
-        this.initLanguage(this.mResetPosTextBlock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-SetPanel_Generate = __decorate([
-    UIBind('UI/module/SetModule/SetPanel.ui')
-], SetPanel_Generate);
-var SetPanel_Generate$1 = SetPanel_Generate;
-
-var foreign173 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SetPanel_Generate$1
-});
-
-class SetPanel extends SetPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.setModuleC = null;
-    }
-    get getSetModuleC() {
-        if (this.setModuleC == null) {
-            this.setModuleC = ModuleService.getModule(SetModuleC);
-        }
-        return this.setModuleC;
-    }
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = UILayerMiddle;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mSet1TextBlock.text = GameConfig.Language.Text_SetUp1.Value;
-        this.mQualityTextBlock.text = GameConfig.Language.Text_PictureQuality.Value;
-        this.mSoundTextBlock.text = GameConfig.Language.Text_SoundEffects.Value;
-        this.mBgMusicTextBlock.text = GameConfig.Language.Text_BackgroundMusic.Value;
-        this.mViewAngleTextBlock.text = GameConfig.Language.Text_ViewAngleScaling.Value;
-        this.mShowNickNameTextBlock.text = GameConfig.Language.Text_DisplayNicknames.Value;
-        this.mResetPosTextBlock.text = GameConfig.Language.Text_ResetLocation.Value;
-        this.mResetTextBlock.text = GameConfig.Language.Text_RestoringSettings.Value;
-    }
-    bindButton() {
-        this.mCloseButton.onClicked.add(this.onCloseButtonClick.bind(this));
-        this.mQualityProgressBar.onSliderValueChanged.add(this.onQualityChange.bind(this));
-        this.mQualityProgressBar.sliderButtonReleaseDelegate.add(this.onSaveQuality.bind(this));
-        this.mSoundProgressBar.onSliderValueChanged.add(this.onSoundChange.bind(this));
-        this.mSoundProgressBar.sliderButtonReleaseDelegate.add(this.onSaveSound.bind(this));
-        this.mBgMusicmProgressBar.onSliderValueChanged.add(this.onBgMusicChange.bind(this));
-        this.mBgMusicmProgressBar.sliderButtonReleaseDelegate.add(this.onSaveBgMusic.bind(this));
-        this.mViewAngleProgressBar.onSliderValueChanged.add(this.onViewAngleChange.bind(this));
-        this.mViewAngleProgressBar.sliderButtonReleaseDelegate.add(this.onSaveViewAngle.bind(this));
-        this.mShowNickNameButton.onClicked.add(this.onShowNickNameButtonClick.bind(this));
-        this.mResetButton.onClicked.add(this.onResetButtonClick.bind(this));
-        this.mResetPosButton.onClicked.add(this.onResetPosButtonClick.bind(this));
-    }
-    onCloseButtonClick() {
-        this.hide();
-    }
-    onShowNickNameButtonClick() {
-        this.getSetModuleC.onShowNickNameAction.call(this.updateNickNameUI.bind(this));
-    }
-    updateNickNameUI(isShowNickName) {
-        if (isShowNickName) {
-            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.Collapsed);
-            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_On.Value;
-            this.mOnOffNickNameCanvas.position = new Vector2(46, -3.5);
-        }
-        else {
-            Utils.setWidgetVisibility(this.mShowNickNameBgImage, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
-            this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_Off.Value;
-            this.mOnOffNickNameCanvas.position = new Vector2(-14, -3.5);
-        }
-    }
-    updateViewAngleUI(value) {
-        this.mViewAngleProgressBar.currentValue = value;
-    }
-    onResetButtonClick() {
-        this.getSetModuleC.onResetAction.call();
-    }
-    onResetPosButtonClick() {
-        this.getSetModuleC.onResetPosAction.call();
-    }
-    onQualityChange(value) {
-        this.getSetModuleC.onQualityChangeAction.call(value);
-    }
-    onSaveQuality(value) {
-        this.getSetModuleC.onSaveQualityAction.call();
-    }
-    onSoundChange(value) {
-        this.getSetModuleC.onSoundChangeAction.call(value);
-    }
-    onSaveSound(value) {
-        this.getSetModuleC.onSaveSoundAction.call();
-    }
-    onBgMusicChange(value) {
-        this.getSetModuleC.onBgMusicChangeAction.call(value);
-    }
-    onSaveBgMusic(value) {
-        this.getSetModuleC.onSaveBgMusicAction.call();
-    }
-    onViewAngleChange(value) {
-        this.getSetModuleC.onViewAngleChangeAction.call(value);
-    }
-    onSaveViewAngle(value) {
-        this.getSetModuleC.onSaveViewAngleAction.call();
-    }
-    setDatas(quality, sound, bgMusic, viewAngle, isShowNickName) {
-        this.updateNickNameUI(isShowNickName);
-        this.mQualityProgressBar.currentValue = quality;
-        this.mSoundProgressBar.currentValue = sound;
-        this.mBgMusicmProgressBar.currentValue = bgMusic;
-        this.mViewAngleProgressBar.currentValue = viewAngle;
-    }
-}
-
-var foreign124 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: SetPanel
-});
-
-class SetData extends Subdata {
-    constructor() {
-        super(...arguments);
-        // @Decorator.persistence()
-        // public quality: number = 0;
-        this.sound = 1;
-        this.bgMusic = 1;
-        this.viewAngle = 350;
-        this.isShowNickName = true;
-    }
-    // public setQuality(value: number): void {
-    //     this.quality = value;
-    //     this.save(false);
-    // }
-    setSound(value) {
-        this.sound = value;
-        this.save(false);
-    }
-    setBgMusic(value) {
-        this.bgMusic = value;
-        this.save(false);
-    }
-    setViewAngle(value) {
-        this.viewAngle = value;
-        this.save(false);
-    }
-    setIsShowNickName(value) {
-        this.isShowNickName = value;
-        this.save(false);
-    }
-    reset(sound, bgMusic, viewAngle, isShowNickName) {
-        // this.quality = 0;
-        this.sound = sound;
-        this.bgMusic = bgMusic;
-        this.viewAngle = viewAngle;
-        this.isShowNickName = isShowNickName;
-        this.save(false);
-    }
-}
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "sound", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "bgMusic", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "viewAngle", void 0);
-__decorate([
-    Decorator.persistence()
-], SetData.prototype, "isShowNickName", void 0);
-class SetModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.setPanel = null;
-        this.hudModuleC = null;
-        this.onShowNickNameAction = new Action1();
-        this.onResetAction = new Action();
-        this.onResetPosAction = new Action();
-        this.onQualityChangeAction = new Action1();
-        this.onSaveQualityAction = new Action();
-        this.onSoundChangeAction = new Action1();
-        this.onSaveSoundAction = new Action();
-        this.onBgMusicChangeAction = new Action1();
-        this.onSaveBgMusicAction = new Action();
-        this.onViewAngleChangeAction = new Action1();
-        this.onSaveViewAngleAction = new Action();
-        this.isHasSetData = false;
-        this.quality = 0;
-        this.sound = 0;
-        this.bgMusic = 0;
-        this.viewAngle = 0;
-        this.isShowNickName = true;
-    }
-    get getSetPanel() {
-        if (this.setPanel == null) {
-            this.setPanel = UIService.getUI(SetPanel);
-        }
-        return this.setPanel;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-        this.initEvent();
-        InputUtil.onKeyDown(mw.Keys.K, () => {
-            console.error(GraphicsSettings.getDefaultCPULevel());
-            console.error(GraphicsSettings.getDefaultGPULevel());
-            console.error(GraphicsSettings.getGPULevel());
-            console.error(GraphicsSettings.getCPULevel());
-        });
-    }
-    onEnterScene(sceneType) {
-        this.initSetData();
-    }
-    initEvent() {
-        this.getHUDModuleC.onOpenSetAction.add(this.addOpenSetAction.bind(this));
-        this.onShowNickNameAction.add(this.addShowNickNameAction.bind(this));
-        this.onResetAction.add(this.addResetAction.bind(this));
-        this.onResetPosAction.add(this.addResetPosAction.bind(this));
-        this.onQualityChangeAction.add(this.addQualityChangeAction.bind(this));
-        this.onSaveQualityAction.add(this.addSaveQualityAction.bind(this));
-        this.onSoundChangeAction.add(this.addSoundChangeAction.bind(this));
-        this.onSaveSoundAction.add(this.addSaveSoundAction.bind(this));
-        this.onBgMusicChangeAction.add(this.addBgMusicChangeAction.bind(this));
-        this.onSaveBgMusicAction.add(this.addSaveBgMusicAction.bind(this));
-        this.onViewAngleChangeAction.add(this.addViewAngleChangeAction.bind(this));
-        this.onSaveViewAngleAction.add(this.addSaveViewAngleAction.bind(this));
-        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
-    }
-    addOnOffMainUI(isShow) {
-        console.warn(`wfz - addOnOffMainUI - isShow:${isShow}`);
-        if (isShow)
-            return;
-        if (UIService.getUI(SetPanel, false)?.visible)
-            this.getSetPanel.hide();
-    }
-    addOpenSetAction() {
-        if (!this.isHasSetData) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-            this.isHasSetData = true;
-        }
-        if (Camera.currentCamera.springArm.length != this.viewAngle) {
-            this.viewAngle = Camera.currentCamera.springArm.length;
-            this.getSetPanel.updateViewAngleUI(this.viewAngle);
-            this.server.net_sendSetViewAngle(this.viewAngle);
-        }
-        this.getSetPanel.show();
-    }
-    addShowNickNameAction(callBack) {
-        this.isShowNickName = !this.isShowNickName;
-        Character.nameVisible = this.isShowNickName;
-        this.server.net_sendSetNickName(this.isShowNickName);
-        if (callBack)
-            callBack(this.isShowNickName);
-    }
-    addResetAction() {
-        let isReset = false;
-        if (this.quality != GraphicsSettings.getGPULevel()) {
-            this.quality = GraphicsSettings.getDefaultGPULevel();
-            GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-            isReset = true;
-        }
-        if (this.sound != 1) {
-            this.sound = 1;
-            SoundService.volumeScale = this.sound;
-            isReset = true;
-        }
-        if (this.bgMusic != 1) {
-            this.bgMusic = 1;
-            SoundService.BGMVolumeScale = this.bgMusic;
-            isReset = true;
-        }
-        if (this.viewAngle != 350) {
-            this.viewAngle = 350;
-            Camera.currentCamera.springArm.length = this.viewAngle;
-            isReset = true;
-        }
-        if (isReset) {
-            this.getSetPanel.setDatas(this.quality, this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-            this.server.net_reset(this.sound, this.bgMusic, this.viewAngle, this.isShowNickName);
-        }
-    }
-    addResetPosAction() {
-        Utils.resetPlayerPos();
-    }
-    addQualityChangeAction(value) {
-        this.quality = value;
-    }
-    addSaveQualityAction() {
-        GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-    }
-    addSoundChangeAction(value) {
-        this.sound = value;
-        SoundService.volumeScale = this.sound;
-    }
-    addSaveSoundAction() {
-        this.server.net_setSound(this.sound);
-    }
-    addBgMusicChangeAction(value) {
-        this.bgMusic = value;
-        SoundService.BGMVolumeScale = this.bgMusic;
-    }
-    addSaveBgMusicAction() {
-        this.server.net_setBgMusic(this.bgMusic);
-    }
-    addViewAngleChangeAction(value) {
-        this.viewAngle = value;
-        Camera.currentCamera.springArm.length = value;
-    }
-    addSaveViewAngleAction() {
-        this.server.net_sendSetViewAngle(this.viewAngle);
-    }
-    initSetData() {
-        // this.quality = this.data.quality;
-        this.quality = GraphicsSettings.getDefaultGPULevel();
-        this.sound = this.data.sound;
-        this.bgMusic = this.data.bgMusic;
-        this.viewAngle = this.data.viewAngle;
-        this.isShowNickName = this.data.isShowNickName;
-        console.error(`quality:${this.quality}, sound:${this.sound}, bgMusic:${this.bgMusic}, viewAngle:${this.viewAngle}, isShowNickName:${this.isShowNickName}`);
-        // GraphicsSettings.setGraphicsLevel(this.quality, this.quality);
-        SoundService.volumeScale = this.sound;
-        SoundService.BGMVolumeScale = this.bgMusic;
-        Camera.currentCamera.springArm.length = this.viewAngle;
-        Character.nameVisible = this.isShowNickName;
-    }
-}
-class SetModuleS extends ModuleS {
-    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
-    onStart() {
-    }
-    net_sendSetNickName(isShowNickName) {
-        this.currentData.setIsShowNickName(isShowNickName);
-    }
-    net_setSound(sound) {
-        this.currentData.setSound(sound);
-    }
-    net_setBgMusic(bgMusic) {
-        this.currentData.setBgMusic(bgMusic);
-    }
-    net_sendSetViewAngle(viewAngle) {
-        this.currentData.setViewAngle(viewAngle);
-    }
-    net_reset(sound, bgMusic, viewAngle, isShowNickName) {
-        this.currentData.reset(sound, bgMusic, viewAngle, isShowNickName);
-    }
-}
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_sendSetNickName", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_setSound", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_setBgMusic", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_sendSetViewAngle", null);
-__decorate([
-    Decorator.noReply()
-], SetModuleS.prototype, "net_reset", null);
-
-var foreign123 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    SetData: SetData,
-    SetModuleC: SetModuleC,
-    SetModuleS: SetModuleS
 });
 
 class SignInModuleS extends ModuleS {
@@ -17958,6 +18831,7 @@ let GameStart = class GameStart extends Script {
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
+        ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
     }
     /**
      * 周期函数 每帧执行
@@ -18056,7 +18930,7 @@ var foreign79 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -18136,7 +19010,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign151 = /*#__PURE__*/Object.freeze({
+var foreign152 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -18146,7 +19020,7 @@ var foreign151 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -18196,7 +19070,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign152 = /*#__PURE__*/Object.freeze({
+var foreign153 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -18477,7 +19351,7 @@ CopyCharacter = __decorate([
 ], CopyCharacter);
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign130 = /*#__PURE__*/Object.freeze({
+var foreign131 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -18675,7 +19549,7 @@ class KeyActionManager {
     }
 }
 
-var foreign131 = /*#__PURE__*/Object.freeze({
+var foreign132 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -18685,7 +19559,7 @@ var foreign131 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.03.08-11.15.53
+ * TIME: 2025.03.14-20.17.56
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -18743,7 +19617,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign137 = /*#__PURE__*/Object.freeze({
+var foreign138 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -18753,7 +19627,7 @@ var foreign137 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -18881,7 +19755,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign155 = /*#__PURE__*/Object.freeze({
+var foreign156 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -18891,7 +19765,7 @@ var foreign155 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.56
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -18946,7 +19820,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign156 = /*#__PURE__*/Object.freeze({
+var foreign157 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -19081,55 +19955,57 @@ const MWModuleMap = {
      'B23852CE407E0A008F3BE78DDE49EB51': foreign127,
      'FAAFDA5E4A40291D72B0459742CD601A': foreign128,
      '1D10F64B4D38229D7655CC923071E9B2': foreign129,
-     'BC6767CF4240176E5C9B6984BB540726': foreign130,
-     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign131,
-     '49E1131448695DF591C8DEB790EFC952': foreign132,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign133,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign134,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign135,
-     '741B06144E25B4753E8005985816DAF8': foreign136,
-     'EE3F354349BB041CD741FF84B745B113': foreign137,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign138,
-     '100DA6744367634E7FFC0895CD98DDB9': foreign139,
-     '67892EC847DCDABBB14451A8CDFD526C': foreign140,
-     '486071A84887288700A7E297CBF6B438': foreign141,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign142,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign143,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign144,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign145,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign146,
-     '827757834BCFC569771BCB84A3609238': foreign147,
-     'F58702064960960163820CB9C8D0F3C1': foreign148,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign149,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign150,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign151,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign152,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign153,
-     '337A59B14A237973EEB178A260344C21': foreign154,
-     'B9D019D74067C8F762132698D474BF63': foreign155,
-     'C4E377B14812C09429E28988E62907DB': foreign156,
-     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign157,
-     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign158,
-     '06CF574844634CC9C0793EA8847C6FE2': foreign159,
-     '27DEB6624F87673F14AA499E8A3A7DD3': foreign160,
-     'CEE9E492480CEF69BF9291BA357C9AC1': foreign161,
-     '713A8E764F3DAC8A8AD1BEB382C46158': foreign162,
-     '5E6E0BFE48C322071930C2B8DD56E900': foreign163,
-     'C381E72F409A02A45B69B9BC32F4FCAF': foreign164,
-     'FADB775E4F203C2565D31A9AA31E22D1': foreign165,
-     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign166,
-     'F3E9117C4C567C26689F08B919B7E7DA': foreign167,
-     'AF5DEB904C817468E94BAA9265F23AF7': foreign168,
-     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign169,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign170,
-     'A8E0593D477EC697B2559789990E0882': foreign171,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign172,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign173,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign174,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign175,
-     '14F8E49D4B31DFAA50548BA206585CCA': foreign176,
-     '656033E844C70FD925FC8F887EA9FA46': foreign177,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign178,
+     'BC6767CF4240176E5C9B6984BB540726': foreign131,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign132,
+     '49E1131448695DF591C8DEB790EFC952': foreign133,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign134,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign135,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign136,
+     '741B06144E25B4753E8005985816DAF8': foreign137,
+     'EE3F354349BB041CD741FF84B745B113': foreign138,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign139,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign140,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign141,
+     '486071A84887288700A7E297CBF6B438': foreign142,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign143,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign144,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign145,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign146,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign147,
+     '827757834BCFC569771BCB84A3609238': foreign148,
+     'F58702064960960163820CB9C8D0F3C1': foreign149,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign150,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign151,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign152,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign153,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign154,
+     '337A59B14A237973EEB178A260344C21': foreign155,
+     'B9D019D74067C8F762132698D474BF63': foreign156,
+     'C4E377B14812C09429E28988E62907DB': foreign157,
+     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign158,
+     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign159,
+     '06CF574844634CC9C0793EA8847C6FE2': foreign160,
+     '27DEB6624F87673F14AA499E8A3A7DD3': foreign161,
+     'CEE9E492480CEF69BF9291BA357C9AC1': foreign162,
+     '713A8E764F3DAC8A8AD1BEB382C46158': foreign163,
+     '5E6E0BFE48C322071930C2B8DD56E900': foreign164,
+     'C381E72F409A02A45B69B9BC32F4FCAF': foreign165,
+     'FADB775E4F203C2565D31A9AA31E22D1': foreign166,
+     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign167,
+     'F3E9117C4C567C26689F08B919B7E7DA': foreign168,
+     'AF5DEB904C817468E94BAA9265F23AF7': foreign169,
+     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign170,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign171,
+     'A8E0593D477EC697B2559789990E0882': foreign172,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign173,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign174,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign175,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign176,
+     '14F8E49D4B31DFAA50548BA206585CCA': foreign177,
+     '656033E844C70FD925FC8F887EA9FA46': foreign178,
+     'EF1CBB00464A6B9A7C2030907E45B02E': foreign179,
+     '9A88F5744C33F0FB72AB11ADDE35B47B': foreign180,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign181,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -19260,55 +20136,57 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign127 || {}, "JavaScripts/module/SignInModule/SignInModuleS"],
 [foreign128 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
 [foreign129 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
-[foreign130 || {}, "JavaScripts/tools/CopyCharacter"],
-[foreign131 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign132 || {}, "JavaScripts/tools/TouchScript"],
-[foreign133 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign134 || {}, "JavaScripts/tools/Utils"],
-[foreign135 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign136 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign137 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign138 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign139 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign140 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
-[foreign141 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign142 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign143 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign151 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign152 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign153 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign154 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign155 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign156 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign157 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
-[foreign158 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
-[foreign159 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
-[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
-[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
-[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
-[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
-[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
-[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
-[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
-[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
-[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
-[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
-[foreign170 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign171 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign172 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign173 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign174 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign175 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign176 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
-[foreign177 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign178 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign131 || {}, "JavaScripts/tools/CopyCharacter"],
+[foreign132 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign133 || {}, "JavaScripts/tools/TouchScript"],
+[foreign134 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign135 || {}, "JavaScripts/tools/Utils"],
+[foreign136 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign137 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign138 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign139 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign140 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign141 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign142 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign143 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign151 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign152 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign153 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign154 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign155 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign156 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign157 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign158 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
+[foreign159 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
+[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
+[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
+[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
+[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
+[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
+[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
+[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
+[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
+[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
+[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
+[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
+[foreign171 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign172 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign173 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign174 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign175 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign176 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign177 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
+[foreign178 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
+[foreign179 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
+[foreign180 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
+[foreign181 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;

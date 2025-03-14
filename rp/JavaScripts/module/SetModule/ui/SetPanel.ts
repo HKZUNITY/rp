@@ -28,6 +28,7 @@ export default class SetPanel extends SetPanel_Generate {
 		this.mBgMusicTextBlock.text = GameConfig.Language.Text_BackgroundMusic.Value;
 		this.mViewAngleTextBlock.text = GameConfig.Language.Text_ViewAngleScaling.Value;
 		this.mShowNickNameTextBlock.text = GameConfig.Language.Text_DisplayNicknames.Value;
+		this.mTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips9.Value;
 		this.mResetPosTextBlock.text = GameConfig.Language.Text_ResetLocation.Value;
 		this.mResetTextBlock.text = GameConfig.Language.Text_RestoringSettings.Value;
 	}
@@ -48,6 +49,7 @@ export default class SetPanel extends SetPanel_Generate {
 		this.mViewAngleProgressBar.sliderButtonReleaseDelegate.add(this.onSaveViewAngle.bind(this));
 
 		this.mShowNickNameButton.onClicked.add(this.onShowNickNameButtonClick.bind(this));
+		this.mTryOnPermissionButton.onClicked.add(this.onTryOnPermissionButtonClick.bind(this));
 		this.mResetButton.onClicked.add(this.onResetButtonClick.bind(this));
 		this.mResetPosButton.onClicked.add(this.onResetPosButtonClick.bind(this));
 	}
@@ -58,6 +60,10 @@ export default class SetPanel extends SetPanel_Generate {
 
 	private onShowNickNameButtonClick(): void {
 		this.getSetModuleC.onShowNickNameAction.call(this.updateNickNameUI.bind(this));
+	}
+
+	private onTryOnPermissionButtonClick(): void {
+		this.getSetModuleC.onTryOnPermissionAction.call(this.updateTryOnPermissionUI.bind(this));
 	}
 
 	private updateNickNameUI(isShowNickName: boolean): void {
@@ -71,6 +77,20 @@ export default class SetPanel extends SetPanel_Generate {
 			Utils.setWidgetVisibility(this.mHideNickNameBgImage, mw.SlateVisibility.SelfHitTestInvisible);
 			this.mOnOffNickNameTextBlock.text = GameConfig.Language.Text_Off.Value;
 			this.mOnOffNickNameCanvas.position = new Vector2(-14, -3.5);
+		}
+	}
+
+	private updateTryOnPermissionUI(isTryOn: boolean): void {
+		if (isTryOn) {
+			Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+			Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+			this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips10.Value;
+			this.mOnOffTryOnPermissionCanvas.position = new Vector2(75, -3.5);
+		} else {
+			Utils.setWidgetVisibility(this.mShowTryOnPermissionBgImage, mw.SlateVisibility.Collapsed);
+			Utils.setWidgetVisibility(this.mHideTryOnPermissionBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+			this.mOnOffTryOnPermissionTextBlock.text = GameConfig.Language.Text_TryOnTips11.Value;
+			this.mOnOffTryOnPermissionCanvas.position = new Vector2(-25, -3.5);
 		}
 	}
 
@@ -118,8 +138,9 @@ export default class SetPanel extends SetPanel_Generate {
 		this.getSetModuleC.onSaveViewAngleAction.call();
 	}
 
-	public setDatas(quality: number, sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean): void {
+	public setDatas(quality: number, sound: number, bgMusic: number, viewAngle: number, isShowNickName: boolean, isTryOn: boolean): void {
 		this.updateNickNameUI(isShowNickName);
+		this.updateTryOnPermissionUI(isTryOn);
 		this.mQualityProgressBar.currentValue = quality;
 		this.mSoundProgressBar.currentValue = sound;
 		this.mBgMusicmProgressBar.currentValue = bgMusic;

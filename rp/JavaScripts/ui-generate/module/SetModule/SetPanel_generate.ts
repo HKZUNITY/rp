@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.03.08-11.15.54
+ * TIME: 2025.03.14-20.17.57
  */
  
 @UIBind('UI/module/SetModule/SetPanel.ui')
@@ -183,6 +183,69 @@ export default class SetPanel_Generate extends UIScript {
 		}
 		return this.mOnOffNickNameTextBlock_Internal
 	}
+	private mTryOnPermissionImage_Internal: mw.Image
+	public get mTryOnPermissionImage(): mw.Image {
+		if(!this.mTryOnPermissionImage_Internal&&this.uiWidgetBase) {
+			this.mTryOnPermissionImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage') as mw.Image
+		}
+		return this.mTryOnPermissionImage_Internal
+	}
+	private mTryOnPermissionTextBlock_Internal: mw.TextBlock
+	public get mTryOnPermissionTextBlock(): mw.TextBlock {
+		if(!this.mTryOnPermissionTextBlock_Internal&&this.uiWidgetBase) {
+			this.mTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionTextBlock') as mw.TextBlock
+		}
+		return this.mTryOnPermissionTextBlock_Internal
+	}
+	private mTryOnPermissionCanvas_Internal: mw.Canvas
+	public get mTryOnPermissionCanvas(): mw.Canvas {
+		if(!this.mTryOnPermissionCanvas_Internal&&this.uiWidgetBase) {
+			this.mTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas') as mw.Canvas
+		}
+		return this.mTryOnPermissionCanvas_Internal
+	}
+	private mTryOnPermissionButton_Internal: mw.Button
+	public get mTryOnPermissionButton(): mw.Button {
+		if(!this.mTryOnPermissionButton_Internal&&this.uiWidgetBase) {
+			this.mTryOnPermissionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mTryOnPermissionButton') as mw.Button
+		}
+		return this.mTryOnPermissionButton_Internal
+	}
+	private mHideTryOnPermissionBgImage_Internal: mw.Image
+	public get mHideTryOnPermissionBgImage(): mw.Image {
+		if(!this.mHideTryOnPermissionBgImage_Internal&&this.uiWidgetBase) {
+			this.mHideTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mHideTryOnPermissionBgImage') as mw.Image
+		}
+		return this.mHideTryOnPermissionBgImage_Internal
+	}
+	private mShowTryOnPermissionBgImage_Internal: mw.Image
+	public get mShowTryOnPermissionBgImage(): mw.Image {
+		if(!this.mShowTryOnPermissionBgImage_Internal&&this.uiWidgetBase) {
+			this.mShowTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mShowTryOnPermissionBgImage') as mw.Image
+		}
+		return this.mShowTryOnPermissionBgImage_Internal
+	}
+	private mOnOffTryOnPermissionCanvas_Internal: mw.Canvas
+	public get mOnOffTryOnPermissionCanvas(): mw.Canvas {
+		if(!this.mOnOffTryOnPermissionCanvas_Internal&&this.uiWidgetBase) {
+			this.mOnOffTryOnPermissionCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas') as mw.Canvas
+		}
+		return this.mOnOffTryOnPermissionCanvas_Internal
+	}
+	private mOnOffTryOnPermissionBgImage_Internal: mw.Image
+	public get mOnOffTryOnPermissionBgImage(): mw.Image {
+		if(!this.mOnOffTryOnPermissionBgImage_Internal&&this.uiWidgetBase) {
+			this.mOnOffTryOnPermissionBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionBgImage') as mw.Image
+		}
+		return this.mOnOffTryOnPermissionBgImage_Internal
+	}
+	private mOnOffTryOnPermissionTextBlock_Internal: mw.TextBlock
+	public get mOnOffTryOnPermissionTextBlock(): mw.TextBlock {
+		if(!this.mOnOffTryOnPermissionTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOnOffTryOnPermissionTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/BgImage/mBgImage/mContentCanvas/mTryOnPermissionImage/mTryOnPermissionCanvas/mOnOffTryOnPermissionCanvas/mOnOffTryOnPermissionTextBlock') as mw.TextBlock
+		}
+		return this.mOnOffTryOnPermissionTextBlock_Internal
+	}
 	private mResetButton_Internal: mw.Button
 	public get mResetButton(): mw.Button {
 		if(!this.mResetButton_Internal&&this.uiWidgetBase) {
@@ -243,6 +306,12 @@ export default class SetPanel_Generate extends UIScript {
 		this.mShowNickNameButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mTryOnPermissionButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mTryOnPermissionButton");
+		});
+		this.mTryOnPermissionButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mResetButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mResetButton");
 		});
@@ -284,6 +353,12 @@ export default class SetPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOnOffNickNameTextBlock)
+		
+	
+		this.initLanguage(this.mTryOnPermissionTextBlock)
+		
+	
+		this.initLanguage(this.mOnOffTryOnPermissionTextBlock)
 		
 	
 		this.initLanguage(this.mResetTextBlock)

@@ -1,5 +1,6 @@
 ﻿import { EventType } from "../../GlobalData";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import { TryOnData, TryOnModuleC } from "../TryOnModule/TryOnModule";
 import { RankData, RoomData, WorldData } from "./RankData";
 import RankModuleS from "./RankModuleS";
 import RankPanel from "./ui/RankPanel";
@@ -27,6 +28,22 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             this.userId = this.localPlayer.userId;
         }
         return this.userId;
+    }
+
+    private tryOnModuleC: TryOnModuleC = null;
+    private get getTryOnModuleC(): TryOnModuleC {
+        if (this.tryOnModuleC == null) {
+            this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
+        }
+        return this.tryOnModuleC;
+    }
+
+    private tryOnData: TryOnData = null;
+    private get getTryOnData(): TryOnData {
+        if (this.tryOnData == null) {
+            this.tryOnData = DataCenterC.getData(TryOnData);
+        }
+        return this.tryOnData;
     }
 
     // private interactionData: InteractionData = null;
@@ -69,17 +86,20 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
             // let bagIds = this.getInteractionData.bagIds;
             // let score = (!bagIds) ? 0 : bagIds.length;
-            let time = this.data.time;
-            this.server.net_onEnterScene(nickName, 0, time);
+            let time = this.data?.time;
+            if (!time && time != 0) time = 0;
+            let tryon = this.getTryOnData?.tryOn;
+            if (!tryon && tryon != 0) tryon = 0;
+            this.server.net_onEnterScene(nickName, 0, time, tryon);
         });
     }
 
     private roomDatas: RoomData[] = [];
     private recycleRoomDatas: RoomData[] = [];
-    private updateRoomDatas(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[]): void {
+    private updateRoomDatas(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
         if (this.roomDatas.length > roomUserIds.length) {
             for (let i = 0; i < roomUserIds.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
                 this.recycleRoomDatas.push(this.roomDatas[i]);
@@ -87,12 +107,12 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             this.roomDatas.length = roomUserIds.length;
         } else {
             for (let i = 0; i < this.roomDatas.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
             }
             for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
                 let tmpRoomData = null;
                 if (this.recycleRoomDatas.length > 0) tmpRoomData = this.recycleRoomDatas.pop();
-                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i]);
+                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
                 this.roomDatas.push(tmpRoomData);
             }
         }
@@ -149,12 +169,14 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
 
-    public net_syncRoomRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[]): void {
+    public net_syncRoomRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
         // console.error("wfz = " + roomUserIds.length);
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
+
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
     public net_syncWorldRankData(worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
@@ -163,9 +185,9 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
 
-    public net_syncRoomWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[],
+    public net_syncRoomWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[],
         worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
 
@@ -173,11 +195,36 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.updateWorldIndex();
 
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
+
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
+    }
+
+    public net_syncRoomRankData_TryOn(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        let tmpRoomDatas: RoomData[] = [];
+        this.roomDatas.forEach((value: RoomData) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
+            return b.tryOn - a.tryOn;
+        });
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
     }
 
     private sortRoomData(): void {
         this.roomDatas.sort((a: RoomData, b: RoomData) => {
-            return b.score - a.score;
+            return b.time - a.time;
         });
+    }
+
+    public getRoomDatas(): RoomData[] {
+        let tmpRoomDatas: RoomData[] = [];
+        this.roomDatas.forEach((value: RoomData) => {
+            tmpRoomDatas.push(value);
+        });
+        tmpRoomDatas.sort((a: RoomData, b: RoomData) => {
+            return b.tryOn - a.tryOn;
+        });
+        return tmpRoomDatas;
     }
 }
