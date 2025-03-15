@@ -18040,6 +18040,15 @@ __decorate([
     Decorator.persistence()
 ], TryOnData.prototype, "tryOn", void 0);
 
+var foreign130 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    TryOnData: TryOnData,
+    TryOnItem: TryOnItem,
+    TryOnModuleC: TryOnModuleC,
+    TryOnModuleS: TryOnModuleS,
+    TryOnPanel: TryOnPanel
+});
+
 /**
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
@@ -19984,6 +19993,7 @@ const MWModuleMap = {
      'B23852CE407E0A008F3BE78DDE49EB51': foreign127,
      'FAAFDA5E4A40291D72B0459742CD601A': foreign128,
      '1D10F64B4D38229D7655CC923071E9B2': foreign129,
+     '600C8E614022A70C6E8482B36D61FBAE': foreign130,
      'BC6767CF4240176E5C9B6984BB540726': foreign131,
      '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign132,
      '49E1131448695DF591C8DEB790EFC952': foreign133,
@@ -20165,6 +20175,7 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign127 || {}, "JavaScripts/module/SignInModule/SignInModuleS"],
 [foreign128 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
 [foreign129 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
+[foreign130 || {}, "JavaScripts/module/TryOnModule/TryOnModule"],
 [foreign131 || {}, "JavaScripts/tools/CopyCharacter"],
 [foreign132 || {}, "JavaScripts/tools/FreeCamera"],
 [foreign133 || {}, "JavaScripts/tools/TouchScript"],
