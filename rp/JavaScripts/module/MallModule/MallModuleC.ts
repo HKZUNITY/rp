@@ -641,6 +641,11 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (!trailingElement) return;
                 await this.changeSlotAndDecoration(tabId, trailingElement.AssetId, Utils.stringArrayToTransform(trailingElement.Transform), mw.HumanoidSlotType.Root);
                 break;
+            case Tab3Type.Tab3_BackPet:
+                let backPetElement = GameConfig.BackPet.getElement(assetId);
+                if (!backPetElement) return;
+                await this.changeSlotAndDecoration(tabId, backPetElement.AssetId, Utils.stringArrayToTransform(backPetElement.Transform), mw.HumanoidSlotType.BackOrnamental);
+                break;
             default:
                 break;
         }
@@ -961,6 +966,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 let trailingElement = GameConfig.Trailing.findElement(`AssetId`, trailing);
                 if (!trailingElement) return null;
                 return trailingElement.ID.toString();
+            case Tab3Type.Tab3_BackPet:
+                let backPet = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.BackOrnamental);
+                if (!backPet) return null;
+                let backPetElement = GameConfig.BackPet.findElement(`AssetId`, backPet);
+                if (!backPetElement) return null;
+                return backPetElement.ID.toString();
             case Tab2Type.Tab2_Pet:
                 let pet = this.getSlotAndDecoration(configId, mw.HumanoidSlotType.Root);
                 if (!pet) return null;
