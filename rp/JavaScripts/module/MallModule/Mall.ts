@@ -357,6 +357,7 @@ export default class Mall {
         Tab3Type.Tab3_Shoulder,
         Tab3Type.Tab3_Effects,
         Tab3Type.Tab3_Trailing,
+        Tab3Type.Tab3_BackPet,
 
         Tab2Type.Tab2_Outfit,
         Tab3Type.Tab3_DailyStyling_Suit1,
@@ -384,7 +385,8 @@ export default class Mall {
         Tab2Type.Tab2_Pet,
         Tab3Type.Tab3_Shoulder,
         Tab3Type.Tab3_Effects,
-        Tab3Type.Tab3_Trailing
+        Tab3Type.Tab3_Trailing,
+        Tab3Type.Tab3_BackPet
     ];
     public static isSlot(tabId: number): boolean {
         return this.slotTabIds.includes(tabId);

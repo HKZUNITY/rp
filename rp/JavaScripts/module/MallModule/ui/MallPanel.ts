@@ -4,6 +4,7 @@ import { IALongCoatTopElement } from "../../../configs/ALongCoatTop";
 import { IAncientMoldingOutfitElement } from "../../../configs/AncientMoldingOutfit";
 import { IBackElement } from "../../../configs/Back";
 import { IBackHairElement } from "../../../configs/BackHair";
+import { IBackPetElement } from "../../../configs/BackPet";
 import { IBlushElement } from "../../../configs/Blush";
 import { IBodyTypeElement } from "../../../configs/BodyType";
 import { IBootsShoesElement } from "../../../configs/BootsShoes";
@@ -546,6 +547,9 @@ export default class MallPanel extends MallPanel_Generate {
 				break;
 			case Tab3Type.Tab3_Trailing:
 				GameConfig.Trailing.getAllElement().forEach((value: ITrailingElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
+				break;
+			case Tab3Type.Tab3_BackPet:
+				GameConfig.BackPet.getAllElement().forEach((value: IBackPetElement) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });
 				break;
 			case Tab3Type.Tab3_DailyStyling_Suit1:
 				GameConfig.DailyStylingOutfit1.getAllElement().forEach((value: IDailyStylingOutfit1Element) => { if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`); });

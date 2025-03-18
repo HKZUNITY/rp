@@ -265,6 +265,11 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
     }
 
     private onOpenShareActionHandler(): void {
+        console.error(`-------------${JSON.stringify(this.tryOnConfigData)}`);
+        if (!this.tryOnConfigData || !this.tryOnConfigData.isOpenTryOn) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return;
+        }
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.getMallModuleC.isAccountServiceDownloadData();
             this.tryOnRoomData = null;
@@ -405,6 +410,11 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
         });
     }
+
+    private tryOnConfigData: TryOnConfigData = null;
+    public net_syncTryOnConfigData(tryOnConfigData: TryOnConfigData): void {
+        this.tryOnConfigData = tryOnConfigData;
+    }
 }
 
 
@@ -420,6 +430,26 @@ export class TryOnModuleS extends ModuleS<TryOnModuleC, TryOnData> {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
 
+    }
+
+    protected onPlayerEnterGame(player: mw.Player): void {
+        this.syncTryOnConfigData(player);
+    }
+
+    private isContinueInitTryOnData: boolean = true;
+    private async syncTryOnConfigData(player: mw.Player): Promise<void> {
+        if (this.isContinueInitTryOnData) {
+            this.isContinueInitTryOnData = false;
+            await this.initTryOnConfigData();
+            TimeUtil.delaySecond(5).then(() => { this.isContinueInitTryOnData = true; });
+        }
+        this.getClient(player).net_syncTryOnConfigData(this.tryOnConfigData);
+    }
+
+    private tryOnConfigData: TryOnConfigData = null;
+    private async initTryOnConfigData(): Promise<void> {
+        let data = await Utils.getCustomdata("TryOnConfigData");
+        this.tryOnConfigData = new TryOnConfigData(data);
     }
 
     @Decorator.noReply()
@@ -461,5 +491,14 @@ export class TryOnData extends Subdata {
 
     public get getTryOn(): number {
         return this.tryOn;
+    }
+}
+
+export class TryOnConfigData {
+    public isOpenTryOn: boolean = false;
+
+    public constructor(data: any) {
+        if (!data) return;
+        this.isOpenTryOn = data?.isOpenTryOn;
     }
 }

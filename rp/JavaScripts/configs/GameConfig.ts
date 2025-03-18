@@ -5,6 +5,7 @@ import {ActionPropConfig} from "./ActionProp";
 import {ALongCoatTopConfig} from "./ALongCoatTop";
 import {AncientMoldingOutfitConfig} from "./AncientMoldingOutfit";
 import {BackHairConfig} from "./BackHair";
+import {BackPetConfig} from "./BackPet";
 import {BackConfig} from "./Back";
 import {BlushConfig} from "./Blush";
 import {BodyTypeConfig} from "./BodyType";
@@ -93,6 +94,7 @@ export class GameConfig{
 	public static get ALongCoatTop():ALongCoatTopConfig{ return this.getConfig(ALongCoatTopConfig) };
 	public static get AncientMoldingOutfit():AncientMoldingOutfitConfig{ return this.getConfig(AncientMoldingOutfitConfig) };
 	public static get BackHair():BackHairConfig{ return this.getConfig(BackHairConfig) };
+	public static get BackPet():BackPetConfig{ return this.getConfig(BackPetConfig) };
 	public static get Back():BackConfig{ return this.getConfig(BackConfig) };
 	public static get Blush():BlushConfig{ return this.getConfig(BlushConfig) };
 	public static get BodyType():BodyTypeConfig{ return this.getConfig(BodyTypeConfig) };
