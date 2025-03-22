@@ -1,4 +1,6 @@
-﻿export class NavigationConfig {
+﻿import Utils from "../../tools/Utils";
+
+export class NavigationConfig {
     public modelId: string;
     public interactionObjId: string;
     public npcId: string;
@@ -38,6 +40,18 @@ export class NavigationModel {
         if (this.pathIndex == this.pathVecs.length) this.pathIndex = 0;
 
         this.isInitComplete = true;
+
+        this.copyOtherPlayerDescription();
+        TimeUtil.setInterval(() => {
+            this.copyOtherPlayerDescription();
+        }, 300);
+    }
+
+    private copyOtherPlayerDescription(): void {
+        let players = Player.getAllPlayers();
+        if (!players || players.length == 0) return;
+        let player = players[Utils.randomInt(0, players.length - 1)];
+        this.npc.setDescription(player.character.getDescription());
     }
 
     private stride: mw.Vector = mw.Vector.zero;
