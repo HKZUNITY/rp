@@ -3306,6 +3306,14 @@ class Utils {
         if (ui.visibility != visibility)
             ui.visibility = visibility;
     }
+    static randomInt(min, max) {
+        if (min > max) {
+            let temp = min;
+            min = max;
+            max = temp;
+        }
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
     static getDay() {
         let day = "";
         day += new Date().getFullYear();
@@ -16206,6 +16214,17 @@ class NavigationModel {
         if (this.pathIndex == this.pathVecs.length)
             this.pathIndex = 0;
         this.isInitComplete = true;
+        this.copyOtherPlayerDescription();
+        TimeUtil.setInterval(() => {
+            this.copyOtherPlayerDescription();
+        }, 300);
+    }
+    copyOtherPlayerDescription() {
+        let players = Player.getAllPlayers();
+        if (!players || players.length == 0)
+            return;
+        let player = players[Utils.randomInt(0, players.length - 1)];
+        this.npc.setDescription(player.character.getDescription());
     }
     updateMove() {
         if (!this.model || !this.pathVecs || this.pathVecs.length <= 1 || !this.isInitComplete)
