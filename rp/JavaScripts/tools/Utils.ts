@@ -36,6 +36,15 @@ export default class Utils {
         if (ui.visibility != visibility) ui.visibility = visibility;
     }
 
+    public static randomInt(min: number, max: number): number {
+        if (min > max) {
+            let temp = min;
+            min = max;
+            max = temp;
+        }
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
     public static getDay(): string {
         let day: string = "";
         day += new Date().getFullYear();
