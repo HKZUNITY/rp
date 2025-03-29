@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign138 = /*#__PURE__*/Object.freeze({
+var foreign139 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign140 = /*#__PURE__*/Object.freeze({
+var foreign141 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -3266,10 +3266,17 @@ GlobalData.onMusicIconGuid = `133445`;
 var EventType;
 (function (EventType) {
     EventType["OnOffMainUI"] = "OnOffMainUI";
+    EventType["SwitchCamera"] = "SwitchCamera";
 })(EventType || (EventType = {}));
+var CameraManagerType;
+(function (CameraManagerType) {
+    CameraManagerType[CameraManagerType["Head"] = 104] = "Head";
+    CameraManagerType[CameraManagerType["Body"] = 105] = "Body";
+})(CameraManagerType || (CameraManagerType = {}));
 
 var foreign81 = /*#__PURE__*/Object.freeze({
     __proto__: null,
+    get CameraManagerType () { return CameraManagerType; },
     get EventType () { return EventType; },
     default: GlobalData
 });
@@ -3600,7 +3607,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign136 = /*#__PURE__*/Object.freeze({
+var foreign137 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -3669,7 +3676,7 @@ LoadingPanel_Generate = __decorate([
 ], LoadingPanel_Generate);
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign182 = /*#__PURE__*/Object.freeze({
+var foreign183 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -3711,7 +3718,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign135 = /*#__PURE__*/Object.freeze({
+var foreign136 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -3835,7 +3842,7 @@ class ExecutorManager {
 }
 ExecutorManager._instance = undefined;
 
-var foreign137 = /*#__PURE__*/Object.freeze({
+var foreign138 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -3903,7 +3910,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign147 = /*#__PURE__*/Object.freeze({
+var foreign148 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -3986,7 +3993,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign155 = /*#__PURE__*/Object.freeze({
+var foreign156 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -4394,7 +4401,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign156 = /*#__PURE__*/Object.freeze({
+var foreign157 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -4460,7 +4467,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign176 = /*#__PURE__*/Object.freeze({
+var foreign177 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -4598,7 +4605,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign177 = /*#__PURE__*/Object.freeze({
+var foreign178 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -4684,7 +4691,7 @@ AdPanel_Generate = __decorate([
 ], AdPanel_Generate);
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign141 = /*#__PURE__*/Object.freeze({
+var foreign142 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -4775,7 +4782,7 @@ TipsPanel_Generate = __decorate([
 ], TipsPanel_Generate);
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign142 = /*#__PURE__*/Object.freeze({
+var foreign143 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -6247,7 +6254,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign150 = /*#__PURE__*/Object.freeze({
+var foreign151 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -6385,7 +6392,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign157 = /*#__PURE__*/Object.freeze({
+var foreign158 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -6450,7 +6457,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign158 = /*#__PURE__*/Object.freeze({
+var foreign159 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -7533,7 +7540,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign143 = /*#__PURE__*/Object.freeze({
+var foreign144 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -7643,7 +7650,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign144 = /*#__PURE__*/Object.freeze({
+var foreign145 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -7782,7 +7789,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign145 = /*#__PURE__*/Object.freeze({
+var foreign146 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -7920,7 +7927,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign146 = /*#__PURE__*/Object.freeze({
+var foreign147 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -8045,7 +8052,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign148 = /*#__PURE__*/Object.freeze({
+var foreign149 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -8148,7 +8155,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign149 = /*#__PURE__*/Object.freeze({
+var foreign150 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -8258,7 +8265,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign152 = /*#__PURE__*/Object.freeze({
+var foreign153 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -8713,7 +8720,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign151 = /*#__PURE__*/Object.freeze({
+var foreign152 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -10538,6 +10545,237 @@ var foreign101 = /*#__PURE__*/Object.freeze({
     default: MallData
 });
 
+var CameraManager_1;
+let CameraManager = CameraManager_1 = class CameraManager extends Script {
+    constructor() {
+        super(...arguments);
+        this.wfzCameraName = `WFZCamera`;
+        this.cameraType = CameraManagerType.Body;
+        this.isRotCharacter = false;
+        this.isRotWFZCamera = false;
+        this.mainCamera = null;
+        this.defaultRotation = mw.Rotation.zero;
+        this.targetCharacter = null;
+        /**上一帧的挂点位置 */
+        this.oldSlotPos = mw.Vector.zero;
+        this.cameraData = new CameraData();
+        this.E_Head_H = new CameraData();
+        this.E_Body_H = new CameraData();
+        this.E_Head_V = new CameraData();
+        this.E_Body_V = new CameraData();
+        /**触摸缓存 */
+        this.lastTouchPos = mw.Vector2.zero;
+        this.onTouchBegin = (index, location, touchType) => {
+            this.lastTouchPos = location;
+        };
+        this.onTouchMove = (index, loc, type) => {
+            if (this.isWFZCamera && this.targetCharacter) {
+                if (index == 0) {
+                    let rot = this.wfzCamera.parent.worldTransform.rotation;
+                    let z = loc.x - this.lastTouchPos.x;
+                    this.lastTouchPos = loc;
+                    if (Math.abs(z) > 80)
+                        return;
+                    //旋转角色
+                    if (this.isRotCharacter) {
+                        const rot = this.targetCharacter.worldTransform.rotation;
+                        rot.z -= z;
+                        this.targetCharacter.worldTransform.rotation = rot;
+                    }
+                    //旋转相机
+                    if (this.isRotWFZCamera)
+                        this.worldRotation([rot.x, rot.y, rot.z + z]);
+                }
+            }
+        };
+    }
+    static get instance() {
+        return CameraManager_1.cameraManager;
+    }
+    get wfzCamera() {
+        return this.gameObject;
+    }
+    get isWFZCamera() {
+        try {
+            return Camera.currentCamera?.getCustomProperty(this.wfzCameraName) == this.wfzCameraName;
+        }
+        catch (error) {
+            return false;
+        }
+    }
+    static async asyncReady() {
+        while (!this.cameraManager) {
+            await TimeUtil.delaySecond(0.1);
+        }
+    }
+    onStart() {
+        this.initData();
+        this.gameObject.asyncReady().then(() => {
+            this.gameObject.setCustomProperty(this.wfzCameraName, this.wfzCameraName);
+            CameraManager_1.cameraManager = this;
+            this.useUpdate = true;
+        });
+        Event.addLocalListener(EventType.SwitchCamera, this.changeCameraType2.bind(this));
+    }
+    onUpdate(dt) {
+        this.follow();
+    }
+    switchWFZCamera(isOpenCamera, targetCharacter = null, isRotWFZCamera = false, isRotCharacter = false) {
+        this.targetCharacter = targetCharacter;
+        if (targetCharacter?.worldTransform?.rotation)
+            this.defaultRotation = targetCharacter?.worldTransform?.rotation;
+        this.isRotWFZCamera = isRotWFZCamera;
+        this.isRotCharacter = isRotCharacter;
+        TouchInputUtil.getInstance().onTouchBegin.remove(this.onTouchBegin.bind(this));
+        TouchInputUtil.getInstance().onTouchMove.remove(this.onTouchMove.bind(this));
+        if (isOpenCamera) {
+            if (isRotWFZCamera || isRotCharacter) {
+                TouchInputUtil.getInstance().onTouchBegin.add(this.onTouchBegin.bind(this));
+                TouchInputUtil.getInstance().onTouchMove.add(this.onTouchMove.bind(this));
+            }
+            if (this.isWFZCamera)
+                return;
+            this.mainCamera = Camera.currentCamera;
+            Camera.switch(this.wfzCamera);
+            const size = mw.getViewportSize();
+            if (size.x >= size.y) {
+                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainXFOV;
+            }
+            else {
+                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainYFOV;
+            }
+        }
+        else {
+            if (this.mainCamera && this.isWFZCamera) {
+                Camera.switch(this.mainCamera);
+                this.mainCamera = null;
+            }
+        }
+        this.useUpdate = isOpenCamera;
+    }
+    worldRotation(rotation) {
+        this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(rotation[0], rotation[1], rotation[2]);
+    }
+    follow() {
+        if (!this.targetCharacter)
+            return;
+        let slotPos = CameraData.getTargetPos(this.targetCharacter, this.cameraData);
+        if (!slotPos)
+            return;
+        this.oldSlotPos = slotPos;
+        this.wfzCamera.parent.worldTransform.position = slotPos;
+    }
+    setData(cameraData) {
+        this.wfzCamera.springArm.length = cameraData.l;
+        let rot = this.wfzCamera.localTransform.rotation;
+        this.wfzCamera.fov = cameraData.fov;
+        let rotY = cameraData.fov * cameraData.v;
+        this.wfzCamera.localTransform.rotation = new mw.Rotation(rot.x, rotY, cameraData.fov * cameraData.h);
+        if (this.targetCharacter)
+            this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(0, 0, this.targetCharacter.worldTransform.rotation.z + 180);
+    }
+    setValue(name, value) {
+        this.cameraData[name] = value;
+        this.setData(this.cameraData);
+    }
+    initData() {
+        this.E_Body_H.l = 500;
+        this.E_Body_H.fov = 45;
+        this.E_Body_H.targetType = TargetType.WorldPos;
+        this.E_Body_H.h = 0.25;
+        this.E_Body_H.v = 0;
+        this.E_Head_V = { "h": 0, "v": -0.1, "targetType": 1, "slot": 1, "l": 260, "fov": 45, "offset": Vector.zero };
+        this.E_Body_V = { "h": 0, "v": -0.13, "targetType": 2, "slot": 1, "l": 2500, "fov": 18, "offset": Vector.zero };
+    }
+    /**切换相机模式，如果值为空就使用当前的相机数据 */
+    changeCameraType2(avatarCameraType) {
+        if (this.targetCharacter?.worldTransform)
+            this.targetCharacter.worldTransform.rotation = this.defaultRotation;
+        if (CameraManagerType[avatarCameraType]) {
+            this.cameraType = avatarCameraType;
+        }
+        else if (CameraManagerType[this.cameraType]) ;
+        else {
+            this.cameraType = CameraManagerType.Body;
+        }
+        let cameraData = this.getCameraDataByType(avatarCameraType);
+        this.cameraData.l = cameraData.l;
+        this.cameraData.fov = cameraData.fov;
+        this.cameraData.slot = cameraData.slot;
+        this.cameraData.targetType = cameraData.targetType;
+        this.cameraData.h = cameraData.h;
+        this.cameraData.v = cameraData.v;
+        this.cameraData.offset = cameraData.offset;
+        this.setData(cameraData);
+    }
+    getCameraDataByType(avatarCameraType) {
+        let size = mw.getViewportSize();
+        if (size.x < size.y) {
+            switch (avatarCameraType) {
+                case CameraManagerType.Head:
+                    return this.E_Head_V;
+                default:
+                    return this.E_Body_V;
+            }
+        }
+        else {
+            switch (avatarCameraType) {
+                case CameraManagerType.Head:
+                    return this.E_Head_H;
+                default:
+                    return this.E_Body_H;
+            }
+        }
+    }
+};
+CameraManager.cameraManager = null;
+CameraManager = CameraManager_1 = __decorate([
+    Component
+], CameraManager);
+var CameraManager$1 = CameraManager;
+var TargetType;
+(function (TargetType) {
+    /**插槽 */
+    TargetType[TargetType["slot"] = 1] = "slot";
+    /**世界坐标 */
+    TargetType[TargetType["WorldPos"] = 2] = "WorldPos";
+})(TargetType || (TargetType = {}));
+class CameraData {
+    constructor() {
+        /**横向fov比例角度 */
+        this.h = 0.25;
+        /**垂直fov比例角度 */
+        this.v = 0;
+        /**1角色插槽，2世界坐标 */
+        this.targetType = TargetType.slot;
+        this.slot = mw.HumanoidSlotType.Head;
+        /**弹簧臂长度 */
+        this.l = 250;
+        this.fov = 45;
+        /**偏移值 */
+        this.offset = Vector.zero;
+    }
+    static getTargetPos(char, data) {
+        let pos = data.offset.clone();
+        switch (data.targetType) {
+            case TargetType.slot:
+                let v3 = char?.getSlotWorldPosition(data.slot);
+                if (v3)
+                    pos.add(v3);
+                break;
+            case TargetType.WorldPos:
+                pos.add(char.worldTransform.position);
+                break;
+        }
+        return pos;
+    }
+}
+
+var foreign132 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: CameraManager$1
+});
+
 class Mall {
     static async copyCharacterSlot(fromCharacter, toCharacter) {
         if (!fromCharacter || !toCharacter)
@@ -11289,7 +11527,7 @@ ColorPickPanel_Generate = __decorate([
 ], ColorPickPanel_Generate);
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign159 = /*#__PURE__*/Object.freeze({
+var foreign160 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11345,7 +11583,7 @@ ColorPickTab1_Generate = __decorate([
 ], ColorPickTab1_Generate);
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign160 = /*#__PURE__*/Object.freeze({
+var foreign161 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11454,7 +11692,7 @@ ColorPickTab2_Generate = __decorate([
 ], ColorPickTab2_Generate);
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign161 = /*#__PURE__*/Object.freeze({
+var foreign162 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -11600,7 +11838,7 @@ ColorPickTab3_Generate = __decorate([
 ], ColorPickTab3_Generate);
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign162 = /*#__PURE__*/Object.freeze({
+var foreign163 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -11739,7 +11977,7 @@ class TouchScript {
     }
 }
 
-var foreign134 = /*#__PURE__*/Object.freeze({
+var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     get Enums () { return Enums; },
     TouchScript: TouchScript
@@ -11963,7 +12201,7 @@ MallPanel_Generate = __decorate([
 ], MallPanel_Generate);
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign167 = /*#__PURE__*/Object.freeze({
+var foreign168 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -12053,7 +12291,7 @@ MallItem_Big_Generate = __decorate([
 ], MallItem_Big_Generate);
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign163 = /*#__PURE__*/Object.freeze({
+var foreign164 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -12257,7 +12495,7 @@ MallItem_Color_Generate = __decorate([
 ], MallItem_Color_Generate);
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign164 = /*#__PURE__*/Object.freeze({
+var foreign165 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12413,7 +12651,7 @@ MallItem_Self_Generate = __decorate([
 ], MallItem_Self_Generate);
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign165 = /*#__PURE__*/Object.freeze({
+var foreign166 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -12574,7 +12812,7 @@ MallItem_Small_Generate = __decorate([
 ], MallItem_Small_Generate);
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign166 = /*#__PURE__*/Object.freeze({
+var foreign167 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -12964,7 +13202,7 @@ MallTab1_Generate = __decorate([
 ], MallTab1_Generate);
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign168 = /*#__PURE__*/Object.freeze({
+var foreign169 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -13104,7 +13342,7 @@ MallTab2_Generate = __decorate([
 ], MallTab2_Generate);
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign169 = /*#__PURE__*/Object.freeze({
+var foreign170 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -13242,7 +13480,7 @@ MallTab3_Generate = __decorate([
 ], MallTab3_Generate);
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign170 = /*#__PURE__*/Object.freeze({
+var foreign171 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -13400,9 +13638,10 @@ class MallPanel extends MallPanel_Generate$1 {
         this.initUI();
         this.bindButton();
         this.bindAction();
-        this.initMallRot();
+        // this.initMallRot();
     }
     initUI() {
+        Utils.setWidgetVisibility(this.mTouchImage, mw.SlateVisibility.Collapsed);
         this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
         this.mResetTextBlock.text = GameConfig.Language.Text_ResetImage.Value;
     }
@@ -14259,13 +14498,13 @@ class MallPanel extends MallPanel_Generate$1 {
     }
     onShow(...params) {
         Event.dispatchToLocal(EventType.OnOffMainUI, false);
-        this.canUpdate = true;
-        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+        // this.canUpdate = true;
+        // TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
     }
     onHide() {
         Event.dispatchToLocal(EventType.OnOffMainUI, true);
-        this.canUpdate = false;
-        TouchScript.instance.removeScreenListener(this.mTouchImage);
+        // this.canUpdate = false;
+        // TouchScript.instance.removeScreenListener(this.mTouchImage);
     }
     onOffLeftCanvas(isOpen) {
         Utils.setWidgetVisibility(this.mLeftCanvas, isOpen ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
@@ -14588,7 +14827,7 @@ MallTipsPanel_Generate = __decorate([
 ], MallTipsPanel_Generate);
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign171 = /*#__PURE__*/Object.freeze({
+var foreign172 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -15693,27 +15932,24 @@ class MallModuleC extends ModuleC {
         //         Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
         //     }
         // });
-        let myCamera = Camera.currentCamera;
+        Camera.currentCamera;
         let shopCamera = await GameObject.asyncSpawn(`Camera`);
         shopCamera.worldTransform.rotation = mw.Rotation.zero;
         this.onSwitchCameraAction.add((cameraType) => {
             // if (this.lastCameraType == cameraType) return;
             if (cameraType == 0) {
-                Camera.switch(myCamera);
+                CameraManager$1.instance.switchWFZCamera(false);
+                return;
             }
             else if (cameraType == 1) {
-                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
-                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 55, rootLoc.y + 32, rootLoc.z + 10);
-                let offsetZ = this.localPlayer.character.collisionExtent.z;
-                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ / 2.8, rootLoc.y + offsetZ / 5.3, rootLoc.z + offsetZ / 16);
-                Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+                CameraManager$1.instance.switchWFZCamera(true, this.localPlayer.character, true, false);
+                Event.dispatchToLocal(EventType.SwitchCamera, CameraManagerType.Head);
+                return;
             }
             else if (cameraType == 2) {
-                let rootLoc = this.localPlayer.character.getSlotWorldPosition(mw.HumanoidSlotType.Head);
-                // shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - 174, rootLoc.y + 102, rootLoc.z - 54);
-                let offsetZ = this.localPlayer.character.collisionExtent.z;
-                shopCamera.worldTransform.position = new mw.Vector(rootLoc.x - offsetZ * 1.3, rootLoc.y + offsetZ / 1.6, rootLoc.z - offsetZ / 3);
-                Camera.switch(shopCamera, 0.5, mw.CameraSwitchBlendFunction.Linear);
+                CameraManager$1.instance.switchWFZCamera(true, this.localPlayer.character, true, false);
+                Event.dispatchToLocal(EventType.SwitchCamera, CameraManagerType.Body);
+                return;
             }
             // this.lastCameraType = cameraType;
         });
@@ -16704,7 +16940,7 @@ TryOnItem_Generate = __decorate([
 ], TryOnItem_Generate);
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign180 = /*#__PURE__*/Object.freeze({
+var foreign181 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -16862,7 +17098,7 @@ TryOnPanel_Generate = __decorate([
 ], TryOnPanel_Generate);
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign181 = /*#__PURE__*/Object.freeze({
+var foreign182 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -17180,7 +17416,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign175 = /*#__PURE__*/Object.freeze({
+var foreign176 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -17697,7 +17933,7 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
     onStart() {
         this.initUI();
         this.bindButton();
-        this.initTryOnRot();
+        // this.initTryOnRot();
     }
     initUI() {
         this.mTitleTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
@@ -17705,6 +17941,7 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
         this.mNameTextBlock.text = GameConfig.Language.Text_TryOnTips2.Value;
         this.mTryOnTextBlock.text = GameConfig.Language.Text_TryOnTips3.Value;
         this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
+        Utils.setWidgetVisibility(this.mTouchImage, mw.SlateVisibility.Collapsed);
     }
     bindButton() {
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
@@ -17744,13 +17981,13 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
     }
     onShow(...params) {
         Event.dispatchToLocal(EventType.OnOffMainUI, false);
-        this.canUpdate = true;
-        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+        // this.canUpdate = true;
+        // TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
     }
     onHide() {
         Event.dispatchToLocal(EventType.OnOffMainUI, true);
-        this.canUpdate = false;
-        TouchScript.instance.removeScreenListener(this.mTouchImage);
+        // this.canUpdate = false;
+        // TouchScript.instance.removeScreenListener(this.mTouchImage);
     }
     //#region Rotate-Camera
     initTryOnRot() {
@@ -18259,7 +18496,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign172 = /*#__PURE__*/Object.freeze({
+var foreign173 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -18329,7 +18566,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign173 = /*#__PURE__*/Object.freeze({
+var foreign174 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -18424,7 +18661,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign174 = /*#__PURE__*/Object.freeze({
+var foreign175 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -18951,7 +19188,7 @@ SignInPanel_Generate = __decorate([
 ], SignInPanel_Generate);
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign179 = /*#__PURE__*/Object.freeze({
+var foreign180 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -19037,7 +19274,7 @@ SignInItem_Generate = __decorate([
 ], SignInItem_Generate);
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign178 = /*#__PURE__*/Object.freeze({
+var foreign179 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -19541,7 +19778,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign153 = /*#__PURE__*/Object.freeze({
+var foreign154 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -19601,7 +19838,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign154 = /*#__PURE__*/Object.freeze({
+var foreign155 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -19882,7 +20119,7 @@ CopyCharacter = __decorate([
 ], CopyCharacter);
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign132 = /*#__PURE__*/Object.freeze({
+var foreign133 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -20080,7 +20317,7 @@ class KeyActionManager {
     }
 }
 
-var foreign133 = /*#__PURE__*/Object.freeze({
+var foreign134 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -20148,7 +20385,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign139 = /*#__PURE__*/Object.freeze({
+var foreign140 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -20285,57 +20522,58 @@ const MWModuleMap = {
      'FAAFDA5E4A40291D72B0459742CD601A': foreign129,
      '1D10F64B4D38229D7655CC923071E9B2': foreign130,
      '2032BEF24550E75CE53EE39AE53150E9': foreign131,
-     'BC6767CF4240176E5C9B6984BB540726': foreign132,
-     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign133,
-     '49E1131448695DF591C8DEB790EFC952': foreign134,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign135,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign136,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign137,
-     '741B06144E25B4753E8005985816DAF8': foreign138,
-     'EE3F354349BB041CD741FF84B745B113': foreign139,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign140,
-     '100DA6744367634E7FFC0895CD98DDB9': foreign141,
-     '67892EC847DCDABBB14451A8CDFD526C': foreign142,
-     '486071A84887288700A7E297CBF6B438': foreign143,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign144,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign145,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign146,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign147,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign148,
-     '827757834BCFC569771BCB84A3609238': foreign149,
-     'F58702064960960163820CB9C8D0F3C1': foreign150,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign151,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign152,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign153,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign154,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign155,
-     '337A59B14A237973EEB178A260344C21': foreign156,
-     'B9D019D74067C8F762132698D474BF63': foreign157,
-     'C4E377B14812C09429E28988E62907DB': foreign158,
-     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign159,
-     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign160,
-     '06CF574844634CC9C0793EA8847C6FE2': foreign161,
-     '27DEB6624F87673F14AA499E8A3A7DD3': foreign162,
-     'CEE9E492480CEF69BF9291BA357C9AC1': foreign163,
-     '713A8E764F3DAC8A8AD1BEB382C46158': foreign164,
-     '5E6E0BFE48C322071930C2B8DD56E900': foreign165,
-     'C381E72F409A02A45B69B9BC32F4FCAF': foreign166,
-     'FADB775E4F203C2565D31A9AA31E22D1': foreign167,
-     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign168,
-     'F3E9117C4C567C26689F08B919B7E7DA': foreign169,
-     'AF5DEB904C817468E94BAA9265F23AF7': foreign170,
-     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign171,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign172,
-     'A8E0593D477EC697B2559789990E0882': foreign173,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign174,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign175,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign176,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign177,
-     '14F8E49D4B31DFAA50548BA206585CCA': foreign178,
-     '656033E844C70FD925FC8F887EA9FA46': foreign179,
-     '6B744DEB4703AED17EA7279D0783813A': foreign180,
-     'C6D169354450AEEF12B964B7B3BA8B2D': foreign181,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign182,
+     '1757D7694B3B2F7BFB8C0897BDF03724': foreign132,
+     'BC6767CF4240176E5C9B6984BB540726': foreign133,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign134,
+     '49E1131448695DF591C8DEB790EFC952': foreign135,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign136,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign137,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign138,
+     '741B06144E25B4753E8005985816DAF8': foreign139,
+     'EE3F354349BB041CD741FF84B745B113': foreign140,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign141,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign142,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign143,
+     '486071A84887288700A7E297CBF6B438': foreign144,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign145,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign146,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign147,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign148,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign149,
+     '827757834BCFC569771BCB84A3609238': foreign150,
+     'F58702064960960163820CB9C8D0F3C1': foreign151,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign152,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign153,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign154,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign155,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign156,
+     '337A59B14A237973EEB178A260344C21': foreign157,
+     'B9D019D74067C8F762132698D474BF63': foreign158,
+     'C4E377B14812C09429E28988E62907DB': foreign159,
+     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign160,
+     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign161,
+     '06CF574844634CC9C0793EA8847C6FE2': foreign162,
+     '27DEB6624F87673F14AA499E8A3A7DD3': foreign163,
+     'CEE9E492480CEF69BF9291BA357C9AC1': foreign164,
+     '713A8E764F3DAC8A8AD1BEB382C46158': foreign165,
+     '5E6E0BFE48C322071930C2B8DD56E900': foreign166,
+     'C381E72F409A02A45B69B9BC32F4FCAF': foreign167,
+     'FADB775E4F203C2565D31A9AA31E22D1': foreign168,
+     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign169,
+     'F3E9117C4C567C26689F08B919B7E7DA': foreign170,
+     'AF5DEB904C817468E94BAA9265F23AF7': foreign171,
+     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign172,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign173,
+     'A8E0593D477EC697B2559789990E0882': foreign174,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign175,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign176,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign177,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign178,
+     '14F8E49D4B31DFAA50548BA206585CCA': foreign179,
+     '656033E844C70FD925FC8F887EA9FA46': foreign180,
+     '6B744DEB4703AED17EA7279D0783813A': foreign181,
+     'C6D169354450AEEF12B964B7B3BA8B2D': foreign182,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign183,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -20468,57 +20706,58 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign129 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
 [foreign130 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
 [foreign131 || {}, "JavaScripts/module/TryOnModule/TryOnModule"],
-[foreign132 || {}, "JavaScripts/tools/CopyCharacter"],
-[foreign133 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign134 || {}, "JavaScripts/tools/TouchScript"],
-[foreign135 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign136 || {}, "JavaScripts/tools/Utils"],
-[foreign137 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign138 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign139 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign140 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign141 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign142 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
-[foreign143 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign151 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign152 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign153 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign154 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign155 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign156 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign157 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign158 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign159 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
-[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
-[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
-[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
-[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
-[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
-[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
-[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
-[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
-[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
-[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
-[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
-[foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
-[foreign172 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign173 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign174 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign175 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign176 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign177 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign178 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
-[foreign179 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign180 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
-[foreign181 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
-[foreign182 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign132 || {}, "JavaScripts/tools/CameraManager"],
+[foreign133 || {}, "JavaScripts/tools/CopyCharacter"],
+[foreign134 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign135 || {}, "JavaScripts/tools/TouchScript"],
+[foreign136 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign137 || {}, "JavaScripts/tools/Utils"],
+[foreign138 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign139 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign140 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign141 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign142 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign143 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign151 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign152 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign153 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign154 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign155 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign156 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign157 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign158 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign159 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
+[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
+[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
+[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
+[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
+[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
+[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
+[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
+[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
+[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
+[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
+[foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
+[foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
+[foreign173 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign174 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign175 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign176 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign177 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign178 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign179 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
+[foreign180 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
+[foreign181 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
+[foreign182 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
+[foreign183 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;
