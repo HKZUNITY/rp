@@ -94,10 +94,11 @@ export default class MallPanel extends MallPanel_Generate {
 		this.initUI();
 		this.bindButton();
 		this.bindAction();
-		this.initMallRot();
+		// this.initMallRot();
 	}
 
 	private initUI(): void {
+		Utils.setWidgetVisibility(this.mTouchImage, mw.SlateVisibility.Collapsed);
 		this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
 		this.mResetTextBlock.text = GameConfig.Language.Text_ResetImage.Value;
 	}
@@ -957,14 +958,14 @@ export default class MallPanel extends MallPanel_Generate {
 
 	protected onShow(...params: any[]): void {
 		Event.dispatchToLocal(EventType.OnOffMainUI, false);
-		this.canUpdate = true;
-		TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+		// this.canUpdate = true;
+		// TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
 	}
 
 	protected onHide(): void {
 		Event.dispatchToLocal(EventType.OnOffMainUI, true);
-		this.canUpdate = false;
-		TouchScript.instance.removeScreenListener(this.mTouchImage);
+		// this.canUpdate = false;
+		// TouchScript.instance.removeScreenListener(this.mTouchImage);
 	}
 
 	public onOffLeftCanvas(isOpen: boolean): void {
