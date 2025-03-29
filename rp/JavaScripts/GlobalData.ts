@@ -18,5 +18,11 @@ export default class GlobalData {
 }
 
 export enum EventType {
-    OnOffMainUI = `OnOffMainUI`
+    OnOffMainUI = `OnOffMainUI`,
+    SwitchCamera = `SwitchCamera`,
+}
+
+export enum CameraManagerType {
+    Head = 104,
+    Body = 105,
 }

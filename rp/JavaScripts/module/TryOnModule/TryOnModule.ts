@@ -83,7 +83,7 @@ export class TryOnPanel extends TryOnPanel_Generate {
     protected onStart(): void {
         this.initUI();
         this.bindButton();
-        this.initTryOnRot();
+        // this.initTryOnRot();
     }
 
     private initUI(): void {
@@ -92,6 +92,8 @@ export class TryOnPanel extends TryOnPanel_Generate {
         this.mNameTextBlock.text = GameConfig.Language.Text_TryOnTips2.Value;
         this.mTryOnTextBlock.text = GameConfig.Language.Text_TryOnTips3.Value;
         this.mSaveTextBlock.text = GameConfig.Language.Text_FreeSave.Value;
+
+        Utils.setWidgetVisibility(this.mTouchImage, mw.SlateVisibility.Collapsed);
     }
 
     private bindButton(): void {
@@ -135,14 +137,14 @@ export class TryOnPanel extends TryOnPanel_Generate {
 
     protected onShow(...params: any[]): void {
         Event.dispatchToLocal(EventType.OnOffMainUI, false);
-        this.canUpdate = true;
-        TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
+        // this.canUpdate = true;
+        // TouchScript.instance.addScreenListener(this.mTouchImage, this.onMoveTouchEvent.bind(this), false);
     }
 
     protected onHide(): void {
         Event.dispatchToLocal(EventType.OnOffMainUI, true);
-        this.canUpdate = false;
-        TouchScript.instance.removeScreenListener(this.mTouchImage);
+        // this.canUpdate = false;
+        // TouchScript.instance.removeScreenListener(this.mTouchImage);
     }
 
     //#region Rotate-Camera
