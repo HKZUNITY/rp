@@ -7025,7 +7025,7 @@ class InteractionModuleC extends ModuleC {
         this.bagIds = [];
         this.guidePanel = null;
         this.guideStep = 0;
-        this.guideBagIds = [60004, 20002, 10106, 30002];
+        this.guideBagIds = [60002, 20002, 10106, 30002];
     }
     get getOnClickPanel() {
         if (this.onClickPanel == null) {

@@ -412,7 +412,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         this.server.net_setGuideStep(addStep);
     }
 
-    private guideBagIds: number[] = [60004, 20002, 10106, 30002];
+    private guideBagIds: number[] = [60002, 20002, 10106, 30002];
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
         if (this.guideStep >= this.guideBagIds.length - 1) {
