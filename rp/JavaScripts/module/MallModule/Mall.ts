@@ -1,5 +1,5 @@
 ﻿import Utils from "../../tools/Utils";
-import { Tab2Type, Tab3Type } from "./MallData";
+import { Tab1Type, Tab2Type, Tab3Type } from "./MallData";
 
 export default class Mall {
     public static async copyCharacterSlot(fromCharacter: mw.Character, toCharacter: mw.Character): Promise<void> {
@@ -370,6 +370,8 @@ export default class Mall {
         Tab3Type.Tab3_AncientMolding_Suit,
 
         Tab2Type.Tab2_Pet,
+
+        Tab1Type.Tab1_Clothing,
     ];
     public static isRemovableTabId(tabId: number): boolean {
         return this.removableTabIds.includes(tabId);

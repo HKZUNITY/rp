@@ -15,6 +15,8 @@ export default class GlobalData {
     public static offMusicIconGuid: string = `133403`;
     /**打开背景音乐图标Guid */
     public static onMusicIconGuid: string = `133445`;
+
+    public static savaMaxCount: number = 6;
 }
 
 export enum EventType {

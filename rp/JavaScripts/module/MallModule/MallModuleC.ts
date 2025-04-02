@@ -8,9 +8,10 @@ import { CameraManagerType, EventType } from "../../GlobalData";
 import CameraManager from "../../tools/CameraManager";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
+import { CharacterModuleC } from "../CharacterModule/CharacterModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
-import MallData, { AssetIdInfoData, ColorPickTab2Data, Tab2Type, Tab3Type, TabType } from "./MallData";
+import MallData, { AssetIdInfoData, ColorPickTab2Data, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
 import MallModuleS from "./MallModuleS";
 import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
@@ -49,10 +50,19 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         return this.mallTipsPanel;
     }
 
+    private characterModuleC: CharacterModuleC = null;
+    private get getCharacterModuleC(): CharacterModuleC {
+        if (!this.characterModuleC) {
+            this.characterModuleC = ModuleService.getModule(CharacterModuleC);
+        }
+        return this.characterModuleC;
+    }
+
     public onSelectTab1Action: Action1<number> = new Action1<number>();
     public onSelectTab2Action: Action1<number> = new Action1<number>();
     public onSelectTab3Action: Action1<number> = new Action1<number>();
     public onSelectItemAction: Action3<number, number, string> = new Action3<number, number, string>();
+    public onDeleteItemAction: Action3<number, number, string> = new Action3<number, number, string>();
     public onOpenColorPickAction: Action2<number, number> = new Action2<number, number>();
     public onResetAction: Action = new Action();
     public onSaveAction: Action = new Action();
@@ -84,6 +94,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private bindAction(): void {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
         this.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+        this.onDeleteItemAction.add(this.addDeleteItemAction.bind(this));
         this.onOpenColorPickAction.add(this.addOpenColorPickAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
         this.onCloseMallPanelAction.add(this.addCloseAction.bind(this));
@@ -270,7 +281,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         if (tabType == TabType.None) return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
-            if (!Mall.isRemovableTabId(tabId)) return;
+            if (!Mall.isRemovableTabId(tabId) || assetId == `0`) return;
             // if (Mall.isClothingTabId(tabId)) {
             //     this.refreshUsingCharacterDataByTabId(tabId);
             // } else {
@@ -281,10 +292,31 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         });
     }
 
+    private addDeleteItemAction(tabType: TabType, tabId: number, assetId: string): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.getCharacterModuleC.deleteCharacterData(assetId, () => {
+                this.getMallPanel.initTab1Item();
+            });
+        });
+    }
+
+    private delaySwitchCameraTabIds: number[] = [
+        Tab1Type.Tab1_Clothing,
+        Tab2Type.Tab2_BodyType
+    ];
     private isNeedSaveCharacter: boolean = false;
     private async changeCharacter(tabId: number, assetId: string): Promise<void> {
         await this.localPlayer.character.asyncReady();
         switch (tabId) {
+            case Tab1Type.Tab1_Collection:
+                await this.getCharacterModuleC.useCharacterData(assetId, (isAdd: boolean) => {
+                    if (isAdd) {
+                        this.getMallPanel.initTab1Item();
+                    } else {
+                        this.updateMallPanelBySomatotype();
+                    }
+                });
+                break;
             case Tab2Type.Tab2_BodyType:
                 let bodyTypeElement: IBodyTypeElement = GameConfig.BodyType.getElement(assetId);
                 if (!bodyTypeElement || bodyTypeElement?.Scale == 0) return;
@@ -654,7 +686,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         await this.localPlayer.character.asyncReady();
         this.isNeedSaveCharacter = true;
         // this.localPlayer.character.syncDescription();
-        if (tabId == Tab2Type.Tab2_BodyType) {
+        if (this.delaySwitchCameraTabIds.includes(tabId)) {
             await TimeUtil.delaySecond(1);
             this.onSwitchCameraAction.call(2);
         }
@@ -824,6 +856,8 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public async getCharacterAssetId(configId: number): Promise<string | mw.LinearColor> {
         await this.localPlayer.character.asyncReady();
         switch (configId) {
+            case Tab1Type.Tab1_Collection:
+                return this.getCharacterModuleC.getCharacterDataKey();
             case Tab2Type.Tab2_BodyType:
                 let heightRatio: number = this.localPlayer.character.description.advance.bodyFeatures.body.height;
                 let scale: string = heightRatio.toFixed(1);
@@ -1185,6 +1219,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
             Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
         });
+    }
+
+    private updateMallPanelBySomatotype(): void {
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.initUsingCharacterData();
+        if (mw.UIService.getUI(MallPanel, false)?.visible) {
+            this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            this.onSelectTab1Action.call(3);
+        }
     }
 
     private colorPickTabId: number = -1;
@@ -1838,5 +1881,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         }
         this.isNeedSaveColor = true;
         this.isNeedSaveCharacter = true;
+    }
+
+    public get getCharacterDataKeys(): string[] {
+        return this.getCharacterModuleC.getCharacterDataKeys;
+    }
+
+    public getCharacterDataUpAssetIdByKey(key: string): string {
+        return this.getCharacterModuleC.getCharacterDataUpAssetIdByKey(key);
     }
 }
