@@ -1,6 +1,9 @@
 ﻿import { update } from "./common/notice/Tween";
 import { GameConfig } from "./configs/GameConfig";
 import GlobalData from "./GlobalData";
+import { CharacterData } from "./module/CharacterModule/CharacterData";
+import { CharacterModuleC } from "./module/CharacterModule/CharacterModuleC";
+import { CharacterModuleS } from "./module/CharacterModule/CharacterModuleS";
 import DanMuModuleC from "./module/DanMuModule/DanMuModuleC";
 import DanMuModuleS from "./module/DanMuModule/DanMuModuleS";
 import { HUDModuleC, HUDModuleS } from "./module/HUDModule/HUDModule";
@@ -52,6 +55,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
         ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
+        ModuleService.registerModule(CharacterModuleS, CharacterModuleC, CharacterData);
     }
 
     /**
