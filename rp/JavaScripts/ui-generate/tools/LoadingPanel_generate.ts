@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
  
 @UIBind('UI/tools/LoadingPanel.ui')

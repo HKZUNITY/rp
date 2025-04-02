@@ -29,7 +29,7 @@ function __decorate(decorators, target, key, desc) {
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
 let NoticeView_Generate = class NoticeView_Generate extends UIScript {
     get con_top_notice() {
@@ -86,7 +86,7 @@ NoticeView_Generate = __decorate([
 ], NoticeView_Generate);
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign139 = /*#__PURE__*/Object.freeze({
+var foreign147 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -96,7 +96,7 @@ var foreign139 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/TopNoticeItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
 let TopNoticeItem_Generate = class TopNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -160,7 +160,7 @@ TopNoticeItem_Generate = __decorate([
 ], TopNoticeItem_Generate);
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign141 = /*#__PURE__*/Object.freeze({
+var foreign149 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -1527,10 +1527,10 @@ var foreign19 = /*#__PURE__*/Object.freeze({
     ConfigBase: ConfigBase
 });
 
-const EXCELDATA$18 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "292307", 2], [2, null, "240931", 2], [3, null, "144441", 2], [4, null, "137386", 2], [5, null, "117489", 2], [6, null, "115847", 2], [7, null, "67591", 2], [8, null, "66710", 2], [9, null, "64416", 2], [10, null, "60991", 2], [11, null, "140281", 1], [12, null, "123710", 1], [13, null, "119111", 1], [14, null, "117051", 1], [15, null, "109070", 1]];
+const EXCELDATA$19 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "292307", 2], [2, null, "240931", 2], [3, null, "144441", 2], [4, null, "137386", 2], [5, null, "117489", 2], [6, null, "115847", 2], [7, null, "67591", 2], [8, null, "66710", 2], [9, null, "64416", 2], [10, null, "60991", 2], [11, null, "140281", 1], [12, null, "123710", 1], [13, null, "119111", 1], [14, null, "117051", 1], [15, null, "109070", 1]];
 class AccessoriesGlovesConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$18);
+        super(EXCELDATA$19);
     }
 }
 
@@ -1539,10 +1539,10 @@ var foreign5 = /*#__PURE__*/Object.freeze({
     AccessoriesGlovesConfig: AccessoriesGlovesConfig
 });
 
-const EXCELDATA$17 = [["ID", "Tab", "Names", "Icon", "ActionId", "Loop", "Pos", "Rot", "Type"], ["", "", "", "", "", "", "", "", ""], [10000, 0, ["Double-双人", "Social-社交", "Dance-舞蹈", "Pose-拍照", "Other-其他"], null, null, 0, null, null, 0], [1, 1, ["Lift Up", "托举"], "98715-98699", "103085-4174", -1, new mw.Vector(-22, -2, 110), new mw.Vector(0, 0, 0), 1], [2, 1, ["Resistance Of Shoulder", "肩抗"], "98712-98700", "101653-101652", -1, new mw.Vector(-6, -2, -75), new mw.Vector(0, 0, 0), 1], [3, 1, ["Drag", "拖"], "98675-98701", "101651-101650", -1, new mw.Vector(-148, -2, -86), new mw.Vector(0, 23, 0), 1], [4, 1, ["The Princess Hug", "公主抱"], "86271-34435", "35464-38174", -1, new mw.Vector(-20, 0, -50), new mw.Vector(0, 0, 0), 1], [5, 1, ["Back", "背"], "98707-98708", "35463-38173", -1, new mw.Vector(-40, 0, -35), new mw.Vector(0, 0, 0), 1], [6, 1, ["Latin", "拉丁"], "145736-145734", "122807-122806", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [7, 1, ["Hyundai 03", "现代03"], "145738-145737", "124192-124194", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [8, 1, ["Jazz", "爵士"], "145741-145740", "122811-122809", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [9, 1, ["Hyundai 02", "现代02"], "145735-145739", "122808-122810", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [10, 2, ["Hello", "Say hello"], "158409", "29755", 0, null, null, 0], [11, 2, ["Farewell", "告别"], "158409", "29775", 0, null, null, 0], [12, 2, ["Applause", "鼓掌"], "158409", "29758", 0, null, null, 0], [13, 2, ["Salute", "行礼"], "158409", "15057", 0, null, null, 0], [14, 2, ["Cheers", "喝彩"], "158409", "123713", 0, null, null, 0], [15, 2, ["Cheers", "欢呼"], "158409", "123720", 0, null, null, 0], [16, 2, ["Hooray", "欢呼"], "158409", "14625", 0, null, null, 0], [17, 2, ["Let's Go", "加油"], "158409", "148733", 0, null, null, 0], [18, 2, ["Yes!", "开心跺脚"], "158409", "123633", 0, null, null, 0], [19, 2, ["Welcome", "高举击掌"], "158409", "123711", 0, null, null, 0], [20, 2, ["Handsome", "耍帅"], "158409", "108424", 0, null, null, 0], [21, 2, ["Backflip", "后空翻"], "158409", "14602", 0, null, null, 0], [22, 2, ["Refuse", "拒绝"], "158409", "118296", 0, null, null, 0], [23, 2, ["Reject", "拒绝"], "158409", "14767", 0, null, null, 0], [24, 2, ["NO!", "拒绝"], "158409", "14524", 0, null, null, 0], [25, 2, ["Hit Back", "不服气"], "158409", "123714", 0, null, null, 0], [26, 2, ["Defiant", "挑衅"], "158409", "15022", 0, null, null, 0], [27, 2, ["Taunt", "嘲讽"], "158409", "14531", 0, null, null, 0], [28, 2, ["Punch", "出拳"], "158409", "108414", 0, null, null, 0], [29, 2, ["Kick", "大脚踹"], "158409", "135373", 0, null, null, 0], [30, 2, ["Bow", "鞠躬"], "158409", "108427", 0, null, null, 0], [31, 2, ["Kneel", "跪拜"], "158409", "148567", 0, null, null, 0], [32, 2, ["Worship", "俯首跪姿"], "158409", "14584", 0, null, null, 0], [33, 2, ["Shy Face", "害羞捂脸"], "158409", "217872", 0, null, null, 0], [34, 2, ["Heart", "比心"], "158409", "198611", 0, null, null, 0], [35, 2, ["Blow Kiss", "飞吻"], "158409", "14771", 0, null, null, 0], [36, 2, ["Kiss", "亲吻"], "158409", "123632", 0, null, null, 0], [37, 2, ["Couple", "牵手吻"], "158409", "122814", 0, null, null, 0], [38, 2, ["One Knee", "单膝跪地"], "158409", "217871", 0, null, null, 0], [39, 2, ["Angry", "生气"], "158409", "95778", 0, null, null, 0], [40, 2, ["Mad", "生气"], "158409", "29719", 0, null, null, 0], [41, 2, ["Furious", "生气"], "158409", "14766", 0, null, null, 0], [42, 2, ["Disappointed", "失望"], "158409", "123729", 0, null, null, 0], [43, 2, ["Weep", "哭泣"], "158409", "14655", 0, null, null, 0], [44, 2, ["Cry", "哭泣"], "158409", "14655", 0, null, null, 0], [45, 2, ["In Tears", "哭泣"], "158409", "14633", 0, null, null, 0], [46, 3, ["Cheesy Moves", "科目三"], "153860", "232755", 1, null, null, 0], [47, 3, ["Breakdance", "霹雳舞"], "153860", "124498", 1, null, null, 0], [48, 3, ["Minute To Second", "一分一秒"], "153860", "124194", 1, null, null, 0], [49, 3, ["Second To Minute", "一分一秒"], "153860", "124192", 1, null, null, 0], [50, 3, ["Smooth Moves", "Robot"], "153860", "123405", 1, null, null, 0], [51, 3, ["Spirited Twirls", "Robot"], "153860", "123408", 1, null, null, 0], [52, 3, ["Graceful Swirls", "Robot"], "153860", "123407", 1, null, null, 0], [53, 3, ["Dynamic Steps", "Closet"], "153860", "123406", 1, null, null, 0], [54, 3, ["Energetic Shimmies", "Closet"], "153860", "123402", 1, null, null, 0], [55, 3, ["Fluid Gestures", "BOOM"], "153860", "122981", 1, null, null, 0], [56, 3, ["Expressive Dance", "BOOM"], "153860", "122982", 1, null, null, 0], [57, 3, ["Lively Rhythms", "BOOM"], "153860", "122983", 1, null, null, 0], [58, 3, ["Twinkle", "Twinkle"], "153860", "137750", 1, null, null, 0], [59, 3, ["Twinkle", "Twinkle"], "153860", "137749", 1, null, null, 0], [60, 3, ["Alien", "外星人"], "153860", "137324", 1, null, null, 0], [61, 3, ["Alien", "外星人"], "153860", "137325", 1, null, null, 0], [62, 3, ["In Love", "恋爱"], "153860", "137302", 1, null, null, 0], [63, 3, ["In Love", "恋爱"], "153860", "137304", 1, null, null, 0], [64, 3, ["In Love", "恋爱"], "153860", "137300", 1, null, null, 0], [65, 3, ["In Love", "恋爱"], "153860", "137298", 1, null, null, 0], [66, 3, ["Bear Dance", "小熊跳舞"], "153860", "135346", 1, null, null, 0], [67, 3, ["Love Shot", "爱杀宝贝"], "153860", "135159", 1, null, null, 0], [68, 3, ["Wave", "Wave"], "153860", "133177", 1, null, null, 0], [69, 3, ["Shake Hip", "Shake Hip"], "153860", "133151", 1, null, null, 0], [70, 3, ["A Heartbeat", "怦然心动"], "153860", "129504", 1, null, null, 0], [71, 3, ["Today We Start", "今天我们开始"], "153860", "129501", 1, null, null, 0], [72, 3, ["Hang Out With Me", "和我交往吗"], "153860", "126867", 1, null, null, 0], [73, 3, ["Swan Dance", "天鹅舞"], "153860", "126581", 1, null, null, 0], [74, 3, ["Seaweed Dance", "海草舞"], "153860", "126579", 1, null, null, 0], [75, 3, ["Disco", "Disco"], "153860", "126578", 1, null, null, 0], [76, 3, ["Senorita", "Senorita"], "153860", "126045", 1, null, null, 0], [77, 3, ["Billie Jean", "Billie Jean"], "153860", "125813", 1, null, null, 0], [78, 3, ["Hello Dance", "招呼舞"], "153860", "124623", 1, null, null, 0], [79, 3, ["Hip Hop", "街舞"], "153860", "124622", 1, null, null, 0], [80, 3, ["Pirate", "海盗"], "153860", "124621", 1, null, null, 0], [81, 3, ["Carp", "鲤鱼"], "153860", "124620", 1, null, null, 0], [82, 3, ["Latin Dance", "拉丁舞"], "153860", "124502", 1, null, null, 0], [83, 3, ["Ghost Steps", "鬼步舞"], "153860", "124500", 1, null, null, 0], [84, 3, ["National Dance", "拉丁舞"], "153860", "124499", 1, null, null, 0], [85, 3, ["Synchronized Beats", "Freaky"], "153860", "122812", 1, null, null, 0], [86, 3, ["Playful Jumps", "Freaky"], "153860", "122813", 1, null, null, 0], [87, 3, ["Cool With You", "Cool With You"], "153860", "122809", 1, null, null, 0], [88, 3, ["Get Your Love", "Get Your Love"], "153860", "122811", 1, null, null, 0], [89, 3, ["Walc", "Walc"], "153860", "122810", 1, null, null, 0], [90, 3, ["Walc", "Walc"], "153860", "122808", 1, null, null, 0], [91, 3, ["Yummy", "Yummy"], "153860", "122807", 1, null, null, 0], [92, 3, ["Yummy", "Yummy"], "153860", "122806", 1, null, null, 0], [93, 3, ["There Is No Tomorrow", "没有明天"], "153860", "122746", 1, null, null, 0], [94, 3, ["There Is No Tomorrow", "没有明天"], "153860", "122751", 1, null, null, 0], [95, 3, ["Current Dance", "电流舞"], "153860", "122750", 1, null, null, 0], [96, 3, ["Farewell to memory", "告别记忆"], "153860", "212984", 1, null, null, 0], [97, 3, ["Dynamite", "Dynamite"], "153860", "212813", 1, null, null, 0], [98, 3, ["Drunken Butterfly", "醉酒的蝴蝶"], "153860", "211149", 1, null, null, 0], [99, 3, ["Dance 01", "舞蹈01"], "153860", "210266", 1, null, null, 0], [100, 3, ["Queencard", "Queencard"], "153860", "197629", 1, null, null, 0], [101, 3, ["Bear Dance 01", "小熊跳舞01"], "153860", "200201", 1, null, null, 0], [102, 3, ["Magic Castle 01", "魔法城堡01"], "153860", "196071", 1, null, null, 0], [103, 3, ["Magic Castle 02", "魔法城堡02"], "153860", "196070", 1, null, null, 0], [104, 3, ["Magic Castle 03", "魔法城堡03"], "153860", "180850", 1, null, null, 0], [105, 3, ["Elysium Pure Land", "极乐净土"], "153860", "195754", 1, null, null, 0], [106, 3, ["Queencard", "Queencard"], "153860", "185610", 1, null, null, 0], [107, 3, ["Wheel Of Liberty", "自由之轮"], "153860", "122745", 1, null, null, 0], [108, 3, ["Full Video", "Full Video（女）"], "153860", "122684", 1, null, null, 0], [109, 3, ["Full Video", "Full Video（男）"], "153860", "122677", 1, null, null, 0], [110, 3, ["Permission", "Permission（女3）"], "153860", "122683", 1, null, null, 0], [111, 3, ["Permission", "Permission（男1）"], "153860", "122682", 1, null, null, 0], [112, 3, ["Permission", "Permission（女1）"], "153860", "122681", 1, null, null, 0], [113, 3, ["Permission", "Permission（女2）"], "153860", "122680", 1, null, null, 0], [114, 3, ["How You Like That", "How You Like That（女）"], "153860", "122679", 1, null, null, 0], [115, 3, ["How You Like That", "How You Like That（男）"], "153860", "122678", 1, null, null, 0], [116, 3, ["Kill This Love", "Kill This Love"], "153860", "122676", 1, null, null, 0], [117, 3, ["Pollo", "Pollo"], "153860", "122455", 1, null, null, 0], [118, 3, ["Crotch Twist", "扭胯"], "153860", "122454", 1, null, null, 0], [119, 3, ["Crotch Twist", "扭胯"], "153860", "122453", 1, null, null, 0], [120, 3, ["Crotch Twist", "扭胯"], "153860", "88544", 1, null, null, 0], [121, 3, ["Nobody", "Nobody"], "153860", "88543", 1, null, null, 0], [122, 3, ["Welcome Dance", "欢迎你来"], "153860", "88541", 1, null, null, 0], [123, 3, ["Street Dance", "街舞"], "153860", "88450", 1, null, null, 0], [124, 3, ["Swing Dance", "摇曳舞"], "153860", "88449", 1, null, null, 0], [125, 3, ["Fancy Feet", "Fancy Feet"], "153860", "88448", 1, null, null, 0], [126, 3, ["Love Song", "桃源恋歌"], "153860", "84930", 1, null, null, 0], [127, 3, ["Crab Dance", "螃蟹舞"], "153860", "29748", 1, null, null, 0], [128, 3, ["Love me", "Love me"], "153860", "29725", 1, null, null, 0], [129, 3, ["Shake The Shoulders", "抖肩舞"], "153860", "29717", 1, null, null, 0], [130, 3, ["Roll NRock", "Roll NRock"], "153860", "213624", 1, null, null, 0], [131, 3, ["Roll NRock", "Roll NRock"], "153860", "213625", 1, null, null, 0], [132, 4, ["Play Rabbit", "扮兔子"], "120728", "198590", 1, null, null, 0], [133, 4, ["Hands Down", "双手触地"], "120728", "198591", 1, null, null, 0], [134, 4, ["Think", "单手摆"], "120728", "14516", 1, null, null, 0], [135, 4, ["Idle", "女性站立"], "120728", "200191", 1, null, null, 0], [136, 4, ["Idle", "男性站立"], "120728", "200190", 1, null, null, 0], [137, 4, ["Superman", "握拳举起"], "120728", "198587", 1, null, null, 0], [138, 4, ["Fist Up", "握拳摆"], "120728", "173336", 1, null, null, 0], [139, 4, ["Refuse", "拒绝"], "120728", "198593", 1, null, null, 0], [140, 4, ["Play Cute", "托腮"], "120728", "198596", 1, null, null, 0], [141, 4, ["Play Cute", "托腮"], "120728", "198586", 1, null, null, 0], [142, 4, ["Peace", "比耶"], "120728", "198595", 1, null, null, 0], [143, 4, ["Peace", "比造型"], "120728", "198588", 1, null, null, 0], [144, 4, ["Play Cool", "扶头耍帅"], "120728", "198594", 1, null, null, 0], [145, 4, ["Groomed", "撑下巴"], "120728", "198589", 1, null, null, 0], [146, 4, ["Shy", "掩面"], "120728", "173344", 1, null, null, 0], [147, 4, ["Relaxed", "叉腰"], "120728", "173343", 1, null, null, 0], [148, 4, ["In Trouble", "撑头"], "120728", "173341", 1, null, null, 0], [149, 4, ["Relaxed", "叉腰"], "120728", "173340", 1, null, null, 0], [150, 4, ["Make Fist", "握拳"], "120728", "173336", 1, null, null, 0], [151, 4, ["Sideways", "侧身"], "120728", "173335", 1, null, null, 0], [152, 4, ["Look Out", "眺望"], "120728", "173334", 1, null, null, 0], [153, 4, ["Grab Wrist", "抓手腕"], "120728", "173333", 1, null, null, 0], [154, 4, ["Play Cool", "耍帅"], "120728", "173332", 1, null, null, 0], [155, 4, ["Relaxed", "叉腰"], "120728", "173331", 1, null, null, 0], [156, 4, ["On The Go", "双手握拳"], "120728", "173330", 1, null, null, 0], [157, 4, ["Ponder", "托腮"], "120728", "173329", 1, null, null, 0], [158, 4, ["Speak", "双手交叉"], "120728", "15163", 1, null, null, 0], [159, 4, ["Stand On One Foot", "单脚立地"], "120728", "15159", 1, null, null, 0], [160, 4, ["Grimace", "鬼脸"], "120728", "15122", 1, null, null, 0], [161, 4, ["Hold Head", "单手抱头"], "120728", "14764", 1, null, null, 0], [162, 4, ["Squat", "蹲姿"], "120728", "14761", 1, null, null, 0], [163, 4, ["Serious", "双手交叉"], "120728", "14760", 1, null, null, 0], [164, 4, ["Pray", "双手合十"], "120728", "14747", 1, null, null, 0], [165, 4, ["Ready To Fly", "模仿飞天"], "120728", "14707", 1, null, null, 0], [166, 4, ["Stretch Legs", "伸腿摸头"], "120728", "14702", 1, null, null, 0], [167, 4, ["Act Weird", "鬼畜"], "120728", "14687", 1, null, null, 0], [168, 4, ["Sit", "坐姿单腿伸出"], "120728", "14686", 1, null, null, 0], [169, 4, ["Hold Out One Hand", "单手张开"], "120728", "14682", 1, null, null, 0], [170, 4, ["Relaxed", "单手叉腰"], "120728", "14680", 1, null, null, 0], [171, 4, ["Peace", "比耶"], "120728", "14679", 1, null, null, 0], [172, 4, ["Shruggle", "顶肩"], "120728", "14678", 1, null, null, 0], [173, 4, ["Peace", "比耶"], "120728", "14660", 1, null, null, 0], [174, 4, ["Half Squat", "半蹲张手"], "120728", "14647", 1, null, null, 0], [175, 4, ["Half Lie", "半躺抱头"], "120728", "14634", 1, null, null, 0], [176, 4, ["Hit The Ground", "单手匝地"], "120728", "14632", 1, null, null, 0], [177, 4, ["Peace", "双手比耶"], "120728", "14600", 1, null, null, 0], [178, 4, ["On One Foot", "单脚站立"], "120728", "14592", 1, null, null, 0], [179, 4, ["Pray", "双手合并"], "120728", "14589", 1, null, null, 0], [180, 4, ["On One Hand", "半躺撑着"], "120728", "14565", 1, null, null, 0], [181, 4, ["Idle", "站姿双手"], "120728", "14548", 1, null, null, 0], [182, 4, ["Get Down", "双手抱头"], "120728", "14546", 1, null, null, 0], [183, 4, ["Seated With Bent Legs", "屈腿坐姿"], "120728", "14544", 1, null, null, 0], [184, 4, ["Picture Time", "摆照型"], "120728", "14516", 1, null, null, 0], [185, 4, ["Act Cute", "双手托脸"], "120728", "14513", 1, null, null, 0], [186, 4, ["Touch Chin", "半躺摸下巴"], "120728", "14986", 1, null, null, 0], [187, 4, ["Lift On One Foot", "单脚抬起"], "120728", "14778", 1, null, null, 0], [188, 4, ["Left Heart", "比心左"], "120728", "219280", 1, null, null, 0], [189, 4, ["Right Heart", "比心右"], "120728", "219281", 1, null, null, 0], [190, 5, ["Horse Dance", "骑马舞"], "158408", "137301", 1, null, null, 0], [191, 5, ["PPAP", "PPAP"], "158408", "129505", 1, null, null, 0], [192, 5, ["Bird Walk", "学鸟走"], "158408", "14522", 1, null, null, 0], [193, 5, ["Spin Ⅰ", "旋转01"], "158408", "14552", 1, null, null, 0], [194, 5, ["Spin Ⅱ", "旋转02"], "158408", "14741", 1, null, null, 0], [195, 5, ["Spin Ⅲ", "旋转03"], "158408", "218262", 1, null, null, 0], [196, 5, ["Spin Ⅳ", "旋转04"], "158408", "218263", 1, null, null, 0], [197, 5, ["Spin Ⅴ", "旋转05"], "158408", "218264", 1, null, null, 0], [198, 5, ["Spin Ⅵ", "旋转06"], "158408", "218265", 1, null, null, 0], [199, 5, ["Spin Ⅶ", "旋转07"], "158408", "29733", 1, null, null, 0], [200, 5, ["Street Dance", "街舞"], "158408", "122805", 1, null, null, 0], [201, 5, ["Dance", "跳舞"], "158408", "129503", 1, null, null, 0], [202, 5, ["Sing & Dance", "歌舞"], "158408", "14554", 1, null, null, 0], [203, 5, ["Tumble", "翻滚"], "158408", "150691", 1, null, null, 0], [204, 5, ["Sprint", "冲刺"], "158408", "150690", 1, null, null, 0], [205, 5, ["Glide", "滑翔"], "158408", "148890", 1, null, null, 0], [206, 5, ["Stomp", "空中蹬腿"], "158408", "148846", 1, null, null, 0], [207, 5, ["Squat Walk", "下蹲行走"], "158408", "156793", 1, null, null, 0], [208, 5, ["In Water", "水中"], "158408", "156792", 1, null, null, 0], [209, 5, ["Fly", "飞行"], "158408", "159198", 1, null, null, 0], [210, 5, ["Zombie Walk", "丧尸行"], "158408", "97857", 1, null, null, 0], [211, 5, ["Roll", "翻滚"], "158408", "95751", 1, null, null, 0], [212, 5, ["Situp", "仰卧起坐"], "158408", "14708", 1, null, null, 0], [213, 5, ["Circle", "转圈"], "158408", "14695", 1, null, null, 0], [214, 5, ["Tumble", "翻滚"], "158408", "14648", 1, null, null, 0], [215, 5, ["Duck Sit", "鸭子坐"], "158408", "14711", 1, null, null, 0], [216, 5, ["Sit Holding Knees", "抱膝坐"], "158408", "146800", 1, null, null, 0], [217, 5, ["Lie Down", "躺下"], "158408", "175980", 1, null, null, 0], [218, 5, ["Get Down", "趴下"], "158408", "86093", 1, null, null, 0], [219, 5, ["Get Down", "趴下"], "158408", "14757", 1, null, null, 0], [220, 5, ["Get Down", "趴下"], "158408", "125881", 1, null, null, 0], [221, 5, ["Crawl", "爬行"], "158408", "14613", 1, null, null, 0], [222, 5, ["Kneel", "跪拜"], "158408", "14612", 1, null, null, 0]];
+const EXCELDATA$18 = [["ID", "Tab", "Names", "Icon", "ActionId", "Loop", "Pos", "Rot", "Type"], ["", "", "", "", "", "", "", "", ""], [10000, 0, ["Double-双人", "Social-社交", "Dance-舞蹈", "Pose-拍照", "Other-其他"], null, null, 0, null, null, 0], [1, 1, ["Lift Up", "托举"], "98715-98699", "103085-4174", -1, new mw.Vector(-22, -2, 110), new mw.Vector(0, 0, 0), 1], [2, 1, ["Resistance Of Shoulder", "肩抗"], "98712-98700", "101653-101652", -1, new mw.Vector(-6, -2, -75), new mw.Vector(0, 0, 0), 1], [3, 1, ["Drag", "拖"], "98675-98701", "101651-101650", -1, new mw.Vector(-148, -2, -86), new mw.Vector(0, 23, 0), 1], [4, 1, ["The Princess Hug", "公主抱"], "86271-34435", "35464-38174", -1, new mw.Vector(-20, 0, -50), new mw.Vector(0, 0, 0), 1], [5, 1, ["Back", "背"], "98707-98708", "35463-38173", -1, new mw.Vector(-40, 0, -35), new mw.Vector(0, 0, 0), 1], [6, 1, ["Latin", "拉丁"], "145736-145734", "122807-122806", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [7, 1, ["Hyundai 03", "现代03"], "145738-145737", "124192-124194", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [8, 1, ["Jazz", "爵士"], "145741-145740", "122811-122809", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [9, 1, ["Hyundai 02", "现代02"], "145735-145739", "122808-122810", -1, new mw.Vector(0, 0, 0), new mw.Vector(0, 0, 0), 2], [10, 2, ["Hello", "Say hello"], "158409", "29755", 0, null, null, 0], [11, 2, ["Farewell", "告别"], "158409", "29775", 0, null, null, 0], [12, 2, ["Applause", "鼓掌"], "158409", "29758", 0, null, null, 0], [13, 2, ["Salute", "行礼"], "158409", "15057", 0, null, null, 0], [14, 2, ["Cheers", "喝彩"], "158409", "123713", 0, null, null, 0], [15, 2, ["Cheers", "欢呼"], "158409", "123720", 0, null, null, 0], [16, 2, ["Hooray", "欢呼"], "158409", "14625", 0, null, null, 0], [17, 2, ["Let's Go", "加油"], "158409", "148733", 0, null, null, 0], [18, 2, ["Yes!", "开心跺脚"], "158409", "123633", 0, null, null, 0], [19, 2, ["Welcome", "高举击掌"], "158409", "123711", 0, null, null, 0], [20, 2, ["Handsome", "耍帅"], "158409", "108424", 0, null, null, 0], [21, 2, ["Backflip", "后空翻"], "158409", "14602", 0, null, null, 0], [22, 2, ["Refuse", "拒绝"], "158409", "118296", 0, null, null, 0], [23, 2, ["Reject", "拒绝"], "158409", "14767", 0, null, null, 0], [24, 2, ["NO!", "拒绝"], "158409", "14524", 0, null, null, 0], [25, 2, ["Hit Back", "不服气"], "158409", "123714", 0, null, null, 0], [26, 2, ["Defiant", "挑衅"], "158409", "15022", 0, null, null, 0], [27, 2, ["Taunt", "嘲讽"], "158409", "14531", 0, null, null, 0], [28, 2, ["Punch", "出拳"], "158409", "108414", 0, null, null, 0], [29, 2, ["Kick", "大脚踹"], "158409", "135373", 0, null, null, 0], [30, 2, ["Bow", "鞠躬"], "158409", "108427", 0, null, null, 0], [31, 2, ["Kneel", "跪拜"], "158409", "148567", 0, null, null, 0], [32, 2, ["Worship", "俯首跪姿"], "158409", "14584", 0, null, null, 0], [33, 2, ["Shy Face", "害羞捂脸"], "158409", "217872", 0, null, null, 0], [34, 2, ["Heart", "比心"], "158409", "198611", 0, null, null, 0], [35, 2, ["Blow Kiss", "飞吻"], "158409", "14771", 0, null, null, 0], [36, 2, ["Kiss", "亲吻"], "158409", "123632", 0, null, null, 0], [37, 2, ["Couple", "牵手吻"], "158409", "122814", 0, null, null, 0], [38, 2, ["One Knee", "单膝跪地"], "158409", "217871", 0, null, null, 0], [39, 2, ["Angry", "生气"], "158409", "95778", 0, null, null, 0], [40, 2, ["Mad", "生气"], "158409", "29719", 0, null, null, 0], [41, 2, ["Furious", "生气"], "158409", "14766", 0, null, null, 0], [42, 2, ["Disappointed", "失望"], "158409", "123729", 0, null, null, 0], [43, 2, ["Weep", "哭泣"], "158409", "14655", 0, null, null, 0], [44, 2, ["Cry", "哭泣"], "158409", "14655", 0, null, null, 0], [45, 2, ["In Tears", "哭泣"], "158409", "14633", 0, null, null, 0], [46, 3, ["Cheesy Moves", "科目三"], "153860", "232755", 1, null, null, 0], [47, 3, ["Breakdance", "霹雳舞"], "153860", "124498", 1, null, null, 0], [48, 3, ["Minute To Second", "一分一秒"], "153860", "124194", 1, null, null, 0], [49, 3, ["Second To Minute", "一分一秒"], "153860", "124192", 1, null, null, 0], [50, 3, ["Smooth Moves", "Robot"], "153860", "123405", 1, null, null, 0], [51, 3, ["Spirited Twirls", "Robot"], "153860", "123408", 1, null, null, 0], [52, 3, ["Graceful Swirls", "Robot"], "153860", "123407", 1, null, null, 0], [53, 3, ["Dynamic Steps", "Closet"], "153860", "123406", 1, null, null, 0], [54, 3, ["Energetic Shimmies", "Closet"], "153860", "123402", 1, null, null, 0], [55, 3, ["Fluid Gestures", "BOOM"], "153860", "122981", 1, null, null, 0], [56, 3, ["Expressive Dance", "BOOM"], "153860", "122982", 1, null, null, 0], [57, 3, ["Lively Rhythms", "BOOM"], "153860", "122983", 1, null, null, 0], [58, 3, ["Twinkle", "Twinkle"], "153860", "137750", 1, null, null, 0], [59, 3, ["Twinkle", "Twinkle"], "153860", "137749", 1, null, null, 0], [60, 3, ["Alien", "外星人"], "153860", "137324", 1, null, null, 0], [61, 3, ["Alien", "外星人"], "153860", "137325", 1, null, null, 0], [62, 3, ["In Love", "恋爱"], "153860", "137302", 1, null, null, 0], [63, 3, ["In Love", "恋爱"], "153860", "137304", 1, null, null, 0], [64, 3, ["In Love", "恋爱"], "153860", "137300", 1, null, null, 0], [65, 3, ["In Love", "恋爱"], "153860", "137298", 1, null, null, 0], [66, 3, ["Bear Dance", "小熊跳舞"], "153860", "135346", 1, null, null, 0], [67, 3, ["Love Shot", "爱杀宝贝"], "153860", "135159", 1, null, null, 0], [68, 3, ["Wave", "Wave"], "153860", "133177", 1, null, null, 0], [69, 3, ["Shake Hip", "Shake Hip"], "153860", "133151", 1, null, null, 0], [70, 3, ["A Heartbeat", "怦然心动"], "153860", "129504", 1, null, null, 0], [71, 3, ["Today We Start", "今天我们开始"], "153860", "129501", 1, null, null, 0], [72, 3, ["Hang Out With Me", "和我交往吗"], "153860", "126867", 1, null, null, 0], [73, 3, ["Swan Dance", "天鹅舞"], "153860", "126581", 1, null, null, 0], [74, 3, ["Seaweed Dance", "海草舞"], "153860", "126579", 1, null, null, 0], [75, 3, ["Disco", "Disco"], "153860", "126578", 1, null, null, 0], [76, 3, ["Senorita", "Senorita"], "153860", "126045", 1, null, null, 0], [77, 3, ["Billie Jean", "Billie Jean"], "153860", "125813", 1, null, null, 0], [78, 3, ["Hello Dance", "招呼舞"], "153860", "124623", 1, null, null, 0], [79, 3, ["Hip Hop", "街舞"], "153860", "124622", 1, null, null, 0], [80, 3, ["Pirate", "海盗"], "153860", "124621", 1, null, null, 0], [81, 3, ["Carp", "鲤鱼"], "153860", "124620", 1, null, null, 0], [82, 3, ["Latin Dance", "拉丁舞"], "153860", "124502", 1, null, null, 0], [83, 3, ["Ghost Steps", "鬼步舞"], "153860", "124500", 1, null, null, 0], [84, 3, ["National Dance", "拉丁舞"], "153860", "124499", 1, null, null, 0], [85, 3, ["Synchronized Beats", "Freaky"], "153860", "122812", 1, null, null, 0], [86, 3, ["Playful Jumps", "Freaky"], "153860", "122813", 1, null, null, 0], [87, 3, ["Cool With You", "Cool With You"], "153860", "122809", 1, null, null, 0], [88, 3, ["Get Your Love", "Get Your Love"], "153860", "122811", 1, null, null, 0], [89, 3, ["Walc", "Walc"], "153860", "122810", 1, null, null, 0], [90, 3, ["Walc", "Walc"], "153860", "122808", 1, null, null, 0], [91, 3, ["Yummy", "Yummy"], "153860", "122807", 1, null, null, 0], [92, 3, ["Yummy", "Yummy"], "153860", "122806", 1, null, null, 0], [93, 3, ["There Is No Tomorrow", "没有明天"], "153860", "122746", 1, null, null, 0], [94, 3, ["There Is No Tomorrow", "没有明天"], "153860", "122751", 1, null, null, 0], [95, 3, ["Current Dance", "电流舞"], "153860", "122750", 1, null, null, 0], [96, 3, ["Farewell to memory", "告别记忆"], "153860", "212984", 1, null, null, 0], [97, 3, ["Dynamite", "Dynamite"], "153860", "212813", 1, null, null, 0], [98, 3, ["Drunken Butterfly", "醉酒的蝴蝶"], "153860", "211149", 1, null, null, 0], [99, 3, ["Dance 01", "舞蹈01"], "153860", "210266", 1, null, null, 0], [100, 3, ["Queencard", "Queencard"], "153860", "197629", 1, null, null, 0], [101, 3, ["Bear Dance 01", "小熊跳舞01"], "153860", "200201", 1, null, null, 0], [102, 3, ["Magic Castle 01", "魔法城堡01"], "153860", "196071", 1, null, null, 0], [103, 3, ["Magic Castle 02", "魔法城堡02"], "153860", "196070", 1, null, null, 0], [104, 3, ["Magic Castle 03", "魔法城堡03"], "153860", "180850", 1, null, null, 0], [105, 3, ["Elysium Pure Land", "极乐净土"], "153860", "195754", 1, null, null, 0], [106, 3, ["Queencard", "Queencard"], "153860", "185610", 1, null, null, 0], [107, 3, ["Wheel Of Liberty", "自由之轮"], "153860", "122745", 1, null, null, 0], [108, 3, ["Full Video", "Full Video（女）"], "153860", "122684", 1, null, null, 0], [109, 3, ["Full Video", "Full Video（男）"], "153860", "122677", 1, null, null, 0], [110, 3, ["Permission", "Permission（女3）"], "153860", "122683", 1, null, null, 0], [111, 3, ["Permission", "Permission（男1）"], "153860", "122682", 1, null, null, 0], [112, 3, ["Permission", "Permission（女1）"], "153860", "122681", 1, null, null, 0], [113, 3, ["Permission", "Permission（女2）"], "153860", "122680", 1, null, null, 0], [114, 3, ["How You Like That", "How You Like That（女）"], "153860", "122679", 1, null, null, 0], [115, 3, ["How You Like That", "How You Like That（男）"], "153860", "122678", 1, null, null, 0], [116, 3, ["Kill This Love", "Kill This Love"], "153860", "122676", 1, null, null, 0], [117, 3, ["Pollo", "Pollo"], "153860", "122455", 1, null, null, 0], [118, 3, ["Crotch Twist", "扭胯"], "153860", "122454", 1, null, null, 0], [119, 3, ["Crotch Twist", "扭胯"], "153860", "122453", 1, null, null, 0], [120, 3, ["Crotch Twist", "扭胯"], "153860", "88544", 1, null, null, 0], [121, 3, ["Nobody", "Nobody"], "153860", "88543", 1, null, null, 0], [122, 3, ["Welcome Dance", "欢迎你来"], "153860", "88541", 1, null, null, 0], [123, 3, ["Street Dance", "街舞"], "153860", "88450", 1, null, null, 0], [124, 3, ["Swing Dance", "摇曳舞"], "153860", "88449", 1, null, null, 0], [125, 3, ["Fancy Feet", "Fancy Feet"], "153860", "88448", 1, null, null, 0], [126, 3, ["Love Song", "桃源恋歌"], "153860", "84930", 1, null, null, 0], [127, 3, ["Crab Dance", "螃蟹舞"], "153860", "29748", 1, null, null, 0], [128, 3, ["Love me", "Love me"], "153860", "29725", 1, null, null, 0], [129, 3, ["Shake The Shoulders", "抖肩舞"], "153860", "29717", 1, null, null, 0], [130, 3, ["Roll NRock", "Roll NRock"], "153860", "213624", 1, null, null, 0], [131, 3, ["Roll NRock", "Roll NRock"], "153860", "213625", 1, null, null, 0], [132, 4, ["Play Rabbit", "扮兔子"], "120728", "198590", 1, null, null, 0], [133, 4, ["Hands Down", "双手触地"], "120728", "198591", 1, null, null, 0], [134, 4, ["Think", "单手摆"], "120728", "14516", 1, null, null, 0], [135, 4, ["Idle", "女性站立"], "120728", "200191", 1, null, null, 0], [136, 4, ["Idle", "男性站立"], "120728", "200190", 1, null, null, 0], [137, 4, ["Superman", "握拳举起"], "120728", "198587", 1, null, null, 0], [138, 4, ["Fist Up", "握拳摆"], "120728", "173336", 1, null, null, 0], [139, 4, ["Refuse", "拒绝"], "120728", "198593", 1, null, null, 0], [140, 4, ["Play Cute", "托腮"], "120728", "198596", 1, null, null, 0], [141, 4, ["Play Cute", "托腮"], "120728", "198586", 1, null, null, 0], [142, 4, ["Peace", "比耶"], "120728", "198595", 1, null, null, 0], [143, 4, ["Peace", "比造型"], "120728", "198588", 1, null, null, 0], [144, 4, ["Play Cool", "扶头耍帅"], "120728", "198594", 1, null, null, 0], [145, 4, ["Groomed", "撑下巴"], "120728", "198589", 1, null, null, 0], [146, 4, ["Shy", "掩面"], "120728", "173344", 1, null, null, 0], [147, 4, ["Relaxed", "叉腰"], "120728", "173343", 1, null, null, 0], [148, 4, ["In Trouble", "撑头"], "120728", "173341", 1, null, null, 0], [149, 4, ["Relaxed", "叉腰"], "120728", "173340", 1, null, null, 0], [150, 4, ["Make Fist", "握拳"], "120728", "173336", 1, null, null, 0], [151, 4, ["Sideways", "侧身"], "120728", "173335", 1, null, null, 0], [152, 4, ["Look Out", "眺望"], "120728", "173334", 1, null, null, 0], [153, 4, ["Grab Wrist", "抓手腕"], "120728", "173333", 1, null, null, 0], [154, 4, ["Play Cool", "耍帅"], "120728", "173332", 1, null, null, 0], [155, 4, ["Relaxed", "叉腰"], "120728", "173331", 1, null, null, 0], [156, 4, ["On The Go", "双手握拳"], "120728", "173330", 1, null, null, 0], [157, 4, ["Ponder", "托腮"], "120728", "173329", 1, null, null, 0], [158, 4, ["Speak", "双手交叉"], "120728", "15163", 1, null, null, 0], [159, 4, ["Stand On One Foot", "单脚立地"], "120728", "15159", 1, null, null, 0], [160, 4, ["Grimace", "鬼脸"], "120728", "15122", 1, null, null, 0], [161, 4, ["Hold Head", "单手抱头"], "120728", "14764", 1, null, null, 0], [162, 4, ["Squat", "蹲姿"], "120728", "14761", 1, null, null, 0], [163, 4, ["Serious", "双手交叉"], "120728", "14760", 1, null, null, 0], [164, 4, ["Pray", "双手合十"], "120728", "14747", 1, null, null, 0], [165, 4, ["Ready To Fly", "模仿飞天"], "120728", "14707", 1, null, null, 0], [166, 4, ["Stretch Legs", "伸腿摸头"], "120728", "14702", 1, null, null, 0], [167, 4, ["Act Weird", "鬼畜"], "120728", "14687", 1, null, null, 0], [168, 4, ["Sit", "坐姿单腿伸出"], "120728", "14686", 1, null, null, 0], [169, 4, ["Hold Out One Hand", "单手张开"], "120728", "14682", 1, null, null, 0], [170, 4, ["Relaxed", "单手叉腰"], "120728", "14680", 1, null, null, 0], [171, 4, ["Peace", "比耶"], "120728", "14679", 1, null, null, 0], [172, 4, ["Shruggle", "顶肩"], "120728", "14678", 1, null, null, 0], [173, 4, ["Peace", "比耶"], "120728", "14660", 1, null, null, 0], [174, 4, ["Half Squat", "半蹲张手"], "120728", "14647", 1, null, null, 0], [175, 4, ["Half Lie", "半躺抱头"], "120728", "14634", 1, null, null, 0], [176, 4, ["Hit The Ground", "单手匝地"], "120728", "14632", 1, null, null, 0], [177, 4, ["Peace", "双手比耶"], "120728", "14600", 1, null, null, 0], [178, 4, ["On One Foot", "单脚站立"], "120728", "14592", 1, null, null, 0], [179, 4, ["Pray", "双手合并"], "120728", "14589", 1, null, null, 0], [180, 4, ["On One Hand", "半躺撑着"], "120728", "14565", 1, null, null, 0], [181, 4, ["Idle", "站姿双手"], "120728", "14548", 1, null, null, 0], [182, 4, ["Get Down", "双手抱头"], "120728", "14546", 1, null, null, 0], [183, 4, ["Seated With Bent Legs", "屈腿坐姿"], "120728", "14544", 1, null, null, 0], [184, 4, ["Picture Time", "摆照型"], "120728", "14516", 1, null, null, 0], [185, 4, ["Act Cute", "双手托脸"], "120728", "14513", 1, null, null, 0], [186, 4, ["Touch Chin", "半躺摸下巴"], "120728", "14986", 1, null, null, 0], [187, 4, ["Lift On One Foot", "单脚抬起"], "120728", "14778", 1, null, null, 0], [188, 4, ["Left Heart", "比心左"], "120728", "219280", 1, null, null, 0], [189, 4, ["Right Heart", "比心右"], "120728", "219281", 1, null, null, 0], [190, 5, ["Horse Dance", "骑马舞"], "158408", "137301", 1, null, null, 0], [191, 5, ["PPAP", "PPAP"], "158408", "129505", 1, null, null, 0], [192, 5, ["Bird Walk", "学鸟走"], "158408", "14522", 1, null, null, 0], [193, 5, ["Spin Ⅰ", "旋转01"], "158408", "14552", 1, null, null, 0], [194, 5, ["Spin Ⅱ", "旋转02"], "158408", "14741", 1, null, null, 0], [195, 5, ["Spin Ⅲ", "旋转03"], "158408", "218262", 1, null, null, 0], [196, 5, ["Spin Ⅳ", "旋转04"], "158408", "218263", 1, null, null, 0], [197, 5, ["Spin Ⅴ", "旋转05"], "158408", "218264", 1, null, null, 0], [198, 5, ["Spin Ⅵ", "旋转06"], "158408", "218265", 1, null, null, 0], [199, 5, ["Spin Ⅶ", "旋转07"], "158408", "29733", 1, null, null, 0], [200, 5, ["Street Dance", "街舞"], "158408", "122805", 1, null, null, 0], [201, 5, ["Dance", "跳舞"], "158408", "129503", 1, null, null, 0], [202, 5, ["Sing & Dance", "歌舞"], "158408", "14554", 1, null, null, 0], [203, 5, ["Tumble", "翻滚"], "158408", "150691", 1, null, null, 0], [204, 5, ["Sprint", "冲刺"], "158408", "150690", 1, null, null, 0], [205, 5, ["Glide", "滑翔"], "158408", "148890", 1, null, null, 0], [206, 5, ["Stomp", "空中蹬腿"], "158408", "148846", 1, null, null, 0], [207, 5, ["Squat Walk", "下蹲行走"], "158408", "156793", 1, null, null, 0], [208, 5, ["In Water", "水中"], "158408", "156792", 1, null, null, 0], [209, 5, ["Fly", "飞行"], "158408", "159198", 1, null, null, 0], [210, 5, ["Zombie Walk", "丧尸行"], "158408", "97857", 1, null, null, 0], [211, 5, ["Roll", "翻滚"], "158408", "95751", 1, null, null, 0], [212, 5, ["Situp", "仰卧起坐"], "158408", "14708", 1, null, null, 0], [213, 5, ["Circle", "转圈"], "158408", "14695", 1, null, null, 0], [214, 5, ["Tumble", "翻滚"], "158408", "14648", 1, null, null, 0], [215, 5, ["Duck Sit", "鸭子坐"], "158408", "14711", 1, null, null, 0], [216, 5, ["Sit Holding Knees", "抱膝坐"], "158408", "146800", 1, null, null, 0], [217, 5, ["Lie Down", "躺下"], "158408", "175980", 1, null, null, 0], [218, 5, ["Get Down", "趴下"], "158408", "86093", 1, null, null, 0], [219, 5, ["Get Down", "趴下"], "158408", "14757", 1, null, null, 0], [220, 5, ["Get Down", "趴下"], "158408", "125881", 1, null, null, 0], [221, 5, ["Crawl", "爬行"], "158408", "14613", 1, null, null, 0], [222, 5, ["Kneel", "跪拜"], "158408", "14612", 1, null, null, 0]];
 class ActionConfigConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$17);
+        super(EXCELDATA$18);
     }
 }
 
@@ -1551,10 +1551,10 @@ var foreign6 = /*#__PURE__*/Object.freeze({
     ActionConfigConfig: ActionConfigConfig
 });
 
-const EXCELDATA$16 = [["ID", "Name", "NextId", "Tab", "Sort", "AssetId", "SlotType", "ModeOffsetParameter", "AnimationId", "AnimationParameter", "AnimationSlot", "EffectId", "EffectOffsetParameter", "EffectLoop", "SoundId", "SoundParameter", "MaterialId", "IsFly", "ButtonIconId", "Icon", "DelayParameter", "DelayAssetId", "DelayModeOffsetParameter", "DelayModeEffectId", "DelayModeEffectOffsetParameter", "DelayEffectId", "DelayEffectOffsetParameter", "DelayModeSoundId", "DelayModeSoundParameter", "VehiclesIcon", "VehiclesChildId", "VehiclesChildParameter", "VehiclesChildMoveId", "VehiclesChildIdleId", "VehiclesWalkStanceId", "VehiclesWalkStanceSlot", "VehiclesIdleStanceId", "VehiclesIdleStanceSlot", "VehiclesWalkAnimationId", "VehiclesWalkAnimationSlot", "VehiclesIdleAnimationId", "VehiclesIdleAnimationSlot", "BuffId", "BuffType", "BuffParams"], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], [10006, "电吉他", 10106, 1, 1, "170487", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10106, null, 10006, 0, 0, null, 13, [18.77, 32.96, -57.93, 1.88, -43.35, -83.69, 1, 1, 1], "121812", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "147341", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10093, "电吉他", 10193, 1, 7, "129224", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10193, null, 10093, 0, 0, null, 13, [33.36, 29.26, -56.4, -11.98, -55.89, -89.71, 1, 1, 1], "122451", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "146098", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10094, "吉他", 10194, 1, 8, "170611", 12, [10, -38, -36, -14, 54, -105, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10194, null, 10094, 0, 0, null, 14, [20.47, -37.05, -57.34, -1.81, 47.06, -95.53, 1, 1, 1], "35412", [1, 0], 1, "172882", [0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5], 0, "52334", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10095, "吉他", 10195, 1, 9, "27099", 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35415", [1, 0], 1, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10195, null, 10095, 0, 0, null, 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35412", [1, 0], 1, "4368", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, "45287", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10320, "钢琴", 10420, 1, 2, "3C5A7B8940E805D7192F53ACF6989935", 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, null, null, 0, null, null, null, 0, "158398", "216957", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10420, null, 10320, 0, 0, null, 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, "130776", [0, 0, 20, 0, 0, 0, 1.5, 1.5, 1], 0, "117193", [500, 1.5, 0], null, 0, "158398", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10340, "架子鼓", 10440, 1, 3, "170495", 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123634", [1, 0], 3, null, null, 0, null, null, null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10440, null, 10340, 0, 0, null, 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123300", [1, 0], 3, "119917", [8, 0, 0, 0, 0, 0, 1, 1, 0.8], 0, "117197", [500, 1, 0], null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10338, "灯球", 10438, 1, 5, "05B519BD4F3FE68467C4F78BE870B7E2", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10438, null, 10338, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "216688", [1, 0], 3, null, null, 0, "147340", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10339, "灯球", 10439, 1, 4, "807D3DAD4695AD616EF6B6A6DE05CF50", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132901", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10439, null, 10339, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "212813", [1, 0], 3, null, null, 0, "147338", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10341, "沙发", 10441, 1, 13, "173566", 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "182947", [1, 0], 3, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10441, null, 10341, 0, 0, null, 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "14516", [1, 0], 1, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10329, "卡通小人", 10429, 1, 38, "135229", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10429, null, 10329, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10330, "L", 10430, 1, 39, "198914", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10430, null, 10330, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10331, "O", 10431, 1, 40, "199057", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "210884", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10431, null, 10331, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10332, "V", 10432, 1, 41, "199090", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10432, null, 10332, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10333, "E", 10433, 1, 42, "198991", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10433, null, 10333, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10334, "F", 10434, 1, 42.1, "198902", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10434, null, 10334, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10335, "U", 10435, 1, 44, "198968", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10435, null, 10335, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10336, "C", 10436, 1, 46, "198896", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10436, null, 10336, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10337, "K", 10437, 1, 48, "198912", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10437, null, 10337, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10342, "箱子", 10442, 1, 17, "36250", 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10442, null, 10342, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10343, "红手牌(笑脸)", 10443, 1, 23, "121354", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10443, null, 10343, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10344, "蓝手牌(委屈脸)", 10444, 1, 24, "121351", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10444, null, 10344, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10345, "A", 10445, 1, 43, "198892", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10445, null, 10345, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10346, "B", 10446, 1, 45, "198894", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10446, null, 10346, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10347, "D", 10447, 1, 47, "198898", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10447, null, 10347, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10348, "G", 10448, 1, 49, "198904", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10448, null, 10348, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10349, "凳子", 10449, 1, 11, "25354", 16, [12.72, 1.83, 10.34, -60.44, -42.82, -42.85, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10449, null, 10349, 0, 0, null, 23, [-16, 0, -15, 0, 0, -90, 1, 1, 1], "170905", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10312, "蓝色法杖", 10412, 1, 19, "210651", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10412, null, 10312, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 2, 1, [0.4]], [10313, "红色法杖", 10413, 1, 20, "210652", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10413, null, 10313, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 3, 1, [3]], [10314, "扫帚法杖", 10414, 1, 21, "210790", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10414, null, 10314, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 4, 1, [0.2]], [10315, "魔法仗", 10415, 1, 22, "210820", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10415, null, 10315, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10316, "地毯", 10416, 1, 12, "091282744E9FD074EC3B4A9336B2136F", 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "192126", [1, 0], 3, null, null, 0, null, null, null, 0, "158427", "22961", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10416, null, 10316, 0, 0, null, 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "14565", [1, 0], 3, "172886", [0, 0, 9, 0, 0, 0, 0.5, 0.5, 1], 0, null, null, null, 0, "158427", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10317, "足球筐", 10417, 1, 15, "22940", 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10417, null, 10317, 0, 0, null, 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10318, "纸板箱", 10418, 1, 16, "38008", 23, [13.7, 0, 0, 0, 0, 90, 1.5, 1.5, 1.5], "47756", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10418, null, 10318, 0, 0, null, 1, [0, 0, 32, -180, 0, -45, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10319, "热狗摊", 10419, 1, 14, "40876", 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29759", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10419, null, 10319, 0, 0, null, 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29755", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10321, "妲己耳朵", 10421, 1, 33, "212767", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10421, null, 10321, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10322, "长耳兔灰耳朵", 10422, 1, 34, "212777", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10422, null, 10322, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10323, "黑狼耳朵", 10423, 1, 35, "213047", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10423, null, 10323, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10324, "气球", 10424, 1, 32, "218065", 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10424, null, 10324, 0, 0, null, 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10325, "卡通小人", 10425, 1, 36, "135222", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10425, null, 10325, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10326, "卡通小人", 10426, 1, 37, "135223", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10426, null, 10326, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10306, "凳子", 10406, 1, 10, "174452", 16, [12.72, 1.06, 31.84, 299.23, -42.82, 677.15, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10406, null, 10306, 0, 0, null, 23, [-16, 0, 10, 0, 0, -90, 1, 1, 1], "218259", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10092, "女帽子", 10192, 1, 30.1, "173243", 16, [13.6, 6, -2, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10192, null, 10092, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 1], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10074, "法杖", 10174, 1, 18, "122954", 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10174, null, 10074, 0, 0, null, 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 1, 1, [2]], [10051, "射灯", 10151, 1, 31, "33028", 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10151, null, 10051, 0, 0, null, 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, "32254", [0, 0, 40, -120, 0, 0, 2, 5, 5], 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10052, "喷火枪", 10152, 1, 25, "87019", 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10152, null, 10052, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.1, 1], 1, "4394", [35, 0, 12, 0, 0, 180, 1, 1, 1], 1, "20322", [500, 1, 1], null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10047, "尖叫鸡", 10147, 1, 30, "20799", 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10147, null, 10047, 0, 0, null, 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], "14557", [1, 1], 1, null, null, 0, "108734", [500, 0.8, 1], null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10005, "荧光棒", 10105, 1, 6, "88974", 16, [4, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10105, null, 10005, 0, 0, null, 16, [3.13, -1.62, -1.12, 0, 0, 0, 1, 1, 1], "174562", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10007, "左轮手枪", 10107, 1, 28, "175291", 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10107, null, 10007, 0, 0, null, 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, "88791", [0, 18, 3, 0, 0, 90, 1, 1, 1], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10008, "散弹枪", 10108, 1, 27, "176450", 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10108, null, 10008, 0, 0, null, 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [1, 1], 1, "4387", [0, 40, 0, 0, 0, 90, 1, 1, 1], 1, "39320", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10009, "步枪", 10109, 1, 26, "176541", 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10109, null, 10009, 0, 0, null, 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [1, 1], 1, "13594", [40, 0, 10, 0, 0, 0, 0.5, 0.5, 0.5], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10012, "美元", 10112, 1, 29, "176320", 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98751", [1, 0], 1, null, null, 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10112, null, 10012, 0, 0, null, 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98746", [1, 0], 1, "60761", [0, 0, 0, 0, 0, 90, 0.5, 0.5, 0.5], 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10001, "洋娃娃", 10101, 3, 4, "163620", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10101, null, 10001, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97383", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10002, "娃娃", 10102, 3, 5, "176521", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10102, null, 10002, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97386", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10003, "书本", 10103, 3, 19, "88948", 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], null, [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10103, null, 10003, 0, 0, null, 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], "14739", [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10004, "相机", 10104, 3, 20, "176511", 16, [-5, -12, 0, 90, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10104, null, 10004, 0, 0, null, 16, [-5, -12, -2, 90, 0, -90, 1, 1, 1], "98797", [1, 1], 1, null, null, 0, "97374", [500, 1, 1], null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10011, "笔记本电脑", 10111, 3, 21, "176265", 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98737", [1, 0], 1, null, null, 0, null, null, null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10111, null, 10011, 0, 0, null, 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98740", [1, 1], 1, null, null, 0, "97379", [500, 1, 1], null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10014, "手机", 10114, 3, 22, "176478", 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10114, null, 10014, 0, 0, null, 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10016, "手捧鲜花", 10116, 3, 3, "162188", 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10116, null, 10016, 0, 0, null, 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], "217871", [1, 1], 1, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10017, "购物车", 10117, 3, 7, "176260", 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10117, null, 10017, 0, 0, null, 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10019, "婴儿车", 10119, 3, 6, "176266", 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10119, null, 10019, 0, 0, null, 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10020, "行李箱", 10120, 3, 8, "176501", 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "98757", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10120, null, 10020, 0, 0, null, 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10021, "黑色雨伞", 10121, 3, 1, "176321", 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "98752", [1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10121, null, 10021, 0, 0, null, 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "14557", [0.1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10046, "气球", 10146, 3, 2, "85003", 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10146, null, 10046, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10048, "小白兔玩偶", 10148, 3, 15, "23414", 16, [5, -10, -20, 10, 5, -60, 0.5, 0.5, 0.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10148, null, 10048, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10049, "玩偶", 10149, 3, 16, "32626", 16, [0, -15, -20, 0, 5, -60, 1.5, 1.5, 1.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10149, null, 10049, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1.5, 1.5, 1.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10064, "杠铃", 10164, 3, 11, "27022", 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10164, null, 10064, 0, 0, null, 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10065, "杠铃", 10165, 3, 12, "72490", 16, [3, -10, -10, -60, 0, 0, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10165, null, 10065, 0, 0, null, 16, [0, -10, 0, 25, 0, 0, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10066, "玩偶", 10166, 3, 13, "32618", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10166, null, 10066, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10067, "玩偶", 10167, 3, 14, "32622", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10167, null, 10067, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10069, "奖杯", 10169, 3, 9, "27066", 16, [5, -8, -12, 0, 60, 90, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10169, null, 10069, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10070, "靠垫", 10170, 3, 17, "32568", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10170, null, 10070, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10071, "靠垫", 10171, 3, 18, "32570", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10171, null, 10071, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10073, "游戏机", 10173, 3, 10, "32556", 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10173, null, 10073, 0, 0, null, 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10075, "鲤鱼", 10175, 3, 201, "123357", 16, [-9, 0, -20, 90, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10175, null, 10075, 0, 0, null, 23, [0, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10076, "龙虾", 10176, 3, 202, "123355", 16, [-14, 0, -18, 110, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10176, null, 10076, 0, 0, null, 23, [30, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10077, "金龙鱼", 10177, 3, 203, "136420", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10177, null, 10077, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10078, "毛鼻鲶", 10178, 3, 204, "136408", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10178, null, 10078, 0, 0, null, 23, [10, 0, 65, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10079, "尖吻鲈", 10179, 3, 205, "136422", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10179, null, 10079, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10080, "蓝鳍金枪鱼", 10180, 3, 206, "136415", 16, [-4, 0, -21, -180, 90, 0, 0.2, 0.2, 0.2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10180, null, 10080, 0, 0, null, 23, [10, 0, 10, 0, 0, 180, 1, 1, 1], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10081, "大眼鲤鱼", 10181, 3, 207, "136418", 16, [-10, 0, -16, -180, 90, 0, 2.5, 2.5, 2.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10181, null, 10081, 0, 0, null, 23, [10, 0, 40, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10082, "大口副鲈", 10182, 3, 208, "136409", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10182, null, 10082, 0, 0, null, 23, [10, 0, 30, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10083, "皇带鱼", 10183, 3, 209, "136410", 16, [-3, 0, -21, -180, 90, 0, 0.3, 0.7, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10183, null, 10083, 0, 0, null, 23, [0, 0, 40, 0, 0, 180, 1, 5, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10084, "鲸鱼", 10184, 3, 210, "122172", 16, [5, -25, -5, 0, 60, 90, 0.15, 0.15, 0.15], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10184, null, 10084, 0, 0, null, 23, [20, 0, 60, 0, 0, 0, 0.2, 0.2, 0.2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10085, "孔雀鱼", 10185, 3, 211, "136417", 16, [-4, 0, -15, -180, 90, 0, 7, 10, 7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10185, null, 10085, 0, 0, null, 23, [20, 0, 60, 0, 0, 180, 20, 20, 20], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10086, "笛鲷", 10186, 3, 212, "136405", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10186, null, 10086, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 4, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10087, "平颌鱲", 10187, 3, 213, "136416", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10187, null, 10087, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10088, "鲨鱼", 10188, 3, 214, "136412", 16, [5, -8, -12, 0, 60, 90, 1, 1.2, 1.2], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10188, null, 10088, 0, 0, null, 23, [-20, 0, 40, 0, 0, 180, 2, 2, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10089, "樱花枝", 10189, 3, 16, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10189, null, 10089, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "123718", [1, 1], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10090, "咖啡", 10190, 3, 17, "40809", 16, [6.04, -7.74, -4.26, 0, 0, -79.46, 0.06, 0.06, 0.06], "35385", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10190, null, 10090, 0, 0, null, 16, [4.32, -2.89, -5.03, 0, 0, -33.59, 0.06, 0.06, 0.06], "14514", [1, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10091, "女帽子", 10191, 3, 18, "173243", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10191, null, 10091, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10097, "角色模型", 10197, 3, 38, "177590", 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, "177590", [-5000, 0, 0, 0, 0, -90, 100, 100, 100], 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10197, null, 10097, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, null, null, 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10098, "背带鲨鱼", 10198, 3, 301, "180966", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10198, null, 10098, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145506", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10099, "埃及鲨鱼", 10199, 3, 302, "184457", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10199, null, 10099, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "88020", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10300, "埃及章鱼", 10400, 3, 303, "184458", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10400, null, 10300, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27392", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10301, "埃及金鱼", 10401, 3, 304, "184556", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10401, null, 10301, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27447", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10302, "天使章鱼", 10402, 3, 305, "186655", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10402, null, 10302, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145495", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10303, "嘟嘟嘴金鱼", 10403, 3, 306, "179470", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10403, null, 10303, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "151527", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10304, "嘟嘟嘴红金鱼", 10404, 3, 307, "180967", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10404, null, 10304, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145512", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10305, "灯笼鱼形态的宠物", 10405, 3, 308, "80343", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10405, null, 10305, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], "14620", [1, 0], 0, "153613", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10307, "紫阳春剑", 10407, 3, 27, "172199", 14, [3.1, 12.9, -44.11, 63.65, -62.11, 22.9, 1, 1, 1], null, null, 0, "162221", [0, 0, 0, 90, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10407, null, 10307, 0, 0, null, 16, [0, 0, 45, -90, 0, 0, 1, 1, 1], "122491", [1, 1], 3, "88442", [0, 80, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10308, "剑", 10408, 3, 27, "122949", 12, [11.2, -32.84, 20.81, 180.05, -48.22, -90.01, 1, 1, 1], null, null, 0, "103123", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10408, null, 10308, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "111102", [1, 1], 3, "180505", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 1, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10309, "大剑", 10409, 3, 27, "186519", 12, [6.28, 33.79, 25.13, 180, 46.64, -90, 1, 1, 1], null, null, 0, "162250", [0, 0, 32, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10409, null, 10309, 0, 0, null, 15, [0, 0, 0, -6.2, 10.73, 29.3, 1, 1, 1], "217289", [1, 1], 3, "14323", [0, 0, 95, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10310, "樱花枝", 10410, 3, 30, "218258", 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219281", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10410, null, 10310, 0, 0, null, 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10311, "樱花枝", 10411, 3, 30, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219280", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10411, null, 10311, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10327, "卡通小人", 10427, 3, 15, "135233", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10427, null, 10327, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10328, "甜品店吉祥物", 10428, 3, 15, "128491", 16, [0, -10, -10, 0, 5, -60, 0.2, 0.2, 0.2], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10428, null, 10328, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 0.2, 0.2, 0.2], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10022, "汉堡", 10122, 4, 0, "37975", 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "98747", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10122, null, 10022, 0, 0, null, 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10023, "羊奶", 10123, 4, 0, "29005", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10123, null, 10023, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10024, "面包", 10124, 4, 0, "46131", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10124, null, 10024, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10025, "面包", 10125, 4, 0, "46132", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10125, null, 10025, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10027, "饮料", 10127, 4, 0, "46150", 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10127, null, 10027, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10028, "饮料", 10128, 4, 0, "46156", 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10128, null, 10028, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10029, "饮料", 10129, 4, 0, "46158", 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10129, null, 10029, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10031, "酒", 10131, 4, 0, "49441", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10131, null, 10031, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10033, "奶昔", 10133, 4, 0, "40819", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10133, null, 10033, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10034, "冰淇淋", 10134, 4, 0, "40832", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10134, null, 10034, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10038, "烧烤", 10138, 4, 0, "46136", 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10138, null, 10038, 0, 0, null, 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10041, "奶茶", 10141, 4, 0, "27826", 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10141, null, 10041, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10043, "猫粮", 10143, 4, 0, "28995", 15, [5, 2, -8, 0, 0, 0, 0.7, 0.7, 0.7], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10143, null, 10043, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 0.7, 0.7, 0.7], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10054, "蛋糕", 10154, 4, 0, "23115", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10154, null, 10054, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10057, "一盘蛋糕", 10157, 4, 0, "23116", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10157, null, 10057, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10059, "咖啡", 10159, 4, 0, "23191", 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10159, null, 10059, 0, 0, null, 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10062, "清酒", 10162, 4, 0, "23043", 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10162, null, 10062, 0, 0, null, 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10063, "清酒", 10163, 4, 0, "23071", 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10163, null, 10063, 0, 0, null, 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20001, "火焰翅膀", 20002, 2, 2, "223877", 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20002, null, 20001, 2, 0, null, 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20003, "翅膀", 20004, 2, 2, "135840", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20004, null, 20003, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20005, "翅膀", 20006, 2, 2, "135851", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20006, null, 20005, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20007, "翅膀", 20008, 2, 2, "135848", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20008, null, 20007, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20009, "双层翅膀", 20010, 2, 2, "334814", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20010, null, 20009, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20011, "翅膀", 20012, 2, 2, "42804", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20012, null, 20011, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20013, "翅膀", 20014, 2, 2, "42805", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20014, null, 20013, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20015, "翅膀", 20016, 2, 2, "42816", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20016, null, 20015, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20017, "翅膀", 20018, 2, 2, "42818", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20018, null, 20017, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20019, "翅膀", 20020, 2, 2, "42821", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20020, null, 20019, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20021, "翅膀", 20022, 2, 2, "42828", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20022, null, 20021, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20023, "翅膀", 20024, 2, 2, "145906", 12, [0, 0, -20, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20024, null, 20023, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20025, "翅膀", 20026, 2, 2, "145908", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20026, null, 20025, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20027, "翅膀", 20028, 2, 2, "145910", 12, [0, 0, 0, 0, 0, 180, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20028, null, 20027, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20029, "翅膀", 20030, 2, 2, "145912", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20030, null, 20029, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20031, "翅膀", 20032, 2, 2, "145913", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20032, null, 20031, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20033, "翅膀", 20034, 2, 2, "340180", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20034, null, 20033, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20035, "翅膀", 20036, 2, 2, "342526", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20036, null, 20035, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20037, "翅膀", 20038, 2, 2, "342530", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20038, null, 20037, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20039, "翅膀", 20040, 2, 2, "375134", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20040, null, 20039, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20041, "翅膀", 20042, 2, 2, "375788", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20042, null, 20041, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20043, "翅膀", 20044, 2, 2, "393543", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20044, null, 20043, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20045, "六翼翅膀", 20046, 2, 1, "399002", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20046, null, 20045, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20047, "翅膀", 20048, 2, 2, "42830", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20048, null, 20047, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20049, "翅膀", 20050, 2, 2, "136963", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20050, null, 20049, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20051, "翅膀", 20052, 2, 2, "145902", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20052, null, 20051, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20053, "翅膀", 20054, 2, 2, "145904", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20054, null, 20053, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20055, "翅膀", 20056, 2, 2, "136966", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20056, null, 20055, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20057, "翅膀", 20058, 2, 2, "145909", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20058, null, 20057, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20059, "翅膀", 20060, 2, 2, "145911", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20060, null, 20059, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20061, "火焰翅膀", 20062, 2, 2, "211667", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20062, null, 20061, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30001, "烟花筒", 30002, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125370", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30002, null, 30002, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125370", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30003, "炮弹", 30004, 5, 0, "122174", 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], null, null, 0, "86375", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "96613", "86375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30004, null, 30004, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "52981", [1, 1], 0, null, null, 0, null, null, null, 0, "96613", null, [2, 1, 1], "122174", [0, 0, 0, 0, 0, 0, 1, 1, 1], "86375", [0, 0, 30, 0, 0, 0, 1, 1, 1], "85151", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "97385", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30005, "烟花筒", 30006, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4374", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30006, null, 30006, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4374", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30007, "烟花筒", 30008, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30008, null, 30008, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4375", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30009, "烟花筒", 30010, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4376", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30010, null, 30010, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4376", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30011, "烟花筒", 30012, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4377", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30012, null, 30012, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4377", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30013, "烟花筒", 30014, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "32679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30014, null, 30014, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "32679", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30015, "烟花筒", 30016, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81684", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30016, null, 30016, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81684", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30017, "烟花筒", 30018, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81685", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30018, null, 30018, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81685", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30019, "烟花筒", 30020, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88812", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30020, null, 30020, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88812", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30021, "烟花筒", 30022, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88816", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30022, null, 30022, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88816", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30023, "烟花筒", 30024, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88821", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30024, null, 30024, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88821", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30025, "烟花筒", 30026, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88828", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30026, null, 30026, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88828", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30027, "烟花筒", 30028, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88832", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30028, null, 30028, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88832", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30029, "烟花筒", 30030, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88835", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30030, null, 30030, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88835", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30031, "烟花筒", 30032, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125365", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30032, null, 30032, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125365", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30033, "烟花筒", 30034, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125373", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30034, null, 30034, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125373", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30035, "烟花筒", 30036, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141911", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30036, null, 30036, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141911", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30037, "烟花筒", 30038, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141912", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30038, null, 30038, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141912", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30039, "烟花筒", 30040, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141915", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30040, null, 30040, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141915", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30041, "烟花筒", 30042, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141916", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30042, null, 30042, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141916", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30043, "烟花筒", 30044, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174253", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30044, null, 30044, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "174253", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30045, "炮竹", 30046, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78884", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30046, null, 30046, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78884", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30047, "炮竹", 30048, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78885", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30048, null, 30048, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78885", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30049, "炮竹", 30050, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78886", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30050, null, 30050, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78886", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30051, "炮竹", 30052, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78887", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30052, null, 30052, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78887", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30053, "炮竹", 30054, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30054, null, 30054, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146328", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30055, "炮竹", 30056, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146329", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30056, null, 30056, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146329", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30057, "炮竹", 30058, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146753", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30058, null, 30058, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146753", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30059, "炮竹", 30060, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146754", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30060, null, 30060, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146754", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30061, "炮竹", 30062, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146781", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30062, null, 30062, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146781", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30063, "炮竹", 30064, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146782", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30064, null, 30064, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146782", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30065, "炮竹", 30066, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173515", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30066, null, 30066, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173515", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30067, "炮竹", 30068, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173518", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30068, null, 30068, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173518", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30069, "炮竹", 30070, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174247", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30070, null, 30070, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174247", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30071, "炮竹", 30072, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174249", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30072, null, 30072, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174249", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30073, "炮竹", 30074, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174251", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30074, null, 30074, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174251", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [60001, "滑板", 0, 6, 0, "363FEA624259C1B9142621B378EF2D00", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167883", null, null, null, null, null, null, null, null, null, null, "167883", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60002, "滑板2", 0, 6, 0, "E8023A80499578B92FF7FF9DC6B0C5DF", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60003, "滑板3", 0, 6, 0, "DD372C0847DF60EA5A71188793CED8B9", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60004, "冲浪板", 0, 6, 0, "CA4C723A47326DBDD6C15E81BF263948", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112946", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60005, "冲浪板_1", 0, 6, 0, "44C88B394905C23FAEB144A09D1C288F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112935", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60006, "自行车", 0, 6, 0, "3535C0024A4AB595E185E696C68D7A92", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "31526", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60007, "自行车1", 0, 6, 0, "CD227C3B493C28D21247CF9B037E2C79", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "186109", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60008, "花猪", 0, 6, 0, "10C7602E48F2D1CCFB972EBF05FCEB99", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160429", "159590", null, null, null, null, null, null, null, null, null, null, "159590", [15, 0, 50, 0, 0, 0, 1, 1, 1], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60009, "狗儿子", 0, 6, 0, "30AACA6644A6A8934E7CBA8C6391853F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160427", "160319", null, null, null, null, null, null, null, null, null, null, "160319", [20, 0, 80, 0, 0, 0, 2, 2, 2], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60010, "彩虹马", 0, 6, 0, "04EC792B4A3A2234074439AD1B38B6A0", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "131921", "174968", null, null, null, null, null, null, null, null, null, null, "174968", [20, 0, 80, 0, 0, 0, 3, 3, 3], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60011, "熊猫", 0, 6, 0, "D15BB1CF4FA03737446352A21DFB0807", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "193823", "159933", null, null, null, null, null, null, null, null, null, null, "159933", [-10, 0, 60, 0, 0, 0, 1.5, 1.5, 1.5], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60012, "小龙", 0, 6, 0, "8A792E1B42F34D60C29234A0B038B26C", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "408381", "160634", null, null, null, null, null, null, null, null, null, null, "160634", [5, 0, 50, 0, 0, 0, 2.4, 2.4, 2.4], "160618", "160618", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60013, "御剑", 0, 6, 0, "C1CBB0A8489B5CC17AB0A49EBC78D26D", 23, [-50, 0, 0, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "169463", "300435", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "284751", 3, "284751", 3, 0, 0, null], [60014, "鱼", 0, 6, 0, "B76602D34118414D88C30ABABC20DCE1", 23, [15, 0, 50, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "123030", "23559", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "169639", 3, "169639", 3, 0, 0, null]];
+const EXCELDATA$17 = [["ID", "Name", "NextId", "Tab", "Sort", "AssetId", "SlotType", "ModeOffsetParameter", "AnimationId", "AnimationParameter", "AnimationSlot", "EffectId", "EffectOffsetParameter", "EffectLoop", "SoundId", "SoundParameter", "MaterialId", "IsFly", "ButtonIconId", "Icon", "DelayParameter", "DelayAssetId", "DelayModeOffsetParameter", "DelayModeEffectId", "DelayModeEffectOffsetParameter", "DelayEffectId", "DelayEffectOffsetParameter", "DelayModeSoundId", "DelayModeSoundParameter", "VehiclesIcon", "VehiclesChildId", "VehiclesChildParameter", "VehiclesChildMoveId", "VehiclesChildIdleId", "VehiclesWalkStanceId", "VehiclesWalkStanceSlot", "VehiclesIdleStanceId", "VehiclesIdleStanceSlot", "VehiclesWalkAnimationId", "VehiclesWalkAnimationSlot", "VehiclesIdleAnimationId", "VehiclesIdleAnimationSlot", "BuffId", "BuffType", "BuffParams"], ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""], [10006, "电吉他", 10106, 1, 1, "170487", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10106, null, 10006, 0, 0, null, 13, [18.77, 32.96, -57.93, 1.88, -43.35, -83.69, 1, 1, 1], "121812", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "147341", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10093, "电吉他", 10193, 1, 7, "129224", 12, [11, 16, -40, 3.5, -35, -101, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10193, null, 10093, 0, 0, null, 13, [33.36, 29.26, -56.4, -11.98, -55.89, -89.71, 1, 1, 1], "122451", [1, 0], 1, "118436", [0, 0, 50, 5, -90, 90, 0.5, 0.5, 0.5], 0, "146098", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10094, "吉他", 10194, 1, 8, "170611", 12, [10, -38, -36, -14, 54, -105, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10194, null, 10094, 0, 0, null, 14, [20.47, -37.05, -57.34, -1.81, 47.06, -95.53, 1, 1, 1], "35412", [1, 0], 1, "172882", [0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5], 0, "52334", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10095, "吉他", 10195, 1, 9, "27099", 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35415", [1, 0], 1, null, null, 0, null, null, null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10195, null, 10095, 0, 0, null, 14, [26.4, -16.19, -63.36, -4.03, 28.21, -96.34, 0.6, 0.6, 0.6], "35412", [1, 0], 1, "4368", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, "45287", [500, 1.5, 0], null, 0, "120649", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10320, "钢琴", 10420, 1, 2, "3C5A7B8940E805D7192F53ACF6989935", 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, null, null, 0, null, null, null, 0, "158398", "216957", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10420, null, 10320, 0, 0, null, 23, [118.86, -21.18, -23.54, 0, 0, 90, 1, 1, 1], "29715", [1, 0], 3, "130776", [0, 0, 20, 0, 0, 0, 1.5, 1.5, 1], 0, "117193", [500, 1.5, 0], null, 0, "158398", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10340, "架子鼓", 10440, 1, 3, "170495", 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123634", [1, 0], 3, null, null, 0, null, null, null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10440, null, 10340, 0, 0, null, 23, [59, 11, 0, 0, 0, -90, 1.2, 1.2, 1.2], "123300", [1, 0], 3, "119917", [8, 0, 0, 0, 0, 0, 1, 1, 0.8], 0, "117197", [500, 1, 0], null, 0, "120719", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10338, "灯球", 10438, 1, 5, "05B519BD4F3FE68467C4F78BE870B7E2", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10438, null, 10338, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "216688", [1, 0], 3, null, null, 0, "147340", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10339, "灯球", 10439, 1, 4, "807D3DAD4695AD616EF6B6A6DE05CF50", 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], null, null, 0, null, null, 0, null, null, null, 0, "159386", "132901", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10439, null, 10339, 0, 0, null, 23, [0, 0, 260, 0, 0, 0, 0.8, 0.8, 0.8], "212813", [1, 0], 3, null, null, 0, "147338", [500, 1.5, 0], null, 0, "159386", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10341, "沙发", 10441, 1, 13, "173566", 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "182947", [1, 0], 3, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10441, null, 10341, 0, 0, null, 23, [-65, -45, 0, 0, 0, -90, 1, 1, 1], "14516", [1, 0], 1, null, null, 0, null, null, null, 0, "120318", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10329, "卡通小人", 10429, 1, 38, "135229", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10429, null, 10329, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10330, "L", 10430, 1, 39, "198914", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10430, null, 10330, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10331, "O", 10431, 1, 40, "199057", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "210884", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10431, null, 10331, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10332, "V", 10432, 1, 41, "199090", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10432, null, 10332, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10333, "E", 10433, 1, 42, "198991", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10433, null, 10333, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10334, "F", 10434, 1, 42.1, "198902", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10434, null, 10334, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10335, "U", 10435, 1, 44, "198968", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10435, null, 10335, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 0, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10336, "C", 10436, 1, 46, "198896", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10436, null, 10336, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10337, "K", 10437, 1, 48, "198912", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10437, null, 10337, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10342, "箱子", 10442, 1, 17, "36250", 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10442, null, 10342, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 2, 2, 2.5], "46285", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10343, "红手牌(笑脸)", 10443, 1, 23, "121354", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10443, null, 10343, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "159438", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10344, "蓝手牌(委屈脸)", 10444, 1, 24, "121351", 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10444, null, 10344, 0, 0, null, 16, [0, 0, -10, 0, 0, 90, 2, 2, 2], "174562", [1, 0], 1, null, null, 0, null, null, null, 0, "10344", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10345, "A", 10445, 1, 43, "198892", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10445, null, 10345, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10346, "B", 10446, 1, 45, "198894", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10446, null, 10346, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10347, "D", 10447, 1, 47, "198898", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10447, null, 10347, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10348, "G", 10448, 1, 49, "198904", 16, [0, 0, 0, 0, 0, -90, 1, 1, 1], "14559", [1, 0], 1, null, null, 0, null, null, "211028", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10448, null, 10348, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10349, "凳子", 10449, 1, 11, "25354", 16, [12.72, 1.83, 10.34, -60.44, -42.82, -42.85, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10449, null, 10349, 0, 0, null, 23, [-16, 0, -15, 0, 0, -90, 1, 1, 1], "170905", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10312, "蓝色法杖", 10412, 1, 19, "210651", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10412, null, 10312, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27447", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 2, 1, [0.4]], [10313, "红色法杖", 10413, 1, 20, "210652", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10413, null, 10313, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "88021", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 3, 1, [3]], [10314, "扫帚法杖", 10414, 1, 21, "210790", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10414, null, 10314, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "27399", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 4, 1, [0.2]], [10315, "魔法仗", 10415, 1, 22, "210820", 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10415, null, 10315, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.3, 0.3, 0.3], "85026", [1, 1], 0, "145506", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10316, "地毯", 10416, 1, 12, "091282744E9FD074EC3B4A9336B2136F", 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "192126", [1, 0], 3, null, null, 0, null, null, null, 0, "158427", "22961", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10416, null, 10316, 0, 0, null, 23, [70, 0, -1, 0, 0, 0, 2, 2, 1], "14565", [1, 0], 3, "172886", [0, 0, 9, 0, 0, 0, 0.5, 0.5, 1], 0, null, null, null, 0, "158427", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10317, "足球筐", 10417, 1, 15, "22940", 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10417, null, 10317, 0, 0, null, 23, [101, 0, 0, 0, 0, 90, 1.2, 1.2, 1.15], "181189", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10318, "纸板箱", 10418, 1, 16, "38008", 23, [13.7, 0, 0, 0, 0, 90, 1.5, 1.5, 1.5], "47756", [1, 0], 3, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10418, null, 10318, 0, 0, null, 1, [0, 0, 32, -180, 0, -45, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "153896", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10319, "热狗摊", 10419, 1, 14, "40876", 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29759", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10419, null, 10319, 0, 0, null, 23, [39, -46, 0, 0, 0, 90, 0.9, 0.9, 0.9], "29755", [1, 0], 1, null, null, 0, null, null, null, 0, "59458", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10321, "妲己耳朵", 10421, 1, 33, "212767", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10421, null, 10321, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10322, "长耳兔灰耳朵", 10422, 1, 34, "212777", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10422, null, 10322, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10323, "黑狼耳朵", 10423, 1, 35, "213047", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10423, null, 10323, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10324, "气球", 10424, 1, 32, "218065", 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10424, null, 10324, 0, 0, null, 16, [0, 0, -20, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10325, "卡通小人", 10425, 1, 36, "135222", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10425, null, 10325, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10326, "卡通小人", 10426, 1, 37, "135223", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10426, null, 10326, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10306, "凳子", 10406, 1, 10, "174452", 16, [12.72, 1.06, 31.84, 299.23, -42.82, 677.15, 0.6, 0.6, 0.6], "20257", [1, 0], 1, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10406, null, 10306, 0, 0, null, 23, [-16, 0, 10, 0, 0, -90, 1, 1, 1], "218259", [1, 0], 3, null, null, 0, null, null, null, 0, "86710", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10092, "女帽子", 10192, 1, 30.1, "173243", 16, [13.6, 6, -2, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10192, null, 10092, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 1], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10074, "法杖", 10174, 1, 18, "122954", 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10174, null, 10074, 0, 0, null, 15, [0, 0, 50, 180, 0, 0, 1, 1, 1], "85026", [1, 1], 0, "27392", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 1, 1, [2]], [10051, "射灯", 10151, 1, 31, "33028", 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10151, null, 10051, 0, 0, null, 16, [0, -10, 10, 170, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, "32254", [0, 0, 40, -120, 0, 0, 2, 5, 5], 0, null, null, null, 0, "131663", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10052, "喷火枪", 10152, 1, 25, "87019", 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10152, null, 10052, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "49094", [0.1, 1], 1, "4394", [35, 0, 12, 0, 0, 180, 1, 1, 1], 1, "20322", [500, 1, 1], null, 0, "138004", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10047, "尖叫鸡", 10147, 1, 30, "20799", 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10147, null, 10047, 0, 0, null, 16, [5, -3, 5, 0, 0, -90, 0.7, 0.7, 0.7], "14557", [1, 1], 1, null, null, 0, "108734", [500, 0.8, 1], null, 0, "130565", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10005, "荧光棒", 10105, 1, 6, "88974", 16, [4, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10105, null, 10005, 0, 0, null, 16, [3.13, -1.62, -1.12, 0, 0, 0, 1, 1, 1], "174562", [1, 0], 1, null, null, 0, null, null, "152978", 0, "157198", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10007, "左轮手枪", 10107, 1, 28, "175291", 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10107, null, 10007, 0, 0, null, 16, [8, 0, 0, 0, 0, -90, 1, 1, 1], "20244", [0.4, 1], 1, "88791", [0, 18, 3, 0, 0, 90, 1, 1, 1], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10008, "散弹枪", 10108, 1, 27, "176450", 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10108, null, 10008, 0, 0, null, 16, [6, 0, 8, 0, 0, -90, 1, 1, 1], "49094", [1, 1], 1, "4387", [0, 40, 0, 0, 0, 90, 1, 1, 1], 1, "39320", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10009, "步枪", 10109, 1, 26, "176541", 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [0.01, 0], 1, null, null, 0, null, null, null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10109, null, 10009, 0, 0, null, 16, [20, 0, -1, 0, 0, 0, 1, 1, 1], "49094", [1, 1], 1, "13594", [40, 0, 10, 0, 0, 0, 0.5, 0.5, 0.5], 1, "169140", [500, 0.5, 1], null, 0, "106330", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10012, "美元", 10112, 1, 29, "176320", 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98751", [1, 0], 1, null, null, 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10112, null, 10012, 0, 0, null, 16, [10, -10, 0, 0, 0, -90, 1, 1, 1], "98746", [1, 0], 1, "60761", [0, 0, 0, 0, 0, 90, 0.5, 0.5, 0.5], 0, null, null, null, 0, "125834", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10001, "洋娃娃", 10101, 3, 4, "163620", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10101, null, 10001, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97383", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10002, "娃娃", 10102, 3, 5, "176521", 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10102, null, 10002, 0, 0, null, 15, [10, 10, -10, 0, 0, 0, 1, 1, 1], "98739", [1, 1], 1, null, null, 0, "97386", [500, 1, 1], null, 0, "159349", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10003, "书本", 10103, 3, 19, "88948", 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], null, [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10103, null, 10003, 0, 0, null, 16, [0, -3.19, -2.62, -2.88, -68.85, -88.79, 1, 1, 1], "14739", [1, 0], 1, null, null, 0, null, null, null, 0, "175742", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10004, "相机", 10104, 3, 20, "176511", 16, [-5, -12, 0, 90, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10104, null, 10004, 0, 0, null, 16, [-5, -12, -2, 90, 0, -90, 1, 1, 1], "98797", [1, 1], 1, null, null, 0, "97374", [500, 1, 1], null, 0, "175747", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10011, "笔记本电脑", 10111, 3, 21, "176265", 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98737", [1, 0], 1, null, null, 0, null, null, null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10111, null, 10011, 0, 0, null, 16, [25, 0, -20, -90, 90, 0, 1, 1, 1], "98740", [1, 1], 1, null, null, 0, "97379", [500, 1, 1], null, 0, "105234", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10014, "手机", 10114, 3, 22, "176478", 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10114, null, 10014, 0, 0, null, 16, [5, 0, 0, 0, 0, 0, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "162891", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10016, "手捧鲜花", 10116, 3, 3, "162188", 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10116, null, 10016, 0, 0, null, 16, [0, 0, -10, 0, 0, 0, 1, 1, 1], "217871", [1, 1], 1, null, null, 0, null, null, null, 0, "148869", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10017, "购物车", 10117, 3, 7, "176260", 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10117, null, 10017, 0, 0, null, 15, [65, 105, 20, 90, 0, 180, 1, 1, 1], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "166610", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10019, "婴儿车", 10119, 3, 6, "176266", 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98753", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10119, null, 10019, 0, 0, null, 15, [45, 105, 20, 90, -90, 180, 1.2, 1.2, 1.2], "98748", [1, 0], 1, null, null, 0, null, null, null, 0, "120653", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10020, "行李箱", 10120, 3, 8, "176501", 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "98757", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10120, null, 10020, 0, 0, null, 16, [110, 12, 0, 0, -90, 180, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10021, "黑色雨伞", 10121, 3, 1, "176321", 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "98752", [1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10121, null, 10021, 0, 0, null, 16, [0, 0, -5, 5, 5, 0, 1, 1, 1], "14557", [0.1, 0], 1, null, null, 0, null, null, null, 0, "159401", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10046, "气球", 10146, 3, 2, "85003", 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10146, null, 10046, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "98754", [1, 1], 1, null, null, 0, null, null, null, 0, "146441", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10048, "小白兔玩偶", 10148, 3, 15, "23414", 16, [5, -10, -20, 10, 5, -60, 0.5, 0.5, 0.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10148, null, 10048, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 0.5, 0.5, 0.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10049, "玩偶", 10149, 3, 16, "32626", 16, [0, -15, -20, 0, 5, -60, 1.5, 1.5, 1.5], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10149, null, 10049, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 1.5, 1.5, 1.5], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10064, "杠铃", 10164, 3, 11, "27022", 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], null, null, 0, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10164, null, 10064, 0, 0, null, 16, [12, 0, 0, 0, 90, 0, 0.7, 0.7, 0.7], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10065, "杠铃", 10165, 3, 12, "72490", 16, [3, -10, -10, -60, 0, 0, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10165, null, 10065, 0, 0, null, 16, [0, -10, 0, 25, 0, 0, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120669", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10066, "玩偶", 10166, 3, 13, "32618", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10166, null, 10066, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10067, "玩偶", 10167, 3, 14, "32622", 16, [0, -15, -25, 0, 5, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10167, null, 10067, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10069, "奖杯", 10169, 3, 9, "27066", 16, [5, -8, -12, 0, 60, 90, 1, 1, 1], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10169, null, 10069, 0, 0, null, 16, [0, -10, 10, 160, 25, -90, 1, 1, 1], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "176328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10070, "靠垫", 10170, 3, 17, "32568", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10170, null, 10070, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10071, "靠垫", 10171, 3, 18, "32570", 16, [7, -10, -5, 40, 0, -60, 1, 1, 1], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10171, null, 10071, 0, 0, null, 16, [5, 5, 15, -120, 0, -10, 1, 1, 1], "14654", [1, 0], 1, null, null, 0, null, null, null, 0, "158393", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10073, "游戏机", 10173, 3, 10, "32556", 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10173, null, 10073, 0, 0, null, 16, [5, -3, 5, -70, -40, -20, 1, 1, 1], "98612", [1, 0], 1, null, null, 0, null, null, null, 0, "175743", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10075, "鲤鱼", 10175, 3, 201, "123357", 16, [-9, 0, -20, 90, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "96595", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10175, null, 10075, 0, 0, null, 23, [0, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10076, "龙虾", 10176, 3, 202, "123355", 16, [-14, 0, -18, 110, 0, -90, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10176, null, 10076, 0, 0, null, 23, [30, 0, 30, 0, 0, -90, 3, 3, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10077, "金龙鱼", 10177, 3, 203, "136420", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10177, null, 10077, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10078, "毛鼻鲶", 10178, 3, 204, "136408", 16, [-4, 0, -21, -180, 90, 0, 1, 1.5, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10178, null, 10078, 0, 0, null, 23, [10, 0, 65, 0, 0, 180, 3, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10079, "尖吻鲈", 10179, 3, 205, "136422", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10179, null, 10079, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10080, "蓝鳍金枪鱼", 10180, 3, 206, "136415", 16, [-4, 0, -21, -180, 90, 0, 0.2, 0.2, 0.2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10180, null, 10080, 0, 0, null, 23, [10, 0, 10, 0, 0, 180, 1, 1, 1], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10081, "大眼鲤鱼", 10181, 3, 207, "136418", 16, [-10, 0, -16, -180, 90, 0, 2.5, 2.5, 2.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10181, null, 10081, 0, 0, null, 23, [10, 0, 40, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10082, "大口副鲈", 10182, 3, 208, "136409", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10182, null, 10082, 0, 0, null, 23, [10, 0, 30, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10083, "皇带鱼", 10183, 3, 209, "136410", 16, [-3, 0, -21, -180, 90, 0, 0.3, 0.7, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10183, null, 10083, 0, 0, null, 23, [0, 0, 40, 0, 0, 180, 1, 5, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10084, "鲸鱼", 10184, 3, 210, "122172", 16, [5, -25, -5, 0, 60, 90, 0.15, 0.15, 0.15], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10184, null, 10084, 0, 0, null, 23, [20, 0, 60, 0, 0, 0, 0.2, 0.2, 0.2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10085, "孔雀鱼", 10185, 3, 211, "136417", 16, [-4, 0, -15, -180, 90, 0, 7, 10, 7], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10185, null, 10085, 0, 0, null, 23, [20, 0, 60, 0, 0, 180, 20, 20, 20], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10086, "笛鲷", 10186, 3, 212, "136405", 16, [-4, 0, -21, -180, 90, 0, 1.5, 2, 1.5], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10186, null, 10086, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 4, 5, 3], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10087, "平颌鱲", 10187, 3, 213, "136416", 16, [-4, 0, -21, -180, 90, 0, 2, 3, 2], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10187, null, 10087, 0, 0, null, 23, [10, 0, 50, 0, 0, 180, 6, 6, 6], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10088, "鲨鱼", 10188, 3, 214, "136412", 16, [5, -8, -12, 0, 60, 90, 1, 1.2, 1.2], "14025", [1, 0], 1, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10188, null, 10088, 0, 0, null, 23, [-20, 0, 40, 0, 0, 180, 2, 2, 2], "169638", [1, 0], 3, null, null, 0, null, null, null, 0, "159381", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10089, "樱花枝", 10189, 3, 16, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10189, null, 10089, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "123718", [1, 1], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10090, "咖啡", 10190, 3, 17, "40809", 16, [6.04, -7.74, -4.26, 0, 0, -79.46, 0.06, 0.06, 0.06], "35385", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10190, null, 10090, 0, 0, null, 16, [4.32, -2.89, -5.03, 0, 0, -33.59, 0.06, 0.06, 0.06], "14514", [1, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10091, "女帽子", 10191, 3, 18, "173243", 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10191, null, 10091, 0, 0, null, 20, [2.5, 0, -16, 0, 0, -90, 1, 1, 1], "198590", [1, 0], 1, null, null, 0, null, null, null, 0, "180436", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10097, "角色模型", 10197, 3, 38, "177590", 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, "177590", [-5000, 0, 0, 0, 0, -90, 100, 100, 100], 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10197, null, 10097, 0, 0, null, 23, [0, 0, 0, 0, 0, 0, 0.01, 0.01, 0.01], null, null, 0, null, null, 0, "126684", [500, 0.8, 1], null, 0, "211477", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10098, "背带鲨鱼", 10198, 3, 301, "180966", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10198, null, 10098, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145506", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10099, "埃及鲨鱼", 10199, 3, 302, "184457", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10199, null, 10099, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "88020", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10300, "埃及章鱼", 10400, 3, 303, "184458", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10400, null, 10300, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27392", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10301, "埃及金鱼", 10401, 3, 304, "184556", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10401, null, 10301, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "27447", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10302, "天使章鱼", 10402, 3, 305, "186655", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10402, null, 10302, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145495", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10303, "嘟嘟嘴金鱼", 10403, 3, 306, "179470", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10403, null, 10303, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "151527", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10304, "嘟嘟嘴红金鱼", 10404, 3, 307, "180967", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10404, null, 10304, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], null, null, 0, "145512", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10305, "灯笼鱼形态的宠物", 10405, 3, 308, "80343", 16, [0, -12.64, -12.64, 0, 0, 0, 1, 1, 1], "181132", [1, 0], 1, null, null, 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10405, null, 10305, 0, 0, null, 23, [-50, -25, 123, 0, 0, -90, 1, 1, 1], "14620", [1, 0], 0, "153613", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 0, null, null, null, 0, "98210", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10307, "紫阳春剑", 10407, 3, 27, "172199", 14, [3.1, 12.9, -44.11, 63.65, -62.11, 22.9, 1, 1, 1], null, null, 0, "162221", [0, 0, 0, 90, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10407, null, 10307, 0, 0, null, 16, [0, 0, 45, -90, 0, 0, 1, 1, 1], "122491", [1, 1], 3, "88442", [0, 80, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10308, "剑", 10408, 3, 27, "122949", 12, [11.2, -32.84, 20.81, 180.05, -48.22, -90.01, 1, 1, 1], null, null, 0, "103123", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10408, null, 10308, 0, 0, null, 16, [0, 0, 0, 0, 0, 0, 1, 1, 1], "111102", [1, 1], 3, "180505", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], 1, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10309, "大剑", 10409, 3, 27, "186519", 12, [6.28, 33.79, 25.13, 180, 46.64, -90, 1, 1, 1], null, null, 0, "162250", [0, 0, 32, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10409, null, 10309, 0, 0, null, 15, [0, 0, 0, -6.2, 10.73, 29.3, 1, 1, 1], "217289", [1, 1], 3, "14323", [0, 0, 95, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "98203", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10310, "樱花枝", 10410, 3, 30, "218258", 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219281", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10410, null, 10310, 0, 0, null, 16, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10311, "樱花枝", 10411, 3, 30, "218258", 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], "219280", [1, 0], 1, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10411, null, 10311, 0, 0, null, 15, [2, 0, 0, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "192129", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10327, "卡通小人", 10427, 3, 15, "135233", 16, [0, -10, -10, 0, 5, -60, 4, 4, 4], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10427, null, 10327, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 4, 4, 4], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10328, "甜品店吉祥物", 10428, 3, 15, "128491", 16, [0, -10, -10, 0, 5, -60, 0.2, 0.2, 0.2], "98743", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10428, null, 10328, 0, 0, null, 16, [0, -13, 10, 160, 25, -90, 0.2, 0.2, 0.2], "88751", [1, 0], 1, null, null, 0, null, null, null, 0, "120679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10022, "汉堡", 10122, 4, 0, "37975", 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "98747", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10122, null, 10022, 0, 0, null, 16, [5, -9, -3, 0, 0, 0, 0.5, 0.5, 0.5], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10023, "羊奶", 10123, 4, 0, "29005", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10123, null, 10023, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10024, "面包", 10124, 4, 0, "46131", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10124, null, 10024, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10025, "面包", 10125, 4, 0, "46132", 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10125, null, 10025, 0, 0, null, 16, [5, -3, -5, 0, 90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10027, "饮料", 10127, 4, 0, "46150", 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10127, null, 10027, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.5, 0.5, 0.5], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10028, "饮料", 10128, 4, 0, "46156", 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10128, null, 10028, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.3, 0.3, 0.3], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10029, "饮料", 10129, 4, 0, "46158", 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10129, null, 10029, 0, 0, null, 16, [5, -3, -10, 0, 0, 0, 0.4, 0.4, 0.4], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10031, "酒", 10131, 4, 0, "49441", 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10131, null, 10031, 0, 0, null, 16, [5, -3, -15, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10033, "奶昔", 10133, 4, 0, "40819", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10133, null, 10033, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10034, "冰淇淋", 10134, 4, 0, "40832", 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10134, null, 10034, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 0.05, 0.05, 0.05], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10038, "烧烤", 10138, 4, 0, "46136", 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10138, null, 10038, 0, 0, null, 16, [15, -3, 0, -90, -90, 0, 1, 1, 1], "14762", [0.7, 1], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10041, "奶茶", 10141, 4, 0, "27826", 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "14557", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10141, null, 10041, 0, 0, null, 16, [3, -3, -10, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10043, "猫粮", 10143, 4, 0, "28995", 15, [5, 2, -8, 0, 0, 0, 0.7, 0.7, 0.7], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10143, null, 10043, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 0.7, 0.7, 0.7], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "163628", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10054, "蛋糕", 10154, 4, 0, "23115", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10154, null, 10054, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10057, "一盘蛋糕", 10157, 4, 0, "23116", 15, [0, 0, 0, 0, 0, 0, 1, 1, 1], "98606", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10157, null, 10057, 0, 0, null, 15, [0, 0, 0, 90, 0, 0, 1, 1, 1], "14780", [1, 0], 1, null, null, 0, null, null, null, 0, "159430", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10059, "咖啡", 10159, 4, 0, "23191", 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10159, null, 10059, 0, 0, null, 16, [8, 0, -5, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10062, "清酒", 10162, 4, 0, "23043", 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10162, null, 10062, 0, 0, null, 16, [3, -3, -30, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10063, "清酒", 10163, 4, 0, "23071", 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "98736", [1, 0], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [10163, null, 10063, 0, 0, null, 16, [3, -3, -27, 0, 0, 0, 1, 1, 1], "8356", [0.7, 1], 1, null, null, 0, null, null, null, 0, "153900", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20001, "火焰翅膀", 20002, 2, 2, "223877", 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20002, null, 20001, 2, 0, null, 12, [0, 0, 10, 0, 0, 90, 1.5, 1.5, 1.5], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20003, "翅膀", 20004, 2, 2, "135840", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20004, null, 20003, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20005, "翅膀", 20006, 2, 2, "135851", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20006, null, 20005, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20007, "翅膀", 20008, 2, 2, "135848", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20008, null, 20007, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20009, "双层翅膀", 20010, 2, 2, "334814", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20010, null, 20009, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20011, "翅膀", 20012, 2, 2, "42804", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20012, null, 20011, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20013, "翅膀", 20014, 2, 2, "42805", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20014, null, 20013, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20015, "翅膀", 20016, 2, 2, "42816", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20016, null, 20015, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20017, "翅膀", 20018, 2, 2, "42818", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20018, null, 20017, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20019, "翅膀", 20020, 2, 2, "42821", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20020, null, 20019, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20021, "翅膀", 20022, 2, 2, "42828", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20022, null, 20021, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20023, "翅膀", 20024, 2, 2, "145906", 12, [0, 0, -20, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20024, null, 20023, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20025, "翅膀", 20026, 2, 2, "145908", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20026, null, 20025, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20027, "翅膀", 20028, 2, 2, "145910", 12, [0, 0, 0, 0, 0, 180, 2, 2, 2], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20028, null, 20027, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20029, "翅膀", 20030, 2, 2, "145912", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20030, null, 20029, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20031, "翅膀", 20032, 2, 2, "145913", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20032, null, 20031, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20033, "翅膀", 20034, 2, 2, "340180", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20034, null, 20033, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20035, "翅膀", 20036, 2, 2, "342526", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20036, null, 20035, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20037, "翅膀", 20038, 2, 2, "342530", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20038, null, 20037, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20039, "翅膀", 20040, 2, 2, "375134", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20040, null, 20039, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20041, "翅膀", 20042, 2, 2, "375788", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20042, null, 20041, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20043, "翅膀", 20044, 2, 2, "393543", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20044, null, 20043, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20045, "六翼翅膀", 20046, 2, 1, "399002", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20046, null, 20045, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20047, "翅膀", 20048, 2, 2, "42830", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20048, null, 20047, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20049, "翅膀", 20050, 2, 2, "136963", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20050, null, 20049, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20051, "翅膀", 20052, 2, 2, "145902", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20052, null, 20051, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20053, "翅膀", 20054, 2, 2, "145904", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20054, null, 20053, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20055, "翅膀", 20056, 2, 2, "136966", 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20056, null, 20055, 2, 0, null, 12, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20057, "翅膀", 20058, 2, 2, "145909", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20058, null, 20057, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20059, "翅膀", 20060, 2, 2, "145911", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20060, null, 20059, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20061, "火焰翅膀", 20062, 2, 2, "211667", 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 1, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [20062, null, 20061, 2, 0, null, 12, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "129686", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30001, "烟花筒", 30002, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125370", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30002, null, 30002, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125370", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30003, "炮弹", 30004, 5, 0, "122174", 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], null, null, 0, "86375", [0, 0, 0, 0, 0, 0, 1, 1, 1], 0, null, null, null, 0, "96613", "86375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30004, null, 30004, 0, 0, null, 15, [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "52981", [1, 1], 0, null, null, 0, null, null, null, 0, "96613", null, [2, 1, 1], "122174", [0, 0, 0, 0, 0, 0, 1, 1, 1], "86375", [0, 0, 30, 0, 0, 0, 1, 1, 1], "85151", [0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5], "97385", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30005, "烟花筒", 30006, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4374", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30006, null, 30006, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4374", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30007, "烟花筒", 30008, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4375", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30008, null, 30008, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4375", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30009, "烟花筒", 30010, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4376", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30010, null, 30010, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4376", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30011, "烟花筒", 30012, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "4377", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30012, null, 30012, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "4377", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30013, "烟花筒", 30014, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "32679", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30014, null, 30014, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "32679", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30015, "烟花筒", 30016, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81684", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30016, null, 30016, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81684", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30017, "烟花筒", 30018, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "81685", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30018, null, 30018, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "81685", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30019, "烟花筒", 30020, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88812", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30020, null, 30020, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88812", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30021, "烟花筒", 30022, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88816", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30022, null, 30022, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88816", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30023, "烟花筒", 30024, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88821", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30024, null, 30024, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88821", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30025, "烟花筒", 30026, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88828", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30026, null, 30026, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88828", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30027, "烟花筒", 30028, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88832", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30028, null, 30028, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88832", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30029, "烟花筒", 30030, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "88835", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30030, null, 30030, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "88835", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30031, "烟花筒", 30032, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125365", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30032, null, 30032, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125365", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30033, "烟花筒", 30034, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "125373", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30034, null, 30034, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "125373", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30035, "烟花筒", 30036, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141911", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30036, null, 30036, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141911", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30037, "烟花筒", 30038, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141912", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30038, null, 30038, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141912", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30039, "烟花筒", 30040, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141915", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30040, null, 30040, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141915", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30041, "烟花筒", 30042, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "141916", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30042, null, 30042, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "141916", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30043, "烟花筒", 30044, 5, 0, "171837", 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174253", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30044, null, 30044, 0, 0, null, 15, [6.47, -0.35, -15.02, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 3, 1], "171837", [0, 0, 100, 0, 45, 0, 1.5, 1.5, 1.5], null, null, "174253", [0, 0, 0, 0, 0, 0, 1, 1, 1], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30045, "炮竹", 30046, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78884", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30046, null, 30046, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78884", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30047, "炮竹", 30048, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78885", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30048, null, 30048, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78885", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30049, "炮竹", 30050, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78886", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30050, null, 30050, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78886", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30051, "炮竹", 30052, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "78887", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30052, null, 30052, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "78887", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30053, "炮竹", 30054, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146328", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30054, null, 30054, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146328", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30055, "炮竹", 30056, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146329", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30056, null, 30056, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146329", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30057, "炮竹", 30058, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146753", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30058, null, 30058, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146753", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30059, "炮竹", 30060, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146754", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30060, null, 30060, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146754", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30061, "炮竹", 30062, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146781", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30062, null, 30062, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146781", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30063, "炮竹", 30064, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "146782", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30064, null, 30064, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "146782", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30065, "炮竹", 30066, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173515", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30066, null, 30066, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173515", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30067, "炮竹", 30068, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "173518", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30068, null, 30068, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "173518", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30069, "炮竹", 30070, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174247", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30070, null, 30070, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174247", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30071, "炮竹", 30072, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174249", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30072, null, 30072, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174249", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30073, "炮竹", 30074, 5, 0, "96556", 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "103437", "174251", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [30074, null, 30074, 0, 0, null, 15, [4.52, 1.11, -5.3, 0, 0, 0, 1, 1, 1], "124999", [1, 1], 0, null, null, 0, null, null, null, 0, "103437", null, [2, 5, 1], "96556", [0, 0, 100, 0, 0, 0, 1.5, 1.5, 1.5], null, null, "174251", [0, 0, 0, 0, 0, 0, 0.7, 0.7, 0.7], "97372", [1, 500], null, null, null, null, null, null, 0, null, 0, null, 0, null, 0, 0, 0, null], [60001, "滑板", 0, 6, 0, "363FEA624259C1B9142621B378EF2D00", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167883", null, null, null, null, null, null, null, null, null, null, "167883", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60002, "滑板2", 0, 6, 0, "E8023A80499578B92FF7FF9DC6B0C5DF", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60003, "滑板3", 0, 6, 0, "DD372C0847DF60EA5A71188793CED8B9", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "167952", null, null, null, null, null, null, null, null, null, null, "167952", null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60004, "冲浪板", 0, 6, 0, "CA4C723A47326DBDD6C15E81BF263948", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112946", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60005, "冲浪板_1", 0, 6, 0, "44C88B394905C23FAEB144A09D1C288F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "120767", "112935", null, null, null, null, null, null, null, null, null, null, null, null, null, null, "151060", 3, "151060", 3, null, 0, null, 0, 0, 0, null], [60006, "自行车", 0, 6, 0, "3535C0024A4AB595E185E696C68D7A92", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "31526", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60007, "自行车1", 0, 6, 0, "CD227C3B493C28D21247CF9B037E2C79", 23, [0, 0, 0, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "126636", "186109", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, "174560", 1, "285057", 3, null, 0, 0, 0, null], [60008, "花猪", 0, 6, 0, "10C7602E48F2D1CCFB972EBF05FCEB99", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160429", "159590", null, null, null, null, null, null, null, null, null, null, "159590", [15, 0, 50, 0, 0, 0, 1, 1, 1], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60009, "狗儿子", 0, 6, 0, "30AACA6644A6A8934E7CBA8C6391853F", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "160427", "160319", null, null, null, null, null, null, null, null, null, null, "160319", [20, 0, 80, 0, 0, 0, 2, 2, 2], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60010, "彩虹马", 0, 6, 0, "04EC792B4A3A2234074439AD1B38B6A0", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "131921", "174968", null, null, null, null, null, null, null, null, null, null, "174968", [20, 0, 80, 0, 0, 0, 3, 3, 3], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60011, "熊猫", 0, 6, 0, "D15BB1CF4FA03737446352A21DFB0807", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "193823", "159933", null, null, null, null, null, null, null, null, null, null, "159933", [-10, 0, 60, 0, 0, 0, 1.5, 1.5, 1.5], "181293", "181291", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60012, "小龙", 0, 6, 0, "8A792E1B42F34D60C29234A0B038B26C", 23, [0, 0, 0, 0, 0, 90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "408381", "160634", null, null, null, null, null, null, null, null, null, null, "160634", [5, 0, 50, 0, 0, 0, 2.4, 2.4, 2.4], "160618", "160618", null, 0, null, 0, "169639", 3, "169638", 3, 0, 0, null], [60013, "御剑", 0, 6, 0, "C1CBB0A8489B5CC17AB0A49EBC78D26D", 23, [-50, 0, 0, 0, 0, -90, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "169463", "300435", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "284751", 3, "284751", 3, 0, 0, null], [60014, "鱼", 0, 6, 0, "B76602D34118414D88C30ABABC20DCE1", 23, [15, 0, 50, 0, 0, 180, 1, 1, 1], null, null, 0, null, null, 0, null, null, null, 0, "123030", "23559", null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, 0, null, 0, "169639", 3, "169639", 3, 0, 0, null]];
 class ActionPropConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$16);
+        super(EXCELDATA$17);
     }
 }
 
@@ -1563,10 +1563,10 @@ var foreign7 = /*#__PURE__*/Object.freeze({
     ActionPropConfig: ActionPropConfig
 });
 
-const EXCELDATA$15 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "399525", 2], [2, null, "264186", 2], [3, null, "248351", 2], [4, null, "221716", 2], [5, null, "221709", 2], [6, null, "218570", 2], [7, null, "142606", 2], [8, null, "137492", 2], [9, null, "134959", 2], [10, null, "66353", 2], [11, null, "64458", 2], [12, null, "451380", 1], [13, null, "264153", 1], [14, null, "218835", 1], [15, null, "134561", 1], [16, null, "134559", 1], [17, null, "74680", 1], [18, null, "66593", 1], [19, null, "66553", 1], [20, null, "66220", 1], [21, null, "66149", 1], [22, null, "65725", 1], [23, null, "64951", 1]];
+const EXCELDATA$16 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "399525", 2], [2, null, "264186", 2], [3, null, "248351", 2], [4, null, "221716", 2], [5, null, "221709", 2], [6, null, "218570", 2], [7, null, "142606", 2], [8, null, "137492", 2], [9, null, "134959", 2], [10, null, "66353", 2], [11, null, "64458", 2], [12, null, "451380", 1], [13, null, "264153", 1], [14, null, "218835", 1], [15, null, "134561", 1], [16, null, "134559", 1], [17, null, "74680", 1], [18, null, "66593", 1], [19, null, "66553", 1], [20, null, "66220", 1], [21, null, "66149", 1], [22, null, "65725", 1], [23, null, "64951", 1]];
 class ALongCoatTopConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$15);
+        super(EXCELDATA$16);
     }
 }
 
@@ -1575,10 +1575,10 @@ var foreign8 = /*#__PURE__*/Object.freeze({
     ALongCoatTopConfig: ALongCoatTopConfig
 });
 
-const EXCELDATA$14 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "紫袍皇妃", "361904", 2], [2, "黄袍皇妃", "361909", 2], [3, "柔弱少女", "361917", 2], [4, "旗袍", "163277", 2], [5, "冰雪少女服饰", "163281", 2], [6, "短款汉服襦裙", "163285", 2], [7, "西域舞蹈服饰", "163289", 2], [8, "对襟襦裙", "163295", 2], [9, "汉服襦裙", "163314", 2], [10, "民族服饰", "163711", 2], [11, "古风大唐袖衫", "270466", 2], [12, "古装潮流女", "299952", 2], [13, "汉服男套装", "162928", 1], [14, "作战服", "162951", 1], [15, "汉服长袍", "162965", 1], [16, "清代官服", "164358", 1], [17, "刺绣古装男", "300154", 1], [18, "古风长发书生", "351095", 1], [19, "盔甲套装男", "351111", 1], [20, "富家子弟", "361912", 1], [21, "黑衣侠客", "361918", 1], [22, "古代将军", "362520", 1], [23, "白衣军师", "362525", 1], [24, "古代诗人", "362539", 1]];
+const EXCELDATA$15 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "紫袍皇妃", "361904", 2], [2, "黄袍皇妃", "361909", 2], [3, "柔弱少女", "361917", 2], [4, "旗袍", "163277", 2], [5, "冰雪少女服饰", "163281", 2], [6, "短款汉服襦裙", "163285", 2], [7, "西域舞蹈服饰", "163289", 2], [8, "对襟襦裙", "163295", 2], [9, "汉服襦裙", "163314", 2], [10, "民族服饰", "163711", 2], [11, "古风大唐袖衫", "270466", 2], [12, "古装潮流女", "299952", 2], [13, "汉服男套装", "162928", 1], [14, "作战服", "162951", 1], [15, "汉服长袍", "162965", 1], [16, "清代官服", "164358", 1], [17, "刺绣古装男", "300154", 1], [18, "古风长发书生", "351095", 1], [19, "盔甲套装男", "351111", 1], [20, "富家子弟", "361912", 1], [21, "黑衣侠客", "361918", 1], [22, "古代将军", "362520", 1], [23, "白衣军师", "362525", 1], [24, "古代诗人", "362539", 1]];
 class AncientMoldingOutfitConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$14);
+        super(EXCELDATA$15);
     }
 }
 
@@ -1587,10 +1587,10 @@ var foreign9 = /*#__PURE__*/Object.freeze({
     AncientMoldingOutfitConfig: AncientMoldingOutfitConfig
 });
 
-const EXCELDATA$13 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "双层翅膀", "334814", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [2, "翅膀", "135851", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [3, "六翼翅膀", "399002", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [4, "精灵翅膀", "339243", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [5, null, "326976", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [6, null, "211667", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [7, null, "452702", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [8, null, "449694", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [9, null, "449687", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [10, null, "449659", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [11, null, "393543", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [12, null, "375152", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [13, null, "375788", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [14, null, "375145", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [15, null, "375134", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [16, null, "145912", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [17, null, "42805", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [18, null, "42816", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [19, null, "342530", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [20, null, "211666", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [21, null, "178438", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [22, null, "378668", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [23, null, "342526", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [24, null, "342525", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [25, null, "340180", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [26, null, "340178", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [27, null, "145910", ["0", "0", "0", "0", "0", "180", "1", "1", "1"], 0], [28, null, "145909", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [29, null, "145908", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [30, null, "145907", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [31, null, "145906", ["0", "0", "-20", "0", "0", "90", "1", "1", "1"], 0], [32, null, "145904", ["0", "0", "0", "0", "0", "180", "1", "1", "1"], 0], [33, "棺材", "117847", ["0", "0", "-132", "0", "0", "90", "1", "1", "1"], 0], [34, "环绕", "146784", ["0", "0", "-18", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [35, null, "88757", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [36, null, "88756", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [37, null, "88767", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [38, null, "88770", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [39, null, "88769", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [40, null, "127018", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [41, null, "127019", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [42, null, "155677", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [43, null, "155680", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [44, null, "155682", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [45, null, "155684", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [46, null, "155705", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [47, null, "155706", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [48, null, "155707", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [49, null, "157113", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [50, null, "157118", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [51, null, "157119", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [52, null, "157253", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [53, null, "157254", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [54, null, "160335", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [55, null, "160339", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [56, null, "160340", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [57, null, "160342", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [58, null, "160344", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [59, null, "160347", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [60, null, "160345", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [61, null, "160343", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [62, null, "301947", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [63, null, "326208", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [64, null, "326209", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [65, null, "326306", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [66, null, "328807", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [67, null, "445944", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [68, null, "499861", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [69, null, "517323", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [70, null, "510179", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [71, null, "510182", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [72, null, "510184", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [73, null, "530877", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [74, null, "530878", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [75, null, "530881", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [76, "闪电", "142950", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [77, "飞行背包", "131208", ["-6", "0", "-123", "0", "0", "90", "1", "1", "1"], 0], [78, "小熊背包", "454815", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [79, "小熊背包", "454822", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [80, "小熊背包", "454833", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [81, "小熊背包", "454834", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [82, null, "132890", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [83, null, "132891", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [84, null, "132893", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [85, null, "132894", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [86, null, "132892", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [87, null, "402315", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [88, null, "402301", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [89, null, "397447", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [90, null, "409377", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [91, null, "409330", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [92, null, "424761", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [93, null, "348269", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [94, null, "196412", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [95, null, "155703", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0]];
+const EXCELDATA$14 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "双层翅膀", "334814", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [2, "翅膀", "135851", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [3, "六翼翅膀", "399002", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [4, "精灵翅膀", "339243", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [5, null, "326976", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [6, null, "211667", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [7, null, "452702", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [8, null, "449694", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [9, null, "449687", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [10, null, "449659", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [11, null, "393543", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [12, null, "375152", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [13, null, "375788", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [14, null, "375145", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [15, null, "375134", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [16, null, "145912", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [17, null, "42805", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [18, null, "42816", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [19, null, "342530", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [20, null, "211666", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [21, null, "178438", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [22, null, "378668", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [23, null, "342526", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [24, null, "342525", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [25, null, "340180", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [26, null, "340178", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [27, null, "145910", ["0", "0", "0", "0", "0", "180", "1", "1", "1"], 0], [28, null, "145909", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [29, null, "145908", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [30, null, "145907", ["0", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [31, null, "145906", ["0", "0", "-20", "0", "0", "90", "1", "1", "1"], 0], [32, null, "145904", ["0", "0", "0", "0", "0", "180", "1", "1", "1"], 0], [33, "棺材", "117847", ["0", "0", "-132", "0", "0", "90", "1", "1", "1"], 0], [34, "环绕", "146784", ["0", "0", "-18", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [35, null, "88757", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [36, null, "88756", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [37, null, "88767", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [38, null, "88770", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [39, null, "88769", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [40, null, "127018", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [41, null, "127019", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [42, null, "155677", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [43, null, "155680", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [44, null, "155682", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [45, null, "155684", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [46, null, "155705", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [47, null, "155706", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [48, null, "155707", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [49, null, "157113", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [50, null, "157118", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [51, null, "157119", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [52, null, "157253", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [53, null, "157254", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [54, null, "160335", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [55, null, "160339", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [56, null, "160340", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [57, null, "160342", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [58, null, "160344", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [59, null, "160347", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [60, null, "160345", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [61, null, "160343", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [62, null, "301947", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [63, null, "326208", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [64, null, "326209", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [65, null, "326306", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [66, null, "328807", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [67, null, "445944", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [68, null, "499861", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [69, null, "517323", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [70, null, "510179", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [71, null, "510182", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [72, null, "510184", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [73, null, "530877", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [74, null, "530878", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [75, null, "530881", ["30", "0", "-100", "0", "0", "90", "1", "1", "1"], 0], [76, "闪电", "142950", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [77, "飞行背包", "131208", ["-6", "0", "-123", "0", "0", "90", "1", "1", "1"], 0], [78, "小熊背包", "454815", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [79, "小熊背包", "454822", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [80, "小熊背包", "454833", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [81, "小熊背包", "454834", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [82, null, "132890", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [83, null, "132891", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [84, null, "132893", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [85, null, "132894", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [86, null, "132892", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [87, null, "402315", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [88, null, "402301", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [89, null, "397447", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [90, null, "409377", ["30", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [91, null, "409330", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [92, null, "424761", ["30", "0", "0", "0", "90", "0", "1", "1", "1"], 0], [93, null, "348269", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [94, null, "196412", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0], [95, null, "155703", ["30", "0", "0", "0", "0", "90", "1", "1", "1"], 0]];
 class BackConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$13);
+        super(EXCELDATA$14);
     }
 }
 
@@ -1599,10 +1599,10 @@ var foreign10 = /*#__PURE__*/Object.freeze({
     BackConfig: BackConfig
 });
 
-const EXCELDATA$12 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "57735", 2], [2, null, "60080", 2], [3, null, "60116", 2], [4, null, "60990", 2], [5, null, "61002", 2], [6, null, "62545", 2], [7, null, "62548", 2], [8, null, "62786", 2], [9, null, "62788", 2], [10, null, "62789", 2], [11, null, "62966", 2], [12, null, "62968", 2], [13, null, "63305", 2], [14, null, "63306", 2], [15, null, "63309", 2], [16, null, "63310", 2], [17, null, "63311", 2], [18, null, "63549", 2], [19, null, "63550", 2], [20, null, "63551", 2], [21, null, "63647", 2], [22, null, "63874", 2], [23, null, "64148", 2], [24, null, "64149", 2], [25, null, "64150", 2], [26, null, "64259", 2], [27, null, "64261", 2], [28, null, "64310", 2], [29, null, "64415", 2], [30, null, "64717", 2], [31, null, "64718", 2], [32, null, "65663", 2], [33, null, "65711", 2], [34, null, "65868", 2], [35, null, "66357", 2], [36, null, "66418", 2], [37, null, "66507", 2], [38, null, "66563", 2], [39, null, "66575", 2], [40, null, "66711", 2], [41, null, "66734", 2], [42, null, "67587", 2], [43, null, "73211", 2], [44, null, "73212", 2], [45, null, "74318", 2], [46, null, "86091", 2], [47, null, "109838", 2], [48, null, "117150", 2], [49, null, "117492", 2], [50, null, "118421", 2], [51, null, "118435", 2], [52, null, "118445", 2], [53, null, "118452", 2], [54, null, "118483", 2], [55, null, "118517", 2], [56, null, "118531", 2], [57, null, "118544", 2], [58, null, "118562", 2], [59, null, "119413", 2], [60, null, "119430", 2], [61, null, "119446", 2], [62, null, "124779", 2], [63, null, "124792", 2], [64, null, "126006", 2], [65, null, "126617", 2], [66, null, "127276", 2], [67, null, "127637", 2], [68, null, "127680", 2], [69, null, "132223", 2], [70, null, "132225", 2], [71, null, "132227", 2], [72, null, "132228", 2], [73, null, "132229", 2], [74, null, "137381", 2], [75, null, "137493", 2], [76, null, "140482", 2], [77, null, "141711", 2], [78, null, "142599", 2], [79, null, "142605", 2], [80, null, "142676", 2], [81, null, "142677", 2], [82, null, "142681", 2], [83, null, "142836", 2], [84, null, "142846", 2], [85, null, "144625", 2], [86, null, "144680", 2], [87, null, "181364", 2], [88, null, "195705", 2], [89, null, "195706", 2], [90, null, "217608", 2], [91, null, "218591", 2], [92, null, "221652", 2], [93, null, "240053", 2], [94, null, "240936", 2], [95, null, "241188", 2], [96, null, "241443", 2], [97, null, "292001", 2], [98, null, "299080", 2], [99, null, "346551", 2], [100, null, "349653", 2], [101, null, "358219", 2], [102, null, "392301", 2], [103, null, "399523", 2], [104, null, "457926", 2], [105, null, "468348", 2], [106, null, "490923", 2], [107, null, "497920", 2], [108, null, "60383", 1], [109, null, "63679", 1], [110, null, "63910", 1], [111, null, "64186", 1], [112, null, "64719", 1], [113, null, "64998", 1], [114, null, "65007", 1], [115, null, "65728", 1], [116, null, "65777", 1], [117, null, "65977", 1], [118, null, "66109", 1], [119, null, "66151", 1], [120, null, "66161", 1], [121, null, "66421", 1], [122, null, "66422", 1], [123, null, "66557", 1], [124, null, "66595", 1], [125, null, "66698", 1], [126, null, "74120", 1], [127, null, "74121", 1], [128, null, "92012", 1], [129, null, "119494", 1], [130, null, "119680", 1], [131, null, "119696", 1], [132, null, "119876", 1], [133, null, "120200", 1], [134, null, "121120", 1], [135, null, "121121", 1], [136, null, "122002", 1], [137, null, "122920", 1], [138, null, "124848", 1], [139, null, "126004", 1], [140, null, "129175", 1], [141, null, "129459", 1], [142, null, "129952", 1], [143, null, "130755", 1], [144, null, "140328", 1], [145, null, "140424", 1], [146, null, "142603", 1], [147, null, "144328", 1], [148, null, "144340", 1], [149, null, "144412", 1], [150, null, "241323", 1], [151, null, "247527", 1], [152, null, "250942", 1], [153, null, "250944", 1], [154, null, "266162", 1], [155, null, "314482", 1]];
+const EXCELDATA$13 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "57735", 2], [2, null, "60080", 2], [3, null, "60116", 2], [4, null, "60990", 2], [5, null, "61002", 2], [6, null, "62545", 2], [7, null, "62548", 2], [8, null, "62786", 2], [9, null, "62788", 2], [10, null, "62789", 2], [11, null, "62966", 2], [12, null, "62968", 2], [13, null, "63305", 2], [14, null, "63306", 2], [15, null, "63309", 2], [16, null, "63310", 2], [17, null, "63311", 2], [18, null, "63549", 2], [19, null, "63550", 2], [20, null, "63551", 2], [21, null, "63647", 2], [22, null, "63874", 2], [23, null, "64148", 2], [24, null, "64149", 2], [25, null, "64150", 2], [26, null, "64259", 2], [27, null, "64261", 2], [28, null, "64310", 2], [29, null, "64415", 2], [30, null, "64717", 2], [31, null, "64718", 2], [32, null, "65663", 2], [33, null, "65711", 2], [34, null, "65868", 2], [35, null, "66357", 2], [36, null, "66418", 2], [37, null, "66507", 2], [38, null, "66563", 2], [39, null, "66575", 2], [40, null, "66711", 2], [41, null, "66734", 2], [42, null, "67587", 2], [43, null, "73211", 2], [44, null, "73212", 2], [45, null, "74318", 2], [46, null, "86091", 2], [47, null, "109838", 2], [48, null, "117150", 2], [49, null, "117492", 2], [50, null, "118421", 2], [51, null, "118435", 2], [52, null, "118445", 2], [53, null, "118452", 2], [54, null, "118483", 2], [55, null, "118517", 2], [56, null, "118531", 2], [57, null, "118544", 2], [58, null, "118562", 2], [59, null, "119413", 2], [60, null, "119430", 2], [61, null, "119446", 2], [62, null, "124779", 2], [63, null, "124792", 2], [64, null, "126006", 2], [65, null, "126617", 2], [66, null, "127276", 2], [67, null, "127637", 2], [68, null, "127680", 2], [69, null, "132223", 2], [70, null, "132225", 2], [71, null, "132227", 2], [72, null, "132228", 2], [73, null, "132229", 2], [74, null, "137381", 2], [75, null, "137493", 2], [76, null, "140482", 2], [77, null, "141711", 2], [78, null, "142599", 2], [79, null, "142605", 2], [80, null, "142676", 2], [81, null, "142677", 2], [82, null, "142681", 2], [83, null, "142836", 2], [84, null, "142846", 2], [85, null, "144625", 2], [86, null, "144680", 2], [87, null, "181364", 2], [88, null, "195705", 2], [89, null, "195706", 2], [90, null, "217608", 2], [91, null, "218591", 2], [92, null, "221652", 2], [93, null, "240053", 2], [94, null, "240936", 2], [95, null, "241188", 2], [96, null, "241443", 2], [97, null, "292001", 2], [98, null, "299080", 2], [99, null, "346551", 2], [100, null, "349653", 2], [101, null, "358219", 2], [102, null, "392301", 2], [103, null, "399523", 2], [104, null, "457926", 2], [105, null, "468348", 2], [106, null, "490923", 2], [107, null, "497920", 2], [108, null, "60383", 1], [109, null, "63679", 1], [110, null, "63910", 1], [111, null, "64186", 1], [112, null, "64719", 1], [113, null, "64998", 1], [114, null, "65007", 1], [115, null, "65728", 1], [116, null, "65777", 1], [117, null, "65977", 1], [118, null, "66109", 1], [119, null, "66151", 1], [120, null, "66161", 1], [121, null, "66421", 1], [122, null, "66422", 1], [123, null, "66557", 1], [124, null, "66595", 1], [125, null, "66698", 1], [126, null, "74120", 1], [127, null, "74121", 1], [128, null, "92012", 1], [129, null, "119494", 1], [130, null, "119680", 1], [131, null, "119696", 1], [132, null, "119876", 1], [133, null, "120200", 1], [134, null, "121120", 1], [135, null, "121121", 1], [136, null, "122002", 1], [137, null, "122920", 1], [138, null, "124848", 1], [139, null, "126004", 1], [140, null, "129175", 1], [141, null, "129459", 1], [142, null, "129952", 1], [143, null, "130755", 1], [144, null, "140328", 1], [145, null, "140424", 1], [146, null, "142603", 1], [147, null, "144328", 1], [148, null, "144340", 1], [149, null, "144412", 1], [150, null, "241323", 1], [151, null, "247527", 1], [152, null, "250942", 1], [153, null, "250944", 1], [154, null, "266162", 1], [155, null, "314482", 1]];
 class BackHairConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$12);
+        super(EXCELDATA$13);
     }
 }
 
@@ -1611,10 +1611,10 @@ var foreign11 = /*#__PURE__*/Object.freeze({
     BackHairConfig: BackHairConfig
 });
 
-const EXCELDATA$11 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, null, "454704", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, null, "454729", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, null, "454730", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, null, "454731", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, null, "454740", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, null, "458894", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, null, "458895", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [8, null, "458896", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [9, null, "458897", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
+const EXCELDATA$12 = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, null, "454704", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, null, "454729", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, null, "454730", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, null, "454731", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, null, "454740", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, null, "458894", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, null, "458895", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [8, null, "458896", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [9, null, "458897", ["-7", "0", "0", "0", "0", "0", "1", "1", "1"], 0]];
 class BackPetConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$11);
+        super(EXCELDATA$12);
     }
 }
 
@@ -1623,10 +1623,10 @@ var foreign12 = /*#__PURE__*/Object.freeze({
     BackPetConfig: BackPetConfig
 });
 
-const EXCELDATA$10 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "531764", 0], [2, null, "370252", 0], [3, null, "370251", 0], [4, null, "370250", 0], [5, null, "370249", 0], [6, null, "370246", 0], [7, null, "370245", 0], [8, null, "370239", 0], [9, null, "215936", 0], [10, null, "215935", 0], [11, null, "215934", 0], [12, null, "215933", 0], [13, null, "215932", 0], [14, null, "215930", 0], [15, null, "215929", 0], [16, null, "215928", 0], [17, null, "215927", 0], [18, null, "215926", 0], [19, null, "215925", 0], [20, null, "215924", 0], [21, null, "215923", 0], [22, null, "215922", 0], [23, null, "215921", 0], [24, null, "215920", 0], [25, null, "215919", 0], [26, null, "215918", 0], [27, null, "215917", 0], [28, null, "215916", 0], [29, null, "215915", 0], [30, null, "215914", 0], [31, null, "215913", 0], [32, null, "215911", 0], [33, null, "215910", 0], [34, null, "215909", 0], [35, null, "215908", 0], [36, null, "215907", 0], [37, null, "215906", 0], [38, null, "215905", 0], [39, null, "215904", 0], [40, null, "215903", 0], [41, null, "215902", 0], [42, null, "215901", 0], [43, null, "215900", 0], [44, null, "215899", 0], [45, null, "215898", 0], [46, null, "215897", 0], [47, null, "215896", 0], [48, null, "215895", 0], [49, null, "164837", 0], [50, null, "129303", 0], [51, null, "121548", 0], [52, null, "112597", 0], [53, null, "112596", 0], [54, null, "112595", 0], [55, null, "112594", 0], [56, null, "112593", 0], [57, null, "112591", 0], [58, null, "112590", 0], [59, null, "112589", 0], [60, null, "112588", 0], [61, null, "112586", 0], [62, null, "107625", 0], [63, null, "77490", 0], [64, null, "77489", 0], [65, null, "77488", 0], [66, null, "77487", 0], [67, null, "77442", 0], [68, null, "77441", 0], [69, null, "77440", 0], [70, null, "77439", 0], [71, null, "77438", 0], [72, null, "77437", 0], [73, null, "75674", 0], [74, null, "75673", 0], [75, null, "32114", 0], [76, null, "32103", 0]];
+const EXCELDATA$11 = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "531764", 0], [2, null, "370252", 0], [3, null, "370251", 0], [4, null, "370250", 0], [5, null, "370249", 0], [6, null, "370246", 0], [7, null, "370245", 0], [8, null, "370239", 0], [9, null, "215936", 0], [10, null, "215935", 0], [11, null, "215934", 0], [12, null, "215933", 0], [13, null, "215932", 0], [14, null, "215930", 0], [15, null, "215929", 0], [16, null, "215928", 0], [17, null, "215927", 0], [18, null, "215926", 0], [19, null, "215925", 0], [20, null, "215924", 0], [21, null, "215923", 0], [22, null, "215922", 0], [23, null, "215921", 0], [24, null, "215920", 0], [25, null, "215919", 0], [26, null, "215918", 0], [27, null, "215917", 0], [28, null, "215916", 0], [29, null, "215915", 0], [30, null, "215914", 0], [31, null, "215913", 0], [32, null, "215911", 0], [33, null, "215910", 0], [34, null, "215909", 0], [35, null, "215908", 0], [36, null, "215907", 0], [37, null, "215906", 0], [38, null, "215905", 0], [39, null, "215904", 0], [40, null, "215903", 0], [41, null, "215902", 0], [42, null, "215901", 0], [43, null, "215900", 0], [44, null, "215899", 0], [45, null, "215898", 0], [46, null, "215897", 0], [47, null, "215896", 0], [48, null, "215895", 0], [49, null, "164837", 0], [50, null, "129303", 0], [51, null, "121548", 0], [52, null, "112597", 0], [53, null, "112596", 0], [54, null, "112595", 0], [55, null, "112594", 0], [56, null, "112593", 0], [57, null, "112591", 0], [58, null, "112590", 0], [59, null, "112589", 0], [60, null, "112588", 0], [61, null, "112586", 0], [62, null, "107625", 0], [63, null, "77490", 0], [64, null, "77489", 0], [65, null, "77488", 0], [66, null, "77487", 0], [67, null, "77442", 0], [68, null, "77441", 0], [69, null, "77440", 0], [70, null, "77439", 0], [71, null, "77438", 0], [72, null, "77437", 0], [73, null, "75674", 0], [74, null, "75673", 0], [75, null, "32114", 0], [76, null, "32103", 0]];
 class BlushConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$10);
+        super(EXCELDATA$11);
     }
 }
 
@@ -1635,10 +1635,10 @@ var foreign13 = /*#__PURE__*/Object.freeze({
     BlushConfig: BlushConfig
 });
 
-const EXCELDATA$$ = [["ID", "Describe", "Scale", "SexType", "Icon"], ["", "", "", "", ""], [1, "0.7倍", 0.7, 0, "119160"], [2, "0.8倍", 0.8, 0, "119155"], [3, "0.9倍", 0.9, 0, "119155"], [4, "正常", 1, 0, "119156"], [5, "1.1倍", 1.1, 0, "119157"], [6, "1.2倍", 1.2, 0, "119157"], [7, "1.3倍", 1.3, 0, "119152"]];
+const EXCELDATA$10 = [["ID", "Describe", "Scale", "SexType", "Icon"], ["", "", "", "", ""], [1, "0.7倍", 0.7, 0, "119160"], [2, "0.8倍", 0.8, 0, "119155"], [3, "0.9倍", 0.9, 0, "119155"], [4, "正常", 1, 0, "119156"], [5, "1.1倍", 1.1, 0, "119157"], [6, "1.2倍", 1.2, 0, "119157"], [7, "1.3倍", 1.3, 0, "119152"]];
 class BodyTypeConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$$);
+        super(EXCELDATA$10);
     }
 }
 
@@ -1647,10 +1647,10 @@ var foreign14 = /*#__PURE__*/Object.freeze({
     BodyTypeConfig: BodyTypeConfig
 });
 
-const EXCELDATA$_ = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "502241", 2], [2, null, "497874", 2], [3, null, "497782", 2], [4, null, "458636", 2], [5, null, "457812", 2], [6, null, "440206", 2], [7, null, "437606", 2], [8, null, "412090", 2], [9, null, "298038", 2], [10, null, "264185", 2], [11, null, "240934", 2], [12, null, "240050", 2], [13, null, "221708", 2], [14, null, "218866", 2], [15, null, "140484", 2], [16, null, "137490", 2], [17, null, "137383", 2], [18, null, "134232", 2], [19, null, "131788", 2], [20, null, "128835", 2], [21, null, "125735", 2], [22, null, "115850", 2], [23, null, "111252", 2], [24, null, "111082", 2], [25, null, "74458", 2], [26, null, "66709", 2], [27, null, "64456", 2], [28, null, "64209", 2], [29, null, "63297", 2], [30, null, "63296", 2], [31, null, "62780", 2], [32, null, "59427", 2], [33, null, "502159", 1], [34, null, "494889", 1], [35, null, "479088", 1], [36, null, "218865", 1], [37, null, "218832", 1], [38, null, "181111", 1], [39, null, "140279", 1], [40, null, "134565", 1], [41, null, "134558", 1], [42, null, "131749", 1], [43, null, "129937", 1], [44, null, "129248", 1], [45, null, "129178", 1], [46, null, "127715", 1], [47, null, "127498", 1], [48, null, "125687", 1], [49, null, "122088", 1], [50, null, "119774", 1], [51, null, "119340", 1], [52, null, "119255", 1], [53, null, "112569", 1], [54, null, "111769", 1], [55, null, "111618", 1], [56, null, "111393", 1], [57, null, "111354", 1], [58, null, "111287", 1], [59, null, "111160", 1], [60, null, "94773", 1], [61, null, "92016", 1], [62, null, "74116", 1], [63, null, "66555", 1], [64, null, "65779", 1], [65, null, "60385", 1]];
+const EXCELDATA$$ = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "502241", 2], [2, null, "497874", 2], [3, null, "497782", 2], [4, null, "458636", 2], [5, null, "457812", 2], [6, null, "440206", 2], [7, null, "437606", 2], [8, null, "412090", 2], [9, null, "298038", 2], [10, null, "264185", 2], [11, null, "240934", 2], [12, null, "240050", 2], [13, null, "221708", 2], [14, null, "218866", 2], [15, null, "140484", 2], [16, null, "137490", 2], [17, null, "137383", 2], [18, null, "134232", 2], [19, null, "131788", 2], [20, null, "128835", 2], [21, null, "125735", 2], [22, null, "115850", 2], [23, null, "111252", 2], [24, null, "111082", 2], [25, null, "74458", 2], [26, null, "66709", 2], [27, null, "64456", 2], [28, null, "64209", 2], [29, null, "63297", 2], [30, null, "63296", 2], [31, null, "62780", 2], [32, null, "59427", 2], [33, null, "502159", 1], [34, null, "494889", 1], [35, null, "479088", 1], [36, null, "218865", 1], [37, null, "218832", 1], [38, null, "181111", 1], [39, null, "140279", 1], [40, null, "134565", 1], [41, null, "134558", 1], [42, null, "131749", 1], [43, null, "129937", 1], [44, null, "129248", 1], [45, null, "129178", 1], [46, null, "127715", 1], [47, null, "127498", 1], [48, null, "125687", 1], [49, null, "122088", 1], [50, null, "119774", 1], [51, null, "119340", 1], [52, null, "119255", 1], [53, null, "112569", 1], [54, null, "111769", 1], [55, null, "111618", 1], [56, null, "111393", 1], [57, null, "111354", 1], [58, null, "111287", 1], [59, null, "111160", 1], [60, null, "94773", 1], [61, null, "92016", 1], [62, null, "74116", 1], [63, null, "66555", 1], [64, null, "65779", 1], [65, null, "60385", 1]];
 class BootsShoesConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$_);
+        super(EXCELDATA$$);
     }
 }
 
@@ -1659,10 +1659,10 @@ var foreign15 = /*#__PURE__*/Object.freeze({
     BootsShoesConfig: BootsShoesConfig
 });
 
-const EXCELDATA$Z = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "套靴长裤", "60386", 1], [2, "制服短裙", "57736", 2]];
+const EXCELDATA$_ = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "套靴长裤", "60386", 1], [2, "制服短裙", "57736", 2]];
 class BottomConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$Z);
+        super(EXCELDATA$_);
     }
 }
 
@@ -1671,10 +1671,10 @@ var foreign16 = /*#__PURE__*/Object.freeze({
     BottomConfig: BottomConfig
 });
 
-const EXCELDATA$Y = [["Id", "Chats", "ChatChilds"], ["", "", ""], [1, ["Praise", "赞美"], [["Your outfit looks great!", "你的搭配真好看！"], ["This dress fits you well!", "这件衣服好适合你！"], ["Hair and makeup match!", "发型和妆容绝配！"], ["You're so good!", "你太会搭了！"]]], [2, ["Help", "求助"], [["How about looking at this set for me?", "帮我看看这套怎么样？"], ["What shoes would go with this dress?", "这件衣服配什么鞋子好？"], ["Are there any recommended color combinations?", "有没有推荐的颜色搭配？"], ["Does this hairstyle suit me?", "这个发型适合我吗？"]]], [3, ["Interaction", "互动"], [["Share your outfit!", "分享一下穿搭吧！"], ["PK to match it!", "来PK一下搭配吧！"], ["What style do you prefer?", "你喜欢什么风格？"], ["We can try each other on!", "我们可以互相试穿哦！"]]], [4, ["Thank you", "感谢"], [["Thanks for the advice!", "谢谢你的建议！"], ["Thanks for sharing!", "感谢你的分享！"], ["Thanks for the compliment!", "谢谢夸奖！"], ["Thanks for your help!", "感谢你的帮助！"]]], [5, ["Make fun of", "吐槽"], [["This dress is so hard to match!", "这件衣服太难搭了！"], ["You are out of line!", "你好过分！"], ["No hee hee!", "不嘻嘻！"]]], [6, ["Invitation", "邀请"], [["Add a friend!", "加个好友吧！"], ["Team up!", "一起组队吧！"], ["Come on, my dress!", "试穿我的穿搭！"]]], [7, ["Show Time!", ")*o*( 我要开始表演了~"], null]];
+const EXCELDATA$Z = [["Id", "Chats", "ChatChilds"], ["", "", ""], [1, ["Praise", "赞美"], [["Your outfit looks great!", "你的搭配真好看！"], ["This dress fits you well!", "这件衣服好适合你！"], ["Hair and makeup match!", "发型和妆容绝配！"], ["You're so good!", "你太会搭了！"]]], [2, ["Help", "求助"], [["How about looking at this set for me?", "帮我看看这套怎么样？"], ["What shoes would go with this dress?", "这件衣服配什么鞋子好？"], ["Are there any recommended color combinations?", "有没有推荐的颜色搭配？"], ["Does this hairstyle suit me?", "这个发型适合我吗？"]]], [3, ["Interaction", "互动"], [["Share your outfit!", "分享一下穿搭吧！"], ["PK to match it!", "来PK一下搭配吧！"], ["What style do you prefer?", "你喜欢什么风格？"], ["We can try each other on!", "我们可以互相试穿哦！"]]], [4, ["Thank you", "感谢"], [["Thanks for the advice!", "谢谢你的建议！"], ["Thanks for sharing!", "感谢你的分享！"], ["Thanks for the compliment!", "谢谢夸奖！"], ["Thanks for your help!", "感谢你的帮助！"]]], [5, ["Make fun of", "吐槽"], [["This dress is so hard to match!", "这件衣服太难搭了！"], ["You are out of line!", "你好过分！"], ["No hee hee!", "不嘻嘻！"]]], [6, ["Invitation", "邀请"], [["Add a friend!", "加个好友吧！"], ["Team up!", "一起组队吧！"], ["Come on, my dress!", "试穿我的穿搭！"]]], [7, ["Show Time!", ")*o*( 我要开始表演了~"], null]];
 class ChatConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$Y);
+        super(EXCELDATA$Z);
     }
 }
 
@@ -1683,10 +1683,10 @@ var foreign17 = /*#__PURE__*/Object.freeze({
     ChatConfig: ChatConfig
 });
 
-const EXCELDATA$X = [["ID", "SkinToneColor", "PupilColor", "HairColor", "TopColor", "BottomColor", "ShoeColor", "GloveColor", "EyebrowsColor", "EyeLashColor", "EyeShadow", "BlushColor", "LipstickColor", "PupilStyleColor"], ["", "", "", "", "", "", "", "", "", "", "", "", "", ""], [1, "FEF9F6FF", "F76964FF", "D5C7D4FF", "A086DEFF", "A086DEFF", "316459FF", "316459FF", "312E2CFF", "312E2CFF", "FFEEE7FF", "FFD6E6FF", "B56B63FF", "F76964FF"], [2, "F7DACCFF", "FEC574FF", "A77FB8FF", "D95F5DFF", "D95F5DFF", "68605BFF", "68605BFF", "4A2B25FF", "4A2B25FF", "946A7BFF", "FE77B3FF", "F87874FF", "FEC574FF"], [3, "ECC8AEFF", "AD82F7FF", "FBD97FFF", "AED85BFF", "AED85BFF", "F8AC35FF", "F8AC35FF", "7A3730FF", "7A3730FF", "A59273FF", "C14C71FF", "E78863FF", "AD82F7FF"], [4, "805F4CFF", "1F2329FF", "B1AE7BFF", "FCC86DFF", "FCC86DFF", "0C81B4FF", "0C81B4FF", "863F30FF", "863F30FF", "E7B6A5FF", "FDAEB9FF", "F2AEB2FF", "1F2329FF"], [5, "341C10FF", "8EE085FF", "7A92B4FF", "BABEBDFF", "BABEBDFF", "026B47FF", "026B47FF", "B26949FF", "B26949FF", "5A5D5AFF", "FED2D7FF", "FFDAD6FF", "8EE085FF"], [6, "F9E175FF", "47B7F6FF", "2F2629FF", "2E5A8FFF", "2E5A8FFF", "BABEBDFF", "BABEBDFF", "E9A37BFF", "E9A37BFF", "312E2CFF", "F9E2DFFF", "BC6A65FF", "47B7F6FF"]];
+const EXCELDATA$Y = [["ID", "SkinToneColor", "PupilColor", "HairColor", "TopColor", "BottomColor", "ShoeColor", "GloveColor", "EyebrowsColor", "EyeLashColor", "EyeShadow", "BlushColor", "LipstickColor", "PupilStyleColor"], ["", "", "", "", "", "", "", "", "", "", "", "", "", ""], [1, "FEF9F6FF", "F76964FF", "D5C7D4FF", "A086DEFF", "A086DEFF", "316459FF", "316459FF", "312E2CFF", "312E2CFF", "FFEEE7FF", "FFD6E6FF", "B56B63FF", "F76964FF"], [2, "F7DACCFF", "FEC574FF", "A77FB8FF", "D95F5DFF", "D95F5DFF", "68605BFF", "68605BFF", "4A2B25FF", "4A2B25FF", "946A7BFF", "FE77B3FF", "F87874FF", "FEC574FF"], [3, "ECC8AEFF", "AD82F7FF", "FBD97FFF", "AED85BFF", "AED85BFF", "F8AC35FF", "F8AC35FF", "7A3730FF", "7A3730FF", "A59273FF", "C14C71FF", "E78863FF", "AD82F7FF"], [4, "805F4CFF", "1F2329FF", "B1AE7BFF", "FCC86DFF", "FCC86DFF", "0C81B4FF", "0C81B4FF", "863F30FF", "863F30FF", "E7B6A5FF", "FDAEB9FF", "F2AEB2FF", "1F2329FF"], [5, "341C10FF", "8EE085FF", "7A92B4FF", "BABEBDFF", "BABEBDFF", "026B47FF", "026B47FF", "B26949FF", "B26949FF", "5A5D5AFF", "FED2D7FF", "FFDAD6FF", "8EE085FF"], [6, "F9E175FF", "47B7F6FF", "2F2629FF", "2E5A8FFF", "2E5A8FFF", "BABEBDFF", "BABEBDFF", "E9A37BFF", "E9A37BFF", "312E2CFF", "F9E2DFFF", "BC6A65FF", "47B7F6FF"]];
 class ColorValueConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$X);
+        super(EXCELDATA$Y);
     }
 }
 
@@ -1695,10 +1695,10 @@ var foreign18 = /*#__PURE__*/Object.freeze({
     ColorValueConfig: ColorValueConfig
 });
 
-const EXCELDATA$W = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "制服女", "367076", 2], [2, "制服女", "435694", 2], [3, "一定过套装", "253153", 2], [4, "主打求神套装", "264188", 2], [5, "卡皮巴拉套装1", "270007", 2], [6, "卡皮巴拉套装2", "213620", 2], [7, "女学生角色", "343066", 2], [8, "和服", "334005", 2], [9, "JK女生", "320751", 2], [10, "新年毛衣", "298108", 2], [11, "露肩长裙", "218598", 2], [12, null, "215971", 2], [13, null, "213622", 2], [14, null, "270008", 2], [15, null, "213535", 2], [16, null, "213533", 2], [17, null, "164426", 2], [18, null, "164421", 2], [19, null, "164418", 2], [20, null, "163712", 2], [21, null, "163710", 2], [22, null, "163709", 2], [23, null, "163708", 2], [24, null, "163707", 2], [25, null, "163706", 2], [26, null, "163624", 2], [27, null, "163551", 2], [28, null, "163550", 2], [29, null, "163548", 2], [30, null, "163547", 2], [31, null, "163546", 2], [32, null, "163545", 2], [33, null, "163544", 2], [34, null, "163543", 2], [35, null, "163529", 2], [36, null, "163528", 2], [37, null, "163527", 2], [38, null, "163526", 2], [39, null, "163525", 2], [40, null, "163524", 2], [41, null, "163523", 2], [42, null, "163522", 2], [43, null, "163521", 2], [44, null, "163334", 2], [45, null, "163333", 2], [46, null, "163332", 2], [47, null, "163331", 2], [48, null, "163328", 2], [49, null, "163327", 2], [50, null, "163325", 2], [51, null, "163324", 2], [52, null, "163323", 2], [53, null, "163322", 2], [54, null, "163321", 2], [55, null, "163320", 2], [56, null, "163319", 2], [57, null, "163318", 2], [58, null, "163317", 2], [59, null, "163316", 2], [60, null, "163315", 2], [61, null, "163313", 2], [62, null, "163312", 2], [63, null, "163311", 2], [64, null, "163310", 2], [65, null, "163309", 2], [66, null, "163308", 2], [67, null, "163307", 2], [68, null, "163306", 2], [69, null, "163305", 2], [70, null, "163303", 2], [71, null, "163302", 2], [72, null, "163301", 2], [73, null, "163300", 2], [74, null, "163299", 2], [75, null, "163298", 2], [76, null, "163297", 2], [77, null, "163296", 2], [78, null, "163294", 2], [79, null, "163293", 2], [80, null, "163292", 2], [81, null, "163291", 2], [82, null, "163290", 2], [83, null, "163288", 2], [84, null, "163287", 2], [85, null, "163286", 2], [86, null, "163284", 2], [87, null, "163283", 2], [88, null, "163282", 2], [89, null, "163275", 2], [90, null, "162960", 2], [91, null, "162957", 2], [92, null, "136183", 2], [93, null, "136184", 2], [94, null, "136185", 2], [95, null, "136186", 2], [96, null, "136187", 2], [97, null, "136188", 2], [98, null, "136190", 2], [99, null, "136191", 2], [100, null, "136289", 2], [101, null, "136290", 2], [102, null, "136291", 2], [103, null, "136292", 2], [104, null, "136295", 2], [105, null, "136300", 2], [106, null, "136302", 2], [107, null, "136304", 2], [108, null, "137840", 2], [109, null, "137847", 2], [110, null, "137852", 2], [111, null, "137855", 2], [112, null, "141013", 2], [113, null, "141016", 2], [114, null, "141019", 2], [115, null, "141020", 2], [116, null, "141022", 2], [117, null, "141023", 2], [118, null, "141026", 2], [119, null, "141027", 2], [120, null, "141048", 2], [121, null, "141049", 2], [122, null, "141051", 2], [123, null, "141052", 2], [124, null, "141053", 2], [125, null, "141054", 2], [126, null, "141057", 2], [127, null, "141059", 2], [128, null, "141060", 2], [129, null, "141080", 2], [130, null, "141082", 2], [131, null, "141084", 2], [132, null, "141085", 2], [133, null, "141089", 2], [134, null, "141090", 2], [135, null, "141091", 2], [136, null, "141093", 2], [137, null, "141095", 2], [138, null, "141100", 2], [139, null, "141102", 2], [140, null, "141106", 2], [141, null, "141126", 2], [142, null, "141141", 2], [143, null, "141142", 2], [144, null, "141154", 2], [145, null, "141483", 2], [146, null, "141484", 2], [147, null, "141488", 2], [148, null, "141490", 2], [149, null, "141492", 2], [150, null, "141494", 2], [151, null, "141501", 2], [152, null, "141502", 2], [153, null, "141503", 2], [154, null, "141505", 2], [155, null, "141528", 2], [156, null, "141542", 2], [157, null, "141620", 2], [158, null, "141647", 2], [159, null, "141714", 2], [160, null, "141717", 2], [161, null, "141733", 2], [162, null, "141928", 2], [163, null, "142185", 2], [164, null, "142188", 2], [165, null, "142189", 2], [166, null, "142191", 2], [167, null, "142194", 2], [168, null, "142249", 2], [169, null, "142257", 2], [170, null, "142267", 2], [171, null, "142269", 2], [172, null, "142274", 2], [173, null, "142287", 2], [174, null, "142289", 2], [175, null, "142304", 2], [176, null, "142307", 2], [177, null, "142309", 2], [178, null, "142348", 2], [179, null, "142350", 2], [180, null, "142391", 2], [181, null, "142392", 2], [182, null, "142427", 2], [183, null, "142866", 2], [184, null, "142867", 2], [185, null, "142875", 2], [186, null, "142879", 2], [187, null, "143391", 2], [188, null, "143393", 2], [189, null, "143400", 2], [190, null, "143401", 2], [191, null, "143419", 2], [192, null, "143420", 2], [193, null, "147934", 2], [194, null, "226385", 2], [195, null, "347528", 2], [196, null, "347564", 2], [197, null, "347607", 2], [198, null, "349208", 2], [199, null, "349214", 2], [200, null, "349215", 2], [201, null, "349245", 2], [202, null, "349269", 2], [203, null, "349270", 2], [204, null, "349310", 2], [205, null, "349315", 2], [206, null, "349371", 2], [207, null, "349375", 2], [208, null, "350314", 2], [209, null, "350315", 2], [210, null, "350318", 2], [211, null, "350568", 2], [212, null, "350569", 2], [213, null, "350570", 2], [214, null, "350574", 2], [215, null, "350575", 2], [216, null, "350576", 2], [217, null, "350667", 2], [218, null, "350738", 2], [219, null, "350739", 2], [220, null, "350740", 2], [221, null, "350744", 2], [222, null, "350746", 2], [223, null, "350752", 2], [224, null, "350756", 2], [225, null, "350956", 2], [226, null, "350958", 2], [227, null, "350959", 2], [228, null, "350973", 2], [229, null, "350987", 2], [230, null, "351004", 2], [231, null, "351025", 2], [232, null, "351397", 2], [233, null, "351404", 2], [234, null, "351497", 2], [235, null, "351500", 2], [236, null, "351600", 2], [237, null, "361910", 2], [238, null, "385222", 2], [239, null, "226377", 1], [240, null, "263401", 1], [241, null, "264189", 1], [242, null, "397887", 1], [243, null, "392825", 1], [244, null, "343523", 1], [245, null, "321374", 1], [246, null, "305216", 1], [247, null, "254424", 1], [248, null, "213621", 1], [249, null, "213534", 1], [250, null, "164379", 1], [251, null, "164376", 1], [252, null, "164375", 1], [253, null, "164374", 1], [254, null, "164372", 1], [255, null, "164370", 1], [256, null, "164365", 1], [257, null, "164363", 1], [258, null, "164357", 1], [259, null, "163627", 1], [260, null, "163626", 1], [261, null, "163625", 1], [262, null, "163623", 1], [263, null, "163622", 1], [264, null, "162975", 1], [265, null, "162974", 1], [266, null, "162973", 1], [267, null, "162972", 1], [268, null, "162970", 1], [269, null, "162969", 1], [270, null, "162968", 1], [271, null, "162967", 1], [272, null, "162966", 1], [273, null, "162963", 1], [274, null, "162962", 1], [275, null, "162961", 1], [276, null, "162959", 1], [277, null, "162958", 1], [278, null, "162956", 1], [279, null, "162954", 1], [280, null, "162953", 1], [281, null, "162952", 1], [282, null, "162949", 1], [283, null, "162948", 1], [284, null, "162947", 1], [285, null, "162945", 1], [286, null, "162944", 1], [287, null, "162943", 1], [288, null, "162942", 1], [289, null, "162941", 1], [290, null, "162940", 1], [291, null, "162939", 1], [292, null, "162936", 1], [293, null, "162935", 1], [294, null, "162934", 1], [295, null, "162932", 1], [296, null, "162931", 1], [297, null, "162930", 1], [298, null, "162929", 1], [299, null, "162927", 1], [300, null, "162925", 1], [301, null, "136258", 1], [302, null, "136259", 1], [303, null, "136260", 1], [304, null, "136261", 1], [305, null, "136293", 1], [306, null, "136294", 1], [307, null, "136296", 1], [308, null, "136297", 1], [309, null, "136301", 1], [310, null, "136303", 1], [311, null, "137809", 1], [312, null, "137838", 1], [313, null, "137839", 1], [314, null, "137842", 1], [315, null, "137844", 1], [316, null, "137845", 1], [317, null, "137846", 1], [318, null, "137848", 1], [319, null, "137849", 1], [320, null, "137850", 1], [321, null, "137853", 1], [322, null, "137854", 1], [323, null, "141014", 1], [324, null, "141015", 1], [325, null, "141017", 1], [326, null, "141018", 1], [327, null, "141024", 1], [328, null, "141025", 1], [329, null, "141028", 1], [330, null, "141029", 1], [331, null, "141030", 1], [332, null, "141031", 1], [333, null, "141041", 1], [334, null, "141042", 1], [335, null, "141043", 1], [336, null, "141045", 1], [337, null, "141047", 1], [338, null, "141050", 1], [339, null, "141058", 1], [340, null, "141078", 1], [341, null, "141079", 1], [342, null, "141081", 1], [343, null, "141083", 1], [344, null, "141088", 1], [345, null, "141092", 1], [346, null, "141097", 1], [347, null, "141098", 1], [348, null, "141101", 1], [349, null, "141107", 1], [350, null, "141108", 1], [351, null, "141127", 1], [352, null, "141140", 1], [353, null, "141152", 1], [354, null, "141482", 1], [355, null, "141485", 1], [356, null, "141486", 1], [357, null, "141487", 1], [358, null, "141489", 1], [359, null, "141491", 1], [360, null, "141493", 1], [361, null, "141526", 1], [362, null, "141527", 1], [363, null, "141536", 1], [364, null, "141537", 1], [365, null, "141609", 1], [366, null, "141618", 1], [367, null, "141623", 1], [368, null, "141643", 1], [369, null, "141713", 1], [370, null, "141715", 1], [371, null, "141716", 1], [372, null, "141718", 1], [373, null, "141719", 1], [374, null, "141720", 1], [375, null, "141927", 1], [376, null, "142139", 1], [377, null, "142184", 1], [378, null, "142190", 1], [379, null, "142192", 1], [380, null, "142193", 1], [381, null, "142250", 1], [382, null, "142258", 1], [383, null, "142259", 1], [384, null, "142260", 1], [385, null, "142266", 1], [386, null, "142268", 1], [387, null, "142271", 1], [388, null, "142275", 1], [389, null, "142277", 1], [390, null, "142279", 1], [391, null, "142280", 1], [392, null, "142281", 1], [393, null, "142282", 1], [394, null, "142283", 1], [395, null, "142286", 1], [396, null, "142288", 1], [397, null, "142290", 1], [398, null, "142295", 1], [399, null, "142296", 1], [400, null, "142297", 1], [401, null, "142298", 1], [402, null, "142299", 1], [403, null, "142301", 1], [404, null, "142302", 1], [405, null, "142303", 1], [406, null, "142305", 1], [407, null, "142314", 1], [408, null, "142349", 1], [409, null, "142390", 1], [410, null, "142393", 1], [411, null, "142394", 1], [412, null, "142395", 1], [413, null, "142396", 1], [414, null, "142397", 1], [415, null, "142398", 1], [416, null, "142399", 1], [417, null, "142864", 1], [418, null, "142865", 1], [419, null, "142868", 1], [420, null, "142869", 1], [421, null, "142870", 1], [422, null, "142871", 1], [423, null, "142872", 1], [424, null, "142873", 1], [425, null, "142876", 1], [426, null, "142878", 1], [427, null, "142882", 1], [428, null, "142883", 1], [429, null, "144870", 1], [430, null, "144871", 1], [431, null, "144872", 1], [432, null, "145320", 1], [433, null, "145321", 1], [434, null, "148750", 1], [435, null, "148751", 1], [436, null, "148752", 1], [437, null, "346901", 1], [438, null, "347527", 1], [439, null, "347872", 1], [440, null, "347873", 1], [441, null, "349324", 1], [442, null, "350317", 1], [443, null, "350571", 1], [444, null, "350737", 1], [445, null, "350741", 1], [446, null, "350742", 1], [447, null, "350745", 1], [448, null, "350971", 1], [449, null, "350974", 1], [450, null, "351024", 1], [451, null, "351098", 1], [452, null, "351109", 1], [453, null, "351496", 1], [454, null, "351679", 1], [455, null, "361905", 1], [456, null, "361911", 1], [457, null, "362521", 1], [458, null, "362522", 1], [459, null, "362523", 1], [460, null, "362524", 1], [461, null, "362526", 1], [462, null, "362534", 1], [463, null, "392830", 1], [464, null, "398164", 1]];
+const EXCELDATA$X = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "制服女", "367076", 2], [2, "制服女", "435694", 2], [3, "一定过套装", "253153", 2], [4, "主打求神套装", "264188", 2], [5, "卡皮巴拉套装1", "270007", 2], [6, "卡皮巴拉套装2", "213620", 2], [7, "女学生角色", "343066", 2], [8, "和服", "334005", 2], [9, "JK女生", "320751", 2], [10, "新年毛衣", "298108", 2], [11, "露肩长裙", "218598", 2], [12, null, "215971", 2], [13, null, "213622", 2], [14, null, "270008", 2], [15, null, "213535", 2], [16, null, "213533", 2], [17, null, "164426", 2], [18, null, "164421", 2], [19, null, "164418", 2], [20, null, "163712", 2], [21, null, "163710", 2], [22, null, "163709", 2], [23, null, "163708", 2], [24, null, "163707", 2], [25, null, "163706", 2], [26, null, "163624", 2], [27, null, "163551", 2], [28, null, "163550", 2], [29, null, "163548", 2], [30, null, "163547", 2], [31, null, "163546", 2], [32, null, "163545", 2], [33, null, "163544", 2], [34, null, "163543", 2], [35, null, "163529", 2], [36, null, "163528", 2], [37, null, "163527", 2], [38, null, "163526", 2], [39, null, "163525", 2], [40, null, "163524", 2], [41, null, "163523", 2], [42, null, "163522", 2], [43, null, "163521", 2], [44, null, "163334", 2], [45, null, "163333", 2], [46, null, "163332", 2], [47, null, "163331", 2], [48, null, "163328", 2], [49, null, "163327", 2], [50, null, "163325", 2], [51, null, "163324", 2], [52, null, "163323", 2], [53, null, "163322", 2], [54, null, "163321", 2], [55, null, "163320", 2], [56, null, "163319", 2], [57, null, "163318", 2], [58, null, "163317", 2], [59, null, "163316", 2], [60, null, "163315", 2], [61, null, "163313", 2], [62, null, "163312", 2], [63, null, "163311", 2], [64, null, "163310", 2], [65, null, "163309", 2], [66, null, "163308", 2], [67, null, "163307", 2], [68, null, "163306", 2], [69, null, "163305", 2], [70, null, "163303", 2], [71, null, "163302", 2], [72, null, "163301", 2], [73, null, "163300", 2], [74, null, "163299", 2], [75, null, "163298", 2], [76, null, "163297", 2], [77, null, "163296", 2], [78, null, "163294", 2], [79, null, "163293", 2], [80, null, "163292", 2], [81, null, "163291", 2], [82, null, "163290", 2], [83, null, "163288", 2], [84, null, "163287", 2], [85, null, "163286", 2], [86, null, "163284", 2], [87, null, "163283", 2], [88, null, "163282", 2], [89, null, "163275", 2], [90, null, "162960", 2], [91, null, "162957", 2], [92, null, "136183", 2], [93, null, "136184", 2], [94, null, "136185", 2], [95, null, "136186", 2], [96, null, "136187", 2], [97, null, "136188", 2], [98, null, "136190", 2], [99, null, "136191", 2], [100, null, "136289", 2], [101, null, "136290", 2], [102, null, "136291", 2], [103, null, "136292", 2], [104, null, "136295", 2], [105, null, "136300", 2], [106, null, "136302", 2], [107, null, "136304", 2], [108, null, "137840", 2], [109, null, "137847", 2], [110, null, "137852", 2], [111, null, "137855", 2], [112, null, "141013", 2], [113, null, "141016", 2], [114, null, "141019", 2], [115, null, "141020", 2], [116, null, "141022", 2], [117, null, "141023", 2], [118, null, "141026", 2], [119, null, "141027", 2], [120, null, "141048", 2], [121, null, "141049", 2], [122, null, "141051", 2], [123, null, "141052", 2], [124, null, "141053", 2], [125, null, "141054", 2], [126, null, "141057", 2], [127, null, "141059", 2], [128, null, "141060", 2], [129, null, "141080", 2], [130, null, "141082", 2], [131, null, "141084", 2], [132, null, "141085", 2], [133, null, "141089", 2], [134, null, "141090", 2], [135, null, "141091", 2], [136, null, "141093", 2], [137, null, "141095", 2], [138, null, "141100", 2], [139, null, "141102", 2], [140, null, "141106", 2], [141, null, "141126", 2], [142, null, "141141", 2], [143, null, "141142", 2], [144, null, "141154", 2], [145, null, "141483", 2], [146, null, "141484", 2], [147, null, "141488", 2], [148, null, "141490", 2], [149, null, "141492", 2], [150, null, "141494", 2], [151, null, "141501", 2], [152, null, "141502", 2], [153, null, "141503", 2], [154, null, "141505", 2], [155, null, "141528", 2], [156, null, "141542", 2], [157, null, "141620", 2], [158, null, "141647", 2], [159, null, "141714", 2], [160, null, "141717", 2], [161, null, "141733", 2], [162, null, "141928", 2], [163, null, "142185", 2], [164, null, "142188", 2], [165, null, "142189", 2], [166, null, "142191", 2], [167, null, "142194", 2], [168, null, "142249", 2], [169, null, "142257", 2], [170, null, "142267", 2], [171, null, "142269", 2], [172, null, "142274", 2], [173, null, "142287", 2], [174, null, "142289", 2], [175, null, "142304", 2], [176, null, "142307", 2], [177, null, "142309", 2], [178, null, "142348", 2], [179, null, "142350", 2], [180, null, "142391", 2], [181, null, "142392", 2], [182, null, "142427", 2], [183, null, "142866", 2], [184, null, "142867", 2], [185, null, "142875", 2], [186, null, "142879", 2], [187, null, "143391", 2], [188, null, "143393", 2], [189, null, "143400", 2], [190, null, "143401", 2], [191, null, "143419", 2], [192, null, "143420", 2], [193, null, "147934", 2], [194, null, "226385", 2], [195, null, "347528", 2], [196, null, "347564", 2], [197, null, "347607", 2], [198, null, "349208", 2], [199, null, "349214", 2], [200, null, "349215", 2], [201, null, "349245", 2], [202, null, "349269", 2], [203, null, "349270", 2], [204, null, "349310", 2], [205, null, "349315", 2], [206, null, "349371", 2], [207, null, "349375", 2], [208, null, "350314", 2], [209, null, "350315", 2], [210, null, "350318", 2], [211, null, "350568", 2], [212, null, "350569", 2], [213, null, "350570", 2], [214, null, "350574", 2], [215, null, "350575", 2], [216, null, "350576", 2], [217, null, "350667", 2], [218, null, "350738", 2], [219, null, "350739", 2], [220, null, "350740", 2], [221, null, "350744", 2], [222, null, "350746", 2], [223, null, "350752", 2], [224, null, "350756", 2], [225, null, "350956", 2], [226, null, "350958", 2], [227, null, "350959", 2], [228, null, "350973", 2], [229, null, "350987", 2], [230, null, "351004", 2], [231, null, "351025", 2], [232, null, "351397", 2], [233, null, "351404", 2], [234, null, "351497", 2], [235, null, "351500", 2], [236, null, "351600", 2], [237, null, "361910", 2], [238, null, "385222", 2], [239, null, "226377", 1], [240, null, "263401", 1], [241, null, "264189", 1], [242, null, "397887", 1], [243, null, "392825", 1], [244, null, "343523", 1], [245, null, "321374", 1], [246, null, "305216", 1], [247, null, "254424", 1], [248, null, "213621", 1], [249, null, "213534", 1], [250, null, "164379", 1], [251, null, "164376", 1], [252, null, "164375", 1], [253, null, "164374", 1], [254, null, "164372", 1], [255, null, "164370", 1], [256, null, "164365", 1], [257, null, "164363", 1], [258, null, "164357", 1], [259, null, "163627", 1], [260, null, "163626", 1], [261, null, "163625", 1], [262, null, "163623", 1], [263, null, "163622", 1], [264, null, "162975", 1], [265, null, "162974", 1], [266, null, "162973", 1], [267, null, "162972", 1], [268, null, "162970", 1], [269, null, "162969", 1], [270, null, "162968", 1], [271, null, "162967", 1], [272, null, "162966", 1], [273, null, "162963", 1], [274, null, "162962", 1], [275, null, "162961", 1], [276, null, "162959", 1], [277, null, "162958", 1], [278, null, "162956", 1], [279, null, "162954", 1], [280, null, "162953", 1], [281, null, "162952", 1], [282, null, "162949", 1], [283, null, "162948", 1], [284, null, "162947", 1], [285, null, "162945", 1], [286, null, "162944", 1], [287, null, "162943", 1], [288, null, "162942", 1], [289, null, "162941", 1], [290, null, "162940", 1], [291, null, "162939", 1], [292, null, "162936", 1], [293, null, "162935", 1], [294, null, "162934", 1], [295, null, "162932", 1], [296, null, "162931", 1], [297, null, "162930", 1], [298, null, "162929", 1], [299, null, "162927", 1], [300, null, "162925", 1], [301, null, "136258", 1], [302, null, "136259", 1], [303, null, "136260", 1], [304, null, "136261", 1], [305, null, "136293", 1], [306, null, "136294", 1], [307, null, "136296", 1], [308, null, "136297", 1], [309, null, "136301", 1], [310, null, "136303", 1], [311, null, "137809", 1], [312, null, "137838", 1], [313, null, "137839", 1], [314, null, "137842", 1], [315, null, "137844", 1], [316, null, "137845", 1], [317, null, "137846", 1], [318, null, "137848", 1], [319, null, "137849", 1], [320, null, "137850", 1], [321, null, "137853", 1], [322, null, "137854", 1], [323, null, "141014", 1], [324, null, "141015", 1], [325, null, "141017", 1], [326, null, "141018", 1], [327, null, "141024", 1], [328, null, "141025", 1], [329, null, "141028", 1], [330, null, "141029", 1], [331, null, "141030", 1], [332, null, "141031", 1], [333, null, "141041", 1], [334, null, "141042", 1], [335, null, "141043", 1], [336, null, "141045", 1], [337, null, "141047", 1], [338, null, "141050", 1], [339, null, "141058", 1], [340, null, "141078", 1], [341, null, "141079", 1], [342, null, "141081", 1], [343, null, "141083", 1], [344, null, "141088", 1], [345, null, "141092", 1], [346, null, "141097", 1], [347, null, "141098", 1], [348, null, "141101", 1], [349, null, "141107", 1], [350, null, "141108", 1], [351, null, "141127", 1], [352, null, "141140", 1], [353, null, "141152", 1], [354, null, "141482", 1], [355, null, "141485", 1], [356, null, "141486", 1], [357, null, "141487", 1], [358, null, "141489", 1], [359, null, "141491", 1], [360, null, "141493", 1], [361, null, "141526", 1], [362, null, "141527", 1], [363, null, "141536", 1], [364, null, "141537", 1], [365, null, "141609", 1], [366, null, "141618", 1], [367, null, "141623", 1], [368, null, "141643", 1], [369, null, "141713", 1], [370, null, "141715", 1], [371, null, "141716", 1], [372, null, "141718", 1], [373, null, "141719", 1], [374, null, "141720", 1], [375, null, "141927", 1], [376, null, "142139", 1], [377, null, "142184", 1], [378, null, "142190", 1], [379, null, "142192", 1], [380, null, "142193", 1], [381, null, "142250", 1], [382, null, "142258", 1], [383, null, "142259", 1], [384, null, "142260", 1], [385, null, "142266", 1], [386, null, "142268", 1], [387, null, "142271", 1], [388, null, "142275", 1], [389, null, "142277", 1], [390, null, "142279", 1], [391, null, "142280", 1], [392, null, "142281", 1], [393, null, "142282", 1], [394, null, "142283", 1], [395, null, "142286", 1], [396, null, "142288", 1], [397, null, "142290", 1], [398, null, "142295", 1], [399, null, "142296", 1], [400, null, "142297", 1], [401, null, "142298", 1], [402, null, "142299", 1], [403, null, "142301", 1], [404, null, "142302", 1], [405, null, "142303", 1], [406, null, "142305", 1], [407, null, "142314", 1], [408, null, "142349", 1], [409, null, "142390", 1], [410, null, "142393", 1], [411, null, "142394", 1], [412, null, "142395", 1], [413, null, "142396", 1], [414, null, "142397", 1], [415, null, "142398", 1], [416, null, "142399", 1], [417, null, "142864", 1], [418, null, "142865", 1], [419, null, "142868", 1], [420, null, "142869", 1], [421, null, "142870", 1], [422, null, "142871", 1], [423, null, "142872", 1], [424, null, "142873", 1], [425, null, "142876", 1], [426, null, "142878", 1], [427, null, "142882", 1], [428, null, "142883", 1], [429, null, "144870", 1], [430, null, "144871", 1], [431, null, "144872", 1], [432, null, "145320", 1], [433, null, "145321", 1], [434, null, "148750", 1], [435, null, "148751", 1], [436, null, "148752", 1], [437, null, "346901", 1], [438, null, "347527", 1], [439, null, "347872", 1], [440, null, "347873", 1], [441, null, "349324", 1], [442, null, "350317", 1], [443, null, "350571", 1], [444, null, "350737", 1], [445, null, "350741", 1], [446, null, "350742", 1], [447, null, "350745", 1], [448, null, "350971", 1], [449, null, "350974", 1], [450, null, "351024", 1], [451, null, "351098", 1], [452, null, "351109", 1], [453, null, "351496", 1], [454, null, "351679", 1], [455, null, "361905", 1], [456, null, "361911", 1], [457, null, "362521", 1], [458, null, "362522", 1], [459, null, "362523", 1], [460, null, "362524", 1], [461, null, "362526", 1], [462, null, "362534", 1], [463, null, "392830", 1], [464, null, "398164", 1]];
 class DailyStylingOutfitConfig extends ConfigBase {
     constructor() {
-        super(EXCELDATA$W);
+        super(EXCELDATA$X);
     }
 }
 
@@ -1707,10 +1707,10 @@ var foreign20 = /*#__PURE__*/Object.freeze({
     DailyStylingOutfitConfig: DailyStylingOutfitConfig
 });
 
-const EXCELDATA$V = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "制服女", "367076", 2], [2, "制服女", "435694", 2], [3, "一定过套装", "253153", 2], [4, "主打求神套装", "264188", 2], [5, "卡皮巴拉套装1", "270007", 2], [6, "卡皮巴拉套装2", "213620", 2], [7, "女学生角色", "343066", 2], [8, "和服", "334005", 2], [9, "JK女生", "320751", 2], [10, "新年毛衣", "298108", 2], [11, "露肩长裙", "218598", 2], [12, null, "215971", 2], [13, null, "213622", 2], [14, null, "270008", 2], [15, null, "213535", 2], [16, null, "213533", 2], [17, null, "164426", 2], [18, null, "164421", 2], [19, null, "164418", 2], [20, null, "163712", 2], [21, null, "163710", 2], [22, null, "163709", 2], [23, null, "163708", 2], [24, null, "163707", 2], [25, null, "163706", 2], [26, null, "163624", 2], [27, null, "163551", 2], [28, null, "163550", 2], [29, null, "163548", 2], [30, null, "163547", 2], [31, null, "163546", 2], [32, null, "163545", 2], [33, null, "163544", 2], [34, null, "163543", 2], [35, null, "163529", 2], [36, null, "163528", 2], [37, null, "163527", 2], [38, null, "163526", 2], [39, null, "163525", 2], [40, null, "163524", 2], [41, null, "163523", 2], [42, null, "163522", 2], [43, null, "163521", 2], [44, null, "163334", 2], [45, null, "163333", 2], [46, null, "163332", 2], [47, null, "163331", 2], [48, null, "163328", 2], [49, null, "163327", 2], [50, null, "163325", 2], [51, null, "163324", 2], [52, null, "163323", 2], [53, null, "163322", 2], [54, null, "163321", 2], [55, null, "163320", 2], [56, null, "163319", 2], [57, null, "163318", 2], [58, null, "163317", 2], [59, null, "163316", 2], [60, null, "163315", 2], [61, null, "163313", 2], [62, null, "163312", 2], [63, null, "163311", 2], [64, null, "163310", 2], [65, null, "163309", 2], [66, null, "163308", 2], [67, null, "163307", 2], [68, null, "163306", 2], [69, null, "163305", 2], [70, null, "163303", 2], [71, null, "163302", 2], [72, null, "163301", 2], [73, null, "163300", 2], [74, null, "163299", 2], [75, null, "163298", 2], [76, null, "163297", 2], [77, null, "163296", 2], [78, null, "163294", 2], [79, null, "163293", 2], [80, null, "163292", 2], [81, null, "163291", 2], [82, null, "163290", 2], [83, null, "163288", 2], [84, null, "163287", 2], [85, null, "163286", 2], [86, null, "163284", 2], [87, null, "163283", 2], [88, null, "163282", 2], [89, null, "163275", 2], [90, null, "162960", 2], [91, null, "162957", 2], [92, null, "136183", 2], [93, null, "136184", 2], [94, null, "136185", 2], [95, null, "136186", 2], [96, null, "136187", 2], [97, null, "136188", 2], [98, null, "136190", 2], [99, null, "136191", 2], [100, null, "136289", 2], [101, null, "136290", 2], [102, null, "136291", 2], [103, null, "136292", 2], [104, null, "136295", 2], [105, null, "136300", 2], [106, null, "136302", 2], [107, null, "136304", 2], [108, null, "137840", 2], [109, null, "137847", 2], [110, null, "137852", 2], [111, null, "137855", 2], [112, null, "141013", 2], [113, null, "141016", 2], [114, null, "141019", 2], [115, null, "141020", 2], [116, null, "141022", 2], [117, null, "141023", 2], [118, null, "141026", 2], [119, null, "141027", 2], [120, null, "226377", 1], [121, null, "263401", 1], [122, null, "264189", 1], [123, null, "397887", 1], [124, null, "392825", 1], [125, null, "343523", 1], [126, null, "321374", 1], [127, null, "305216", 1], [128, null, "254424", 1], [129, null, "213621", 1], [130, null, "213534", 1], [131, null, "164379", 1], [132, null, "164376", 1], [133, null, "164375", 1], [134, null, "164374", 1], [135, null, "164372", 1], [136, null, "164370", 1], [137, null, "164365", 1], [138, null, "164363", 1], [139, null, "164357", 1], [140, null, "163627", 1], [141, null, "163626", 1], [142, null, "163625", 1], [143, null, "163623", 1], [144, null, "163622", 1], [145, null, "162975", 1], [146, null, "162974", 1], [147, null, "162973", 1], [148, null, "162972", 1], [149, null, "162970", 1], [150, null, "162969", 1], [151, null, "162968", 1], [152, null, "162967", 1], [153, null, "162966", 1], [154, null, "162963", 1], [155, null, "162962", 1], [156, null, "162961", 1], [157, null, "162959", 1], [158, null, "162958", 1], [159, null, "162956", 1], [160, null, "162954", 1], [161, null, "162953", 1], [162, null, "162952", 1], [163, null, "162949", 1], [164, null, "162948", 1], [165, null, "162947", 1], [166, null, "162945", 1], [167, null, "162944", 1], [168, null, "162943", 1], [169, null, "162942", 1], [170, null, "162941", 1], [171, null, "162940", 1], [172, null, "162939", 1], [173, null, "162936", 1], [174, null, "162935", 1], [175, null, "162934", 1], [176, null, "162932", 1], [177, null, "162931", 1], [178, null, "162930", 1], [179, null, "162929", 1], [180, null, "162927", 1], [181, null, "162925", 1], [182, null, "136258", 1], [183, null, "136259", 1], [184, null, "136260", 1], [185, null, "136261", 1], [186, null, "136293", 1], [187, null, "136294", 1], [188, null, "136296", 1], [189, null, "136297", 1], [190, null, "136301", 1], [191, null, "136303", 1], [192, null, "137809", 1], [193, null, "137838", 1], [194, null, "137839", 1], [195, null, "137842", 1], [196, null, "137844", 1], [197, null, "137845", 1], [198, null, "137846", 1], [199, null, "137848", 1], [200, null, "137849", 1], [201, null, "137850", 1], [202, null, "137853", 1], [203, null, "137854", 1], [204, null, "141014", 1], [205, null, "141015", 1], [206, null, "141017", 1], [207, null, "141018", 1], [208, null, "141024", 1], [209, null, "141025", 1], [210, null, "141028", 1], [211, null, "141029", 1], [212, null, "141030", 1], [213, null, "141031", 1], [214, null, "141041", 1], [215, null, "141042", 1], [216, null, "141043", 1], [217, null, "141045", 1], [218, null, "141047", 1], [219, null, "141050", 1], [220, null, "141058", 1], [221, null, "141078", 1], [222, null, "141079", 1], [223, null, "141081", 1], [224, null, "141083", 1], [225, null, "141088", 1], [226, null, "141092", 1], [227, null, "141097", 1], [228, null, "141098", 1], [229, null, "141101", 1], [230, null, "141107", 1]];
+const EXCELDATA$W = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, "制服女", "367076", 2], [2, "制服女", "435694", 2], [3, "一定过套装", "253153", 2], [4, "主打求神套装", "264188", 2], [5, "卡皮巴拉套装1", "270007", 2], [6, "卡皮巴拉套装2", "213620", 2], [7, "女学生角色", "343066", 2], [8, "和服", "334005", 2], [9, "JK女生", "320751", 2], [10, "新年毛衣", "298108", 2], [11, "露肩长裙", "218598", 2], [12, null, "215971", 2], [13, null, "213622", 2], [14, null, "270008", 2], [15, null, "213535", 2], [16, null, "213533", 2], [17, null, "164426", 2], [18, null, "164421", 2], [19, null, "164418", 2], [20, null, "163712", 2], [21, null, "163710", 2], [22, null, "163709", 2], [23, null, "163708", 2], [24, null, "163707", 2], [25, null, "163706", 2], [26, null, "163624", 2], [27, null, "163551", 2], [28, null, "163550", 2], [29, null, "163548", 2], [30, null, "163547", 2], [31, null, "163546", 2], [32, null, "163545", 2], [33, null, "163544", 2], [34, null, "163543", 2], [35, null, "163529", 2], [36, null, "163528", 2], [37, null, "163527", 2], [38, null, "163526", 2], [39, null, "163525", 2], [40, null, "163524", 2], [41, null, "163523", 2], [42, null, "163522", 2], [43, null, "163521", 2], [44, null, "163334", 2], [45, null, "163333", 2], [46, null, "163332", 2], [47, null, "163331", 2], [48, null, "163328", 2], [49, null, "163327", 2], [50, null, "163325", 2], [51, null, "163324", 2], [52, null, "163323", 2], [53, null, "163322", 2], [54, null, "163321", 2], [55, null, "163320", 2], [56, null, "163319", 2], [57, null, "163318", 2], [58, null, "163317", 2], [59, null, "163316", 2], [60, null, "163315", 2], [61, null, "163313", 2], [62, null, "163312", 2], [63, null, "163311", 2], [64, null, "163310", 2], [65, null, "163309", 2], [66, null, "163308", 2], [67, null, "163307", 2], [68, null, "163306", 2], [69, null, "163305", 2], [70, null, "163303", 2], [71, null, "163302", 2], [72, null, "163301", 2], [73, null, "163300", 2], [74, null, "163299", 2], [75, null, "163298", 2], [76, null, "163297", 2], [77, null, "163296", 2], [78, null, "163294", 2], [79, null, "163293", 2], [80, null, "163292", 2], [81, null, "163291", 2], [82, null, "163290", 2], [83, null, "163288", 2], [84, null, "163287", 2], [85, null, "163286", 2], [86, null, "163284", 2], [87, null, "163283", 2], [88, null, "163282", 2], [89, null, "163275", 2], [90, null, "162960", 2], [91, null, "162957", 2], [92, null, "136183", 2], [93, null, "136184", 2], [94, null, "136185", 2], [95, null, "136186", 2], [96, null, "136187", 2], [97, null, "136188", 2], [98, null, "136190", 2], [99, null, "136191", 2], [100, null, "136289", 2], [101, null, "136290", 2], [102, null, "136291", 2], [103, null, "136292", 2], [104, null, "136295", 2], [105, null, "136300", 2], [106, null, "136302", 2], [107, null, "136304", 2], [108, null, "137840", 2], [109, null, "137847", 2], [110, null, "137852", 2], [111, null, "137855", 2], [112, null, "141013", 2], [113, null, "141016", 2], [114, null, "141019", 2], [115, null, "141020", 2], [116, null, "141022", 2], [117, null, "141023", 2], [118, null, "141026", 2], [119, null, "141027", 2], [120, null, "226377", 1], [121, null, "263401", 1], [122, null, "264189", 1], [123, null, "397887", 1], [124, null, "392825", 1], [125, null, "343523", 1], [126, null, "321374", 1], [127, null, "305216", 1], [128, null, "254424", 1], [129, null, "213621", 1], [130, null, "213534", 1], [131, null, "164379", 1], [132, null, "164376", 1], [133, null, "164375", 1], [134, null, "164374", 1], [135, null, "164372", 1], [136, null, "164370", 1], [137, null, "164365", 1], [138, null, "164363", 1], [139, null, "164357", 1], [140, null, "163627", 1], [141, null, "163626", 1], [142, null, "163625", 1], [143, null, "163623", 1], [144, null, "163622", 1], [145, null, "162975", 1], [146, null, "162974", 1], [147, null, "162973", 1], [148, null, "162972", 1], [149, null, "162970", 1], [150, null, "162969", 1], [151, null, "162968", 1], [152, null, "162967", 1], [153, null, "162966", 1], [154, null, "162963", 1], [155, null, "162962", 1], [156, null, "162961", 1], [157, null, "162959", 1], [158, null, "162958", 1], [159, null, "162956", 1], [160, null, "162954", 1], [161, null, "162953", 1], [162, null, "162952", 1], [163, null, "162949", 1], [164, null, "162948", 1], [165, null, "162947", 1], [166, null, "162945", 1], [167, null, "162944", 1], [168, null, "162943", 1], [169, null, "162942", 1], [170, null, "162941", 1], [171, null, "162940", 1], [172, null, "162939", 1], [173, null, "162936", 1], [174, null, "162935", 1], [175, null, "162934", 1], [176, null, "162932", 1], [177, null, "162931", 1], [178, null, "162930", 1], [179, null, "162929", 1], [180, null, "162927", 1], [181, null, "162925", 1], [182, null, "136258", 1], [183, null, "136259", 1], [184, null, "136260", 1], [185, null, "136261", 1], [186, null, "136293", 1], [187, null, "136294", 1], [188, null, "136296", 1], [189, null, "136297", 1], [190, null, "136301", 1], [191, null, "136303", 1], [192, null, "137809", 1], [193, null, "137838", 1], [194, null, "137839", 1], [195, null, "137842", 1], [196, null, "137844", 1], [197, null, "137845", 1], [198, null, "137846", 1], [199, null, "137848", 1], [200, null, "137849", 1], [201, null, "137850", 1], [202, null, "137853", 1], [203, null, "137854", 1], [204, null, "141014", 1], [205, null, "141015", 1], [206, null, "141017", 1], [207, null, "141018", 1], [208, null, "141024", 1], [209, null, "141025", 1], [210, null, "141028", 1], [211, null, "141029", 1], [212, null, "141030", 1], [213, null, "141031", 1], [214, null, "141041", 1], [215, null, "141042", 1], [216, null, "141043", 1], [217, null, "141045", 1], [218, null, "141047", 1], [219, null, "141050", 1], [220, null, "141058", 1], [221, null, "141078", 1], [222, null, "141079", 1], [223, null, "141081", 1], [224, null, "141083", 1], [225, null, "141088", 1], [226, null, "141092", 1], [227, null, "141097", 1], [228, null, "141098", 1], [229, null, "141101", 1], [230, null, "141107", 1]];
 class DailyStylingOutfit1Config extends ConfigBase {
     constructor() {
-        super(EXCELDATA$V);
+        super(EXCELDATA$W);
     }
 }
 
@@ -1719,16 +1719,28 @@ var foreign21 = /*#__PURE__*/Object.freeze({
     DailyStylingOutfit1Config: DailyStylingOutfit1Config
 });
 
-const EXCELDATA$U = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "141048", 2], [2, null, "141049", 2], [3, null, "141051", 2], [4, null, "141052", 2], [5, null, "141053", 2], [6, null, "141054", 2], [7, null, "141057", 2], [8, null, "141059", 2], [9, null, "141060", 2], [10, null, "141080", 2], [11, null, "141082", 2], [12, null, "141084", 2], [13, null, "141085", 2], [14, null, "141089", 2], [15, null, "141090", 2], [16, null, "141091", 2], [17, null, "141093", 2], [18, null, "141095", 2], [19, null, "141100", 2], [20, null, "141102", 2], [21, null, "141106", 2], [22, null, "141126", 2], [23, null, "141141", 2], [24, null, "141142", 2], [25, null, "141154", 2], [26, null, "141483", 2], [27, null, "141484", 2], [28, null, "141488", 2], [29, null, "141490", 2], [30, null, "141492", 2], [31, null, "141494", 2], [32, null, "141501", 2], [33, null, "141502", 2], [34, null, "141503", 2], [35, null, "141505", 2], [36, null, "141528", 2], [37, null, "141542", 2], [38, null, "141620", 2], [39, null, "141647", 2], [40, null, "141714", 2], [41, null, "141717", 2], [42, null, "141733", 2], [43, null, "141928", 2], [44, null, "142185", 2], [45, null, "142188", 2], [46, null, "142189", 2], [47, null, "142191", 2], [48, null, "142194", 2], [49, null, "142249", 2], [50, null, "142257", 2], [51, null, "142267", 2], [52, null, "142269", 2], [53, null, "142274", 2], [54, null, "142287", 2], [55, null, "142289", 2], [56, null, "142304", 2], [57, null, "142307", 2], [58, null, "142309", 2], [59, null, "142348", 2], [60, null, "142350", 2], [61, null, "142391", 2], [62, null, "142392", 2], [63, null, "142427", 2], [64, null, "142866", 2], [65, null, "142867", 2], [66, null, "142875", 2], [67, null, "142879", 2], [68, null, "143391", 2], [69, null, "143393", 2], [70, null, "143400", 2], [71, null, "143401", 2], [72, null, "143419", 2], [73, null, "143420", 2], [74, null, "147934", 2], [75, null, "226385", 2], [76, null, "347528", 2], [77, null, "347564", 2], [78, null, "347607", 2], [79, null, "349208", 2], [80, null, "349214", 2], [81, null, "349215", 2], [82, null, "349245", 2], [83, null, "349269", 2], [84, null, "349270", 2], [85, null, "349310", 2], [86, null, "349315", 2], [87, null, "349371", 2], [88, null, "349375", 2], [89, null, "350314", 2], [90, null, "350315", 2], [91, null, "350318", 2], [92, null, "350568", 2], [93, null, "350569", 2], [94, null, "350570", 2], [95, null, "350574", 2], [96, null, "350575", 2], [97, null, "350576", 2], [98, null, "350667", 2], [99, null, "350738", 2], [100, null, "350739", 2], [101, null, "350740", 2], [102, null, "350744", 2], [103, null, "350746", 2], [104, null, "350752", 2], [105, null, "350756", 2], [106, null, "350956", 2], [107, null, "350958", 2], [108, null, "350959", 2], [109, null, "350973", 2], [110, null, "350987", 2], [111, null, "351004", 2], [112, null, "351025", 2], [113, null, "351397", 2], [114, null, "351404", 2], [115, null, "351497", 2], [116, null, "351500", 2], [117, null, "351600", 2], [118, null, "361910", 2], [119, null, "385222", 2], [120, null, "141108", 1], [121, null, "141127", 1], [122, null, "141140", 1], [123, null, "141152", 1], [124, null, "141482", 1], [125, null, "141485", 1], [126, null, "141486", 1], [127, null, "141487", 1], [128, null, "141489", 1], [129, null, "141491", 1], [130, null, "141493", 1], [131, null, "141526", 1], [132, null, "141527", 1], [133, null, "141536", 1], [134, null, "141537", 1], [135, null, "141609", 1], [136, null, "141618", 1], [137, null, "141623", 1], [138, null, "141643", 1], [139, null, "141713", 1], [140, null, "141715", 1], [141, null, "141716", 1], [142, null, "141718", 1], [143, null, "141719", 1], [144, null, "141720", 1], [145, null, "141927", 1], [146, null, "142139", 1], [147, null, "142184", 1], [148, null, "142190", 1], [149, null, "142192", 1], [150, null, "142193", 1], [151, null, "142250", 1], [152, null, "142258", 1], [153, null, "142259", 1], [154, null, "142260", 1], [155, null, "142266", 1], [156, null, "142268", 1], [157, null, "142271", 1], [158, null, "142275", 1], [159, null, "142277", 1], [160, null, "142279", 1], [161, null, "142280", 1], [162, null, "142281", 1], [163, null, "142282", 1], [164, null, "142283", 1], [165, null, "142286", 1], [166, null, "142288", 1], [167, null, "142290", 1], [168, null, "142295", 1], [169, null, "142296", 1], [170, null, "142297", 1], [171, null, "142298", 1], [172, null, "142299", 1], [173, null, "142301", 1], [174, null, "142302", 1], [175, null, "142303", 1], [176, null, "142305", 1], [177, null, "142314", 1], [178, null, "142349", 1], [179, null, "142390", 1], [180, null, "142393", 1], [181, null, "142394", 1], [182, null, "142395", 1], [183, null, "142396", 1], [184, null, "142397", 1], [185, null, "142398", 1], [186, null, "142399", 1], [187, null, "142864", 1], [188, null, "142865", 1], [189, null, "142868", 1], [190, null, "142869", 1], [191, null, "142870", 1], [192, null, "142871", 1], [193, null, "142872", 1], [194, null, "142873", 1], [195, null, "142876", 1], [196, null, "142878", 1], [197, null, "142882", 1], [198, null, "142883", 1], [199, null, "144870", 1], [200, null, "144871", 1], [201, null, "144872", 1], [202, null, "145320", 1], [203, null, "145321", 1], [204, null, "148750", 1], [205, null, "148751", 1], [206, null, "148752", 1], [207, null, "346901", 1], [208, null, "347527", 1], [209, null, "347872", 1], [210, null, "347873", 1], [211, null, "349324", 1], [212, null, "350317", 1], [213, null, "350571", 1], [214, null, "350737", 1], [215, null, "350741", 1], [216, null, "350742", 1], [217, null, "350745", 1], [218, null, "350971", 1], [219, null, "350974", 1], [220, null, "351024", 1], [221, null, "351098", 1], [222, null, "351109", 1], [223, null, "351496", 1], [224, null, "351679", 1], [225, null, "361905", 1], [226, null, "361911", 1], [227, null, "362521", 1], [228, null, "362522", 1], [229, null, "362523", 1], [230, null, "362524", 1], [231, null, "362526", 1], [232, null, "362534", 1], [233, null, "392830", 1], [234, null, "398164", 1]];
+const EXCELDATA$V = [["ID", "Describe", "AssetId", "SexType"], ["", "", "", ""], [1, null, "141048", 2], [2, null, "141049", 2], [3, null, "141051", 2], [4, null, "141052", 2], [5, null, "141053", 2], [6, null, "141054", 2], [7, null, "141057", 2], [8, null, "141059", 2], [9, null, "141060", 2], [10, null, "141080", 2], [11, null, "141082", 2], [12, null, "141084", 2], [13, null, "141085", 2], [14, null, "141089", 2], [15, null, "141090", 2], [16, null, "141091", 2], [17, null, "141093", 2], [18, null, "141095", 2], [19, null, "141100", 2], [20, null, "141102", 2], [21, null, "141106", 2], [22, null, "141126", 2], [23, null, "141141", 2], [24, null, "141142", 2], [25, null, "141154", 2], [26, null, "141483", 2], [27, null, "141484", 2], [28, null, "141488", 2], [29, null, "141490", 2], [30, null, "141492", 2], [31, null, "141494", 2], [32, null, "141501", 2], [33, null, "141502", 2], [34, null, "141503", 2], [35, null, "141505", 2], [36, null, "141528", 2], [37, null, "141542", 2], [38, null, "141620", 2], [39, null, "141647", 2], [40, null, "141714", 2], [41, null, "141717", 2], [42, null, "141733", 2], [43, null, "141928", 2], [44, null, "142185", 2], [45, null, "142188", 2], [46, null, "142189", 2], [47, null, "142191", 2], [48, null, "142194", 2], [49, null, "142249", 2], [50, null, "142257", 2], [51, null, "142267", 2], [52, null, "142269", 2], [53, null, "142274", 2], [54, null, "142287", 2], [55, null, "142289", 2], [56, null, "142304", 2], [57, null, "142307", 2], [58, null, "142309", 2], [59, null, "142348", 2], [60, null, "142350", 2], [61, null, "142391", 2], [62, null, "142392", 2], [63, null, "142427", 2], [64, null, "142866", 2], [65, null, "142867", 2], [66, null, "142875", 2], [67, null, "142879", 2], [68, null, "143391", 2], [69, null, "143393", 2], [70, null, "143400", 2], [71, null, "143401", 2], [72, null, "143419", 2], [73, null, "143420", 2], [74, null, "147934", 2], [75, null, "226385", 2], [76, null, "347528", 2], [77, null, "347564", 2], [78, null, "347607", 2], [79, null, "349208", 2], [80, null, "349214", 2], [81, null, "349215", 2], [82, null, "349245", 2], [83, null, "349269", 2], [84, null, "349270", 2], [85, null, "349310", 2], [86, null, "349315", 2], [87, null, "349371", 2], [88, null, "349375", 2], [89, null, "350314", 2], [90, null, "350315", 2], [91, null, "350318", 2], [92, null, "350568", 2], [93, null, "350569", 2], [94, null, "350570", 2], [95, null, "350574", 2], [96, null, "350575", 2], [97, null, "350576", 2], [98, null, "350667", 2], [99, null, "350738", 2], [100, null, "350739", 2], [101, null, "350740", 2], [102, null, "350744", 2], [103, null, "350746", 2], [104, null, "350752", 2], [105, null, "350756", 2], [106, null, "350956", 2], [107, null, "350958", 2], [108, null, "350959", 2], [109, null, "350973", 2], [110, null, "350987", 2], [111, null, "351004", 2], [112, null, "351025", 2], [113, null, "351397", 2], [114, null, "351404", 2], [115, null, "351497", 2], [116, null, "351500", 2], [117, null, "351600", 2], [118, null, "361910", 2], [119, null, "385222", 2], [120, null, "141108", 1], [121, null, "141127", 1], [122, null, "141140", 1], [123, null, "141152", 1], [124, null, "141482", 1], [125, null, "141485", 1], [126, null, "141486", 1], [127, null, "141487", 1], [128, null, "141489", 1], [129, null, "141491", 1], [130, null, "141493", 1], [131, null, "141526", 1], [132, null, "141527", 1], [133, null, "141536", 1], [134, null, "141537", 1], [135, null, "141609", 1], [136, null, "141618", 1], [137, null, "141623", 1], [138, null, "141643", 1], [139, null, "141713", 1], [140, null, "141715", 1], [141, null, "141716", 1], [142, null, "141718", 1], [143, null, "141719", 1], [144, null, "141720", 1], [145, null, "141927", 1], [146, null, "142139", 1], [147, null, "142184", 1], [148, null, "142190", 1], [149, null, "142192", 1], [150, null, "142193", 1], [151, null, "142250", 1], [152, null, "142258", 1], [153, null, "142259", 1], [154, null, "142260", 1], [155, null, "142266", 1], [156, null, "142268", 1], [157, null, "142271", 1], [158, null, "142275", 1], [159, null, "142277", 1], [160, null, "142279", 1], [161, null, "142280", 1], [162, null, "142281", 1], [163, null, "142282", 1], [164, null, "142283", 1], [165, null, "142286", 1], [166, null, "142288", 1], [167, null, "142290", 1], [168, null, "142295", 1], [169, null, "142296", 1], [170, null, "142297", 1], [171, null, "142298", 1], [172, null, "142299", 1], [173, null, "142301", 1], [174, null, "142302", 1], [175, null, "142303", 1], [176, null, "142305", 1], [177, null, "142314", 1], [178, null, "142349", 1], [179, null, "142390", 1], [180, null, "142393", 1], [181, null, "142394", 1], [182, null, "142395", 1], [183, null, "142396", 1], [184, null, "142397", 1], [185, null, "142398", 1], [186, null, "142399", 1], [187, null, "142864", 1], [188, null, "142865", 1], [189, null, "142868", 1], [190, null, "142869", 1], [191, null, "142870", 1], [192, null, "142871", 1], [193, null, "142872", 1], [194, null, "142873", 1], [195, null, "142876", 1], [196, null, "142878", 1], [197, null, "142882", 1], [198, null, "142883", 1], [199, null, "144870", 1], [200, null, "144871", 1], [201, null, "144872", 1], [202, null, "145320", 1], [203, null, "145321", 1], [204, null, "148750", 1], [205, null, "148751", 1], [206, null, "148752", 1], [207, null, "346901", 1], [208, null, "347527", 1], [209, null, "347872", 1], [210, null, "347873", 1], [211, null, "349324", 1], [212, null, "350317", 1], [213, null, "350571", 1], [214, null, "350737", 1], [215, null, "350741", 1], [216, null, "350742", 1], [217, null, "350745", 1], [218, null, "350971", 1], [219, null, "350974", 1], [220, null, "351024", 1], [221, null, "351098", 1], [222, null, "351109", 1], [223, null, "351496", 1], [224, null, "351679", 1], [225, null, "361905", 1], [226, null, "361911", 1], [227, null, "362521", 1], [228, null, "362522", 1], [229, null, "362523", 1], [230, null, "362524", 1], [231, null, "362526", 1], [232, null, "362534", 1], [233, null, "392830", 1], [234, null, "398164", 1]];
 class DailyStylingOutfit2Config extends ConfigBase {
     constructor() {
-        super(EXCELDATA$U);
+        super(EXCELDATA$V);
     }
 }
 
 var foreign22 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     DailyStylingOutfit2Config: DailyStylingOutfit2Config
+});
+
+const EXCELDATA$U = [["id", "desc", "dependence", "tsAttribute", "funcIndex", "priority", "saveType", "valueType"], ["", "", "", "", "", "", "", ""], [1, "头部样式", null, "advance.headFeatures.head.style", 0, 5, 1, 2], [2, "头部左右缩放", [0], "advance.headFeatures.head.headHorizontalScale", 1, 4, 1, 1], [3, "上半脸前后移动", [0], "advance.headFeatures.faceShape.overall.upperFaceFrontalShift", 2, 4, 1, 1], [4, "上半脸上下移动", [0], "advance.headFeatures.faceShape.overall.upperFaceVerticalShift", 3, 4, 1, 1], [5, "上半脸整体缩放", [0], "advance.headFeatures.faceShape.overall.upperFaceOverallScale", 4, 4, 1, 1], [6, "下半脸前后移动", [0], "advance.headFeatures.faceShape.overall.lowerFaceFrontalShift", 5, 4, 1, 1], [7, "下半脸左右缩放", [0], "advance.headFeatures.faceShape.overall.lowerFaceHorizontalScale", 6, 4, 1, 1], [8, "耳朵整体缩放", [0], "advance.headFeatures.ears.earOverallScale", 7, 4, 1, 1], [9, "耳朵左右旋转", [0], "advance.headFeatures.ears.earHorizontalRotation", 8, 4, 1, 1], [10, "耳朵前后旋转", [0], "advance.headFeatures.ears.earFrontalRotation", 9, 4, 1, 1], [11, "耳朵上部缩放", [0], "advance.headFeatures.ears.earUpperScale", 10, 4, 1, 1], [12, "耳朵下部缩放", [0], "advance.headFeatures.ears.earLowerScale", 11, 4, 1, 1], [13, "下颌圆度", [0], "advance.headFeatures.faceShape.jawline.jawlineRoundness", 12, 4, 1, 1], [14, "下颌前后移动", [0], "advance.headFeatures.faceShape.jawline.jawFrontalShift", 13, 4, 1, 1], [15, "下颌上下移动", [0], "advance.headFeatures.faceShape.jawline.jawlineVerticalShift", 14, 4, 1, 1], [16, "下颌左右缩放", [0], "advance.headFeatures.faceShape.jawline.jawHorizontalScale", 15, 4, 1, 1], [17, "下巴前后移动", [0], "advance.headFeatures.faceShape.chin.chinFrontalShift", 16, 4, 1, 1], [18, "下巴尖上下移动", [0], "advance.headFeatures.faceShape.chin.chinTipVerticalShift", 17, 4, 1, 1], [19, "下巴尖前后移动", [0], "advance.headFeatures.faceShape.chin.chinTipFrontalShift", 18, 4, 1, 1], [20, "下巴尖左右缩放", [0], "advance.headFeatures.faceShape.chin.chinTipHorizontalScale", 19, 4, 1, 1], [21, "颧骨左右缩放", [0], "advance.headFeatures.faceShape.cheekbone.cheekboneHorizontalScale", 20, 4, 1, 1], [22, "颧骨前后移动", [0], "advance.headFeatures.faceShape.cheekbone.cheekboneFrontalShift", 21, 4, 1, 1], [23, "脸颊左右缩放", [0], "advance.headFeatures.faceShape.cheek.cheekHorizontalScale", 22, 4, 1, 1], [24, "脸颊前后移动", [0], "advance.headFeatures.faceShape.cheek.cheekFrontalShift", 23, 4, 1, 1], [25, "脸颊上下移动", [0], "advance.headFeatures.faceShape.cheek.cheekVerticalShift", 24, 4, 1, 1], [26, "眉毛上下移动", [0], "advance.headFeatures.eyebrows.eyebrowVerticalShift", 25, 4, 1, 1], [27, "眉毛左右移动", [0], "advance.headFeatures.eyebrows.eyebrowHorizontalShift", 26, 4, 1, 1], [28, "眉毛整体旋转", [0], "advance.headFeatures.eyebrows.eyebrowOverallRotation", 27, 4, 1, 1], [29, "眉头上下移动", [0], "advance.headFeatures.eyebrows.eyebrowInnerVerticalShift", 28, 4, 1, 1], [30, "眉尾上下移动", [0], "advance.headFeatures.eyebrows.eyebrowOuterVerticalShift", 29, 4, 1, 1], [31, "眼睛上下移动", [0], "advance.headFeatures.eyes.overall.eyeVerticalShift", 30, 4, 1, 1], [32, "眼睛左右缩放", [0], "advance.headFeatures.eyes.overall.eyeHorizontalScale", 31, 4, 1, 1], [33, "眼睛前后移动", [0], "advance.headFeatures.eyes.overall.eyeFrontalShift", 32, 4, 1, 1], [34, "眼睛整体旋转", [0], "advance.headFeatures.eyes.overall.eyeOverallRotation", 33, 4, 1, 1], [35, "眼睛上下缩放", [0], "advance.headFeatures.eyes.overall.eyeVerticalScale", 34, 4, 1, 1], [36, "眼睛左右移动", [0], "advance.headFeatures.eyes.overall.eyeHorizontalShift", 35, 4, 1, 1], [37, "内眼角左右移动", [0], "advance.headFeatures.eyes.eyeCorners.innerEyeCornerHorizontalShift", 36, 4, 1, 1], [38, "外眼角上下移动", [0], "advance.headFeatures.eyes.eyeCorners.outerEyeCornerVerticalShift", 37, 4, 1, 1], [39, "瞳孔左右移动", [0], "advance.headFeatures.eyes.pupils.pupilHorizontalShift", 38, 4, 1, 1], [40, "瞳孔上下移动", [0], "advance.headFeatures.eyes.pupils.pupilVerticalShift", 39, 4, 1, 1], [41, "瞳孔左右缩放", [0], "advance.headFeatures.eyes.pupils.pupilHorizontalScale", 40, 4, 1, 1], [42, "瞳孔上下缩放", [0], "advance.headFeatures.eyes.pupils.pupilVerticalScale", 41, 4, 1, 1], [43, "鼻子整体前后移动", [0], "advance.headFeatures.nose.overall.noseOverallFrontalShift", 42, 4, 1, 1], [44, "鼻尖上下移动", [0], "advance.headFeatures.nose.noseTip.noseTipVerticalShift", 43, 4, 1, 1], [45, "鼻梁前后移动", [0], "advance.headFeatures.nose.noseBridge.noseBridgeFrontalShift", 44, 4, 1, 1], [46, "嘴巴上下移动", [0], "advance.headFeatures.mouth.overall.mouthVerticalShift", 45, 4, 1, 1], [47, "嘴巴前后移动", [0], "advance.headFeatures.mouth.overall.mouthFrontalShift", 46, 4, 1, 1], [48, "嘴巴左右缩放", [0], "advance.headFeatures.mouth.overall.mouthHorizontalScale", 47, 4, 1, 1], [49, "上嘴唇薄厚", [0], "advance.headFeatures.mouth.lips.upperLipThickness", 48, 4, 1, 1], [50, "下嘴唇薄厚", [0], "advance.headFeatures.mouth.lips.lowerLipThickness", 49, 4, 1, 1], [51, "嘴角上下移动", [0], "advance.headFeatures.mouth.mouthCorners.mouthCornerVerticalShift", 50, 4, 1, 1], [52, "身高", null, "advance.bodyFeatures.body.height", 51, 4, 2, 1], [53, "头部整体缩放", null, "advance.headFeatures.head.headOverallScale", 52, 4, 1, 1], [54, "胸部整体缩放", null, "advance.bodyFeatures.breast.breastOverallScale", 53, 4, 2, 1], [55, "胸部上下移动", null, "advance.bodyFeatures.breast.breastVerticalShift", 54, 4, 2, 1], [56, "胸部左右移动", null, "advance.bodyFeatures.breast.breastHorizontalShift", 56, 4, 2, 1], [57, "胸部长度", null, "advance.bodyFeatures.breast.breastLength", 58, 4, 2, 1], [58, "脖子左右缩放", null, "advance.bodyFeatures.neck.neckHorizontalScale", 59, 4, 0, 1], [59, "脖子前后缩放", null, "advance.bodyFeatures.neck.neckFrontalScale", 60, 4, 2, 1], [60, "胸腔左右缩放", null, "advance.bodyFeatures.chest.chestHorizontalScale", 61, 4, 2, 1], [61, "胸腔前后缩放", null, "advance.bodyFeatures.chest.chestFrontalScale", 62, 4, 2, 1], [62, "肋骨左右缩放", null, "advance.bodyFeatures.ribs.ribHorizontalScale", 63, 4, 2, 1], [63, "肋骨前后缩放", null, "advance.bodyFeatures.ribs.ribFrontalScale", 64, 4, 2, 1], [64, "腰部左右缩放", null, "advance.bodyFeatures.waist.waistHorizontalScale", 65, 4, 2, 1], [65, "腰部前后缩放", null, "advance.bodyFeatures.waist.waistFrontalScale", 66, 4, 2, 1], [66, "脖子上下缩放", null, "advance.bodyFeatures.neck.neckVerticalScale", 67, 4, 2, 1], [67, "胸腔上下缩放", null, "advance.bodyFeatures.chest.chestVerticalScale", 68, 4, 2, 1], [68, "腰部上下缩放", null, "advance.bodyFeatures.waist.waistVerticalScale", 69, 4, 2, 1], [69, "胯左右缩放", null, "advance.bodyFeatures.hips.hipHorizontalScale", 70, 4, 2, 1], [70, "胯前后缩放", null, "advance.bodyFeatures.hips.hipFrontalScale", 71, 4, 2, 1], [71, "肩臂左右缩放", null, "advance.bodyFeatures.arms.shoulderHorizontalScale", 72, 4, 2, 1], [72, "肩臂前后缩放", null, "advance.bodyFeatures.arms.shoulderFrontalScale", 73, 4, 2, 1], [73, "大臂左右缩放", null, "advance.bodyFeatures.arms.upperArmHorizontalScale", 74, 4, 2, 1], [74, "大臂前后缩放", null, "advance.bodyFeatures.arms.upperArmFrontalScale", 75, 4, 2, 1], [75, "小臂左右缩放", null, "advance.bodyFeatures.arms.forearmHorizontalScale", 76, 4, 2, 1], [76, "小臂前后缩放", null, "advance.bodyFeatures.arms.forearmFrontalScale", 77, 4, 2, 1], [77, "大臂上下缩放", null, "advance.bodyFeatures.arms.upperArmVerticalScale", 78, 4, 2, 1], [78, "小臂上下缩放", null, "advance.bodyFeatures.arms.forearmVerticalScale", 79, 4, 2, 1], [79, "大腿上下缩放", null, "advance.bodyFeatures.legs.thighVerticalScale", 80, 4, 2, 1], [80, "小腿上下缩放", null, "advance.bodyFeatures.legs.calfVerticalScale", 81, 4, 2, 1], [81, "大腿左右缩放", null, "advance.bodyFeatures.legs.thighHorizontalScale", 82, 4, 2, 1], [82, "大腿前后缩放", null, "advance.bodyFeatures.legs.thighFrontalScale", 83, 4, 2, 1], [83, "小腿前后缩放", null, "advance.bodyFeatures.legs.calfFrontalScale", 84, 4, 2, 1], [84, "小腿左右缩放", null, "advance.bodyFeatures.legs.calfHorizontalScale", 85, 4, 2, 1], [85, "上装样式", null, "advance.clothing.upperCloth.style", 86, 5, 6, 2], [86, "区域颜色", [86], "advance.clothing.upperCloth.part[].color.areaColor", 87, 4, 6, 3], [87, "纹理样式", [86], "advance.clothing.upperCloth.part[].pattern.patternStyle", 88, 5, 6, 2], [88, "纹理颜色", [86], "advance.clothing.upperCloth.part[].pattern.patternColor", 89, 4, 6, 3], [89, "纹理左右拉伸", [86], "advance.clothing.upperCloth.part[].pattern.patternHorizontalScale", 90, 4, 6, 1], [90, "纹理上下拉伸", [86], "advance.clothing.upperCloth.part[].pattern.patternVerticalScale", 91, 4, 6, 1], [91, "纹理旋转", [86], "advance.clothing.upperCloth.part[].pattern.patternRotation", 92, 4, 6, 1], [92, "纹理显示程度", [86], "advance.clothing.upperCloth.part[].pattern.patternVisibility", 93, 4, 6, 1], [93, "设计图案样式", [86], "advance.clothing.upperCloth.part[].design.designStyle", 94, 5, 6, 2], [94, "设计图案颜色", [86], "advance.clothing.upperCloth.part[].design.designColor", 95, 4, 6, 3], [95, "设计图案旋转", [86], "advance.clothing.upperCloth.part[].design.designRotation", 96, 4, 6, 1], [96, "下装样式", null, "advance.clothing.lowerCloth.style", 97, 5, 7, 2], [97, "区域颜色", [97], "advance.clothing.lowerCloth.part[].color.areaColor", 98, 4, 7, 3], [98, "纹理样式", [97], "advance.clothing.lowerCloth.part[].pattern.patternStyle", 99, 5, 7, 2], [99, "纹理颜色", [97], "advance.clothing.lowerCloth.part[].pattern.patternColor", 100, 4, 7, 3], [100, "纹理左右拉伸", [97], "advance.clothing.lowerCloth.part[].pattern.patternHorizontalScale", 101, 4, 7, 1], [101, "纹理上下拉伸", [97], "advance.clothing.lowerCloth.part[].pattern.patternVerticalScale", 102, 4, 7, 1], [102, "纹理旋转", [97], "advance.clothing.lowerCloth.part[].pattern.patternRotation", 103, 4, 7, 1], [103, "纹理显示程度", [97], "advance.clothing.lowerCloth.part[].pattern.patternVisibility", 104, 4, 7, 1], [104, "设计图案样式", [97], "advance.clothing.lowerCloth.part[].design.designStyle", 105, 5, 7, 2], [105, "设计图案颜色", [97], "advance.clothing.lowerCloth.part[].design.designColor", 106, 4, 7, 3], [106, "设计图案旋转", [97], "advance.clothing.lowerCloth.part[].design.designRotation", 107, 4, 7, 1], [107, "手套样式", null, "advance.clothing.gloves.style", 108, 5, 8, 2], [108, "区域颜色", [108], "advance.clothing.gloves.part[].color.areaColor", 109, 4, 8, 3], [109, "纹理样式", [108], "advance.clothing.gloves.part[].pattern.patternStyle", 110, 5, 8, 2], [110, "纹理颜色", [108], "advance.clothing.gloves.part[].pattern.patternColor", 111, 4, 8, 3], [111, "纹理左右拉伸", [108], "advance.clothing.gloves.part[].pattern.patternHorizontalScale", 112, 4, 8, 1], [112, "纹理上下拉伸", [108], "advance.clothing.gloves.part[].pattern.patternVerticalScale", 113, 4, 8, 1], [113, "纹理旋转", [108], "advance.clothing.gloves.part[].pattern.patternRotation", 114, 4, 8, 1], [114, "纹理显示程度", [108], "advance.clothing.gloves.part[].pattern.patternVisibility", 115, 4, 8, 1], [115, "设计图案样式", [108], "advance.clothing.gloves.part[].design.designStyle", 116, 5, 8, 2], [116, "设计图案颜色", [108], "advance.clothing.gloves.part[].design.designColor", 117, 4, 8, 3], [117, "设计图案旋转", [108], "advance.clothing.gloves.part[].design.designRotation", 118, 4, 8, 1], [118, "鞋子样式", null, "advance.clothing.shoes.style", 119, 5, 9, 2], [119, "区域颜色", [119], "advance.clothing.shoes.part[].color.areaColor", 120, 4, 9, 3], [120, "纹理样式", [119], "advance.clothing.shoes.part[].pattern.patternStyle", 121, 5, 9, 2], [121, "纹理颜色", [119], "advance.clothing.shoes.part[].pattern.patternColor", 122, 4, 9, 3], [122, "纹理左右拉伸", [119], "advance.clothing.shoes.part[].pattern.patternHorizontalScale", 123, 4, 9, 1], [123, "纹理上下拉伸", [119], "advance.clothing.shoes.part[].pattern.patternVerticalScale", 124, 4, 9, 1], [124, "纹理旋转", [119], "advance.clothing.shoes.part[].pattern.patternRotation", 125, 4, 9, 1], [125, "纹理显示程度", [119], "advance.clothing.shoes.part[].pattern.patternVisibility", 126, 4, 9, 1], [126, "设计图案样式", [119], "advance.clothing.shoes.part[].design.designStyle", 127, 5, 9, 2], [127, "设计图案颜色", [119], "advance.clothing.shoes.part[].design.designColor", 128, 4, 9, 3], [128, "设计图案旋转", [119], "advance.clothing.shoes.part[].design.designRotation", 129, 4, 9, 1], [129, "眉毛样式", [0], "advance.makeup.eyebrows.eyebrowStyle", 130, 5, 3, 2], [130, "眉毛颜色", [0], "advance.makeup.eyebrows.eyebrowColor", 131, 4, 3, 3], [131, "瞳孔样式", [0], "advance.makeup.coloredContacts.style.pupilStyle", 132, 5, 3, 2], [132, "睫毛样式", [0], "advance.makeup.eyelashes.eyelashStyle", 133, 5, 3, 2], [133, "睫毛颜色", [0], "advance.makeup.eyelashes.eyelashColor", 134, 4, 3, 3], [134, "上高光样式", [0], "advance.makeup.coloredContacts.highlight.upperHighlightStyle", 135, 5, 3, 2], [135, "上高光颜色", [0], "advance.makeup.coloredContacts.highlight.upperHighlightColor", 136, 4, 3, 3], [136, "下高光样式", [0], "advance.makeup.coloredContacts.highlight.lowerHighlightStyle", 137, 5, 3, 2], [137, "下高光颜色", [0], "advance.makeup.coloredContacts.highlight.lowerHighlightColor", 138, 4, 3, 3], [138, "瞳孔样式", [0], "advance.makeup.coloredContacts.decal.pupilStyle", 139, 5, 3, 2], [139, "瞳孔颜色", [0], "advance.makeup.coloredContacts.decal.pupilColor", 140, 4, 3, 3], [140, "瞳孔左右位置", [0], "advance.makeup.coloredContacts.decal.pupilHorizontalPosition", 141, 4, 3, 1], [141, "瞳孔上下位置", [0], "advance.makeup.coloredContacts.decal.pupilVerticalPosition", 142, 4, 3, 1], [142, "瞳孔大小缩放", [0], "advance.makeup.coloredContacts.decal.pupilSizeScale", 143, 4, 3, 1], [143, "眼影样式", [0], "advance.makeup.eyeShadow.eyeshadowStyle", 145, 5, 3, 2], [144, "眼影颜色", [0], "advance.makeup.eyeShadow.eyeshaowColor", 146, 4, 3, 3], [145, "腮红样式", [0], "advance.makeup.blush.blushStyle", 147, 5, 3, 2], [146, "腮红颜色", [0], "advance.makeup.blush.blushColor", 148, 4, 3, 3], [147, "口红样式", [0], "advance.makeup.lipstick.lipstickStyle", 149, 5, 3, 2], [148, "口红颜色", [0], "advance.makeup.lipstick.lipstickColor", 150, 4, 3, 3], [149, "贴花样式", [0], "advance.makeup.faceDecal[].decalStyle", 151, 5, 3, 2], [150, "贴花左右移动", [0], "advance.makeup.faceDecal[].decalHorizontalShift", 152, 4, 3, 1], [151, "贴花上下移动", [0], "advance.makeup.faceDecal[].decalVerticalShift", 153, 4, 3, 1], [152, "贴花整体旋转", [0], "advance.makeup.faceDecal[].decalOverallRotation", 154, 4, 3, 1], [153, "贴花整体缩放", [0], "advance.makeup.faceDecal[].decalOverallScale", 155, 4, 3, 1], [154, "肌肤颜色", [0, 86, 97, 108, 119], "advance.makeup.skinTone.skinColor", 156, 4, 3, 3], [155, "贴花左右移动", [97, 86], "advance.makeup.bodyDecal[].decalHorizontalShift", 157, 4, 3, 1], [156, "贴花上下移动", [97, 86], "advance.makeup.bodyDecal[].decalVerticalShift", 158, 4, 3, 1], [157, "贴花样式", [97, 86], "advance.makeup.bodyDecal[].decalStyle", 159, 5, 3, 2], [158, "贴花颜色", [97, 86], "advance.makeup.bodyDecal[].decalColor", 160, 4, 3, 3], [159, "贴花整体旋转", [97, 86], "advance.makeup.bodyDecal[].decalOverallRotation", 161, 4, 3, 1], [160, "贴花整体缩放", [97, 86], "advance.makeup.bodyDecal[].decalOverallScale", 162, 4, 3, 1], [161, "样式", null, "advance.hair.frontHair.style", 163, 5, 4, 2], [162, "颜色", [163], "advance.hair.frontHair.color.color", 164, 4, 4, 3], [163, "渐变颜色", [163], "advance.hair.frontHair.color.gradientColor", 165, 4, 4, 3], [164, "渐变区域", [163], "advance.hair.frontHair.color.gradientArea", 166, 4, 4, 1], [165, "高光样式", [163], "advance.hair.frontHair.highlight.highlightStyle", 167, 5, 4, 2], [166, "样式", null, "advance.hair.backHair.style", 169, 5, 5, 2], [167, "颜色", [169], "advance.hair.backHair.color.color", 170, 4, 5, 3], [168, "渐变颜色", [169], "advance.hair.backHair.color.gradientColor", 171, 4, 5, 3], [169, "渐变区域", [169], "advance.hair.backHair.color.gradientArea", 172, 4, 5, 1], [170, "高光样式", [169], "advance.hair.backHair.highlight.highlightStyle", 173, 5, 5, 2], [171, "体型", null, "advance.base.characterSetting.somatotype", 175, 4, 0, 1], [172, "贴花颜色", [0], "advance.makeup.faceDecal[].decalColor", 176, 4, 3, 3], [173, "左眼颜色(二次元)", [0], "advance.makeup.coloredContacts.style.leftPupilColor", 178, 5, 3, 3], [174, "右眼颜色(二次元)", [0], "advance.makeup.coloredContacts.style.rightPupilColor", 179, 5, 3, 3], [175, "头部贴花颜色", [0], "advance.makeup.headDecal.decalColor", 182, 4, 3, 3], [176, "头部贴花样式", [0], "advance.makeup.headDecal.decalStyle", 183, 5, 3, 2], [177, "切换表情", [0], "advance.headFeatures.expressions.changeExpression", 184, 4, 0, 1], [178, "头饰颜色", [163], "advance.hair.frontHair.accessories[].color.accessoryColor", 185, 4, 4, 3], [179, "纹理样式", [163], "advance.hair.frontHair.accessories[].pattern.patternStyle", 186, 5, 4, 2], [180, "纹理颜色", [163], "advance.hair.frontHair.accessories[].pattern.patternColor", 187, 4, 4, 3], [181, "设计图案样式", [163], "advance.hair.frontHair.accessories[].design.designStyle", 188, 5, 4, 2], [182, "设计图案颜色", [163], "advance.hair.frontHair.accessories[].design.designColor", 189, 4, 4, 3], [183, "设计图案旋转", [163], "advance.hair.frontHair.accessories[].design.designRotation", 190, 4, 4, 1], [184, "设计图案缩放", [163], "advance.hair.frontHair.accessories[].design.designScale", 191, 4, 4, 1], [185, "头饰颜色", [169], "advance.hair.backHair.accessories[].color.accessoryColor", 192, 4, 5, 3], [186, "纹理样式", [169], "advance.hair.backHair.accessories[].pattern.patternStyle", 193, 5, 5, 2], [187, "纹理颜色", [169], "advance.hair.backHair.accessories[].pattern.patternColor", 194, 4, 5, 3], [188, "设计图案样式", [169], "advance.hair.backHair.accessories[].design.designStyle", 195, 5, 5, 2], [189, "设计图案颜色", [169], "advance.hair.backHair.accessories[].design.designColor", 196, 4, 5, 3], [190, "设计图案旋转", [169], "advance.hair.backHair.accessories[].design.designRotation", 197, 4, 5, 1], [191, "设计图案缩放", [169], "advance.hair.backHair.accessories[].design.designScale", 198, 4, 5, 1], [192, "手整体缩放", null, "advance.bodyFeatures.hands.handOverallScale", 199, 4, 2, 1], [193, "脚整体缩放", null, "advance.bodyFeatures.feet.feetOverallScale", 200, 4, 2, 1], [194, "纹理左右拉伸", [163], "advance.hair.frontHair.accessories[].pattern.patternHorizontalScale", 201, 4, 4, 1], [195, "纹理上下拉伸", [163], "advance.hair.frontHair.accessories[].pattern.patternVerticalScale", 202, 4, 4, 1], [196, "纹理旋转", [163], "advance.hair.frontHair.accessories[].pattern.patternRotation", 203, 4, 4, 1], [197, "纹理显示程度", [163], "advance.hair.frontHair.accessories[].pattern.patternVisibility", 204, 4, 4, 1], [198, "纹理左右拉伸", [169], "advance.hair.backHair.accessories[].pattern.patternHorizontalScale", 205, 4, 5, 1], [199, "纹理上下拉伸", [169], "advance.hair.backHair.accessories[].pattern.patternVerticalScale", 206, 4, 5, 1], [200, "纹理旋转", [169], "advance.hair.backHair.accessories[].pattern.patternRotation", 207, 4, 5, 1], [201, "纹理显示程度", [169], "advance.hair.backHair.accessories[].pattern.patternVisibility", 208, 4, 5, 1], [202, "面部左右缩放", [0], "advance.headFeatures.faceShape.overall.faceHorizontalScale", 210, 4, 1, 1], [203, "眉毛前后移动", [0], "advance.headFeatures.eyebrows.eyebrowFrontalShift", 211, 4, 1, 1], [204, "眉间前后移动", [0], "advance.headFeatures.eyebrows.eyebrowBridgeFrontalShift", 212, 4, 1, 1], [205, "鼻子整体上下移动", [0], "advance.headFeatures.nose.overall.noseOverallVerticalShift", 213, 4, 1, 1], [206, "鼻梁左右缩放", [0], "advance.headFeatures.nose.noseBridge.noseBridgeHorizontalScale", 214, 4, 1, 1], [207, "鼻翼前后移动", [0], "advance.headFeatures.nose.nostrils.nostrilForntalShift", 215, 4, 1, 1], [208, "鼻翼上下移动", [0], "advance.headFeatures.nose.nostrils.nostrilVerticalShift", 216, 4, 1, 1], [209, "鼻翼左右缩放", [0], "advance.headFeatures.nose.nostrils.nostrilHorizontalScale", 217, 4, 1, 1], [210, "嘴角前后移动", [0], "advance.headFeatures.mouth.mouthCorners.mouthCornerFrontalShift", 218, 4, 1, 1], [211, "V1模型", null, "base.wholeBody", 219, 6, 0, 2], [212, null, null, "advance.dynamicAttachments[].style", 228, 4, 0, 2]];
+class DescriptionConfig extends ConfigBase {
+    constructor() {
+        super(EXCELDATA$U);
+    }
+}
+
+var foreign23 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    DescriptionConfig: DescriptionConfig
 });
 
 const EXCELDATA$T = [["ID", "Describe", "AssetId", "Transform", "SexType"], ["", "", "", "", ""], [1, "狐狸耳朵", "226479", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [2, "围巾", "295506", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [3, "双马尾辫子", "352615", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [4, "狐耳朵", "404433", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [5, "猫耳", "404473", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [6, "星星", "441348", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [7, "眩晕Buff", "142935", ["0", "0", "22", "0", "0", "0", "0.4", "0.4", "0.4"], 0], [8, "狗头", "462790", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [9, "熊猫头", "462791", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [10, "问号", "441349", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [11, "问号", "13728", ["0", "0", "38", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [12, "乌云", "169404", ["0", "0", "47", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [13, "问号", "200911", ["0", "0", "14", "0", "0", "0", "1", "1", "1"], 0], [14, "表情", "88831", ["0", "0", "23", "0", "0", "0", "0.15", "0.15", "0.15"], 0], [15, "表情", "88818", ["0", "0", "23", "0", "0", "0", "0.15", "0.15", "0.15"], 0], [16, "表情", "88825", ["-15", "0", "30", "0", "0", "0", "0.3", "0.3", "0.3"], 0], [17, "睡眠", "287819", ["0", "0", "8", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [18, "恶心", "26155", ["0", "0", "36", "0", "0", "0", "1", "1", "1"], 0], [19, "泡泡", "451246", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [20, "蝙蝠", "452716", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [21, "花瓣环绕", "340179", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [22, null, "340181", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [23, "蝴蝶泡泡", "295800", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [24, "星星", "235888", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [25, "五角星泡泡", "295801", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [26, "打瞌睡", "26158", ["0", "10", "5", "0", "0", "0", "0.3", "0.3", "0.3"], 0], [27, "爱心", "184435", ["0", "0", "32", "0", "0", "0", "0.5", "0.5", "0.5"], 0], [28, "梦幻泡泡蝴蝶结", "452232", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [29, "梦幻泡泡蝴蝶结", "452233", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [30, "梦幻泡泡蝴蝶结", "452234", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [31, "梦幻泡泡蝴蝶结", "452235", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [32, "道具", "471540", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [33, "道具", "471541", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [34, "道具", "471542", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [35, "道具", "471543", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [36, "绿蛇头发", "502350", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [37, "青蛇头发", "502351", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [38, "红蛇头发", "502352", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [39, "龙角", "266596", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [40, "龙角", "266597", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [41, "龙角", "266598", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [42, "龙角", "266600", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [43, "龙角", "266601", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [44, "龙角", "266602", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [45, "龙角", "266610", ["0", "0", "15", "0", "0", "0", "1", "1", "1"], 0], [46, "犄角", "467603", ["0", "0", "16", "0", "0", "0", "1", "1", "1"], 0], [47, "发光恶魔角", "266332", ["0", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [48, "帽子", "457013", ["0", "0", "12", "0", "0", "0", "1", "1", "1"], 0], [49, "护目眼镜", "209534", ["0", "5", "15", "-45", "0", "0", "1", "1", "1"], 0], [50, "泳镜", "112801", ["0", "5", "17", "-45", "0", "0", "1", "1", "1"], 0], [51, "男帽子", "173867", ["0", "0", "0", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [52, "尴尬", "26146", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [53, "眩晕", "26151", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [54, null, "26155", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [55, "手指", "160743", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [56, "自动寻路图标", "162012", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [57, "子弹", "168959", ["0", "0", "20", "0", "0", "0", "1", "1", "1"], 0], [58, "生气", "200925", ["0", "0", "30", "0", "0", "0", "1", "1", "1"], 0], [59, "荧光小人", "403000", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [60, "荧光小人", "403004", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [61, "荧光小人", "403012", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [62, "荧光小人", "403014", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [63, "荧光小人", "403015", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [64, "恭喜发财", "506842", ["0", "0", "0", "0", "0", "0", "1", "1", "1"], 0], [65, "南瓜", "442771", ["0", "0", "-5", "0", "0", "0", "0.6", "0.6", "0.6"], 0], [66, "头套", "234390", ["0", "0", "-5", "0", "0", "0", "1", "1", "1"], 0], [67, null, "292089", ["0", "0", "-8", "0", "0", "0", "1", "1", "1"], 0], [68, null, "72681", ["0", "0", "8", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [69, null, "72689", ["0", "0", "8", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [70, null, "44268", ["0", "0", "10", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [71, null, "72675", ["0", "0", "15", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [72, null, "68413", ["0", "-1.3", "-5", "0", "0", "0", "1", "1", "1"], 0], [73, null, "266331", ["0", "4", "12", "-5", "0", "0", "1", "1", "1"], 0], [74, null, "386337", ["0", "0", "14", "0", "0", "0", "1", "1", "1"], 0], [75, null, "173237", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [76, null, "173239", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [77, null, "173240", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [78, null, "173242", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [79, null, "173241", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [80, null, "173243", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [81, null, "173244", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [82, null, "173245", ["0", "0", "8", "0", "0", "0", "1", "1", "1"], 0], [83, null, "173501", ["0", "0", "7", "0", "0", "0", "1", "1", "1"], 0], [84, null, "173502", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [85, null, "173499", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [86, null, "173503", ["0", "-2", "10", "0", "0", "0", "1", "1", "1"], 0], [87, null, "173504", ["0", "0", "11", "0", "0", "0", "1", "1", "1"], 0], [88, null, "173505", ["0", "-1", "-2", "0", "0", "0", "1", "1", "1"], 0], [89, null, "173506", ["0", "-3", "4", "0", "0", "0", "1", "1", "1"], 0], [90, null, "173858", ["0", "-1", "16", "0", "0", "0", "1", "1", "1"], 0], [91, null, "173859", ["0", "-3", "12", "0", "0", "0", "1", "1", "1"], 0], [92, null, "173860", ["0", "-1", "12", "0", "0", "0", "1", "1", "1"], 0], [93, null, "173861", ["0", "-1", "15", "0", "0", "0", "1", "1", "1"], 0], [94, null, "173862", ["2", "-4", "12", "0", "0", "0", "1", "1", "1"], 0], [95, null, "173863", ["0", "-2.5", "13", "0", "0", "0", "1", "1", "1"], 0], [96, null, "173864", ["0", "-2", "12", "0", "0", "0", "1", "1", "1"], 0], [97, null, "173865", ["0", "2", "13", "0", "0", "0", "1", "1", "1"], 0], [98, null, "173866", ["0", "-3", "11", "0", "0", "0", "1", "1", "1"], 0], [99, null, "390761", ["0", "-2.5", "12", "0", "0", "0", "1", "1", "1"], 0], [100, null, "314053", ["0", "-2.5", "10", "0", "0", "0", "0.3", "0.3", "0.3"], 0], [101, null, "68397", ["0", "-3", "8", "0", "0", "0", "1", "1", "1"], 0], [102, null, "504881", ["0", "-2.5", "8", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [103, null, "68430", ["0", "-3", "10", "0", "0", "0", "1", "1", "1"], 0], [104, null, "68462", ["0", "-1", "3", "0", "0", "0", "1", "1", "1"], 0], [105, null, "68404", ["0", "-5", "5", "0", "0", "0", "1", "1", "1"], 0], [106, null, "68406", ["0", "-2.5", "5", "0", "0", "0", "1", "1", "1"], 0], [107, null, "68410", ["0", "0", "5", "0", "0", "0", "1", "1", "1"], 0], [108, null, "68422", ["0", "-2.5", "14", "0", "0", "0", "1", "1", "1"], 0], [109, null, "68424", ["-3", "-5", "-5", "0", "0", "0", "1", "1", "1"], 0], [110, null, "68427", ["0", "-4", "-7", "0", "0", "0", "1.2", "1.2", "1.2"], 0], [111, null, "68432", ["0", "-2", "0", "0", "0", "0", "1", "1", "1"], 0], [112, null, "68434", ["3", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [113, null, "68436", ["0", "0", "-9", "0", "0", "0", "1", "1", "1"], 0], [114, null, "68438", ["0", "-4", "10", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [115, null, "68440", ["0", "-4", "6", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [116, null, "68442", ["0", "-2.5", "5", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [117, null, "68447", ["0", "-3", "6", "0", "0", "0", "1", "1", "1"], 0], [118, null, "68449", ["0", "-3", "-2", "0", "0", "0", "1", "1", "1"], 0], [119, null, "68452", ["0", "-1.5", "-3", "0", "0", "0", "1", "1", "1"], 0], [120, null, "68456", ["0", "-2.5", "-3", "0", "0", "0", "1", "1", "1"], 0], [121, null, "111667", ["0", "-2", "3", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [122, null, "111668", ["0", "-2.5", "2.5", "0", "0", "0", "1", "1", "1"], 0], [123, null, "111669", ["0", "-6", "-6", "0", "0", "0", "1", "1", "1"], 0], [124, null, "117848", ["0", "-1.33", "12", "0", "0", "0", "1", "1", "1"], 0], [125, null, "134224", ["0", "-2.5", "12", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [126, null, "174438", ["0", "0", "22", "0", "0", "0", "0.8", "0.8", "0.8"], 0], [127, null, "182167", ["0", "-4.5", "15", "0", "0", "0", "1", "1", "1"], 0], [128, null, "186725", ["0", "-5", "16", "0", "0", "0", "1", "1", "1"], 0], [129, null, "186901", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [130, null, "191858", ["0", "-4", "10", "0", "0", "0", "1", "1", "1"], 0], [131, null, "192738", ["0", "-3", "11", "0", "0", "0", "1", "1", "1"], 0], [132, null, "192739", ["0", "-3", "11", "0", "0", "0", "1", "1", "1"], 0], [133, null, "192740", ["0", "-3", "11", "0", "0", "0", "1", "1", "1"], 0], [134, null, "192741", ["0", "-3", "11", "0", "0", "0", "1", "1", "1"], 0], [135, null, "202880", ["0", "2", "12", "0", "0", "0", "1", "1", "1"], 0], [136, null, "266537", ["0", "-2", "2", "0", "0", "0", "1", "1", "1"], 0], [137, null, "286443", ["0", "0", "17", "0", "0", "0", "1", "1", "1"], 0], [138, null, "323565", ["0", "0", "18", "0", "0", "0", "1", "1", "1"], 0], [139, null, "351369", ["0", "0", "-11", "0", "0", "0", "1", "1", "1"], 0], [140, null, "363651", ["0", "-2", "12", "0", "0", "0", "1", "1", "1"], 0], [141, null, "374517", ["0", "-3", "9", "0", "0", "0", "1", "1", "1"], 0], [142, null, "384900", ["0", "-2", "11", "0", "0", "0", "1", "1", "1"], 0], [143, null, "390760", ["0", "0", "10", "0", "0", "0", "1", "1", "1"], 0], [144, null, "457460", ["0", "0", "16", "0", "0", "0", "1", "1", "1"], 0]];
@@ -1738,7 +1750,7 @@ class EarConfig extends ConfigBase {
     }
 }
 
-var foreign23 = /*#__PURE__*/Object.freeze({
+var foreign24 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EarConfig: EarConfig
 });
@@ -1750,7 +1762,7 @@ class EffectsConfig extends ConfigBase {
     }
 }
 
-var foreign24 = /*#__PURE__*/Object.freeze({
+var foreign25 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EffectsConfig: EffectsConfig
 });
@@ -1762,7 +1774,7 @@ class EverydayShoesConfig extends ConfigBase {
     }
 }
 
-var foreign25 = /*#__PURE__*/Object.freeze({
+var foreign26 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EverydayShoesConfig: EverydayShoesConfig
 });
@@ -1774,7 +1786,7 @@ class ExpressionConfig extends ConfigBase {
     }
 }
 
-var foreign26 = /*#__PURE__*/Object.freeze({
+var foreign27 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ExpressionConfig: ExpressionConfig
 });
@@ -1786,7 +1798,7 @@ class EyebrowsConfig extends ConfigBase {
     }
 }
 
-var foreign27 = /*#__PURE__*/Object.freeze({
+var foreign28 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EyebrowsConfig: EyebrowsConfig
 });
@@ -1798,7 +1810,7 @@ class EyelashesConfig extends ConfigBase {
     }
 }
 
-var foreign28 = /*#__PURE__*/Object.freeze({
+var foreign29 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EyelashesConfig: EyelashesConfig
 });
@@ -1810,7 +1822,7 @@ class EyeshadowConfig extends ConfigBase {
     }
 }
 
-var foreign29 = /*#__PURE__*/Object.freeze({
+var foreign30 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     EyeshadowConfig: EyeshadowConfig
 });
@@ -1822,7 +1834,7 @@ class FaceConfig extends ConfigBase {
     }
 }
 
-var foreign30 = /*#__PURE__*/Object.freeze({
+var foreign31 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FaceConfig: FaceConfig
 });
@@ -1834,7 +1846,7 @@ class FaceExpressionConfig extends ConfigBase {
     }
 }
 
-var foreign31 = /*#__PURE__*/Object.freeze({
+var foreign32 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FaceExpressionConfig: FaceExpressionConfig
 });
@@ -1846,7 +1858,7 @@ class FaceTattooConfig extends ConfigBase {
     }
 }
 
-var foreign32 = /*#__PURE__*/Object.freeze({
+var foreign33 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FaceTattooConfig: FaceTattooConfig
 });
@@ -1858,7 +1870,7 @@ class FacingConfig extends ConfigBase {
     }
 }
 
-var foreign33 = /*#__PURE__*/Object.freeze({
+var foreign34 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FacingConfig: FacingConfig
 });
@@ -1870,7 +1882,7 @@ class FantasyModelingOutfitConfig extends ConfigBase {
     }
 }
 
-var foreign34 = /*#__PURE__*/Object.freeze({
+var foreign35 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FantasyModelingOutfitConfig: FantasyModelingOutfitConfig
 });
@@ -1882,7 +1894,7 @@ class FootCoverShoesConfig extends ConfigBase {
     }
 }
 
-var foreign35 = /*#__PURE__*/Object.freeze({
+var foreign36 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FootCoverShoesConfig: FootCoverShoesConfig
 });
@@ -1894,7 +1906,7 @@ class FrontHairConfig extends ConfigBase {
     }
 }
 
-var foreign36 = /*#__PURE__*/Object.freeze({
+var foreign37 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FrontHairConfig: FrontHairConfig
 });
@@ -1906,7 +1918,7 @@ class FullHairConfig extends ConfigBase {
     }
 }
 
-var foreign37 = /*#__PURE__*/Object.freeze({
+var foreign38 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     FullHairConfig: FullHairConfig
 });
@@ -1918,7 +1930,7 @@ class GlovesGlovesConfig extends ConfigBase {
     }
 }
 
-var foreign40 = /*#__PURE__*/Object.freeze({
+var foreign41 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     GlovesGlovesConfig: GlovesGlovesConfig
 });
@@ -1930,7 +1942,7 @@ class GlovesConfig extends ConfigBase {
     }
 }
 
-var foreign39 = /*#__PURE__*/Object.freeze({
+var foreign40 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     GlovesConfig: GlovesConfig
 });
@@ -1942,7 +1954,7 @@ class HeroStylingOutfitConfig extends ConfigBase {
     }
 }
 
-var foreign41 = /*#__PURE__*/Object.freeze({
+var foreign42 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HeroStylingOutfitConfig: HeroStylingOutfitConfig
 });
@@ -1954,7 +1966,7 @@ class HighHeelsShoesConfig extends ConfigBase {
     }
 }
 
-var foreign42 = /*#__PURE__*/Object.freeze({
+var foreign43 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HighHeelsShoesConfig: HighHeelsShoesConfig
 });
@@ -1966,7 +1978,7 @@ class HipConfig extends ConfigBase {
     }
 }
 
-var foreign43 = /*#__PURE__*/Object.freeze({
+var foreign44 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HipConfig: HipConfig
 });
@@ -1978,7 +1990,7 @@ class HolidayStylingOutfitConfig extends ConfigBase {
     }
 }
 
-var foreign44 = /*#__PURE__*/Object.freeze({
+var foreign45 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HolidayStylingOutfitConfig: HolidayStylingOutfitConfig
 });
@@ -1990,12 +2002,12 @@ class InteractConfig extends ConfigBase {
     }
 }
 
-var foreign45 = /*#__PURE__*/Object.freeze({
+var foreign46 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n樱花换装派对"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "收藏"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"], [208, "Text_HUDPanelTips1", null, "服装签到"], [209, "Text_HUDPanelTips2", null, "试穿排行榜"], [210, "Text_HUDPanelTips3", null, "全服排行榜"], [211, "Text_HUDPanelTips4", null, "设置"], [212, "Text_HUDPanelTips5", null, "免费换装"], [213, "Text_HUDPanelTips6", null, "换装商店"], [214, "Text_HUDPanelTips7", null, "背景音乐"], [215, "Text_TryOnTips1", null, "排名"], [216, "Text_TryOnTips2", null, "昵称"], [217, "Text_TryOnTips3", null, "被试穿次数"], [218, "Text_TryOnTips4", null, "试穿好友形象"], [219, "Text_TryOnTips5", null, "自己的形象"], [220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间"], [221, "Text_TryOnTips7", null, "换个好友试试吧"], [222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范"], [223, "Text_TryOnTips9", null, "被好友试穿权限"], [224, "Text_TryOnTips10", null, "允许"], [225, "Text_TryOnTips11", null, "不允许"], [226, "Text_TryOnTips12", null, "好友试穿权限已关闭，不允许试穿"], [227, "Text_Tab3_1048", "Pet", "灵宠"]];
+const EXCELDATA$x = [["ID", "Name", "Value", "Value_Ch"], ["", "Key|ReadByName", "MainLanguage", "ChildLanguage"], [1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满"], [2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具"], [3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试"], [4, "Text_SetUp1", "Base Setup", "基础设置"], [5, "Text_PictureQuality", "Picture Quality", "画质"], [6, "Text_SoundEffects", "Sound Effects", "音效"], [7, "Text_BackgroundMusic", "Background Music", "背景音乐"], [8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放"], [9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称"], [10, "Text_ResetLocation", "Reset Location", "重置位置"], [11, "Text_RestoringSettings", "Restoring Settings", "还原设置"], [12, "Text_On", "ON", "开"], [13, "Text_Off", "OFF", "关"], [14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用"], [15, "Text_Advertising", "Advertising", "广告奖励"], [16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得"], [17, "Text_Dont", "Don't", "不要"], [18, "Text_Free", "free", "免费获得"], [19, "Text_Fail", "Fail", "指引失败，请重试"], [20, "Text_NoOnTheList", "Not", "未上榜"], [21, "Text_Ranking", "Ranking", "排名"], [22, "Text_Nickname", "Nickname", "昵称"], [23, "Text_Score", "Score", "分数"], [24, "Text_Duration", "Duration", "时长"], [25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名"], [26, "Text_StartGame", "Start the game", "开始游戏"], [27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n樱花换装派对"], [28, "Text_UpNext", "Up next", "下一个"], [29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的樱花小镇之旅吧"], [30, "Text_Close", "Close", "关闭"], [31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿"], [32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID"], [33, "Text_Cancel", "Cancel", "取消"], [34, "Text_FreeTryOn", "Free Try On", "免费试穿"], [35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象"], [36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象"], [37, "Text_CopySuccessfully", "Copy Successfully", "复制成功"], [38, "Text_InvalidID", "Invalid ID!", "ID无效！"], [39, "Text_Loading", "Loading", "加载中"], [40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功"], [41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿"], [42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿"], [43, "Text_GuideTips", "Reach near the target point", "达到目标点附近"], [44, "Text_BootPrompt", "Boot prompt", "引导提示"], [45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得"], [46, "Text_SignIn_1", "Activity is not enabled", "活动未开启"], [47, "Text_SignIn_2", "Successful costume change", "换装成功"], [48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足"], [49, "Text_SignIn_4", "Check-in bonus", "签到奖励"], [50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天"], [51, "Text_SignIn_6", "Has been \nObtained", "已获得"], [52, "Text_SignIn_7", "Change of dress", "换装"], [53, "Text_SignIn_8", "Insufficient check-in", "签到不足"], [54, "Text_SignIn_9", "Day {0}", "第{0}天"], [55, "Text_SignIn_10", "Sign In", "签到"], [56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装"], [57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。"], [58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟"], [59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿"], [60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦"], [61, "Text_Tab1_1", "Appearance", "捏脸"], [62, "Text_Tab1_2", "Clothing", "换装"], [63, "Text_Tab1_3", "Collection", "保存穿搭"], [64, "Text_Tab1_4", "Test", "测试"], [65, "Text_Tab2_101", "Body Type", "体型"], [66, "Text_Tab2_102", "Skin Tone", "肤色"], [67, "Text_Tab2_103", "Face", "脸型"], [68, "Text_Tab2_104", "Eyes", "眼睛"], [69, "Text_Tab2_105", "Eyebrows", "眉毛"], [70, "Text_Tab2_106", "Makeup", "妆容"], [71, "Text_Tab2_107", "Expression", "表情"], [72, "Text_Tab2_108", "Outfit", "套装"], [73, "Text_Tab2_109", "Hair", "头发"], [74, "Text_Tab2_110", "Top", "上衣"], [75, "Text_Tab2_111", "Bottom", "下衣"], [76, "Text_Tab2_112", "Gloves", "鞋子"], [77, "Text_Tab2_113", "Shoes", "手套"], [78, "Text_Tab2_114", "Pet", "宠物"], [79, "Text_Tab2_115", "Accessory", "饰品"], [80, "Text_Tab2_501", "Body Type", "体型", "收藏"], [81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏"], [82, "Text_Tab2_503", "Face", "脸型", "收藏"], [83, "Text_Tab2_504", "Eyes", "眼睛", "收藏"], [84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏"], [85, "Text_Tab2_506", "Makeup", "妆容", "收藏"], [86, "Text_Tab2_507", "Expression", "表情", "收藏"], [87, "Text_Tab2_508", "Outfit", "套装", "收藏"], [88, "Text_Tab2_509", "Hair", "头发", "收藏"], [89, "Text_Tab2_510", "Top", "上衣", "收藏"], [90, "Text_Tab2_511", "Bottom", "下衣", "收藏"], [91, "Text_Tab2_512", "Gloves", "鞋子", "收藏"], [92, "Text_Tab2_513", "Shoes", "手套", "收藏"], [93, "Text_Tab2_514", "Pet", "宠物", "收藏"], [94, "Text_Tab2_515", "Accessory", "饰品", "收藏"], [95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式"], [96, "Text_Tab3_1002", "Lens", "瞳孔贴花"], [97, "Text_Tab3_1003", "Upper Highlight", "上高光"], [98, "Text_Tab3_1004", "Lower Highlight", "下高光"], [99, "Text_Tab3_1005", "Eyelashes", "睫毛"], [100, "Text_Tab3_1006", "Eyeshadow", "眼影"], [101, "Text_Tab3_1007", "Blush", "腮红"], [102, "Text_Tab3_1008", "Lip Makeup", "口红"], [103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘"], [104, "Text_Tab3_1010", "Full Hair", "整体发型"], [105, "Text_Tab3_1011", "Front Hair", "前发"], [106, "Text_Tab3_1012", "Back Hair", "后发"], [107, "Text_Tab3_1013", "Left Hand", "左手"], [108, "Text_Tab3_1014", "Right Hand", "右手"], [109, "Text_Tab3_1015", "Back", "背饰"], [110, "Text_Tab3_1016", "Head", "头饰"], [111, "Text_Tab3_1017", "Face", "面饰"], [112, "Text_Tab3_1018", "Hip", "臀部"], [113, "Text_Tab3_1019", "Shoulder", "肩部"], [114, "Text_Tab3_1020", "Effects", "特效"], [115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏"], [116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏"], [117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏"], [118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏"], [119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏"], [120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏"], [121, "Text_Tab3_2007", "Blush", "腮红", "收藏"], [122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏"], [123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏"], [124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏"], [125, "Text_Tab3_2011", "Front Hair", "前发", "收藏"], [126, "Text_Tab3_2012", "Back Hair", "后发", "收藏"], [127, "Text_Tab3_2013", "Left Hand", "左手", "收藏"], [128, "Text_Tab3_2014", "Right Hand", "右手", "收藏"], [129, "Text_Tab3_2015", "Back", "背饰", "收藏"], [130, "Text_Tab3_2016", "Ear", "耳饰", "收藏"], [131, "Text_Tab3_2017", "Face", "面饰", "收藏"], [132, "Text_Tab3_2018", "Hip", "臀部", "收藏"], [133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏"], [134, "Text_Tab3_2020", "Effects", "特效", "收藏"], [135, "Text_OpenClothTextBlock", "Shop", "换装商店"], [136, "Text_MallItem_Free", "Free", "免费"], [137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启"], [138, "Text_BodyTypeDescribe", "{0} times", "{0}倍"], [139, "Text_Expression_Default", "Default", "默认表情"], [140, "Text_Expression_Smile", "Smile", "微笑"], [141, "Text_Expression_HaveFun", "Have Fun", "开心"], [142, "Text_Expression_Sad", "Sad", "伤心"], [143, "Text_Expression_GetAngry", "Get Angry", "生气"], [144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬"], [145, "Text_Expression_Laugh", "Laugh", "笑"], [146, "Text_Expression_BeNaughty", "Be Naughty", "调皮"], [147, "Text_Expression_Cute", "Cute", "可爱"], [148, "Text_Expression_Doubt", "Doubt", "疑惑"], [149, "Text_Tab3_1021", "Trailing", "拖尾"], [150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏"], [151, "Text_ColorPick", "Color Pick", "调色板"], [152, "Text_ColorPart", "Part {0}", "部位 {0}"], [153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色"], [154, "Text_PupilColor", "Pupil Color", "瞳孔颜色"], [155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色"], [156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色"], [157, "Text_DecalColor", "Decal Color", "贴花颜色"], [158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色"], [159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色"], [160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色"], [161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色"], [162, "Text_BlushColor", "Blush Color", "腮红颜色"], [163, "Text_LipstickColor", "Lipstick Color", "口红颜色"], [164, "Text_Monochrome", "Monochrome", "单色"], [165, "Text_TopColor", "Top Color", "发顶色"], [166, "Text_TailColor", "Tail Color", "发尾色"], [167, "Text_FreeSave", "Free Save", "免费保存"], [168, "Text_ResetImage", "Reset Image", "重置平台形象"], [169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败"], [170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色"], [171, "Text_SaveTips", "Save Tips", "保存提示"], [172, "Text_Save", "Save", "保存"], [173, "Text_NoSave", "No Save", "不保存"], [174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象"], [175, "Text_CloseTips", "Close Tips", "关闭提示"], [176, "Text_SaveSuccessfully", "Save Successfully", "保存成功"], [177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功"], [178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功"], [179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色"], [180, "Text_Retain", "Retain", "保留"], [181, "Text_NoRetain", "No Retain", "不保留"], [182, "Text_Tab3_1022", "Daily Styling", "日常造型1"], [183, "Text_Tab3_1023", "Muppet Styling", "布偶造型"], [184, "Text_Tab3_1024", "Hero Styling", "英雄造型"], [185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型"], [186, "Text_Tab3_1026", "Holiday Styling", "节日造型"], [187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型"], [188, "Text_Tab3_1028", "Ancient Molding", "古代造型"], [189, "Text_Tab3_1029", "Long Piece", "长单件"], [190, "Text_Tab3_1030", "Jacket", "短外套"], [191, "Text_Tab3_1031", "Short Piece", "短单件"], [192, "Text_Tab3_1032", "Outfit", "套装"], [193, "Text_Tab3_1033", "Long Coat", "长外套"], [194, "Text_Tab3_1034", "Kilt", "短裙"], [195, "Text_Tab3_1035", "Trousers", "长裤"], [196, "Text_Tab3_1036", "Shorts", "短裤"], [197, "Text_Tab3_1037", "Long Dress", "长裙"], [198, "Text_Tab3_1038", "Pantyhose", "裤袜"], [199, "Text_Tab3_1039", "Gloves", "手套"], [200, "Text_Tab3_1040", "Glove Accessory", "手套饰品"], [201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋"], [202, "Text_Tab3_1042", "Boots", "靴子"], [203, "Text_Tab3_1043", "Toe Brace", "足套"], [204, "Text_Tab3_1044", "Nudity", "裸饰"], [205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋"], [206, "Text_Tab3_1046", "Sneakers", "运动鞋"], [207, "Text_Tab3_1047", "Daily Styling", "日常造型2"], [208, "Text_HUDPanelTips1", null, "服装签到"], [209, "Text_HUDPanelTips2", null, "试穿排行榜"], [210, "Text_HUDPanelTips3", null, "全服排行榜"], [211, "Text_HUDPanelTips4", null, "设置"], [212, "Text_HUDPanelTips5", null, "免费换装"], [213, "Text_HUDPanelTips6", null, "换装商店"], [214, "Text_HUDPanelTips7", null, "背景音乐"], [215, "Text_TryOnTips1", null, "排名"], [216, "Text_TryOnTips2", null, "昵称"], [217, "Text_TryOnTips3", null, "被试穿次数"], [218, "Text_TryOnTips4", null, "试穿好友形象"], [219, "Text_TryOnTips5", null, "自己的形象"], [220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间"], [221, "Text_TryOnTips7", null, "换个好友试试吧"], [222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范"], [223, "Text_TryOnTips9", null, "被好友试穿权限"], [224, "Text_TryOnTips10", null, "允许"], [225, "Text_TryOnTips11", null, "不允许"], [226, "Text_TryOnTips12", null, "好友试穿权限已关闭，不允许试穿"], [227, "Text_Tab3_1048", "Pet", "灵宠"], [228, "Text_SaveSuccefully", "Save Succefully", "保存穿搭成功"], [229, "Text_SaveCurrentCharacter", null, "保存当前穿搭\n（{0}/{1}）"], [230, "Text_MaxSaveCount", null, "最多只能保存{0}个"], [231, "Text_DeleteSucceed", null, "删除成功"]];
 class LanguageConfig extends ConfigBase {
     constructor() {
         super(EXCELDATA$x);
@@ -2187,7 +2199,7 @@ class LanguageConfig extends ConfigBase {
     /**换装*/
     get Text_Tab1_2() { return this.getElement(62); }
     ;
-    /**收藏*/
+    /**保存穿搭*/
     get Text_Tab1_3() { return this.getElement(63); }
     ;
     /**测试*/
@@ -2682,9 +2694,22 @@ class LanguageConfig extends ConfigBase {
     /**灵宠*/
     get Text_Tab3_1048() { return this.getElement(227); }
     ;
+    /**保存穿搭成功*/
+    get Text_SaveSuccefully() { return this.getElement(228); }
+    ;
+    /**保存当前穿搭
+（{0}/{1}）*/
+    get Text_SaveCurrentCharacter() { return this.getElement(229); }
+    ;
+    /**最多只能保存{0}个*/
+    get Text_MaxSaveCount() { return this.getElement(230); }
+    ;
+    /**删除成功*/
+    get Text_DeleteSucceed() { return this.getElement(231); }
+    ;
 }
 
-var foreign46 = /*#__PURE__*/Object.freeze({
+var foreign47 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LanguageConfig: LanguageConfig
 });
@@ -2696,7 +2721,7 @@ class LeftHandConfig extends ConfigBase {
     }
 }
 
-var foreign47 = /*#__PURE__*/Object.freeze({
+var foreign48 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LeftHandConfig: LeftHandConfig
 });
@@ -2708,7 +2733,7 @@ class LensConfig extends ConfigBase {
     }
 }
 
-var foreign48 = /*#__PURE__*/Object.freeze({
+var foreign49 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LensConfig: LensConfig
 });
@@ -2720,7 +2745,7 @@ class LipMakeupConfig extends ConfigBase {
     }
 }
 
-var foreign49 = /*#__PURE__*/Object.freeze({
+var foreign50 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LipMakeupConfig: LipMakeupConfig
 });
@@ -2732,7 +2757,7 @@ class LongPantsBottomConfig extends ConfigBase {
     }
 }
 
-var foreign50 = /*#__PURE__*/Object.freeze({
+var foreign51 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LongPantsBottomConfig: LongPantsBottomConfig
 });
@@ -2744,7 +2769,7 @@ class LongSinglePieceTopConfig extends ConfigBase {
     }
 }
 
-var foreign51 = /*#__PURE__*/Object.freeze({
+var foreign52 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LongSinglePieceTopConfig: LongSinglePieceTopConfig
 });
@@ -2756,7 +2781,7 @@ class LongSkirtBottomConfig extends ConfigBase {
     }
 }
 
-var foreign52 = /*#__PURE__*/Object.freeze({
+var foreign53 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LongSkirtBottomConfig: LongSkirtBottomConfig
 });
@@ -2768,7 +2793,7 @@ class LowerHighlightConfig extends ConfigBase {
     }
 }
 
-var foreign53 = /*#__PURE__*/Object.freeze({
+var foreign54 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     LowerHighlightConfig: LowerHighlightConfig
 });
@@ -2780,7 +2805,7 @@ class MuppetStylingOutfitConfig extends ConfigBase {
     }
 }
 
-var foreign54 = /*#__PURE__*/Object.freeze({
+var foreign55 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     MuppetStylingOutfitConfig: MuppetStylingOutfitConfig
 });
@@ -2792,7 +2817,7 @@ class MusicConfig extends ConfigBase {
     }
 }
 
-var foreign55 = /*#__PURE__*/Object.freeze({
+var foreign56 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     MusicConfig: MusicConfig
 });
@@ -2804,7 +2829,7 @@ class NakedDressShoesConfig extends ConfigBase {
     }
 }
 
-var foreign56 = /*#__PURE__*/Object.freeze({
+var foreign57 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     NakedDressShoesConfig: NakedDressShoesConfig
 });
@@ -2816,7 +2841,7 @@ class OutfitConfig extends ConfigBase {
     }
 }
 
-var foreign57 = /*#__PURE__*/Object.freeze({
+var foreign58 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     OutfitConfig: OutfitConfig
 });
@@ -2828,7 +2853,7 @@ class PetConfig extends ConfigBase {
     }
 }
 
-var foreign58 = /*#__PURE__*/Object.freeze({
+var foreign59 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     PetConfig: PetConfig
 });
@@ -2840,7 +2865,7 @@ class PupilStyleConfig extends ConfigBase {
     }
 }
 
-var foreign59 = /*#__PURE__*/Object.freeze({
+var foreign60 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     PupilStyleConfig: PupilStyleConfig
 });
@@ -2852,7 +2877,7 @@ class RightHandConfig extends ConfigBase {
     }
 }
 
-var foreign60 = /*#__PURE__*/Object.freeze({
+var foreign61 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     RightHandConfig: RightHandConfig
 });
@@ -2864,7 +2889,7 @@ class ScienceFictionStylingOutfitConfig extends ConfigBase {
     }
 }
 
-var foreign61 = /*#__PURE__*/Object.freeze({
+var foreign62 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ScienceFictionStylingOutfitConfig: ScienceFictionStylingOutfitConfig
 });
@@ -2876,7 +2901,7 @@ class ShareIdConfig extends ConfigBase {
     }
 }
 
-var foreign62 = /*#__PURE__*/Object.freeze({
+var foreign63 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShareIdConfig: ShareIdConfig
 });
@@ -2888,7 +2913,7 @@ class ShoesConfig extends ConfigBase {
     }
 }
 
-var foreign63 = /*#__PURE__*/Object.freeze({
+var foreign64 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShoesConfig: ShoesConfig
 });
@@ -2900,7 +2925,7 @@ class ShortJacketTopConfig extends ConfigBase {
     }
 }
 
-var foreign64 = /*#__PURE__*/Object.freeze({
+var foreign65 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShortJacketTopConfig: ShortJacketTopConfig
 });
@@ -2912,7 +2937,7 @@ class ShortsBottomConfig extends ConfigBase {
     }
 }
 
-var foreign65 = /*#__PURE__*/Object.freeze({
+var foreign66 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShortsBottomConfig: ShortsBottomConfig
 });
@@ -2924,7 +2949,7 @@ class ShortSinglePieceTopConfig extends ConfigBase {
     }
 }
 
-var foreign66 = /*#__PURE__*/Object.freeze({
+var foreign67 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShortSinglePieceTopConfig: ShortSinglePieceTopConfig
 });
@@ -2936,7 +2961,7 @@ class ShortSkirtBottomConfig extends ConfigBase {
     }
 }
 
-var foreign67 = /*#__PURE__*/Object.freeze({
+var foreign68 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShortSkirtBottomConfig: ShortSkirtBottomConfig
 });
@@ -2948,7 +2973,7 @@ class ShoulderConfig extends ConfigBase {
     }
 }
 
-var foreign68 = /*#__PURE__*/Object.freeze({
+var foreign69 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ShoulderConfig: ShoulderConfig
 });
@@ -2960,7 +2985,7 @@ class SkinToneConfig extends ConfigBase {
     }
 }
 
-var foreign70 = /*#__PURE__*/Object.freeze({
+var foreign71 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SkinToneConfig: SkinToneConfig
 });
@@ -2972,7 +2997,7 @@ class SportsShoesShoesConfig extends ConfigBase {
     }
 }
 
-var foreign71 = /*#__PURE__*/Object.freeze({
+var foreign72 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SportsShoesShoesConfig: SportsShoesShoesConfig
 });
@@ -2984,7 +3009,7 @@ class SuitTopConfig extends ConfigBase {
     }
 }
 
-var foreign72 = /*#__PURE__*/Object.freeze({
+var foreign73 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SuitTopConfig: SuitTopConfig
 });
@@ -2996,7 +3021,7 @@ class Tab1Config extends ConfigBase {
     }
 }
 
-var foreign73 = /*#__PURE__*/Object.freeze({
+var foreign74 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     Tab1Config: Tab1Config
 });
@@ -3008,7 +3033,7 @@ class Tab2Config extends ConfigBase {
     }
 }
 
-var foreign74 = /*#__PURE__*/Object.freeze({
+var foreign75 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     Tab2Config: Tab2Config
 });
@@ -3020,7 +3045,7 @@ class Tab3Config extends ConfigBase {
     }
 }
 
-var foreign75 = /*#__PURE__*/Object.freeze({
+var foreign76 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     Tab3Config: Tab3Config
 });
@@ -3032,7 +3057,7 @@ class TightsBottomConfig extends ConfigBase {
     }
 }
 
-var foreign76 = /*#__PURE__*/Object.freeze({
+var foreign77 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     TightsBottomConfig: TightsBottomConfig
 });
@@ -3044,7 +3069,7 @@ class TopConfig extends ConfigBase {
     }
 }
 
-var foreign77 = /*#__PURE__*/Object.freeze({
+var foreign78 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     TopConfig: TopConfig
 });
@@ -3056,7 +3081,7 @@ class TrailingConfig extends ConfigBase {
     }
 }
 
-var foreign78 = /*#__PURE__*/Object.freeze({
+var foreign79 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     TrailingConfig: TrailingConfig
 });
@@ -3068,7 +3093,7 @@ class UpperHighlightConfig extends ConfigBase {
     }
 }
 
-var foreign79 = /*#__PURE__*/Object.freeze({
+var foreign80 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     UpperHighlightConfig: UpperHighlightConfig
 });
@@ -3120,6 +3145,8 @@ class GameConfig {
     static get DailyStylingOutfit1() { return this.getConfig(DailyStylingOutfit1Config); }
     ;
     static get DailyStylingOutfit2() { return this.getConfig(DailyStylingOutfit2Config); }
+    ;
+    static get Description() { return this.getConfig(DescriptionConfig); }
     ;
     static get Ear() { return this.getConfig(EarConfig); }
     ;
@@ -3234,7 +3261,7 @@ class GameConfig {
 }
 GameConfig.configMap = new Map();
 
-var foreign38 = /*#__PURE__*/Object.freeze({
+var foreign39 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     GameConfig: GameConfig
 });
@@ -3246,7 +3273,7 @@ class SitConfig extends ConfigBase {
     }
 }
 
-var foreign69 = /*#__PURE__*/Object.freeze({
+var foreign70 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SitConfig: SitConfig
 });
@@ -3263,6 +3290,7 @@ GlobalData.freeTime = 999;
 GlobalData.offMusicIconGuid = `133403`;
 /**打开背景音乐图标Guid */
 GlobalData.onMusicIconGuid = `133445`;
+GlobalData.savaMaxCount = 6;
 var EventType;
 (function (EventType) {
     EventType["OnOffMainUI"] = "OnOffMainUI";
@@ -3274,11 +3302,1865 @@ var CameraManagerType;
     CameraManagerType[CameraManagerType["Body"] = 105] = "Body";
 })(CameraManagerType || (CameraManagerType = {}));
 
-var foreign81 = /*#__PURE__*/Object.freeze({
+var foreign82 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     get CameraManagerType () { return CameraManagerType; },
     get EventType () { return EventType; },
     default: GlobalData
+});
+
+/**
+ * MapEx(可序列化)
+ */
+var MapEx;
+(function (MapEx) {
+    /**
+     * 是否为空
+     * @param map
+     * @returns 是/否
+     */
+    function isNull(map) {
+        return !map || map == null || map == undefined;
+    }
+    MapEx.isNull = isNull;
+    /**
+     * 获取对象
+     * @param map
+     * @param key
+     * @returns
+     */
+    function get(map, key) {
+        if (map[key]) {
+            return map[key];
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            return map[key];
+        }
+        return null;
+    }
+    MapEx.get = get;
+    /**
+     * 设置对象
+     * @param map
+     * @param key
+     * @param val
+     */
+    function set(map, key, val) {
+        map[key] = val;
+    }
+    MapEx.set = set;
+    /**
+     * 删除对象
+     * @param map
+     * @param key
+     * @returns 成功/失败
+     */
+    function del(map, key) {
+        if (map[key]) {
+            delete map[key];
+            return true;
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            delete map[key];
+            return true;
+        }
+        return false;
+    }
+    MapEx.del = del;
+    /**
+     * 是否有指定对象
+     * @param map
+     * @param key
+     * @returns
+     */
+    function has(map, key) {
+        if (map[key]) {
+            return true;
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            return true;
+        }
+        return false;
+    }
+    MapEx.has = has;
+    /**
+     * 获取count数量
+     * @param map
+     * @param key
+     * @returns
+     */
+    function count(map) {
+        let res = 0;
+        forEach(map, e => {
+            ++res;
+        });
+        return res;
+    }
+    MapEx.count = count;
+    /**
+     * 遍历map
+     * @param map
+     * @param callback
+     */
+    function forEach(map, callback) {
+        for (let key in map) {
+            if (map[key]) {
+                callback(key, map[key]);
+            }
+        }
+    }
+    MapEx.forEach = forEach;
+    /**
+     * 拷贝，Val还是引用出来的，只是Map换了
+     * @param map
+     * @returns
+     */
+    function copy(map) {
+        let res = {};
+        for (let key in map) {
+            res[key] = map[key];
+        }
+        return res;
+    }
+    MapEx.copy = copy;
+})(MapEx || (MapEx = {}));
+
+var foreign142 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    get MapEx () { return MapEx; }
+});
+
+class CharacterData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.characterDataMap = {};
+    }
+    setCharacterData(key, value) {
+        MapEx.set(this.characterDataMap, key, value);
+        this.save(false);
+        return true;
+    }
+    delCharacterData(key) {
+        if (MapEx.has(this.characterDataMap, key)) {
+            MapEx.del(this.characterDataMap, key);
+            this.save(false);
+            return true;
+        }
+        return false;
+    }
+    clearCharacterData() {
+        this.characterDataMap = {};
+        this.save(false);
+        return true;
+    }
+}
+__decorate([
+    Decorator.persistence()
+], CharacterData.prototype, "characterDataMap", void 0);
+
+var foreign84 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    CharacterData: CharacterData
+});
+
+class Decora {
+    constructor(decoraStr) {
+        let arr = decoraStr.split("#");
+        if (arr.length < 4)
+            throw new Error(`decoraStr Fail`);
+        this.skeletonName = arr[0];
+        this.assetId = arr[1];
+        this.slotName = arr[2];
+        this.relativeTransform = mw.Transform.fromString(arr[3]);
+    }
+}
+var DecorType;
+(function (DecorType) {
+    /**没有 */
+    DecorType[DecorType["None"] = 1] = "None";
+    /**静态模型 */
+    DecorType[DecorType["StaticObj"] = 2] = "StaticObj";
+    /**特效对象 */
+    DecorType[DecorType["Effect"] = 3] = "Effect";
+})(DecorType || (DecorType = {}));
+var ItemType;
+(function (ItemType) {
+    ItemType[ItemType["\u7269\u54C1\u7C7B\u578B"] = 1] = "\u7269\u54C1\u7C7B\u578B";
+    ItemType[ItemType["\u9053\u5177\u7C7B\u578B"] = 2] = "\u9053\u5177\u7C7B\u578B";
+    ItemType[ItemType["\u6D88\u8017\u7C7B\u578B"] = 3] = "\u6D88\u8017\u7C7B\u578B";
+    ItemType[ItemType["\u670D\u9970\u7C7B\u578B"] = 4] = "\u670D\u9970\u7C7B\u578B";
+    ItemType[ItemType["\u4E0A\u8863"] = 5] = "\u4E0A\u8863";
+    ItemType[ItemType["\u4E0B\u8863"] = 6] = "\u4E0B\u8863";
+    ItemType[ItemType["\u624B\u5957"] = 7] = "\u624B\u5957";
+    ItemType[ItemType["\u978B\u5B50"] = 8] = "\u978B\u5B50";
+    ItemType[ItemType["\u524D\u53D1"] = 9] = "\u524D\u53D1";
+    ItemType[ItemType["\u540E\u53D1"] = 10] = "\u540E\u53D1";
+    ItemType[ItemType["\u773C\u775B\u8D34\u56FE"] = 11] = "\u773C\u775B\u8D34\u56FE";
+    ItemType[ItemType["\u77B3\u5B54\u8D34\u56FE"] = 12] = "\u77B3\u5B54\u8D34\u56FE";
+    ItemType[ItemType["\u776B\u6BDB"] = 13] = "\u776B\u6BDB";
+    ItemType[ItemType["\u7709\u6BDB"] = 14] = "\u7709\u6BDB";
+    ItemType[ItemType["\u5507\u818F"] = 15] = "\u5507\u818F";
+    ItemType[ItemType["\u816E\u7EA2"] = 16] = "\u816E\u7EA2";
+    ItemType[ItemType["\u8868\u60C5"] = 17] = "\u8868\u60C5";
+    ItemType[ItemType["\u6574\u4F53\u53D1\u578B"] = 18] = "\u6574\u4F53\u53D1\u578B";
+    ItemType[ItemType["\u5957\u88C5"] = 19] = "\u5957\u88C5";
+    ItemType[ItemType["\u4F53\u578B"] = 20] = "\u4F53\u578B";
+    ItemType[ItemType["\u9762\u90E8"] = 21] = "\u9762\u90E8";
+    ItemType[ItemType["UGC\u4E0A\u8863"] = 22] = "UGC\u4E0A\u8863";
+    ItemType[ItemType["UGC\u4E0B\u8863"] = 23] = "UGC\u4E0B\u8863";
+    ItemType[ItemType["UGC\u624B\u5957"] = 24] = "UGC\u624B\u5957";
+    ItemType[ItemType["UGC\u978B\u5B50"] = 25] = "UGC\u978B\u5B50";
+    ItemType[ItemType["\u773C\u5F71"] = 26] = "\u773C\u5F71";
+    ItemType[ItemType["\u80CC\u666F_\u5E9F\u5F03"] = 27] = "\u80CC\u666F_\u5E9F\u5F03";
+    ItemType[ItemType["\u6302\u4EF6_\u5DE6\u624B"] = 28] = "\u6302\u4EF6_\u5DE6\u624B";
+    ItemType[ItemType["\u6302\u4EF6_\u80CC\u90E8"] = 29] = "\u6302\u4EF6_\u80CC\u90E8";
+    ItemType[ItemType["\u6302\u4EF6_\u5934\u90E8"] = 30] = "\u6302\u4EF6_\u5934\u90E8";
+    ItemType[ItemType["\u6302\u4EF6_\u8033\u90E8"] = 31] = "\u6302\u4EF6_\u8033\u90E8";
+    ItemType[ItemType["\u6302\u4EF6_\u9762\u90E8"] = 32] = "\u6302\u4EF6_\u9762\u90E8";
+    ItemType[ItemType["\u8033\u6735"] = 33] = "\u8033\u6735";
+    ItemType[ItemType["\u9F3B\u5B50"] = 34] = "\u9F3B\u5B50";
+    ItemType[ItemType["\u5634\u5DF4"] = 35] = "\u5634\u5DF4";
+    ItemType[ItemType["\u9762\u90E8\u5F69\u7ED8"] = 36] = "\u9762\u90E8\u5F69\u7ED8";
+    ItemType[ItemType["\u4E0A\u9AD8\u5149"] = 37] = "\u4E0A\u9AD8\u5149";
+    ItemType[ItemType["\u4E0B\u9AD8\u5149"] = 38] = "\u4E0B\u9AD8\u5149";
+    ItemType[ItemType["\u6302\u4EF6_\u81C0\u90E8"] = 39] = "\u6302\u4EF6_\u81C0\u90E8";
+    ItemType[ItemType["\u6302\u4EF6_\u80A9\u90E8"] = 40] = "\u6302\u4EF6_\u80A9\u90E8";
+    ItemType[ItemType["\u80CC\u666F"] = 41] = "\u80CC\u666F";
+    ItemType[ItemType["\u6302\u4EF6_\u5BA0\u7269"] = 42] = "\u6302\u4EF6_\u5BA0\u7269";
+    ItemType[ItemType["\u6302\u4EF6_\u7279\u6548"] = 43] = "\u6302\u4EF6_\u7279\u6548";
+    ItemType[ItemType["\u8138\u578B"] = 44] = "\u8138\u578B";
+    ItemType[ItemType["\u5168\u5986"] = 45] = "\u5168\u5986";
+    ItemType[ItemType["V1\u76AE\u5957"] = 46] = "V1\u76AE\u5957";
+    ItemType[ItemType["\u6302\u4EF6_\u5DE6\u624B_\u5168\u9AA8\u9ABC"] = 47] = "\u6302\u4EF6_\u5DE6\u624B_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u80CC\u9970_\u5168\u9AA8\u9ABC"] = 48] = "\u6302\u4EF6_\u80CC\u9970_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u5934\u9970_\u5168\u9AA8\u9ABC"] = 49] = "\u6302\u4EF6_\u5934\u9970_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u8033\u9970_\u5168\u9AA8\u9ABC"] = 50] = "\u6302\u4EF6_\u8033\u9970_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u9762\u9970_\u5168\u9AA8\u9ABC"] = 51] = "\u6302\u4EF6_\u9762\u9970_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u81C0\u90E8_\u5168\u9AA8\u9ABC"] = 52] = "\u6302\u4EF6_\u81C0\u90E8_\u5168\u9AA8\u9ABC";
+    ItemType[ItemType["\u6302\u4EF6_\u80A9\u90E8_\u5168\u9AA8\u9ABC"] = 53] = "\u6302\u4EF6_\u80A9\u90E8_\u5168\u9AA8\u9ABC";
+    /**独立添加，与后端无关 */
+    ItemType[ItemType["\u80A4\u8272"] = 1234124] = "\u80A4\u8272";
+})(ItemType || (ItemType = {}));
+///MW_Skeleton#22915#Left_Glove#10,15,-5|0,0,0|1,1,1
+var AvatarDecora;
+(function (AvatarDecora) {
+    /** 动态挂件的itemtype   */
+    AvatarDecora.dynamicItemType = [ItemType.挂件_左手_全骨骼, ItemType.挂件_背饰_全骨骼, ItemType.挂件_头饰_全骨骼, ItemType.挂件_耳饰_全骨骼, ItemType.挂件_面饰_全骨骼, ItemType.挂件_臀部_全骨骼, ItemType.挂件_肩部_全骨骼];
+    /** 静态挂件的itemtype   */
+    AvatarDecora.staticItemType = [ItemType.挂件_左手, ItemType.挂件_背部, ItemType.挂件_头部, ItemType.挂件_耳部, ItemType.挂件_面部, ItemType.挂件_臀部, ItemType.挂件_肩部];
+    /**根据静态插槽，返回对应的动态挂件索引 */
+    function getDynamicIndexBySlotIndex(slotIndex) {
+        let itemType;
+        switch (slotIndex) {
+            case mw.HumanoidSlotType.LeftGlove:
+                itemType = ItemType.挂件_左手_全骨骼;
+                break;
+            case mw.HumanoidSlotType.BackOrnamental:
+                itemType = ItemType.挂件_背饰_全骨骼;
+                break;
+            case mw.HumanoidSlotType.Head:
+                itemType = ItemType.挂件_头饰_全骨骼;
+                break;
+            case mw.HumanoidSlotType.LeftHead:
+                itemType = ItemType.挂件_耳饰_全骨骼;
+                break;
+            case mw.HumanoidSlotType.FaceOrnamental:
+                itemType = ItemType.挂件_面饰_全骨骼;
+                break;
+            case mw.HumanoidSlotType.Buttocks:
+                itemType = ItemType.挂件_臀部_全骨骼;
+                break;
+            case mw.HumanoidSlotType.RightBack:
+                itemType = ItemType.挂件_肩部_全骨骼;
+                break;
+        }
+        return getDynamicIndexByItemType(itemType);
+    }
+    AvatarDecora.getDynamicIndexBySlotIndex = getDynamicIndexBySlotIndex;
+    /**根据itemType引返回动态挂件枚举 */
+    function getDynamicIndexByItemType(itemType) {
+        return AvatarDecora.dynamicItemType.indexOf(itemType);
+    }
+    AvatarDecora.getDynamicIndexByItemType = getDynamicIndexByItemType;
+    /**根据动态挂件索引，返回对应的itemType */
+    function getItemTypeByDynamicIndex(dynamicIndex) {
+        return AvatarDecora.dynamicItemType[dynamicIndex];
+    }
+    AvatarDecora.getItemTypeByDynamicIndex = getItemTypeByDynamicIndex;
+    /**动静挂件itemType互斥映射 */
+    function exclusiveItemType(itemType) {
+        const index = AvatarDecora.dynamicItemType.indexOf(itemType);
+        if (index >= 0)
+            return AvatarDecora.staticItemType[index];
+        const index2 = AvatarDecora.staticItemType.indexOf(itemType);
+        if (index2 >= 0)
+            return AvatarDecora.dynamicItemType[index];
+    }
+    AvatarDecora.exclusiveItemType = exclusiveItemType;
+    /**设置挂件（动态、静态）
+     * @param char 角色对象
+     * @param itemType 物品类型
+     * @param assetId 挂件assetId
+     * @param slotData 静态挂件的槽位必须参数（有些itemType可能存在不同的slothIdex）和偏移值
+     */
+    function setDecor3(char, itemType, assetId, slotData) {
+        //动态挂件itemType
+        if (AvatarDecora.dynamicItemType.includes(itemType)) {
+            return setDynamicDecor(char, getDynamicIndexByItemType(itemType), assetId);
+        }
+        //静态itemType
+        else if (AvatarDecora.staticItemType.includes(itemType)) {
+            //静态插槽
+            const slotIndex = getSlotByItemType(itemType);
+            //校验插槽与offset
+            if (slotIndex == slotData.slotIndex && slotData?.offset) {
+                return setDecoraBase(char, slotIndex, assetId, slotData.offset);
+            }
+        }
+        else if (itemType == ItemType.挂件_特效) {
+            //校验插槽与offset
+            if (slotData?.offset) {
+                return setDecoraBase(char, slotData.slotIndex, assetId, slotData.offset);
+            }
+        }
+        console.error(`挂件数据异常:itemType:${itemType},assetId:${assetId},slotData:${JSON.stringify(slotData)}`);
+    }
+    AvatarDecora.setDecor3 = setDecor3;
+    /**挂上一个挂件 */
+    async function setDecora(decoraStr, char = undefined) {
+        let decora = deserialize(decoraStr);
+        return setDecoraBase(char, decora.slotIndex, decora.assetId, decora.relativeTransform);
+    }
+    AvatarDecora.setDecora = setDecora;
+    /**挂上一个挂件 */
+    async function setDecora2(char, slotIndex, assetId, offset) {
+        return setDecoraBase(char, slotIndex, assetId, offset);
+    }
+    AvatarDecora.setDecora2 = setDecora2;
+    /**挂上一个挂件 */
+    async function setDecoraBase(char, slotIndex, assetId, offset) {
+        let obj = await GameObject.asyncSpawn(assetId);
+        if (obj) {
+            obj.setCollision(mw.PropertyStatus.Off, true);
+            // if (obj instanceof mw.Effect) {
+            //     clearOneDecoraBySlotIndex(slotIndex, char, DecorType.Effect);
+            // } else {
+            //     clearOneDecoraBySlotIndex(slotIndex, char, DecorType.StaticObj);
+            //     clearDynamicDecorByIndex(char, getDynamicIndexBySlotIndex(slotIndex))
+            // }
+            char.description.advance.slotAndDecoration.slot[slotIndex].decoration.add(obj, offset);
+            return true;
+        }
+        return false;
+    }
+    AvatarDecora.setDecoraBase = setDecoraBase;
+    /**根据索引清除动态挂件 */
+    function clearDynamicDecorByIndex(char, dynamicIndex) {
+        const decor = char.description.advance.dynamicAttachments[dynamicIndex];
+        if (decor?.style?.length > 0) {
+            decor.style = "";
+        }
+    }
+    AvatarDecora.clearDynamicDecorByIndex = clearDynamicDecorByIndex;
+    /**挂上一个动态挂件 */
+    async function setDynamicDecor(char, dynamicIndex, assetId) {
+        if (!(EDynamicAttachmentIndex[dynamicIndex])) {
+            console.error(`动态骨骼索引异常:${dynamicIndex}`);
+            return false;
+        }
+        let downloadSucceed = await AssetUtil.asyncDownloadAsset(assetId);
+        if (!downloadSucceed)
+            return false;
+        if (char.description.advance.dynamicAttachments[dynamicIndex].style != assetId) {
+            char.description.advance.dynamicAttachments[dynamicIndex].style = assetId;
+        }
+        await char.asyncReady();
+        const succeed = char.description.advance.dynamicAttachments[dynamicIndex].style == assetId;
+        //成功时，删除映射静态挂件
+        if (succeed) {
+            clearOneDecoraByItemType(exclusiveItemType(getItemTypeByDynamicIndex(dynamicIndex)), char);
+        }
+        return succeed;
+    }
+    AvatarDecora.setDynamicDecor = setDynamicDecor;
+    /**清除对应部位的挂件 */
+    function clearOneDecoraBySlotIndex(slotIndex, char = undefined, objType = DecorType.StaticObj) {
+        if (objType == DecorType.Effect) {
+            let slot = char.description.advance.slotAndDecoration.slot;
+            if (!slot || slot.length == 0)
+                return;
+            for (let i = 0; i < slot.length; ++i) {
+                let decoration = slot[i]?.decoration;
+                if (!decoration)
+                    continue;
+                for (let j = 0; j < decoration.length; ++j) {
+                    let attachmentGameObject = decoration[j]?.attachmentGameObject;
+                    if (!attachmentGameObject || !(attachmentGameObject instanceof mw.Effect))
+                        continue;
+                    decoration.delete(attachmentGameObject, true);
+                }
+            }
+        }
+        else {
+            let decoration = char.description.advance.slotAndDecoration.slot[slotIndex].decoration;
+            if (!decoration || decoration.length == 0)
+                return;
+            for (let i = 0; i < decoration.length; ++i) {
+                let attachmentGameObject = decoration[i]?.attachmentGameObject;
+                if (!attachmentGameObject)
+                    continue;
+                switch (objType) {
+                    case DecorType.None:
+                        decoration.delete(attachmentGameObject, true);
+                        break;
+                    case DecorType.StaticObj:
+                        if (!(attachmentGameObject instanceof mw.Effect)) {
+                            decoration.delete(attachmentGameObject, true);
+                        }
+                        break;
+                    default:
+                        console.error(`未知挂件类型${objType}`);
+                        break;
+                }
+            }
+        }
+    }
+    AvatarDecora.clearOneDecoraBySlotIndex = clearOneDecoraBySlotIndex;
+    /**清除所有挂件 */
+    function clearAllDecora(char = undefined) {
+        char.detachAllFromSlot({ isDestroy: true });
+        for (let i = 0; i < char.description.advance.dynamicAttachments.length; ++i) {
+            if (char.description.advance.dynamicAttachments[i].style != "") {
+                char.description.advance.dynamicAttachments[i].style = "";
+            }
+        }
+    }
+    AvatarDecora.clearAllDecora = clearAllDecora;
+    /**反序列化 */
+    function deserialize(decoraStr) {
+        if (decoraStr.includes("#")) {
+            let strs = decoraStr.split("#");
+            if (strs[1] && strs[2])
+                return { assetId: strs[1], slotIndex: getSlotIndexByName(strs[2]), relativeTransform: mw.Transform.fromString(strs[3]), highModel: strs[4] == "high" };
+        }
+        else {
+            // 资源库id$挂点名称$变换信息$高模
+            // "20686$FaceOrnamental$1,0,0|0,0,0|1,1,1$high
+            let strs = decoraStr.split("$");
+            if (strs.length >= 3)
+                return { assetId: strs[0], slotIndex: getSlotIndexByName(strs[1]), relativeTransform: mw.Transform.fromString(strs[2]), highModel: strs[3] == "high" };
+        }
+        return undefined;
+    }
+    AvatarDecora.deserialize = deserialize;
+    /**根据名字获取槽位索引 */
+    function getSlotIndexByName(slotName) {
+        switch (slotName) {
+            case "Head":
+                return HumanoidSlotType["Head"];
+            case "Left_Glove":
+                return HumanoidSlotType["LeftGlove"];
+            case "Left_Head":
+                return HumanoidSlotType["LeftHead"];
+            case "BackOrnamental":
+                return HumanoidSlotType["BackOrnamental"];
+            case "Buns":
+                return HumanoidSlotType["Buttocks"];
+            case "Right_Shoulder":
+                return HumanoidSlotType["RightShoulder"];
+        }
+        return HumanoidSlotType[slotName];
+    }
+    AvatarDecora.getSlotIndexByName = getSlotIndexByName;
+    /**根据索引获取槽位名 */
+    function getSlotNameByIndex(slotIndex) {
+        return HumanoidSlotType[slotIndex];
+    }
+    AvatarDecora.getSlotNameByIndex = getSlotNameByIndex;
+    /**获取挂件序列化数据 */
+    function getDecorationsString(char) {
+        let slot = char.description.advance.slotAndDecoration.slot;
+        let decs = [];
+        for (let i = 0; i < slot.length; i++) {
+            for (let j = 0; j < slot[i].decoration.length; j++) {
+                let str = `MW_Skeleton#${slot[i].decoration[j].attachmentAssetId}#${getSlotNameByIndex(i)}#${slot[i].decoration[j].attachmentOffset.toString()}`;
+                decs.push(str);
+            }
+        }
+        return decs;
+    }
+    AvatarDecora.getDecorationsString = getDecorationsString;
+    /**一个槽位只能存在一个挂件 */
+    async function vefDescra(char) {
+        let slot = char.description.advance.slotAndDecoration.slot;
+        for (let i = 0; i < slot.length; i++) {
+            let objs = [];
+            for (let j = 0; j < slot[i].decoration.length; j++) {
+                if (objs.includes(slot[i].decoration[j].attachmentAssetId))
+                    slot[i].decoration.delete(slot[i].decoration[j].attachmentGameObject, true);
+                else
+                    objs.push(slot[i].decoration[j].attachmentAssetId);
+            }
+        }
+    }
+    AvatarDecora.vefDescra = vefDescra;
+    function getSlotByItemType(itemType) {
+        switch (itemType) {
+            case ItemType.挂件_左手:
+                return mw.HumanoidSlotType.LeftGlove;
+            case ItemType.挂件_背部:
+                return mw.HumanoidSlotType.BackOrnamental;
+            case ItemType.挂件_头部:
+                return mw.HumanoidSlotType.Head;
+            case ItemType.挂件_耳部:
+                return mw.HumanoidSlotType.LeftHead;
+            case ItemType.挂件_面部:
+                return mw.HumanoidSlotType.FaceOrnamental;
+            case ItemType.挂件_臀部:
+                return mw.HumanoidSlotType.Buttocks;
+            case ItemType.挂件_肩部:
+                return mw.HumanoidSlotType.RightBack;
+        }
+    }
+    AvatarDecora.getSlotByItemType = getSlotByItemType;
+    /**清除对应部位的挂件(根据物品类型) */
+    function clearOneDecoraByItemType(itemType, char) {
+        if (itemType == ItemType.挂件_特效) {
+            let slot = char.description.advance.slotAndDecoration.slot;
+            for (let i = 0; i < slot.length; i++) {
+                for (let j = 0; j < slot[i].decoration.length; j++) {
+                    let obj = slot[i].decoration[j].attachmentGameObject;
+                    if (obj instanceof mw.Effect) {
+                        slot[i].decoration.delete(obj, true);
+                    }
+                }
+            }
+        }
+        else if (AvatarDecora.dynamicItemType.includes(itemType)) {
+            clearDynamicDecorByIndex(char, getDynamicIndexByItemType(itemType));
+        }
+        else {
+            let slotIndex = getSlotByItemType(itemType);
+            let slot = char.description.advance.slotAndDecoration.slot[slotIndex];
+            if (!slot || slot.decoration.length == 0)
+                return;
+            for (let j = 0; j < slot.decoration.length; j++) {
+                let obj = slot.decoration[j].attachmentGameObject;
+                if (!(obj instanceof mw.Effect)) {
+                    slot.decoration.delete(obj, true);
+                }
+            }
+        }
+    }
+    AvatarDecora.clearOneDecoraByItemType = clearOneDecoraByItemType;
+    /**根据itemType获取挂件 */
+    function getDecorByItemType(char, itemType) {
+        if (itemType == ItemType.挂件_特效) {
+            let slot = char.description.advance.slotAndDecoration.slot;
+            for (let i = 0; i < slot.length; i++) {
+                for (let j = 0; j < slot[i].decoration.length; j++) {
+                    const obj = slot[i].decoration[j].attachmentGameObject;
+                    if (obj instanceof mw.Effect) {
+                        return slot[i].decoration[j].attachmentAssetId;
+                    }
+                }
+            }
+        }
+        else if (AvatarDecora.dynamicItemType.includes(itemType)) {
+            return char.description.advance.dynamicAttachments[getDynamicIndexByItemType(itemType)]?.style;
+        }
+        else {
+            let slotIndex = getSlotByItemType(itemType);
+            if (mw.HumanoidSlotType[slotIndex]) {
+                let slot = char.description.advance.slotAndDecoration.slot[slotIndex];
+                let f = slot;
+                for (let j = 0; j < f.decoration.length; j++) {
+                    if (!(f.decoration[j].attachmentGameObject instanceof mw.Effect)) {
+                        let assetId = f.decoration[j].attachmentAssetId;
+                        if (assetId)
+                            return assetId;
+                    }
+                }
+            }
+        }
+    }
+    AvatarDecora.getDecorByItemType = getDecorByItemType;
+})(AvatarDecora || (AvatarDecora = {}));
+
+var foreign138 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    get AvatarDecora () { return AvatarDecora; },
+    get DecorType () { return DecorType; },
+    Decora: Decora,
+    get ItemType () { return ItemType; }
+});
+
+/**
+ * 角色外观接口工具,接口索引依赖红军配置表，接口解析依赖Description配置表
+ */
+var AvatarApi;
+(function (AvatarApi) {
+    /**
+     * 接口属性对应的值类型枚举
+     */
+    let ValueType;
+    (function (ValueType) {
+        /**数字，一般捏脸数值 */
+        ValueType[ValueType["Number"] = 1] = "Number";
+        /**字符串，一般是资源guid，用在style的接口 */
+        ValueType[ValueType["String"] = 2] = "String";
+        /**颜色，用在color的接口 */
+        ValueType[ValueType["Color"] = 3] = "Color";
+    })(ValueType || (ValueType = {}));
+    /**
+     * 函数类，包含get、set接口，和接口配置表
+     */
+    class FuncCls {
+        constructor(getFunc, setFunc, cfg, hasArea) {
+            this.getFunc = getFunc;
+            this.setFunc = setFunc;
+            this.cfg = cfg;
+            this.hasArea = hasArea;
+        }
+    }
+    /**所有接口map，key:funcIndex,value:FuncCls */
+    AvatarApi.funcMap = new Map();
+    /**存在区域的接口获取方法，key:funcIndex,value:Function */
+    var areaCountMap = new Map;
+    /**
+     * 遍历Description表，初始化funcMap和areaCountMap
+     */
+    function initMap() {
+        //遍历Description表，初始化funcMap和areaCountMap
+        for (const cfg of GameConfig.Description.getAllElement()) {
+            let getFunc;
+            let setFunc;
+            let hasArea = false;
+            //检查是否存在[],根据这个符号判断是否有区域
+            if (cfg.tsAttribute.includes("[]")) {
+                const s = cfg.tsAttribute.replace("[]", "[areaIndex]");
+                getFunc = new Function("char", "areaIndex", `return char.description.${s}`);
+                console.log();
+                hasArea = true;
+                setFunc = new Function("char", "value", "areaIndex", `char.description.${s} = value`);
+                //分割接口字符串，取第一个字符串作为获取区域数量函数
+                let str = cfg.tsAttribute.split("[]");
+                const tmp = str[0];
+                const func = new Function("char", `return char.description.${tmp}.length`);
+                areaCountMap.set(cfg.funcIndex, func);
+            }
+            else {
+                getFunc = new Function("char", `return char.description.${cfg.tsAttribute}`);
+                setFunc = new Function("char", "value", `char.description.${cfg.tsAttribute} = value`);
+            }
+            AvatarApi.funcMap.set(cfg.funcIndex, new FuncCls(getFunc, setFunc, cfg, hasArea));
+        }
+    }
+    initMap();
+    /**封装好的数据类 */
+    class DescriptionApiData {
+        constructor() {
+            /**外观数据体 ，例如：[151,"0|32115",1,2,152,"1|0.5"],表示151接口0部位的值为32115,1接口的值为2,152接口1部位的值为0.5*/
+            this.apiValue = [];
+        }
+    }
+    AvatarApi.DescriptionApiData = DescriptionApiData;
+    /**
+     * 根据数据体设置角色外观数据
+     * @param char 角色对象
+     * @param apiData 数据体 参考https://meta.feishu.cn/wiki/NjDhw7G5qiOpbAkHjF7cOxoEnEh 第一个评论
+     * @param areaIndex 区域索引
+     * @returns 主要部件加载成功返回true，否者false
+     */
+    async function setDescriptionByApiData2(char, apiData) {
+        if (apiData.apiValue.length % 2 != 0)
+            throw new Error(`apiData.apiValue数据长度异常,${JSON.stringify(apiData)}`);
+        /**接口要设置的值，key:funcIndex,value:解析后的值 */
+        const dMap = new Map();
+        /**基础接口，key:funcIndex,value:解析后的值 */
+        const baseMap = new Map();
+        /**需要依赖基础接口，key:funcIndex,value:解析后的值 */
+        const subMap = new Map();
+        let funcIndex175Value;
+        /**加载主要部件成功 */
+        let loadMainPartSucceed = true;
+        const onLoadDescriptionFailed = () => {
+            loadMainPartSucceed = false;
+            console.log(`setDescriptionByApiData2 加载主要部件失败`);
+        };
+        char.onLoadDescriptionFailed.add(onLoadDescriptionFailed);
+        //解析数据
+        for (let i = 0; i < apiData.apiValue.length; i += 2) {
+            const funcIndex = apiData.apiValue[i];
+            const funcObj = AvatarApi.funcMap.get(funcIndex);
+            let areaIndex;
+            let value;
+            if (funcObj.hasArea) {
+                const strValue = apiData.apiValue[i + 1];
+                const strArr = strValue.split("|");
+                areaIndex = parseInt(strArr[0]);
+                value = deserialize(funcObj.cfg.valueType, strArr[1]);
+            }
+            else
+                value = deserialize(funcObj.cfg.valueType, apiData.apiValue[i + 1]);
+            if (dMap.has(funcIndex)) {
+                dMap.get(funcIndex).push({ funcObj: funcObj, areaIndex: areaIndex, value: value });
+            }
+            else {
+                dMap.set(funcIndex, [{ funcObj: funcObj, areaIndex: areaIndex, value: value }]);
+            }
+            if (funcIndex == 175)
+                funcIndex175Value = value;
+        }
+        for (const [funcIndex, v] of dMap) {
+            const funcObj = AvatarApi.funcMap.get(funcIndex);
+            if (funcObj.cfg.dependence) {
+                subMap.set(funcIndex, v);
+            }
+            else {
+                baseMap.set(funcIndex, v);
+            }
+        }
+        //先设置基础接口装扮，再设置sub接口
+        for (const [k, v] of baseMap) {
+            for (const e of v) {
+                try {
+                    e.funcObj.setFunc(char, e.value, e.areaIndex);
+                }
+                catch (error) {
+                    if (e.areaIndex != null)
+                        console.error(`setDescriptionByApiData1 error,funcIndex(${e.funcObj.cfg.funcIndex}),areaIndex(${e.areaIndex}),value(${e.value})`);
+                    else
+                        console.error(`setDescriptionByApiData1 error,funcIndex(${e.funcObj.cfg.funcIndex}),value(${e.value})`);
+                }
+            }
+        }
+        for (const [k, v] of subMap) {
+            for (const e of v) {
+                try {
+                    e.funcObj.setFunc(char, e.value, e.areaIndex);
+                }
+                catch (error) {
+                    if (e.areaIndex != null)
+                        console.error(`setDescriptionByApiData1 error,funcIndex(${e.funcObj.cfg.funcIndex}),areaIndex(${e.areaIndex}),value(${e.value})`);
+                    else
+                        console.error(`setDescriptionByApiData1 error,funcIndex(${e.funcObj.cfg.funcIndex}),value(${e.value})`);
+                }
+            }
+        }
+        if (funcIndex175Value) {
+            //不是二次元和高模二次元就没有前发
+            let style = getStyle(funcIndex175Value);
+            if (!(style == StyleType.Quadratic)) {
+                char.description.advance.hair.frontHair.style = "";
+            }
+        }
+        await setSlotData(char, apiData.slotData);
+        await setDynamicDecor(char, apiData.dynDecor);
+        char.onLoadDescriptionFailed.remove(onLoadDescriptionFailed);
+        return loadMainPartSucceed;
+    }
+    AvatarApi.setDescriptionByApiData2 = setDescriptionByApiData2;
+    /**
+     * 比较角色当前的接口数据是否与目标数据相等
+     * @param char 角色对象
+     * @param funcIndex 接口索引
+     * @param value serialization过的值
+     * @param areaIndex 区域索引
+     * @returns 相等返回true
+     */
+    function eqSerializationValue(char, funcIndex, value, areaIndex) {
+        const curValue = getByFuncIndex(char, funcIndex, areaIndex);
+        if (curValue == null || curValue == `undefined` || value == null || value == `undefined`)
+            return true;
+        const valueType = AvatarApi.funcMap.get(funcIndex).cfg.valueType;
+        const curV = serialization(valueType, curValue);
+        let eqValue = false;
+        switch (valueType) {
+            case ValueType.Number:
+                eqValue = Math.abs(curV - value) <= 0.01;
+                break;
+            case ValueType.Color:
+                try {
+                    let curColor = deserialize(ValueType.Color, curV);
+                    let color = deserialize(ValueType.Color, value);
+                    eqValue = (curColor).equality(color, 0.01);
+                }
+                catch (error) {
+                    console.log(`eqSerializationValue error:${error}`);
+                }
+                break;
+            default:
+                eqValue = curV == value;
+                break;
+        }
+        return eqValue;
+    }
+    /** 获取角色所有外观数据
+     * @param char 角色
+     * @param dataVersion 数据版本
+     * @returns 封装好的数据类
+     */
+    function getAllData(char, dataVersion = 1) {
+        const data = new DescriptionApiData;
+        data.version = dataVersion;
+        if (data.version == 1) {
+            for (const [funcIndex, v] of AvatarApi.funcMap) {
+                if (areaCountMap.has(funcIndex)) {
+                    for (let areaIndex = 0; areaIndex <= areaCountMap.get(funcIndex)(char); areaIndex++) {
+                        const serializationValue = getSerializationValueByFuncIndex(char, funcIndex, areaIndex);
+                        if (serializationValue != null)
+                            data.apiValue.push(funcIndex, `${areaIndex}|${serializationValue}`);
+                    }
+                }
+                else {
+                    const serializationValue = getSerializationValueByFuncIndex(char, funcIndex);
+                    if (serializationValue != null)
+                        data.apiValue.push(funcIndex, serializationValue);
+                }
+                data.slotData = getSlotDataArr(char);
+                data.dynDecor = getDynamicDecor(char);
+            }
+        }
+        return data;
+    }
+    AvatarApi.getAllData = getAllData;
+    /** 获取角色所有资源数据
+     * @param char 角色
+     * @returns assetGuidList
+     */
+    function getAsset(char) {
+        const assets = [];
+        for (const [funcIndex, v] of AvatarApi.funcMap) {
+            if (v.cfg.valueType == ValueType.String && !areaCountMap.has(funcIndex)) {
+                if (areaCountMap.has(funcIndex)) {
+                    for (let areaIndex = 0; areaIndex <= areaCountMap.get(funcIndex)(char); areaIndex++) {
+                        const serializationValue = getSerializationValueByFuncIndex(char, funcIndex, areaIndex);
+                        if (serializationValue != null)
+                            assets.push({ funcIndex: funcIndex, assetId: serializationValue, areaIndex: areaIndex });
+                    }
+                }
+                else {
+                    const serializationValue = getSerializationValueByFuncIndex(char, funcIndex);
+                    if (serializationValue != null)
+                        assets.push({ funcIndex: funcIndex, assetId: serializationValue });
+                }
+            }
+        }
+        return assets;
+    }
+    AvatarApi.getAsset = getAsset;
+    /**
+     * 获取需要的角色对象外观数据
+     * @param char 角色对象
+     * @param funcIndexArr 外观接口索引数组，参考https://meta.feishu.cn/sheets/AIK0soPXEh4hTTtWVPScWjTDnon
+     * @param dataVersion 数据版本
+     * @returns 外观数据对象
+     */
+    function getByFuncIndexArr(char, funcIndexArr, dataVersion = 1) {
+        const data = new DescriptionApiData;
+        data.version = dataVersion;
+        if (data.version == 1) {
+            for (const funcIndex of funcIndexArr) {
+                if (areaCountMap.has(funcIndex)) {
+                    for (let areaIndex = 0; areaIndex <= areaCountMap.get(funcIndex)(char); areaIndex++) {
+                        const serializationValue = getSerializationValueByFuncIndex(char, funcIndex, areaIndex);
+                        if (serializationValue != null)
+                            data.apiValue.push(funcIndex, `${areaIndex}|${serializationValue}`);
+                    }
+                }
+                else {
+                    const serializationValue = getSerializationValueByFuncIndex(char, funcIndex);
+                    if (serializationValue != null)
+                        data.apiValue.push(funcIndex, serializationValue);
+                }
+            }
+        }
+        return data;
+    }
+    AvatarApi.getByFuncIndexArr = getByFuncIndexArr;
+    /**
+     * 根据保存类型saveType，导出对应接口的角色外观数据
+     * @param char 角色对象
+     * @param saveType 保存类型，参考Description.saveType
+     * @param dataVersion 数据版本，默认1
+     * @param extraFuncIndexArr 额外要添加的接口索引，可选参数
+     * @returns 角色外观数据
+     */
+    function getDataBySaveType(char, saveType, dataVersion = 1, extraFuncIndexArr) {
+        let funcIndexArr = [];
+        for (const cfg of GameConfig.Description.getAllElement()) {
+            switch (cfg.saveType) {
+                case saveType:
+                    funcIndexArr.push(cfg.funcIndex);
+                    break;
+            }
+        }
+        extraFuncIndexArr?.forEach((e) => {
+            funcIndexArr.push(e);
+        });
+        return getByFuncIndexArr(char, funcIndexArr, dataVersion);
+    }
+    AvatarApi.getDataBySaveType = getDataBySaveType;
+    /**
+     * 根据保存类型saveType，导出对应接口的角色外观数据
+     * @param char 角色对象
+     * @param saveTypeArr 保存类型，参考Description.saveType,例如[1,2]，导出头部捏脸、身材数值
+     * @param dataVersion 数据版本，默认1
+     * @param extraFuncIndexArr 额外要添加的接口索引，可选参数
+     * @returns 角色外观数据
+     */
+    function getDataBySaveTypeArr(char, saveTypeArr, dataVersion = 1, extraFuncIndexArr) {
+        let funcIndexArr = [];
+        for (const cfg of GameConfig.Description.getAllElement()) {
+            saveTypeArr.forEach(saveType => {
+                if (cfg.saveType == saveType)
+                    funcIndexArr.push(cfg.funcIndex);
+            });
+        }
+        extraFuncIndexArr?.forEach((e) => {
+            funcIndexArr.push(e);
+        });
+        return getByFuncIndexArr(char, funcIndexArr, dataVersion);
+    }
+    AvatarApi.getDataBySaveTypeArr = getDataBySaveTypeArr;
+    /**
+     * 根据funcIndex获取序列化后的值
+     * @param char 角色对象
+     * @param funcIndex 外观接口索引，参考https://meta.feishu.cn/sheets/AIK0soPXEh4hTTtWVPScWjTDnon
+     * @param areaIndex 区域索引（可选参数）
+     * @returns 序列化后的值
+     */
+    function getSerializationValueByFuncIndex(char, funcIndex, areaIndex) {
+        try {
+            const funcObj = AvatarApi.funcMap.get(funcIndex);
+            const v2 = funcObj.getFunc(char, areaIndex);
+            if (v2 != null) {
+                const serializationValue = serialization(funcObj.cfg.valueType, v2);
+                return serializationValue;
+            }
+            return null;
+        }
+        catch (error) {
+            console.error(`getSerializationValueByFuncIndex error,funcIndex(${funcIndex}),areaCount(${areaIndex})`);
+            return null;
+        }
+    }
+    AvatarApi.getSerializationValueByFuncIndex = getSerializationValueByFuncIndex;
+    /**
+     * 设置角色外观该接口对应的值
+     * @param char 角色
+     * @param funcIndex 接口索引，参考https://meta.feishu.cn/sheets/AIK0soPXEh4hTTtWVPScWjTDnon
+     * @param value 值,严格按照接口对应值类型
+     * @param areaIndex 可选参数，区域
+     */
+    function setByFuncIndex(char, funcIndex, value, areaIndex) {
+        const funcObj = AvatarApi.funcMap.get(funcIndex);
+        funcObj.setFunc(char, value, areaIndex);
+    }
+    AvatarApi.setByFuncIndex = setByFuncIndex;
+    /**
+     * 获取角色外观该接口对应的值
+     * @param char 角色
+     * @param funcIndex 接口索引，参考https://meta.feishu.cn/sheets/AIK0soPXEh4hTTtWVPScWjTDnon
+     * @param areaIndex 可选参数，区域
+     * @returns 接口对应的值
+     */
+    function getByFuncIndex(char, funcIndex, areaIndex) {
+        const funcObj = AvatarApi.funcMap.get(funcIndex);
+        const value = funcObj.getFunc(char, areaIndex);
+        return value;
+    }
+    AvatarApi.getByFuncIndex = getByFuncIndex;
+    /**
+     * 根据值类型序列化为对应的值
+     * @param valueType 值类型
+     * @param value 值,number|string|LinearColor
+     * @returns 序列化后的值
+     */
+    function serialization(valueType, value) {
+        let v;
+        switch (valueType) {
+            case ValueType.Color:
+                if (value.r > 1)
+                    value.r = 1;
+                else if (value.r < 0)
+                    value.r = 0;
+                if (value.g > 1)
+                    value.g = 1;
+                else if (value.g < 0)
+                    value.g = 0;
+                if (value.b > 1)
+                    value.b = 1;
+                else if (value.b < 0)
+                    value.b = 0;
+                if (value.a > 1)
+                    value.a = 1;
+                else if (value.a < 0)
+                    value.a = 0;
+                if (value.r + value.g + value.b + value.a == 0)
+                    v = "0";
+                else if (value.r == 1 && value.g == 1 && value.b == 1 && value.a == 1)
+                    v = "f";
+                else
+                    v = linearToHex(value);
+                break;
+            case ValueType.Number:
+                let numb = Number(value);
+                if (Number(numb) % 1 !== 0)
+                    v = parseFloat(numb.toFixed(3));
+                else
+                    v = numb;
+                break;
+            case ValueType.String:
+                if (value && value != "undefined")
+                    v = value;
+                break;
+        }
+        return v;
+    }
+    function deserialize(valueType, value) {
+        let v;
+        switch (valueType) {
+            case ValueType.Color:
+                if (value == "0")
+                    value = "00000000";
+                else if (value == "f")
+                    value = "ffffff";
+                v = hexToColor(value);
+                break;
+            case ValueType.Number:
+                v = value;
+                break;
+            case ValueType.String:
+                if (value && value != "undefined")
+                    v = value;
+                break;
+        }
+        return v;
+    }
+    /**
+     * 16进制色值转为LinearColor
+     * @param hex 16进制色值
+     * @param outer 可选参数，LinearColor对象
+     * @returns LinearColor对象
+     */
+    function hexToColor(hex, outer) {
+        try {
+            const hexRegex = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})?$/i;
+            const match = hex.match(hexRegex);
+            if (match) {
+                const r = parseInt(match[1], 16) / 255;
+                const g = parseInt(match[2], 16) / 255;
+                const b = parseInt(match[3], 16) / 255;
+                const a = match[4] ? parseInt(match[4], 16) / 255 : 1;
+                if (!outer)
+                    outer = new mw.LinearColor(r, g, b, a);
+                else {
+                    outer.r = r;
+                    outer.g = g;
+                    outer.b = b;
+                    outer.a = a;
+                }
+                return outer;
+            }
+        }
+        catch (error) {
+            console.error(`hexToColor error,hex(${hex}):${error}`);
+            return LinearColor.white;
+        }
+    }
+    /**
+     * LinearColor转为16进制色值,取值范围为 0 到 1
+     * @param color LinearColor对象
+     * @returns 16进制色值
+     */
+    function linearToHex(color) {
+        let colorHex;
+        try {
+            const r = color.r;
+            const g = color.g;
+            const b = color.b;
+            const a = color.a;
+            const hexR = Math.round(r * 255).toString(16).padStart(2, '0');
+            const hexG = Math.round(g * 255).toString(16).padStart(2, '0');
+            const hexB = Math.round(b * 255).toString(16).padStart(2, '0');
+            const hexA = Math.round(a * 255).toString(16).padStart(2, '0');
+            if (hexA === `ff`)
+                colorHex = `${hexR}${hexG}${hexB}`;
+            colorHex = `${hexR}${hexG}${hexB}${hexA}`;
+        }
+        catch (error) {
+            console.error(`linearToHex error:${error}`);
+        }
+        if (colorHex?.length > 8) {
+            console.log(`dddddddddddddddddddddddddddd:颜色换算大于八位,${color},${colorHex}`);
+            throw new Error(`颜色换算大于八位,${color}`);
+        }
+        return colorHex;
+    }
+    /**
+     * 获取角色对象所有捏脸外观数据(log输出)
+     * @param char 角色对象
+     * @returns 外观数据字符串数组
+     */
+    function toStrings(char) {
+        let strArr = [];
+        for (const [k, v] of AvatarApi.funcMap) {
+            if (v.hasArea) {
+                for (let i = 0; i < areaCountMap.get(k)(char); i++) {
+                    const str = `funcIndex(${v.cfg.funcIndex}),areaIndex(${i}),value(${v.getFunc(char, i)}),cfg:${JSON.stringify(v.cfg)}`;
+                    strArr.push(str);
+                }
+            }
+            else {
+                const str = `funcIndex(${v.cfg.funcIndex}),value(${v.getFunc(char)}),cfg:${JSON.stringify(v.cfg)}`;
+                strArr.push(str);
+            }
+            console.log(`toStrings:${k}`);
+        }
+        return strArr;
+    }
+    AvatarApi.toStrings = toStrings;
+    /**
+     * 根据funcIndex更换某个资源，还原依赖这个接口的
+     * @param char 角色对象
+     * @param funcIndex 接口索引，参考https://meta.feishu.cn/sheets/AIK0soPXEh4hTTtWVPScWjTDnon
+     * @param value 资源guid值
+     * @param areaIndex 区域
+     * @returns
+     */
+    async function changeAsset(char, funcIndex, value, areaIndex) {
+        const funcObj = AvatarApi.funcMap.get(funcIndex);
+        const serializationVale = isNaN(areaIndex) ? serialization(funcObj.cfg.valueType, value) : `${areaIndex}|${serialization(funcObj.cfg.valueType, value)}`;
+        let tempData = getAllData(char);
+        for (let i = 0; i < tempData.apiValue.length; i += 2) {
+            if (tempData.apiValue[i] == funcIndex) {
+                tempData.apiValue[i + 1];
+                tempData.apiValue[i + 1] = serializationVale;
+                // console.log(`changeAsset>>>funcIndex(${funcIndex}),curValue(${curValue})=>serializationVale(${serializationVale})`);
+                break;
+            }
+        }
+        await setDescriptionByApiData2(char, tempData);
+    }
+    AvatarApi.changeAsset = changeAsset;
+    /**
+     * 比较角色对象外观数据是否与数据体匹配
+     * @param char 角色对象
+     * @param apiData 数据体 参考https://meta.feishu.cn/wiki/NjDhw7G5qiOpbAkHjF7cOxoEnEh 第一个评论
+     * @param eqSlot 比较挂件数据
+     */
+    function equality(char, apiData, eqSlot = false) {
+        let funcIndex;
+        let areaIndex;
+        let valueData;
+        let eq = true;
+        if (apiData.version == 1) {
+            for (let i = 0; i < apiData.apiValue.length; i += 2) {
+                funcIndex = apiData.apiValue[i];
+                if (funcIndex == 182 || funcIndex == 183)
+                    continue;
+                areaIndex = undefined;
+                AvatarApi.funcMap.get(funcIndex);
+                valueData = apiData.apiValue[i + 1];
+                try {
+                    if (typeof valueData === `string` && valueData.includes(`|`)) {
+                        const str = valueData.split("|");
+                        const value = str[1];
+                        areaIndex = Number(str[0]);
+                        eq = eqSerializationValue(char, funcIndex, value, areaIndex);
+                    }
+                    else {
+                        eq = eqSerializationValue(char, funcIndex, valueData);
+                    }
+                    if (!eq) {
+                        // console.log(`AvatarApi.equality,funcIndex(${funcIndex}),areaIndex(${areaIndex}),valueData(${valueData}),eq(${eq})`);
+                        break;
+                    }
+                }
+                catch (error) {
+                    console.error(`AvatarApi.equality,funcIndex(${funcIndex}),areaIndex(${areaIndex}),valueData(${valueData}),eq(${eq}),error:${error}`);
+                    return false;
+                }
+            }
+            if (eq && eqSlot) {
+                eq = equalitySloth(char, apiData.slotData);
+            }
+            if (eq && eqSlot) {
+                eq = equalityDynamicDecor(char, apiData.dynDecor);
+            }
+            return eq;
+        }
+    }
+    AvatarApi.equality = equality;
+    /**挂件分割字符 */
+    const slotSplit = "$";
+    /**获取所有挂件数据并序列化为字符串数组，如果数据长度=0，则为undefined */
+    function getSlotDataArr(char) {
+        let slot = char.description.advance.slotAndDecoration.slot;
+        let dataStrArr = [];
+        for (let i = 0; i < slot.length; i++) {
+            for (let j = 0; j < slot[i].decoration.length; j++) {
+                const decoration = slot[i].decoration[j];
+                if (decoration.attachmentAssetId && decoration.attachmentGameObject && decoration.attachmentOffset) {
+                    let transform = new Transform();
+                    transform.position = new Vector(Number(decoration.attachmentOffset.position.x.toFixed(3)), Number(decoration.attachmentOffset.position.y.toFixed(3)), Number(decoration.attachmentOffset.position.z.toFixed(3)));
+                    transform.rotation = new Rotation(Number(decoration.attachmentOffset.rotation.x.toFixed(3)), Number(decoration.attachmentOffset.rotation.y.toFixed(3)), Number(decoration.attachmentOffset.rotation.z.toFixed(3)));
+                    transform.scale = new Vector(Number(decoration.attachmentOffset.scale.x.toFixed(3)), Number(decoration.attachmentOffset.scale.y.toFixed(3)), Number(decoration.attachmentOffset.scale.z.toFixed(3)));
+                    const str = `${i}${slotSplit}${decoration.attachmentAssetId}${slotSplit}${transform.toString()}`;
+                    dataStrArr.push(str);
+                }
+            }
+        }
+        return dataStrArr.length > 0 ? dataStrArr : undefined;
+    }
+    AvatarApi.getSlotDataArr = getSlotDataArr;
+    /**获取角色所有动态挂件数据 */
+    function getDynamicDecor(char) {
+        let dataStr = [];
+        const dynamicAttachments = char.description.advance.dynamicAttachments;
+        if (!dynamicAttachments || dynamicAttachments.length == 0)
+            return dataStr;
+        for (let i = 0; i < dynamicAttachments.length; i++) {
+            const d = dynamicAttachments[i].style;
+            dataStr.push(d);
+        }
+        return dataStr;
+    }
+    AvatarApi.getDynamicDecor = getDynamicDecor;
+    /**获取所有挂件数据*/
+    function getSlotDataArr2(char) {
+        let slot = char.description.advance.slotAndDecoration.slot;
+        let dataStrArr = [];
+        for (let i = 0; i < slot.length; i++) {
+            for (let j = 0; j < slot[i].decoration.length; j++) {
+                const decoration = slot[i].decoration[j];
+                if (decoration.attachmentAssetId && decoration.attachmentGameObject && decoration.attachmentOffset) {
+                    dataStrArr.push({ assetId: decoration.attachmentAssetId, slot: i, offset: decoration.attachmentOffset, obj: decoration.attachmentGameObject });
+                }
+            }
+        }
+        return dataStrArr;
+    }
+    AvatarApi.getSlotDataArr2 = getSlotDataArr2;
+    /**
+    * 设置动态挂件数据
+    * @param char
+    * @param strArr getDynamicDecor接口获取
+    */
+    async function setDynamicDecor(char, strArr) {
+        if (strArr?.length > 0) {
+            for (let i = 0; i < strArr.length; i++) {
+                await AvatarDecora.setDynamicDecor(char, i, strArr[i]);
+            }
+        }
+    }
+    AvatarApi.setDynamicDecor = setDynamicDecor;
+    /**
+     * 设置挂件数据
+     * @param char
+     * @param strArr getSlotDataArr接口获取
+     */
+    async function setSlotData(char, strArr) {
+        if (strArr?.length > 0) {
+            for (let i = 0; i < strArr.length; i++) {
+                const [slotIndexStr, assetId, transform] = strArr[i].split(slotSplit);
+                const slotIndex = Number(slotIndexStr);
+                if (slotIndex >= 0 && slotIndex < char.description.advance.slotAndDecoration.slot.length) {
+                    await AvatarDecora.setDecora2(char, slotIndex, assetId, Transform.fromString(transform));
+                }
+            }
+        }
+        await char.asyncReady();
+    }
+    AvatarApi.setSlotData = setSlotData;
+    /**
+     * 比较当前角色挂件是否完全相同
+     * @param char 角色对象
+     * @param strArr 挂件数据，getSlotDataArr接口获取
+     * @returns 相同返回true,不相同返回false
+     */
+    function equalitySloth(char, strArr) {
+        const curSlotData = getSlotDataArr(char);
+        //如果挂件数据存在
+        if (curSlotData && strArr) {
+            //如果挂件数量相同
+            if (curSlotData.length == strArr.length) {
+                //遍历挂件数据，比较所有挂件数据
+                for (let i = 0; i < curSlotData.length; i++) {
+                    const [slotIndexStr1, assetId1, transform1] = curSlotData[i].split(slotSplit);
+                    const [slotIndexStr2, assetId2, transform2] = strArr[i].split(slotSplit);
+                    if (slotIndexStr1 != slotIndexStr2)
+                        return false;
+                    if (assetId1 != assetId2)
+                        return false;
+                    if (transform1.toString() != transform2.toString())
+                        return false;
+                }
+                console.log(`equalitySloth1`);
+                return true;
+            }
+            console.log(`equalitySloth2`);
+            return false;
+        }
+        console.log(`equalitySloth3,${curSlotData},${strArr}`);
+        return !(curSlotData || strArr);
+    }
+    AvatarApi.equalitySloth = equalitySloth;
+    /**
+    * 比较当前角色动态挂件是否完全相同
+    * @param char 角色对象
+    * @param strArr 挂件数据，getDynamicDecor接口获取
+    * @returns 相同返回true,不相同返回false
+    */
+    function equalityDynamicDecor(char, strArr) {
+        const curSlotData = getDynamicDecor(char);
+        //如果挂件数据存在
+        if (curSlotData && strArr) {
+            for (let i = 0; i < curSlotData.length; i++) {
+                if (curSlotData[i] != strArr[i])
+                    return false;
+            }
+        }
+        return true;
+    }
+    AvatarApi.equalityDynamicDecor = equalityDynamicDecor;
+    /**
+     * 根据接口索引获取数据对象里的反序列化数据
+     * @param apiData 目标数据
+     * @param targetFuncIndex 目标接口索引
+     * @returns 接口索引对应的反序列化数据
+     */
+    function getValueByFuncIndex(apiData, targetFuncIndex) {
+        for (let i = 0; i < apiData.apiValue.length; i += 2) {
+            const funcIndex = apiData.apiValue[i];
+            if (targetFuncIndex == funcIndex) {
+                const funcObj = AvatarApi.funcMap.get(funcIndex);
+                return deserialize(funcObj.cfg.valueType, apiData.apiValue[i + 1]);
+            }
+        }
+    }
+    AvatarApi.getValueByFuncIndex = getValueByFuncIndex;
+    /**
+     * 根据接口索引设置数据对象里的数据
+     * @param apiData 目标数据
+     * @param targetFuncIndex 目标接口索引
+     * @returns 接口索引对应的数据
+     */
+    function setValueByFuncIndex(apiData, targetFuncIndex, value) {
+        for (let i = 0; i < apiData.apiValue.length; i += 2) {
+            const funcIndex = apiData.apiValue[i];
+            if (targetFuncIndex == funcIndex) {
+                const funcObj = AvatarApi.funcMap.get(funcIndex);
+                apiData.apiValue[i + 1] = serialization(funcObj.cfg.valueType, value);
+                break;
+            }
+        }
+        return apiData;
+    }
+    AvatarApi.setValueByFuncIndex = setValueByFuncIndex;
+    /** 获取所有资源guid
+     * @param char 角色对象
+     * @returns 所有guid拼接成的string,例如：guid1,guid2
+     */
+    function getAssets(char) {
+        let assetMap = new Map();
+        for (const [funcIndex, v] of AvatarApi.funcMap) {
+            if (v.cfg.valueType == ValueType.String) {
+                if (areaCountMap.has(funcIndex)) {
+                    for (let areaIndex = 0; areaIndex <= areaCountMap.get(funcIndex)(char); areaIndex++) {
+                        const serializationValue = getSerializationValueByFuncIndex(char, funcIndex, areaIndex);
+                        if (serializationValue != null) {
+                            assetMap.set(serializationValue, true);
+                        }
+                    }
+                }
+                else {
+                    const serializationValue = getSerializationValueByFuncIndex(char, funcIndex);
+                    if (serializationValue != null) {
+                        assetMap.set(serializationValue, true);
+                    }
+                }
+            }
+        }
+        getSlotDataArr2(char).forEach(e => {
+            assetMap.set(e.assetId, true);
+        });
+        let assets = "";
+        let a = [...assetMap.keys()];
+        const lastIndex = a.length - 1;
+        a.forEach((guid, index) => { assets += index != lastIndex ? `${guid},` : `${guid}`; });
+        return assets;
+    }
+    AvatarApi.getAssets = getAssets;
+    /**
+    * 获取所有资源guid通过DescriptionApiData
+    * @param apiData 封装好的数据类
+    * @returns 所有guid拼接成的string,例如：guid1,guid2
+    */
+    function getAssetsByDescriptionApiData(apiData) {
+        let assetMap = new Map();
+        //解析数据
+        for (let i = 0; i < apiData.apiValue.length; i += 2) {
+            const funcIndex = apiData.apiValue[i];
+            const funcObj = AvatarApi.funcMap.get(funcIndex);
+            let value;
+            if (funcObj.cfg.valueType == ValueType.String) {
+                if (funcObj.hasArea) {
+                    const strValue = apiData.apiValue[i + 1];
+                    const strArr = strValue.split("|");
+                    parseInt(strArr[0]);
+                    value = deserialize(funcObj.cfg.valueType, strArr[1]);
+                    assetMap.set(value, true);
+                }
+                else {
+                    value = deserialize(funcObj.cfg.valueType, apiData.apiValue[i + 1]);
+                    assetMap.set(value, true);
+                }
+            }
+        }
+        return [...assetMap.keys()];
+    }
+    AvatarApi.getAssetsByDescriptionApiData = getAssetsByDescriptionApiData;
+    function setValueByFuncIndex2(char, funcIndex, areaIndex, value) {
+        try {
+            const funcObj = AvatarApi.funcMap.get(funcIndex);
+            return funcObj.setFunc(char, value, areaIndex);
+        }
+        catch (error) {
+        }
+    }
+    AvatarApi.setValueByFuncIndex2 = setValueByFuncIndex2;
+})(AvatarApi || (AvatarApi = {}));
+var StyleType;
+(function (StyleType) {
+    /**二次元 */
+    StyleType[StyleType["Quadratic"] = 1] = "Quadratic";
+    /**低模 */
+    StyleType[StyleType["LowPoly"] = 2] = "LowPoly";
+    /**写实 */
+    StyleType[StyleType["Realistic"] = 3] = "Realistic";
+    /**美式卡通 */
+    StyleType[StyleType["Cartoony"] = 4] = "Cartoony";
+})(StyleType || (StyleType = {}));
+function getStyle(somatotype) {
+    if (somatotype === mw.SomatotypeV2.LowpolyAdultFemale || somatotype === mw.SomatotypeV2.LowpolyAdultMale)
+        return StyleType.LowPoly;
+    if (somatotype === mw.SomatotypeV2.AnimeFemale || somatotype === mw.SomatotypeV2.AnimeMale)
+        return StyleType.Quadratic;
+    if (somatotype === mw.SomatotypeV2.RealisticAdultMale || somatotype === mw.SomatotypeV2.RealisticAdultFemale)
+        return StyleType.Realistic;
+    if (somatotype === mw.SomatotypeV2.CartoonyMale || somatotype === mw.SomatotypeV2.CartoonyFemale)
+        return StyleType.Cartoony;
+}
+
+var foreign137 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    get AvatarApi () { return AvatarApi; },
+    get StyleType () { return StyleType; },
+    getStyle: getStyle
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/tools/LoadingPanel.ui
+ * TIME: 2025.04.02-20.05.08
+ */
+let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
+    get mMainCanvas() {
+        if (!this.mMainCanvas_Internal && this.uiWidgetBase) {
+            this.mMainCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas');
+        }
+        return this.mMainCanvas_Internal;
+    }
+    get mLoadingImage() {
+        if (!this.mLoadingImage_Internal && this.uiWidgetBase) {
+            this.mLoadingImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas/mLoadingImage');
+        }
+        return this.mLoadingImage_Internal;
+    }
+    get mLoadingTextblock() {
+        if (!this.mLoadingTextblock_Internal && this.uiWidgetBase) {
+            this.mLoadingTextblock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas/mLoadingTextblock');
+        }
+        return this.mLoadingTextblock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mLoadingTextblock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+LoadingPanel_Generate = __decorate([
+    UIBind('UI/tools/LoadingPanel.ui')
+], LoadingPanel_Generate);
+var LoadingPanel_Generate$1 = LoadingPanel_Generate;
+
+var foreign192 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: LoadingPanel_Generate$1
+});
+
+class LoadingPanel extends LoadingPanel_Generate$1 {
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerTop;
+    }
+    /**
+    * 每一帧调用
+    * 通过canUpdate可以开启关闭调用
+    * dt 两帧调用的时间差，毫秒
+    */
+    onUpdate(dt) {
+        this.mLoadingImage.renderTransformAngle = this.mLoadingImage.renderTransformAngle + 180 * dt;
+        if (this.mLoadingImage.renderTransformAngle > 180)
+            this.mLoadingImage.renderTransformAngle = -180 + this.mLoadingImage.renderTransformAngle - 180;
+    }
+    setLock(isLock) {
+        if (isLock) {
+            this.canUpdate = true;
+            this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
+        }
+        else {
+            this.canUpdate = false;
+            this.rootCanvas.visibility = mw.SlateVisibility.Collapsed;
+        }
+    }
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+}
+
+var foreign144 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: LoadingPanel
+});
+
+class ExecutorBase {
+    execute() { }
+}
+class Executor extends ExecutorBase {
+    execute() {
+        this.func(this.arg);
+    }
+}
+class AsyncExecutor extends ExecutorBase {
+    constructor() {
+        super(...arguments);
+        /**锁定输入 */
+        this.lockInput = true;
+    }
+    async execute() {
+        await this.asyncFunc(this.arg);
+    }
+}
+class ExecutorManager {
+    constructor() {
+        this.executorList = new Array();
+        this.running = false;
+        this.index = 0;
+        this.doneCb = new Action();
+    }
+    static get instance() {
+        if (ExecutorManager._instance == undefined)
+            ExecutorManager._instance = new ExecutorManager();
+        return ExecutorManager._instance;
+    }
+    pushExecutor(func, arg = undefined, record = false, resetFunc = undefined) {
+        let executor = new Executor();
+        executor.func = func;
+        executor.arg = arg;
+        executor.record = record;
+        executor.resetFunc = resetFunc;
+        this.push(executor);
+    }
+    /** 添加异步命令
+     * @param asyncFunc 异步函数
+     * @param arg 函数参数
+     * @param isAwait 是否等待(默认等待)
+     * @param record 记录角色数据
+     * @param resetFunc 恢复角色数据的操作
+     */
+    pushAsyncExecutor(asyncFunc, arg = undefined, isAwait = true, record = false, resetFunc = undefined, lockInput = true) {
+        let asyncExecutor = new AsyncExecutor();
+        asyncExecutor.asyncFunc = asyncFunc;
+        asyncExecutor.arg = arg;
+        asyncExecutor.isAwait = isAwait;
+        asyncExecutor.record = record;
+        asyncExecutor.lockInput = lockInput;
+        asyncExecutor.resetFunc = resetFunc;
+        this.push(asyncExecutor);
+    }
+    push(executor) {
+        this.executorList.push(executor);
+        this.run();
+    }
+    async run() {
+        if (this.running)
+            return;
+        this.running = true;
+        let executor = this.executorList[this.index];
+        UIService.getUI(LoadingPanel).show();
+        while (executor) {
+            try {
+                if (executor instanceof Executor) {
+                    executor.execute();
+                }
+                else {
+                    let asyncExecutor = executor;
+                    UIService.getUI(LoadingPanel).setLock(asyncExecutor.lockInput);
+                    if (asyncExecutor.isAwait) {
+                        await this.runExecute(asyncExecutor.execute.bind(asyncExecutor));
+                    }
+                    else {
+                        asyncExecutor.execute();
+                    }
+                }
+                // if (executor.record) Event.dispatchToLocal(EventType.Event_Record, executor.resetFunc);
+            }
+            catch (error) {
+                console.error(`命令执行异常:${error}`);
+            }
+            this.index++;
+            executor = this.executorList[this.index];
+        }
+        UIService.getUI(LoadingPanel).hide();
+        this.running = false;
+        this.doneCb.call();
+    }
+    //执行命令，10秒超时
+    runExecute(exeFunc) {
+        return new Promise(async (resolve) => {
+            let timeOut = setTimeout(() => {
+                console.error(`命令执行10秒超时`);
+                return resolve();
+            }, 10 * 1000);
+            await exeFunc();
+            clearTimeout(timeOut);
+            return resolve();
+        });
+    }
+    /**等待执行完毕 */
+    awaitDone() {
+        return new Promise((resolve) => {
+            if (!this.running)
+                return resolve();
+            const doneFunc = () => {
+                this.doneCb.remove(doneFunc, this);
+                return resolve();
+            };
+            this.doneCb.add(doneFunc, this);
+        });
+    }
+}
+ExecutorManager._instance = undefined;
+
+var foreign146 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: ExecutorManager
+});
+
+class CharacterModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.characterDataMap = {};
+    }
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    onEnterScene(sceneType) {
+        this.initCharacterData();
+    }
+    getCharacterDataKey() {
+        let retKey = null;
+        if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0)
+            return retKey;
+        let characterDataStr = JSON.stringify(AvatarApi.getAllData(this.localPlayer.character));
+        MapEx.forEach(this.characterDataMap, (key, element) => {
+            if (characterDataStr == element) {
+                retKey = key;
+            }
+        });
+        return retKey;
+    }
+    get getCharacterData() {
+        return this.characterDataMap;
+    }
+    get getCharacterDataIndex() {
+        for (let i = 1; i <= GlobalData.savaMaxCount; ++i) {
+            if (!MapEx.has(this.characterDataMap, i))
+                return i;
+        }
+    }
+    async useCharacterData(key, setCharacterDataSucceed) {
+        if (key == `0`) {
+            let nextKey = `1`;
+            if (this.characterDataMap && MapEx.count(this.characterDataMap) > 0) {
+                let currentCharacterDataSize = Number(MapEx.count(this.characterDataMap));
+                if (currentCharacterDataSize >= GlobalData.savaMaxCount) {
+                    Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_MaxSaveCount.Value, GlobalData.savaMaxCount));
+                    return;
+                }
+                nextKey = (this.getCharacterDataIndex).toString();
+            }
+            await this.localPlayer.character.asyncReady();
+            let characterDataStr = JSON.stringify(AvatarApi.getAllData(this.localPlayer.character));
+            await this.setCharacterData(nextKey, characterDataStr);
+            Notice.showDownNotice(GameConfig.Language.Text_SaveSuccefully.Value);
+            if (setCharacterDataSucceed)
+                setCharacterDataSucceed(true);
+        }
+        else {
+            if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0)
+                return;
+            if (!MapEx.has(this.characterDataMap, key))
+                return;
+            let characterData = MapEx.get(this.characterDataMap, key);
+            let descriptionApiData = JSON.parse(characterData);
+            this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+            await this.localPlayer.character.asyncReady();
+            let isSuccess = await AvatarApi.setDescriptionByApiData2(this.localPlayer.character, descriptionApiData);
+            await this.localPlayer.character.asyncReady();
+            if (isSuccess) {
+                if (setCharacterDataSucceed)
+                    setCharacterDataSucceed(false);
+            }
+        }
+    }
+    async deleteCharacterData(key, delCharacterDataSucceed) {
+        if (key == `0`)
+            return;
+        await this.delCharacterData(key);
+        Notice.showDownNotice(GameConfig.Language.Text_DeleteSucceed.Value);
+        if (delCharacterDataSucceed)
+            delCharacterDataSucceed();
+    }
+    get getCharacterDataKeys() {
+        let keys = [];
+        if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0)
+            return keys;
+        MapEx.forEach(this.characterDataMap, (key, element) => {
+            keys.push(key);
+        });
+        return keys;
+    }
+    getCharacterDataUpAssetIdByKey(key) {
+        if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0)
+            return null;
+        if (!MapEx.has(this.characterDataMap, key))
+            return null;
+        let characterData = MapEx.get(this.characterDataMap, key);
+        let descriptionApiData = JSON.parse(characterData);
+        let indexOf = descriptionApiData.apiValue.indexOf(86);
+        if (indexOf != -1) {
+            return descriptionApiData.apiValue[indexOf + 1];
+        }
+        return null;
+    }
+    initCharacterData() {
+        this.characterDataMap = this.data.characterDataMap;
+    }
+    async setCharacterData(key, value) {
+        MapEx.set(this.characterDataMap, key, value);
+        await this.server.net_setCharacterData(key, value);
+    }
+    async delCharacterData(key) {
+        if (MapEx.has(this.characterDataMap, key)) {
+            MapEx.del(this.characterDataMap, key);
+            await this.server.net_delCharacterData(key);
+        }
+    }
+    clearCharacterData() {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.characterDataMap = {};
+            await this.server.net_clearCharacterData();
+        });
+    }
+}
+
+var foreign85 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    CharacterModuleC: CharacterModuleC
+});
+
+class CharacterModuleS extends ModuleS {
+    /** 当脚本被实例后，会在第一帧更新前调用此函数 */
+    onStart() {
+    }
+    net_setCharacterData(key, value) {
+        return this.currentData.setCharacterData(key, value);
+    }
+    net_delCharacterData(key) {
+        return this.currentData.delCharacterData(key);
+    }
+    net_clearCharacterData() {
+        return this.currentData.clearCharacterData();
+    }
+}
+
+var foreign86 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    CharacterModuleS: CharacterModuleS
 });
 
 class Utils {
@@ -3607,7 +5489,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign137 = /*#__PURE__*/Object.freeze({
+var foreign145 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -3617,242 +5499,8 @@ var foreign137 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
- * UI: UI/tools/LoadingPanel.ui
- * TIME: 2025.03.08-12.30.15
- */
-let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
-    get mMainCanvas() {
-        if (!this.mMainCanvas_Internal && this.uiWidgetBase) {
-            this.mMainCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas');
-        }
-        return this.mMainCanvas_Internal;
-    }
-    get mLoadingImage() {
-        if (!this.mLoadingImage_Internal && this.uiWidgetBase) {
-            this.mLoadingImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas/mLoadingImage');
-        }
-        return this.mLoadingImage_Internal;
-    }
-    get mLoadingTextblock() {
-        if (!this.mLoadingTextblock_Internal && this.uiWidgetBase) {
-            this.mLoadingTextblock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/MainCanvas/mMainCanvas/mLoadingTextblock');
-        }
-        return this.mLoadingTextblock_Internal;
-    }
-    onAwake() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        //按钮添加点击
-        //按钮添加点击
-        //按钮多语言
-        //文本多语言
-        this.initLanguage(this.mLoadingTextblock);
-        //文本多语言
-    }
-    /*初始化多语言*/
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) { }
-    ;
-    /*显示panel*/
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    /*隐藏panel*/
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-LoadingPanel_Generate = __decorate([
-    UIBind('UI/tools/LoadingPanel.ui')
-], LoadingPanel_Generate);
-var LoadingPanel_Generate$1 = LoadingPanel_Generate;
-
-var foreign183 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: LoadingPanel_Generate$1
-});
-
-class LoadingPanel extends LoadingPanel_Generate$1 {
-    /**
-     * 构造UI文件成功后，在合适的时机最先初始化一次
-     */
-    onStart() {
-        //设置能否每帧触发onUpdate
-        this.canUpdate = false;
-        this.layer = mw.UILayerTop;
-    }
-    /**
-    * 每一帧调用
-    * 通过canUpdate可以开启关闭调用
-    * dt 两帧调用的时间差，毫秒
-    */
-    onUpdate(dt) {
-        this.mLoadingImage.renderTransformAngle = this.mLoadingImage.renderTransformAngle + 180 * dt;
-        if (this.mLoadingImage.renderTransformAngle > 180)
-            this.mLoadingImage.renderTransformAngle = -180 + this.mLoadingImage.renderTransformAngle - 180;
-    }
-    setLock(isLock) {
-        if (isLock) {
-            this.canUpdate = true;
-            this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
-        }
-        else {
-            this.canUpdate = false;
-            this.rootCanvas.visibility = mw.SlateVisibility.Collapsed;
-        }
-    }
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-}
-
-var foreign136 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: LoadingPanel
-});
-
-class ExecutorBase {
-    execute() { }
-}
-class Executor extends ExecutorBase {
-    execute() {
-        this.func(this.arg);
-    }
-}
-class AsyncExecutor extends ExecutorBase {
-    constructor() {
-        super(...arguments);
-        /**锁定输入 */
-        this.lockInput = true;
-    }
-    async execute() {
-        await this.asyncFunc(this.arg);
-    }
-}
-class ExecutorManager {
-    constructor() {
-        this.executorList = new Array();
-        this.running = false;
-        this.index = 0;
-        this.doneCb = new Action();
-    }
-    static get instance() {
-        if (ExecutorManager._instance == undefined)
-            ExecutorManager._instance = new ExecutorManager();
-        return ExecutorManager._instance;
-    }
-    pushExecutor(func, arg = undefined, record = false, resetFunc = undefined) {
-        let executor = new Executor();
-        executor.func = func;
-        executor.arg = arg;
-        executor.record = record;
-        executor.resetFunc = resetFunc;
-        this.push(executor);
-    }
-    /** 添加异步命令
-     * @param asyncFunc 异步函数
-     * @param arg 函数参数
-     * @param isAwait 是否等待(默认等待)
-     * @param record 记录角色数据
-     * @param resetFunc 恢复角色数据的操作
-     */
-    pushAsyncExecutor(asyncFunc, arg = undefined, isAwait = true, record = false, resetFunc = undefined, lockInput = true) {
-        let asyncExecutor = new AsyncExecutor();
-        asyncExecutor.asyncFunc = asyncFunc;
-        asyncExecutor.arg = arg;
-        asyncExecutor.isAwait = isAwait;
-        asyncExecutor.record = record;
-        asyncExecutor.lockInput = lockInput;
-        asyncExecutor.resetFunc = resetFunc;
-        this.push(asyncExecutor);
-    }
-    push(executor) {
-        this.executorList.push(executor);
-        this.run();
-    }
-    async run() {
-        if (this.running)
-            return;
-        this.running = true;
-        let executor = this.executorList[this.index];
-        UIService.getUI(LoadingPanel).show();
-        while (executor) {
-            try {
-                if (executor instanceof Executor) {
-                    executor.execute();
-                }
-                else {
-                    let asyncExecutor = executor;
-                    UIService.getUI(LoadingPanel).setLock(asyncExecutor.lockInput);
-                    if (asyncExecutor.isAwait) {
-                        await this.runExecute(asyncExecutor.execute.bind(asyncExecutor));
-                    }
-                    else {
-                        asyncExecutor.execute();
-                    }
-                }
-                // if (executor.record) Event.dispatchToLocal(EventType.Event_Record, executor.resetFunc);
-            }
-            catch (error) {
-                console.error(`命令执行异常:${error}`);
-            }
-            this.index++;
-            executor = this.executorList[this.index];
-        }
-        UIService.getUI(LoadingPanel).hide();
-        this.running = false;
-        this.doneCb.call();
-    }
-    //执行命令，10秒超时
-    runExecute(exeFunc) {
-        return new Promise(async (resolve) => {
-            let timeOut = setTimeout(() => {
-                console.error(`命令执行10秒超时`);
-                return resolve();
-            }, 10 * 1000);
-            await exeFunc();
-            clearTimeout(timeOut);
-            return resolve();
-        });
-    }
-    /**等待执行完毕 */
-    awaitDone() {
-        return new Promise((resolve) => {
-            if (!this.running)
-                return resolve();
-            const doneFunc = () => {
-                this.doneCb.remove(doneFunc, this);
-                return resolve();
-            };
-            this.doneCb.add(doneFunc, this);
-        });
-    }
-}
-ExecutorManager._instance = undefined;
-
-var foreign138 = /*#__PURE__*/Object.freeze({
-    __proto__: null,
-    default: ExecutorManager
-});
-
-/**
- * AUTO GENERATE BY UI EDITOR.
- * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
- * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
     get mDialogBg1() {
@@ -3910,7 +5558,7 @@ BubbleItem_Generate = __decorate([
 ], BubbleItem_Generate);
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign148 = /*#__PURE__*/Object.freeze({
+var foreign156 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -3920,7 +5568,7 @@ var foreign148 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
     get mIconImage() {
@@ -3993,7 +5641,7 @@ HUDItem_Generate = __decorate([
 ], HUDItem_Generate);
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign156 = /*#__PURE__*/Object.freeze({
+var foreign164 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -4003,7 +5651,7 @@ var foreign156 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
     get mVirtualJoystickPanel() {
@@ -4401,7 +6049,7 @@ HUDPanel_Generate = __decorate([
 ], HUDPanel_Generate);
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign157 = /*#__PURE__*/Object.freeze({
+var foreign165 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -4411,7 +6059,7 @@ var foreign157 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SavePanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let SavePanel_Generate = class SavePanel_Generate extends UIScript {
     get mSaveButton() {
@@ -4467,7 +6115,7 @@ SavePanel_Generate = __decorate([
 ], SavePanel_Generate);
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign177 = /*#__PURE__*/Object.freeze({
+var foreign186 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -4477,7 +6125,7 @@ var foreign177 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/ShareModule/SharePanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let SharePanel_Generate = class SharePanel_Generate extends UIScript {
     get mMainImage() {
@@ -4605,7 +6253,7 @@ SharePanel_Generate = __decorate([
 ], SharePanel_Generate);
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign178 = /*#__PURE__*/Object.freeze({
+var foreign187 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -4615,7 +6263,7 @@ var foreign178 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/AdPanel.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
 let AdPanel_Generate = class AdPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4691,7 +6339,7 @@ AdPanel_Generate = __decorate([
 ], AdPanel_Generate);
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign142 = /*#__PURE__*/Object.freeze({
+var foreign150 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -4701,7 +6349,7 @@ var foreign142 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/AdModule/TipsPanel.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
 let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
     get mCanvas() {
@@ -4782,7 +6430,7 @@ TipsPanel_Generate = __decorate([
 ], TipsPanel_Generate);
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign143 = /*#__PURE__*/Object.freeze({
+var foreign151 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -4861,7 +6509,7 @@ class TipsPanel extends TipsPanel_Generate$1 {
     }
 }
 
-var foreign82 = /*#__PURE__*/Object.freeze({
+var foreign83 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     TipsPanel: TipsPanel,
     default: AdPanel
@@ -5651,7 +7299,7 @@ class SavePanel extends SavePanel_Generate$1 {
     }
 }
 
-var foreign98 = /*#__PURE__*/Object.freeze({
+var foreign102 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     HUDItem: HUDItem,
     HUDModuleC: HUDModuleC,
@@ -5900,7 +7548,7 @@ class StateMeasure {
     }
 }
 
-var foreign83 = /*#__PURE__*/Object.freeze({
+var foreign87 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     Bubble: Bubble
 });
@@ -5913,7 +7561,7 @@ class ActionData {
 } //AssetId:96612
 // AssetId:168261
 
-var foreign85 = /*#__PURE__*/Object.freeze({
+var foreign89 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     ActionData: ActionData,
     ChatData: ChatData,
@@ -5925,7 +7573,7 @@ var foreign85 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
     get mOpenChatCanvas() {
@@ -6254,7 +7902,7 @@ ChatPanel_Generate = __decorate([
 ], ChatPanel_Generate);
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign151 = /*#__PURE__*/Object.freeze({
+var foreign159 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -6264,7 +7912,7 @@ var foreign151 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/GuidePanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
     get mMainBgImage_0() {
@@ -6392,7 +8040,7 @@ GuidePanel_Generate = __decorate([
 ], GuidePanel_Generate);
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign158 = /*#__PURE__*/Object.freeze({
+var foreign166 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -6402,7 +8050,7 @@ var foreign158 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/InteractionModule/OnClickPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
     get mBgImage() {
@@ -6457,7 +8105,7 @@ OnClickPanel_Generate = __decorate([
 ], OnClickPanel_Generate);
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign159 = /*#__PURE__*/Object.freeze({
+var foreign167 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -6515,7 +8163,7 @@ __decorate([
     Decorator.persistence()
 ], RankData.prototype, "time", void 0);
 
-var foreign118 = /*#__PURE__*/Object.freeze({
+var foreign123 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     RankData: RankData,
     RoomData: RoomData,
@@ -6831,7 +8479,7 @@ __decorate([
     Decorator.noReply()
 ], RankModuleS.prototype, "net_setFirstModel", null);
 
-var foreign120 = /*#__PURE__*/Object.freeze({
+var foreign125 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankModuleS
 });
@@ -7456,7 +9104,7 @@ __decorate([
     Decorator.persistence()
 ], InteractionData.prototype, "guideStep", void 0);
 
-var foreign99 = /*#__PURE__*/Object.freeze({
+var foreign103 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     GuidePanel: GuidePanel,
     InteractionData: InteractionData,
@@ -7472,7 +9120,7 @@ var foreign99 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
@@ -7540,7 +9188,7 @@ ActionItem_Generate = __decorate([
 ], ActionItem_Generate);
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign144 = /*#__PURE__*/Object.freeze({
+var foreign152 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -7584,7 +9232,7 @@ class ActionItem extends ActionItem_Generate$1 {
     }
 }
 
-var foreign88 = /*#__PURE__*/Object.freeze({
+var foreign92 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionItem
 });
@@ -7594,7 +9242,7 @@ var foreign88 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7650,7 +9298,7 @@ ActionTabItem_Generate = __decorate([
 ], ActionTabItem_Generate);
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign145 = /*#__PURE__*/Object.freeze({
+var foreign153 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -7712,7 +9360,7 @@ class ActionTabItem extends ActionTabItem_Generate$1 {
     }
 }
 
-var foreign89 = /*#__PURE__*/Object.freeze({
+var foreign93 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ActionTabItem
 });
@@ -7722,7 +9370,7 @@ var foreign89 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let BagItem_Generate = class BagItem_Generate extends UIScript {
     get mIconImage() {
@@ -7789,7 +9437,7 @@ BagItem_Generate = __decorate([
 ], BagItem_Generate);
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign146 = /*#__PURE__*/Object.freeze({
+var foreign154 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -7861,7 +9509,7 @@ class BagItem extends BagItem_Generate$1 {
     }
 }
 
-var foreign90 = /*#__PURE__*/Object.freeze({
+var foreign94 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagItem
 });
@@ -7871,7 +9519,7 @@ var foreign90 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagTabItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
     get mClickButton() {
@@ -7927,7 +9575,7 @@ BagTabItem_Generate = __decorate([
 ], BagTabItem_Generate);
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign147 = /*#__PURE__*/Object.freeze({
+var foreign155 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -7992,7 +9640,7 @@ class BagTabItem extends BagTabItem_Generate$1 {
     }
 }
 
-var foreign91 = /*#__PURE__*/Object.freeze({
+var foreign95 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: BagTabItem
 });
@@ -8002,7 +9650,7 @@ var foreign91 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem1.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
     get mClickButton() {
@@ -8052,7 +9700,7 @@ ChatItem1_Generate = __decorate([
 ], ChatItem1_Generate);
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign149 = /*#__PURE__*/Object.freeze({
+var foreign157 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -8095,7 +9743,7 @@ class ChatItem1 extends ChatItem1_Generate$1 {
     }
 }
 
-var foreign92 = /*#__PURE__*/Object.freeze({
+var foreign96 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem1
 });
@@ -8105,7 +9753,7 @@ var foreign92 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatItem2.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.09
  */
 let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
     get mClickButton() {
@@ -8155,7 +9803,7 @@ ChatItem2_Generate = __decorate([
 ], ChatItem2_Generate);
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign150 = /*#__PURE__*/Object.freeze({
+var foreign158 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -8200,7 +9848,7 @@ class ChatItem2 extends ChatItem2_Generate$1 {
     }
 }
 
-var foreign93 = /*#__PURE__*/Object.freeze({
+var foreign97 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatItem2
 });
@@ -8210,7 +9858,7 @@ var foreign93 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ExpressionItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
     get mClickButton() {
@@ -8265,7 +9913,7 @@ ExpressionItem_Generate = __decorate([
 ], ExpressionItem_Generate);
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign153 = /*#__PURE__*/Object.freeze({
+var foreign161 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -8308,7 +9956,7 @@ class ExpressionItem extends ExpressionItem_Generate$1 {
     }
 }
 
-var foreign96 = /*#__PURE__*/Object.freeze({
+var foreign100 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ExpressionItem
 });
@@ -8665,7 +10313,7 @@ class ChatPanel extends ChatPanel_Generate$1 {
     }
 }
 
-var foreign94 = /*#__PURE__*/Object.freeze({
+var foreign98 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ChatPanel
 });
@@ -8675,7 +10323,7 @@ var foreign94 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/DanMuPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let DanMuPanel_Generate = class DanMuPanel_Generate extends UIScript {
     get mDanMuCanvas() {
@@ -8720,7 +10368,7 @@ DanMuPanel_Generate = __decorate([
 ], DanMuPanel_Generate);
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign152 = /*#__PURE__*/Object.freeze({
+var foreign160 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -8804,7 +10452,7 @@ class DanMuPanel extends DanMuPanel_Generate$1 {
     }
 }
 
-var foreign95 = /*#__PURE__*/Object.freeze({
+var foreign99 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: DanMuPanel
 });
@@ -9378,7 +11026,7 @@ const danceInteracts = [
     { npcIds: ["1C528004", "2C9FC93B"], danceIds: ["122808", "122810"] },
 ];
 
-var foreign86 = /*#__PURE__*/Object.freeze({
+var foreign90 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     DanmuSyncClient: DanmuSyncClient,
     DanmuSyncServer: DanmuSyncServer,
@@ -9460,7 +11108,7 @@ Buff = __decorate([
 ], Buff);
 var Buff$1 = Buff;
 
-var foreign84 = /*#__PURE__*/Object.freeze({
+var foreign88 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Buff$1
 });
@@ -10273,7 +11921,7 @@ class PlayerInteract {
     }
 }
 
-var foreign87 = /*#__PURE__*/Object.freeze({
+var foreign91 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     PlayerBag: PlayerBag,
     PlayerGlide: PlayerGlide,
@@ -10533,7 +12181,7 @@ var Tab3Type;
     Tab3Type[Tab3Type["Tab3_Trailing_Collection"] = 2021] = "Tab3_Trailing_Collection";
 })(Tab3Type || (Tab3Type = {}));
 
-var foreign101 = /*#__PURE__*/Object.freeze({
+var foreign105 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AssetIdInfoData: AssetIdInfoData,
     ColorPickTab2Data: ColorPickTab2Data,
@@ -10771,7 +12419,7 @@ class CameraData {
     }
 }
 
-var foreign132 = /*#__PURE__*/Object.freeze({
+var foreign139 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: CameraManager$1
 });
@@ -11269,6 +12917,7 @@ Mall.removableTabIds = [
     Tab3Type.Tab3_ScienceFictionStyling_Suit,
     Tab3Type.Tab3_AncientMolding_Suit,
     Tab2Type.Tab2_Pet,
+    Tab1Type.Tab1_Clothing,
 ];
 Mall.slotTabIds = [
     Tab3Type.Tab3_LeftHand,
@@ -11361,7 +13010,7 @@ Mall.headTabIds = [
     Tab3Type.Tab3_BackHair,
 ];
 
-var foreign100 = /*#__PURE__*/Object.freeze({
+var foreign104 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: Mall
 });
@@ -11371,7 +13020,7 @@ var foreign100 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
     get mSaveCanvas() {
@@ -11527,7 +13176,7 @@ ColorPickPanel_Generate = __decorate([
 ], ColorPickPanel_Generate);
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign160 = /*#__PURE__*/Object.freeze({
+var foreign168 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11537,7 +13186,7 @@ var foreign160 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab1.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let ColorPickTab1_Generate = class ColorPickTab1_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -11583,7 +13232,7 @@ ColorPickTab1_Generate = __decorate([
 ], ColorPickTab1_Generate);
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign161 = /*#__PURE__*/Object.freeze({
+var foreign169 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11602,7 +13251,7 @@ class ColorPickTab1 extends ColorPickTab1_Generate$1 {
     }
 }
 
-var foreign105 = /*#__PURE__*/Object.freeze({
+var foreign109 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab1
 });
@@ -11612,7 +13261,7 @@ var foreign105 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab2.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -11692,7 +13341,7 @@ ColorPickTab2_Generate = __decorate([
 ], ColorPickTab2_Generate);
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign162 = /*#__PURE__*/Object.freeze({
+var foreign170 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -11767,7 +13416,7 @@ class ColorPickTab2 extends ColorPickTab2_Generate$1 {
     }
 }
 
-var foreign106 = /*#__PURE__*/Object.freeze({
+var foreign110 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab2
 });
@@ -11777,7 +13426,7 @@ var foreign106 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/ColorPickTab3.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
     get mBgImage() {
@@ -11838,7 +13487,7 @@ ColorPickTab3_Generate = __decorate([
 ], ColorPickTab3_Generate);
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign163 = /*#__PURE__*/Object.freeze({
+var foreign171 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -11901,7 +13550,7 @@ class ColorPickTab3 extends ColorPickTab3_Generate$1 {
     }
 }
 
-var foreign107 = /*#__PURE__*/Object.freeze({
+var foreign111 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickTab3
 });
@@ -11977,7 +13626,7 @@ class TouchScript {
     }
 }
 
-var foreign135 = /*#__PURE__*/Object.freeze({
+var foreign143 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     get Enums () { return Enums; },
     TouchScript: TouchScript
@@ -11988,7 +13637,7 @@ var foreign135 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallPanel_Generate = class MallPanel_Generate extends UIScript {
     get mTouchImage() {
@@ -12201,7 +13850,7 @@ MallPanel_Generate = __decorate([
 ], MallPanel_Generate);
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign168 = /*#__PURE__*/Object.freeze({
+var foreign177 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -12211,7 +13860,7 @@ var foreign168 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
     get mBgImage() {
@@ -12291,7 +13940,7 @@ MallItem_Big_Generate = __decorate([
 ], MallItem_Big_Generate);
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign164 = /*#__PURE__*/Object.freeze({
+var foreign172 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -12424,7 +14073,7 @@ class MallItem_Big extends MallItem_Big_Generate$1 {
     }
 }
 
-var foreign108 = /*#__PURE__*/Object.freeze({
+var foreign112 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Big
 });
@@ -12433,8 +14082,199 @@ var foreign108 = /*#__PURE__*/Object.freeze({
  * AUTO GENERATE BY UI EDITOR.
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
+ * UI: UI/module/MallModule/MallItem_Character.ui
+ * TIME: 2025.04.02-20.05.08
+ */
+let MallItem_Character_Generate = class MallItem_Character_Generate extends UIScript {
+    get mSelectButton() {
+        if (!this.mSelectButton_Internal && this.uiWidgetBase) {
+            this.mSelectButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mSelectButton');
+        }
+        return this.mSelectButton_Internal;
+    }
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBgImage');
+        }
+        return this.mBgImage_Internal;
+    }
+    get mIconCanvas() {
+        if (!this.mIconCanvas_Internal && this.uiWidgetBase) {
+            this.mIconCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconCanvas');
+        }
+        return this.mIconCanvas_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconCanvas/mIconImage');
+        }
+        return this.mIconImage_Internal;
+    }
+    get mDeleteButton() {
+        if (!this.mDeleteButton_Internal && this.uiWidgetBase) {
+            this.mDeleteButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mIconCanvas/mDeleteButton');
+        }
+        return this.mDeleteButton_Internal;
+    }
+    get mAddCanvas() {
+        if (!this.mAddCanvas_Internal && this.uiWidgetBase) {
+            this.mAddCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mAddCanvas');
+        }
+        return this.mAddCanvas_Internal;
+    }
+    get mAddBgTextBlock() {
+        if (!this.mAddBgTextBlock_Internal && this.uiWidgetBase) {
+            this.mAddBgTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mAddCanvas/mAddBgTextBlock');
+        }
+        return this.mAddBgTextBlock_Internal;
+    }
+    get mAddTextBlock() {
+        if (!this.mAddTextBlock_Internal && this.uiWidgetBase) {
+            this.mAddTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mAddCanvas/mAddTextBlock');
+        }
+        return this.mAddTextBlock_Internal;
+    }
+    onAwake() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        //按钮添加点击
+        //按钮添加点击
+        this.mSelectButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
+        });
+        this.mSelectButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        this.mDeleteButton.onClicked.add(() => {
+            Event.dispatchToLocal("PlayButtonClick", "mDeleteButton");
+        });
+        this.mDeleteButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+        //按钮多语言
+        //文本多语言
+        this.initLanguage(this.mAddBgTextBlock);
+        this.initLanguage(this.mAddTextBlock);
+        //文本多语言
+    }
+    /*初始化多语言*/
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) { }
+    ;
+    /*显示panel*/
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    /*隐藏panel*/
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+MallItem_Character_Generate = __decorate([
+    UIBind('UI/module/MallModule/MallItem_Character.ui')
+], MallItem_Character_Generate);
+var MallItem_Character_Generate$1 = MallItem_Character_Generate;
+
+var foreign173 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: MallItem_Character_Generate$1
+});
+
+class MallItem_Character extends MallItem_Character_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.mallModuleC = null;
+        this.tabType = TabType.None;
+        this.tabId = 0;
+        this.assetId = null;
+        this.isSelect = false;
+    }
+    get getMallModuleC() {
+        if (!this.mallModuleC) {
+            this.mallModuleC = ModuleService.getModule(MallModuleC);
+        }
+        return this.mallModuleC;
+    }
+    /**
+     * 构造UI文件成功后，在合适的时机最先初始化一次
+     */
+    onStart() {
+        //设置能否每帧触发onUpdate
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+        this.bindAction();
+    }
+    initUI() {
+        this.mIconImage.imageGuid = `32115`;
+        this.updateSelectStateUI();
+    }
+    bindButton() {
+        this.mSelectButton.onClicked.add(this.addItemButton.bind(this));
+        this.mDeleteButton.onClicked.add(this.addDeleteButton.bind(this));
+    }
+    bindAction() {
+        this.getMallModuleC.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+    }
+    addItemButton() {
+        this.getMallModuleC.onSelectItemAction.call(this.tabType, this.tabId, this.assetId);
+    }
+    addDeleteButton() {
+        this.getMallModuleC.onDeleteItemAction.call(this.tabType, this.tabId, this.assetId);
+    }
+    initItem(tabType, tabId, assetId, length) {
+        this.tabType = tabType;
+        this.tabId = tabId;
+        this.assetId = assetId;
+        switch (tabId) {
+            case Tab1Type.Tab1_Collection:
+                if (assetId == `0`) {
+                    Utils.setWidgetVisibility(this.mIconCanvas, mw.SlateVisibility.Collapsed);
+                    Utils.setWidgetVisibility(this.mAddCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+                    this.mAddTextBlock.text = StringUtil.format(GameConfig.Language.Text_SaveCurrentCharacter.Value, length, GlobalData.savaMaxCount);
+                }
+                else {
+                    Utils.setWidgetVisibility(this.mIconCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+                    Utils.setWidgetVisibility(this.mAddCanvas, mw.SlateVisibility.Collapsed);
+                    this.mIconImage.imageInfo.setByAssetIcon(this.getMallModuleC.getCharacterDataUpAssetIdByKey(assetId), mw.AssetIconSize.Icon_128px);
+                }
+                break;
+        }
+        this.updateSelectState(false);
+    }
+    addSelectItemAction(tabType, tabId, assetId) {
+        if (this.tabType != tabType || this.tabId != tabId)
+            return;
+        this.updateSelectState(this.assetId == assetId);
+    }
+    updateSelectState(isSelect) {
+        if (this.isSelect == isSelect)
+            return;
+        this.isSelect = isSelect;
+        this.updateSelectStateUI();
+    }
+    updateSelectStateUI() {
+        this.mSelectButton.renderOpacity = this.isSelect ? 1 : 0;
+    }
+}
+
+var foreign113 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: MallItem_Character
+});
+
+/**
+ * AUTO GENERATE BY UI EDITOR.
+ * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
+ * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Color.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
     get mBgImage() {
@@ -12495,7 +14335,7 @@ MallItem_Color_Generate = __decorate([
 ], MallItem_Color_Generate);
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign165 = /*#__PURE__*/Object.freeze({
+var foreign174 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12573,7 +14413,7 @@ class MallItem_Color extends MallItem_Color_Generate$1 {
     }
 }
 
-var foreign109 = /*#__PURE__*/Object.freeze({
+var foreign114 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Color
 });
@@ -12583,7 +14423,7 @@ var foreign109 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Self.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
     get mBgImage() {
@@ -12651,7 +14491,7 @@ MallItem_Self_Generate = __decorate([
 ], MallItem_Self_Generate);
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign166 = /*#__PURE__*/Object.freeze({
+var foreign175 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -12706,7 +14546,7 @@ class MallItem_Self extends MallItem_Self_Generate$1 {
     }
 }
 
-var foreign110 = /*#__PURE__*/Object.freeze({
+var foreign115 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Self
 });
@@ -12716,7 +14556,7 @@ var foreign110 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Small.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
     get mBgImage() {
@@ -12812,7 +14652,7 @@ MallItem_Small_Generate = __decorate([
 ], MallItem_Small_Generate);
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign167 = /*#__PURE__*/Object.freeze({
+var foreign176 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -13118,7 +14958,7 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
     }
 }
 
-var foreign111 = /*#__PURE__*/Object.freeze({
+var foreign116 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallItem_Small
 });
@@ -13128,7 +14968,7 @@ var foreign111 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab1.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallTab1_Generate = class MallTab1_Generate extends UIScript {
     get mTab1Canvas() {
@@ -13202,7 +15042,7 @@ MallTab1_Generate = __decorate([
 ], MallTab1_Generate);
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign169 = /*#__PURE__*/Object.freeze({
+var foreign178 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -13270,7 +15110,7 @@ class MallTab1 extends MallTab1_Generate$1 {
     }
 }
 
-var foreign113 = /*#__PURE__*/Object.freeze({
+var foreign118 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab1
 });
@@ -13280,7 +15120,7 @@ var foreign113 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab2.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallTab2_Generate = class MallTab2_Generate extends UIScript {
     get mTab2Canvas() {
@@ -13342,7 +15182,7 @@ MallTab2_Generate = __decorate([
 ], MallTab2_Generate);
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign170 = /*#__PURE__*/Object.freeze({
+var foreign179 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -13408,7 +15248,7 @@ class MallTab2 extends MallTab2_Generate$1 {
     }
 }
 
-var foreign114 = /*#__PURE__*/Object.freeze({
+var foreign119 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab2
 });
@@ -13418,7 +15258,7 @@ var foreign114 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTab3.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallTab3_Generate = class MallTab3_Generate extends UIScript {
     get mTab3Canvas() {
@@ -13480,7 +15320,7 @@ MallTab3_Generate = __decorate([
 ], MallTab3_Generate);
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign171 = /*#__PURE__*/Object.freeze({
+var foreign180 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -13546,7 +15386,7 @@ class MallTab3 extends MallTab3_Generate$1 {
     }
 }
 
-var foreign115 = /*#__PURE__*/Object.freeze({
+var foreign120 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTab3
 });
@@ -13568,6 +15408,7 @@ class MallPanel extends MallPanel_Generate$1 {
         this.mallItem_Color = [];
         this.mallItem_Small = [];
         this.mallItem_Big = [];
+        this.mallItem_Character = [];
         this.mallItemAssetIds = [];
         this.mallItemMap = new Map();
         this.mallItemHasBig = [
@@ -13583,6 +15424,7 @@ class MallPanel extends MallPanel_Generate$1 {
             Tab3Type.Tab3_AncientMolding_Suit
         ];
         this.mallItemHasColor = [Tab2Type.Tab2_SkinTone];
+        this.mallItemHasCharacter = [Tab1Type.Tab1_Collection];
         this.currentConfigId = 0;
         this.mallTab1s = [];
         this.mallTab2s = [];
@@ -14190,6 +16032,15 @@ class MallPanel extends MallPanel_Generate$1 {
     }
     initTab1Item() {
         this.clearMallItemData();
+        switch (this.tab1Id) {
+            case Tab1Type.Tab1_Collection:
+                this.mallItemAssetIds.push(`0`);
+                let keys = this.getMallModuleC.getCharacterDataKeys;
+                if (keys && keys.length > 0) {
+                    this.mallItemAssetIds = this.mallItemAssetIds.concat(keys);
+                }
+                break;
+        }
         this.currentConfigId = this.tab1Id;
         this.initMallItem();
     }
@@ -14198,42 +16049,66 @@ class MallPanel extends MallPanel_Generate$1 {
             Notice.showDownNotice(GameConfig.Language.Text_ThisFeatureIsNotEnabled.Value);
         }
     }
-    hideMallItemSmallAndBig() {
+    hideOtherMallItemNoHasColor() {
         this.mallItem_Small.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
         this.mallItem_Big.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
+        this.mallItem_Character.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
     }
-    hideMallItemSamllAndColor() {
+    hideOtherMallItemNoHasBig() {
         this.mallItem_Small.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
         this.mallItem_Color.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
+        this.mallItem_Character.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
     }
-    hideMallItemBigAndColor() {
+    hideOtherMallItemNoHasSmall() {
         this.mallItem_Big.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
         this.mallItem_Color.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
+        this.mallItem_Character.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
+    }
+    hideOtherMallItemNoHasCharacter() {
+        this.mallItem_Color.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
+        this.mallItem_Small.forEach((value) => {
+            Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
+        });
+        this.mallItem_Big.forEach((value) => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
         });
     }
     initMallItem() {
         this.thisFeatureIsNotEnabled();
         if (this.mallItemHasBig.includes(this.currentConfigId)) {
-            this.hideMallItemSamllAndColor();
+            this.hideOtherMallItemNoHasBig();
             this.initMallItemBig();
         }
         else if (this.mallItemHasColor.includes(this.currentConfigId)) {
-            this.hideMallItemSmallAndBig();
+            this.hideOtherMallItemNoHasColor();
             this.initMallItemColor();
         }
+        else if (this.mallItemHasCharacter.includes(this.currentConfigId)) {
+            this.hideOtherMallItemNoHasCharacter();
+            this.initMallItemCharacter();
+        }
         else {
-            this.hideMallItemBigAndColor();
+            this.hideOtherMallItemNoHasSmall();
             this.initMallItemSmall();
         }
         this.checkMallItemState();
@@ -14314,6 +16189,32 @@ class MallPanel extends MallPanel_Generate$1 {
             }
             for (let i = this.mallItemAssetIds.length; i < this.mallItem_Color.length; ++i) {
                 Utils.setWidgetVisibility(this.mallItem_Color[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+    }
+    initMallItemCharacter() {
+        if (this.mallItemAssetIds.length > this.mallItem_Character.length) {
+            for (let i = 0; i < this.mallItem_Character.length; ++i) {
+                this.mallItem_Character[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i], this.mallItemAssetIds.length - 1);
+                Utils.setWidgetVisibility(this.mallItem_Character[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Character[i]);
+            }
+            for (let i = this.mallItem_Character.length; i < this.mallItemAssetIds.length; ++i) {
+                let mallItem_Character = UIService.create(MallItem_Character);
+                mallItem_Character.initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i], this.mallItemAssetIds.length - 1);
+                this.mItemContentCanvas.addChild(mallItem_Character.uiObject);
+                this.mallItem_Character.push(mallItem_Character);
+                this.mallItemMap.set(this.mallItemAssetIds[i], mallItem_Character);
+            }
+        }
+        else {
+            for (let i = 0; i < this.mallItemAssetIds.length; ++i) {
+                this.mallItem_Character[i].initItem(this.currentTabType, this.currentConfigId, this.mallItemAssetIds[i], this.mallItemAssetIds.length - 1);
+                Utils.setWidgetVisibility(this.mallItem_Character[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+                this.mallItemMap.set(this.mallItemAssetIds[i], this.mallItem_Character[i]);
+            }
+            for (let i = this.mallItemAssetIds.length; i < this.mallItem_Character.length; ++i) {
+                Utils.setWidgetVisibility(this.mallItem_Character[i].uiObject, mw.SlateVisibility.Collapsed);
             }
         }
     }
@@ -14534,7 +16435,7 @@ class MallPanel extends MallPanel_Generate$1 {
     }
 }
 
-var foreign112 = /*#__PURE__*/Object.freeze({
+var foreign117 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallPanel
 });
@@ -14724,7 +16625,7 @@ class ColorPickPanel extends ColorPickPanel_Generate$1 {
     }
 }
 
-var foreign104 = /*#__PURE__*/Object.freeze({
+var foreign108 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: ColorPickPanel
 });
@@ -14734,7 +16635,7 @@ var foreign104 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallTipsPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
     get mMainImage() {
@@ -14827,7 +16728,7 @@ MallTipsPanel_Generate = __decorate([
 ], MallTipsPanel_Generate);
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign172 = /*#__PURE__*/Object.freeze({
+var foreign181 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -14877,7 +16778,7 @@ class MallTipsPanel extends MallTipsPanel_Generate$1 {
     }
 }
 
-var foreign116 = /*#__PURE__*/Object.freeze({
+var foreign121 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallTipsPanel
 });
@@ -14889,10 +16790,12 @@ class MallModuleC extends ModuleC {
         this.mallPanel = null;
         this.colorPickPanel = null;
         this.mallTipsPanel = null;
+        this.characterModuleC = null;
         this.onSelectTab1Action = new Action1();
         this.onSelectTab2Action = new Action1();
         this.onSelectTab3Action = new Action1();
         this.onSelectItemAction = new Action3();
+        this.onDeleteItemAction = new Action3();
         this.onOpenColorPickAction = new Action2();
         this.onResetAction = new Action();
         this.onSaveAction = new Action();
@@ -14906,6 +16809,10 @@ class MallModuleC extends ModuleC {
         this.onCloseMallItemSelfAction = new Action2();
         this.usingAssetIdMap = new Map();
         this.usingAssetIds = [];
+        this.delaySwitchCameraTabIds = [
+            Tab1Type.Tab1_Clothing,
+            Tab2Type.Tab2_BodyType
+        ];
         this.isNeedSaveCharacter = false;
         this.decorationIndexMap = new Map();
         this.onSwitchCameraAction = new Action1();
@@ -14946,6 +16853,12 @@ class MallModuleC extends ModuleC {
         }
         return this.mallTipsPanel;
     }
+    get getCharacterModuleC() {
+        if (!this.characterModuleC) {
+            this.characterModuleC = ModuleService.getModule(CharacterModuleC);
+        }
+        return this.characterModuleC;
+    }
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     onStart() {
         this.bindAction();
@@ -14958,6 +16871,7 @@ class MallModuleC extends ModuleC {
     bindAction() {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
         this.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+        this.onDeleteItemAction.add(this.addDeleteItemAction.bind(this));
         this.onOpenColorPickAction.add(this.addOpenColorPickAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
         this.onCloseMallPanelAction.add(this.addCloseAction.bind(this));
@@ -15145,7 +17059,7 @@ class MallModuleC extends ModuleC {
             return;
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
-            if (!Mall.isRemovableTabId(tabId))
+            if (!Mall.isRemovableTabId(tabId) || assetId == `0`)
                 return;
             // if (Mall.isClothingTabId(tabId)) {
             //     this.refreshUsingCharacterDataByTabId(tabId);
@@ -15156,9 +17070,26 @@ class MallModuleC extends ModuleC {
             this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall.isSlot(tabId));
         });
     }
+    addDeleteItemAction(tabType, tabId, assetId) {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.getCharacterModuleC.deleteCharacterData(assetId, () => {
+                this.getMallPanel.initTab1Item();
+            });
+        });
+    }
     async changeCharacter(tabId, assetId) {
         await this.localPlayer.character.asyncReady();
         switch (tabId) {
+            case Tab1Type.Tab1_Collection:
+                await this.getCharacterModuleC.useCharacterData(assetId, (isAdd) => {
+                    if (isAdd) {
+                        this.getMallPanel.initTab1Item();
+                    }
+                    else {
+                        this.updateMallPanelBySomatotype();
+                    }
+                });
+                break;
             case Tab2Type.Tab2_BodyType:
                 let bodyTypeElement = GameConfig.BodyType.getElement(assetId);
                 if (!bodyTypeElement || bodyTypeElement?.Scale == 0)
@@ -15561,7 +17492,7 @@ class MallModuleC extends ModuleC {
         await this.localPlayer.character.asyncReady();
         this.isNeedSaveCharacter = true;
         // this.localPlayer.character.syncDescription();
-        if (tabId == Tab2Type.Tab2_BodyType) {
+        if (this.delaySwitchCameraTabIds.includes(tabId)) {
             await TimeUtil.delaySecond(1);
             this.onSwitchCameraAction.call(2);
         }
@@ -15734,6 +17665,8 @@ class MallModuleC extends ModuleC {
     async getCharacterAssetId(configId) {
         await this.localPlayer.character.asyncReady();
         switch (configId) {
+            case Tab1Type.Tab1_Collection:
+                return this.getCharacterModuleC.getCharacterDataKey();
             case Tab2Type.Tab2_BodyType:
                 let heightRatio = this.localPlayer.character.description.advance.bodyFeatures.body.height;
                 let scale = heightRatio.toFixed(1);
@@ -16096,6 +18029,14 @@ class MallModuleC extends ModuleC {
                 this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
             Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
         });
+    }
+    updateMallPanelBySomatotype() {
+        let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
+        this.initUsingCharacterData();
+        if (mw.UIService.getUI(MallPanel, false)?.visible) {
+            this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            this.onSelectTab1Action.call(3);
+        }
     }
     openColorPickPanel(tabId) {
         this.colorPickTabId = tabId;
@@ -16674,9 +18615,15 @@ class MallModuleC extends ModuleC {
         this.isNeedSaveColor = true;
         this.isNeedSaveCharacter = true;
     }
+    get getCharacterDataKeys() {
+        return this.getCharacterModuleC.getCharacterDataKeys;
+    }
+    getCharacterDataUpAssetIdByKey(key) {
+        return this.getCharacterModuleC.getCharacterDataUpAssetIdByKey(key);
+    }
 }
 
-var foreign102 = /*#__PURE__*/Object.freeze({
+var foreign106 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallModuleC
 });
@@ -16687,7 +18634,7 @@ class MallModuleS extends ModuleS {
     }
 }
 
-var foreign103 = /*#__PURE__*/Object.freeze({
+var foreign107 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: MallModuleS
 });
@@ -16838,7 +18785,7 @@ class NavigationModuleS extends ModuleS {
     }
 }
 
-var foreign117 = /*#__PURE__*/Object.freeze({
+var foreign122 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     NavigationConfig: NavigationConfig,
     NavigationModel: NavigationModel,
@@ -16851,7 +18798,7 @@ var foreign117 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
     get mBgImage() {
@@ -16940,7 +18887,7 @@ TryOnItem_Generate = __decorate([
 ], TryOnItem_Generate);
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign181 = /*#__PURE__*/Object.freeze({
+var foreign190 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -16950,7 +18897,7 @@ var foreign181 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let TryOnPanel_Generate = class TryOnPanel_Generate extends UIScript {
     get mLeftCanvas() {
@@ -17098,7 +19045,7 @@ TryOnPanel_Generate = __decorate([
 ], TryOnPanel_Generate);
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign182 = /*#__PURE__*/Object.freeze({
+var foreign191 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -17108,7 +19055,7 @@ var foreign182 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SetModule/SetPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
     get mBgImage() {
@@ -17416,7 +19363,7 @@ SetPanel_Generate = __decorate([
 ], SetPanel_Generate);
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign176 = /*#__PURE__*/Object.freeze({
+var foreign185 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -17545,7 +19492,7 @@ class SetPanel extends SetPanel_Generate$1 {
     }
 }
 
-var foreign125 = /*#__PURE__*/Object.freeze({
+var foreign130 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SetPanel
 });
@@ -17824,7 +19771,7 @@ __decorate([
     Decorator.noReply()
 ], SetModuleS.prototype, "net_reset", null);
 
-var foreign124 = /*#__PURE__*/Object.freeze({
+var foreign129 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SetData: SetData,
     SetModuleC: SetModuleC,
@@ -18299,7 +20246,7 @@ class TryOnConfigData {
     }
 }
 
-var foreign131 = /*#__PURE__*/Object.freeze({
+var foreign136 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     TryOnConfigData: TryOnConfigData,
     TryOnData: TryOnData,
@@ -18314,7 +20261,7 @@ var foreign131 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let RankPanel_Generate = class RankPanel_Generate extends UIScript {
     get mOpenRoomRankImage() {
@@ -18496,7 +20443,7 @@ RankPanel_Generate = __decorate([
 ], RankPanel_Generate);
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign173 = /*#__PURE__*/Object.freeze({
+var foreign182 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -18506,7 +20453,7 @@ var foreign173 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let RoomItem_Generate = class RoomItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -18566,7 +20513,7 @@ RoomItem_Generate = __decorate([
 ], RoomItem_Generate);
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign174 = /*#__PURE__*/Object.freeze({
+var foreign183 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -18591,7 +20538,7 @@ class RoomItem extends RoomItem_Generate$1 {
     }
 }
 
-var foreign122 = /*#__PURE__*/Object.freeze({
+var foreign127 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RoomItem
 });
@@ -18601,7 +20548,7 @@ var foreign122 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let WorldItem_Generate = class WorldItem_Generate extends UIScript {
     get mRankTextBlock() {
@@ -18661,7 +20608,7 @@ WorldItem_Generate = __decorate([
 ], WorldItem_Generate);
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign175 = /*#__PURE__*/Object.freeze({
+var foreign184 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -18686,7 +20633,7 @@ class WorldItem extends WorldItem_Generate$1 {
     }
 }
 
-var foreign123 = /*#__PURE__*/Object.freeze({
+var foreign128 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: WorldItem
 });
@@ -18838,7 +20785,7 @@ class RankPanel extends RankPanel_Generate$1 {
     }
 }
 
-var foreign121 = /*#__PURE__*/Object.freeze({
+var foreign126 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankPanel
 });
@@ -19052,7 +20999,7 @@ class RankModuleC extends ModuleC {
     }
 }
 
-var foreign119 = /*#__PURE__*/Object.freeze({
+var foreign124 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: RankModuleC
 });
@@ -19101,7 +21048,7 @@ class SignInConfigData {
     }
 }
 
-var foreign126 = /*#__PURE__*/Object.freeze({
+var foreign131 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     SignInConfigData: SignInConfigData,
     SignInUserData: SignInUserData,
@@ -19113,7 +21060,7 @@ var foreign126 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
     get mTitleTextBlock() {
@@ -19188,7 +21135,7 @@ SignInPanel_Generate = __decorate([
 ], SignInPanel_Generate);
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign180 = /*#__PURE__*/Object.freeze({
+var foreign189 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -19198,7 +21145,7 @@ var foreign180 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.09
  */
 let SignInItem_Generate = class SignInItem_Generate extends UIScript {
     get mIconImage() {
@@ -19274,7 +21221,7 @@ SignInItem_Generate = __decorate([
 ], SignInItem_Generate);
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign179 = /*#__PURE__*/Object.freeze({
+var foreign188 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -19336,7 +21283,7 @@ class SignInItem extends SignInItem_Generate$1 {
     }
 }
 
-var foreign129 = /*#__PURE__*/Object.freeze({
+var foreign134 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInItem
 });
@@ -19382,7 +21329,7 @@ class SignInPanel extends SignInPanel_Generate$1 {
     }
 }
 
-var foreign130 = /*#__PURE__*/Object.freeze({
+var foreign135 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInPanel
 });
@@ -19517,7 +21464,7 @@ class SignInModuleC extends ModuleC {
     }
 }
 
-var foreign127 = /*#__PURE__*/Object.freeze({
+var foreign132 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInModuleC
 });
@@ -19563,7 +21510,7 @@ class SignInModuleS extends ModuleS {
     }
 }
 
-var foreign128 = /*#__PURE__*/Object.freeze({
+var foreign133 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SignInModuleS
 });
@@ -19600,6 +21547,7 @@ let GameStart = class GameStart extends Script {
         ModuleService.registerModule(SignInModuleS, SignInModuleC, SignInData);
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
         ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
+        ModuleService.registerModule(CharacterModuleS, CharacterModuleC, CharacterData);
     }
     /**
      * 周期函数 每帧执行
@@ -19688,7 +21636,7 @@ GameStart = __decorate([
 ], GameStart);
 var GameStart$1 = GameStart;
 
-var foreign80 = /*#__PURE__*/Object.freeze({
+var foreign81 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GameStart$1
 });
@@ -19698,7 +21646,7 @@ var foreign80 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMHUD.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let GMHUD_Generate = class GMHUD_Generate extends UIScript {
     get oKbutton() {
@@ -19778,7 +21726,7 @@ GMHUD_Generate = __decorate([
 ], GMHUD_Generate);
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign154 = /*#__PURE__*/Object.freeze({
+var foreign162 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -19788,7 +21736,7 @@ var foreign154 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/GMModule/GMItem.ui
- * TIME: 2025.03.08-12.30.16
+ * TIME: 2025.04.02-20.05.08
  */
 let GMItem_Generate = class GMItem_Generate extends UIScript {
     get button() {
@@ -19838,7 +21786,7 @@ GMItem_Generate = __decorate([
 ], GMItem_Generate);
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign155 = /*#__PURE__*/Object.freeze({
+var foreign163 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -20082,7 +22030,7 @@ class DropdownList {
     }
 }
 
-var foreign97 = /*#__PURE__*/Object.freeze({
+var foreign101 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     AddGMCommand: AddGMCommand,
     CloseGMUI: CloseGMUI,
@@ -20119,7 +22067,7 @@ CopyCharacter = __decorate([
 ], CopyCharacter);
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign133 = /*#__PURE__*/Object.freeze({
+var foreign140 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -20317,7 +22265,7 @@ class KeyActionManager {
     }
 }
 
-var foreign134 = /*#__PURE__*/Object.freeze({
+var foreign141 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -20327,7 +22275,7 @@ var foreign134 = /*#__PURE__*/Object.freeze({
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/SecondNoticeItem.ui
- * TIME: 2025.03.08-12.30.15
+ * TIME: 2025.04.02-20.05.08
  */
 let SecondNoticeItem_Generate = class SecondNoticeItem_Generate extends UIScript {
     get txt_context() {
@@ -20385,7 +22333,7 @@ SecondNoticeItem_Generate = __decorate([
 ], SecondNoticeItem_Generate);
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign140 = /*#__PURE__*/Object.freeze({
+var foreign148 = /*#__PURE__*/Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -20413,167 +22361,176 @@ const MWModuleMap = {
      'B6A928644529AA10CBC8C89C88E55527': foreign20,
      'C67268BD48260E47D9B20ABFD681CDE6': foreign21,
      'EF46DC684C5095F23AB1CDBDC99C5E18': foreign22,
-     '3556BC894D567078DFA53FB84C80FEA5': foreign23,
-     '2A4378CF46E335A85DDEB48C29E7A739': foreign24,
-     '0434889E4AECBAAD74F94DA0593D2A58': foreign25,
-     '68B4676C4491BF748184D8B1C41C073C': foreign26,
-     'A2718601468E55D897B0A0956C95BB58': foreign27,
-     '7EFA744642DEF2CF87196ABAFC508494': foreign28,
-     '8FEC2BA64F0E22B1016AFA8687BB15EB': foreign29,
-     '9F0BD1DA4FD4D29377DCB9A5D39765DD': foreign30,
-     'CABD28EC4039A8E35DFAE1AD66F67197': foreign31,
-     '5A39EF934034CBEE314F82B52349B130': foreign32,
-     'F12E438D4B20BA10E2A8F69481DCA60D': foreign33,
-     '4FD6C57543A5A13D552BA5A0AB4CC204': foreign34,
-     '389A7C3A4ECA3E088872EFB50C292AB9': foreign35,
-     '457E06044E12621A6C828F96F77F2DBA': foreign36,
-     'F02793634EEF5BFD887A738715432357': foreign37,
-     '5518D83E44C5548F0296A588F32A2EBA': foreign38,
-     'B83754B54AADDBA4D96121AF56EB9FB8': foreign39,
-     '782157B84C1D0296B93035864A899AAE': foreign40,
-     '9AD8BCC843AA9AAB12CF1B893C012F4B': foreign41,
-     'B1297C104F75993DF2229B94CD030D08': foreign42,
-     'B9352A4F4CBE39334B0D4195D7924E85': foreign43,
-     '60DD9FED43F4523F1F3A2C939452ECE9': foreign44,
-     '3AB8E07248A4F10CBBD12990567959A3': foreign45,
-     '243765004517AECC33492499B2B88CBC': foreign46,
-     'F7E863884182B33057CB8E9B67B0A412': foreign47,
-     '7CBAD32441B5CD730647B0B5A600A94D': foreign48,
-     '1330684147A9A502E350008C98D2BCA7': foreign49,
-     '11962E4241521418017371B96A54BB03': foreign50,
-     '6B62464A4360EA13FDA7D9BCF2CB1B25': foreign51,
-     'FCEB66AB4F9446760C58CCAFF50CB461': foreign52,
-     '141D09DE4B1EC9F741B654BD9E50EB6A': foreign53,
-     '4FA2BF144E6865A1D22E1780AE811754': foreign54,
-     '1104309D4AC2F09410E3428603131405': foreign55,
-     '44B4F98542D4E2FB3785468E24E38256': foreign56,
-     'E2B7D6D54EA9DE417F22C7A341800147': foreign57,
-     '3EB367E948EC45D54DA403A9356BB59B': foreign58,
-     '855B872E43C1F8DA6D4AF9BE52B3F11E': foreign59,
-     '791552A549BD00864EE004911284285E': foreign60,
-     'B309BEB84127DB25AE5331B433718577': foreign61,
-     '2C6C1F5B41E266A6AEA9DE92728F56BA': foreign62,
-     '447359264FC3721660CAA8A507CC92A7': foreign63,
-     '322EFBB14EC22DE043EE9FB804458848': foreign64,
-     '2990954C4F47DDBAA760A7BDA2110FC5': foreign65,
-     'A08E64004A031F3B5A4F3FAD7F627837': foreign66,
-     '09CD46A745C34756B421029FD47D5FFD': foreign67,
-     'E365E6CC4DB42C06753F629A21BAC5EE': foreign68,
-     '9BC6EE924CE6A5778D6FAFBF640EED8C': foreign69,
-     '6EE9A8E84D34A9826FDCAA8FB6A85ABE': foreign70,
-     '7BAC400240190D965D3E3191D7192F93': foreign71,
-     '632937BF45CF6303AB7020899FAD7F74': foreign72,
-     'F04CD9C841CD23385A765A83E04D1FD3': foreign73,
-     '69D0FF714F0FAED8C52B80A2AAC7A9C6': foreign74,
-     '329755234A9566B9A648DFB4BA9C04B8': foreign75,
-     'FFA95DBC498EFC129F926A889C81EE58': foreign76,
-     'FACDE3F5429BC164C699E8ADA502778D': foreign77,
-     '87F14EB741C27E6D200286A37061BC80': foreign78,
-     '984197194E9B5C76B63157987ABC8AAD': foreign79,
-     'D2DDF11D4BF0BEBBCE0F2B9CF42517EE': foreign80,
-     '0FCAF0584709FBB39E590CAEA83B1217': foreign81,
-     '7D98F77C457BD44550899198F36FDB9F': foreign82,
-     '904D34A54E1F6197EF34B1892E35FC85': foreign83,
-     'AA3586B64B181C63C928A1810CCA95E1': foreign84,
-     '9C6A23FA4F6E9AAA9861F28F43A80CB7': foreign85,
-     '837FD9D94CC2AE241B061DABC0E78B17': foreign86,
-     '09C1929E4D5A6DC4B1C6DF8F280C0B8E': foreign87,
-     '644F545245224887FB7893A799934F09': foreign88,
-     '33E4306448F72B0C557086A691B9CBFF': foreign89,
-     'F411D5434367FBC411D5629DE4530583': foreign90,
-     '32887ABC4B678AD4708B3EAB42A38F87': foreign91,
-     'D7B3EB9F492B14994EC537AEF4144580': foreign92,
-     'E5070EED458C8754669EE78CB19176FE': foreign93,
-     '0687D50F477374C7AB669BBD15E6FDF5': foreign94,
-     '3340D31D4C01664F7F4F45A689890DBD': foreign95,
-     'DCE2333D4CD32653F566BA81ED0419FF': foreign96,
-     'ADCD102745EC6ADBA54B59A92A39C2DB': foreign97,
-     '8846728C43298291A92B03A84C2B605C': foreign98,
-     'A7352BD449067EB6E854E3AF902BC932': foreign99,
-     '4CDE05C5416CAB199FD4A68E7D1943F1': foreign100,
-     '67738F2D4FC93D7F8961718891C8042A': foreign101,
-     'D355DD4B4EF11EA260DAAF9043337A92': foreign102,
-     'B3FFB33B46975FA3DF61B68CADAD43E5': foreign103,
-     'BFC546CF465E6F5B7AF12794A74685B6': foreign104,
-     '0564982D45096EB45701F5B12C03AA73': foreign105,
-     '03CCABAD4D03EEBB9EEC509FC8C041AB': foreign106,
-     '4F12A4D54B59BF4E7BF8578B98947A43': foreign107,
-     '14C9D8334A5CCF2499885CA2EB8235EB': foreign108,
-     '0F92FD664F4498F2D37DBB85F5591864': foreign109,
-     '0C059CEC46B430E154759A97D924865E': foreign110,
-     'F693343F43B7C53464696B8833FF38E0': foreign111,
-     '11E7804D47058EB9E27F16AD288AF1CA': foreign112,
-     'E5D27183452CBD04A0D0D187CF2014FC': foreign113,
-     '0433C0944AF345F89D35AD863E1E2290': foreign114,
-     '099CC63342C56F28195B5794157F5C82': foreign115,
-     '63B7A637479107F0C4812A9513E4EF84': foreign116,
-     'D8E6B9EF4DE0DF3088CC3C8599F76F45': foreign117,
-     '7833C871441E612CC5B5CE9BDDA947C9': foreign118,
-     'A12B8D524B602E750EB63288C79D32E2': foreign119,
-     'F057824E4569A842D403858DC7D1D88B': foreign120,
-     '9F1D50A144B07BFAFC552F925299CE71': foreign121,
-     '3E1D070A4147D9A5B46E0EAF1E5FD4E1': foreign122,
-     'F215908B4B4F40F5531DE4A01F660731': foreign123,
-     'A8FB760F441C95AFACBAD78838B58528': foreign124,
-     'DC56F3F94E062B2AD909F386B767436F': foreign125,
-     '6688C3B84E092AFB395C0DB3E4331E3D': foreign126,
-     '535BEEA64A7F529F52631FA182212718': foreign127,
-     'B23852CE407E0A008F3BE78DDE49EB51': foreign128,
-     'FAAFDA5E4A40291D72B0459742CD601A': foreign129,
-     '1D10F64B4D38229D7655CC923071E9B2': foreign130,
-     '2032BEF24550E75CE53EE39AE53150E9': foreign131,
-     '1757D7694B3B2F7BFB8C0897BDF03724': foreign132,
-     'BC6767CF4240176E5C9B6984BB540726': foreign133,
-     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign134,
-     '49E1131448695DF591C8DEB790EFC952': foreign135,
-     '290BA293443A80CCA56170B9DA3D47C1': foreign136,
-     '71EC5D03421DCEEEB4172C8C643D8019': foreign137,
-     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign138,
-     '741B06144E25B4753E8005985816DAF8': foreign139,
-     'EE3F354349BB041CD741FF84B745B113': foreign140,
-     '8FA0EC3E442A57C1B550BB833E68DA90': foreign141,
-     '100DA6744367634E7FFC0895CD98DDB9': foreign142,
-     '67892EC847DCDABBB14451A8CDFD526C': foreign143,
-     '486071A84887288700A7E297CBF6B438': foreign144,
-     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign145,
-     '50B679574FA404BE92C52CAD0436F5B1': foreign146,
-     'BC28A8C5401B15E17AAEF482A8AA133E': foreign147,
-     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign148,
-     '3A88620945CCB3EE5B699F9D35A5A28F': foreign149,
-     '827757834BCFC569771BCB84A3609238': foreign150,
-     'F58702064960960163820CB9C8D0F3C1': foreign151,
-     'D92460FC43DFEF127C8EB39DECD67E58': foreign152,
-     'C265D0BB488D0422A80DBBB6082E4CB4': foreign153,
-     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign154,
-     '95C84A464FBF396210D6DAB0DFAF53C3': foreign155,
-     'C067E1F649184B0F7FC5E0B9456BC72C': foreign156,
-     '337A59B14A237973EEB178A260344C21': foreign157,
-     'B9D019D74067C8F762132698D474BF63': foreign158,
-     'C4E377B14812C09429E28988E62907DB': foreign159,
-     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign160,
-     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign161,
-     '06CF574844634CC9C0793EA8847C6FE2': foreign162,
-     '27DEB6624F87673F14AA499E8A3A7DD3': foreign163,
-     'CEE9E492480CEF69BF9291BA357C9AC1': foreign164,
-     '713A8E764F3DAC8A8AD1BEB382C46158': foreign165,
-     '5E6E0BFE48C322071930C2B8DD56E900': foreign166,
-     'C381E72F409A02A45B69B9BC32F4FCAF': foreign167,
-     'FADB775E4F203C2565D31A9AA31E22D1': foreign168,
-     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign169,
-     'F3E9117C4C567C26689F08B919B7E7DA': foreign170,
-     'AF5DEB904C817468E94BAA9265F23AF7': foreign171,
-     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign172,
-     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign173,
-     'A8E0593D477EC697B2559789990E0882': foreign174,
-     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign175,
-     '559367EC4AA0BAE9AD25A694D5CA960C': foreign176,
-     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign177,
-     '52E3A8604FC761E6CC747FB22FD7160B': foreign178,
-     '14F8E49D4B31DFAA50548BA206585CCA': foreign179,
-     '656033E844C70FD925FC8F887EA9FA46': foreign180,
-     '6B744DEB4703AED17EA7279D0783813A': foreign181,
-     'C6D169354450AEEF12B964B7B3BA8B2D': foreign182,
-     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign183,
+     'CB2CC466426F9ED0690FE1818DDB4A4D': foreign23,
+     '3556BC894D567078DFA53FB84C80FEA5': foreign24,
+     '2A4378CF46E335A85DDEB48C29E7A739': foreign25,
+     '0434889E4AECBAAD74F94DA0593D2A58': foreign26,
+     '68B4676C4491BF748184D8B1C41C073C': foreign27,
+     'A2718601468E55D897B0A0956C95BB58': foreign28,
+     '7EFA744642DEF2CF87196ABAFC508494': foreign29,
+     '8FEC2BA64F0E22B1016AFA8687BB15EB': foreign30,
+     '9F0BD1DA4FD4D29377DCB9A5D39765DD': foreign31,
+     'CABD28EC4039A8E35DFAE1AD66F67197': foreign32,
+     '5A39EF934034CBEE314F82B52349B130': foreign33,
+     'F12E438D4B20BA10E2A8F69481DCA60D': foreign34,
+     '4FD6C57543A5A13D552BA5A0AB4CC204': foreign35,
+     '389A7C3A4ECA3E088872EFB50C292AB9': foreign36,
+     '457E06044E12621A6C828F96F77F2DBA': foreign37,
+     'F02793634EEF5BFD887A738715432357': foreign38,
+     '5518D83E44C5548F0296A588F32A2EBA': foreign39,
+     'B83754B54AADDBA4D96121AF56EB9FB8': foreign40,
+     '782157B84C1D0296B93035864A899AAE': foreign41,
+     '9AD8BCC843AA9AAB12CF1B893C012F4B': foreign42,
+     'B1297C104F75993DF2229B94CD030D08': foreign43,
+     'B9352A4F4CBE39334B0D4195D7924E85': foreign44,
+     '60DD9FED43F4523F1F3A2C939452ECE9': foreign45,
+     '3AB8E07248A4F10CBBD12990567959A3': foreign46,
+     '243765004517AECC33492499B2B88CBC': foreign47,
+     'F7E863884182B33057CB8E9B67B0A412': foreign48,
+     '7CBAD32441B5CD730647B0B5A600A94D': foreign49,
+     '1330684147A9A502E350008C98D2BCA7': foreign50,
+     '11962E4241521418017371B96A54BB03': foreign51,
+     '6B62464A4360EA13FDA7D9BCF2CB1B25': foreign52,
+     'FCEB66AB4F9446760C58CCAFF50CB461': foreign53,
+     '141D09DE4B1EC9F741B654BD9E50EB6A': foreign54,
+     '4FA2BF144E6865A1D22E1780AE811754': foreign55,
+     '1104309D4AC2F09410E3428603131405': foreign56,
+     '44B4F98542D4E2FB3785468E24E38256': foreign57,
+     'E2B7D6D54EA9DE417F22C7A341800147': foreign58,
+     '3EB367E948EC45D54DA403A9356BB59B': foreign59,
+     '855B872E43C1F8DA6D4AF9BE52B3F11E': foreign60,
+     '791552A549BD00864EE004911284285E': foreign61,
+     'B309BEB84127DB25AE5331B433718577': foreign62,
+     '2C6C1F5B41E266A6AEA9DE92728F56BA': foreign63,
+     '447359264FC3721660CAA8A507CC92A7': foreign64,
+     '322EFBB14EC22DE043EE9FB804458848': foreign65,
+     '2990954C4F47DDBAA760A7BDA2110FC5': foreign66,
+     'A08E64004A031F3B5A4F3FAD7F627837': foreign67,
+     '09CD46A745C34756B421029FD47D5FFD': foreign68,
+     'E365E6CC4DB42C06753F629A21BAC5EE': foreign69,
+     '9BC6EE924CE6A5778D6FAFBF640EED8C': foreign70,
+     '6EE9A8E84D34A9826FDCAA8FB6A85ABE': foreign71,
+     '7BAC400240190D965D3E3191D7192F93': foreign72,
+     '632937BF45CF6303AB7020899FAD7F74': foreign73,
+     'F04CD9C841CD23385A765A83E04D1FD3': foreign74,
+     '69D0FF714F0FAED8C52B80A2AAC7A9C6': foreign75,
+     '329755234A9566B9A648DFB4BA9C04B8': foreign76,
+     'FFA95DBC498EFC129F926A889C81EE58': foreign77,
+     'FACDE3F5429BC164C699E8ADA502778D': foreign78,
+     '87F14EB741C27E6D200286A37061BC80': foreign79,
+     '984197194E9B5C76B63157987ABC8AAD': foreign80,
+     'D2DDF11D4BF0BEBBCE0F2B9CF42517EE': foreign81,
+     '0FCAF0584709FBB39E590CAEA83B1217': foreign82,
+     '7D98F77C457BD44550899198F36FDB9F': foreign83,
+     '217BA01E41730F90FFD93DB073302A23': foreign84,
+     '8060BCE54660E3CD68990A8C89C05E1D': foreign85,
+     '8A1395194926A242C9BA5F9A9B6B8272': foreign86,
+     '904D34A54E1F6197EF34B1892E35FC85': foreign87,
+     'AA3586B64B181C63C928A1810CCA95E1': foreign88,
+     '9C6A23FA4F6E9AAA9861F28F43A80CB7': foreign89,
+     '837FD9D94CC2AE241B061DABC0E78B17': foreign90,
+     '09C1929E4D5A6DC4B1C6DF8F280C0B8E': foreign91,
+     '644F545245224887FB7893A799934F09': foreign92,
+     '33E4306448F72B0C557086A691B9CBFF': foreign93,
+     'F411D5434367FBC411D5629DE4530583': foreign94,
+     '32887ABC4B678AD4708B3EAB42A38F87': foreign95,
+     'D7B3EB9F492B14994EC537AEF4144580': foreign96,
+     'E5070EED458C8754669EE78CB19176FE': foreign97,
+     '0687D50F477374C7AB669BBD15E6FDF5': foreign98,
+     '3340D31D4C01664F7F4F45A689890DBD': foreign99,
+     'DCE2333D4CD32653F566BA81ED0419FF': foreign100,
+     'ADCD102745EC6ADBA54B59A92A39C2DB': foreign101,
+     '8846728C43298291A92B03A84C2B605C': foreign102,
+     'A7352BD449067EB6E854E3AF902BC932': foreign103,
+     '4CDE05C5416CAB199FD4A68E7D1943F1': foreign104,
+     '67738F2D4FC93D7F8961718891C8042A': foreign105,
+     'D355DD4B4EF11EA260DAAF9043337A92': foreign106,
+     'B3FFB33B46975FA3DF61B68CADAD43E5': foreign107,
+     'BFC546CF465E6F5B7AF12794A74685B6': foreign108,
+     '0564982D45096EB45701F5B12C03AA73': foreign109,
+     '03CCABAD4D03EEBB9EEC509FC8C041AB': foreign110,
+     '4F12A4D54B59BF4E7BF8578B98947A43': foreign111,
+     '14C9D8334A5CCF2499885CA2EB8235EB': foreign112,
+     '314CF3AC4A3AB95069A56BA593371A38': foreign113,
+     '0F92FD664F4498F2D37DBB85F5591864': foreign114,
+     '0C059CEC46B430E154759A97D924865E': foreign115,
+     'F693343F43B7C53464696B8833FF38E0': foreign116,
+     '11E7804D47058EB9E27F16AD288AF1CA': foreign117,
+     'E5D27183452CBD04A0D0D187CF2014FC': foreign118,
+     '0433C0944AF345F89D35AD863E1E2290': foreign119,
+     '099CC63342C56F28195B5794157F5C82': foreign120,
+     '63B7A637479107F0C4812A9513E4EF84': foreign121,
+     'D8E6B9EF4DE0DF3088CC3C8599F76F45': foreign122,
+     '7833C871441E612CC5B5CE9BDDA947C9': foreign123,
+     'A12B8D524B602E750EB63288C79D32E2': foreign124,
+     'F057824E4569A842D403858DC7D1D88B': foreign125,
+     '9F1D50A144B07BFAFC552F925299CE71': foreign126,
+     '3E1D070A4147D9A5B46E0EAF1E5FD4E1': foreign127,
+     'F215908B4B4F40F5531DE4A01F660731': foreign128,
+     'A8FB760F441C95AFACBAD78838B58528': foreign129,
+     'DC56F3F94E062B2AD909F386B767436F': foreign130,
+     '6688C3B84E092AFB395C0DB3E4331E3D': foreign131,
+     '535BEEA64A7F529F52631FA182212718': foreign132,
+     'B23852CE407E0A008F3BE78DDE49EB51': foreign133,
+     'FAAFDA5E4A40291D72B0459742CD601A': foreign134,
+     '1D10F64B4D38229D7655CC923071E9B2': foreign135,
+     '2032BEF24550E75CE53EE39AE53150E9': foreign136,
+     'D64517A445CBA580CE34A68B0DE2D5D0': foreign137,
+     'C48FD39D43DA5E48E2FFED92F839BB3D': foreign138,
+     '1757D7694B3B2F7BFB8C0897BDF03724': foreign139,
+     'BC6767CF4240176E5C9B6984BB540726': foreign140,
+     '7EA40C8447FE422BDA45A6A15ACAB0C2': foreign141,
+     'F7EE8818455A5EE814A6F18A2F0CBB12': foreign142,
+     '49E1131448695DF591C8DEB790EFC952': foreign143,
+     '290BA293443A80CCA56170B9DA3D47C1': foreign144,
+     '71EC5D03421DCEEEB4172C8C643D8019': foreign145,
+     '0AEE9F474D44E77C3A083FBF0EFD7775': foreign146,
+     '741B06144E25B4753E8005985816DAF8': foreign147,
+     'EE3F354349BB041CD741FF84B745B113': foreign148,
+     '8FA0EC3E442A57C1B550BB833E68DA90': foreign149,
+     '100DA6744367634E7FFC0895CD98DDB9': foreign150,
+     '67892EC847DCDABBB14451A8CDFD526C': foreign151,
+     '486071A84887288700A7E297CBF6B438': foreign152,
+     'BB12954A4FC0D5D00C29B0BFD73F83A2': foreign153,
+     '50B679574FA404BE92C52CAD0436F5B1': foreign154,
+     'BC28A8C5401B15E17AAEF482A8AA133E': foreign155,
+     '4FBD7D6C429DD0F90494B5B35FD1AE7F': foreign156,
+     '3A88620945CCB3EE5B699F9D35A5A28F': foreign157,
+     '827757834BCFC569771BCB84A3609238': foreign158,
+     'F58702064960960163820CB9C8D0F3C1': foreign159,
+     'D92460FC43DFEF127C8EB39DECD67E58': foreign160,
+     'C265D0BB488D0422A80DBBB6082E4CB4': foreign161,
+     '2DB355DB4AE5EEA9FAD9E39C7071F66C': foreign162,
+     '95C84A464FBF396210D6DAB0DFAF53C3': foreign163,
+     'C067E1F649184B0F7FC5E0B9456BC72C': foreign164,
+     '337A59B14A237973EEB178A260344C21': foreign165,
+     'B9D019D74067C8F762132698D474BF63': foreign166,
+     'C4E377B14812C09429E28988E62907DB': foreign167,
+     'E038BA9A4A21ED21407734BBDEC1DF0C': foreign168,
+     'AD7B5C5440FB6D1DA3795A9BA561546D': foreign169,
+     '06CF574844634CC9C0793EA8847C6FE2': foreign170,
+     '27DEB6624F87673F14AA499E8A3A7DD3': foreign171,
+     'CEE9E492480CEF69BF9291BA357C9AC1': foreign172,
+     '44FCD3854A750D1B45716AA4CFE030E3': foreign173,
+     '713A8E764F3DAC8A8AD1BEB382C46158': foreign174,
+     '5E6E0BFE48C322071930C2B8DD56E900': foreign175,
+     'C381E72F409A02A45B69B9BC32F4FCAF': foreign176,
+     'FADB775E4F203C2565D31A9AA31E22D1': foreign177,
+     'AF6D5EC44D0BB050F181CD8B9544DD7B': foreign178,
+     'F3E9117C4C567C26689F08B919B7E7DA': foreign179,
+     'AF5DEB904C817468E94BAA9265F23AF7': foreign180,
+     'AAE12F3F4FD38A0B43975DB01D2D496C': foreign181,
+     '9E3A8E7D4942E24576FFE88DEBE534D2': foreign182,
+     'A8E0593D477EC697B2559789990E0882': foreign183,
+     'BF8FC10D4207BD4C47028EBC0D3ACF8F': foreign184,
+     '559367EC4AA0BAE9AD25A694D5CA960C': foreign185,
+     '2AD51BC848CD83DE2F0BA68674DE3EE1': foreign186,
+     '52E3A8604FC761E6CC747FB22FD7160B': foreign187,
+     '14F8E49D4B31DFAA50548BA206585CCA': foreign188,
+     '656033E844C70FD925FC8F887EA9FA46': foreign189,
+     '6B744DEB4703AED17EA7279D0783813A': foreign190,
+     'C6D169354450AEEF12B964B7B3BA8B2D': foreign191,
+     '46D363B5455BBB5A2A9BB58A4E4A04D2': foreign192,
 };
 const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/Notice"],
 [foreign2 || {}, "JavaScripts/common/notice/Tween"],
@@ -20597,167 +22554,176 @@ const MWFileMapping = new WeakMap([[foreign1 || {}, "JavaScripts/common/notice/N
 [foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit"],
 [foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1"],
 [foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2"],
-[foreign23 || {}, "JavaScripts/configs/Ear"],
-[foreign24 || {}, "JavaScripts/configs/Effects"],
-[foreign25 || {}, "JavaScripts/configs/EverydayShoes"],
-[foreign26 || {}, "JavaScripts/configs/Expression"],
-[foreign27 || {}, "JavaScripts/configs/Eyebrows"],
-[foreign28 || {}, "JavaScripts/configs/Eyelashes"],
-[foreign29 || {}, "JavaScripts/configs/Eyeshadow"],
-[foreign30 || {}, "JavaScripts/configs/Face"],
-[foreign31 || {}, "JavaScripts/configs/FaceExpression"],
-[foreign32 || {}, "JavaScripts/configs/FaceTattoo"],
-[foreign33 || {}, "JavaScripts/configs/Facing"],
-[foreign34 || {}, "JavaScripts/configs/FantasyModelingOutfit"],
-[foreign35 || {}, "JavaScripts/configs/FootCoverShoes"],
-[foreign36 || {}, "JavaScripts/configs/FrontHair"],
-[foreign37 || {}, "JavaScripts/configs/FullHair"],
-[foreign38 || {}, "JavaScripts/configs/GameConfig"],
-[foreign39 || {}, "JavaScripts/configs/Gloves"],
-[foreign40 || {}, "JavaScripts/configs/GlovesGloves"],
-[foreign41 || {}, "JavaScripts/configs/HeroStylingOutfit"],
-[foreign42 || {}, "JavaScripts/configs/HighHeelsShoes"],
-[foreign43 || {}, "JavaScripts/configs/Hip"],
-[foreign44 || {}, "JavaScripts/configs/HolidayStylingOutfit"],
-[foreign45 || {}, "JavaScripts/configs/Interact"],
-[foreign46 || {}, "JavaScripts/configs/Language"],
-[foreign47 || {}, "JavaScripts/configs/LeftHand"],
-[foreign48 || {}, "JavaScripts/configs/Lens"],
-[foreign49 || {}, "JavaScripts/configs/LipMakeup"],
-[foreign50 || {}, "JavaScripts/configs/LongPantsBottom"],
-[foreign51 || {}, "JavaScripts/configs/LongSinglePieceTop"],
-[foreign52 || {}, "JavaScripts/configs/LongSkirtBottom"],
-[foreign53 || {}, "JavaScripts/configs/LowerHighlight"],
-[foreign54 || {}, "JavaScripts/configs/MuppetStylingOutfit"],
-[foreign55 || {}, "JavaScripts/configs/Music"],
-[foreign56 || {}, "JavaScripts/configs/NakedDressShoes"],
-[foreign57 || {}, "JavaScripts/configs/Outfit"],
-[foreign58 || {}, "JavaScripts/configs/Pet"],
-[foreign59 || {}, "JavaScripts/configs/PupilStyle"],
-[foreign60 || {}, "JavaScripts/configs/RightHand"],
-[foreign61 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit"],
-[foreign62 || {}, "JavaScripts/configs/ShareId"],
-[foreign63 || {}, "JavaScripts/configs/Shoes"],
-[foreign64 || {}, "JavaScripts/configs/ShortJacketTop"],
-[foreign65 || {}, "JavaScripts/configs/ShortsBottom"],
-[foreign66 || {}, "JavaScripts/configs/ShortSinglePieceTop"],
-[foreign67 || {}, "JavaScripts/configs/ShortSkirtBottom"],
-[foreign68 || {}, "JavaScripts/configs/Shoulder"],
-[foreign69 || {}, "JavaScripts/configs/Sit"],
-[foreign70 || {}, "JavaScripts/configs/SkinTone"],
-[foreign71 || {}, "JavaScripts/configs/SportsShoesShoes"],
-[foreign72 || {}, "JavaScripts/configs/SuitTop"],
-[foreign73 || {}, "JavaScripts/configs/Tab1"],
-[foreign74 || {}, "JavaScripts/configs/Tab2"],
-[foreign75 || {}, "JavaScripts/configs/Tab3"],
-[foreign76 || {}, "JavaScripts/configs/TightsBottom"],
-[foreign77 || {}, "JavaScripts/configs/Top"],
-[foreign78 || {}, "JavaScripts/configs/Trailing"],
-[foreign79 || {}, "JavaScripts/configs/UpperHighlight"],
-[foreign80 || {}, "JavaScripts/GameStart"],
-[foreign81 || {}, "JavaScripts/GlobalData"],
-[foreign82 || {}, "JavaScripts/module/AdModule/ui/AdPanel"],
-[foreign83 || {}, "JavaScripts/module/DanMuModule/Bubble"],
-[foreign84 || {}, "JavaScripts/module/DanMuModule/Buff"],
-[foreign85 || {}, "JavaScripts/module/DanMuModule/DanMuData"],
-[foreign86 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC"],
-[foreign87 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS"],
-[foreign88 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem"],
-[foreign89 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem"],
-[foreign90 || {}, "JavaScripts/module/DanMuModule/ui/BagItem"],
-[foreign91 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem"],
-[foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1"],
-[foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2"],
-[foreign94 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel"],
-[foreign95 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel"],
-[foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem"],
-[foreign97 || {}, "JavaScripts/module/GmModule/GMService"],
-[foreign98 || {}, "JavaScripts/module/HUDModule/HUDModule"],
-[foreign99 || {}, "JavaScripts/module/InteractionModule/InteractionModule"],
-[foreign100 || {}, "JavaScripts/module/MallModule/Mall"],
-[foreign101 || {}, "JavaScripts/module/MallModule/MallData"],
-[foreign102 || {}, "JavaScripts/module/MallModule/MallModuleC"],
-[foreign103 || {}, "JavaScripts/module/MallModule/MallModuleS"],
-[foreign104 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel"],
-[foreign105 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1"],
-[foreign106 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2"],
-[foreign107 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3"],
-[foreign108 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big"],
-[foreign109 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color"],
-[foreign110 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self"],
-[foreign111 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small"],
-[foreign112 || {}, "JavaScripts/module/MallModule/ui/MallPanel"],
-[foreign113 || {}, "JavaScripts/module/MallModule/ui/MallTab1"],
-[foreign114 || {}, "JavaScripts/module/MallModule/ui/MallTab2"],
-[foreign115 || {}, "JavaScripts/module/MallModule/ui/MallTab3"],
-[foreign116 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel"],
-[foreign117 || {}, "JavaScripts/module/NavigationModule/NavigationModule"],
-[foreign118 || {}, "JavaScripts/module/RankModule/RankData"],
-[foreign119 || {}, "JavaScripts/module/RankModule/RankModuleC"],
-[foreign120 || {}, "JavaScripts/module/RankModule/RankModuleS"],
-[foreign121 || {}, "JavaScripts/module/RankModule/ui/RankPanel"],
-[foreign122 || {}, "JavaScripts/module/RankModule/ui/RoomItem"],
-[foreign123 || {}, "JavaScripts/module/RankModule/ui/WorldItem"],
-[foreign124 || {}, "JavaScripts/module/SetModule/SetModule"],
-[foreign125 || {}, "JavaScripts/module/SetModule/ui/SetPanel"],
-[foreign126 || {}, "JavaScripts/module/SignInModule/SignInData"],
-[foreign127 || {}, "JavaScripts/module/SignInModule/SignInModuleC"],
-[foreign128 || {}, "JavaScripts/module/SignInModule/SignInModuleS"],
-[foreign129 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
-[foreign130 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
-[foreign131 || {}, "JavaScripts/module/TryOnModule/TryOnModule"],
-[foreign132 || {}, "JavaScripts/tools/CameraManager"],
-[foreign133 || {}, "JavaScripts/tools/CopyCharacter"],
-[foreign134 || {}, "JavaScripts/tools/FreeCamera"],
-[foreign135 || {}, "JavaScripts/tools/TouchScript"],
-[foreign136 || {}, "JavaScripts/tools/ui/LoadingPanel"],
-[foreign137 || {}, "JavaScripts/tools/Utils"],
-[foreign138 || {}, "JavaScripts/tools/WaitingQueue"],
-[foreign139 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
-[foreign140 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
-[foreign141 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
-[foreign142 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
-[foreign143 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
-[foreign144 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
-[foreign145 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
-[foreign146 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
-[foreign147 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
-[foreign148 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
-[foreign149 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
-[foreign150 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
-[foreign151 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
-[foreign152 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
-[foreign153 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
-[foreign154 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
-[foreign155 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
-[foreign156 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
-[foreign157 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
-[foreign158 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
-[foreign159 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
-[foreign160 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
-[foreign161 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
-[foreign162 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
-[foreign163 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
-[foreign164 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
-[foreign165 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
-[foreign166 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
-[foreign167 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
-[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
-[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
-[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
-[foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
-[foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
-[foreign173 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
-[foreign174 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
-[foreign175 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
-[foreign176 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
-[foreign177 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
-[foreign178 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
-[foreign179 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
-[foreign180 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
-[foreign181 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
-[foreign182 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
-[foreign183 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
+[foreign23 || {}, "JavaScripts/configs/Description"],
+[foreign24 || {}, "JavaScripts/configs/Ear"],
+[foreign25 || {}, "JavaScripts/configs/Effects"],
+[foreign26 || {}, "JavaScripts/configs/EverydayShoes"],
+[foreign27 || {}, "JavaScripts/configs/Expression"],
+[foreign28 || {}, "JavaScripts/configs/Eyebrows"],
+[foreign29 || {}, "JavaScripts/configs/Eyelashes"],
+[foreign30 || {}, "JavaScripts/configs/Eyeshadow"],
+[foreign31 || {}, "JavaScripts/configs/Face"],
+[foreign32 || {}, "JavaScripts/configs/FaceExpression"],
+[foreign33 || {}, "JavaScripts/configs/FaceTattoo"],
+[foreign34 || {}, "JavaScripts/configs/Facing"],
+[foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit"],
+[foreign36 || {}, "JavaScripts/configs/FootCoverShoes"],
+[foreign37 || {}, "JavaScripts/configs/FrontHair"],
+[foreign38 || {}, "JavaScripts/configs/FullHair"],
+[foreign39 || {}, "JavaScripts/configs/GameConfig"],
+[foreign40 || {}, "JavaScripts/configs/Gloves"],
+[foreign41 || {}, "JavaScripts/configs/GlovesGloves"],
+[foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit"],
+[foreign43 || {}, "JavaScripts/configs/HighHeelsShoes"],
+[foreign44 || {}, "JavaScripts/configs/Hip"],
+[foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit"],
+[foreign46 || {}, "JavaScripts/configs/Interact"],
+[foreign47 || {}, "JavaScripts/configs/Language"],
+[foreign48 || {}, "JavaScripts/configs/LeftHand"],
+[foreign49 || {}, "JavaScripts/configs/Lens"],
+[foreign50 || {}, "JavaScripts/configs/LipMakeup"],
+[foreign51 || {}, "JavaScripts/configs/LongPantsBottom"],
+[foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop"],
+[foreign53 || {}, "JavaScripts/configs/LongSkirtBottom"],
+[foreign54 || {}, "JavaScripts/configs/LowerHighlight"],
+[foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit"],
+[foreign56 || {}, "JavaScripts/configs/Music"],
+[foreign57 || {}, "JavaScripts/configs/NakedDressShoes"],
+[foreign58 || {}, "JavaScripts/configs/Outfit"],
+[foreign59 || {}, "JavaScripts/configs/Pet"],
+[foreign60 || {}, "JavaScripts/configs/PupilStyle"],
+[foreign61 || {}, "JavaScripts/configs/RightHand"],
+[foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit"],
+[foreign63 || {}, "JavaScripts/configs/ShareId"],
+[foreign64 || {}, "JavaScripts/configs/Shoes"],
+[foreign65 || {}, "JavaScripts/configs/ShortJacketTop"],
+[foreign66 || {}, "JavaScripts/configs/ShortsBottom"],
+[foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop"],
+[foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom"],
+[foreign69 || {}, "JavaScripts/configs/Shoulder"],
+[foreign70 || {}, "JavaScripts/configs/Sit"],
+[foreign71 || {}, "JavaScripts/configs/SkinTone"],
+[foreign72 || {}, "JavaScripts/configs/SportsShoesShoes"],
+[foreign73 || {}, "JavaScripts/configs/SuitTop"],
+[foreign74 || {}, "JavaScripts/configs/Tab1"],
+[foreign75 || {}, "JavaScripts/configs/Tab2"],
+[foreign76 || {}, "JavaScripts/configs/Tab3"],
+[foreign77 || {}, "JavaScripts/configs/TightsBottom"],
+[foreign78 || {}, "JavaScripts/configs/Top"],
+[foreign79 || {}, "JavaScripts/configs/Trailing"],
+[foreign80 || {}, "JavaScripts/configs/UpperHighlight"],
+[foreign81 || {}, "JavaScripts/GameStart"],
+[foreign82 || {}, "JavaScripts/GlobalData"],
+[foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel"],
+[foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData"],
+[foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC"],
+[foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS"],
+[foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble"],
+[foreign88 || {}, "JavaScripts/module/DanMuModule/Buff"],
+[foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData"],
+[foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC"],
+[foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS"],
+[foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem"],
+[foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem"],
+[foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem"],
+[foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem"],
+[foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1"],
+[foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2"],
+[foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel"],
+[foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel"],
+[foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem"],
+[foreign101 || {}, "JavaScripts/module/GmModule/GMService"],
+[foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule"],
+[foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule"],
+[foreign104 || {}, "JavaScripts/module/MallModule/Mall"],
+[foreign105 || {}, "JavaScripts/module/MallModule/MallData"],
+[foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC"],
+[foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS"],
+[foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel"],
+[foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1"],
+[foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2"],
+[foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3"],
+[foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big"],
+[foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character"],
+[foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color"],
+[foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self"],
+[foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small"],
+[foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel"],
+[foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1"],
+[foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2"],
+[foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3"],
+[foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel"],
+[foreign122 || {}, "JavaScripts/module/NavigationModule/NavigationModule"],
+[foreign123 || {}, "JavaScripts/module/RankModule/RankData"],
+[foreign124 || {}, "JavaScripts/module/RankModule/RankModuleC"],
+[foreign125 || {}, "JavaScripts/module/RankModule/RankModuleS"],
+[foreign126 || {}, "JavaScripts/module/RankModule/ui/RankPanel"],
+[foreign127 || {}, "JavaScripts/module/RankModule/ui/RoomItem"],
+[foreign128 || {}, "JavaScripts/module/RankModule/ui/WorldItem"],
+[foreign129 || {}, "JavaScripts/module/SetModule/SetModule"],
+[foreign130 || {}, "JavaScripts/module/SetModule/ui/SetPanel"],
+[foreign131 || {}, "JavaScripts/module/SignInModule/SignInData"],
+[foreign132 || {}, "JavaScripts/module/SignInModule/SignInModuleC"],
+[foreign133 || {}, "JavaScripts/module/SignInModule/SignInModuleS"],
+[foreign134 || {}, "JavaScripts/module/SignInModule/ui/SignInItem"],
+[foreign135 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel"],
+[foreign136 || {}, "JavaScripts/module/TryOnModule/TryOnModule"],
+[foreign137 || {}, "JavaScripts/tools/AvatarApi"],
+[foreign138 || {}, "JavaScripts/tools/AvatarDecora"],
+[foreign139 || {}, "JavaScripts/tools/CameraManager"],
+[foreign140 || {}, "JavaScripts/tools/CopyCharacter"],
+[foreign141 || {}, "JavaScripts/tools/FreeCamera"],
+[foreign142 || {}, "JavaScripts/tools/MapEx"],
+[foreign143 || {}, "JavaScripts/tools/TouchScript"],
+[foreign144 || {}, "JavaScripts/tools/ui/LoadingPanel"],
+[foreign145 || {}, "JavaScripts/tools/Utils"],
+[foreign146 || {}, "JavaScripts/tools/WaitingQueue"],
+[foreign147 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate"],
+[foreign148 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate"],
+[foreign149 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate"],
+[foreign150 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate"],
+[foreign151 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate"],
+[foreign152 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate"],
+[foreign153 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate"],
+[foreign154 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate"],
+[foreign155 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate"],
+[foreign156 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate"],
+[foreign157 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate"],
+[foreign158 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate"],
+[foreign159 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate"],
+[foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate"],
+[foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate"],
+[foreign162 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate"],
+[foreign163 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate"],
+[foreign164 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate"],
+[foreign165 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate"],
+[foreign166 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate"],
+[foreign167 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate"],
+[foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate"],
+[foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate"],
+[foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate"],
+[foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate"],
+[foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate"],
+[foreign173 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate"],
+[foreign174 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate"],
+[foreign175 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate"],
+[foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate"],
+[foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate"],
+[foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate"],
+[foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate"],
+[foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate"],
+[foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate"],
+[foreign182 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate"],
+[foreign183 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate"],
+[foreign184 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate"],
+[foreign185 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate"],
+[foreign186 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate"],
+[foreign187 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate"],
+[foreign188 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate"],
+[foreign189 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate"],
+[foreign190 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate"],
+[foreign191 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate"],
+[foreign192 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate"]]);
 
 exports.MWFileMapping = MWFileMapping;
 exports.MWModuleMap = MWModuleMap;
