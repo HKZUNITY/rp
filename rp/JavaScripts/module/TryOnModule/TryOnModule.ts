@@ -6,7 +6,7 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import TryOnItem_Generate from "../../ui-generate/module/TryOnModule/TryOnItem_generate";
 import TryOnPanel_Generate from "../../ui-generate/module/TryOnModule/TryOnPanel_generate";
-import { HUDModuleC } from "../HUDModule/HUDModule";
+import { HUDModuleC, SharePanel } from "../HUDModule/HUDModule";
 import Mall from "../MallModule/Mall";
 import MallModuleC from "../MallModule/MallModuleC";
 import MallTipsPanel from "../MallModule/ui/MallTipsPanel";
@@ -99,6 +99,7 @@ export class TryOnPanel extends TryOnPanel_Generate {
     private bindButton(): void {
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
         this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
     }
 
     private addCloseButton(): void {
@@ -108,6 +109,10 @@ export class TryOnPanel extends TryOnPanel_Generate {
     private addSaveButton(): void {
         this.hide();
         this.getTryOnModuleC.onSaveAction.call();
+    }
+
+    private addOpenShareButton(): void {
+        this.getTryOnModuleC.onOpenShareAction.call();
     }
 
     private tryOnItems: TryOnItem[] = [];
@@ -250,9 +255,18 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
         return this.mallTipsPanel;
     }
 
+    private sharePanel: SharePanel = null;
+    private get getSharePanel(): SharePanel {
+        if (!this.sharePanel) {
+            this.sharePanel = UIService.getUI(SharePanel);
+        }
+        return this.sharePanel;
+    }
+
     public onTryOnAction: Action1<RoomData> = new Action1<RoomData>();
     public onCloseAction: Action = new Action();
     public onSaveAction: Action = new Action();
+    public onOpenShareAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -264,6 +278,15 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
         this.onCloseAction.add(this.addCloseTryOnPanelAction.bind(this));
         this.onTryOnAction.add(this.addTryOnAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
+        this.onOpenShareAction.add(this.addOpenShareAction.bind(this));
+    }
+
+    private addOpenShareAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            this.getSharePanel.show();
+            let sharedId = await Utils.createSharedId(this.localPlayer.character);
+            this.getSharePanel.showPanel(sharedId, 1);
+        });
     }
 
     private onOpenShareActionHandler(): void {
@@ -307,20 +330,9 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
     private addCloseTryOnPanelAction(): void {
         if (this.isNeedSaveCharacter) {
             this.getMallTipsPanel.showTips(() => {
-                this.isNeedSaveCharacter = false;
-                this.saveCharacter();
-                this.getTryOnPanel.hide();
-                this.getMallModuleC.onSwitchCameraAction.call(0);
+                this.onSaveAction.call();
             }, () => {
-                this.isNeedSaveCharacter = false;
-                ExecutorManager.instance.pushAsyncExecutor(async () => {
-                    let copyNpc = this.getMallModuleC.getCopyNpc;
-                    await copyNpc.asyncReady();
-                    this.localPlayer.character.setDescription(copyNpc.getDescription());
-                    await this.localPlayer.character.asyncReady();
-                });
-                this.getTryOnPanel.hide();
-                this.getMallModuleC.onSwitchCameraAction.call(0);
+                this.resetCharacterDescription();
             }, GameConfig.Language.Text_CloseTips.Value
                 , GameConfig.Language.Text_WhetherSaveImage.Value
                 , GameConfig.Language.Text_NoSave.Value
@@ -374,17 +386,60 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
         });
     }
 
+    private resetCharacterDescription(): void {
+        this.isNeedSaveCharacter = false;
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            let copyNpc = this.getMallModuleC.getCopyNpc;
+            await copyNpc.asyncReady();
+            this.localPlayer.character.setDescription(copyNpc.getDescription());
+            await this.localPlayer.character.asyncReady();
+        });
+        this.getTryOnPanel.hide();
+        this.getMallModuleC.onSwitchCameraAction.call(0);
+    }
+
     private isNeedSaveCharacter: boolean = false;
     private addSaveAction(): void {
-        this.getMallModuleC.onSwitchCameraAction.call(0);
-        this.saveCharacter();
+        this.isNeedSaveCharacter = false;
+        console.error(`-------------${JSON.stringify(this.tryOnConfigData)}`);
+        if (this.tryOnConfigData && this.tryOnConfigData.isOpenAvatarEditor) {
+            this.openAvatarEditor();
+        } else {
+            this.getTryOnPanel.hide();
+            this.getMallModuleC.onSwitchCameraAction.call(0);
+            this.saveCharacter();
+        }
+    }
+
+    private openAvatarEditor(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.localPlayer.character.asyncReady();
+            let buyCharacterDescription = this.localPlayer.character.getDescription();
+
+            let copyNpc = this.getMallModuleC.getCopyNpc;
+            await copyNpc.asyncReady();
+            this.localPlayer.character.setDescription(copyNpc.getDescription());
+            await this.localPlayer.character.asyncReady();
+
+            this.getTryOnPanel.hide();
+            this.getMallModuleC.onSwitchCameraAction.call(0);
+
+            await TimeUtil.delaySecond(1);
+            await AvatarEditorService.asyncOpenAvatarEditorModule();
+            await TimeUtil.delaySecond(1);
+
+            this.localPlayer.character.setDescription(buyCharacterDescription);
+            await this.localPlayer.character.asyncReady();
+
+            if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
+            this.server.net_addTryOn(this.tryOnRoomData.userId);
+        });
     }
 
     private saveCharacter(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             this.localPlayer.character.syncDescription();
-            this.isNeedSaveCharacter = false;
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
             await this.getMallModuleC.syncTryOnCharacter();
             if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
@@ -498,9 +553,11 @@ export class TryOnData extends Subdata {
 
 export class TryOnConfigData {
     public isOpenTryOn: boolean = false;
+    public isOpenAvatarEditor: boolean = false;
 
     public constructor(data: any) {
         if (!data) return;
         this.isOpenTryOn = data?.isOpenTryOn;
+        this.isOpenAvatarEditor = data?.isOpenAvatarEditor;
     }
 }

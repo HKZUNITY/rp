@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.04.02-19.18.56
+ * TIME: 2025.04.11-20.54.08
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -168,6 +168,27 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenSignInImage/mOpenSignInTextBlock') as mw.TextBlock
 		}
 		return this.mOpenSignInTextBlock_Internal
+	}
+	private mOpenPhotoImage_Internal: mw.Image
+	public get mOpenPhotoImage(): mw.Image {
+		if(!this.mOpenPhotoImage_Internal&&this.uiWidgetBase) {
+			this.mOpenPhotoImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenPhotoImage') as mw.Image
+		}
+		return this.mOpenPhotoImage_Internal
+	}
+	private mOpenPhotoButton_Internal: mw.StaleButton
+	public get mOpenPhotoButton(): mw.StaleButton {
+		if(!this.mOpenPhotoButton_Internal&&this.uiWidgetBase) {
+			this.mOpenPhotoButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenPhotoImage/mOpenPhotoButton') as mw.StaleButton
+		}
+		return this.mOpenPhotoButton_Internal
+	}
+	private mOpenPhotoTextBlock_Internal: mw.TextBlock
+	public get mOpenPhotoTextBlock(): mw.TextBlock {
+		if(!this.mOpenPhotoTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenPhotoTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenPhotoImage/mOpenPhotoTextBlock') as mw.TextBlock
+		}
+		return this.mOpenPhotoTextBlock_Internal
 	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
@@ -383,6 +404,13 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenSignInButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mOpenPhotoButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenPhotoButton");
+		});
+		this.initLanguage(this.mOpenPhotoButton);
+		this.mOpenPhotoButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
 		});
@@ -478,6 +506,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)
+		
+	
+		this.initLanguage(this.mOpenPhotoTextBlock)
 		
 	
 		this.initLanguage(this.mMusicText)
