@@ -164,6 +164,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
+        this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -226,6 +227,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenMallButton(): void {
         this.getHUDModuleC.onOpenMallAction.call();
+    }
+
+    private addOpenPhotoButton(): void {
+        this.getHUDModuleC.onOpenPhotoAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -415,13 +420,13 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         return this.danMuModuleC;
     }
 
-    private sharePanel: SharePanel = null;
-    private get getSharePanel(): SharePanel {
-        if (!this.sharePanel) {
-            this.sharePanel = UIService.getUI(SharePanel);
-        }
-        return this.sharePanel;
-    }
+    // private sharePanel: SharePanel = null;
+    // private get getSharePanel(): SharePanel {
+    //     if (!this.sharePanel) {
+    //         this.sharePanel = UIService.getUI(SharePanel);
+    //     }
+    //     return this.sharePanel;
+    // }
 
     private savePanel: SavePanel = null;
     private get getSavePanel(): SavePanel {
@@ -460,6 +465,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     /**切换背景音乐（-1前一首|1下一首） */
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
     public onOpenMallAction: Action = new Action();
+    public onOpenPhotoAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -509,6 +515,13 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         // this.localPlayer.character.onDescriptionChange.add(this.addDescriptionChange.bind(this));
         this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
         this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
+        this.onOpenPhotoAction.add(this.addOpenPhotoAction.bind(this));
+    }
+
+    private addOpenPhotoAction(): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await PhotoStudioService.asyncOpenPhotoStudioModule();
+        });
     }
 
     private addOnOffMusicAction(isOpenBGM: boolean): void {
@@ -566,11 +579,11 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
     private onOpenShareActionHandler(openType: number): void {
         return;
-        ExecutorManager.instance.pushAsyncExecutor(async () => {
-            this.getSharePanel.show();
-            let sharedId = await Utils.createSharedId(this.localPlayer.character);
-            this.getSharePanel.showPanel(sharedId, openType);
-        });
+        // ExecutorManager.instance.pushAsyncExecutor(async () => {
+        //     this.getSharePanel.show();
+        //     let sharedId = await Utils.createSharedId(this.localPlayer.character);
+        //     this.getSharePanel.showPanel(sharedId, openType);
+        // });
     }
 
     private onUseShareActionHandler(shareId: string, openType: number): void {
