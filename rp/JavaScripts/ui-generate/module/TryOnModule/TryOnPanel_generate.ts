@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnPanel.ui
- * TIME: 2025.04.02-20.05.09
+ * TIME: 2025.04.11-20.09.25
  */
  
 @UIBind('UI/module/TryOnModule/TryOnPanel.ui')
@@ -35,6 +35,13 @@ export default class TryOnPanel_Generate extends UIScript {
 			this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mSaveButton/mSaveTextBlock') as mw.TextBlock
 		}
 		return this.mSaveTextBlock_Internal
+	}
+	private mOpenShareButton_Internal: mw.StaleButton
+	public get mOpenShareButton(): mw.StaleButton {
+		if(!this.mOpenShareButton_Internal&&this.uiWidgetBase) {
+			this.mOpenShareButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mOpenShareButton') as mw.StaleButton
+		}
+		return this.mOpenShareButton_Internal
 	}
 	private mListBgImage_Internal: mw.Image
 	public get mListBgImage(): mw.Image {
@@ -131,6 +138,13 @@ export default class TryOnPanel_Generate extends UIScript {
 	protected initButtons() {
 		//按钮添加点击
 		
+		this.mOpenShareButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
+		});
+		this.initLanguage(this.mOpenShareButton);
+		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		//按钮添加点击
 		
 		this.mSaveButton.onClicked.add(()=>{
