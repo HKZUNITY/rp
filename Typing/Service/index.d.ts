@@ -1,53 +1,44 @@
 ﻿/**
- * @author huipeng.jia & guang.deng
  * @description Account Service
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @description 下载平台数据回调
      * @groups 基础类型
      */
     type downloadCharacterDataStringCallback = (dataString: string) => void;
     /**
-     * @author huipeng.jia
      * @description 下载角色形象的回调，无参数
      * @groups 基础类型
      */
     type DownloadDataResponse = () => void;
     /**
-     * @author huipeng.jia
      * @description 下载角色形象的回调消息格式
      * @groups 基础类型
      * @param success usage: 上传是否成功
      */
     type UploadDataResponse = (success: boolean) => void;
     /**
-     * @author huipeng.jia
      * @description 返回bool的回调
      * @groups 基础类型
      */
     type BoolResponse = (success: boolean) => void;
     /**
-     * @author huipeng.jia
      * @description 返回无参数的回调
      * @groups 基础类型
      */
     type VoidResponse = () => void;
     /**
-     * @author huipeng.jia
      * @description 返回string的回调
      * @groups 基础类型
      */
     type StringResponse = (dataString: string) => void;
     /**
-     * @author huipeng.jia
      * @description GameService的回调
      * @groups 基础类型
      */
     type MGSResponse = (isSuccess: boolean, jsonData: string) => void;
     /**
-     * @author huipeng.jia, guang.deng
      * @groups 服务/社交
      * @description 用户账号信息管理服务
      * @networkStatus usage: 客户端
@@ -321,7 +312,6 @@ declare namespace mw {
      * 2. https://meta.feishu.cn/wiki/wikcnY0JiJ5gTwWan4ec5pC2Wdb
      */
     /**
-     * @author huipeng.jia
      * @description 广告类型
      * @groups 服务/货币
      */
@@ -332,7 +322,6 @@ declare namespace mw {
         Interstitial = "interstitial"
     }
     /**
-     * @author huipeng.jia
      * @description 广告状态，调用show方法的时候可能返回的广告状态
      * @groups 服务/货币
      */
@@ -353,7 +342,6 @@ declare namespace mw {
         Timeout = 5
     }
     /**
-     * @author huipeng.jia
      * @description 广告服务
      * @precautions 需先在开发者后台“游戏服务”中接入广告，才能正常播出。请注意，广告只能在真机上播放，开发环境无法播放。
      * @networkStatus usage: 客户端
@@ -439,7 +427,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @groups 服务/埋点分析
      * @description 事件包装器
      * @networkStatus usage: 双端
@@ -494,7 +481,6 @@ declare namespace mw {
         send(): void;
     }
     /**
-     * @author xiangkun.sun
      * @groups 服务/埋点分析
      * @description 分析服务
      * @networkStatus usage: 双端
@@ -541,7 +527,6 @@ declare namespace mw {
 declare namespace mw {
     /**
      * @hidden
-     * @author huipeng.jia, junwen.hua
      * @description 枚举各个通道的使用与接收方
      * @groups 基础类型
      */
@@ -561,7 +546,6 @@ declare namespace mw {
     }
     /**
      * @hidden
-     * @author huipeng.jia, junwen.hua
      * @groups 基础类型
      * @instance
      * @description 支持各端的通信，Platform、引擎、Web和游戏项目可以互相直接进行业务上的消息传递，无需修改引擎代码
@@ -642,19 +626,16 @@ declare namespace mw {
 }
 
 /**
- * @author changzun.li
  * @description 拍照组件
  */
 declare namespace mw {
     /**
-     * @author changzun.li
      * @groups 设置/设置面板
      * @description 拍照组件
      * @networkStatus usage: 客户端
      */
     class PhotoStudioService {
         /**
-         * @author changzun.li
          * @groups 设置/设置面板
          * @description 打开拍照组件
          * @effect 只在客户端调用生效
@@ -663,7 +644,6 @@ declare namespace mw {
          */
         static asyncOpenPhotoStudioModule(extraInfo?: any): Promise<boolean>;
         /**
-         * @author changzun.li
          * @groups 设置/设置面板
          * @description 打开拍照组件
          * @effect 只在客户端调用生效
@@ -682,12 +662,10 @@ declare namespace mw {
 }
 
 /**
- * @author huipeng.jia
  * @description 应用内购服务
  */
 declare namespace mw {
     /**
-     * @author junwen.hua
      * @groups 服务/货币
      * @description 大会员扣除钥匙订单返回状态信息
      */
@@ -704,7 +682,6 @@ declare namespace mw {
         Error = -3
     }
     /**
-     * @author huipeng.jia
      * @description 服务端接收发货通知的消息格式
      * @groups 基础类型
      * @param playerId usage: 下单的玩家playerId
@@ -715,7 +692,6 @@ declare namespace mw {
      */
     type OnOrderDelivered = (playerId: number, orderId: string, commodityId: string, amount: number, confirmOrder: (bReceived: boolean, message?: string) => void) => void;
     /**
-     * @author junwen.hua
      * @description 大会员钥匙扣除服务端接收发货通知的消息格式
      * @groups 服务/货币
      * @param player usage: 下单的玩家Player
@@ -726,14 +702,12 @@ declare namespace mw {
      */
     type OnKeyConsume = (player: mw.Player, orderId: string, boxId: string, amount: number, confirmOrder: (bReceived: boolean) => void) => void;
     /**
-     * @author huipeng.jia
      * @description 客户端接收余额更新的消息格式
      * @groups 基础类型
      * @param amount usage: 新的余额
      */
     type OnArkBalanceUpdated = (amount: number) => void;
     /**
-     * @author junwen.hua
      * @description 大会员消费钥匙订单。orderId：订单ID，boxId：宝箱ID，number：购买宝箱数量，shipTime：发货时间，毫秒级时间戳
      * @groups 服务/货币
      */
@@ -744,7 +718,6 @@ declare namespace mw {
         boxId: string;
     };
     /**
-     * @author mengyuan.hao
      * @description status : 兑换状态。
      * @description 200 ： 兑换成功
      * @description 400 ： 兑换失败（兑换码不存在）
@@ -767,7 +740,6 @@ declare namespace mw {
         player: mw.Player;
     };
     /**
-     * @author huipeng.jia, junwen.hua
      * @groups 服务/货币
      * @description 应用内购服务
      * @networkStatus usage: 客户端
@@ -775,7 +747,6 @@ declare namespace mw {
     class PurchaseService {
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 获取用户使用软件版本是否有大会员功能
          * @effect 只在客户端调用生效
          * @param isSupportedResult usage:结果回调，查询到结果后执行回调函数。true:支持大会员功能，false:不支持大会员功能
@@ -803,7 +774,6 @@ declare namespace mw {
         static isPremiumMemberSupported(isSupportedResult: (result: boolean) => void): void;
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 获取用户是否是大会员
          * @effect 只在客户端调用生效
          * @param isPremiumMemberResult usage:结果回调，查询到结果后执行回调函数。true:是大会员，false:不是大会员
@@ -831,7 +801,6 @@ declare namespace mw {
         static isPremiumMember(isPremiumMemberResult: (result: boolean) => void): void;
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 获取用户剩余钥匙数量
          * @effect 只在客户端调用生效
          * @param getUserKeyNumberResult usage:结果回调，查询到结果后执行回调函数。keyNumber : 剩余钥匙数量
@@ -859,7 +828,6 @@ declare namespace mw {
         static getUserKeyNumber(getUserKeyNumberResult: (keyNumber: number) => void, keyType?: number): void;
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 大会员开宝箱消耗金钥匙
          * @effect 只在客户端调用生效
          * @param boxId usage:宝箱 ID，代表一种福利，暂时自定义id。后续会在开发者平台配制  range:依据 boxId 长度
@@ -905,7 +873,6 @@ declare namespace mw {
         static consumeKey(boxId: string, number: number, keyType: number, placeOrderResult: (status: consumeKeyStatus) => void): void;
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 跳转会员充值页面
          * @effect 只在客户端调用生效
          * @example
@@ -929,7 +896,6 @@ declare namespace mw {
         static openPremiumMemberPurchasePage(): void;
         /**
          * @groups 服务/货币
-         * @author junwen.hua
          * @description 获取大会员状态更新时触发的委托
          * @effect 只在客户端调用生效
          * @returns 大会员状态更新时触发的委托
@@ -1093,26 +1059,22 @@ declare namespace mw {
 }
 
 /**
- * @author huipeng.jia
  * @groups 服务/社交
  * @description 游戏跳转服务
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @description 窗口刷新的消息格式
      * @groups 基础类型
      */
     type OnViewRefreshed = () => void;
     /**
-     * @author huipeng.jia
      * @description 窗口显示模式切换的消息格式
      * @groups 基础类型
      * @param newState usage: 新的窗口模式。1 为“角色展示模式”，2 为“角色编辑模式”
      */
     type OnViewLayoutSwitched = (newState: number) => void;
     /**
-     * @author huipeng.jia
      * @description 组队跳游戏请求失败回调
      * @groups 基础类型
      */
@@ -1123,7 +1085,6 @@ declare namespace mw {
         failedReason: string;
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/社交
      * @description 游戏管理器
      * @networkStatus usage: 双端
@@ -1311,7 +1272,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author changzun.li
      * @description 设置面板选项
      * @networkStatus usage: 客户端
      * @groups 设置/设置面板
@@ -1329,7 +1289,6 @@ declare namespace mw {
         Profiler = "PROFILER"
     }
     /**
-     * @author changzun.li
      * @description 设置面板相关API
      * @networkStatus usage: 客户端
      * @groups 设置/设置面板
@@ -1367,19 +1326,16 @@ declare namespace mw {
 }
 
 /**
- * @author huipeng.jia
  * @groups 服务
  * @description 多场景和传送服务
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @description 传送时可携带的数据类型
      * @groups 数据处理
      */
     type TeleportData = string | string[] | Record<string, any> | Record<string, any>[];
     /**
-     * @author huipeng.jia
      * @description 传送时可额外提供的信息
      * @groups 数据处理
      */
@@ -1395,7 +1351,6 @@ declare namespace mw {
         createNewPrivateRoom?: boolean;
     }
     /**
-     * @author huipeng.jia
      * @description 传送状态
      * @groups 数据处理
      */
@@ -1410,7 +1365,6 @@ declare namespace mw {
         error = "error"
     }
     /**
-     * @author huipeng.jia
      * @description 传送请求的结果
      * @groups 数据处理
      */
@@ -1425,7 +1379,6 @@ declare namespace mw {
         message: string;
     }
     /**
-     * @author huipeng.jia
      * @description 玩家所在的房间信息
      * @groups 数据处理
      */
@@ -1440,7 +1393,6 @@ declare namespace mw {
         sceneName: string;
     }
     /**
-     * @author huipeng.jia
      * @groups 服务/传送
      * @description 多场景和传送服务
      * @networkStatus usage: 服务端
@@ -1702,12 +1654,10 @@ declare namespace mw {
 }
 
 /**
- * @author huipeng.jia
  * @description 用户建造服务
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @groups 基础类型
      * @description UGC模板信息
      */
@@ -1735,7 +1685,6 @@ declare namespace mw {
         };
     };
     /**
-     * @author huipeng.jia
      * @groups 基础类型
      * @description 发布成功的UGC消费态游戏信息
      */
@@ -1761,7 +1710,6 @@ declare namespace mw {
         ];
     };
     /**
-     * @author huipeng.jia
      * @groups 基础类型
      * @description 本地工程信息。如果该工程发布过UGC消费态的游戏，那gameId不为空。
      */
@@ -1775,7 +1723,6 @@ declare namespace mw {
     };
     /**
      * @hidden
-     * @author huipeng.jia
      * @groups 基础类型
      * @description 用户建造服务
      * @networkStatus usage: 客户端
@@ -1808,12 +1755,10 @@ declare namespace mw {
  * 客户端是否支持某功能：https://meta.feishu.cn/wiki/DOa9w5YoTi3cY7kM5LRcJM6bnZj
  */
 /**
- * @author huipeng.jia
  * @description Avatar商城的应用内购服务
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description 使用placeOrder接口下单时用于描述商品信息的类型
      */
@@ -1824,7 +1769,6 @@ declare namespace mw {
         number: number;
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description 通过接口查询符合要求的商品列表时，会返回的对象类型。
      */
@@ -1837,7 +1781,6 @@ declare namespace mw {
         message: string;
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description 充值信息
      */
@@ -1857,7 +1800,6 @@ declare namespace mw {
         productList?: CommodityInfo[];
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description 账户余额信息
      */
@@ -1868,7 +1810,6 @@ declare namespace mw {
         point: number;
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description 发货回调
      */
@@ -1883,7 +1824,6 @@ declare namespace mw {
         message: string;
     };
     /**
-     * @author huipeng.jia
      * @groups 服务/货币
      * @description Avatar商城的应用内购服务
      * @networkStatus usage: 客户端
@@ -2053,7 +1993,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author xiangkun.sun
      * @groups 服务/调试
      * @instance
      * @description debug调试服务
@@ -2091,7 +2030,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author huipeng.jia, shilong.wang
      * @groups 场景/特效
      * @description 特效管理器
      * @description Effect 通常用于增强游戏画面、呈现视觉效果或传达特定的情感或信息。特效可以是各种形式的视觉效果，如粒子效果、光影效果、爆炸效果、烟雾效果等。MW编辑器在左侧特效栏中提供了大量的粒子特效，您可以任意的拖动特效到场景中查看并使用。
@@ -2259,7 +2197,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author mengyuan.hao
      * @groups 服务/社交
      * @description 聊天头顶气泡
      * @description 1. 什么是头顶气泡？
@@ -2655,13 +2592,11 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author mengyuan.hao
      * @description 收到MGS事件调用
      * @groups 数据处理
      */
     type ChatEvent = (jsonData: string) => void;
     /**
-     * @author mengyuan.hao
      * @description 发送消息的结果
      * @groups 基础类型
      */
@@ -2672,7 +2607,6 @@ declare namespace mw {
         message: string;
     };
     /**
-     * @author mengyuan.hao
      * @description 发送消息的类型
      * @groups 基础类型
      */
@@ -2683,7 +2617,6 @@ declare namespace mw {
         Game = 1
     }
     /**
-     * @author mengyuan.hao
      * @description 发送消息的状态
      * @groups 基础类型
      */
@@ -2700,7 +2633,6 @@ declare namespace mw {
         Error = -1
     }
     /**
-     * @author mengyuan.hao
      * @groups 服务/社交
      * @description 聊天服务
      * @description 语音聊天功能需要在mobile端才可生效，pie没有效果。可以使用手机端测试。
@@ -3018,20 +2950,17 @@ declare namespace mw {
 }
 
 /**
- * @author huipeng.jia
  * @description 游戏管理器
  * @description MGS以及玩家信息、数据、头像等相关API。
  * @description MGS = Meta Game Service, 是编辑器提供给开发者的一些原生服务，如发布游戏后的左上角聊天、好友相关信息服务。
  */
 declare namespace mw {
     /**
-     * @author huipeng.jia
      * @description 收到MGS事件调用
      * @groups 基础类型
      */
     type MGSEvent = (jsonData: string) => void;
     /**
-     * @author huipeng.jia
      * @groups 服务/社交
      * @description MGS以及玩家信息、数据、头像等相关API。
      * MGS = Meta Game Service, 是编辑器提供给开发者的一些原生服务，如发布游戏后的左上角聊天、好友相关信息服务。
@@ -3199,7 +3128,6 @@ declare namespace mw {
 
 declare namespace mw {
     /**
-     * @author shilong.wang
      * @groups 场景/音效
      * @description 音效管理器
      * @networkStatus usage: 双端
