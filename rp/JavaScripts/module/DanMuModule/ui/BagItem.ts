@@ -35,8 +35,9 @@ export default class BagItem extends BagItem_Generate {
 	}
 
 	private addClickButton(): void {
+		this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+		return;
 		if (this.isHas) {
-			this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
 		} else {
 			this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
 		}
@@ -54,7 +55,7 @@ export default class BagItem extends BagItem_Generate {
 		} else if (actionPropElement.AssetId) {
 			Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
 		}
-		this.isHas = isHas;
+		this.isHas = true;
 		this.updateState();
 	}
 

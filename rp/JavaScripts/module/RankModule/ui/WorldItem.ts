@@ -16,10 +16,12 @@ export default class WorldItem extends WorldItem_Generate {
 		this.mRankTextBlock.text = ranking.toString();
 		this.mNameTextBlock.text = roomData.playerName;
 		this.mTimeTextBlock.text = roomData.time.toString();
+		this.mScoreTextBlock.text = roomData.score.toString();
 
 		let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
 		this.mRankTextBlock.fontColor = fontColor;
 		this.mNameTextBlock.fontColor = fontColor;
 		this.mTimeTextBlock.fontColor = fontColor;
+		this.mScoreTextBlock.fontColor = fontColor;
 	}
 }

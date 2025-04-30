@@ -290,6 +290,19 @@ export default class Utils {
         }
         return true;
     }
+
+    public static randomColor(): mw.LinearColor[] {
+        let colors: mw.LinearColor[] = [mw.LinearColor.red, mw.LinearColor.green, mw.LinearColor.blue,
+        mw.LinearColor.yellow, new mw.LinearColor(1, 0, 1, 1), new mw.LinearColor(0, 1, 1, 1), mw.LinearColor.white];
+        let fontColor = colors[this.randomInt(0, colors.length - 1)];
+        let outlineColor = colors[this.randomInt(0, colors.length - 1)];
+        while (fontColor.a == outlineColor.a && fontColor.r == outlineColor.r
+            && fontColor.g == outlineColor.g && fontColor.b == outlineColor.b) {
+            outlineColor = colors[this.randomInt(0, colors.length - 1)];
+            // Console.error("颜色重复");
+        }
+        return [fontColor, outlineColor];
+    }
 }
 
 export function cubicBezier(p1x, p1y, p2x, p2y) {

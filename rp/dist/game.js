@@ -50,7 +50,7 @@ NoticeView_Generate = __decorate([ UIBind("UI/common/notice/NoticeView.ui") ], N
 
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign147 = Object.freeze({
+var foreign148 = Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -107,7 +107,7 @@ TopNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/TopNoticeItem.ui"
 
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign149 = Object.freeze({
+var foreign150 = Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -1863,7 +1863,7 @@ var foreign45 = Object.freeze({
     HolidayStylingOutfitConfig: HolidayStylingOutfitConfig
 });
 
-const EXCELDATA$y = [ [ "ID", "TriggerGuid", "ModelGuid", "ModelGuid_C", "BagId", "NpcId", "ShareId", "NpcAnimationId" ], [ "", "", "", "", "", "", "", "" ], [ 1, "224AC214", null, null, 10106, null, 0, null, "电吉他" ], [ 2, "35CDCC44", null, null, 10193, null, 0, null, "电吉他" ], [ 3, "34350953", null, null, 10194, null, 0, null, "吉他" ], [ 4, "3EA51D09", null, null, 10195, null, 0, null, "吉他" ], [ 5, "04AEE481", null, null, 10420, null, 0, null, "钢琴" ], [ 6, "05ED08EB", null, null, 10440, null, 0, null, "架子鼓" ], [ 7, "0CAEBC7B", null, null, 10438, null, 0, null, "灯球" ], [ 8, "1B1B284C", null, null, 10439, null, 0, null, "灯球" ], [ 9, "3B1D90D9", null, null, 10441, null, 0, null, "沙发" ], [ 10, "38A812F7", null, null, 10429, null, 0, null, "卡通小人" ], [ 11, "2D253DE4", null, null, 10430, null, 0, null, "L" ], [ 12, "1F461FC1", null, null, 10431, null, 0, null, "O" ], [ 13, "122CF8D0", null, null, 10432, null, 0, null, "V" ], [ 14, "135CB222", null, null, 10433, null, 0, null, "E" ], [ 15, "13F0153C", null, null, 10434, null, 0, null, "F" ], [ 16, "2B380279", null, null, 10435, null, 0, null, "U" ], [ 17, "323796B5", null, null, 10436, null, 0, null, "C" ], [ 18, "0BFB2115", null, null, 10437, null, 0, null, "K" ], [ 19, "025E8339", null, null, 10442, null, 0, null, "箱子" ], [ 20, "1CB8B39E", null, "121354", 10443, null, 0, null, "红手牌(笑脸)" ], [ 21, "3218B841", null, "121351", 10444, null, 0, null, "蓝手牌(委屈脸)" ], [ 22, "3FC7844F", null, null, 10445, null, 0, null, "A" ], [ 23, "3A0B1AA4", null, null, 10446, null, 0, null, "B" ], [ 24, "289874F8", null, null, 10447, null, 0, null, "D" ], [ 25, "2D35158F", null, null, 10448, null, 0, null, "G" ], [ 26, "37179069", null, null, 10449, null, 0, null, "凳子" ], [ 27, "06A7F0E5", null, null, 10412, null, 0, null, "蓝色法杖" ], [ 28, "22E2E57A", null, null, 10413, null, 0, null, "红色法杖" ], [ 29, "2826DD99", null, null, 10414, null, 0, null, "扫帚法杖" ], [ 30, "2A198EFA", null, null, 10415, null, 0, null, "魔法仗" ], [ 31, "1E555942", null, null, 10416, null, 0, null, "地毯" ], [ 32, "2D19DF6C", null, null, 10417, null, 0, null, "足球筐" ], [ 33, "32A7A7B8", null, null, 10418, null, 0, null, "纸板箱" ], [ 34, "34F4253C", null, null, 10419, null, 0, null, "热狗摊" ], [ 35, "3D84B039", null, null, 10421, null, 0, null, "妲己耳朵" ], [ 36, "3AA417A1", null, null, 10422, null, 0, null, "长耳兔灰耳朵" ], [ 37, "3A0611CB", null, null, 10423, null, 0, null, "黑狼耳朵" ], [ 38, "3AC125DE", null, null, 10424, null, 0, null, "气球" ], [ 39, "32B8310E", null, null, 10425, null, 0, null, "卡通小人" ], [ 40, "3E3B0A9B", null, null, 10426, null, 0, null, "卡通小人" ], [ 41, "1A0BA065", null, null, 10406, null, 0, null, "凳子" ], [ 42, "16726419", null, null, 10192, null, 0, null, "女帽子" ], [ 43, "17FB3B3A", null, null, 10174, null, 0, null, "法杖" ], [ 44, "359709F3", null, null, 10151, null, 0, null, "射灯" ], [ 45, "39365A4F", null, "87019", 10152, null, 0, null, "喷火枪" ], [ 46, "2B34AD30", null, null, 10147, null, 0, null, "尖叫鸡" ], [ 47, "0E045A2F", null, null, 10105, null, 0, null, "荧光棒" ], [ 48, "3DFE17A3", null, "175291", 10107, null, 0, null, "左轮手枪" ], [ 49, "26253FF9", null, "176450", 10108, null, 0, null, "散弹枪" ], [ 50, "2DA1B897", null, "176541", 10109, null, 0, null, "步枪" ], [ 51, "31CB4D13", null, "176320", 10112, null, 0, null, "美元" ], [ 52, "20002110", null, null, 10101, null, 0, null, "洋娃娃" ], [ 53, "253BA295", null, "176521", 10102, null, 0, null, "娃娃" ], [ 54, "03839C6A", null, null, 10103, null, 0, null, "书本" ], [ 55, "364243CD", null, "176511", 10104, null, 0, null, "相机" ], [ 56, "39E41FEF", null, "176265", 10111, null, 0, null, "笔记本电脑" ], [ 57, "282CC813", null, "176478", 10114, null, 0, null, "手机" ], [ 58, "09E06B43", null, "162188", 10116, null, 0, null, "手捧鲜花" ], [ 59, "0B2EE355", null, "176260", 10117, null, 0, null, "购物车" ], [ 60, "37CE4DD0", null, "176266", 10119, null, 0, null, "婴儿车" ], [ 61, "2C2B7A39", null, "176501", 10120, null, 0, null, "行李箱" ], [ 62, "0EC71B70", null, "176321", 10121, null, 0, null, "黑色雨伞" ], [ 63, "170B6165", null, null, 10146, null, 0, null, "气球" ], [ 64, "0C858992", null, null, 10148, null, 0, null, "小白兔玩偶" ], [ 65, "1C3B1716", null, null, 10149, null, 0, null, "玩偶" ], [ 66, "3099F378", null, null, 10164, null, 0, null, "杠铃" ], [ 67, "1A6AA485", null, null, 10165, null, 0, null, "杠铃" ], [ 68, "22A2C3CA", null, null, 10166, null, 0, null, "玩偶" ], [ 69, "29C87271", null, null, 10167, null, 0, null, "玩偶" ], [ 70, "22E0C2A0", null, null, 10169, null, 0, null, "奖杯" ], [ 71, "317994EA", null, null, 10170, null, 0, null, "靠垫" ], [ 72, "173E9CED", null, null, 10171, null, 0, null, "靠垫" ], [ 73, "1F7EF865", null, null, 10173, null, 0, null, "游戏机" ], [ 74, "1A4DEA4F", null, null, 10175, null, 0, null, "鲤鱼" ], [ 75, "30DCA4CE", null, null, 10176, null, 0, null, "龙虾" ], [ 76, "30DFB9BA", null, null, 10177, null, 0, null, "金龙鱼" ], [ 77, "124A25AC", null, null, 10178, null, 0, null, "毛鼻鲶" ], [ 78, "3A948C2D", null, null, 10179, null, 0, null, "尖吻鲈" ], [ 79, "1A1960EC", null, null, 10180, null, 0, null, "蓝鳍金枪鱼" ], [ 80, "137C3DFC", null, null, 10181, null, 0, null, "大眼鲤鱼" ], [ 81, "3517B1C8", null, null, 10182, null, 0, null, "大口副鲈" ], [ 82, "1B7F2A56", null, null, 10183, null, 0, null, "皇带鱼" ], [ 83, "0F885A8D", null, null, 10184, null, 0, null, "鲸鱼" ], [ 84, "033F8BC7", null, null, 10185, null, 0, null, "孔雀鱼" ], [ 85, "2BBA0926", null, null, 10186, null, 0, null, "笛鲷" ], [ 86, "0115C5D2", null, null, 10187, null, 0, null, "平颌鱲" ], [ 87, "27471C8D", null, null, 10188, null, 0, null, "鲨鱼" ], [ 88, "3D53903B", null, null, 10189, null, 0, null, "樱花枝" ], [ 89, "3FC58217", null, null, 10190, null, 0, null, "咖啡" ], [ 90, "011F309B", null, null, 10191, null, 0, null, "女帽子" ], [ 91, "279B18E5", null, null, 10197, null, 0, null, "角色模型" ], [ 92, "2ED0380E", null, null, 10198, null, 0, null, "背带鲨鱼" ], [ 93, "0B82C187", null, null, 10199, null, 0, null, "埃及鲨鱼" ], [ 94, "222E5F2C", null, null, 10400, null, 0, null, "埃及章鱼" ], [ 95, "2B30B91A", null, null, 10401, null, 0, null, "埃及金鱼" ], [ 96, "13072EE6", null, null, 10402, null, 0, null, "天使章鱼" ], [ 97, "0EF164F2", null, null, 10403, null, 0, null, "嘟嘟嘴金鱼" ], [ 98, "0A1F52D5", null, null, 10404, null, 0, null, "嘟嘟嘴红金鱼" ], [ 99, "136497DE", null, null, 10405, null, 0, null, "灯笼鱼形态的宠物" ], [ 100, "3F965EAA", null, "172199", 10407, null, 0, null, "紫阳春剑" ], [ 101, "2EA2AC85", null, null, 10408, null, 0, null, "剑" ], [ 102, "218D8D42", null, null, 10409, null, 0, null, "大剑" ], [ 103, "08BA2210", null, null, 10410, null, 0, null, "樱花枝" ], [ 104, "209DADD3", null, null, 10411, null, 0, null, "樱花枝" ], [ 105, "26F28CC5", null, null, 10427, null, 0, null, "卡通小人" ], [ 106, "080EB5B4", null, null, 10428, null, 0, null, "甜品店吉祥物" ], [ 107, "050F3F49", null, null, 10122, null, 0, null, "汉堡" ], [ 108, "103D03C0", null, null, 10123, null, 0, null, "羊奶" ], [ 109, "2083D818", null, null, 10124, null, 0, null, "面包" ], [ 110, "10A78A34", null, null, 10125, null, 0, null, "面包" ], [ 111, "2A879D5B", null, null, 10127, null, 0, null, "饮料" ], [ 112, "1A5C96B8", null, null, 10128, null, 0, null, "饮料" ], [ 113, "004E4C1F", null, null, 10129, null, 0, null, "饮料" ], [ 114, "1C676A4A", null, null, 10131, null, 0, null, "酒" ], [ 115, "2300CB9F", null, null, 10133, null, 0, null, "奶昔" ], [ 116, "214CD6A8", null, null, 10134, null, 0, null, "冰淇淋" ], [ 117, "2B6173AC", null, null, 10138, null, 0, null, "烧烤" ], [ 118, "192EEF1B", null, null, 10141, null, 0, null, "奶茶" ], [ 119, "129123ED", null, null, 10143, null, 0, null, "猫粮" ], [ 120, "2DDFA879", null, null, 10154, null, 0, null, "蛋糕" ], [ 121, "1F5D16DF", null, "23116", 10157, null, 0, null, "一盘蛋糕" ], [ 122, "2DBA3007", null, null, 10159, null, 0, null, "咖啡" ], [ 123, "11DE3617", null, null, 10162, null, 0, null, "清酒" ], [ 124, "1F8B4506", null, null, 10163, null, 0, null, "清酒" ], [ 125, "1D2C18D1", null, null, 20002, null, 0, null, "火焰翅膀" ], [ 126, "2916ADF8", null, null, 20004, null, 0, null, "翅膀" ], [ 127, "06C9F1FE", null, null, 20006, null, 0, null, "翅膀" ], [ 128, "142E03ED", null, null, 20008, null, 0, null, "翅膀" ], [ 129, "26D884D0", null, null, 20010, null, 0, null, "双层翅膀" ], [ 130, "1145F838", null, null, 20012, null, 0, null, "翅膀" ], [ 131, "0DA363C5", null, null, 20014, null, 0, null, "翅膀" ], [ 132, "18F12461", null, null, 20016, null, 0, null, "翅膀" ], [ 133, "09A98640", null, null, 20018, null, 0, null, "翅膀" ], [ 134, "29259717", null, null, 20020, null, 0, null, "翅膀" ], [ 135, "18263521", null, null, 20022, null, 0, null, "翅膀" ], [ 136, "2FEA3789", null, null, 20024, null, 0, null, "翅膀" ], [ 137, "014FF45D", null, null, 20026, null, 0, null, "翅膀" ], [ 138, "0405BC9D", null, null, 20028, null, 0, null, "翅膀" ], [ 139, "094A02FA", null, null, 20030, null, 0, null, "翅膀" ], [ 140, "299D82EF", null, null, 20032, null, 0, null, "翅膀" ], [ 141, "3FAFE6CC", null, null, 20034, null, 0, null, "翅膀" ], [ 142, "2AD6A4AE", null, null, 20036, null, 0, null, "翅膀" ], [ 143, "36C39B14", null, null, 20038, null, 0, null, "翅膀" ], [ 144, "3522E74F", null, null, 20040, null, 0, null, "翅膀" ], [ 145, "2FE7B16D", null, null, 20042, null, 0, null, "翅膀" ], [ 146, "37DAF393", null, null, 20044, null, 0, null, "翅膀" ], [ 147, "3E372B7B", null, null, 20046, null, 0, null, "六翼翅膀" ], [ 148, "2C44780B", null, null, 20048, null, 0, null, "翅膀" ], [ 149, "3BE2742B", null, null, 20050, null, 0, null, "翅膀" ], [ 150, "2D5EE2BA", null, null, 20052, null, 0, null, "翅膀" ], [ 151, "21667B97", null, null, 20054, null, 0, null, "翅膀" ], [ 152, "1BA1097C", null, null, 20056, null, 0, null, "翅膀" ], [ 153, "01DAA052", null, null, 20058, null, 0, null, "翅膀" ], [ 154, "0079B931", null, null, 20060, null, 0, null, "翅膀" ], [ 155, "0A6CF066", null, null, 20062, null, 0, null, "火焰翅膀" ], [ 156, "0170FAC5", "10EE2A0C", null, 30002, null, 0, null, "烟花筒" ], [ 157, "26A8A892", null, null, 30004, null, 0, null, "炮弹" ], [ 158, "17A75E0B", "11FC9E63", null, 30006, null, 0, null, "烟花筒" ], [ 159, "00C80687", "009A5BCB", null, 30008, null, 0, null, "烟花筒" ], [ 160, "35CFC979", "0BABC56F", null, 30010, null, 0, null, "烟花筒" ], [ 161, "282879EE", "086F059A", null, 30012, null, 0, null, "烟花筒" ], [ 162, "1348916C", "2CE0DFEA", null, 30014, null, 0, null, "烟花筒" ], [ 163, "14BC2A1E", "1C4054BD", null, 30016, null, 0, null, "烟花筒" ], [ 164, "351C315A", "0C3BA4A7", null, 30018, null, 0, null, "烟花筒" ], [ 165, "1851FD98", "2BF65CD0", null, 30020, null, 0, null, "烟花筒" ], [ 166, "0BC4E95E", "1FBB9B3D", null, 30022, null, 0, null, "烟花筒" ], [ 167, "1926D26C", "1AD6F243", null, 30024, null, 0, null, "烟花筒" ], [ 168, "3BE44928", "0CA04CBA", null, 30026, null, 0, null, "烟花筒" ], [ 169, "3731FC4C", "1E7500AE", null, 30028, null, 0, null, "烟花筒" ], [ 170, "2AB82CCF", "0DEDEC96", null, 30030, null, 0, null, "烟花筒" ], [ 171, "23E53611", "29469B64", null, 30032, null, 0, null, "烟花筒" ], [ 172, "09D6F64A", "038E0DE6", null, 30034, null, 0, null, "烟花筒" ], [ 173, "21EBA335", "02D1FC4B", null, 30036, null, 0, null, "烟花筒" ], [ 174, "0AEFD6F9", "1C1338D2", null, 30038, null, 0, null, "烟花筒" ], [ 175, "2CEB6159", "0F8364EB", null, 30040, null, 0, null, "烟花筒" ], [ 176, "3B8E291C", "2B16F449", null, 30042, null, 0, null, "烟花筒" ], [ 177, "0942A9BF", "2A1D15C4", null, 30044, null, 0, null, "烟花筒" ], [ 178, "0C77E34B", "2D266A62", null, 30046, null, 0, null, "炮竹" ], [ 179, "03AABEC8", "19765D9B", null, 30048, null, 0, null, "炮竹" ], [ 180, "0BAE4938", "224D3EAB", null, 30050, null, 0, null, "炮竹" ], [ 181, "2072060C", "2B5E0169", null, 30052, null, 0, null, "炮竹" ], [ 182, "125FDADA", "2BDB0504", null, 30054, null, 0, null, "炮竹" ], [ 183, "0CEBF7F6", "0972F491", null, 30056, null, 0, null, "炮竹" ], [ 184, "0CBA3B39", "03CA58A6", null, 30058, null, 0, null, "炮竹" ], [ 185, "3C02005B", "3846CB30", null, 30060, null, 0, null, "炮竹" ], [ 186, "197982A9", "249786AD", null, 30062, null, 0, null, "炮竹" ], [ 187, "0C2A81EC", "22179468", null, 30064, null, 0, null, "炮竹" ], [ 188, "385D9FB5", "04B8B96E", null, 30066, null, 0, null, "炮竹" ], [ 189, "3684FDBA", "3DCE0055", null, 30068, null, 0, null, "炮竹" ], [ 190, "30776600", "05A9EE0A", null, 30070, null, 0, null, "炮竹" ], [ 191, "2FE9605C", "069FA242", null, 30072, null, 0, null, "炮竹" ], [ 192, "3E3F8384", "38A2E844", null, 30074, null, 0, null, "炮竹" ], [ 193, "2897C252", null, null, 60001, null, 0, null, "滑板" ], [ 194, "0B49E4CA", null, null, 60002, null, 0, null, "滑板2" ], [ 195, "046CC428", null, null, 60003, null, 0, null, "滑板3" ], [ 196, "15F06D91", null, null, 60004, null, 0, null, "冲浪板" ], [ 197, "33053BEF", null, null, 60005, null, 0, null, "冲浪板_1" ], [ 198, "0074DBFD", null, null, 60006, null, 0, null, "自行车" ], [ 199, "182128DB", null, null, 60007, null, 0, null, "自行车1" ], [ 200, "2A6DF1E4", null, "159590", 60008, null, 0, null, "花猪" ], [ 201, "17410470", null, "160319", 60009, null, 0, null, "狗儿子" ], [ 202, "0A5C1D80", null, "174968", 60010, null, 0, null, "彩虹马" ], [ 203, "071E50F6", null, "159933", 60011, null, 0, null, "熊猫" ], [ 204, "08EF9811", null, "160634", 60012, null, 0, null, "小龙" ], [ 205, "3A194CF5", null, null, 60013, null, 0, null, "御剑" ], [ 206, "300D2EC9", null, null, 60014, null, 0, null, "鱼" ], [ 207, null, null, null, 0, "39AB2FB0", 2, "151060", "冲浪板" ], [ 208, null, null, null, 0, "254A21DD", 3, "151060", "冲浪板" ], [ 209, null, null, null, 0, "31DE1825", 7, "151060", "鱼" ], [ 210, null, null, null, 0, "0A031A75", 8, "151060", "滑板" ] ];
+const EXCELDATA$y = [ [ "ID", "TriggerGuid", "ModelGuid", "ModelGuid_C", "BagId", "NpcId", "ShareId", "NpcAnimationId" ], [ "", "", "", "", "", "", "", "" ], [ 1, "224AC214", null, null, 10106, null, 0, null, "电吉他" ], [ 2, "35CDCC44", null, null, 10193, null, 0, null, "电吉他" ], [ 3, "34350953", null, null, 10194, null, 0, null, "吉他" ], [ 4, "3EA51D09", null, null, 10195, null, 0, null, "吉他" ], [ 5, "04AEE481", null, null, 10420, null, 0, null, "钢琴" ], [ 6, "05ED08EB", null, null, 10440, null, 0, null, "架子鼓" ], [ 7, "0CAEBC7B", null, null, 10438, null, 0, null, "灯球" ], [ 196, "15F06D91", null, null, 60004, null, 0, null, "冲浪板" ], [ 197, "33053BEF", null, null, 60005, null, 0, null, "冲浪板_1" ], [ 207, null, null, null, 0, "39AB2FB0", 2, "151060", "冲浪板" ], [ 208, null, null, null, 0, "254A21DD", 3, "151060", "冲浪板" ], [ 209, null, null, null, 0, "31DE1825", 7, "151060", "鱼" ], [ 210, null, null, null, 0, "0A031A75", 8, "151060", "滑板" ] ];
 
 class InteractConfig extends ConfigBase {
     constructor() {
@@ -1876,7 +1876,7 @@ var foreign46 = Object.freeze({
     InteractConfig: InteractConfig
 });
 
-const EXCELDATA$x = [ [ "ID", "Name", "Value", "Value_Ch" ], [ "", "Key|ReadByName", "MainLanguage", "ChildLanguage" ], [ 1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满" ], [ 2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具" ], [ 3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试" ], [ 4, "Text_SetUp1", "Base Setup", "基础设置" ], [ 5, "Text_PictureQuality", "Picture Quality", "画质" ], [ 6, "Text_SoundEffects", "Sound Effects", "音效" ], [ 7, "Text_BackgroundMusic", "Background Music", "背景音乐" ], [ 8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放" ], [ 9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称" ], [ 10, "Text_ResetLocation", "Reset Location", "重置位置" ], [ 11, "Text_RestoringSettings", "Restoring Settings", "还原设置" ], [ 12, "Text_On", "ON", "开" ], [ 13, "Text_Off", "OFF", "关" ], [ 14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用" ], [ 15, "Text_Advertising", "Advertising", "广告奖励" ], [ 16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得" ], [ 17, "Text_Dont", "Don't", "不要" ], [ 18, "Text_Free", "free", "免费获得" ], [ 19, "Text_Fail", "Fail", "指引失败，请重试" ], [ 20, "Text_NoOnTheList", "Not", "未上榜" ], [ 21, "Text_Ranking", "Ranking", "排名" ], [ 22, "Text_Nickname", "Nickname", "昵称" ], [ 23, "Text_Score", "Score", "分数" ], [ 24, "Text_Duration", "Duration", "时长" ], [ 25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "时长全服前{0}名" ], [ 26, "Text_StartGame", "Start the game", "开始游戏" ], [ 27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春日物语：露营换装派对" ], [ 28, "Text_UpNext", "Up next", "下一个" ], [ 29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的露营之旅吧" ], [ 30, "Text_Close", "Close", "关闭" ], [ 31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿" ], [ 32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID" ], [ 33, "Text_Cancel", "Cancel", "取消" ], [ 34, "Text_FreeTryOn", "Free Try On", "免费试穿" ], [ 35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象" ], [ 36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象" ], [ 37, "Text_CopySuccessfully", "Copy Successfully", "复制成功" ], [ 38, "Text_InvalidID", "Invalid ID!", "ID无效！" ], [ 39, "Text_Loading", "Loading", "加载中" ], [ 40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功" ], [ 41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿" ], [ 42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿" ], [ 43, "Text_GuideTips", "Reach near the target point", "达到目标点附近" ], [ 44, "Text_BootPrompt", "Boot prompt", "引导提示" ], [ 45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得" ], [ 46, "Text_SignIn_1", "Activity is not enabled", "活动未开启" ], [ 47, "Text_SignIn_2", "Successful costume change", "换装成功" ], [ 48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足" ], [ 49, "Text_SignIn_4", "Check-in bonus", "签到奖励" ], [ 50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天" ], [ 51, "Text_SignIn_6", "Has been \nObtained", "已获得" ], [ 52, "Text_SignIn_7", "Change of dress", "换装" ], [ 53, "Text_SignIn_8", "Insufficient check-in", "签到不足" ], [ 54, "Text_SignIn_9", "Day {0}", "第{0}天" ], [ 55, "Text_SignIn_10", "Sign In", "签到" ], [ 56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装" ], [ 57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。" ], [ 58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟" ], [ 59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿" ], [ 60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦" ], [ 61, "Text_Tab1_1", "Appearance", "捏脸" ], [ 62, "Text_Tab1_2", "Clothing", "换装" ], [ 63, "Text_Tab1_3", "Collection", "保存穿搭" ], [ 64, "Text_Tab1_4", "Test", "测试" ], [ 65, "Text_Tab2_101", "Body Type", "体型" ], [ 66, "Text_Tab2_102", "Skin Tone", "肤色" ], [ 67, "Text_Tab2_103", "Face", "脸型" ], [ 68, "Text_Tab2_104", "Eyes", "眼睛" ], [ 69, "Text_Tab2_105", "Eyebrows", "眉毛" ], [ 70, "Text_Tab2_106", "Makeup", "妆容" ], [ 71, "Text_Tab2_107", "Expression", "表情" ], [ 72, "Text_Tab2_108", "Outfit", "套装" ], [ 73, "Text_Tab2_109", "Hair", "头发" ], [ 74, "Text_Tab2_110", "Top", "上衣" ], [ 75, "Text_Tab2_111", "Bottom", "下衣" ], [ 76, "Text_Tab2_112", "Gloves", "鞋子" ], [ 77, "Text_Tab2_113", "Shoes", "手套" ], [ 78, "Text_Tab2_114", "Pet", "宠物" ], [ 79, "Text_Tab2_115", "Accessory", "饰品" ], [ 80, "Text_Tab2_501", "Body Type", "体型", "收藏" ], [ 81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏" ], [ 82, "Text_Tab2_503", "Face", "脸型", "收藏" ], [ 83, "Text_Tab2_504", "Eyes", "眼睛", "收藏" ], [ 84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏" ], [ 85, "Text_Tab2_506", "Makeup", "妆容", "收藏" ], [ 86, "Text_Tab2_507", "Expression", "表情", "收藏" ], [ 87, "Text_Tab2_508", "Outfit", "套装", "收藏" ], [ 88, "Text_Tab2_509", "Hair", "头发", "收藏" ], [ 89, "Text_Tab2_510", "Top", "上衣", "收藏" ], [ 90, "Text_Tab2_511", "Bottom", "下衣", "收藏" ], [ 91, "Text_Tab2_512", "Gloves", "鞋子", "收藏" ], [ 92, "Text_Tab2_513", "Shoes", "手套", "收藏" ], [ 93, "Text_Tab2_514", "Pet", "宠物", "收藏" ], [ 94, "Text_Tab2_515", "Accessory", "饰品", "收藏" ], [ 95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式" ], [ 96, "Text_Tab3_1002", "Lens", "瞳孔贴花" ], [ 97, "Text_Tab3_1003", "Upper Highlight", "上高光" ], [ 98, "Text_Tab3_1004", "Lower Highlight", "下高光" ], [ 99, "Text_Tab3_1005", "Eyelashes", "睫毛" ], [ 100, "Text_Tab3_1006", "Eyeshadow", "眼影" ], [ 101, "Text_Tab3_1007", "Blush", "腮红" ], [ 102, "Text_Tab3_1008", "Lip Makeup", "口红" ], [ 103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘" ], [ 104, "Text_Tab3_1010", "Full Hair", "整体发型" ], [ 105, "Text_Tab3_1011", "Front Hair", "前发" ], [ 106, "Text_Tab3_1012", "Back Hair", "后发" ], [ 107, "Text_Tab3_1013", "Left Hand", "左手" ], [ 108, "Text_Tab3_1014", "Right Hand", "右手" ], [ 109, "Text_Tab3_1015", "Back", "背饰" ], [ 110, "Text_Tab3_1016", "Head", "头饰" ], [ 111, "Text_Tab3_1017", "Face", "面饰" ], [ 112, "Text_Tab3_1018", "Hip", "臀部" ], [ 113, "Text_Tab3_1019", "Shoulder", "肩部" ], [ 114, "Text_Tab3_1020", "Effects", "特效" ], [ 115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏" ], [ 116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏" ], [ 117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏" ], [ 118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏" ], [ 119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏" ], [ 120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏" ], [ 121, "Text_Tab3_2007", "Blush", "腮红", "收藏" ], [ 122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏" ], [ 123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏" ], [ 124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏" ], [ 125, "Text_Tab3_2011", "Front Hair", "前发", "收藏" ], [ 126, "Text_Tab3_2012", "Back Hair", "后发", "收藏" ], [ 127, "Text_Tab3_2013", "Left Hand", "左手", "收藏" ], [ 128, "Text_Tab3_2014", "Right Hand", "右手", "收藏" ], [ 129, "Text_Tab3_2015", "Back", "背饰", "收藏" ], [ 130, "Text_Tab3_2016", "Ear", "耳饰", "收藏" ], [ 131, "Text_Tab3_2017", "Face", "面饰", "收藏" ], [ 132, "Text_Tab3_2018", "Hip", "臀部", "收藏" ], [ 133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏" ], [ 134, "Text_Tab3_2020", "Effects", "特效", "收藏" ], [ 135, "Text_OpenClothTextBlock", "Shop", "换装商店" ], [ 136, "Text_MallItem_Free", "Free", "免费" ], [ 137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启" ], [ 138, "Text_BodyTypeDescribe", "{0} times", "{0}倍" ], [ 139, "Text_Expression_Default", "Default", "默认表情" ], [ 140, "Text_Expression_Smile", "Smile", "微笑" ], [ 141, "Text_Expression_HaveFun", "Have Fun", "开心" ], [ 142, "Text_Expression_Sad", "Sad", "伤心" ], [ 143, "Text_Expression_GetAngry", "Get Angry", "生气" ], [ 144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬" ], [ 145, "Text_Expression_Laugh", "Laugh", "笑" ], [ 146, "Text_Expression_BeNaughty", "Be Naughty", "调皮" ], [ 147, "Text_Expression_Cute", "Cute", "可爱" ], [ 148, "Text_Expression_Doubt", "Doubt", "疑惑" ], [ 149, "Text_Tab3_1021", "Trailing", "拖尾" ], [ 150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏" ], [ 151, "Text_ColorPick", "Color Pick", "调色板" ], [ 152, "Text_ColorPart", "Part {0}", "部位 {0}" ], [ 153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色" ], [ 154, "Text_PupilColor", "Pupil Color", "瞳孔颜色" ], [ 155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色" ], [ 156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色" ], [ 157, "Text_DecalColor", "Decal Color", "贴花颜色" ], [ 158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色" ], [ 159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色" ], [ 160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色" ], [ 161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色" ], [ 162, "Text_BlushColor", "Blush Color", "腮红颜色" ], [ 163, "Text_LipstickColor", "Lipstick Color", "口红颜色" ], [ 164, "Text_Monochrome", "Monochrome", "单色" ], [ 165, "Text_TopColor", "Top Color", "发顶色" ], [ 166, "Text_TailColor", "Tail Color", "发尾色" ], [ 167, "Text_FreeSave", "Free Save", "免费保存" ], [ 168, "Text_ResetImage", "Reset Image", "重置平台形象" ], [ 169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败" ], [ 170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色" ], [ 171, "Text_SaveTips", "Save Tips", "保存提示" ], [ 172, "Text_Save", "Save", "保存" ], [ 173, "Text_NoSave", "No Save", "不保存" ], [ 174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象" ], [ 175, "Text_CloseTips", "Close Tips", "关闭提示" ], [ 176, "Text_SaveSuccessfully", "Save Successfully", "保存成功" ], [ 177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功" ], [ 178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功" ], [ 179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色" ], [ 180, "Text_Retain", "Retain", "保留" ], [ 181, "Text_NoRetain", "No Retain", "不保留" ], [ 182, "Text_Tab3_1022", "Daily Styling", "日常造型1" ], [ 183, "Text_Tab3_1023", "Muppet Styling", "布偶造型" ], [ 184, "Text_Tab3_1024", "Hero Styling", "英雄造型" ], [ 185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型" ], [ 186, "Text_Tab3_1026", "Holiday Styling", "节日造型" ], [ 187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型" ], [ 188, "Text_Tab3_1028", "Ancient Molding", "古代造型" ], [ 189, "Text_Tab3_1029", "Long Piece", "长单件" ], [ 190, "Text_Tab3_1030", "Jacket", "短外套" ], [ 191, "Text_Tab3_1031", "Short Piece", "短单件" ], [ 192, "Text_Tab3_1032", "Outfit", "套装" ], [ 193, "Text_Tab3_1033", "Long Coat", "长外套" ], [ 194, "Text_Tab3_1034", "Kilt", "短裙" ], [ 195, "Text_Tab3_1035", "Trousers", "长裤" ], [ 196, "Text_Tab3_1036", "Shorts", "短裤" ], [ 197, "Text_Tab3_1037", "Long Dress", "长裙" ], [ 198, "Text_Tab3_1038", "Pantyhose", "裤袜" ], [ 199, "Text_Tab3_1039", "Gloves", "手套" ], [ 200, "Text_Tab3_1040", "Glove Accessory", "手套饰品" ], [ 201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋" ], [ 202, "Text_Tab3_1042", "Boots", "靴子" ], [ 203, "Text_Tab3_1043", "Toe Brace", "足套" ], [ 204, "Text_Tab3_1044", "Nudity", "裸饰" ], [ 205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋" ], [ 206, "Text_Tab3_1046", "Sneakers", "运动鞋" ], [ 207, "Text_Tab3_1047", "Daily Styling", "日常造型2" ], [ 208, "Text_HUDPanelTips1", null, "服装签到" ], [ 209, "Text_HUDPanelTips2", null, "试穿排行榜" ], [ 210, "Text_HUDPanelTips3", null, "全服排行榜" ], [ 211, "Text_HUDPanelTips4", null, "设置" ], [ 212, "Text_HUDPanelTips5", null, "免费换装" ], [ 213, "Text_HUDPanelTips6", null, "换装商店" ], [ 214, "Text_HUDPanelTips7", null, "背景音乐" ], [ 215, "Text_TryOnTips1", null, "排名" ], [ 216, "Text_TryOnTips2", null, "昵称" ], [ 217, "Text_TryOnTips3", null, "被试穿次数" ], [ 218, "Text_TryOnTips4", null, "试穿好友形象" ], [ 219, "Text_TryOnTips5", null, "自己的形象" ], [ 220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间" ], [ 221, "Text_TryOnTips7", null, "换个好友试试吧" ], [ 222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范" ], [ 223, "Text_TryOnTips9", null, "被好友试穿权限" ], [ 224, "Text_TryOnTips10", null, "允许" ], [ 225, "Text_TryOnTips11", null, "不允许" ], [ 226, "Text_TryOnTips12", null, "好友试穿权限已关闭，不允许试穿" ], [ 227, "Text_Tab3_1048", "Pet", "灵宠" ], [ 228, "Text_SaveSuccefully", "Save Succefully", "保存穿搭成功" ], [ 229, "Text_SaveCurrentCharacter", null, "保存当前穿搭\n（{0}/{1}）" ], [ 230, "Text_MaxSaveCount", null, "最多只能保存{0}个" ], [ 231, "Text_DeleteSucceed", null, "删除成功" ] ];
+const EXCELDATA$x = [ [ "ID", "Name", "Value", "Value_Ch" ], [ "", "Key|ReadByName", "MainLanguage", "ChildLanguage" ], [ 1, "Text_TheItemBarIsFull", "The item bar is full", "道具栏已满" ], [ 2, "Text_ThisItemIsInUse", "This item is in use", "正在使用此道具" ], [ 3, "Text_Tips1", "Someone is using it, please try another one", "有人正在使用，请换个试试" ], [ 4, "Text_SetUp1", "Base Setup", "基础设置" ], [ 5, "Text_PictureQuality", "Picture Quality", "画质" ], [ 6, "Text_SoundEffects", "Sound Effects", "音效" ], [ 7, "Text_BackgroundMusic", "Background Music", "背景音乐" ], [ 8, "Text_ViewAngleScaling", "View Angle Scaling", "视角缩放" ], [ 9, "Text_DisplayNicknames", "Display Nicknames", "显示昵称" ], [ 10, "Text_ResetLocation", "Reset Location", "重置位置" ], [ 11, "Text_RestoringSettings", "Restoring Settings", "还原设置" ], [ 12, "Text_On", "ON", "开" ], [ 13, "Text_Off", "OFF", "关" ], [ 14, "Text_ObtainedTips", "Obtained, open the knapsack to use", "已获得，打开背包使用" ], [ 15, "Text_Advertising", "Advertising", "广告奖励" ], [ 16, "Text_ADGetTips", "See the AD for free guide you get", "看广告免费指引你获得" ], [ 17, "Text_Dont", "Don't", "不要" ], [ 18, "Text_Free", "free", "免费获得" ], [ 19, "Text_Fail", "Fail", "指引失败，请重试" ], [ 20, "Text_NoOnTheList", "Not", "未上榜" ], [ 21, "Text_Ranking", "Ranking", "排名" ], [ 22, "Text_Nickname", "Nickname", "昵称" ], [ 23, "Text_Score", "Score", "网红热度" ], [ 24, "Text_Duration", "Duration", "时长" ], [ 25, "Text_TopInTermsOfDuration", "Top {0} In Terms Of Duration", "网红排名全服前{0}名" ], [ 26, "Text_StartGame", "Start the game", "开始游戏" ], [ 27, "Text_WelcomeTo", "Welcome to\nMy Cherry blossom town", "欢迎来到\n春日物语：露营换装派对" ], [ 28, "Text_UpNext", "Up next", "下一个" ], [ 29, "Text_GuideEnd", "With the guide over, start your trip to the cherry blossom town", "引导结束，开启你的露营之旅吧" ], [ 30, "Text_Close", "Close", "关闭" ], [ 31, "Text_MyCharacterId", "My Character ID- Share Friend Try On", "我的角色ID-分享好友试穿" ], [ 32, "Text_PleaseEnter", "Please Enter The Friend Role ID", "请输入好友角色ID" ], [ 33, "Text_Cancel", "Cancel", "取消" ], [ 34, "Text_FreeTryOn", "Free Try On", "免费试穿" ], [ 35, "Text_SaveImagesForFree", "Save images for free", "免费保存形象" ], [ 36, "Text_TryOnYourFriendAvatarForFree", "Try On Your Friend's Avatar For Free", "免费试穿好友的角色形象" ], [ 37, "Text_CopySuccessfully", "Copy Successfully", "复制成功" ], [ 38, "Text_InvalidID", "Invalid ID!", "ID无效！" ], [ 39, "Text_Loading", "Loading", "加载中" ], [ 40, "Text_TryItOnSuccessfully", "Try it on successfully", "试穿成功" ], [ 41, "Text_CopyTheCharacterIDShareFriendsTryOn", "Copy the character ID share friends try on", "复制角色ID分享好友试穿" ], [ 42, "Text_TryItOnForFree", "Try it on for free", "看广告免费试穿" ], [ 43, "Text_GuideTips", "Reach near the target point", "达到目标点附近" ], [ 44, "Text_BootPrompt", "Boot prompt", "引导提示" ], [ 45, "Text_FreeGuideYouGet", "Free guide you get", "免费指引你获得" ], [ 46, "Text_SignIn_1", "Activity is not enabled", "活动未开启" ], [ 47, "Text_SignIn_2", "Successful costume change", "换装成功" ], [ 48, "Text_SignIn_3", "Insufficient check-in time", "签到时间不足" ], [ 49, "Text_SignIn_4", "Check-in bonus", "签到奖励" ], [ 50, "Text_SignIn_5", "Cumulative Check-In For {0} Days", "已经累积签到{0}天" ], [ 51, "Text_SignIn_6", "Has been \nObtained", "已获得" ], [ 52, "Text_SignIn_7", "Change of dress", "换装" ], [ 53, "Text_SignIn_8", "Insufficient check-in", "签到不足" ], [ 54, "Text_SignIn_9", "Day {0}", "第{0}天" ], [ 55, "Text_SignIn_10", "Sign In", "签到" ], [ 56, "Text_OpenMallTextBlock", "Free change of clothes", "免费换装" ], [ 57, "Text_FreeChangeOfClothes1", "Try on, please wait patiently.", "试穿中，请耐心等待。" ], [ 58, "Text_FreeChangeOfClothes2", "Free fitting {0} minutes", "免费试穿{0}分钟" ], [ 59, "Text_FreeChangeOfClothes3", "Try it on, please go back to try it on", "试穿结束，请打开商店重新试穿" ], [ 60, "Text_Rank1", "The leaderboard is wrong.", "排行榜出错啦" ], [ 61, "Text_Tab1_1", "Appearance", "捏脸" ], [ 62, "Text_Tab1_2", "Clothing", "换装" ], [ 63, "Text_Tab1_3", "Collection", "保存穿搭" ], [ 64, "Text_Tab1_4", "Test", "测试" ], [ 65, "Text_Tab2_101", "Body Type", "体型" ], [ 66, "Text_Tab2_102", "Skin Tone", "肤色" ], [ 67, "Text_Tab2_103", "Face", "脸型" ], [ 68, "Text_Tab2_104", "Eyes", "眼睛" ], [ 69, "Text_Tab2_105", "Eyebrows", "眉毛" ], [ 70, "Text_Tab2_106", "Makeup", "妆容" ], [ 71, "Text_Tab2_107", "Expression", "表情" ], [ 72, "Text_Tab2_108", "Outfit", "套装" ], [ 73, "Text_Tab2_109", "Hair", "头发" ], [ 74, "Text_Tab2_110", "Top", "上衣" ], [ 75, "Text_Tab2_111", "Bottom", "下衣" ], [ 76, "Text_Tab2_112", "Gloves", "鞋子" ], [ 77, "Text_Tab2_113", "Shoes", "手套" ], [ 78, "Text_Tab2_114", "Pet", "宠物" ], [ 79, "Text_Tab2_115", "Accessory", "饰品" ], [ 80, "Text_Tab2_501", "Body Type", "体型", "收藏" ], [ 81, "Text_Tab2_502", "Skin Tone", "肤色", "收藏" ], [ 82, "Text_Tab2_503", "Face", "脸型", "收藏" ], [ 83, "Text_Tab2_504", "Eyes", "眼睛", "收藏" ], [ 84, "Text_Tab2_505", "Eyebrows", "眉毛", "收藏" ], [ 85, "Text_Tab2_506", "Makeup", "妆容", "收藏" ], [ 86, "Text_Tab2_507", "Expression", "表情", "收藏" ], [ 87, "Text_Tab2_508", "Outfit", "套装", "收藏" ], [ 88, "Text_Tab2_509", "Hair", "头发", "收藏" ], [ 89, "Text_Tab2_510", "Top", "上衣", "收藏" ], [ 90, "Text_Tab2_511", "Bottom", "下衣", "收藏" ], [ 91, "Text_Tab2_512", "Gloves", "鞋子", "收藏" ], [ 92, "Text_Tab2_513", "Shoes", "手套", "收藏" ], [ 93, "Text_Tab2_514", "Pet", "宠物", "收藏" ], [ 94, "Text_Tab2_515", "Accessory", "饰品", "收藏" ], [ 95, "Text_Tab3_1001", "Pupil Style", "瞳孔样式" ], [ 96, "Text_Tab3_1002", "Lens", "瞳孔贴花" ], [ 97, "Text_Tab3_1003", "Upper Highlight", "上高光" ], [ 98, "Text_Tab3_1004", "Lower Highlight", "下高光" ], [ 99, "Text_Tab3_1005", "Eyelashes", "睫毛" ], [ 100, "Text_Tab3_1006", "Eyeshadow", "眼影" ], [ 101, "Text_Tab3_1007", "Blush", "腮红" ], [ 102, "Text_Tab3_1008", "Lip Makeup", "口红" ], [ 103, "Text_Tab3_1009", "Face Tattoo", "面部彩绘" ], [ 104, "Text_Tab3_1010", "Full Hair", "整体发型" ], [ 105, "Text_Tab3_1011", "Front Hair", "前发" ], [ 106, "Text_Tab3_1012", "Back Hair", "后发" ], [ 107, "Text_Tab3_1013", "Left Hand", "左手" ], [ 108, "Text_Tab3_1014", "Right Hand", "右手" ], [ 109, "Text_Tab3_1015", "Back", "背饰" ], [ 110, "Text_Tab3_1016", "Head", "头饰" ], [ 111, "Text_Tab3_1017", "Face", "面饰" ], [ 112, "Text_Tab3_1018", "Hip", "臀部" ], [ 113, "Text_Tab3_1019", "Shoulder", "肩部" ], [ 114, "Text_Tab3_1020", "Effects", "特效" ], [ 115, "Text_Tab3_2001", "Pupil Style", "瞳孔样式", "收藏" ], [ 116, "Text_Tab3_2002", "Lens", "瞳孔贴花", "收藏" ], [ 117, "Text_Tab3_2003", "Upper Highlight", "上高光", "收藏" ], [ 118, "Text_Tab3_2004", "Lower Highlight", "下高光", "收藏" ], [ 119, "Text_Tab3_2005", "Eyelashes", "睫毛", "收藏" ], [ 120, "Text_Tab3_2006", "Eyeshadow", "眼影", "收藏" ], [ 121, "Text_Tab3_2007", "Blush", "腮红", "收藏" ], [ 122, "Text_Tab3_2008", "Lip Makeup", "口红", "收藏" ], [ 123, "Text_Tab3_2009", "Face Tattoo", "面部彩绘", "收藏" ], [ 124, "Text_Tab3_2010", "Full Hair", "整体发型", "收藏" ], [ 125, "Text_Tab3_2011", "Front Hair", "前发", "收藏" ], [ 126, "Text_Tab3_2012", "Back Hair", "后发", "收藏" ], [ 127, "Text_Tab3_2013", "Left Hand", "左手", "收藏" ], [ 128, "Text_Tab3_2014", "Right Hand", "右手", "收藏" ], [ 129, "Text_Tab3_2015", "Back", "背饰", "收藏" ], [ 130, "Text_Tab3_2016", "Ear", "耳饰", "收藏" ], [ 131, "Text_Tab3_2017", "Face", "面饰", "收藏" ], [ 132, "Text_Tab3_2018", "Hip", "臀部", "收藏" ], [ 133, "Text_Tab3_2019", "Shoulder", "肩部", "收藏" ], [ 134, "Text_Tab3_2020", "Effects", "特效", "收藏" ], [ 135, "Text_OpenClothTextBlock", "Shop", "换装商店" ], [ 136, "Text_MallItem_Free", "Free", "免费" ], [ 137, "Text_ThisFeatureIsNotEnabled", "This feature is not enabled", "此功能未开启" ], [ 138, "Text_BodyTypeDescribe", "{0} times", "{0}倍" ], [ 139, "Text_Expression_Default", "Default", "默认表情" ], [ 140, "Text_Expression_Smile", "Smile", "微笑" ], [ 141, "Text_Expression_HaveFun", "Have Fun", "开心" ], [ 142, "Text_Expression_Sad", "Sad", "伤心" ], [ 143, "Text_Expression_GetAngry", "Get Angry", "生气" ], [ 144, "Text_Expression_Embarrassment", "Embarrassment", "尴尬" ], [ 145, "Text_Expression_Laugh", "Laugh", "笑" ], [ 146, "Text_Expression_BeNaughty", "Be Naughty", "调皮" ], [ 147, "Text_Expression_Cute", "Cute", "可爱" ], [ 148, "Text_Expression_Doubt", "Doubt", "疑惑" ], [ 149, "Text_Tab3_1021", "Trailing", "拖尾" ], [ 150, "Text_Tab3_2021", "Trailing", "拖尾", "收藏" ], [ 151, "Text_ColorPick", "Color Pick", "调色板" ], [ 152, "Text_ColorPart", "Part {0}", "部位 {0}" ], [ 153, "Text_NotSupportToning", "This {0} Does Not Support Toning", "这个{0}不支持调色" ], [ 154, "Text_PupilColor", "Pupil Color", "瞳孔颜色" ], [ 155, "Text_LeftPupilColor", "Left Pupil Color", "左瞳孔颜色" ], [ 156, "Text_RightPupilColor", "Right Pupil Color", "右瞳孔颜色" ], [ 157, "Text_DecalColor", "Decal Color", "贴花颜色" ], [ 158, "Text_UpperHighlightColor", "Upper Highlight Color", "上高光颜色" ], [ 159, "Text_LowerHighlightColor", "Lower Highlight Color", "下高光颜色" ], [ 160, "Text_EyelashColor", "Eyelash Color", "睫毛颜色" ], [ 161, "Text_EyeshaowColor", "Eyeshaow Color", "眼影颜色" ], [ 162, "Text_BlushColor", "Blush Color", "腮红颜色" ], [ 163, "Text_LipstickColor", "Lipstick Color", "口红颜色" ], [ 164, "Text_Monochrome", "Monochrome", "单色" ], [ 165, "Text_TopColor", "Top Color", "发顶色" ], [ 166, "Text_TailColor", "Tail Color", "发尾色" ], [ 167, "Text_FreeSave", "Free Save", "免费保存" ], [ 168, "Text_ResetImage", "Reset Image", "重置平台形象" ], [ 169, "Text_ResetImageFaild", "Failed to reset platform image", "重置平台形象失败" ], [ 170, "Text_SaveColor", "Save {0} Color", "保存{0}颜色" ], [ 171, "Text_SaveTips", "Save Tips", "保存提示" ], [ 172, "Text_Save", "Save", "保存" ], [ 173, "Text_NoSave", "No Save", "不保存" ], [ 174, "Text_WhetherSaveImage", "Whether Save Image", "是否保存当前角色形象" ], [ 175, "Text_CloseTips", "Close Tips", "关闭提示" ], [ 176, "Text_SaveSuccessfully", "Save Successfully", "保存成功" ], [ 177, "Text_ResetSuccessfully", "Reset Successfully", "重置成功" ], [ 178, "Text_SwitchSuccessfully", "Switch Successfully", "切换成功" ], [ 179, "Text_WhetherToKeepTheCurrentColor", "Whether to keep the current color", "是否保留当前颜色" ], [ 180, "Text_Retain", "Retain", "保留" ], [ 181, "Text_NoRetain", "No Retain", "不保留" ], [ 182, "Text_Tab3_1022", "Daily Styling", "日常造型1" ], [ 183, "Text_Tab3_1023", "Muppet Styling", "布偶造型" ], [ 184, "Text_Tab3_1024", "Hero Styling", "英雄造型" ], [ 185, "Text_Tab3_1025", "Fantasy Modeling", "幻想造型" ], [ 186, "Text_Tab3_1026", "Holiday Styling", "节日造型" ], [ 187, "Text_Tab3_1027", "Science Fiction Styling", "科幻造型" ], [ 188, "Text_Tab3_1028", "Ancient Molding", "古代造型" ], [ 189, "Text_Tab3_1029", "Long Piece", "长单件" ], [ 190, "Text_Tab3_1030", "Jacket", "短外套" ], [ 191, "Text_Tab3_1031", "Short Piece", "短单件" ], [ 192, "Text_Tab3_1032", "Outfit", "套装" ], [ 193, "Text_Tab3_1033", "Long Coat", "长外套" ], [ 194, "Text_Tab3_1034", "Kilt", "短裙" ], [ 195, "Text_Tab3_1035", "Trousers", "长裤" ], [ 196, "Text_Tab3_1036", "Shorts", "短裤" ], [ 197, "Text_Tab3_1037", "Long Dress", "长裙" ], [ 198, "Text_Tab3_1038", "Pantyhose", "裤袜" ], [ 199, "Text_Tab3_1039", "Gloves", "手套" ], [ 200, "Text_Tab3_1040", "Glove Accessory", "手套饰品" ], [ 201, "Text_Tab3_1041", "Everyday Shoes", "日常鞋" ], [ 202, "Text_Tab3_1042", "Boots", "靴子" ], [ 203, "Text_Tab3_1043", "Toe Brace", "足套" ], [ 204, "Text_Tab3_1044", "Nudity", "裸饰" ], [ 205, "Text_Tab3_1045", "High Heeled Shoes", "高跟鞋" ], [ 206, "Text_Tab3_1046", "Sneakers", "运动鞋" ], [ 207, "Text_Tab3_1047", "Daily Styling", "日常造型2" ], [ 208, "Text_HUDPanelTips1", null, "服装签到" ], [ 209, "Text_HUDPanelTips2", null, "试穿排行榜" ], [ 210, "Text_HUDPanelTips3", null, "网红排行榜" ], [ 211, "Text_HUDPanelTips4", null, "设置" ], [ 212, "Text_HUDPanelTips5", null, "免费换装" ], [ 213, "Text_HUDPanelTips6", null, "换装商店" ], [ 214, "Text_HUDPanelTips7", null, "背景音乐" ], [ 215, "Text_TryOnTips1", null, "排名" ], [ 216, "Text_TryOnTips2", null, "昵称" ], [ 217, "Text_TryOnTips3", null, "被试穿次数" ], [ 218, "Text_TryOnTips4", null, "试穿好友形象" ], [ 219, "Text_TryOnTips5", null, "自己的形象" ], [ 220, "Text_TryOnTips6", null, "试穿失败、好友已离开房间" ], [ 221, "Text_TryOnTips7", null, "换个好友试试吧" ], [ 222, "Text_TryOnTips8", null, "试穿失败、好友服装不规范" ], [ 223, "Text_TryOnTips9", null, "被好友试穿权限" ], [ 224, "Text_TryOnTips10", null, "允许" ], [ 225, "Text_TryOnTips11", null, "不允许" ], [ 226, "Text_TryOnTips12", null, "好友试穿权限已关闭，不允许试穿" ], [ 227, "Text_Tab3_1048", "Pet", "灵宠" ], [ 228, "Text_SaveSuccefully", "Save Succefully", "保存穿搭成功" ], [ 229, "Text_SaveCurrentCharacter", null, "保存当前穿搭\n（{0}/{1}）" ], [ 230, "Text_MaxSaveCount", null, "最多只能保存{0}个" ], [ 231, "Text_DeleteSucceed", null, "删除成功" ] ];
 
 class LanguageConfig extends ConfigBase {
     constructor() {
@@ -3383,7 +3383,7 @@ var MapEx;
     MapEx.copy = copy;
 })(MapEx || (MapEx = {}));
 
-var foreign142 = Object.freeze({
+var foreign143 = Object.freeze({
     __proto__: null,
     get MapEx() {
         return MapEx;
@@ -4511,7 +4511,7 @@ LoadingPanel_Generate = __decorate([ UIBind("UI/tools/LoadingPanel.ui") ], Loadi
 
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign192 = Object.freeze({
+var foreign193 = Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -4542,7 +4542,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign144 = Object.freeze({
+var foreign145 = Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -4653,7 +4653,7 @@ class ExecutorManager {
 
 ExecutorManager._instance = undefined;
 
-var foreign146 = Object.freeze({
+var foreign147 = Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -4786,6 +4786,80 @@ var foreign86 = Object.freeze({
     __proto__: null,
     CharacterModuleS: CharacterModuleS
 });
+
+class FlyText {
+    constructor() {
+        this._uiWidget = null;
+        this._rootCanvas = null;
+        this._textPools = [];
+        this._defaultTextSize = new Vector2(200, 100);
+        this._defaultFontColor = LinearColor.white;
+        this._defaultOutlineColor = new mw.LinearColor(1, 0, 1, 1);
+    }
+    static get instance() {
+        if (FlyText._instance == null) {
+            FlyText._instance = new FlyText;
+        }
+        return FlyText._instance;
+    }
+    showFlyText(content, worldLocation, fontColor, outlineColor) {
+        let vec2 = mw.InputUtil.projectWorldPositionToWidgetPosition(worldLocation, true).screenPosition;
+        let textBlock = null;
+        if (this._textPools.length == 0) {
+            textBlock = this.createText();
+        } else {
+            textBlock = this._textPools.pop();
+        }
+        vec2.x -= 120;
+        vec2.y -= 160;
+        let toX = this.getRandomIntInclusive(100, 300);
+        Math.random() < .5 ? toX = -toX : toX = toX;
+        let toY = this.getRandomIntInclusive(-300, 100);
+        let animator = new mw.Tween({
+            a: 0
+        }).to({
+            a: Math.PI
+        }, 1e3).onUpdate((object => {
+            textBlock.position = vec2.clone().add(new mw.Vector2(toX * object.a / Math.PI, toY * Math.sin(object.a)));
+            textBlock.renderScale = new mw.Vector2(Math.sin(object.a));
+        })).onStart((() => {
+            textBlock.fontColor = fontColor ? fontColor : this._defaultFontColor;
+            textBlock.outlineColor = outlineColor ? outlineColor : this._defaultOutlineColor;
+            textBlock.text = content;
+            textBlock.visibility = mw.SlateVisibility.SelfHitTestInvisible;
+        })).onComplete((() => {
+            textBlock.visibility = mw.SlateVisibility.Hidden;
+            this._textPools.push(textBlock);
+        }));
+        animator.start();
+    }
+    createText() {
+        if (!this._uiWidget) {
+            this._uiWidget = mw.UserWidget.newObject();
+            this._uiWidget.addToViewport(1);
+            if (!this._rootCanvas) {
+                this._rootCanvas = mw.Canvas.newObject();
+                this._rootCanvas.size = new mw.Vector2(1920, 1080);
+                this._rootCanvas.position = mw.Vector2.zero;
+                this._uiWidget.rootContent = this._rootCanvas;
+            }
+        }
+        let textBlock = mw.TextBlock.newObject(this._rootCanvas);
+        textBlock.size = this._defaultTextSize;
+        textBlock.fontSize = 30;
+        textBlock.fontLetterSpace = 1;
+        textBlock.textHorizontalLayout = mw.UITextHorizontalLayout.NoClipping;
+        textBlock.autoAdjust = false;
+        textBlock.outlineSize = 4;
+        textBlock.glyph = mw.UIFontGlyph.Light;
+        return textBlock;
+    }
+    getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+}
 
 class Utils {
     static setImageByAssetIconData(image, icon) {
@@ -5015,13 +5089,22 @@ class Utils {
         }
         return true;
     }
+    static randomColor() {
+        let colors = [ mw.LinearColor.red, mw.LinearColor.green, mw.LinearColor.blue, mw.LinearColor.yellow, new mw.LinearColor(1, 0, 1, 1), new mw.LinearColor(0, 1, 1, 1), mw.LinearColor.white ];
+        let fontColor = colors[this.randomInt(0, colors.length - 1)];
+        let outlineColor = colors[this.randomInt(0, colors.length - 1)];
+        while (fontColor.a == outlineColor.a && fontColor.r == outlineColor.r && fontColor.g == outlineColor.g && fontColor.b == outlineColor.b) {
+            outlineColor = colors[this.randomInt(0, colors.length - 1)];
+        }
+        return [ fontColor, outlineColor ];
+    }
 }
 
 Utils.assetIconDataMap = new Map;
 
 Utils.buffMap = new Map;
 
-Utils.birthPos = new mw.Vector(0, 0, 1e3);
+Utils.birthPos = new mw.Vector(-5e3, 0, 1e3);
 
 Utils.targetGuideEffectId = null;
 
@@ -5094,7 +5177,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign145 = Object.freeze({
+var foreign146 = Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -5146,7 +5229,7 @@ BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui")
 
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign156 = Object.freeze({
+var foreign157 = Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -5212,7 +5295,7 @@ HUDItem_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDItem.ui") ], HUDI
 
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign164 = Object.freeze({
+var foreign165 = Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -5627,7 +5710,7 @@ HUDPanel_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDPanel.ui") ], HU
 
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign165 = Object.freeze({
+var foreign166 = Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -5676,7 +5759,7 @@ SavePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SavePanel.ui") ]
 
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign186 = Object.freeze({
+var foreign187 = Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -5797,7 +5880,7 @@ SharePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SharePanel.ui")
 
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign187 = Object.freeze({
+var foreign188 = Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -5866,7 +5949,7 @@ AdPanel_Generate = __decorate([ UIBind("UI/module/AdModule/AdPanel.ui") ], AdPan
 
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign150 = Object.freeze({
+var foreign151 = Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -5940,7 +6023,7 @@ TipsPanel_Generate = __decorate([ UIBind("UI/module/AdModule/TipsPanel.ui") ], T
 
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign151 = Object.freeze({
+var foreign152 = Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -6452,6 +6535,11 @@ class HUDModuleC extends ModuleC {
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);
         this.initFreeNpc();
+        this.localPlayer.character.asyncReady().then((() => {
+            TimeUtil.delaySecond(5).then((() => {
+                this.onOpenMallAction.call();
+            }));
+        }));
     }
     net_syncFreeTime(freeTime) {
         if (!isNaN(freeTime) && freeTime > 0) GlobalData.freeTime = freeTime;
@@ -7288,7 +7376,7 @@ ChatPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatPanel.ui") ]
 
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign159 = Object.freeze({
+var foreign160 = Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -7409,7 +7497,7 @@ GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePane
 
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign166 = Object.freeze({
+var foreign167 = Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -7457,7 +7545,7 @@ OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClick
 
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign167 = Object.freeze({
+var foreign168 = Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -7485,18 +7573,21 @@ class RoomData {
 }
 
 class WorldData {
-    constructor(userId, name, time) {
+    constructor(userId, name, time, score) {
         this.userId = "";
         this.playerName = "";
         this.time = 0;
+        this.score = 0;
         this.userId = userId;
         this.playerName = name;
         this.time = time;
+        this.score = score;
     }
-    setData(userId, name, time) {
+    setData(userId, name, time, score) {
         this.userId = userId;
         this.playerName = name;
         this.time = time;
+        this.score = score;
     }
 }
 
@@ -7504,6 +7595,7 @@ class RankData extends Subdata {
     constructor() {
         super(...arguments);
         this.time = 0;
+        this.score = 0;
     }
     setTime(addTime) {
         this.time += addTime;
@@ -7512,9 +7604,18 @@ class RankData extends Subdata {
     get getTime() {
         return this.time;
     }
+    setScore(addScore) {
+        this.score += addScore;
+        this.save(false);
+    }
+    get getScore() {
+        return this.score;
+    }
 }
 
 __decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
+
+__decorate([ Decorator.persistence() ], RankData.prototype, "score", void 0);
 
 var foreign123 = Object.freeze({
     __proto__: null,
@@ -7540,6 +7641,8 @@ class RankModuleS extends ModuleS {
         this.worldUserIds = [];
         this.worldNames = [];
         this.worldTimes = [];
+        this.worldScores = [];
+        this.isCanUpdateRoom = true;
         this.redFirstModel = null;
         this.blueFirstModel = null;
     }
@@ -7578,7 +7681,7 @@ class RankModuleS extends ModuleS {
     onEnterScene(userId, playerName, score, time, tryOn) {
         let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time);
+        let worldData = new WorldData(userId, playerName, time, score);
         try {
             this.isRefreshWorldData([ worldData ]);
         } catch (error) {}
@@ -7590,7 +7693,9 @@ class RankModuleS extends ModuleS {
     refreshScore(userId, score) {
         if (!this.roomDataMap.has(userId)) return;
         let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
+        let rankData = DataCenterS.getData(userId, RankData);
+        rankData?.setScore(score);
+        roomData.score = rankData?.score;
         this.synchrodata_Room();
     }
     async refreshTime() {
@@ -7602,7 +7707,7 @@ class RankModuleS extends ModuleS {
             if (!this.roomDataMap.has(userId)) return;
             let roomData = this.roomDataMap.get(userId);
             roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time, roomData.score);
             tmpWorldDatas.push(worldData);
         }));
         try {
@@ -7638,7 +7743,7 @@ class RankModuleS extends ModuleS {
                 } else {
                     for (let i = 0; i < this.worldDatas.length; ++i) {
                         if (this.worldDatas[i].userId != worldData.userId) continue;
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 1);
                             break;
                         } else {
@@ -7648,7 +7753,7 @@ class RankModuleS extends ModuleS {
                     }
                     if (ishasData) continue;
                     for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 0, worldData);
                             isPush = true;
                             isNeedSave = true;
@@ -7664,7 +7769,7 @@ class RankModuleS extends ModuleS {
             } else {
                 for (let i = 0; i < this.worldDatas.length; ++i) {
                     if (this.worldDatas[i].userId != worldData.userId) continue;
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 1);
                         ishasDelete = true;
                         break;
@@ -7675,7 +7780,7 @@ class RankModuleS extends ModuleS {
                 }
                 if (ishasData) continue;
                 for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 0, worldData);
                         if (!ishasDelete) {
                             this.worldDatas.pop();
@@ -7712,10 +7817,12 @@ class RankModuleS extends ModuleS {
         this.worldUserIds.length = 0;
         this.worldNames.length = 0;
         this.worldTimes.length = 0;
+        this.worldScores.length = 0;
         for (let i = 0; i < this.worldDatas.length; i++) {
             this.worldUserIds.push(this.worldDatas[i].userId);
             this.worldNames.push(this.worldDatas[i].playerName);
             this.worldTimes.push(this.worldDatas[i].time);
+            this.worldScores.push(this.worldDatas[i].score);
         }
     }
     synchrodata_onEnterScene(sendUserId) {
@@ -7723,13 +7830,18 @@ class RankModuleS extends ModuleS {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
             } else {
                 this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         }));
     }
     synchrodata_Room() {
+        if (!this.isCanUpdateRoom) return;
+        this.isCanUpdateRoom = false;
+        TimeUtil.delaySecond(5).then((() => {
+            this.isCanUpdateRoom = true;
+        }));
         this.updateRoomData();
         this.syncPlayerMap.forEach(((value, key) => {
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
@@ -7744,18 +7856,18 @@ class RankModuleS extends ModuleS {
     synchrodata_World() {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         }));
     }
     synchrodata_RoomWorld() {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         }));
     }
     synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
     }
     getNamesByUserId(userId1, userId2) {
         if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
@@ -7959,13 +8071,11 @@ class InteractionModuleC extends ModuleC {
         this.hudModuleC = null;
         this.adPanel = null;
         this.tipsPanel = null;
+        this.danMuModuleC = null;
         this.onClickBagItemAction = new Action1;
         this.currentDescription = null;
         this.triggerLocMap = new Map;
         this.bagIds = [];
-        this.guidePanel = null;
-        this.guideStep = 0;
-        this.guideBagIds = [ 60002, 20002, 10106, 30002 ];
     }
     get getOnClickPanel() {
         if (this.onClickPanel == null) {
@@ -7991,12 +8101,17 @@ class InteractionModuleC extends ModuleC {
         }
         return this.tipsPanel;
     }
+    get getDanMuModuleC() {
+        if (!this.danMuModuleC) {
+            this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
+        }
+        return this.danMuModuleC;
+    }
     onStart() {
         this.bindEvent();
     }
     onEnterScene(sceneType) {
         this.initBagIds();
-        this.initGuide();
         this.findTriggers();
     }
     bindEvent() {
@@ -8111,6 +8226,9 @@ class InteractionModuleC extends ModuleC {
                 if (this.triggerLocMap.has(bagId)) {
                     let targetLoc = this.triggerLocMap.get(bagId);
                     Utils.startGuide(targetLoc, (() => {}));
+                } else {
+                    this.setBagId(bagId);
+                    this.getDanMuModuleC.onClickBagItemAction.call(bagId);
                 }
             }), GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
         }
@@ -8122,85 +8240,13 @@ class InteractionModuleC extends ModuleC {
         if (this.bagIds.includes(bagId)) return;
         Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
         this.bagIds.push(bagId);
+        let score = this.bagIds.length;
+        let fontColor = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value} +${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
         this.server.net_setBagId(bagId);
     }
     get getBagIds() {
         return this.bagIds;
-    }
-    get getGuidePanel() {
-        if (this.guidePanel == null) {
-            this.guidePanel = mw.UIService.getUI(GuidePanel);
-        }
-        return this.guidePanel;
-    }
-    initGuide() {
-        this.guideStep = this.data.guideStep;
-        this.startGuide();
-    }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.server.net_setGuideStep(addStep);
-    }
-    startGuide() {
-        if (!this.guideBagIds || this.guideBagIds.length == 0) return;
-        if (this.guideStep >= this.guideBagIds.length - 1) {
-            this.localPlayer.character.asyncReady().then((() => {
-                TimeUtil.delaySecond(1).then((() => {
-                    this.getHUDModuleC.onOpenMallAction.call();
-                }));
-            }));
-            return;
-        }
-        this.getGuidePanel.showStartTips((() => {
-            this.getHUDModuleC.onOpenMallAction.call();
-            let bagId = this.guideBagIds[0];
-            console.error(`bagId1:${bagId}`);
-            if (!this.triggerLocMap.has(bagId)) {
-                console.error(`bagId2:${bagId}`);
-                return;
-            }
-            let targetLoc = this.triggerLocMap.get(bagId);
-            console.error(`targetLoc:${targetLoc}`);
-            Utils.startGuide(targetLoc, (() => {
-                this.setGuideStep(1);
-                this.getGuidePanel.showStepTips(bagId, (() => {
-                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                    if (this.guideStep >= this.guideBagIds.length) return;
-                    bagId = this.guideBagIds[1];
-                    if (!this.triggerLocMap.has(bagId)) return;
-                    targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {
-                        this.setGuideStep(1);
-                        this.getGuidePanel.showStepTips(bagId, (() => {
-                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                            if (this.guideStep >= this.guideBagIds.length) return;
-                            bagId = this.guideBagIds[2];
-                            if (!this.triggerLocMap.has(bagId)) return;
-                            targetLoc = this.triggerLocMap.get(bagId);
-                            Utils.startGuide(targetLoc, (() => {
-                                this.setGuideStep(1);
-                                this.getGuidePanel.showStepTips(bagId, (() => {
-                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                    if (this.guideStep >= this.guideBagIds.length) return;
-                                    bagId = this.guideBagIds[3];
-                                    if (!this.triggerLocMap.has(bagId)) return;
-                                    targetLoc = this.triggerLocMap.get(bagId);
-                                    Utils.startGuide(targetLoc, (() => {
-                                        this.setGuideStep(1);
-                                        this.getGuidePanel.showStepTips(bagId, (() => {
-                                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            this.getGuidePanel.showStepTips(bagId, (() => {
-                                                this.getGuidePanel.showStartTips((() => {}), GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                            }), GameConfig.Language.Text_UpNext.Value);
-                                        }), GameConfig.Language.Text_UpNext.Value);
-                                    }));
-                                }), GameConfig.Language.Text_UpNext.Value);
-                            }));
-                        }), GameConfig.Language.Text_UpNext.Value);
-                    }));
-                }), GameConfig.Language.Text_UpNext.Value);
-            }));
-        }), GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
     }
 }
 
@@ -8317,14 +8363,9 @@ class InteractionModuleS extends ModuleS {
         let score = this.currentData.bagIds.length;
         this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
     }
-    net_setGuideStep(addStep) {
-        this.currentData.setGuideStep(addStep);
-    }
 }
 
 __decorate([ Decorator.noReply() ], InteractionModuleS.prototype, "net_setBagId", null);
-
-__decorate([ Decorator.noReply() ], InteractionModuleS.prototype, "net_setGuideStep", null);
 
 class PlayerInteractor {
     constructor() {
@@ -8345,22 +8386,15 @@ class InteractionData extends Subdata {
     constructor() {
         super(...arguments);
         this.bagIds = [];
-        this.guideStep = 0;
     }
     setBagId(bagId) {
         if (this.bagIds.includes(bagId)) return;
         this.bagIds.push(bagId);
         this.save(false);
     }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.save(false);
-    }
 }
 
 __decorate([ Decorator.persistence() ], InteractionData.prototype, "bagIds", void 0);
-
-__decorate([ Decorator.persistence() ], InteractionData.prototype, "guideStep", void 0);
 
 var foreign103 = Object.freeze({
     __proto__: null,
@@ -8431,7 +8465,7 @@ ActionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionItem.ui")
 
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign152 = Object.freeze({
+var foreign153 = Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -8521,7 +8555,7 @@ ActionTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionTabIte
 
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign153 = Object.freeze({
+var foreign154 = Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -8637,7 +8671,7 @@ BagItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagItem.ui") ], Ba
 
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign154 = Object.freeze({
+var foreign155 = Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -8671,11 +8705,8 @@ class BagItem extends BagItem_Generate$1 {
         this.mClickButton.onClicked.add(this.addClickButton.bind(this));
     }
     addClickButton() {
-        if (this.isHas) {
-            this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
-        } else {
-            this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
-        }
+        this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
+        return;
     }
     setDatas(bagId, isHas) {
         this.bagId = bagId;
@@ -8687,7 +8718,7 @@ class BagItem extends BagItem_Generate$1 {
         } else if (actionPropElement.AssetId) {
             Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
         }
-        this.isHas = isHas;
+        this.isHas = true;
         this.updateState();
     }
     updateState() {
@@ -8748,7 +8779,7 @@ BagTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagTabItem.ui")
 
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign155 = Object.freeze({
+var foreign156 = Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -8850,7 +8881,7 @@ ChatItem1_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem1.ui") ]
 
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign157 = Object.freeze({
+var foreign158 = Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -8933,7 +8964,7 @@ ChatItem2_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem2.ui") ]
 
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign158 = Object.freeze({
+var foreign159 = Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -9023,7 +9054,7 @@ ExpressionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ExpressionI
 
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign161 = Object.freeze({
+var foreign162 = Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -9423,7 +9454,7 @@ DanMuPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/DanMuPanel.ui")
 
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign160 = Object.freeze({
+var foreign161 = Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -9703,7 +9734,10 @@ class DanMuModuleC extends ModuleC {
         }), (() => {}), 3);
     }
     showBubbleText(text) {
-        this.server.net_showBubbleText(this.localPlayer.character.gameObjectId, text);
+        let score = Utils.randomInt(10, 100);
+        let fontColor = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_showBubbleText(this.localPlayer.character.gameObjectId, text, score);
     }
     net_showBubbleText(gameObjectId, text) {
         mw.GameObject.asyncFindGameObjectById(gameObjectId).then((value => {
@@ -9762,7 +9796,10 @@ class DanMuModuleC extends ModuleC {
         if (this.expressionAssets.length <= index) return;
         let assetId = this.expressionAssets[index];
         if (!assetId || assetId == "") return;
-        this.server.net_playExpression(assetId);
+        let score = Utils.randomInt(10, 100);
+        let fontColor = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_playExpression(assetId, score);
     }
     net_playExpression(playerId, assetId) {
         let player = Player.getPlayer(playerId);
@@ -9861,7 +9898,10 @@ class DanMuModuleC extends ModuleC {
             return;
         }
         this.isCanInteract = false;
-        this.server.net_EnterInteract(actionData).then((async () => {
+        let score = Utils.randomInt(10, 100);
+        let fontColor = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_EnterInteract(actionData, score).then((async () => {
             this.isPlaying = true;
             this.isCanInteract = true;
             this.clearActionTimeOut();
@@ -9912,7 +9952,10 @@ class DanMuModuleC extends ModuleC {
     addClickBagItemAction(bagId) {
         console.error(`wfz - ClickBagItem - bagId:${bagId}`);
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let bagIds = await this.server.net_useBag(bagId);
+            let score = Utils.randomInt(10, 100);
+            let fontColor = Utils.randomColor();
+            FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+            let bagIds = await this.server.net_useBag(bagId, score);
             this.getChatPanel.closeBagCanvas(false);
             this.currentBagIds = bagIds;
             if (this.currentBagIds.includes(bagId)) {
@@ -10112,10 +10155,17 @@ const WorldActionDatas = "WorldActionDatas";
 class DanMuModuleS extends ModuleS {
     constructor() {
         super(...arguments);
+        this.rankModuleS = null;
         this.maxShowDistance = 2e3;
         this.playerInteractMap = new Map;
         this.playerBagMap = new Map;
         this.playerGlideMap = new Map;
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
     }
     onStart() {}
     onPlayerEnterGame(player) {
@@ -10207,8 +10257,9 @@ class DanMuModuleS extends ModuleS {
         code = await DataStorage.asyncSetData(saveKey, dataInfo);
         return code == mw.DataStorageResultCode.Success;
     }
-    net_showBubbleText(gameObjectId, text) {
-        let currentPlayer = this.currentPlayer;
+    net_showBubbleText(gameObjectId, text, score) {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         if (this.maxShowDistance == -1) {
             Player.getAllPlayers().forEach((player => {
                 this.getClient(player).net_showBubbleText(gameObjectId, text);
@@ -10216,10 +10267,10 @@ class DanMuModuleS extends ModuleS {
         } else {
             const players = Player.getAllPlayers();
             for (const player of players) {
-                if (player === currentPlayer) {
+                if (player === player) {
                     this.getClient(player).net_showBubbleText(gameObjectId, text);
                 } else {
-                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
+                    const len = Vector.distance(player.character.worldTransform.position, player.character.worldTransform.position);
                     if (len <= this.maxShowDistance) {
                         this.getClient(player).net_showBubbleText(gameObjectId, text);
                     }
@@ -10227,11 +10278,14 @@ class DanMuModuleS extends ModuleS {
             }
         }
     }
-    net_playExpression(assetId) {
+    net_playExpression(assetId, score) {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
     }
-    async net_EnterInteract(actionData) {
+    async net_EnterInteract(actionData, score) {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         return await this.enterInteract(player, actionData);
     }
     async enterInteract(player, actionData) {
@@ -10259,8 +10313,9 @@ class DanMuModuleS extends ModuleS {
         let playerInteract = this.playerInteractMap.get(playerId);
         return await playerInteract.clearInteractor(player);
     }
-    async net_useBag(bagId) {
+    async net_useBag(bagId, score) {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         let playerBag = null;
         let bagIds = [];
         if (!this.playerBagMap.has(player.playerId)) {
@@ -11790,7 +11845,7 @@ ColorPickPanel_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickPan
 
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign168 = Object.freeze({
+var foreign169 = Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11829,7 +11884,7 @@ ColorPickTab1_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab1
 
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign169 = Object.freeze({
+var foreign170 = Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11917,7 +11972,7 @@ ColorPickTab2_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab2
 
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign170 = Object.freeze({
+var foreign171 = Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -12040,7 +12095,7 @@ ColorPickTab3_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab3
 
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign171 = Object.freeze({
+var foreign172 = Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -12179,7 +12234,7 @@ class TouchScript {
     }
 }
 
-var foreign143 = Object.freeze({
+var foreign144 = Object.freeze({
     __proto__: null,
     get Enums() {
         return Enums;
@@ -12388,7 +12443,7 @@ MallPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallPanel.ui") ],
 
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign177 = Object.freeze({
+var foreign178 = Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -12461,7 +12516,7 @@ MallItem_Big_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Big.u
 
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign172 = Object.freeze({
+var foreign173 = Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -12688,7 +12743,7 @@ MallItem_Character_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem
 
 var MallItem_Character_Generate$1 = MallItem_Character_Generate;
 
-var foreign173 = Object.freeze({
+var foreign174 = Object.freeze({
     __proto__: null,
     default: MallItem_Character_Generate$1
 });
@@ -12819,7 +12874,7 @@ MallItem_Color_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Col
 
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign174 = Object.freeze({
+var foreign175 = Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12949,7 +13004,7 @@ MallItem_Self_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Self
 
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign175 = Object.freeze({
+var foreign176 = Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -13089,7 +13144,7 @@ MallItem_Small_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Sma
 
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign176 = Object.freeze({
+var foreign177 = Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -13479,7 +13534,7 @@ MallTab1_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab1.ui") ], M
 
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign178 = Object.freeze({
+var foreign179 = Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -13596,7 +13651,7 @@ MallTab2_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab2.ui") ], M
 
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign179 = Object.freeze({
+var foreign180 = Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -13711,7 +13766,7 @@ MallTab3_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab3.ui") ], M
 
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign180 = Object.freeze({
+var foreign181 = Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -15138,7 +15193,7 @@ MallTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallTipsPanel
 
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign181 = Object.freeze({
+var foreign182 = Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -17219,7 +17274,7 @@ TryOnItem_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnItem.ui") ]
 
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign190 = Object.freeze({
+var foreign191 = Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -17371,7 +17426,7 @@ TryOnPanel_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnPanel.ui")
 
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign191 = Object.freeze({
+var foreign192 = Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -17672,7 +17727,7 @@ SetPanel_Generate = __decorate([ UIBind("UI/module/SetModule/SetPanel.ui") ], Se
 
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign185 = Object.freeze({
+var foreign186 = Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -18247,31 +18302,31 @@ class TryOnModuleC extends ModuleC {
         this.mallCharacterRotSpeed = 30;
         this.tryOnConfigData = null;
         this.npcIds = [ {
-            npcId: `0C6BE3B0`,
+            npcId: `0517BE0A`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"521470",87,"0|ffebd3ff",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",97,"521469",98,"0|ffebd3ff",98,"4|f",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"521468",120,"4|ffebd3ff",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",123,"5|-0.001",123,"6|-0.001",123,"7|-0.001",123,"8|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",124,"5|-0.001",124,"6|-0.001",124,"7|-0.001",124,"8|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",125,"5|-0.001",125,"6|-0.001",125,"7|-0.001",125,"8|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",126,"5|-0.001",126,"6|-0.001",126,"7|-0.001",126,"8|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",129,"5|-0.001",129,"6|-0.001",129,"7|-0.001",129,"8|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|-0.001",157,"1|-0.001",157,"2|-0.001",158,"0|-0.001",158,"1|-0.001",158,"2|-0.001",161,"0|-0.001",161,"1|-0.001",161,"2|-0.001",162,"0|-0.001",162,"1|-0.001",162,"2|-0.001",163,"92726",166,1.5,169,"521471",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|ffebd3ff",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"2|566636"],"version":1,"slotData":["23$516829$0,0,0|0,-90,0|1,1,1"],"dynDecor":["","","566636","","","","",""]}`
         }, {
-            npcId: `3ACC5B4F`,
+            npcId: `37FB18AA`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"515650",87,"0|f",87,"1|d42d3fff",87,"2|006559ff",87,"3|45280eff",88,"0|224409",89,"0|bebebeff",90,"0|20",90,"1|5",90,"2|5",90,"3|5",90,"4|-0.001",91,"0|20",91,"1|5",91,"2|5",91,"3|5",91,"4|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|-0.001",93,"0|0.5",93,"1|0",93,"2|0",93,"3|0",93,"4|-0.001",94,"0|509845",94,"1|35058",94,"2|509844",94,"3|509839",95,"0|f",95,"1|c33641ff",95,"2|f",95,"3|ffffff00",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|-0.001",97,"515685",98,"0|f0e6e6ff",98,"1|135658ff",99,"0|224409",100,"0|aba4a4ff",101,"0|8",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|8",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|0",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0.5",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",105,"0|515453",105,"1|227575",105,"2|22672",106,"0|ffbdc8ff",106,"1|b35050ff",106,"2|5c5c5cff",107,"0|0",107,"1|171.428",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"515692",120,"0|f0e6e6ff",120,"1|df4066ff",120,"2|3d272cff",121,"0|224409",122,"0|aba4a4ff",123,"0|8",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|8",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|0.4",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|515463",127,"1|515464",127,"2|515465",128,"0|1fb8beff",128,"1|81f2ffff",128,"2|769fa5ff",129,"0|0",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"515679",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|d42d3fff",192,"1|d4d4d4ff",192,"2|a25f21ff",192,"3|006559ff",194,"0|bebebeff",196,"0|f",196,"1|c33641ff",196,"2|f",196,"3|ffffff00",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|1.856",198,"1|2.838",198,"2|2.236",198,"3|2",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|20",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|20",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0.5",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"2|566636"],"version":1,"slotData":["12$516107$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","566636","","","","",""]}`
         }, {
-            npcId: `26646B0E`,
+            npcId: `17299C7A`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"522838",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",97,"522840",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"522839",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"522835",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["1$522123$0,-2.41,24.69|0,0,0|1,1,1","6$522094$-14.33,0,-1.46|0,-90,0|1,1,1","12$522674$0,0,-5|0,0,0|1,1,1","19$522742$0,0,0|0,0,0|1,1,1","23$523431$0,0,0.1|0,-90,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `05EBD81F`,
+            npcId: `34A80EDD`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"491314",87,"0|ffffff00",87,"1|2c0101ff",87,"2|652f11dd",87,"3|a70712ff",88,"0|47940",88,"1|224409",88,"2|270099",89,"0|f0f0f000",89,"1|090000ff",89,"2|3f2107ff",89,"3|a70712ff",90,"0|15",90,"1|10",90,"2|15",90,"3|5",90,"4|-0.001",91,"0|15",91,"1|10",91,"2|15",91,"3|5",91,"4|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|-0.001",93,"0|1",93,"1|0.12",93,"2|1",93,"3|0",93,"4|-0.001",94,"0|491206",94,"1|495155",94,"2|491205",94,"3|491201",95,"0|f",95,"1|f",95,"2|ecececff",95,"3|f",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|-0.001",97,"491315",98,"0|450001ff",98,"1|823513ff",98,"2|000000dd",98,"3|a70712ff",99,"0|141677",100,"0|290001ff",100,"3|000000bf",101,"0|35",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|35",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|200",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0.8",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",105,"0|491208",105,"1|491210",105,"2|491202",106,"0|f",106,"1|f",106,"2|ecececff",106,"3|f",107,"0|0",107,"1|0",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"491312",120,"0|450001ff",120,"2|000000dd",120,"3|a70712ff",121,"0|141677",122,"0|290001ff",122,"3|000000bf",123,"0|30",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|30",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|1",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|140238",128,"0|f",129,"0|122",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"491278",171,"050505ff",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|340302ff",192,"1|f",195,"0|495155",196,"0|f",196,"2|f",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|2.6",198,"1|1",198,"2|1",198,"3|1",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|5",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|5",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["2$490998$4,1.8,-18|-13,90,43|1,1,1","10$491101$2.8,-17,-2.5|0,0,90|1,1,1","23$494016$0,0,0|0,-90,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `21873FDE`,
+            npcId: `221F136D`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"493767",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",90,"5|-0.001",90,"6|-0.001",90,"7|-0.001",90,"8|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",91,"5|-0.001",91,"6|-0.001",91,"7|-0.001",91,"8|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",92,"5|-0.001",92,"6|-0.001",92,"7|-0.001",92,"8|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",93,"5|-0.001",93,"6|-0.001",93,"7|-0.001",93,"8|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",96,"5|-0.001",96,"6|-0.001",96,"7|-0.001",96,"8|-0.001",97,"493697",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"493645",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"493696",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["2$493632$2.62,9.34,-24.87|0,-90,0|1,1,1","19$493583$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `24E43F6C`,
+            npcId: `39CC56E4`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"453998",87,"0|030303ff",87,"1|f",87,"2|404040ff",87,"4|6e6e6eff",88,"0|155210",88,"1|155210",88,"4|224409",89,"0|050505ff",89,"4|a6a6a6ff",90,"0|40",90,"1|40",90,"2|5",90,"3|5",90,"4|5",90,"5|5",90,"6|5",90,"7|5",90,"8|-0.001",91,"0|40",91,"1|40",91,"2|5",91,"3|5",91,"4|5",91,"5|5",91,"6|5",91,"7|5",91,"8|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|0",92,"5|0",92,"6|0",92,"7|0",92,"8|-0.001",93,"0|0.2",93,"1|0.2",93,"2|0",93,"3|0",93,"4|0.2",93,"5|0",93,"6|0",93,"7|0",93,"8|-0.001",94,"0|453906",94,"1|453908",94,"2|453909",94,"3|453912",94,"4|35058",94,"5|453911",94,"6|453911",95,"0|f",95,"2|ffffff00",95,"3|ffffff00",95,"5|f",95,"6|070707ff",95,"7|0",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|0",96,"5|0",96,"6|0",96,"7|0",96,"8|-0.001",97,"453996",98,"0|241916cd",98,"1|ffffff00",98,"2|f",100,"0|090404ff",101,"0|5",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|5",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|0",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",106,"0|f",106,"2|ffffff00",106,"3|0",107,"0|0",107,"1|0",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"453997",120,"0|050505ff",120,"1|bababaff",120,"2|241916cd",120,"3|ffffff00",121,"0|32115",122,"0|ff1a1aff",122,"2|090404ff",123,"0|30",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|30",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|1",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|453888",127,"1|453889",128,"0|f",128,"1|4e4e4eff",128,"2|ffffff00",128,"3|0",129,"0|0",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|-0.001",157,"1|-0.001",157,"2|-0.001",158,"0|-0.001",158,"1|-0.001",158,"2|-0.001",161,"0|-0.001",161,"1|-0.001",161,"2|-0.001",162,"0|-0.001",162,"1|-0.001",162,"2|-0.001",163,"92726",166,1.5,169,"453968",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|070707ff",192,"1|f",192,"2|424242ff",194,"0|ff1a1aff",196,"0|f",196,"2|ffffff00",196,"3|0",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|1",198,"1|1",198,"2|1",198,"3|1",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|30",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|30",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["1$453959$0.04,-0.95,12.97|0,0,0|1,1,1","6$453958$-5.7,0.07,-1.06|0.38,-88.99,-5.74|1,1,1","12$453934$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `1386CE71`,
+            npcId: `0D645A2E`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"517456",87,"4|f",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",90,"5|-0.001",90,"6|-0.001",90,"7|-0.001",90,"8|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",91,"5|-0.001",91,"6|-0.001",91,"7|-0.001",91,"8|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",92,"5|-0.001",92,"6|-0.001",92,"7|-0.001",92,"8|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",93,"5|-0.001",93,"6|-0.001",93,"7|-0.001",93,"8|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",96,"5|-0.001",96,"6|-0.001",96,"7|-0.001",96,"8|-0.001",97,"517395",98,"4|f",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"517425",120,"0|f",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",123,"5|-0.001",123,"6|-0.001",123,"7|-0.001",123,"8|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",124,"5|-0.001",124,"6|-0.001",124,"7|-0.001",124,"8|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",125,"5|-0.001",125,"6|-0.001",125,"7|-0.001",125,"8|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",126,"5|-0.001",126,"6|-0.001",126,"7|-0.001",126,"8|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",129,"5|-0.001",129,"6|-0.001",129,"7|-0.001",129,"8|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"517457",170,"eb6e71ff",171,"899effff",172,0.571,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|f",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",197,"5|-0.001",197,"6|-0.001",197,"7|-0.001",197,"8|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",198,"5|-0.001",198,"6|-0.001",198,"7|-0.001",198,"8|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",205,"5|-0.001",205,"6|-0.001",205,"7|-0.001",205,"8|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",206,"5|-0.001",206,"6|-0.001",206,"7|-0.001",206,"8|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",207,"5|-0.001",207,"6|-0.001",207,"7|-0.001",207,"8|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",208,"5|-0.001",208,"6|-0.001",208,"7|-0.001",208,"8|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"dynDecor":["569606","","570598","","","","571428",""]}`
         }, {
-            npcId: `2ACEBF84`,
+            npcId: `1EBDA70C`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"557538",90,"0|-0.001",91,"0|-0.001",92,"0|-0.001",93,"0|-0.001",96,"0|-0.001",97,"557526",101,"0|-0.001",102,"0|-0.001",103,"0|-0.001",104,"0|-0.001",107,"0|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"557512",123,"0|-0.001",124,"0|-0.001",125,"0|-0.001",126,"0|-0.001",129,"0|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"557567",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"slotData":["12$557283$-17.49,-1.53,-129.02|0,90,0|1,1,1"],"dynDecor":["569606","","570598","","","","571428",""]}`
         }, {
-            npcId: `2E9EA4B3`,
+            npcId: `040FC2FF`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"569437",90,"0|-0.001",91,"0|-0.001",92,"0|-0.001",93,"0|-0.001",96,"0|-0.001",97,"562437",101,"0|-0.001",102,"0|-0.001",103,"0|-0.001",104,"0|-0.001",107,"0|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"571247",123,"0|-0.001",124,"0|-0.001",125,"0|-0.001",126,"0|-0.001",129,"0|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"570494",170,"0e0e0eff",171,"f",172,1,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"dynDecor":["569606","","570598","","","","571428",""]}`
         } ];
     }
@@ -18685,6 +18740,12 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         }
         return this.mWorldTimeTextBlock_Internal;
     }
+    get mWorldScoreTextBlock() {
+        if (!this.mWorldScoreTextBlock_Internal && this.uiWidgetBase) {
+            this.mWorldScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mWorldCanvas/WorldCanvas/mWorldScoreTextBlock");
+        }
+        return this.mWorldScoreTextBlock_Internal;
+    }
     get mWorldContentCanvas() {
         if (!this.mWorldContentCanvas_Internal && this.uiWidgetBase) {
             this.mWorldContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mWorldCanvas/ScrollBox/mWorldContentCanvas");
@@ -18714,6 +18775,12 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
             this.mSelfWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldTimeTextBlock");
         }
         return this.mSelfWorldTimeTextBlock_Internal;
+    }
+    get mSelfWorldScoreTextBlock() {
+        if (!this.mSelfWorldScoreTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfWorldScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldScoreTextBlock");
+        }
+        return this.mSelfWorldScoreTextBlock_Internal;
     }
     get mCloseWorldButton() {
         if (!this.mCloseWorldButton_Internal && this.uiWidgetBase) {
@@ -18747,9 +18814,11 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         this.initLanguage(this.mWorldRankTextBlock);
         this.initLanguage(this.mWorldNameTextBlock);
         this.initLanguage(this.mWorldTimeTextBlock);
+        this.initLanguage(this.mWorldScoreTextBlock);
         this.initLanguage(this.mSelfWorldRankTextBlock);
         this.initLanguage(this.mSelfWorldNameTextBlock);
         this.initLanguage(this.mSelfWorldTimeTextBlock);
+        this.initLanguage(this.mSelfWorldScoreTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -18770,7 +18839,7 @@ RankPanel_Generate = __decorate([ UIBind("UI/module/RankModule/RankPanel.ui") ],
 
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign182 = Object.freeze({
+var foreign183 = Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -18823,7 +18892,7 @@ RoomItem_Generate = __decorate([ UIBind("UI/module/RankModule/RoomItem.ui") ], R
 
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign183 = Object.freeze({
+var foreign184 = Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -18868,6 +18937,12 @@ let WorldItem_Generate = class WorldItem_Generate extends UIScript {
         }
         return this.mTimeTextBlock_Internal;
     }
+    get mScoreTextBlock() {
+        if (!this.mScoreTextBlock_Internal && this.uiWidgetBase) {
+            this.mScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Canvas/mScoreTextBlock");
+        }
+        return this.mScoreTextBlock_Internal;
+    }
     onAwake() {
         this.canUpdate = false;
         this.layer = mw.UILayerBottom;
@@ -18877,6 +18952,7 @@ let WorldItem_Generate = class WorldItem_Generate extends UIScript {
         this.initLanguage(this.mRankTextBlock);
         this.initLanguage(this.mNameTextBlock);
         this.initLanguage(this.mTimeTextBlock);
+        this.initLanguage(this.mScoreTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -18897,7 +18973,7 @@ WorldItem_Generate = __decorate([ UIBind("UI/module/RankModule/WorldItem.ui") ],
 
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign184 = Object.freeze({
+var foreign185 = Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -18911,10 +18987,12 @@ class WorldItem extends WorldItem_Generate$1 {
         this.mRankTextBlock.text = ranking.toString();
         this.mNameTextBlock.text = roomData.playerName;
         this.mTimeTextBlock.text = roomData.time.toString();
+        this.mScoreTextBlock.text = roomData.score.toString();
         let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
         this.mRankTextBlock.fontColor = fontColor;
         this.mNameTextBlock.fontColor = fontColor;
         this.mTimeTextBlock.fontColor = fontColor;
+        this.mScoreTextBlock.fontColor = fontColor;
     }
 }
 
@@ -18956,6 +19034,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
+        this.mWorldScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
         Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
@@ -19050,6 +19129,7 @@ class RankPanel extends RankPanel_Generate$1 {
     refreshSelfWorldNameAndTimeUI(roomData) {
         this.mSelfWorldNameTextBlock.text = roomData.playerName;
         this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
+        this.mSelfWorldScoreTextBlock.text = roomData.score.toString();
     }
     refreshSelfWorldRankUI(ranking) {
         if (ranking == -1) {
@@ -19146,8 +19226,8 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then((() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData?.bagIds;
-            let score = !bagIds ? 0 : bagIds.length;
+            let score = this.data?.score;
+            if (!score && score != 0) score = 0;
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
             let tryon = this.getTryOnData?.tryOn;
@@ -19185,10 +19265,10 @@ class RankModuleC extends ModuleC {
             break;
         }
     }
-    updateWorldDatas(worldUserIds, worldNames, worldScores) {
+    updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores) {
         if (this.worldDatas.length > worldUserIds.length) {
             for (let i = 0; i < worldUserIds.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = worldUserIds.length; i < this.worldDatas.length; ++i) {
                 this.recycleWorldDatas.push(this.worldDatas[i]);
@@ -19196,15 +19276,15 @@ class RankModuleC extends ModuleC {
             this.worldDatas.length = worldUserIds.length;
         } else {
             for (let i = 0; i < this.worldDatas.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = this.worldDatas.length; i < worldUserIds.length; ++i) {
                 let tmpWorldData = null;
                 if (this.recycleWorldDatas.length > 0) tmpWorldData = this.recycleWorldDatas.pop();
                 if (tmpWorldData) {
-                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 } else {
-                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 }
                 this.worldDatas.push(tmpWorldData);
             }
@@ -19230,16 +19310,16 @@ class RankModuleC extends ModuleC {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
-    net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+    net_syncWorldRankData(worldUserIds, worldNames, worldTimes, worldScores) {
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldTimes, worldScores) {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
     }
@@ -19373,7 +19453,7 @@ SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.u
 
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign189 = Object.freeze({
+var foreign190 = Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -19442,7 +19522,7 @@ SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui"
 
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign188 = Object.freeze({
+var foreign189 = Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -19883,7 +19963,7 @@ GMHUD_Generate = __decorate([ UIBind("UI/module/GMModule/GMHUD.ui") ], GMHUD_Gen
 
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign162 = Object.freeze({
+var foreign163 = Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -19926,7 +20006,7 @@ GMItem_Generate = __decorate([ UIBind("UI/module/GMModule/GMItem.ui") ], GMItem_
 
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign163 = Object.freeze({
+var foreign164 = Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -20375,7 +20455,7 @@ class KeyActionManager {
     }
 }
 
-var foreign141 = Object.freeze({
+var foreign142 = Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -20426,7 +20506,7 @@ SecondNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/SecondNoticeIt
 
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign148 = Object.freeze({
+var foreign149 = Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -20572,61 +20652,61 @@ const MWModuleMap = {
     C48FD39D43DA5E48E2FFED92F839BB3D: foreign138,
     "1757D7694B3B2F7BFB8C0897BDF03724": foreign139,
     BC6767CF4240176E5C9B6984BB540726: foreign140,
-    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign141,
-    F7EE8818455A5EE814A6F18A2F0CBB12: foreign142,
-    "49E1131448695DF591C8DEB790EFC952": foreign143,
-    "290BA293443A80CCA56170B9DA3D47C1": foreign144,
-    "71EC5D03421DCEEEB4172C8C643D8019": foreign145,
-    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign146,
-    "741B06144E25B4753E8005985816DAF8": foreign147,
-    EE3F354349BB041CD741FF84B745B113: foreign148,
-    "8FA0EC3E442A57C1B550BB833E68DA90": foreign149,
-    "100DA6744367634E7FFC0895CD98DDB9": foreign150,
-    "67892EC847DCDABBB14451A8CDFD526C": foreign151,
-    "486071A84887288700A7E297CBF6B438": foreign152,
-    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign153,
-    "50B679574FA404BE92C52CAD0436F5B1": foreign154,
-    BC28A8C5401B15E17AAEF482A8AA133E: foreign155,
-    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign156,
-    "3A88620945CCB3EE5B699F9D35A5A28F": foreign157,
-    "827757834BCFC569771BCB84A3609238": foreign158,
-    F58702064960960163820CB9C8D0F3C1: foreign159,
-    D92460FC43DFEF127C8EB39DECD67E58: foreign160,
-    C265D0BB488D0422A80DBBB6082E4CB4: foreign161,
-    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign162,
-    "95C84A464FBF396210D6DAB0DFAF53C3": foreign163,
-    C067E1F649184B0F7FC5E0B9456BC72C: foreign164,
-    "337A59B14A237973EEB178A260344C21": foreign165,
-    B9D019D74067C8F762132698D474BF63: foreign166,
-    C4E377B14812C09429E28988E62907DB: foreign167,
-    E038BA9A4A21ED21407734BBDEC1DF0C: foreign168,
-    AD7B5C5440FB6D1DA3795A9BA561546D: foreign169,
-    "06CF574844634CC9C0793EA8847C6FE2": foreign170,
-    "27DEB6624F87673F14AA499E8A3A7DD3": foreign171,
-    CEE9E492480CEF69BF9291BA357C9AC1: foreign172,
-    "458367AB498907FB6AAFE7A4CED12F6E": foreign173,
-    "713A8E764F3DAC8A8AD1BEB382C46158": foreign174,
-    "5E6E0BFE48C322071930C2B8DD56E900": foreign175,
-    C381E72F409A02A45B69B9BC32F4FCAF: foreign176,
-    FADB775E4F203C2565D31A9AA31E22D1: foreign177,
-    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign178,
-    F3E9117C4C567C26689F08B919B7E7DA: foreign179,
-    AF5DEB904C817468E94BAA9265F23AF7: foreign180,
-    AAE12F3F4FD38A0B43975DB01D2D496C: foreign181,
-    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign182,
-    A8E0593D477EC697B2559789990E0882: foreign183,
-    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign184,
-    "559367EC4AA0BAE9AD25A694D5CA960C": foreign185,
-    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign186,
-    "52E3A8604FC761E6CC747FB22FD7160B": foreign187,
-    "14F8E49D4B31DFAA50548BA206585CCA": foreign188,
-    "656033E844C70FD925FC8F887EA9FA46": foreign189,
-    "6B744DEB4703AED17EA7279D0783813A": foreign190,
-    C6D169354450AEEF12B964B7B3BA8B2D: foreign191,
-    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign192
+    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign142,
+    F7EE8818455A5EE814A6F18A2F0CBB12: foreign143,
+    "49E1131448695DF591C8DEB790EFC952": foreign144,
+    "290BA293443A80CCA56170B9DA3D47C1": foreign145,
+    "71EC5D03421DCEEEB4172C8C643D8019": foreign146,
+    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign147,
+    "741B06144E25B4753E8005985816DAF8": foreign148,
+    EE3F354349BB041CD741FF84B745B113: foreign149,
+    "8FA0EC3E442A57C1B550BB833E68DA90": foreign150,
+    "100DA6744367634E7FFC0895CD98DDB9": foreign151,
+    "67892EC847DCDABBB14451A8CDFD526C": foreign152,
+    "486071A84887288700A7E297CBF6B438": foreign153,
+    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign154,
+    "50B679574FA404BE92C52CAD0436F5B1": foreign155,
+    BC28A8C5401B15E17AAEF482A8AA133E: foreign156,
+    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign157,
+    "3A88620945CCB3EE5B699F9D35A5A28F": foreign158,
+    "827757834BCFC569771BCB84A3609238": foreign159,
+    F58702064960960163820CB9C8D0F3C1: foreign160,
+    D92460FC43DFEF127C8EB39DECD67E58: foreign161,
+    C265D0BB488D0422A80DBBB6082E4CB4: foreign162,
+    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign163,
+    "95C84A464FBF396210D6DAB0DFAF53C3": foreign164,
+    C067E1F649184B0F7FC5E0B9456BC72C: foreign165,
+    "337A59B14A237973EEB178A260344C21": foreign166,
+    B9D019D74067C8F762132698D474BF63: foreign167,
+    C4E377B14812C09429E28988E62907DB: foreign168,
+    E038BA9A4A21ED21407734BBDEC1DF0C: foreign169,
+    AD7B5C5440FB6D1DA3795A9BA561546D: foreign170,
+    "06CF574844634CC9C0793EA8847C6FE2": foreign171,
+    "27DEB6624F87673F14AA499E8A3A7DD3": foreign172,
+    CEE9E492480CEF69BF9291BA357C9AC1: foreign173,
+    "458367AB498907FB6AAFE7A4CED12F6E": foreign174,
+    "713A8E764F3DAC8A8AD1BEB382C46158": foreign175,
+    "5E6E0BFE48C322071930C2B8DD56E900": foreign176,
+    C381E72F409A02A45B69B9BC32F4FCAF: foreign177,
+    FADB775E4F203C2565D31A9AA31E22D1: foreign178,
+    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign179,
+    F3E9117C4C567C26689F08B919B7E7DA: foreign180,
+    AF5DEB904C817468E94BAA9265F23AF7: foreign181,
+    AAE12F3F4FD38A0B43975DB01D2D496C: foreign182,
+    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign183,
+    A8E0593D477EC697B2559789990E0882: foreign184,
+    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign185,
+    "559367EC4AA0BAE9AD25A694D5CA960C": foreign186,
+    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign187,
+    "52E3A8604FC761E6CC747FB22FD7160B": foreign188,
+    "14F8E49D4B31DFAA50548BA206585CCA": foreign189,
+    "656033E844C70FD925FC8F887EA9FA46": foreign190,
+    "6B744DEB4703AED17EA7279D0783813A": foreign191,
+    C6D169354450AEEF12B964B7B3BA8B2D: foreign192,
+    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign193
 };
 
-const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign123 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign124 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign126 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign127 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign129 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign130 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign131 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign132 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign136 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign137 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign138 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign139 || {}, "JavaScripts/tools/CameraManager" ], [ foreign140 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign141 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign142 || {}, "JavaScripts/tools/MapEx" ], [ foreign143 || {}, "JavaScripts/tools/TouchScript" ], [ foreign144 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign145 || {}, "JavaScripts/tools/Utils" ], [ foreign146 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign147 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign148 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign149 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign150 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign151 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign152 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign153 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign154 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign155 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign156 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign157 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign158 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign159 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
+const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign123 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign124 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign126 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign127 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign129 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign130 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign131 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign132 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign136 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign137 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign138 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign139 || {}, "JavaScripts/tools/CameraManager" ], [ foreign140 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign142 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign143 || {}, "JavaScripts/tools/MapEx" ], [ foreign144 || {}, "JavaScripts/tools/TouchScript" ], [ foreign145 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign146 || {}, "JavaScripts/tools/Utils" ], [ foreign147 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign148 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign149 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign150 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign151 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign152 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign153 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign154 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign155 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign156 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign157 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign158 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign159 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
 
 exports.MWFileMapping = MWFileMapping;
 

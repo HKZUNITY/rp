@@ -4,6 +4,7 @@ import { IExpressionElement } from "../../configs/Expression";
 import { GameConfig } from "../../configs/GameConfig";
 import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
+import RankModuleS from "../RankModule/RankModuleS";
 import Buff from "./Buff";
 import { ChatData, ActionData } from "./DanMuData";
 import DanMuModuleC from "./DanMuModuleC";
@@ -12,6 +13,14 @@ const WorldChatDatas: string = "WorldChatDatas";
 const WorldExpressionDatas: string = "WorldExpressionDatas";
 const WorldActionDatas: string = "WorldActionDatas";
 export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
+
+    private rankModuleS: RankModuleS = null;
+    private get getRankModuleS(): RankModuleS {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -123,8 +132,9 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
 
     private maxShowDistance: number = 2000;
     @Decorator.noReply()
-    public net_showBubbleText(gameObjectId: string, text: string): void {
-        let currentPlayer = this.currentPlayer;
+    public net_showBubbleText(gameObjectId: string, text: string, score: number): void {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         if (this.maxShowDistance == -1) {
             Player.getAllPlayers().forEach((player: mw.Player) => {
                 this.getClient(player).net_showBubbleText(gameObjectId, text);
@@ -132,10 +142,10 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
         } else {
             const players = Player.getAllPlayers();
             for (const player of players) {
-                if (player === currentPlayer) {
+                if (player === player) {
                     this.getClient(player).net_showBubbleText(gameObjectId, text);
                 } else {
-                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
+                    const len = Vector.distance(player.character.worldTransform.position, player.character.worldTransform.position);
                     if (len <= this.maxShowDistance) {
                         this.getClient(player).net_showBubbleText(gameObjectId, text);
                     }
@@ -145,13 +155,16 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
     }
 
     @Decorator.noReply()
-    public net_playExpression(assetId: string): void {
+    public net_playExpression(assetId: string, score: number): void {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
     }
 
     private playerInteractMap: Map<number, PlayerInteract> = new Map<number, PlayerInteract>();
-    public async net_EnterInteract(actionData: ActionData): Promise<boolean> {
+    public async net_EnterInteract(actionData: ActionData, score: number): Promise<boolean> {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         return await this.enterInteract(player, actionData);
     }
 
@@ -184,8 +197,9 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
     }
 
     private playerBagMap: Map<number, PlayerBag[]> = new Map<number, PlayerBag[]>();
-    public async net_useBag(bagId: number): Promise<number[]> {
+    public async net_useBag(bagId: number, score: number): Promise<number[]> {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         let playerBag: PlayerBag = null;
         let bagIds: number[] = [];
         if (!this.playerBagMap.has(player.playerId)) {

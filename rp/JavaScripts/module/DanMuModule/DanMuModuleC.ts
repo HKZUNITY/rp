@@ -4,6 +4,7 @@ import { IChatElement } from "../../configs/Chat";
 import { IExpressionElement } from "../../configs/Expression";
 import { GameConfig } from "../../configs/GameConfig";
 import GlobalData, { EventType } from "../../GlobalData";
+import { FlyText } from "../../tools/FlyText";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import BubbleItem_Generate from "../../ui-generate/module/DanMuModule/BubbleItem_generate";
@@ -214,7 +215,10 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
      * @param text
      */
     private showBubbleText(text: string): void {
-        this.server.net_showBubbleText(this.localPlayer.character.gameObjectId, text);
+        let score = Utils.randomInt(10, 100);
+        let fontColor: mw.LinearColor[] = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_showBubbleText(this.localPlayer.character.gameObjectId, text, score);
     }
 
     public net_showBubbleText(gameObjectId: string, text: string): void {
@@ -309,7 +313,10 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
         let assetId = this.expressionAssets[index];
         if (!assetId || assetId == "") return;
         // this.getChatPanel.closeExpressionList();
-        this.server.net_playExpression(assetId);
+        let score = Utils.randomInt(10, 100);
+        let fontColor: mw.LinearColor[] = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_playExpression(assetId, score);
     }
 
     private expressionMap: Map<number, { playId: number, timeoutId: any }> = new Map<number, { playId: number, timeoutId: any }>();
@@ -416,7 +423,10 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
             return;
         }
         this.isCanInteract = false;
-        this.server.net_EnterInteract(actionData).then(async () => {
+        let score = Utils.randomInt(10, 100);
+        let fontColor: mw.LinearColor[] = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+        this.server.net_EnterInteract(actionData, score).then(async () => {
             this.isPlaying = true;
             this.isCanInteract = true;
 
@@ -482,7 +492,10 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
     private addClickBagItemAction(bagId: number): void {
         console.error(`wfz - ClickBagItem - bagId:${bagId}`);
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            let bagIds: number[] = await this.server.net_useBag(bagId);
+            let score = Utils.randomInt(10, 100);
+            let fontColor: mw.LinearColor[] = Utils.randomColor();
+            FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value}+${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
+            let bagIds: number[] = await this.server.net_useBag(bagId, score);
             this.getChatPanel.closeBagCanvas(false);
             this.currentBagIds = bagIds;
             if (this.currentBagIds.includes(bagId)) {

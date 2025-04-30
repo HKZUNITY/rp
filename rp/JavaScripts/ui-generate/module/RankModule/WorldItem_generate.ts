@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/WorldItem.ui
- * TIME: 2025.04.11-20.54.08
+ * TIME: 2025.05.01-01.36.19
  */
  
 @UIBind('UI/module/RankModule/WorldItem.ui')
@@ -29,6 +29,13 @@ export default class WorldItem_Generate extends UIScript {
 		}
 		return this.mTimeTextBlock_Internal
 	}
+	private mScoreTextBlock_Internal: mw.TextBlock
+	public get mScoreTextBlock(): mw.TextBlock {
+		if(!this.mScoreTextBlock_Internal&&this.uiWidgetBase) {
+			this.mScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mScoreTextBlock') as mw.TextBlock
+		}
+		return this.mScoreTextBlock_Internal
+	}
 
 
 	protected onAwake() {
@@ -53,6 +60,9 @@ export default class WorldItem_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mTimeTextBlock)
+		
+	
+		this.initLanguage(this.mScoreTextBlock)
 		
 	
 		//文本多语言

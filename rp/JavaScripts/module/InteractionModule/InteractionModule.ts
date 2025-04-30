@@ -2,11 +2,13 @@
 import { GameConfig } from "../../configs/GameConfig";
 import { IInteractElement } from "../../configs/Interact";
 import GlobalData from "../../GlobalData";
+import { FlyText } from "../../tools/FlyText";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import GuidePanel_Generate from "../../ui-generate/module/InteractionModule/GuidePanel_generate";
 import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/OnClickPanel_generate";
 import AdPanel, { TipsPanel } from "../AdModule/ui/AdPanel";
+import DanMuModuleC from "../DanMuModule/DanMuModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import RankModuleS from "../RankModule/RankModuleS";
 
@@ -224,6 +226,13 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         }
         return this.tipsPanel;
     }
+    private danMuModuleC: DanMuModuleC = null;
+    private get getDanMuModuleC(): DanMuModuleC {
+        if (!this.danMuModuleC) {
+            this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
+        }
+        return this.danMuModuleC;
+    }
     public onClickBagItemAction: Action1<number> = new Action1<number>();
 
     private currentDescription: mw.CharacterDescription = null;
@@ -234,7 +243,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
 
     protected onEnterScene(sceneType: number): void {
         this.initBagIds();
-        this.initGuide();
+        // this.initGuide();
         this.findTriggers();
     }
 
@@ -370,6 +379,9 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 if (this.triggerLocMap.has(bagId)) {
                     let targetLoc = this.triggerLocMap.get(bagId);
                     Utils.startGuide(targetLoc, () => { });
+                } else {
+                    this.setBagId(bagId);
+                    this.getDanMuModuleC.onClickBagItemAction.call(bagId);
                 }
             }, GameConfig.Language.Text_BootPrompt.Value,
                 GameConfig.Language.Text_FreeGuideYouGet.Value,
@@ -387,6 +399,9 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         if (this.bagIds.includes(bagId)) return;
         Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
         this.bagIds.push(bagId);
+        let score = this.bagIds.length
+        let fontColor: mw.LinearColor[] = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value} +${score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
         this.server.net_setBagId(bagId);
     }
 
@@ -394,24 +409,25 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         return this.bagIds;
     }
 
-    private guidePanel: GuidePanel = null;
-    private get getGuidePanel(): GuidePanel {
-        if (this.guidePanel == null) {
-            this.guidePanel = mw.UIService.getUI(GuidePanel);
-        }
-        return this.guidePanel;
-    }
-    private initGuide(): void {
-        this.guideStep = this.data.guideStep;
-        this.startGuide();
-    }
+    // private guidePanel: GuidePanel = null;
+    // private get getGuidePanel(): GuidePanel {
+    //     if (this.guidePanel == null) {
+    //         this.guidePanel = mw.UIService.getUI(GuidePanel);
+    //     }
+    //     return this.guidePanel;
+    // }
+    // private initGuide(): void {
+    //     this.guideStep = this.data.guideStep;
+    //     this.startGuide();
+    // }
 
-    private guideStep: number = 0;
-    public setGuideStep(addStep: number): void {
-        this.guideStep += addStep;
-        this.server.net_setGuideStep(addStep);
-    }
+    // private guideStep: number = 0;
+    // public setGuideStep(addStep: number): void {
+    //     this.guideStep += addStep;
+    //     this.server.net_setGuideStep(addStep);
+    // }
 
+    /*
     private guideBagIds: number[] = [60002, 20002, 10106, 30002];
     private startGuide(): void {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
@@ -477,6 +493,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
             });
         }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
     }
+    */
 }
 
 export class InteractionModuleS extends ModuleS<InteractionModuleC, InteractionData> {
@@ -603,10 +620,10 @@ export class InteractionModuleS extends ModuleS<InteractionModuleC, InteractionD
         this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
     }
 
-    @Decorator.noReply()
-    public net_setGuideStep(addStep: number): void {
-        this.currentData.setGuideStep(addStep);
-    }
+    // @Decorator.noReply()
+    // public net_setGuideStep(addStep: number): void {
+    //     this.currentData.setGuideStep(addStep);
+    // }
 }
 
 export class PlayerInteractor {
@@ -624,8 +641,8 @@ export class InteractionData extends Subdata {
     @Decorator.persistence()
     public bagIds: number[] = [];
 
-    @Decorator.persistence()
-    public guideStep: number = 0;
+    // @Decorator.persistence()
+    // public guideStep: number = 0;
 
     public setBagId(bagId: number): void {
         if (this.bagIds.includes(bagId)) return;
@@ -633,8 +650,8 @@ export class InteractionData extends Subdata {
         this.save(false);
     }
 
-    public setGuideStep(addStep: number): void {
-        this.guideStep += addStep;
-        this.save(false);
-    }
+    // public setGuideStep(addStep: number): void {
+    //     this.guideStep += addStep;
+    //     this.save(false);
+    // }
 }

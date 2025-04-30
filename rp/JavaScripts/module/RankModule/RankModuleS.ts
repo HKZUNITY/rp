@@ -55,7 +55,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private onEnterScene(userId: string, playerName: string, score: number, time: number, tryOn: number): void {
         let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
-        let worldData: WorldData = new WorldData(userId, playerName, time);
+        let worldData: WorldData = new WorldData(userId, playerName, time, score);
         try {
             this.isRefreshWorldData([worldData]);
         } catch (error) {
@@ -70,7 +70,11 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     public refreshScore(userId: string, score: number): void {
         if (!this.roomDataMap.has(userId)) return;
         let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
+
+        let rankData = DataCenterS.getData(userId, RankData);
+        rankData?.setScore(score);
+        roomData.score = rankData?.score;
+
         this.synchrodata_Room();
     }
 
@@ -84,7 +88,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             let roomData = this.roomDataMap.get(userId);
             roomData.time += 1;
 
-            let worldData: WorldData = new WorldData(userId, roomData.playerName, roomData.time);
+            let worldData: WorldData = new WorldData(userId, roomData.playerName, roomData.time, roomData.score);
             tmpWorldDatas.push(worldData);
         });
         try {
@@ -124,7 +128,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
                 } else {
                     for (let i = 0; i < this.worldDatas.length; ++i) {
                         if (this.worldDatas[i].userId != worldData.userId) continue;
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 1);
                             break;
                         } else {
@@ -136,7 +140,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
                     if (ishasData) continue;
 
                     for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 0, worldData);
                             isPush = true;
                             isNeedSave = true;
@@ -153,7 +157,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             } else {
                 for (let i = 0; i < this.worldDatas.length; ++i) {
                     if (this.worldDatas[i].userId != worldData.userId) continue;
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 1);
                         ishasDelete = true;
                         break;
@@ -166,7 +170,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
                 if (ishasData) continue;
 
                 for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 0, worldData);
                         if (!ishasDelete) {
                             this.worldDatas.pop();
@@ -208,15 +212,18 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private worldUserIds: string[] = [];
     private worldNames: string[] = [];
     private worldTimes: number[] = [];
+    private worldScores: number[] = [];
     private updateWorldData(): void {
         if (!this.worldDatas || this.worldDatas?.length == 0) return;
         this.worldUserIds.length = 0;
         this.worldNames.length = 0;
         this.worldTimes.length = 0;
+        this.worldScores.length = 0;
         for (let i = 0; i < this.worldDatas.length; i++) {
             this.worldUserIds.push(this.worldDatas[i].userId);
             this.worldNames.push(this.worldDatas[i].playerName);
             this.worldTimes.push(this.worldDatas[i].time);
+            this.worldScores.push(this.worldDatas[i].score);
         }
     }
 
@@ -227,14 +234,18 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             // if (!value) return;
             if (sendUserId == key.userId) {
                 this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
-                    this.worldUserIds, this.worldNames, this.worldTimes);
+                    this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
             } else {
                 this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         });
     }
 
+    private isCanUpdateRoom: boolean = true;
     private synchrodata_Room(): void {
+        if (!this.isCanUpdateRoom) return;
+        this.isCanUpdateRoom = false;
+        TimeUtil.delaySecond(5).then(() => { this.isCanUpdateRoom = true; });
         this.updateRoomData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
@@ -254,7 +265,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.updateWorldData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         });
     }
 
@@ -264,13 +275,13 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
             this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
-                this.worldUserIds, this.worldNames, this.worldTimes);
+                this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         });
     }
 
     private synchrodata_aRoomWorld(player: mw.Player): void {
         this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
-            this.worldUserIds, this.worldNames, this.worldTimes);
+            this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
     }
 
     public getNamesByUserId(userId1: string, userId2: string): string[] {

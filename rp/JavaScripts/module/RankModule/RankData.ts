@@ -26,23 +26,29 @@ export class WorldData {
     public userId: string = "";
     public playerName: string = "";
     public time: number = 0;
+    public score: number = 0;
 
-    public constructor(userId: string, name: string, time: number) {
+    public constructor(userId: string, name: string, time: number, score: number) {
         this.userId = userId;
         this.playerName = name;
         this.time = time;
+        this.score = score;
     }
 
-    public setData(userId: string, name: string, time: number): void {
+    public setData(userId: string, name: string, time: number, score: number): void {
         this.userId = userId;
         this.playerName = name;
         this.time = time;
+        this.score = score;
     }
 }
 
 export class RankData extends Subdata {
     @Decorator.persistence()
     public time: number = 0;
+
+    @Decorator.persistence()
+    public score: number = 0;
 
     public setTime(addTime: number): void {
         this.time += addTime;
@@ -51,5 +57,14 @@ export class RankData extends Subdata {
 
     public get getTime(): number {
         return this.time;
+    }
+
+    public setScore(addScore: number): void {
+        this.score += addScore;
+        this.save(false);
+    }
+
+    public get getScore(): number {
+        return this.score;
     }
 }

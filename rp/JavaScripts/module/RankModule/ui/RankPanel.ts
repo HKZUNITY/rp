@@ -46,6 +46,7 @@ export default class RankPanel extends RankPanel_Generate {
 		this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
 		this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
+		this.mWorldScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
 
 		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
 		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
@@ -156,6 +157,7 @@ export default class RankPanel extends RankPanel_Generate {
 	public refreshSelfWorldNameAndTimeUI(roomData: RoomData): void {
 		this.mSelfWorldNameTextBlock.text = roomData.playerName;
 		this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
+		this.mSelfWorldScoreTextBlock.text = roomData.score.toString();
 	}
 
 	public refreshSelfWorldRankUI(ranking: number): void {

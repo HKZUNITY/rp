@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.04.11-20.54.08
+ * TIME: 2025.05.01-01.36.19
  */
  
 @UIBind('UI/module/RankModule/RankPanel.ui')
@@ -106,6 +106,13 @@ export default class RankPanel_Generate extends UIScript {
 		}
 		return this.mWorldTimeTextBlock_Internal
 	}
+	private mWorldScoreTextBlock_Internal: mw.TextBlock
+	public get mWorldScoreTextBlock(): mw.TextBlock {
+		if(!this.mWorldScoreTextBlock_Internal&&this.uiWidgetBase) {
+			this.mWorldScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/WorldCanvas/mWorldScoreTextBlock') as mw.TextBlock
+		}
+		return this.mWorldScoreTextBlock_Internal
+	}
 	private mWorldContentCanvas_Internal: mw.Canvas
 	public get mWorldContentCanvas(): mw.Canvas {
 		if(!this.mWorldContentCanvas_Internal&&this.uiWidgetBase) {
@@ -140,6 +147,13 @@ export default class RankPanel_Generate extends UIScript {
 			this.mSelfWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldTimeTextBlock') as mw.TextBlock
 		}
 		return this.mSelfWorldTimeTextBlock_Internal
+	}
+	private mSelfWorldScoreTextBlock_Internal: mw.TextBlock
+	public get mSelfWorldScoreTextBlock(): mw.TextBlock {
+		if(!this.mSelfWorldScoreTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSelfWorldScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mWorldCanvas/mSelfWorldCanvas/mSelfWorldScoreTextBlock') as mw.TextBlock
+		}
+		return this.mSelfWorldScoreTextBlock_Internal
 	}
 	private mCloseWorldButton_Internal: mw.Button
 	public get mCloseWorldButton(): mw.Button {
@@ -205,6 +219,9 @@ export default class RankPanel_Generate extends UIScript {
 		this.initLanguage(this.mWorldTimeTextBlock)
 		
 	
+		this.initLanguage(this.mWorldScoreTextBlock)
+		
+	
 		this.initLanguage(this.mSelfWorldRankTextBlock)
 		
 	
@@ -212,6 +229,9 @@ export default class RankPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mSelfWorldTimeTextBlock)
+		
+	
+		this.initLanguage(this.mSelfWorldScoreTextBlock)
 		
 	
 		//文本多语言

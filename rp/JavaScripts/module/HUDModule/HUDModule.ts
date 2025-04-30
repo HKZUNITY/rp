@@ -480,6 +480,12 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
         this.initFreeNpc();
+
+        this.localPlayer.character.asyncReady().then(() => {
+            TimeUtil.delaySecond(5).then(() => {
+                this.onOpenMallAction.call();
+            });
+        });
     }
 
     public net_syncFreeTime(freeTime: number): void {

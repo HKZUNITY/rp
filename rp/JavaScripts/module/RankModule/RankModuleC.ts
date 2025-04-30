@@ -91,12 +91,15 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData?.bagIds;
-            let score = (!bagIds) ? 0 : bagIds.length;
+            let score = this.data?.score;
+            if (!score && score != 0) score = 0;
+
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
+
             let tryon = this.getTryOnData?.tryOn;
             if (!tryon && tryon != 0) tryon = 0;
+
             this.server.net_onEnterScene(nickName, score, time, tryon);
         });
     }
@@ -139,10 +142,10 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
 
     private worldDatas: WorldData[] = [];
     private recycleWorldDatas: WorldData[] = [];
-    private updateWorldDatas(worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
+    private updateWorldDatas(worldUserIds: string[], worldNames: string[], worldTimes: number[], worldScores: number[]): void {
         if (this.worldDatas.length > worldUserIds.length) {
             for (let i = 0; i < worldUserIds.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = worldUserIds.length; i < this.worldDatas.length; ++i) {
                 this.recycleWorldDatas.push(this.worldDatas[i]);
@@ -150,15 +153,15 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             this.worldDatas.length = worldUserIds.length;
         } else {
             for (let i = 0; i < this.worldDatas.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = this.worldDatas.length; i < worldUserIds.length; ++i) {
                 let tmpWorldData: WorldData = null;
                 if (this.recycleWorldDatas.length > 0) tmpWorldData = this.recycleWorldDatas.pop();
                 if (tmpWorldData) {
-                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 } else {
-                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 }
                 this.worldDatas.push(tmpWorldData);
             }
@@ -190,19 +193,19 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
-    public net_syncWorldRankData(worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+    public net_syncWorldRankData(worldUserIds: string[], worldNames: string[], worldTimes: number[], worldScores: number[]): void {
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
 
     public net_syncRoomWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[],
-        worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
+        worldUserIds: string[], worldNames: string[], worldTimes: number[], worldScores: number[]): void {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
 
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
 
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);

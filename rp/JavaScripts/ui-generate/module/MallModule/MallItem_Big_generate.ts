@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallItem_Big.ui
- * TIME: 2025.04.11-20.54.08
+ * TIME: 2025.05.01-01.36.19
  */
  
 @UIBind('UI/module/MallModule/MallItem_Big.ui')
