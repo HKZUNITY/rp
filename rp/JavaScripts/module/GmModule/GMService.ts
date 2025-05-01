@@ -1,4 +1,5 @@
-﻿import Utils from "../../tools/Utils";
+﻿import { AvatarApi } from "../../tools/AvatarApi";
+import Utils from "../../tools/Utils";
 import GMHUD_Generate from "../../ui-generate/module/GMModule/GMHUD_generate";
 import GMItem_Generate from "../../ui-generate/module/GMModule/GMItem_generate";
 
@@ -6,6 +7,24 @@ const GMConfig = [];
 export function AddGMCommand(cmd: GMData) {
     GMConfig.push(cmd);
 }
+
+AddGMCommand({
+    label: "getAllData",
+    clientCmd: async (player, value) => {
+        console.error(JSON.stringify(AvatarApi.getAllData(player.character)));
+    },
+    serverCmd: (player, value) => {
+    }
+});
+
+AddGMCommand({
+    label: "getAllData",
+    clientCmd: async (player, value) => {
+        console.error(JSON.stringify(AvatarApi.getAllData(player.character)));
+    },
+    serverCmd: (player, value) => {
+    }
+});
 
 AddGMCommand({
     label: "applySharedId",

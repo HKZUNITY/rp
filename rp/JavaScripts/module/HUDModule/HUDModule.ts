@@ -476,13 +476,13 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     private freeNpc: mw.Character = null;
     protected onEnterScene(sceneType: number): void {
         this.getHUDPanel.show();
-        this.playBGMusic(0);
+        this.playBGMusic(1);
         this.registerGlobalClickSound();
         AvatarEditorService.setAvatarEditorButtonVisible(true);// 设置“去装扮”按钮隐藏
         this.initFreeNpc();
 
         this.localPlayer.character.asyncReady().then(() => {
-            TimeUtil.delaySecond(5).then(() => {
+            TimeUtil.delaySecond(1).then(() => {
                 this.onOpenMallAction.call();
             });
         });
