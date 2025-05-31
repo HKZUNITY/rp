@@ -16,6 +16,7 @@ import MallModuleS from "./MallModuleS";
 import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
 import MallTipsPanel from "./ui/MallTipsPanel";
+import MallVipTipsPanel from "./ui/MallVipTipsPanel";
 
 export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private hudModuleC: HUDModuleC = null;
@@ -50,6 +51,14 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         return this.mallTipsPanel;
     }
 
+    private mallTipsVipPanel: MallVipTipsPanel = null;
+    private get getMallVipTipsPanel(): MallVipTipsPanel {
+        if (!this.mallTipsPanel) {
+            this.mallTipsVipPanel = UIService.getUI(MallVipTipsPanel);
+        }
+        return this.mallTipsVipPanel;
+    }
+
     private characterModuleC: CharacterModuleC = null;
     private get getCharacterModuleC(): CharacterModuleC {
         if (!this.characterModuleC) {
@@ -67,6 +76,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public onResetAction: Action = new Action();
     public onSaveAction: Action = new Action();
     public onSexAction: Action = new Action();
+    public onAddVipAction: Action = new Action();
     public onCloseMallPanelAction: Action = new Action();
     public onSelectColorPickTab2Action: Action1<number> = new Action1<number>();
     public onSelectColorPickTab3Action: Action1<number> = new Action1<number>();
@@ -100,6 +110,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.onCloseMallPanelAction.add(this.addCloseAction.bind(this));
         this.onResetAction.add(this.addResetAction.bind(this));
         this.onSexAction.add(this.addSexAction.bind(this));
+        this.onAddVipAction.add(this.addVipAction.bind(this));
         this.onSelectColorPickTab2Action.add(this.addSelectColorPickTab2Action.bind(this));
         this.onSelectColorPickTab3Action.add(this.addSelectColorPickTab3Action.bind(this));
         this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
@@ -149,7 +160,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.onSwitchCameraAction.call(2);
             if (!mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.mallPanel = UIService.getUI(MallPanel);
-                this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap);
+                this.getMallPanel.initMallPanel(this.saveSomatotype, this.usingAssetIdMap, this.vipCount);
             }
             this.getMallPanel.show();
 
@@ -1134,7 +1145,51 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     private addSaveAction(): void {
-        this.saveCharacterDescription();
+        this.saveCharacterDescriptionPrepare();
+    }
+
+    private addVipAction(): void {
+        this.getMallVipTipsPanel.showTips(() => {
+            this.placeOrder(`9XL5ExKkXvc00054c`, () => {
+            });
+        }, () => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
+                await this.addVipCount(1);
+                this.getMallPanel.updateVipCount(this.vipCount);
+            });
+        },
+            GameConfig.Language.Text_Vip2.Value,
+            StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
+            StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1),
+            GameConfig.Language.Text_Vip5.Value,);
+    }
+
+    private saveCharacterDescriptionPrepare(): void {
+        if (this.isUseFreeSave) {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
+                await this.getVipCount();
+                if (this.vipCount > 0) {
+                    this.saveCharacterDescription();
+                } else {
+                    this.getMallVipTipsPanel.showTips(() => {
+                        this.placeOrder(`9XL5ExKkXvc00054c`, () => {
+                        });
+                    }, () => {
+                        ExecutorManager.instance.pushAsyncExecutor(async () => {
+                            await this.addVipCount(1);
+                            this.getMallPanel.updateVipCount(this.vipCount);
+                        });
+                    },
+                        GameConfig.Language.Text_Vip2.Value,
+                        StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
+                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1),
+                        GameConfig.Language.Text_Vip5.Value);
+                }
+            });
+        } else {
+            this.saveCharacterDescription();
+            this.setIsUseFreeSave(true);
+        }
     }
 
     private saveCharacterDescription(): void {
@@ -1160,7 +1215,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         if (this.isNeedSaveCharacter) {
             this.getMallTipsPanel.showTips(() => {
                 this.isNeedSaveCharacter = false;
-                this.saveCharacterDescription();
+                this.saveCharacterDescriptionPrepare();
                 this.closeMallPanel();
             }, () => {
                 this.isNeedSaveCharacter = false;
@@ -1199,7 +1254,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
             this.initUsingCharacterData();
-            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap, this.vipCount);
             Notice.showDownNotice(GameConfig.Language.Text_ResetSuccessfully.Value);
         });
     }
@@ -1216,7 +1271,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             await this.localPlayer.character.asyncReady();
             somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
             this.initUsingCharacterData();
-            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap, this.vipCount);
             Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
         });
     }
@@ -1225,7 +1280,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
         this.initUsingCharacterData();
         if (mw.UIService.getUI(MallPanel, false)?.visible) {
-            this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap);
+            this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap, this.vipCount);
             this.onSelectTab1Action.call(3);
         }
     }
@@ -1889,5 +1944,60 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
     public getCharacterDataUpAssetIdByKey(key: string): string {
         return this.getCharacterModuleC.getCharacterDataUpAssetIdByKey(key);
+    }
+
+    private vipCount: number = 0;
+    private isUseFreeSave: boolean = false;
+    public net_initPlayerVipData(vipCount: number, isUseFreeSave: boolean): void {
+        this.vipCount = vipCount;
+        this.isUseFreeSave = isUseFreeSave;
+
+        if (!mw.UIService.getUI(MallPanel, false)?.visible) return;
+        this.getMallPanel.updateVipCount(vipCount);
+    }
+
+    public async getVipCount(): Promise<number> {
+        this.vipCount = await this.server.net_getVipCount();
+        return this.vipCount;
+    }
+
+    public async addVipCount(count: number): Promise<number> {
+        this.vipCount = await this.server.net_addVipCount(count);
+        return this.vipCount;
+    }
+
+    public setIsUseFreeSave(isUseFreeSave: boolean): void {
+        this.isUseFreeSave = isUseFreeSave;
+        this.server.net_setIsUseFreeSave(this.isUseFreeSave);
+    }
+
+    public placeOrder(commodityId: string, buySuccessCallback: () => void): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            if (mw.SystemUtil.isPIE) {
+                if (buySuccessCallback) buySuccessCallback();
+                Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
+                    await this.addVipCount(1);
+                    this.getMallPanel.updateVipCount(this.vipCount);
+                });
+            } else {
+                mw.PurchaseService.placeOrder(commodityId, 1, (status, msg) => {
+                    mw.PurchaseService.getArkBalance();//刷新代币数量
+                    if (status != 200) return;
+                    if (buySuccessCallback) buySuccessCallback();
+                });
+                await TimeUtil.delaySecond(3);
+            }
+        });
+    }
+
+    public net_deliverGoods(commodityId: string, amount: number): void {
+        //根据commodityId和amount来处理收货逻辑
+        console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
+        Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.addVipCount(1);
+            this.getMallPanel.updateVipCount(this.vipCount);
+        });
     }
 }
