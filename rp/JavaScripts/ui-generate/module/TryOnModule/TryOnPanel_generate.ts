@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TryOnModule/TryOnPanel.ui
- * TIME: 2025.05.01-01.36.19
+ * TIME: 2025.05.31-20.46.25
  */
  
 @UIBind('UI/module/TryOnModule/TryOnPanel.ui')
