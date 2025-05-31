@@ -11016,6 +11016,14 @@ __decorate([ Decorator.persistence() ], MallData.prototype, "timeStamp", void 0)
 
 __decorate([ Decorator.persistence() ], MallData.prototype, "isUseFreeSave", void 0);
 
+class MallConfigData {
+    constructor(data) {
+        this.addVipCoinNumber = 2;
+        if (!data) return;
+        this.addVipCoinNumber = data?.addVipCoinNumber;
+    }
+}
+
 class TabIdData {
     constructor() {
         this.tabId = 0;
@@ -11178,6 +11186,7 @@ var foreign105 = Object.freeze({
     __proto__: null,
     AssetIdInfoData: AssetIdInfoData,
     ColorPickTab2Data: ColorPickTab2Data,
+    MallConfigData: MallConfigData,
     get Tab1Type() {
         return Tab1Type;
     },
@@ -15534,6 +15543,7 @@ class MallModuleC extends ModuleC {
         this.isNeedSaveColor = false;
         this.vipCount = 0;
         this.isUseFreeSave = false;
+        this.mallConfigData = null;
     }
     get getHUDModuleC() {
         if (!this.hudModuleC) {
@@ -16598,7 +16608,7 @@ class MallModuleC extends ModuleC {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
             }));
-        }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1), GameConfig.Language.Text_Vip5.Value);
+        }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
     }
     saveCharacterDescriptionPrepare() {
         if (this.isUseFreeSave) {
@@ -16615,7 +16625,7 @@ class MallModuleC extends ModuleC {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
                         }));
-                    }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1), GameConfig.Language.Text_Vip5.Value);
+                    }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
                 }
             }));
         } else {
@@ -17357,6 +17367,13 @@ class MallModuleC extends ModuleC {
             this.getMallPanel.updateVipCount(this.vipCount);
         }));
     }
+    net_syncMallConfigData(mallConfigData) {
+        this.mallConfigData = mallConfigData;
+    }
+    get addVipCoinNumber() {
+        if (!this.mallConfigData) return 2;
+        return this.mallConfigData.addVipCoinNumber;
+    }
 }
 
 var foreign106 = Object.freeze({
@@ -17365,6 +17382,11 @@ var foreign106 = Object.freeze({
 });
 
 class MallModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.isContinueInitMallConfigData = true;
+        this.mallConfigData = null;
+    }
     onStart() {
         this.bindAction();
     }
@@ -17377,6 +17399,21 @@ class MallModuleS extends ModuleS {
     }
     onPlayerEnterGame(player) {
         this.initPlayerVipData(player);
+        this.syncMallConfigData(player);
+    }
+    async syncMallConfigData(player) {
+        if (this.isContinueInitMallConfigData) {
+            this.isContinueInitMallConfigData = false;
+            await this.initMallConfigData();
+            TimeUtil.delaySecond(5).then((() => {
+                this.isContinueInitMallConfigData = true;
+            }));
+        }
+        this.getClient(player).net_syncMallConfigData(this.mallConfigData);
+    }
+    async initMallConfigData() {
+        let data = await Utils.getCustomdata("MallConfigData");
+        this.mallConfigData = new MallConfigData(data);
     }
     initPlayerVipData(player) {
         let mallData = DataCenterS.getData(player, MallData);
