@@ -11,7 +11,7 @@ import ExecutorManager from "../../tools/WaitingQueue";
 import { CharacterModuleC } from "../CharacterModule/CharacterModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
-import MallData, { AssetIdInfoData, ColorPickTab2Data, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
+import MallData, { AssetIdInfoData, ColorPickTab2Data, MallConfigData, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
 import MallModuleS from "./MallModuleS";
 import ColorPickPanel from "./ui/ColorPickPanel";
 import MallPanel from "./ui/MallPanel";
@@ -1161,7 +1161,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         },
             GameConfig.Language.Text_Vip2.Value,
             StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
-            StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1),
+            StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
             GameConfig.Language.Text_Vip5.Value,);
     }
 
@@ -1184,7 +1184,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                     },
                         GameConfig.Language.Text_Vip2.Value,
                         StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
-                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1),
+                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
                         GameConfig.Language.Text_Vip5.Value);
                 }
             });
@@ -2001,5 +2001,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             await this.addVipCount(1);
             this.getMallPanel.updateVipCount(this.vipCount);
         });
+    }
+
+    private mallConfigData: MallConfigData = null;
+    public net_syncMallConfigData(mallConfigData: MallConfigData): void {
+        this.mallConfigData = mallConfigData;
+    }
+
+    public get addVipCoinNumber(): number {
+        if (!this.mallConfigData) return 2;
+        return this.mallConfigData.addVipCoinNumber;
     }
 }
