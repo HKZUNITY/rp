@@ -1153,6 +1153,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.placeOrder(`9XL5ExKkXvc00054c`, () => {
             });
         }, () => {
+            Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
             ExecutorManager.instance.pushAsyncExecutor(async () => {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
@@ -1175,6 +1176,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                         this.placeOrder(`9XL5ExKkXvc00054c`, () => {
                         });
                     }, () => {
+                        Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                         ExecutorManager.instance.pushAsyncExecutor(async () => {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
