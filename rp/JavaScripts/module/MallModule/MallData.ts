@@ -1,7 +1,73 @@
 ﻿
 export default class MallData extends Subdata {
+    @Decorator.persistence()
+    public timeStamp: string = null;
 
+    @Decorator.persistence()
+    public isUseFreeSave: boolean = false;
+
+    public resetVip(): number {
+        this.timeStamp = null;
+        this.save(false);
+        return 0;
+    }
+
+    public addVipCount(addVipCount: number): number {
+        let vipCount: number = 0;
+        if (!this.timeStamp || this.timeStamp.length == 0) {
+            //用当前时间戳 + addVipCount(天数) = 新的时间戳
+            this.timeStamp = new Date(Date.now() + addVipCount * 24 * 60 * 60 * 1000).toISOString();
+            vipCount = addVipCount;
+        } else {
+            //已有vip时间戳，计算当前时间戳与已有vip时间戳的差值
+            const vipTime = new Date(this.timeStamp).getTime();
+            const currentTime = Date.now();
+            const diffTime = vipTime - currentTime;
+            if (diffTime <= 0) {
+                //如果vip时间戳小于等于当前时间戳，说明vip已过期
+                //用当前时间戳 + addVipCount(天数) = 新的时间戳
+                this.timeStamp = new Date(Date.now() + addVipCount * 24 * 60 * 60 * 1000).toISOString();
+                vipCount = addVipCount;
+            } else {
+                //如果vip时间戳大于当前时间戳，说明vip未过期
+                //用vip时间戳 + addVipCount(天数) = 新的时间戳
+                this.timeStamp = new Date(vipTime + addVipCount * 24 * 60 * 60 * 1000).toISOString();
+                //计算剩余vip天数
+                const remainingDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                //用剩余vip天数 + addVipCount(天数) = 新的vip天数
+                vipCount = remainingDays + addVipCount;
+            }
+        }
+        this.save(false);
+        return vipCount;
+    }
+
+    public get calculateVipCount(): number {
+        if (!this.timeStamp || this.timeStamp.length == 0) {
+            return 0;
+        }
+        const vipTime = new Date(this.timeStamp).getTime();
+        const currentTime = Date.now();
+        const diffTime = vipTime - currentTime;
+        if (diffTime <= 0) {
+            //如果vip时间戳小于等于当前时间戳，说明vip已过期
+            return 0;
+        } else {
+            //计算剩余vip天数
+            return Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        }
+    }
+
+    public setIsUseFreeSave(isUseFreeSave: boolean): void {
+        this.isUseFreeSave = isUseFreeSave;
+        this.save(false);
+    }
+
+    public get getIsUseFreeSave(): boolean {
+        return this.isUseFreeSave;
+    }
 }
+
 
 export class TabIdData {
     public tabId: number = 0;

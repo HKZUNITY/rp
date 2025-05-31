@@ -109,6 +109,7 @@ export default class MallPanel extends MallPanel_Generate {
 		this.mResetButton.onClicked.add(this.addResetButton.bind(this));
 		this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
 		this.mSexButton.onClicked.add(this.addSexButton.bind(this));
+		this.mAddVipButton.onClicked.add(this.addVipButton.bind(this));
 	}
 
 	private addCloseButton(): void {
@@ -125,6 +126,10 @@ export default class MallPanel extends MallPanel_Generate {
 
 	private addSexButton(): void {
 		this.getMallModuleC.onSexAction.call();
+	}
+
+	private addVipButton(): void {
+		this.getMallModuleC.onAddVipAction.call();
 	}
 
 	private currentSomatotype: number = -1;
@@ -149,7 +154,12 @@ export default class MallPanel extends MallPanel_Generate {
 		this.checkSkinToneMallItemState();
 	}
 
-	public initMallPanel(somatotype: number, usingAssetIdMap: Map<number, AssetIdInfoData>): void {
+	public updateVipCount(vipCount: number): void {
+		this.mVipCountTextBlock.text = StringUtil.format(GameConfig.Language.Text_Remaining.Value, vipCount);
+	}
+
+	public initMallPanel(somatotype: number, usingAssetIdMap: Map<number, AssetIdInfoData>, vipCount: number): void {
+		this.updateVipCount(vipCount);
 		this.clearTabIdDataMap();
 		this.switchSexImage(somatotype);
 		this.refreshMallItemSelf(usingAssetIdMap);
