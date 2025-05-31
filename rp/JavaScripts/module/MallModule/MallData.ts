@@ -1,5 +1,4 @@
-﻿
-export default class MallData extends Subdata {
+﻿export default class MallData extends Subdata {
     @Decorator.persistence()
     public timeStamp: string = null;
 
@@ -68,6 +67,14 @@ export default class MallData extends Subdata {
     }
 }
 
+export class MallConfigData {
+    public addVipCoinNumber: number = 2;
+
+    public constructor(data: any) {
+        if (!data) return;
+        this.addVipCoinNumber = data?.addVipCoinNumber;
+    }
+}
 
 export class TabIdData {
     public tabId: number = 0;

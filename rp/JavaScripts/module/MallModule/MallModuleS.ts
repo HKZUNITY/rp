@@ -1,4 +1,5 @@
-﻿import MallData from "./MallData";
+﻿import Utils from "../../tools/Utils";
+import MallData, { MallConfigData } from "./MallData";
 import MallModuleC from "./MallModuleC";
 
 export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
@@ -20,6 +21,23 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
 
     protected onPlayerEnterGame(player: mw.Player): void {
         this.initPlayerVipData(player);
+        this.syncMallConfigData(player);
+    }
+
+    private isContinueInitMallConfigData: boolean = true;
+    private async syncMallConfigData(player: mw.Player): Promise<void> {
+        if (this.isContinueInitMallConfigData) {
+            this.isContinueInitMallConfigData = false;
+            await this.initMallConfigData();
+            TimeUtil.delaySecond(5).then(() => { this.isContinueInitMallConfigData = true; });
+        }
+        this.getClient(player).net_syncMallConfigData(this.mallConfigData);
+    }
+
+    private mallConfigData: MallConfigData = null;
+    private async initMallConfigData(): Promise<void> {
+        let data = await Utils.getCustomdata("MallConfigData");
+        this.mallConfigData = new MallConfigData(data);
     }
 
     private initPlayerVipData(player: mw.Player): void {
