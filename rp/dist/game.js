@@ -16593,6 +16593,7 @@ class MallModuleC extends ModuleC {
         this.getMallVipTipsPanel.showTips((() => {
             this.placeOrder(`9XL5ExKkXvc00054c`, (() => {}));
         }), (() => {
+            Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
             ExecutorManager.instance.pushAsyncExecutor((async () => {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
@@ -16609,6 +16610,7 @@ class MallModuleC extends ModuleC {
                     this.getMallVipTipsPanel.showTips((() => {
                         this.placeOrder(`9XL5ExKkXvc00054c`, (() => {}));
                     }), (() => {
+                        Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                         ExecutorManager.instance.pushAsyncExecutor((async () => {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
