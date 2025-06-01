@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.04.11-20.54.08
+ * TIME: 2025.06.01-15.48.31
  */
  
 @UIBind('UI/module/MallModule/MallPanel.ui')
@@ -21,6 +21,27 @@ export default class MallPanel_Generate extends UIScript {
 			this.mLeftCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas') as mw.Canvas
 		}
 		return this.mLeftCanvas_Internal
+	}
+	private mAddVipButton_Internal: mw.Button
+	public get mAddVipButton(): mw.Button {
+		if(!this.mAddVipButton_Internal&&this.uiWidgetBase) {
+			this.mAddVipButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton') as mw.Button
+		}
+		return this.mAddVipButton_Internal
+	}
+	private mVipIconImage_Internal: mw.Image
+	public get mVipIconImage(): mw.Image {
+		if(!this.mVipIconImage_Internal&&this.uiWidgetBase) {
+			this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton/mVipIconImage') as mw.Image
+		}
+		return this.mVipIconImage_Internal
+	}
+	private mVipCountTextBlock_Internal: mw.TextBlock
+	public get mVipCountTextBlock(): mw.TextBlock {
+		if(!this.mVipCountTextBlock_Internal&&this.uiWidgetBase) {
+			this.mVipCountTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton/mVipCountTextBlock') as mw.TextBlock
+		}
+		return this.mVipCountTextBlock_Internal
 	}
 	private mResetButton_Internal: mw.Button
 	public get mResetButton(): mw.Button {
@@ -203,6 +224,12 @@ export default class MallPanel_Generate extends UIScript {
 		
 		//按钮添加点击
 		
+		this.mAddVipButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mAddVipButton");
+		});
+		this.mAddVipButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mResetButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mResetButton");
 		});
@@ -231,6 +258,9 @@ export default class MallPanel_Generate extends UIScript {
 		
 		//文本多语言
 		
+		this.initLanguage(this.mVipCountTextBlock)
+		
+	
 		this.initLanguage(this.mResetTextBlock)
 		
 	

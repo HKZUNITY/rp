@@ -1152,7 +1152,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
     private addVipAction(): void {
         this.getMallVipTipsPanel.showTips(() => {
-            this.placeOrder(`9XL5ExKkXvc00054c`, () => {
+            this.placeOrder(`5KdGRn3IhB600054z`, () => {
             });
         }, () => {
             Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
@@ -1175,7 +1175,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                     this.saveCharacterDescription();
                 } else {
                     this.getMallVipTipsPanel.showTips(() => {
-                        this.placeOrder(`9XL5ExKkXvc00054c`, () => {
+                        this.placeOrder(`5KdGRn3IhB600054z`, () => {
                         });
                     }, () => {
                         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
