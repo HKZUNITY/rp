@@ -1,6 +1,7 @@
 ﻿import Utils from "../../tools/Utils";
 import MallData, { MallConfigData } from "./MallData";
 import MallModuleC from "./MallModuleC";
+import Nickname from "./ui/Nickname";
 
 export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
 
@@ -24,6 +25,10 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
         this.syncMallConfigData(player);
     }
 
+    protected onPlayerLeft(player: mw.Player): void {
+        this.deleteNickname(player);
+    }
+
     private isContinueInitMallConfigData: boolean = true;
     private async syncMallConfigData(player: mw.Player): Promise<void> {
         if (this.isContinueInitMallConfigData) {
@@ -40,13 +45,35 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
         this.mallConfigData = new MallConfigData(data);
     }
 
+    private nicknameMap: Map<string, Nickname> = new Map<string, Nickname>();
     private initPlayerVipData(player: mw.Player): void {
         let mallData = DataCenterS.getData(player, MallData);
-        this.getClient(player).net_initPlayerVipData(mallData.calculateVipCount, mallData.getIsUseFreeSave);
+        let vipCount = mallData.calculateVipCount;
+        this.getClient(player).net_initPlayerVipData(vipCount, mallData.getIsUseFreeSave);
+
+        let nickname = player.character.addComponent(Nickname, true);
+        this.nicknameMap.set(player.userId, nickname);
+        nickname.vipCount = vipCount;
+    }
+
+    private deleteNickname(player: mw.Player): void {
+        if (this.nicknameMap.has(player.userId)) {
+            let nickname = this.nicknameMap.get(player.userId);
+            nickname.destroy();
+            this.nicknameMap.delete(player.userId);
+        }
     }
 
     public net_addVipCount(addVipCount): number {
-        return this.currentData.addVipCount(addVipCount);
+        let player = this.currentPlayer;
+        let vipCount = this.currentData.addVipCount(addVipCount);
+
+        if (this.nicknameMap.has(player.userId)) {
+            let nickname = this.nicknameMap.get(player.userId);
+            nickname.vipCount = vipCount;
+        }
+
+        return vipCount;
     }
 
     public net_getVipCount(): number {
