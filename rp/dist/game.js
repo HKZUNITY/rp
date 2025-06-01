@@ -5024,18 +5024,6 @@ class Utils {
             mw.AccountService.downloadData(character, (async success => resolve(success)));
         }));
     }
-    static isSameRoomDataTryOn(roomDatas) {
-        let tryOnCount = 0;
-        if (!roomDatas || roomDatas.length == 0) tryOnCount = 0;
-        roomDatas.forEach((value => {
-            tryOnCount += value.tryOn;
-        }));
-        if (this.tryOnCount != tryOnCount) {
-            this.tryOnCount = tryOnCount;
-            return false;
-        }
-        return true;
-    }
 }
 
 Utils.assetIconDataMap = new Map;
@@ -5057,8 +5045,6 @@ Utils.guideEffectGuid = `146775`;
 Utils.targetEffectGuid = `142962`;
 
 Utils.inColorHexStrMap = new Map;
-
-Utils.tryOnCount = -1;
 
 function cubicBezier(p1x, p1y, p2x, p2y) {
     const ZERO_LIMIT = 1e-6;
@@ -6044,6 +6030,408 @@ var foreign83 = Object.freeze({
     default: AdPanel
 });
 
+class SignInData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.day = 0;
+        this.dayStr = "";
+    }
+    setDay(addDay) {
+        this.day += addDay;
+        this.save(false);
+    }
+    setDayStr(dayStr, addDay) {
+        this.dayStr = dayStr;
+        this.day += addDay;
+        this.save(false);
+    }
+}
+
+__decorate([ Decorator.persistence() ], SignInData.prototype, "day", void 0);
+
+__decorate([ Decorator.persistence() ], SignInData.prototype, "dayStr", void 0);
+
+class SignInUserData {
+    constructor(data) {
+        if (!data) return;
+        this.shareId = data?.shareId;
+        this.icon = data?.icon;
+    }
+}
+
+class SignInConfigData {
+    constructor(data) {
+        this.signInUserDatas = [];
+        if (!data) return;
+        this.isOpen = data?.isOpen;
+        this.isOpenVersion2 = data?.isOpenVersion2;
+        this.totalDay = data?.totalDay;
+        for (let i = 0; i < data?.signInUserDatas?.length; ++i) {
+            this.signInUserDatas.push(new SignInUserData(data?.signInUserDatas[i]));
+        }
+    }
+}
+
+var foreign133 = Object.freeze({
+    __proto__: null,
+    SignInConfigData: SignInConfigData,
+    SignInUserData: SignInUserData,
+    default: SignInData
+});
+
+let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
+    get mTitleTextBlock() {
+        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mTitleTextBlock");
+        }
+        return this.mTitleTextBlock_Internal;
+    }
+    get mScrollBox() {
+        if (!this.mScrollBox_Internal && this.uiWidgetBase) {
+            this.mScrollBox_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mScrollBox");
+        }
+        return this.mScrollBox_Internal;
+    }
+    get mContentCanvas() {
+        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
+            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mScrollBox/ContentCanvas/mContentCanvas");
+        }
+        return this.mContentCanvas_Internal;
+    }
+    get mTotalDayTextBlock() {
+        if (!this.mTotalDayTextBlock_Internal && this.uiWidgetBase) {
+            this.mTotalDayTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mTotalDayTextBlock");
+        }
+        return this.mTotalDayTextBlock_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCloseButton");
+        }
+        return this.mCloseButton_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mCloseButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        }));
+        this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mTitleTextBlock);
+        this.initLanguage(this.mTotalDayTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.ui") ], SignInPanel_Generate);
+
+var SignInPanel_Generate$1 = SignInPanel_Generate;
+
+var foreign193 = Object.freeze({
+    __proto__: null,
+    default: SignInPanel_Generate$1
+});
+
+let SignInItem_Generate = class SignInItem_Generate extends UIScript {
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mIconImage");
+        }
+        return this.mIconImage_Internal;
+    }
+    get mHasTextBlock() {
+        if (!this.mHasTextBlock_Internal && this.uiWidgetBase) {
+            this.mHasTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mIconImage/mHasTextBlock");
+        }
+        return this.mHasTextBlock_Internal;
+    }
+    get mDayTextBlock() {
+        if (!this.mDayTextBlock_Internal && this.uiWidgetBase) {
+            this.mDayTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDayTextBlock");
+        }
+        return this.mDayTextBlock_Internal;
+    }
+    get mSignInButton() {
+        if (!this.mSignInButton_Internal && this.uiWidgetBase) {
+            this.mSignInButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mSignInButton");
+        }
+        return this.mSignInButton_Internal;
+    }
+    get mSignInTextBlock() {
+        if (!this.mSignInTextBlock_Internal && this.uiWidgetBase) {
+            this.mSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mSignInButton/mSignInTextBlock");
+        }
+        return this.mSignInTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mSignInButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSignInButton");
+        }));
+        this.mSignInButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mHasTextBlock);
+        this.initLanguage(this.mDayTextBlock);
+        this.initLanguage(this.mSignInTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui") ], SignInItem_Generate);
+
+var SignInItem_Generate$1 = SignInItem_Generate;
+
+var foreign192 = Object.freeze({
+    __proto__: null,
+    default: SignInItem_Generate$1
+});
+
+class SignInItem extends SignInItem_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.signInModuleC = null;
+        this.signInUserData = null;
+        this.day = 0;
+        this.totalDay = 0;
+    }
+    get getSignInModuleC() {
+        if (!this.signInModuleC) {
+            this.signInModuleC = ModuleService.getModule(SignInModuleC);
+        }
+        return this.signInModuleC;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mHasTextBlock.text = GameConfig.Language.Text_SignIn_6.Value;
+    }
+    bindButton() {
+        this.mSignInButton.onClicked.add(this.addSignInButton.bind(this));
+    }
+    addSignInButton() {
+        this.getSignInModuleC.signInAction.call(this.day, this.signInUserData.shareId);
+    }
+    initItem(signInUserData, day, totalDay) {
+        this.signInUserData = signInUserData;
+        this.day = day;
+        this.totalDay = totalDay;
+        this.refreshUI();
+    }
+    refreshUI() {
+        this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
+        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0) {
+            this.mIconImage.imageGuid = this.signInUserData.icon;
+        } else {
+            this.mIconImage.imageInfo.setByAssetIcon(this.signInUserData.shareId, mw.AssetIconSize.Icon_128px);
+        }
+        if (this.totalDay >= this.day) {
+            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value;
+        } else {
+            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_8.Value;
+            Utils.setWidgetVisibility(this.mHasTextBlock, mw.SlateVisibility.Collapsed);
+        }
+    }
+}
+
+var foreign136 = Object.freeze({
+    __proto__: null,
+    default: SignInItem
+});
+
+class SignInPanel extends SignInPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.signInItems = [];
+        this.signInConfigData = null;
+        this.day = 0;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerDialog;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mTitleTextBlock.text = GameConfig.Language.Text_SignIn_4.Value;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+    }
+    addCloseButton() {
+        this.hide();
+    }
+    initPanel(signInConfigData, day) {
+        this.signInConfigData = signInConfigData;
+        this.day = day;
+        this.mTotalDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_5.Value, this.day);
+        let totalDay = this.signInConfigData.totalDay;
+        let signInUserDatas = this.signInConfigData.signInUserDatas;
+        for (let i = 0; i < totalDay; ++i) {
+            let signInItem = UIService.create(SignInItem);
+            signInItem.initItem(signInUserDatas[i], i + 1, this.day);
+            this.mContentCanvas.addChild(signInItem.uiObject);
+            this.signInItems.push(signInItem);
+        }
+    }
+}
+
+var foreign137 = Object.freeze({
+    __proto__: null,
+    default: SignInPanel
+});
+
+class SignInModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.signInPanel = null;
+        this.signInAction = new Action2;
+        this.isInitSignInPanel = false;
+        this.signInConfigData = null;
+        this.day = 0;
+    }
+    get getHUDModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getSignInPanel() {
+        if (!this.signInPanel) {
+            this.signInPanel = UIService.getUI(SignInPanel);
+        }
+        return this.signInPanel;
+    }
+    onStart() {
+        this.bindAction();
+    }
+    bindAction() {
+        this.getHUDModuleC.onOpenSignInAction.add(this.addOpenSignInAction.bind(this));
+        this.signInAction.add(this.addSignInAction.bind(this));
+    }
+    addOpenSignInAction() {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpenVersion2 || this.day <= 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return;
+        }
+        if (!this.isInitSignInPanel) {
+            this.getSignInPanel.initPanel(this.signInConfigData, this.day);
+            this.isInitSignInPanel = true;
+        }
+        this.getSignInPanel.show();
+    }
+    addSignInAction(day, sharedId) {
+        if (day <= this.day) {
+            ExecutorManager.instance.pushAsyncExecutor((async () => {
+                this.getSignInPanel.hide();
+                await this.useShareId(sharedId);
+                Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
+            }));
+        } else {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
+        }
+    }
+    async useShareId(shareId) {
+        if (shareId && shareId?.length > 0) {
+            await this.server.net_useShareId(shareId);
+        }
+    }
+    net_syncSignInConfigData(signInConfigData, day) {
+        this.signInConfigData = signInConfigData;
+        this.day = day;
+        if (this.signInConfigData) return;
+        let data = {
+            isOpen: false,
+            isOpenVersion2: true,
+            totalDay: 12,
+            signInUserDatas: [ {
+                shareId: "532290",
+                icon: ""
+            }, {
+                shareId: "532291",
+                icon: ""
+            }, {
+                shareId: "532292",
+                icon: ""
+            }, {
+                shareId: "540371",
+                icon: ""
+            }, {
+                shareId: "540373",
+                icon: ""
+            }, {
+                shareId: "540369",
+                icon: ""
+            }, {
+                shareId: "540372",
+                icon: ""
+            }, {
+                shareId: "532301",
+                icon: ""
+            }, {
+                shareId: "532293",
+                icon: ""
+            }, {
+                shareId: "540370",
+                icon: ""
+            }, {
+                shareId: "532295",
+                icon: ""
+            }, {
+                shareId: "532294",
+                icon: ""
+            } ]
+        };
+        this.signInConfigData = new SignInConfigData(data);
+    }
+    get isOpen() {
+        if (!this.signInConfigData || !this.signInConfigData?.isOpen || this.day <= 0) {
+            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
+            return false;
+        }
+        return true;
+    }
+}
+
+var foreign134 = Object.freeze({
+    __proto__: null,
+    default: SignInModuleC
+});
+
 class HUDItem extends HUDItem_Generate$1 {
     constructor() {
         super(...arguments);
@@ -6191,7 +6579,6 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
-        this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
     }
     addJumpButton() {
         this.getHUDModuleC.onJumpAction.call();
@@ -6239,9 +6626,6 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     addOpenMallButton() {
         this.getHUDModuleC.onOpenMallAction.call();
-    }
-    addOpenPhotoButton() {
-        this.getHUDModuleC.onOpenPhotoAction.call();
     }
     showHideGoodsButton() {
         this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
@@ -6410,8 +6794,10 @@ class HUDModuleC extends ModuleC {
         super(...arguments);
         this.hudPanel = null;
         this.danMuModuleC = null;
+        this.sharePanel = null;
         this.savePanel = null;
         this.adPanel = null;
+        this.signInModuleC = null;
         this.onJumpAction = new Action;
         this.onCrouchAction = new Action;
         this.onExitAction = new Action;
@@ -6430,7 +6816,6 @@ class HUDModuleC extends ModuleC {
         this.onOnOffMusicAction = new Action1;
         this.onSwitchBgmAction = new Action1;
         this.onOpenMallAction = new Action;
-        this.onOpenPhotoAction = new Action;
         this.freeNpc = null;
         this.currentBgmIndex = 1;
         this.bgmMusics = [];
@@ -6451,6 +6836,12 @@ class HUDModuleC extends ModuleC {
         }
         return this.danMuModuleC;
     }
+    get getSharePanel() {
+        if (!this.sharePanel) {
+            this.sharePanel = UIService.getUI(SharePanel);
+        }
+        return this.sharePanel;
+    }
     get getSavePanel() {
         if (!this.savePanel) {
             this.savePanel = UIService.getUI(SavePanel);
@@ -6462,6 +6853,12 @@ class HUDModuleC extends ModuleC {
             this.adPanel = UIService.getUI(AdPanel);
         }
         return this.adPanel;
+    }
+    get getSignInModuleC() {
+        if (!this.signInModuleC) {
+            this.signInModuleC = ModuleService.getModule(SignInModuleC);
+        }
+        return this.signInModuleC;
     }
     onStart() {
         this.initUI();
@@ -6500,12 +6897,6 @@ class HUDModuleC extends ModuleC {
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
         this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
         this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
-        this.onOpenPhotoAction.add(this.addOpenPhotoAction.bind(this));
-    }
-    addOpenPhotoAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await PhotoStudioService.asyncOpenPhotoStudioModule();
-        }));
     }
     addOnOffMusicAction(isOpenBGM) {
         isOpenBGM ? this.playBGMusic(0) : SoundService.stopBGM();
@@ -7314,1088 +7705,6 @@ var foreign161 = Object.freeze({
     default: ChatPanel_Generate$1
 });
 
-let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
-    get mMainBgImage_0() {
-        if (!this.mMainBgImage_0_Internal && this.uiWidgetBase) {
-            this.mMainBgImage_0_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0");
-        }
-        return this.mMainBgImage_0_Internal;
-    }
-    get mItemCanvas() {
-        if (!this.mItemCanvas_Internal && this.uiWidgetBase) {
-            this.mItemCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mItemCanvas");
-        }
-        return this.mItemCanvas_Internal;
-    }
-    get mIconImage() {
-        if (!this.mIconImage_Internal && this.uiWidgetBase) {
-            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mItemCanvas/mIconImage");
-        }
-        return this.mIconImage_Internal;
-    }
-    get mTitleImage_0() {
-        if (!this.mTitleImage_0_Internal && this.uiWidgetBase) {
-            this.mTitleImage_0_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mTitleImage_0");
-        }
-        return this.mTitleImage_0_Internal;
-    }
-    get mTitleImage_1() {
-        if (!this.mTitleImage_1_Internal && this.uiWidgetBase) {
-            this.mTitleImage_1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mTitleImage_1");
-        }
-        return this.mTitleImage_1_Internal;
-    }
-    get mClickNextStepButton() {
-        if (!this.mClickNextStepButton_Internal && this.uiWidgetBase) {
-            this.mClickNextStepButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mClickNextStepButton");
-        }
-        return this.mClickNextStepButton_Internal;
-    }
-    get mClickNextStepTextBlock() {
-        if (!this.mClickNextStepTextBlock_Internal && this.uiWidgetBase) {
-            this.mClickNextStepTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mClickNextStepButton/mClickNextStepTextBlock");
-        }
-        return this.mClickNextStepTextBlock_Internal;
-    }
-    get mMainBgImage_1() {
-        if (!this.mMainBgImage_1_Internal && this.uiWidgetBase) {
-            this.mMainBgImage_1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1");
-        }
-        return this.mMainBgImage_1_Internal;
-    }
-    get mTitleImage_2() {
-        if (!this.mTitleImage_2_Internal && this.uiWidgetBase) {
-            this.mTitleImage_2_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mTitleImage_2");
-        }
-        return this.mTitleImage_2_Internal;
-    }
-    get mTitleImage_3() {
-        if (!this.mTitleImage_3_Internal && this.uiWidgetBase) {
-            this.mTitleImage_3_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mTitleImage_3");
-        }
-        return this.mTitleImage_3_Internal;
-    }
-    get mContentTextBlock() {
-        if (!this.mContentTextBlock_Internal && this.uiWidgetBase) {
-            this.mContentTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mContentTextBlock");
-        }
-        return this.mContentTextBlock_Internal;
-    }
-    get mClickStartButton() {
-        if (!this.mClickStartButton_Internal && this.uiWidgetBase) {
-            this.mClickStartButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mClickStartButton");
-        }
-        return this.mClickStartButton_Internal;
-    }
-    get mClickStartTextBlock() {
-        if (!this.mClickStartTextBlock_Internal && this.uiWidgetBase) {
-            this.mClickStartTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mClickStartButton/mClickStartTextBlock");
-        }
-        return this.mClickStartTextBlock_Internal;
-    }
-    onAwake() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        this.mClickNextStepButton.onClicked.add((() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
-        }));
-        this.mClickNextStepButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mClickStartButton.onClicked.add((() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
-        }));
-        this.mClickStartButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.initLanguage(this.mClickNextStepTextBlock);
-        this.initLanguage(this.mContentTextBlock);
-        this.initLanguage(this.mClickStartTextBlock);
-    }
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) {}
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-
-GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePanel.ui") ], GuidePanel_Generate);
-
-var GuidePanel_Generate$1 = GuidePanel_Generate;
-
-var foreign168 = Object.freeze({
-    __proto__: null,
-    default: GuidePanel_Generate$1
-});
-
-let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
-    get mBgImage() {
-        if (!this.mBgImage_Internal && this.uiWidgetBase) {
-            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mBgImage");
-        }
-        return this.mBgImage_Internal;
-    }
-    get mClickBtn() {
-        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
-            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mClickBtn");
-        }
-        return this.mClickBtn_Internal;
-    }
-    onAwake() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        this.mClickBtn.onClicked.add((() => {
-            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
-        }));
-        this.mClickBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-    }
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) {}
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-
-OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClickPanel.ui") ], OnClickPanel_Generate);
-
-var OnClickPanel_Generate$1 = OnClickPanel_Generate;
-
-var foreign169 = Object.freeze({
-    __proto__: null,
-    default: OnClickPanel_Generate$1
-});
-
-class RoomData {
-    constructor(userId, name, killCount, time, tryOn) {
-        this.userId = "";
-        this.playerName = "";
-        this.score = 0;
-        this.time = 0;
-        this.tryOn = 0;
-        this.userId = userId;
-        this.playerName = name;
-        this.score = killCount;
-        this.time = time;
-        this.tryOn = tryOn;
-    }
-    setData(userId, name, killCount, time, tryOn) {
-        this.userId = userId;
-        this.playerName = name;
-        this.score = killCount;
-        this.time = time;
-        this.tryOn = tryOn;
-    }
-}
-
-class WorldData {
-    constructor(userId, name, time) {
-        this.userId = "";
-        this.playerName = "";
-        this.time = 0;
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
-    }
-    setData(userId, name, time) {
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
-    }
-}
-
-class RankData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.time = 0;
-    }
-    setTime(addTime) {
-        this.time += addTime;
-        this.save(false);
-    }
-    get getTime() {
-        return this.time;
-    }
-}
-
-__decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
-
-var foreign125 = Object.freeze({
-    __proto__: null,
-    RankData: RankData,
-    RoomData: RoomData,
-    WorldData: WorldData
-});
-
-class RankModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.worldDatas = [];
-        this.isInitWorldDatas = false;
-        this.time = 60;
-        this.timer = 0;
-        this.syncPlayerMap = new Map;
-        this.roomDataMap = new Map;
-        this.roomUserIds = [];
-        this.roomNames = [];
-        this.roomScores = [];
-        this.roomTimes = [];
-        this.roomTryOn = [];
-        this.worldUserIds = [];
-        this.worldNames = [];
-        this.worldTimes = [];
-        this.redFirstModel = null;
-        this.blueFirstModel = null;
-    }
-    onStart() {
-        this.initData();
-    }
-    async initData() {
-        this.worldDatas = await Utils.getCustomdata("WorldData");
-        this.isInitWorldDatas = true;
-    }
-    onUpdate(dt) {
-        this.timer += dt;
-        if (this.timer >= this.time) {
-            this.timer = 0;
-            this.refreshTime();
-        }
-    }
-    onPlayerLeft(player) {
-        let userId = player.userId;
-        if (this.roomDataMap.has(userId)) this.roomDataMap.delete(userId);
-        if (this.syncPlayerMap.has(player)) this.syncPlayerMap.delete(player);
-        this.synchrodata_Room();
-    }
-    net_updateSyncPlayer(isSync) {
-        let player = this.currentPlayer;
-        if (!this.syncPlayerMap.has(player)) return;
-        this.syncPlayerMap.set(player, isSync);
-        if (isSync) this.synchrodata_aRoomWorld(player);
-    }
-    net_onEnterScene(playerName, score, time, tryOn) {
-        let player = this.currentPlayer;
-        this.syncPlayerMap.set(player, false);
-        player.character.displayName = playerName;
-        this.onEnterScene(player.userId, playerName, score, time, tryOn);
-    }
-    onEnterScene(userId, playerName, score, time, tryOn) {
-        let roomData = new RoomData(userId, playerName, score, time, tryOn);
-        this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time);
-        try {
-            this.isRefreshWorldData([ worldData ]);
-        } catch (error) {}
-        this.synchrodata_onEnterScene(userId);
-    }
-    net_refreshScore(score) {
-        this.refreshScore(this.currentPlayer.userId, score);
-    }
-    refreshScore(userId, score) {
-        if (!this.roomDataMap.has(userId)) return;
-        let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
-        this.synchrodata_Room();
-    }
-    async refreshTime() {
-        if (!this.syncPlayerMap || this.syncPlayerMap?.size == 0) return;
-        let tmpWorldDatas = [];
-        this.syncPlayerMap?.forEach(((value, key) => {
-            DataCenterS.getData(key, RankData)?.setTime(1);
-            let userId = key.userId;
-            if (!this.roomDataMap.has(userId)) return;
-            let roomData = this.roomDataMap.get(userId);
-            roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
-            tmpWorldDatas.push(worldData);
-        }));
-        try {
-            this.worldDatas = await Utils.getCustomdata("WorldData");
-            this.isRefreshWorldData(tmpWorldDatas);
-        } catch (error) {}
-        this.synchrodata_World();
-    }
-    net_refreshTryOn(tryOn) {
-        this.refreshTryOn(this.currentPlayer.userId, tryOn);
-    }
-    refreshTryOn(userId, tryOn) {
-        if (!this.roomDataMap.has(userId)) return;
-        let roomData = this.roomDataMap.get(userId);
-        roomData.tryOn = tryOn;
-        this.synchrodata_Room_TryOn();
-    }
-    isRefreshWorldData(tmpWorldDatas) {
-        if (!this.isInitWorldDatas) return false;
-        if (!tmpWorldDatas || tmpWorldDatas?.length == 0) return false;
-        if (!this.worldDatas || this.worldDatas?.length == 0) this.worldDatas = [];
-        let isNeedSave = false;
-        for (let k = 0; k < tmpWorldDatas.length; ++k) {
-            let isPush = false;
-            let ishasDelete = false;
-            let ishasData = false;
-            let worldData = tmpWorldDatas[k];
-            if (this.worldDatas.length < GlobalData.worldCount) {
-                if (this.worldDatas.length == 0) {
-                    this.worldDatas.push(worldData);
-                    isPush = true;
-                    isNeedSave = true;
-                } else {
-                    for (let i = 0; i < this.worldDatas.length; ++i) {
-                        if (this.worldDatas[i].userId != worldData.userId) continue;
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 1);
-                            break;
-                        } else {
-                            ishasData = true;
-                            break;
-                        }
-                    }
-                    if (ishasData) continue;
-                    for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
-                            this.worldDatas.splice(i, 0, worldData);
-                            isPush = true;
-                            isNeedSave = true;
-                            break;
-                        }
-                    }
-                    if (!isPush) {
-                        this.worldDatas.push(worldData);
-                        isPush = true;
-                        isNeedSave = true;
-                    }
-                }
-            } else {
-                for (let i = 0; i < this.worldDatas.length; ++i) {
-                    if (this.worldDatas[i].userId != worldData.userId) continue;
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 1);
-                        ishasDelete = true;
-                        break;
-                    } else {
-                        ishasData = true;
-                        break;
-                    }
-                }
-                if (ishasData) continue;
-                for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
-                        this.worldDatas.splice(i, 0, worldData);
-                        if (!ishasDelete) {
-                            this.worldDatas.pop();
-                        }
-                        isPush = true;
-                        isNeedSave = true;
-                        break;
-                    }
-                }
-            }
-        }
-        if (isNeedSave) {
-            Utils.setCustomData("WorldData", this.worldDatas);
-        }
-        return isNeedSave;
-    }
-    updateRoomData() {
-        if (!this.roomDataMap || this.roomDataMap?.size == 0) return;
-        this.roomUserIds.length = 0;
-        this.roomNames.length = 0;
-        this.roomScores.length = 0;
-        this.roomTimes.length = 0;
-        this.roomTryOn.length = 0;
-        this.roomDataMap?.forEach(((value, key) => {
-            this.roomUserIds.push(value.userId);
-            this.roomNames.push(value.playerName);
-            this.roomScores.push(value.score);
-            this.roomTimes.push(value.time);
-            this.roomTryOn.push(value.tryOn);
-        }));
-    }
-    updateWorldData() {
-        if (!this.worldDatas || this.worldDatas?.length == 0) return;
-        this.worldUserIds.length = 0;
-        this.worldNames.length = 0;
-        this.worldTimes.length = 0;
-        for (let i = 0; i < this.worldDatas.length; i++) {
-            this.worldUserIds.push(this.worldDatas[i].userId);
-            this.worldNames.push(this.worldDatas[i].playerName);
-            this.worldTimes.push(this.worldDatas[i].time);
-        }
-    }
-    synchrodata_onEnterScene(sendUserId) {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
-            if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
-            } else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
-            }
-        }));
-    }
-    synchrodata_Room() {
-        this.updateRoomData();
-        this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
-        }));
-    }
-    synchrodata_Room_TryOn() {
-        this.updateRoomData();
-        this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
-        }));
-    }
-    synchrodata_World() {
-        this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
-        }));
-    }
-    synchrodata_RoomWorld() {
-        this.updateRoomData();
-        this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
-        }));
-    }
-    synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
-    }
-    getNamesByUserId(userId1, userId2) {
-        if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
-            return [ this.roomDataMap.get(userId1).playerName, this.roomDataMap.get(userId2).playerName ];
-        }
-        return null;
-    }
-    getNameByUserId(userId) {
-        if (this.roomDataMap.has(userId)) {
-            return this.roomDataMap.get(userId).playerName;
-        }
-        return null;
-    }
-    net_setFirstModel(isRed) {
-        let character = this.currentPlayer.character;
-        this.setFirstModel(character, isRed);
-    }
-    async setFirstModel(character, isRed) {
-        if (isRed) {
-            if (!this.redFirstModel) this.redFirstModel = await GameObjPool.asyncSpawn("C825D655443D938EB73591BEEB5CCC81", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.redFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.redFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.redFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        } else {
-            if (!this.blueFirstModel) this.blueFirstModel = await GameObjPool.asyncSpawn("0B59ECA6477D8CA6237016BF613FB019", mwext.GameObjPoolSourceType.Prefab);
-            character.attachToSlot(this.blueFirstModel, mw.HumanoidSlotType.BackOrnamental);
-            this.blueFirstModel.localTransform.position = new mw.Vector(15, 0, 0);
-            this.blueFirstModel.localTransform.rotation = new mw.Rotation(0, 0, -90);
-        }
-    }
-}
-
-__decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_updateSyncPlayer", null);
-
-__decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_onEnterScene", null);
-
-__decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_setFirstModel", null);
-
-var foreign127 = Object.freeze({
-    __proto__: null,
-    default: RankModuleS
-});
-
-class GuidePanel extends GuidePanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.clickNextStepCallBack = null;
-        this.clickStartCallBack = null;
-    }
-    onStart() {
-        this.initUI();
-        this.binButtons();
-    }
-    initUI() {
-        if (GlobalData.languageId == 0) {
-            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.Collapsed);
-        } else {
-            Utils.setWidgetVisibility(this.mTitleImage_0, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_1, mw.SlateVisibility.SelfHitTestInvisible);
-            Utils.setWidgetVisibility(this.mTitleImage_2, mw.SlateVisibility.Collapsed);
-            Utils.setWidgetVisibility(this.mTitleImage_3, mw.SlateVisibility.SelfHitTestInvisible);
-        }
-    }
-    binButtons() {
-        this.mClickNextStepButton.onClicked.add(this.onClickNextStepButton.bind(this));
-        this.mClickStartButton.onClicked.add(this.onClickStartButton.bind(this));
-    }
-    onClickNextStepButton() {
-        if (this.clickNextStepCallBack) this.clickNextStepCallBack();
-        this.hide();
-    }
-    onClickStartButton() {
-        if (this.clickStartCallBack) this.clickStartCallBack();
-        this.hide();
-    }
-    showStepTips(bagId, clickCallBack, clickTextBlock) {
-        if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        if (!actionPropElement.AssetId) {
-            bagId = actionPropElement.NextId;
-        }
-        this.setIcon(bagId);
-        this.clickNextStepCallBack = clickCallBack;
-        this.mClickNextStepTextBlock.text = clickTextBlock;
-        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.SelfHitTestInvisible);
-        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.Collapsed);
-        this.show();
-    }
-    setIcon(bagId) {
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-            }
-        } else {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-            }
-        }
-        if (actionPropElement.VehiclesIcon) {
-            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
-        } else if (actionPropElement.Icon) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
-        } else if (actionPropElement.AssetId) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
-        } else if (bagId == actionPropElement.NextId) {
-            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
-            if (nextActionPropElement.VehiclesIcon) {
-                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
-            } else if (nextActionPropElement.Icon) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
-            } else if (nextActionPropElement.AssetId) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
-            }
-        }
-    }
-    showStartTips(clickStartCallBack, clickStartTextBlock, contentTextBlock) {
-        this.clickStartCallBack = clickStartCallBack;
-        this.mClickStartTextBlock.text = clickStartTextBlock;
-        this.mContentTextBlock.text = contentTextBlock;
-        Utils.setWidgetVisibility(this.mMainBgImage_1, mw.SlateVisibility.SelfHitTestInvisible);
-        Utils.setWidgetVisibility(this.mMainBgImage_0, mw.SlateVisibility.Collapsed);
-        this.show();
-    }
-}
-
-class OnClickPanel extends OnClickPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.interactionModuleC = null;
-        this.id = -1;
-        this.offset = new mw.Vector(0, 0, 0);
-        this.obj = null;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getInteractionModuleC() {
-        if (this.interactionModuleC == null) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
-    }
-    onStart() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerMiddle;
-        this.initUI();
-        this.bindButtons();
-        this.registerActions();
-    }
-    initUI() {}
-    bindButtons() {
-        this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
-    }
-    registerActions() {
-        this.getHUDModuleC.onExitAction.add(this.onExitHandler.bind(this));
-    }
-    onExitHandler() {}
-    onClickButtons() {
-        if (!this.id) return;
-        console.warn("OnClickPanel-this.id = " + this.id);
-        this.canUpdate = false;
-        this.hide();
-        if (this.id <= 0) return;
-        this.getInteractionModuleC.interact(true, this.id);
-    }
-    showBtn(id, obj) {
-        this.id = id;
-        this.canUpdate = true;
-        this.obj = obj;
-        let pos = InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(.5));
-        this.rootCanvas.visibility = mw.SlateVisibility.SelfHitTestInvisible;
-        this.show();
-    }
-    hideBtn() {
-        this.canUpdate = false;
-        this.hide();
-    }
-    onShow(...params) {
-        console.error("[OnClickPanel-onShow]");
-    }
-    onUpdate(dt) {
-        if (!this.obj) return;
-        let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.obj.worldTransform.position.add(this.offset), false).screenPosition;
-        this.rootCanvas.position = pos.subtract(this.rootCanvas.size.multiply(.5));
-    }
-}
-
-class InteractionModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.onClickPanel = null;
-        this.hudModuleC = null;
-        this.adPanel = null;
-        this.tipsPanel = null;
-        this.onClickBagItemAction = new Action1;
-        this.currentDescription = null;
-        this.triggerLocMap = new Map;
-        this.bagIds = [];
-        this.guidePanel = null;
-        this.guideStep = 0;
-        this.guideBagIds = [ 60004, 20002, 10106, 30002 ];
-    }
-    get getOnClickPanel() {
-        if (this.onClickPanel == null) {
-            this.onClickPanel = mw.UIService.getUI(OnClickPanel);
-        }
-        return this.onClickPanel;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getAdPanel() {
-        if (this.adPanel == null) {
-            this.adPanel = mw.UIService.getUI(AdPanel);
-        }
-        return this.adPanel;
-    }
-    get getTipsPanel() {
-        if (this.tipsPanel == null) {
-            this.tipsPanel = mw.UIService.getUI(TipsPanel);
-        }
-        return this.tipsPanel;
-    }
-    onStart() {
-        this.bindEvent();
-    }
-    onEnterScene(sceneType) {
-        this.initBagIds();
-        this.initGuide();
-        this.findTriggers();
-    }
-    bindEvent() {
-        this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
-    }
-    findTriggers() {
-        GameConfig.Interact.getAllElement().forEach((async value => {
-            let triggerGuid = value.TriggerGuid;
-            if (triggerGuid && triggerGuid.length > 0) {
-                let trigger = await GameObject.asyncFindGameObjectById(triggerGuid);
-                await trigger.asyncReady();
-                trigger.onEnter.add((char => {
-                    this.onEnterTrigger(char, value.ID, trigger);
-                }));
-                trigger.onLeave.add((char => {
-                    this.onLeaveTrigger(char);
-                }));
-                let bagId = value.BagId;
-                this.triggerLocMap.set(bagId, trigger.worldTransform.position);
-                if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
-                    GameObject.asyncSpawn(value.ModelGuid_C).then((model => {
-                        model.worldTransform.position = trigger.worldTransform.position;
-                    }));
-                }
-            }
-            let npcId = value.NpcId;
-            if (npcId && npcId.length > 0) {
-                let npc = await GameObject.asyncFindGameObjectById(npcId);
-                await npc.asyncReady();
-                npc.complexMovementEnabled = false;
-                npc.collisionWithOtherCharacterEnabled = false;
-                let shareId = value.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        Utils.applySharedId(npc, shareIdStr);
-                    }
-                } else {
-                    this.currentDescription = this.localPlayer.character.getDescription();
-                    npc.setDescription(this.currentDescription);
-                }
-                let npcAnimationId = value.NpcAnimationId;
-                if (npcAnimationId && npcAnimationId.length > 0) {
-                    await Utils.asyncDownloadAsset(npcAnimationId);
-                    npc.loadSubStance(npcAnimationId).play();
-                    setTimeout((() => {
-                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
-                    }), 1e3);
-                }
-            }
-            console.error(this.triggerLocMap.size);
-        }));
-    }
-    onEnterTrigger(char, id, go) {
-        if (char != Player.localPlayer.character) return;
-        this.getOnClickPanel.showBtn(id, go);
-    }
-    onLeaveTrigger(char) {
-        if (char != Player.localPlayer.character) return;
-        this.getOnClickPanel.hideBtn();
-    }
-    interact(isInteract, id) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let interact = GameConfig.Interact.getElement(id);
-            let bagId = interact.BagId;
-            if (bagId && bagId > 0) {
-                let modelGuid = interact.ModelGuid;
-                if (modelGuid && modelGuid.length > 0) {
-                    this.server.net_playInteract(bagId, modelGuid).then((interactCode => {
-                        if (interactCode == 0) {
-                            Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
-                        }
-                    }));
-                }
-                if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
-                this.getHUDModuleC.action(bagId);
-                let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-                if (!actionPropElement.AssetId) {
-                    bagId = actionPropElement.NextId;
-                }
-                this.setBagId(bagId);
-            }
-            let npcId = interact.NpcId;
-            if (npcId && npcId.length > 0) {
-                let shareId = interact.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        await Utils.applySharedId(this.localPlayer.character, shareIdStr);
-                    }
-                } else {
-                    this.localPlayer.character.setDescription(this.currentDescription);
-                    await this.localPlayer.character.asyncReady();
-                    this.localPlayer.character.syncDescription();
-                }
-            }
-        }));
-    }
-    addClickBagItemAction(bagId) {
-        if (this.bagIds.includes(bagId)) return;
-        let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
-        if (nextId && nextId > 0) bagId = nextId;
-        if (GlobalData.isOpenIAA) {
-            this.getAdPanel.showRewardAd((() => {
-                if (this.triggerLocMap.has(bagId)) {
-                    let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {}));
-                }
-            }), GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
-        } else {
-            this.getTipsPanel.showTips((() => {
-                if (this.triggerLocMap.has(bagId)) {
-                    let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {}));
-                }
-            }), GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
-        }
-    }
-    initBagIds() {
-        this.bagIds = this.data.bagIds;
-    }
-    setBagId(bagId) {
-        if (this.bagIds.includes(bagId)) return;
-        Notice.showDownNotice(GameConfig.Language.Text_ObtainedTips.Value);
-        this.bagIds.push(bagId);
-        this.server.net_setBagId(bagId);
-    }
-    get getBagIds() {
-        return this.bagIds;
-    }
-    get getGuidePanel() {
-        if (this.guidePanel == null) {
-            this.guidePanel = mw.UIService.getUI(GuidePanel);
-        }
-        return this.guidePanel;
-    }
-    initGuide() {
-        this.guideStep = this.data.guideStep;
-        this.startGuide();
-    }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.server.net_setGuideStep(addStep);
-    }
-    startGuide() {
-        if (!this.guideBagIds || this.guideBagIds.length == 0) return;
-        if (this.guideStep >= this.guideBagIds.length - 1) {
-            this.localPlayer.character.asyncReady().then((() => {
-                TimeUtil.delaySecond(1).then((() => {
-                    this.getHUDModuleC.onOpenMallAction.call();
-                }));
-            }));
-            return;
-        }
-        this.getGuidePanel.showStartTips((() => {
-            this.getHUDModuleC.onOpenMallAction.call();
-            let bagId = this.guideBagIds[0];
-            console.error(`bagId1:${bagId}`);
-            if (!this.triggerLocMap.has(bagId)) {
-                console.error(`bagId2:${bagId}`);
-                return;
-            }
-            let targetLoc = this.triggerLocMap.get(bagId);
-            console.error(`targetLoc:${targetLoc}`);
-            Utils.startGuide(targetLoc, (() => {
-                this.setGuideStep(1);
-                this.getGuidePanel.showStepTips(bagId, (() => {
-                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                    if (this.guideStep >= this.guideBagIds.length) return;
-                    bagId = this.guideBagIds[1];
-                    if (!this.triggerLocMap.has(bagId)) return;
-                    targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {
-                        this.setGuideStep(1);
-                        this.getGuidePanel.showStepTips(bagId, (() => {
-                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                            if (this.guideStep >= this.guideBagIds.length) return;
-                            bagId = this.guideBagIds[2];
-                            if (!this.triggerLocMap.has(bagId)) return;
-                            targetLoc = this.triggerLocMap.get(bagId);
-                            Utils.startGuide(targetLoc, (() => {
-                                this.setGuideStep(1);
-                                this.getGuidePanel.showStepTips(bagId, (() => {
-                                    this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                    if (this.guideStep >= this.guideBagIds.length) return;
-                                    bagId = this.guideBagIds[3];
-                                    if (!this.triggerLocMap.has(bagId)) return;
-                                    targetLoc = this.triggerLocMap.get(bagId);
-                                    Utils.startGuide(targetLoc, (() => {
-                                        this.setGuideStep(1);
-                                        this.getGuidePanel.showStepTips(bagId, (() => {
-                                            this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            this.getGuidePanel.showStepTips(bagId, (() => {
-                                                this.getGuidePanel.showStartTips((() => {}), GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                            }), GameConfig.Language.Text_UpNext.Value);
-                                        }), GameConfig.Language.Text_UpNext.Value);
-                                    }));
-                                }), GameConfig.Language.Text_UpNext.Value);
-                            }));
-                        }), GameConfig.Language.Text_UpNext.Value);
-                    }));
-                }), GameConfig.Language.Text_UpNext.Value);
-            }));
-        }), GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
-    }
-}
-
-class InteractionModuleS extends ModuleS {
-    constructor() {
-        super(...arguments);
-        this.rankModuleS = null;
-        this.modelGuidMap = new Map;
-        this.usingBagIdMap = new Map;
-    }
-    get getRankModuleS() {
-        if (this.rankModuleS == null) {
-            this.rankModuleS = ModuleService.getModule(RankModuleS);
-        }
-        return this.rankModuleS;
-    }
-    onStart() {}
-    onPlayerLeft(player) {}
-    async net_playInteract(bagId, modelGuid) {
-        let player = this.currentPlayer;
-        let playerId = player.playerId;
-        let usingBagIds = [];
-        if (this.usingBagIdMap.has(playerId)) {
-            usingBagIds = this.usingBagIdMap.get(playerId);
-            if (usingBagIds.includes(bagId)) return 0;
-            usingBagIds.push(bagId);
-        } else {
-            usingBagIds.push(bagId);
-            this.usingBagIdMap.set(playerId, usingBagIds);
-        }
-        console.error(`usingBagIds = ${usingBagIds}`);
-        let model = null;
-        if (this.modelGuidMap.has(modelGuid)) {
-            model = this.modelGuidMap.get(modelGuid);
-        } else {
-            model = await mw.GameObject.asyncFindGameObjectById(modelGuid);
-            this.modelGuidMap.set(modelGuid, model);
-        }
-        await model.asyncReady();
-        this.placingItems(player, bagId, model).then((() => {
-            usingBagIds.splice(usingBagIds.indexOf(bagId), 1);
-            console.error(`usingBagIds = ${usingBagIds}`);
-        }));
-        return 1;
-    }
-    async placingItems(player, bagId, itemMode) {
-        if (!player) return;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        let animationId = actionPropElement.AnimationId;
-        if (animationId && animationId.length > 0) {
-            await Utils.asyncDownloadAsset(animationId);
-            let animation = player.character.loadAnimation(animationId);
-            if (actionPropElement.AnimationSlot) animation.slot = actionPropElement.AnimationSlot;
-            let parameter = actionPropElement.AnimationParameter;
-            if (parameter && parameter.length > 0) {
-                animation.speed = parameter[0];
-                animation.loop = parameter[1];
-            }
-            animation.play();
-        }
-        let playAnimationTime = 1;
-        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
-            playAnimationTime = actionPropElement.AnimationParameter[0];
-        }
-        await TimeUtil.delaySecond(playAnimationTime);
-        let delayModeEffectId = null;
-        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
-        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
-            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
-            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
-            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
-                loopCount: 0,
-                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
-                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
-                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
-            });
-        }
-        let delayParameter = actionPropElement.DelayParameter;
-        let delayTime = delayParameter[0];
-        let delayCount = delayParameter[1];
-        let delayInterval = delayParameter[2];
-        await TimeUtil.delaySecond(delayTime - playAnimationTime);
-        for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve => {
-                setTimeout((async () => {
-                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
-                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
-                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
-                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
-                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
-                            loopCount: 1,
-                            rotation: itemMode.worldTransform.rotation,
-                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
-                        });
-                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
-                        if (delayModeSoundId && delayModeSoundId.length > 0) {
-                            await Utils.asyncDownloadAsset(delayModeSoundId);
-                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
-                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], {
-                                radius: delayModeSoundParameter[1],
-                                falloffDistance: delayModeSoundParameter[1] * 1.2
-                            });
-                        }
-                    }
-                    return resolve();
-                }), delayInterval * 1e3);
-            }));
-        }
-        if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
-        if (delayModeEffectId) EffectService.stop(delayModeEffectId);
-    }
-    net_setBagId(bagId) {
-        this.currentData.setBagId(bagId);
-        let score = this.currentData.bagIds.length;
-        this.getRankModuleS.refreshScore(this.currentPlayer.userId, score);
-    }
-    net_setGuideStep(addStep) {
-        this.currentData.setGuideStep(addStep);
-    }
-}
-
-__decorate([ Decorator.noReply() ], InteractionModuleS.prototype, "net_setBagId", null);
-
-__decorate([ Decorator.noReply() ], InteractionModuleS.prototype, "net_setGuideStep", null);
-
-class PlayerInteractor {
-    constructor() {
-        this.isCanSit = true;
-        this.interactor = null;
-    }
-}
-
-var OnClickType;
-
-(function(OnClickType) {
-    OnClickType[OnClickType["Sit"] = 1] = "Sit";
-    OnClickType[OnClickType["Shake"] = 2] = "Shake";
-    OnClickType[OnClickType["Dance"] = 3] = "Dance";
-})(OnClickType || (OnClickType = {}));
-
-class InteractionData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.bagIds = [];
-        this.guideStep = 0;
-    }
-    setBagId(bagId) {
-        if (this.bagIds.includes(bagId)) return;
-        this.bagIds.push(bagId);
-        this.save(false);
-    }
-    setGuideStep(addStep) {
-        this.guideStep += addStep;
-        this.save(false);
-    }
-}
-
-__decorate([ Decorator.persistence() ], InteractionData.prototype, "bagIds", void 0);
-
-__decorate([ Decorator.persistence() ], InteractionData.prototype, "guideStep", void 0);
-
-var foreign103 = Object.freeze({
-    __proto__: null,
-    GuidePanel: GuidePanel,
-    InteractionData: InteractionData,
-    InteractionModuleC: InteractionModuleC,
-    InteractionModuleS: InteractionModuleS,
-    OnClickPanel: OnClickPanel,
-    get OnClickType() {
-        return OnClickType;
-    },
-    PlayerInteractor: PlayerInteractor
-});
-
 let ActionItem_Generate = class ActionItem_Generate extends UIScript {
     get mBgImage() {
         if (!this.mBgImage_Internal && this.uiWidgetBase) {
@@ -8667,7 +7976,6 @@ class BagItem extends BagItem_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
-        this.interactionModuleC = null;
         this.bagId = 0;
         this.isHas = false;
     }
@@ -8676,12 +7984,6 @@ class BagItem extends BagItem_Generate$1 {
             this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
         }
         return this.danMuModuleC;
-    }
-    get getInteractionModuleC() {
-        if (!this.interactionModuleC) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
     }
     onStart() {
         this.canUpdate = false;
@@ -8694,8 +7996,6 @@ class BagItem extends BagItem_Generate$1 {
     addClickButton() {
         if (this.isHas) {
             this.getDanMuModuleC.onClickBagItemAction.call(this.bagId);
-        } else {
-            this.getInteractionModuleC.onClickBagItemAction.call(this.bagId);
         }
     }
     setDatas(bagId, isHas) {
@@ -9093,7 +8393,6 @@ class ChatPanel extends ChatPanel_Generate$1 {
     constructor() {
         super(...arguments);
         this.danMuModuleC = null;
-        this.interactionModuleC = null;
         this.chatDatas = [];
         this.chatItems2 = [];
         this.expressionAssets = [];
@@ -9110,12 +8409,6 @@ class ChatPanel extends ChatPanel_Generate$1 {
             this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
         }
         return this.danMuModuleC;
-    }
-    get getInteractionModuleC() {
-        if (!this.interactionModuleC) {
-            this.interactionModuleC = ModuleService.getModule(InteractionModuleC);
-        }
-        return this.interactionModuleC;
     }
     onStart() {
         this.initUI();
@@ -9380,21 +8673,20 @@ class ChatPanel extends ChatPanel_Generate$1 {
         let actionPropElement = GameConfig.ActionProp.getAllElement();
         actionPropElement = actionPropElement.filter((value => value.AssetId && value.AssetId != "" && value.Tab == tabIndex));
         actionPropElement.sort(((a, b) => a.Sort - b.Sort));
-        let bagIds = this.getInteractionModuleC.getBagIds;
         if (actionPropElement.length > this.bagItems.length) {
             for (let i = 0; i < this.bagItems.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                this.bagItems[i].setDatas(actionPropElement[i].ID, true);
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = this.bagItems.length; i < actionPropElement.length; ++i) {
                 let bagItem = mw.UIService.create(BagItem);
-                bagItem.setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                bagItem.setDatas(actionPropElement[i].ID, true);
                 this.mBagContentCanvas.addChild(bagItem.uiObject);
                 this.bagItems.push(bagItem);
             }
         } else {
             for (let i = 0; i < actionPropElement.length; ++i) {
-                this.bagItems[i].setDatas(actionPropElement[i].ID, bagIds.includes(actionPropElement[i].ID));
+                this.bagItems[i].setDatas(actionPropElement[i].ID, true);
                 Utils.setWidgetVisibility(this.bagItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
             for (let i = actionPropElement.length; i < this.bagItems.length; ++i) {
@@ -10896,6 +10188,61 @@ var foreign91 = Object.freeze({
     PlayerGlide: PlayerGlide,
     PlayerInteract: PlayerInteract,
     default: DanMuModuleS
+});
+
+class InteractionModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.currentDescription = null;
+        this.triggerLocMap = new Map;
+    }
+    onStart() {
+        this.bindEvent();
+    }
+    onEnterScene(sceneType) {
+        this.findTriggers();
+    }
+    bindEvent() {}
+    findTriggers() {
+        GameConfig.Interact.getAllElement().forEach((async value => {
+            let npcId = value.NpcId;
+            if (npcId && npcId.length > 0) {
+                let npc = await GameObject.asyncFindGameObjectById(npcId);
+                await npc.asyncReady();
+                npc.complexMovementEnabled = false;
+                npc.collisionWithOtherCharacterEnabled = false;
+                let shareId = value.ShareId;
+                if (shareId > 0) {
+                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                    if (shareIdStr && shareIdStr.length > 0) {
+                        Utils.applySharedId(npc, shareIdStr);
+                    }
+                } else {
+                    this.currentDescription = this.localPlayer.character.getDescription();
+                    npc.setDescription(this.currentDescription);
+                }
+                let npcAnimationId = value.NpcAnimationId;
+                if (npcAnimationId && npcAnimationId.length > 0) {
+                    await Utils.asyncDownloadAsset(npcAnimationId);
+                    npc.loadSubStance(npcAnimationId).play();
+                    setTimeout((() => {
+                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
+                    }), 1e3);
+                }
+            }
+            console.error(this.triggerLocMap.size);
+        }));
+    }
+}
+
+class InteractionModuleS extends ModuleS {
+    onStart() {}
+}
+
+var foreign103 = Object.freeze({
+    __proto__: null,
+    InteractionModuleC: InteractionModuleC,
+    InteractionModuleS: InteractionModuleS
 });
 
 class MallData extends Subdata {
@@ -15469,7 +14816,6 @@ class MallModuleC extends ModuleC {
         this.isNeedSaveCharacter = false;
         this.decorationIndexMap = new Map;
         this.onSwitchCameraAction = new Action1;
-        this.lastCameraType = -1;
         this.mallCharacterRotSpeed = 30;
         this.maleNpc = null;
         this.feMaleNpc = null;
@@ -15528,6 +14874,11 @@ class MallModuleC extends ModuleC {
     onEnterScene(sceneType) {
         this.initNpc();
         this.initShopCamera();
+        this.localPlayer.character.asyncReady().then((() => {
+            TimeUtil.delaySecond(1).then((() => {
+                this.addOpenMallAction();
+            }));
+        }));
     }
     bindAction() {
         this.getHUDModuleC?.onOpenMallAction.add(this.addOpenMallAction.bind(this));
@@ -16213,16 +15564,12 @@ class MallModuleC extends ModuleC {
         let decorationIndex = -1;
         if (this.decorationIndexMap.has(tagId)) {
             decorationIndex = this.decorationIndexMap.get(tagId);
-            let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1]?.attachmentGameObject;
-            if (attachmentGameObject) {
-                let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
-                this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
-                if (assetId == attachmentAssetId) {
-                    this.decorationIndexMap.delete(tagId);
-                    return;
-                }
-            } else {
+            let attachmentGameObject = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentGameObject;
+            let attachmentAssetId = this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration[decorationIndex - 1].attachmentAssetId;
+            this.localPlayer.character.description.advance.slotAndDecoration.slot[slotIndex].decoration.delete(attachmentGameObject, true);
+            if (assetId == attachmentAssetId) {
                 this.decorationIndexMap.delete(tagId);
+                return;
             }
         }
         if (this.isUsingDecoration(assetId)) {
@@ -16541,7 +15888,7 @@ class MallModuleC extends ModuleC {
     }
     addVipAction() {
         this.getMallVipTipsPanel.showTips((() => {
-            this.placeOrder(`7A53roftO8B00054i`, (() => {}));
+            this.placeOrder(`8pPDJnFinE200054y`, (() => {}));
         }), (() => {
             Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
             ExecutorManager.instance.pushAsyncExecutor((async () => {
@@ -16558,7 +15905,7 @@ class MallModuleC extends ModuleC {
                     this.saveCharacterDescription();
                 } else {
                     this.getMallVipTipsPanel.showTips((() => {
-                        this.placeOrder(`7A53roftO8B00054i`, (() => {}));
+                        this.placeOrder(`8pPDJnFinE200054y`, (() => {}));
                     }), (() => {
                         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                         ExecutorManager.instance.pushAsyncExecutor((async () => {
@@ -17606,18 +16953,6 @@ class NavigationModuleC extends ModuleC {
 }
 
 const navigationConfigs = [ {
-    modelId: "040055A6",
-    interactionObjId: "0A394447",
-    npcId: "39AB2FB0",
-    pathId: "356DCBF1",
-    speed: 10
-}, {
-    modelId: "348F4F22",
-    interactionObjId: "048FB28D",
-    npcId: "254A21DD",
-    pathId: "01087776",
-    speed: 10
-}, {
     modelId: "289E46DE",
     interactionObjId: "09295629",
     npcId: "31DE1825",
@@ -17682,6 +17017,67 @@ var foreign124 = Object.freeze({
     NavigationModel: NavigationModel,
     NavigationModuleC: NavigationModuleC,
     NavigationModuleS: NavigationModuleS
+});
+
+class RoomData {
+    constructor(userId, name, killCount, time, tryOn) {
+        this.userId = "";
+        this.playerName = "";
+        this.score = 0;
+        this.time = 0;
+        this.tryOn = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+        this.tryOn = tryOn;
+    }
+    setData(userId, name, killCount, time, tryOn) {
+        this.userId = userId;
+        this.playerName = name;
+        this.score = killCount;
+        this.time = time;
+        this.tryOn = tryOn;
+    }
+}
+
+class WorldData {
+    constructor(userId, name, time) {
+        this.userId = "";
+        this.playerName = "";
+        this.time = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+    setData(userId, name, time) {
+        this.userId = userId;
+        this.playerName = name;
+        this.time = time;
+    }
+}
+
+class RankData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.time = 0;
+    }
+    setTime(addTime) {
+        this.time += addTime;
+        this.save(false);
+    }
+    get getTime() {
+        return this.time;
+    }
+}
+
+__decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
+
+var foreign125 = Object.freeze({
+    __proto__: null,
+    RankData: RankData,
+    RoomData: RoomData,
+    WorldData: WorldData
 });
 
 let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
@@ -17916,6 +17312,211 @@ var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 var foreign195 = Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
+});
+
+class RankModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.worldDatas = [];
+        this.isInitWorldDatas = false;
+        this.time = 60;
+        this.timer = 0;
+        this.syncPlayerMap = new Map;
+        this.roomDataMap = new Map;
+        this.roomUserIds = [];
+        this.roomNames = [];
+        this.roomScores = [];
+        this.roomTimes = [];
+        this.roomTryOn = [];
+        this.worldUserIds = [];
+        this.worldNames = [];
+        this.worldTimes = [];
+    }
+    onStart() {
+        this.initData();
+    }
+    async initData() {
+        this.worldDatas = await Utils.getCustomdata("WorldData");
+        this.isInitWorldDatas = true;
+    }
+    onUpdate(dt) {
+        this.timer += dt;
+        if (this.timer >= this.time) {
+            this.timer = 0;
+            this.refreshTime();
+        }
+    }
+    onPlayerLeft(player) {
+        let userId = player.userId;
+        if (this.roomDataMap.has(userId)) this.roomDataMap.delete(userId);
+        if (this.syncPlayerMap.has(player)) this.syncPlayerMap.delete(player);
+    }
+    net_onEnterScene(playerName, score, time, tryon) {
+        this.syncPlayerMap.set(this.currentPlayer, false);
+        let userId = this.currentPlayer.userId;
+        this.currentPlayer.character.displayName = playerName;
+        this.onEnterScene(userId, playerName, score, time, tryon);
+    }
+    onEnterScene(userId, playerName, score, time, tryon) {
+        let roomData = new RoomData(userId, playerName, score, time, tryon);
+        this.roomDataMap.set(userId, roomData);
+        let worldData = new WorldData(userId, playerName, time);
+        this.isRefreshWorldData([ worldData ]);
+        this.synchrodata_onEnterScene(userId);
+    }
+    async refreshTime() {
+        if (!this.syncPlayerMap || this.syncPlayerMap.size == 0) return;
+        let tmpWorldDatas = [];
+        this.syncPlayerMap.forEach(((value, key) => {
+            DataCenterS.getData(key, RankData).setTime(1);
+            let userId = key.userId;
+            if (!this.roomDataMap.has(userId)) return;
+            let roomData = this.roomDataMap.get(userId);
+            roomData.time += 1;
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            tmpWorldDatas.push(worldData);
+        }));
+        this.worldDatas = await Utils.getCustomdata("WorldData");
+        this.isRefreshWorldData(tmpWorldDatas);
+        this.synchrodata_RoomWorld();
+    }
+    net_refreshTryOn(tryOn) {
+        this.refreshTryOn(this.currentPlayer.userId, tryOn);
+    }
+    refreshTryOn(userId, tryOn) {
+        if (!this.roomDataMap.has(userId)) return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.tryOn = tryOn;
+        this.synchrodata_Room_TryOn();
+    }
+    isRefreshWorldData(tmpWorldDatas) {
+        if (!this.isInitWorldDatas) return false;
+        if (this.worldDatas == null) this.worldDatas = [];
+        let isNeedSave = false;
+        for (let k = 0; k < tmpWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let worldData = tmpWorldDatas[k];
+            if (this.worldDatas.length < GlobalData.worldCount) {
+                if (this.worldDatas.length == 0) {
+                    this.worldDatas.push(worldData);
+                    isPush = true;
+                    isNeedSave = true;
+                } else {
+                    for (let i = 0; i < this.worldDatas.length; ++i) {
+                        if (this.worldDatas[i].userId != worldData.userId) continue;
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 1);
+                            break;
+                        } else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+                    if (ishasData) continue;
+                    for (let i = 0; i < this.worldDatas.length; i++) {
+                        if (worldData.time > this.worldDatas[i].time) {
+                            this.worldDatas.splice(i, 0, worldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+                    if (!isPush) {
+                        this.worldDatas.push(worldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            } else {
+                for (let i = 0; i < this.worldDatas.length; ++i) {
+                    if (this.worldDatas[i].userId != worldData.userId) continue;
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    } else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+                if (ishasData) continue;
+                for (let i = 0; i < this.worldDatas.length; i++) {
+                    if (worldData.time > this.worldDatas[i].time) {
+                        this.worldDatas.splice(i, 0, worldData);
+                        if (!ishasDelete) {
+                            this.worldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            Utils.setCustomData("WorldData", this.worldDatas);
+        }
+        return isNeedSave;
+    }
+    updateRoomData() {
+        if (this.roomDataMap.size == 0 || !this.roomDataMap) return;
+        this.roomUserIds.length = 0;
+        this.roomNames.length = 0;
+        this.roomScores.length = 0;
+        this.roomTimes.length = 0;
+        this.roomTryOn.length = 0;
+        this.roomDataMap.forEach(((value, key) => {
+            this.roomUserIds.push(value.userId);
+            this.roomNames.push(value.playerName);
+            this.roomScores.push(value.score);
+            this.roomTimes.push(value.time);
+            this.roomTryOn.push(value.tryOn);
+        }));
+    }
+    updateWorldData() {
+        if (!this.worldDatas || this.worldDatas.length == 0) return;
+        this.worldUserIds.length = 0;
+        this.worldNames.length = 0;
+        this.worldTimes.length = 0;
+        for (let i = 0; i < this.worldDatas.length; i++) {
+            this.worldUserIds.push(this.worldDatas[i].userId);
+            this.worldNames.push(this.worldDatas[i].playerName);
+            this.worldTimes.push(this.worldDatas[i].time);
+        }
+    }
+    synchrodata_onEnterScene(sendUserId) {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach(((value, key) => {
+            if (sendUserId == key.userId) {
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+            } else {
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            }
+        }));
+    }
+    synchrodata_RoomWorld() {
+        this.updateRoomData();
+        this.updateWorldData();
+        this.syncPlayerMap.forEach(((value, key) => {
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+        }));
+    }
+    synchrodata_Room_TryOn() {
+        this.updateRoomData();
+        this.syncPlayerMap.forEach(((value, key) => {
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+        }));
+    }
+}
+
+__decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_onEnterScene", null);
+
+var foreign127 = Object.freeze({
+    __proto__: null,
+    default: RankModuleS
 });
 
 let SetPanel_Generate = class SetPanel_Generate extends UIScript {
@@ -18707,7 +18308,6 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
     bindButton() {
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
         this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
-        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
     }
     addCloseButton() {
         this.getTryOnModuleC.onCloseAction.call();
@@ -18715,9 +18315,6 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
     addSaveButton() {
         this.hide();
         this.getTryOnModuleC.onSaveAction.call();
-    }
-    addOpenShareButton() {
-        this.getTryOnModuleC.onOpenShareAction.call();
     }
     refreshTryOnPanel(roomDatas, curRoomIndex, isShow = true) {
         if (roomDatas.length > this.tryOnItems.length) {
@@ -18779,41 +18376,39 @@ class TryOnModuleC extends ModuleC {
         this.rankModuleC = null;
         this.tryOnPanel = null;
         this.mallTipsPanel = null;
-        this.sharePanel = null;
         this.onTryOnAction = new Action1;
         this.onCloseAction = new Action;
         this.onSaveAction = new Action;
-        this.onOpenShareAction = new Action;
         this.tryOnRoomData = null;
         this.isNeedSaveCharacter = false;
         this.mallCharacterRotSpeed = 30;
         this.tryOnConfigData = null;
         this.npcIds = [ {
-            npcId: `1824A6F8`,
+            npcId: `33B278F6`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"521470",87,"0|ffebd3ff",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",97,"521469",98,"0|ffebd3ff",98,"4|f",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"521468",120,"4|ffebd3ff",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",123,"5|-0.001",123,"6|-0.001",123,"7|-0.001",123,"8|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",124,"5|-0.001",124,"6|-0.001",124,"7|-0.001",124,"8|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",125,"5|-0.001",125,"6|-0.001",125,"7|-0.001",125,"8|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",126,"5|-0.001",126,"6|-0.001",126,"7|-0.001",126,"8|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",129,"5|-0.001",129,"6|-0.001",129,"7|-0.001",129,"8|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|-0.001",157,"1|-0.001",157,"2|-0.001",158,"0|-0.001",158,"1|-0.001",158,"2|-0.001",161,"0|-0.001",161,"1|-0.001",161,"2|-0.001",162,"0|-0.001",162,"1|-0.001",162,"2|-0.001",163,"92726",166,1.5,169,"521471",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|ffebd3ff",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"2|566636"],"version":1,"slotData":["23$516829$0,0,0|0,-90,0|1,1,1"],"dynDecor":["","","566636","","","","",""]}`
         }, {
-            npcId: `119AB592`,
+            npcId: `2A3CECE5`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"515650",87,"0|f",87,"1|d42d3fff",87,"2|006559ff",87,"3|45280eff",88,"0|224409",89,"0|bebebeff",90,"0|20",90,"1|5",90,"2|5",90,"3|5",90,"4|-0.001",91,"0|20",91,"1|5",91,"2|5",91,"3|5",91,"4|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|-0.001",93,"0|0.5",93,"1|0",93,"2|0",93,"3|0",93,"4|-0.001",94,"0|509845",94,"1|35058",94,"2|509844",94,"3|509839",95,"0|f",95,"1|c33641ff",95,"2|f",95,"3|ffffff00",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|-0.001",97,"515685",98,"0|f0e6e6ff",98,"1|135658ff",99,"0|224409",100,"0|aba4a4ff",101,"0|8",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|8",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|0",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0.5",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",105,"0|515453",105,"1|227575",105,"2|22672",106,"0|ffbdc8ff",106,"1|b35050ff",106,"2|5c5c5cff",107,"0|0",107,"1|171.428",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"515692",120,"0|f0e6e6ff",120,"1|df4066ff",120,"2|3d272cff",121,"0|224409",122,"0|aba4a4ff",123,"0|8",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|8",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|0.4",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|515463",127,"1|515464",127,"2|515465",128,"0|1fb8beff",128,"1|81f2ffff",128,"2|769fa5ff",129,"0|0",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"515679",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|d42d3fff",192,"1|d4d4d4ff",192,"2|a25f21ff",192,"3|006559ff",194,"0|bebebeff",196,"0|f",196,"1|c33641ff",196,"2|f",196,"3|ffffff00",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|1.856",198,"1|2.838",198,"2|2.236",198,"3|2",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|20",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|20",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0.5",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"2|566636"],"version":1,"slotData":["12$516107$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","566636","","","","",""]}`
         }, {
-            npcId: `18B78C6D`,
+            npcId: `2261E113`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"522838",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",97,"522840",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"522839",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"522835",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["1$522123$0,-2.41,24.69|0,0,0|1,1,1","6$522094$-14.33,0,-1.46|0,-90,0|1,1,1","12$522674$0,0,-5|0,0,0|1,1,1","19$522742$0,0,0|0,0,0|1,1,1","23$523431$0,0,0.1|0,-90,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `0CAFBBB7`,
+            npcId: `17330715`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"491314",87,"0|ffffff00",87,"1|2c0101ff",87,"2|652f11dd",87,"3|a70712ff",88,"0|47940",88,"1|224409",88,"2|270099",89,"0|f0f0f000",89,"1|090000ff",89,"2|3f2107ff",89,"3|a70712ff",90,"0|15",90,"1|10",90,"2|15",90,"3|5",90,"4|-0.001",91,"0|15",91,"1|10",91,"2|15",91,"3|5",91,"4|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|-0.001",93,"0|1",93,"1|0.12",93,"2|1",93,"3|0",93,"4|-0.001",94,"0|491206",94,"1|495155",94,"2|491205",94,"3|491201",95,"0|f",95,"1|f",95,"2|ecececff",95,"3|f",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|-0.001",97,"491315",98,"0|450001ff",98,"1|823513ff",98,"2|000000dd",98,"3|a70712ff",99,"0|141677",100,"0|290001ff",100,"3|000000bf",101,"0|35",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|35",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|200",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0.8",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",105,"0|491208",105,"1|491210",105,"2|491202",106,"0|f",106,"1|f",106,"2|ecececff",106,"3|f",107,"0|0",107,"1|0",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"491312",120,"0|450001ff",120,"2|000000dd",120,"3|a70712ff",121,"0|141677",122,"0|290001ff",122,"3|000000bf",123,"0|30",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|30",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|1",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|140238",128,"0|f",129,"0|122",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"491278",171,"050505ff",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|340302ff",192,"1|f",195,"0|495155",196,"0|f",196,"2|f",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|2.6",198,"1|1",198,"2|1",198,"3|1",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|5",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|5",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["2$490998$4,1.8,-18|-13,90,43|1,1,1","10$491101$2.8,-17,-2.5|0,0,90|1,1,1","23$494016$0,0,0|0,-90,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `282DD9DB`,
+            npcId: `0262D76F`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"493767",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",90,"5|-0.001",90,"6|-0.001",90,"7|-0.001",90,"8|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",91,"5|-0.001",91,"6|-0.001",91,"7|-0.001",91,"8|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",92,"5|-0.001",92,"6|-0.001",92,"7|-0.001",92,"8|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",93,"5|-0.001",93,"6|-0.001",93,"7|-0.001",93,"8|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",96,"5|-0.001",96,"6|-0.001",96,"7|-0.001",96,"8|-0.001",97,"493697",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"493645",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"493696",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["2$493632$2.62,9.34,-24.87|0,-90,0|1,1,1","19$493583$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `3BE37CB4`,
+            npcId: `04EC4D95`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"453998",87,"0|030303ff",87,"1|f",87,"2|404040ff",87,"4|6e6e6eff",88,"0|155210",88,"1|155210",88,"4|224409",89,"0|050505ff",89,"4|a6a6a6ff",90,"0|40",90,"1|40",90,"2|5",90,"3|5",90,"4|5",90,"5|5",90,"6|5",90,"7|5",90,"8|-0.001",91,"0|40",91,"1|40",91,"2|5",91,"3|5",91,"4|5",91,"5|5",91,"6|5",91,"7|5",91,"8|-0.001",92,"0|0",92,"1|0",92,"2|0",92,"3|0",92,"4|0",92,"5|0",92,"6|0",92,"7|0",92,"8|-0.001",93,"0|0.2",93,"1|0.2",93,"2|0",93,"3|0",93,"4|0.2",93,"5|0",93,"6|0",93,"7|0",93,"8|-0.001",94,"0|453906",94,"1|453908",94,"2|453909",94,"3|453912",94,"4|35058",94,"5|453911",94,"6|453911",95,"0|f",95,"2|ffffff00",95,"3|ffffff00",95,"5|f",95,"6|070707ff",95,"7|0",96,"0|0",96,"1|0",96,"2|0",96,"3|0",96,"4|0",96,"5|0",96,"6|0",96,"7|0",96,"8|-0.001",97,"453996",98,"0|241916cd",98,"1|ffffff00",98,"2|f",100,"0|090404ff",101,"0|5",101,"1|5",101,"2|5",101,"3|5",101,"4|-0.001",102,"0|5",102,"1|5",102,"2|5",102,"3|5",102,"4|-0.001",103,"0|0",103,"1|0",103,"2|0",103,"3|0",103,"4|-0.001",104,"0|0",104,"1|0",104,"2|0",104,"3|0",104,"4|-0.001",106,"0|f",106,"2|ffffff00",106,"3|0",107,"0|0",107,"1|0",107,"2|0",107,"3|0",107,"4|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"453997",120,"0|050505ff",120,"1|bababaff",120,"2|241916cd",120,"3|ffffff00",121,"0|32115",122,"0|ff1a1aff",122,"2|090404ff",123,"0|30",123,"1|5",123,"2|5",123,"3|5",123,"4|-0.001",124,"0|30",124,"1|5",124,"2|5",124,"3|5",124,"4|-0.001",125,"0|0",125,"1|0",125,"2|0",125,"3|0",125,"4|-0.001",126,"0|1",126,"1|0",126,"2|0",126,"3|0",126,"4|-0.001",127,"0|453888",127,"1|453889",128,"0|f",128,"1|4e4e4eff",128,"2|ffffff00",128,"3|0",129,"0|0",129,"1|0",129,"2|0",129,"3|0",129,"4|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|-0.001",157,"1|-0.001",157,"2|-0.001",158,"0|-0.001",158,"1|-0.001",158,"2|-0.001",161,"0|-0.001",161,"1|-0.001",161,"2|-0.001",162,"0|-0.001",162,"1|-0.001",162,"2|-0.001",163,"92726",166,1.5,169,"453968",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|070707ff",192,"1|f",192,"2|424242ff",194,"0|ff1a1aff",196,"0|f",196,"2|ffffff00",196,"3|0",197,"0|0",197,"1|0",197,"2|0",197,"3|0",197,"4|-0.001",198,"0|1",198,"1|1",198,"2|1",198,"3|1",198,"4|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|30",205,"1|5",205,"2|5",205,"3|5",205,"4|-0.001",206,"0|30",206,"1|5",206,"2|5",206,"3|5",206,"4|-0.001",207,"0|0",207,"1|0",207,"2|0",207,"3|0",207,"4|-0.001",208,"0|0",208,"1|0",208,"2|0",208,"3|0",208,"4|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0],"version":1,"slotData":["1$453959$0.04,-0.95,12.97|0,0,0|1,1,1","6$453958$-5.7,0.07,-1.06|0.38,-88.99,-5.74|1,1,1","12$453934$0,0,0|0,0,0|1,1,1"],"dynDecor":["","","","","","","",""]}`
         }, {
-            npcId: `34063511`,
+            npcId: `04A01A8B`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"517456",87,"4|f",90,"0|-0.001",90,"1|-0.001",90,"2|-0.001",90,"3|-0.001",90,"4|-0.001",90,"5|-0.001",90,"6|-0.001",90,"7|-0.001",90,"8|-0.001",91,"0|-0.001",91,"1|-0.001",91,"2|-0.001",91,"3|-0.001",91,"4|-0.001",91,"5|-0.001",91,"6|-0.001",91,"7|-0.001",91,"8|-0.001",92,"0|-0.001",92,"1|-0.001",92,"2|-0.001",92,"3|-0.001",92,"4|-0.001",92,"5|-0.001",92,"6|-0.001",92,"7|-0.001",92,"8|-0.001",93,"0|-0.001",93,"1|-0.001",93,"2|-0.001",93,"3|-0.001",93,"4|-0.001",93,"5|-0.001",93,"6|-0.001",93,"7|-0.001",93,"8|-0.001",96,"0|-0.001",96,"1|-0.001",96,"2|-0.001",96,"3|-0.001",96,"4|-0.001",96,"5|-0.001",96,"6|-0.001",96,"7|-0.001",96,"8|-0.001",97,"517395",98,"4|f",101,"0|-0.001",101,"1|-0.001",101,"2|-0.001",101,"3|-0.001",101,"4|-0.001",101,"5|-0.001",101,"6|-0.001",101,"7|-0.001",101,"8|-0.001",102,"0|-0.001",102,"1|-0.001",102,"2|-0.001",102,"3|-0.001",102,"4|-0.001",102,"5|-0.001",102,"6|-0.001",102,"7|-0.001",102,"8|-0.001",103,"0|-0.001",103,"1|-0.001",103,"2|-0.001",103,"3|-0.001",103,"4|-0.001",103,"5|-0.001",103,"6|-0.001",103,"7|-0.001",103,"8|-0.001",104,"0|-0.001",104,"1|-0.001",104,"2|-0.001",104,"3|-0.001",104,"4|-0.001",104,"5|-0.001",104,"6|-0.001",104,"7|-0.001",104,"8|-0.001",107,"0|-0.001",107,"1|-0.001",107,"2|-0.001",107,"3|-0.001",107,"4|-0.001",107,"5|-0.001",107,"6|-0.001",107,"7|-0.001",107,"8|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"517425",120,"0|f",123,"0|-0.001",123,"1|-0.001",123,"2|-0.001",123,"3|-0.001",123,"4|-0.001",123,"5|-0.001",123,"6|-0.001",123,"7|-0.001",123,"8|-0.001",124,"0|-0.001",124,"1|-0.001",124,"2|-0.001",124,"3|-0.001",124,"4|-0.001",124,"5|-0.001",124,"6|-0.001",124,"7|-0.001",124,"8|-0.001",125,"0|-0.001",125,"1|-0.001",125,"2|-0.001",125,"3|-0.001",125,"4|-0.001",125,"5|-0.001",125,"6|-0.001",125,"7|-0.001",125,"8|-0.001",126,"0|-0.001",126,"1|-0.001",126,"2|-0.001",126,"3|-0.001",126,"4|-0.001",126,"5|-0.001",126,"6|-0.001",126,"7|-0.001",126,"8|-0.001",129,"0|-0.001",129,"1|-0.001",129,"2|-0.001",129,"3|-0.001",129,"4|-0.001",129,"5|-0.001",129,"6|-0.001",129,"7|-0.001",129,"8|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"517457",170,"eb6e71ff",171,"899effff",172,0.571,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",192,"0|f",197,"0|-0.001",197,"1|-0.001",197,"2|-0.001",197,"3|-0.001",197,"4|-0.001",197,"5|-0.001",197,"6|-0.001",197,"7|-0.001",197,"8|-0.001",198,"0|-0.001",198,"1|-0.001",198,"2|-0.001",198,"3|-0.001",198,"4|-0.001",198,"5|-0.001",198,"6|-0.001",198,"7|-0.001",198,"8|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",205,"1|-0.001",205,"2|-0.001",205,"3|-0.001",205,"4|-0.001",205,"5|-0.001",205,"6|-0.001",205,"7|-0.001",205,"8|-0.001",206,"0|-0.001",206,"1|-0.001",206,"2|-0.001",206,"3|-0.001",206,"4|-0.001",206,"5|-0.001",206,"6|-0.001",206,"7|-0.001",206,"8|-0.001",207,"0|-0.001",207,"1|-0.001",207,"2|-0.001",207,"3|-0.001",207,"4|-0.001",207,"5|-0.001",207,"6|-0.001",207,"7|-0.001",207,"8|-0.001",208,"0|-0.001",208,"1|-0.001",208,"2|-0.001",208,"3|-0.001",208,"4|-0.001",208,"5|-0.001",208,"6|-0.001",208,"7|-0.001",208,"8|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"dynDecor":["569606","","570598","","","","571428",""]}`
         }, {
-            npcId: `34436787`,
+            npcId: `277B193E`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"557538",90,"0|-0.001",91,"0|-0.001",92,"0|-0.001",93,"0|-0.001",96,"0|-0.001",97,"557526",101,"0|-0.001",102,"0|-0.001",103,"0|-0.001",104,"0|-0.001",107,"0|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"557512",123,"0|-0.001",124,"0|-0.001",125,"0|-0.001",126,"0|-0.001",129,"0|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"557567",172,-0.001,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"slotData":["12$557283$-17.49,-1.53,-129.02|0,90,0|1,1,1"],"dynDecor":["569606","","570598","","","","571428",""]}`
         }, {
-            npcId: `11CB74A6`,
+            npcId: `313EB267`,
             shareId: `{"apiValue":[0,"76618",1,0,2,0,3,0,4,0,5,0,6,0,7,0,8,0,9,0,10,0,11,0,12,0,13,0,14,0,15,0,16,0,17,0,18,0,19,0,20,0,21,0,22,0,23,0,24,0,25,0,26,0,27,0,28,0,29,0,30,0,31,0,32,0,33,0,34,0,35,0,36,0,37,0,38,0,39,0,40,0,41,0,42,0,43,0,44,0,45,0,46,0,47,0,48,0,49,0,50,0,51,1,52,1,53,1,54,0,56,0,58,0,59,1,60,1,61,1,62,1,63,1,64,1,65,1,66,1,67,1,68,1,69,1,70,1,71,1,72,1,73,1,74,1,75,1,76,1,77,1,78,1,79,1,80,1,81,1,82,1,83,1,84,1,85,1,86,"569437",90,"0|-0.001",91,"0|-0.001",92,"0|-0.001",93,"0|-0.001",96,"0|-0.001",97,"562437",101,"0|-0.001",102,"0|-0.001",103,"0|-0.001",104,"0|-0.001",107,"0|-0.001",108,"75663",112,"0|-0.001",113,"0|-0.001",114,"0|-0.001",115,"0|-0.001",118,"0|-0.001",119,"571247",123,"0|-0.001",124,"0|-0.001",125,"0|-0.001",126,"0|-0.001",129,"0|-0.001",130,"398608",131,"00000000",132,"398609",133,"398607",134,"00000000",135,"48041",136,"f",137,"48026",138,"ffeccd00",139,"32115",140,"5032b7ff",141,0.019,142,-0.009,143,0.466,145,"32115",146,"72171800",147,"32115",148,"9d141b00",149,"32115",150,"962d2d00",151,"0|32115",151,"1|32115",151,"2|32115",152,"0|0",152,"1|0",152,"2|0",153,"0|0",153,"1|0",153,"2|0",154,"0|0",154,"1|0",154,"2|0",155,"0|6",155,"1|6",155,"2|6",156,"ffd8d8ff",157,"0|0",157,"1|0",157,"2|0",158,"0|0",158,"1|0",158,"2|0",159,"0|32115",159,"1|32115",159,"2|32115",160,"0|f",160,"1|f",160,"2|f",161,"0|0",161,"1|0",161,"2|0",162,"0|10",162,"1|10",162,"2|10",163,"92726",166,1.5,169,"570494",170,"0e0e0eff",171,"f",172,1,175,2,176,"0|f",176,"1|f",176,"2|f",178,"f",179,"f",184,0,190,"0|-0.001",191,"0|-0.001",197,"0|-0.001",198,"0|-0.001",199,1,200,1,201,"0|-0.001",202,"0|-0.001",203,"0|-0.001",204,"0|-0.001",205,"0|-0.001",206,"0|-0.001",207,"0|-0.001",208,"0|-0.001",210,0,211,0,212,0,213,0,214,0,215,0,216,0,217,0,218,0,228,"0|569606",228,"2|570598",228,"6|571428"],"version":1,"dynDecor":["569606","","570598","","","","571428",""]}`
         } ];
     }
@@ -18847,12 +18442,6 @@ class TryOnModuleC extends ModuleC {
         }
         return this.mallTipsPanel;
     }
-    get getSharePanel() {
-        if (!this.sharePanel) {
-            this.sharePanel = UIService.getUI(SharePanel);
-        }
-        return this.sharePanel;
-    }
     onStart() {
         this.bindAction();
     }
@@ -18861,14 +18450,6 @@ class TryOnModuleC extends ModuleC {
         this.onCloseAction.add(this.addCloseTryOnPanelAction.bind(this));
         this.onTryOnAction.add(this.addTryOnAction.bind(this));
         this.onSaveAction.add(this.addSaveAction.bind(this));
-        this.onOpenShareAction.add(this.addOpenShareAction.bind(this));
-    }
-    addOpenShareAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            this.getSharePanel.show();
-            let sharedId = await Utils.createSharedId(this.localPlayer.character);
-            this.getSharePanel.showPanel(sharedId, 1);
-        }));
     }
     onOpenShareActionHandler() {
         console.error(`-------------${JSON.stringify(this.tryOnConfigData)}`);
@@ -18909,9 +18490,20 @@ class TryOnModuleC extends ModuleC {
     addCloseTryOnPanelAction() {
         if (this.isNeedSaveCharacter) {
             this.getMallTipsPanel.showTips((() => {
-                this.onSaveAction.call();
+                this.isNeedSaveCharacter = false;
+                this.saveCharacter();
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
             }), (() => {
-                this.resetCharacterDescription();
+                this.isNeedSaveCharacter = false;
+                ExecutorManager.instance.pushAsyncExecutor((async () => {
+                    let copyNpc = this.getMallModuleC.getCopyNpc;
+                    await copyNpc.asyncReady();
+                    this.localPlayer.character.setDescription(copyNpc.getDescription());
+                    await this.localPlayer.character.asyncReady();
+                }));
+                this.getTryOnPanel.hide();
+                this.getMallModuleC.onSwitchCameraAction.call(0);
             }), GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
         } else {
             this.getTryOnPanel.hide();
@@ -18960,51 +18552,15 @@ class TryOnModuleC extends ModuleC {
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
         }));
     }
-    resetCharacterDescription() {
-        this.isNeedSaveCharacter = false;
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let copyNpc = this.getMallModuleC.getCopyNpc;
-            await copyNpc.asyncReady();
-            this.localPlayer.character.setDescription(copyNpc.getDescription());
-            await this.localPlayer.character.asyncReady();
-        }));
-        this.getTryOnPanel.hide();
-        this.getMallModuleC.onSwitchCameraAction.call(0);
-    }
     addSaveAction() {
-        this.isNeedSaveCharacter = false;
-        console.error(`-------------${JSON.stringify(this.tryOnConfigData)}`);
-        if (this.tryOnConfigData && this.tryOnConfigData.isOpenAvatarEditor) {
-            this.openAvatarEditor();
-        } else {
-            this.getTryOnPanel.hide();
-            this.getMallModuleC.onSwitchCameraAction.call(0);
-            this.saveCharacter();
-        }
-    }
-    openAvatarEditor() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.localPlayer.character.asyncReady();
-            let buyCharacterDescription = this.localPlayer.character.getDescription();
-            let copyNpc = this.getMallModuleC.getCopyNpc;
-            await copyNpc.asyncReady();
-            this.localPlayer.character.setDescription(copyNpc.getDescription());
-            await this.localPlayer.character.asyncReady();
-            this.getTryOnPanel.hide();
-            this.getMallModuleC.onSwitchCameraAction.call(0);
-            await TimeUtil.delaySecond(1);
-            await AvatarEditorService.asyncOpenAvatarEditorModule();
-            await TimeUtil.delaySecond(1);
-            this.localPlayer.character.setDescription(buyCharacterDescription);
-            await this.localPlayer.character.asyncReady();
-            if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
-            this.server.net_addTryOn(this.tryOnRoomData.userId);
-        }));
+        this.getMallModuleC.onSwitchCameraAction.call(0);
+        this.saveCharacter();
     }
     saveCharacter() {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.localPlayer.character.asyncReady();
             this.localPlayer.character.syncDescription();
+            this.isNeedSaveCharacter = false;
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
             await this.getMallModuleC.syncTryOnCharacter();
             if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
@@ -19124,11 +18680,9 @@ class TryOnConfigData {
     constructor(data) {
         this.isOpenTryOn = false;
         this.isInitNpc = false;
-        this.isOpenAvatarEditor = false;
         if (!data) return;
         this.isOpenTryOn = data?.isOpenTryOn;
         this.isInitNpc = data?.isInitNpc;
-        this.isOpenAvatarEditor = data?.isOpenAvatarEditor;
     }
 }
 
@@ -19378,7 +18932,7 @@ class RoomItem extends RoomItem_Generate$1 {
     setData(ranking, roomData, isSelf) {
         this.mRankTextBlock.text = ranking.toString();
         this.mNameTextBlock.text = roomData.playerName;
-        this.mKillCountTextBlock.text = roomData.score.toString();
+        this.mKillCountTextBlock.text = roomData.time.toString();
         let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
         this.mRankTextBlock.fontColor = fontColor;
         this.mNameTextBlock.fontColor = fontColor;
@@ -19493,23 +19047,14 @@ class RankPanel extends RankPanel_Generate$1 {
     initUI() {
         this.mRoomRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mRoomNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
-        this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
+        this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Duration.Value;
         this.mTitleTextBlock.text = StringUtil.format(GameConfig.Language.Text_TopInTermsOfDuration.Value, GlobalData.worldCount);
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
-        Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
-        if (GlobalData.languageId == 0) {
-            this.mRoomRankTextBlock.fontSize = 15;
-            this.mRoomNameTextBlock.fontSize = 15;
-            this.mRoomScoreTextBlock.fontSize = 15;
-            this.mWorldRankTextBlock.fontSize = 15;
-            this.mWorldNameTextBlock.fontSize = 15;
-            this.mWorldTimeTextBlock.fontSize = 15;
-        }
     }
     bindOpenRoomRankButton() {
         if (!this.roomItems || this.roomItems?.length == 0) {
@@ -19613,7 +19158,6 @@ class RankModuleC extends ModuleC {
         this.hudModuleC = null;
         this.rankPanel = null;
         this.userId = null;
-        this.interactionData = null;
         this.tryOnModuleC = null;
         this.tryOnData = null;
         this.onOpenWorldRankAction = new Action;
@@ -19642,12 +19186,6 @@ class RankModuleC extends ModuleC {
         }
         return this.userId;
     }
-    get getInteractionData() {
-        if (this.interactionData == null) {
-            this.interactionData = DataCenterC.getData(InteractionData);
-        }
-        return this.interactionData;
-    }
     get getTryOnModuleC() {
         if (this.tryOnModuleC == null) {
             this.tryOnModuleC = ModuleService.getModule(TryOnModuleC);
@@ -19666,11 +19204,6 @@ class RankModuleC extends ModuleC {
     initEventAction() {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
-        let score = 0;
-        InputUtil.onKeyDown(mw.Keys.L, (() => {
-            score++;
-            this.server.net_refreshScore(score);
-        }));
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
@@ -19688,13 +19221,11 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then((() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData?.bagIds;
-            let score = !bagIds ? 0 : bagIds.length;
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
             let tryon = this.getTryOnData?.tryOn;
             if (!tryon && tryon != 0) tryon = 0;
-            this.server.net_onEnterScene(nickName, score, time, tryon);
+            this.server.net_onEnterScene(nickName, 0, time, tryon);
         }));
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
@@ -19768,10 +19299,6 @@ class RankModuleC extends ModuleC {
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
-    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
-        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
-    }
     net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
@@ -19784,9 +19311,19 @@ class RankModuleC extends ModuleC {
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
+        this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
+    }
+    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        let tmpRoomDatas = [];
+        this.roomDatas.forEach((value => {
+            tmpRoomDatas.push(value);
+        }));
+        tmpRoomDatas.sort(((a, b) => b.tryOn - a.tryOn));
+        this.getTryOnModuleC.refreshTryOnPanel(tmpRoomDatas);
     }
     sortRoomData() {
-        this.roomDatas.sort(((a, b) => b.score - a.score));
+        this.roomDatas.sort(((a, b) => b.time - a.time));
     }
     getRoomDatas() {
         let tmpRoomDatas = [];
@@ -19801,403 +19338,6 @@ class RankModuleC extends ModuleC {
 var foreign126 = Object.freeze({
     __proto__: null,
     default: RankModuleC
-});
-
-class SignInData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.day = 0;
-        this.dayStr = "";
-    }
-    setDay(addDay) {
-        this.day += addDay;
-        this.save(false);
-    }
-    setDayStr(dayStr, addDay) {
-        this.dayStr = dayStr;
-        this.day += addDay;
-        this.save(false);
-    }
-}
-
-__decorate([ Decorator.persistence() ], SignInData.prototype, "day", void 0);
-
-__decorate([ Decorator.persistence() ], SignInData.prototype, "dayStr", void 0);
-
-class SignInUserData {
-    constructor(data) {
-        if (!data) return;
-        this.shareId = data?.shareId;
-        this.icon = data?.icon;
-    }
-}
-
-class SignInConfigData {
-    constructor(data) {
-        this.signInUserDatas = [];
-        if (!data) return;
-        this.isOpen = data?.isOpen;
-        this.isOpenVersion2 = data?.isOpenVersion2;
-        this.totalDay = data?.totalDay;
-        for (let i = 0; i < data?.signInUserDatas?.length; ++i) {
-            this.signInUserDatas.push(new SignInUserData(data?.signInUserDatas[i]));
-        }
-    }
-}
-
-var foreign133 = Object.freeze({
-    __proto__: null,
-    SignInConfigData: SignInConfigData,
-    SignInUserData: SignInUserData,
-    default: SignInData
-});
-
-let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
-    get mTitleTextBlock() {
-        if (!this.mTitleTextBlock_Internal && this.uiWidgetBase) {
-            this.mTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mTitleTextBlock");
-        }
-        return this.mTitleTextBlock_Internal;
-    }
-    get mScrollBox() {
-        if (!this.mScrollBox_Internal && this.uiWidgetBase) {
-            this.mScrollBox_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mScrollBox");
-        }
-        return this.mScrollBox_Internal;
-    }
-    get mContentCanvas() {
-        if (!this.mContentCanvas_Internal && this.uiWidgetBase) {
-            this.mContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mScrollBox/ContentCanvas/mContentCanvas");
-        }
-        return this.mContentCanvas_Internal;
-    }
-    get mTotalDayTextBlock() {
-        if (!this.mTotalDayTextBlock_Internal && this.uiWidgetBase) {
-            this.mTotalDayTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mTotalDayTextBlock");
-        }
-        return this.mTotalDayTextBlock_Internal;
-    }
-    get mCloseButton() {
-        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
-            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCloseButton");
-        }
-        return this.mCloseButton_Internal;
-    }
-    onAwake() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        this.mCloseButton.onClicked.add((() => {
-            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
-        this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.initLanguage(this.mTitleTextBlock);
-        this.initLanguage(this.mTotalDayTextBlock);
-    }
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) {}
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-
-SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.ui") ], SignInPanel_Generate);
-
-var SignInPanel_Generate$1 = SignInPanel_Generate;
-
-var foreign193 = Object.freeze({
-    __proto__: null,
-    default: SignInPanel_Generate$1
-});
-
-let SignInItem_Generate = class SignInItem_Generate extends UIScript {
-    get mIconImage() {
-        if (!this.mIconImage_Internal && this.uiWidgetBase) {
-            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mIconImage");
-        }
-        return this.mIconImage_Internal;
-    }
-    get mHasTextBlock() {
-        if (!this.mHasTextBlock_Internal && this.uiWidgetBase) {
-            this.mHasTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mIconImage/mHasTextBlock");
-        }
-        return this.mHasTextBlock_Internal;
-    }
-    get mDayTextBlock() {
-        if (!this.mDayTextBlock_Internal && this.uiWidgetBase) {
-            this.mDayTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDayTextBlock");
-        }
-        return this.mDayTextBlock_Internal;
-    }
-    get mSignInButton() {
-        if (!this.mSignInButton_Internal && this.uiWidgetBase) {
-            this.mSignInButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mSignInButton");
-        }
-        return this.mSignInButton_Internal;
-    }
-    get mSignInTextBlock() {
-        if (!this.mSignInTextBlock_Internal && this.uiWidgetBase) {
-            this.mSignInTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mSignInButton/mSignInTextBlock");
-        }
-        return this.mSignInTextBlock_Internal;
-    }
-    onAwake() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        this.mSignInButton.onClicked.add((() => {
-            Event.dispatchToLocal("PlayButtonClick", "mSignInButton");
-        }));
-        this.mSignInButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.initLanguage(this.mHasTextBlock);
-        this.initLanguage(this.mDayTextBlock);
-        this.initLanguage(this.mSignInTextBlock);
-    }
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) {}
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-
-SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui") ], SignInItem_Generate);
-
-var SignInItem_Generate$1 = SignInItem_Generate;
-
-var foreign192 = Object.freeze({
-    __proto__: null,
-    default: SignInItem_Generate$1
-});
-
-class SignInItem extends SignInItem_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.signInModuleC = null;
-        this.signInUserData = null;
-        this.day = 0;
-        this.totalDay = 0;
-    }
-    get getSignInModuleC() {
-        if (!this.signInModuleC) {
-            this.signInModuleC = ModuleService.getModule(SignInModuleC);
-        }
-        return this.signInModuleC;
-    }
-    onStart() {
-        this.canUpdate = false;
-        this.layer = UILayerMiddle;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mHasTextBlock.text = GameConfig.Language.Text_SignIn_6.Value;
-    }
-    bindButton() {
-        this.mSignInButton.onClicked.add(this.addSignInButton.bind(this));
-    }
-    addSignInButton() {
-        this.getSignInModuleC.signInAction.call(this.day, this.signInUserData.shareId);
-    }
-    initItem(signInUserData, day, totalDay) {
-        this.signInUserData = signInUserData;
-        this.day = day;
-        this.totalDay = totalDay;
-        this.refreshUI();
-    }
-    refreshUI() {
-        this.mDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_9.Value, this.day);
-        if (this.signInUserData?.icon && this.signInUserData?.icon?.length > 0) {
-            this.mIconImage.imageGuid = this.signInUserData.icon;
-        } else {
-            this.mIconImage.imageInfo.setByAssetIcon(this.signInUserData.shareId, mw.AssetIconSize.Icon_128px);
-        }
-        if (this.totalDay >= this.day) {
-            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_7.Value;
-        } else {
-            this.mSignInTextBlock.text = GameConfig.Language.Text_SignIn_8.Value;
-            Utils.setWidgetVisibility(this.mHasTextBlock, mw.SlateVisibility.Collapsed);
-        }
-    }
-}
-
-var foreign136 = Object.freeze({
-    __proto__: null,
-    default: SignInItem
-});
-
-class SignInPanel extends SignInPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.signInItems = [];
-        this.signInConfigData = null;
-        this.day = 0;
-    }
-    onStart() {
-        this.canUpdate = false;
-        this.layer = UILayerDialog;
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mTitleTextBlock.text = GameConfig.Language.Text_SignIn_4.Value;
-    }
-    bindButton() {
-        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
-    }
-    addCloseButton() {
-        this.hide();
-    }
-    initPanel(signInConfigData, day) {
-        this.signInConfigData = signInConfigData;
-        this.day = day;
-        this.mTotalDayTextBlock.text = StringUtil.format(GameConfig.Language.Text_SignIn_5.Value, this.day);
-        let totalDay = this.signInConfigData.totalDay;
-        let signInUserDatas = this.signInConfigData.signInUserDatas;
-        for (let i = 0; i < totalDay; ++i) {
-            let signInItem = UIService.create(SignInItem);
-            signInItem.initItem(signInUserDatas[i], i + 1, this.day);
-            this.mContentCanvas.addChild(signInItem.uiObject);
-            this.signInItems.push(signInItem);
-        }
-    }
-}
-
-var foreign137 = Object.freeze({
-    __proto__: null,
-    default: SignInPanel
-});
-
-class SignInModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.signInPanel = null;
-        this.signInAction = new Action2;
-        this.isInitSignInPanel = false;
-        this.signInConfigData = null;
-        this.day = 0;
-    }
-    get getHUDModuleC() {
-        if (!this.hudModuleC) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    get getSignInPanel() {
-        if (!this.signInPanel) {
-            this.signInPanel = UIService.getUI(SignInPanel);
-        }
-        return this.signInPanel;
-    }
-    onStart() {
-        this.bindAction();
-    }
-    bindAction() {
-        this.getHUDModuleC.onOpenSignInAction.add(this.addOpenSignInAction.bind(this));
-        this.signInAction.add(this.addSignInAction.bind(this));
-    }
-    addOpenSignInAction() {
-        if (!this.signInConfigData || !this.signInConfigData?.isOpenVersion2 || this.day <= 0) {
-            Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
-            return;
-        }
-        if (!this.isInitSignInPanel) {
-            this.getSignInPanel.initPanel(this.signInConfigData, this.day);
-            this.isInitSignInPanel = true;
-        }
-        this.getSignInPanel.show();
-    }
-    addSignInAction(day, sharedId) {
-        if (day <= this.day) {
-            ExecutorManager.instance.pushAsyncExecutor((async () => {
-                this.getSignInPanel.hide();
-                await this.useShareId(sharedId);
-                Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
-            }));
-        } else {
-            Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
-        }
-    }
-    async useShareId(shareId) {
-        if (shareId && shareId?.length > 0) {
-            await this.server.net_useShareId(shareId);
-        }
-    }
-    net_syncSignInConfigData(signInConfigData, day) {
-        this.signInConfigData = signInConfigData;
-        this.day = day;
-        console.error(JSON.stringify(this.signInConfigData));
-        if (this.signInConfigData) return;
-        let data = {
-            isOpen: false,
-            isOpenVersion2: true,
-            totalDay: 12,
-            signInUserDatas: [ {
-                shareId: "532290",
-                icon: ""
-            }, {
-                shareId: "532291",
-                icon: ""
-            }, {
-                shareId: "532292",
-                icon: ""
-            }, {
-                shareId: "540371",
-                icon: ""
-            }, {
-                shareId: "540373",
-                icon: ""
-            }, {
-                shareId: "540369",
-                icon: ""
-            }, {
-                shareId: "540372",
-                icon: ""
-            }, {
-                shareId: "532301",
-                icon: ""
-            }, {
-                shareId: "532293",
-                icon: ""
-            }, {
-                shareId: "540370",
-                icon: ""
-            }, {
-                shareId: "532295",
-                icon: ""
-            }, {
-                shareId: "532294",
-                icon: ""
-            } ]
-        };
-        this.signInConfigData = new SignInConfigData(data);
-        console.error(JSON.stringify(this.signInConfigData));
-    }
-}
-
-var foreign134 = Object.freeze({
-    __proto__: null,
-    default: SignInModuleC
 });
 
 class SignInModuleS extends ModuleS {
@@ -20266,7 +19406,7 @@ let GameStart = class GameStart extends Script {
     registerModule() {
         ModuleService.registerModule(HUDModuleS, HUDModuleC, null);
         ModuleService.registerModule(DanMuModuleS, DanMuModuleC, null);
-        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, InteractionData);
+        ModuleService.registerModule(InteractionModuleS, InteractionModuleC, null);
         ModuleService.registerModule(NavigationModuleS, NavigationModuleC, null);
         ModuleService.registerModule(RankModuleS, RankModuleC, RankData);
         ModuleService.registerModule(SetModuleS, SetModuleC, SetData);
@@ -20971,6 +20111,175 @@ var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 var foreign150 = Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
+});
+
+let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
+    get mMainBgImage_0() {
+        if (!this.mMainBgImage_0_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_0_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0");
+        }
+        return this.mMainBgImage_0_Internal;
+    }
+    get mItemCanvas() {
+        if (!this.mItemCanvas_Internal && this.uiWidgetBase) {
+            this.mItemCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mItemCanvas");
+        }
+        return this.mItemCanvas_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mItemCanvas/mIconImage");
+        }
+        return this.mIconImage_Internal;
+    }
+    get mTitleImage_0() {
+        if (!this.mTitleImage_0_Internal && this.uiWidgetBase) {
+            this.mTitleImage_0_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mTitleImage_0");
+        }
+        return this.mTitleImage_0_Internal;
+    }
+    get mTitleImage_1() {
+        if (!this.mTitleImage_1_Internal && this.uiWidgetBase) {
+            this.mTitleImage_1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mTitleImage_1");
+        }
+        return this.mTitleImage_1_Internal;
+    }
+    get mClickNextStepButton() {
+        if (!this.mClickNextStepButton_Internal && this.uiWidgetBase) {
+            this.mClickNextStepButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mClickNextStepButton");
+        }
+        return this.mClickNextStepButton_Internal;
+    }
+    get mClickNextStepTextBlock() {
+        if (!this.mClickNextStepTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickNextStepTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_0/mClickNextStepButton/mClickNextStepTextBlock");
+        }
+        return this.mClickNextStepTextBlock_Internal;
+    }
+    get mMainBgImage_1() {
+        if (!this.mMainBgImage_1_Internal && this.uiWidgetBase) {
+            this.mMainBgImage_1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1");
+        }
+        return this.mMainBgImage_1_Internal;
+    }
+    get mTitleImage_2() {
+        if (!this.mTitleImage_2_Internal && this.uiWidgetBase) {
+            this.mTitleImage_2_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mTitleImage_2");
+        }
+        return this.mTitleImage_2_Internal;
+    }
+    get mTitleImage_3() {
+        if (!this.mTitleImage_3_Internal && this.uiWidgetBase) {
+            this.mTitleImage_3_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mTitleImage_3");
+        }
+        return this.mTitleImage_3_Internal;
+    }
+    get mContentTextBlock() {
+        if (!this.mContentTextBlock_Internal && this.uiWidgetBase) {
+            this.mContentTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mContentTextBlock");
+        }
+        return this.mContentTextBlock_Internal;
+    }
+    get mClickStartButton() {
+        if (!this.mClickStartButton_Internal && this.uiWidgetBase) {
+            this.mClickStartButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mClickStartButton");
+        }
+        return this.mClickStartButton_Internal;
+    }
+    get mClickStartTextBlock() {
+        if (!this.mClickStartTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickStartTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainBgImage_1/mClickStartButton/mClickStartTextBlock");
+        }
+        return this.mClickStartTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mClickNextStepButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
+        }));
+        this.mClickNextStepButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mClickStartButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
+        }));
+        this.mClickStartButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mClickNextStepTextBlock);
+        this.initLanguage(this.mContentTextBlock);
+        this.initLanguage(this.mClickStartTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePanel.ui") ], GuidePanel_Generate);
+
+var GuidePanel_Generate$1 = GuidePanel_Generate;
+
+var foreign168 = Object.freeze({
+    __proto__: null,
+    default: GuidePanel_Generate$1
+});
+
+let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mBgImage");
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickBtn() {
+        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
+            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mClickBtn");
+        }
+        return this.mClickBtn_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mClickBtn.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
+        }));
+        this.mClickBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClickPanel.ui") ], OnClickPanel_Generate);
+
+var OnClickPanel_Generate$1 = OnClickPanel_Generate;
+
+var foreign169 = Object.freeze({
+    __proto__: null,
+    default: OnClickPanel_Generate$1
 });
 
 const MWModuleMap = {
