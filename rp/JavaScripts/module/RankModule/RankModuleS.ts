@@ -55,7 +55,8 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private onEnterScene(userId: string, playerName: string, score: number, time: number, tryOn: number): void {
         let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
-        let worldData: WorldData = new WorldData(userId, playerName, time, score);
+        let worldData: WorldData = new WorldData();
+        worldData.setData(userId, playerName, time, score);
         try {
             this.isRefreshWorldData([worldData]);
         } catch (error) {
@@ -88,7 +89,8 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             let roomData = this.roomDataMap.get(userId);
             roomData.time += 1;
 
-            let worldData: WorldData = new WorldData(userId, roomData.playerName, roomData.time, roomData.score);
+            let worldData: WorldData = new WorldData();
+            worldData.setData(userId, roomData.playerName, roomData.time, roomData.score);
             tmpWorldDatas.push(worldData);
         });
         try {
@@ -183,6 +185,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
             }
         }
         if (isNeedSave) {
+            console.error(`wfz - isNeedSave: ${isNeedSave} - worldDatas: ${JSON.stringify(this.worldDatas)}`);
             Utils.setCustomData("WorldData", this.worldDatas);
         }
         return isNeedSave;

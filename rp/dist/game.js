@@ -5115,13 +5115,23 @@ class Utils {
         }
         return true;
     }
+    static randomColor() {
+        let colors = [ mw.LinearColor.red, mw.LinearColor.green, mw.LinearColor.blue, mw.LinearColor.yellow, new mw.LinearColor(1, 0, 1, 1), new mw.LinearColor(0, 1, 1, 1), mw.LinearColor.white ];
+        let fontColor = colors[this.randomInt(0, colors.length - 1)];
+        let outlineColor = colors[this.randomInt(0, colors.length - 1)];
+        while (fontColor.a == outlineColor.a && fontColor.r == outlineColor.r && fontColor.g == outlineColor.g && fontColor.b == outlineColor.b) {
+            outlineColor = colors[this.randomInt(0, colors.length - 1)];
+            console.error("颜色重复");
+        }
+        return [ fontColor, outlineColor ];
+    }
 }
 
 Utils.assetIconDataMap = new Map;
 
 Utils.buffMap = new Map;
 
-Utils.birthPos = new mw.Vector(0, 0, 1e3);
+Utils.birthPos = new mw.Vector(-5e3, 0, 1e3);
 
 Utils.targetGuideEffectId = null;
 
@@ -7590,18 +7600,17 @@ class RoomData {
 }
 
 class WorldData {
-    constructor(userId, name, time) {
+    constructor() {
         this.userId = "";
         this.playerName = "";
         this.time = 0;
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
+        this.score = 0;
     }
-    setData(userId, name, time) {
+    setData(userId, name, time, score) {
         this.userId = userId;
         this.playerName = name;
         this.time = time;
+        this.score = score;
     }
 }
 
@@ -7609,6 +7618,7 @@ class RankData extends Subdata {
     constructor() {
         super(...arguments);
         this.time = 0;
+        this.score = 0;
     }
     setTime(addTime) {
         this.time += addTime;
@@ -7617,9 +7627,18 @@ class RankData extends Subdata {
     get getTime() {
         return this.time;
     }
+    setScore(addScore) {
+        this.score += addScore;
+        this.save(false);
+    }
+    get getScore() {
+        return this.score;
+    }
 }
 
 __decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
+
+__decorate([ Decorator.persistence() ], RankData.prototype, "score", void 0);
 
 var foreign125 = Object.freeze({
     __proto__: null,
@@ -7645,6 +7664,8 @@ class RankModuleS extends ModuleS {
         this.worldUserIds = [];
         this.worldNames = [];
         this.worldTimes = [];
+        this.worldScores = [];
+        this.isCanUpdateRoom = true;
         this.redFirstModel = null;
         this.blueFirstModel = null;
     }
@@ -7683,7 +7704,8 @@ class RankModuleS extends ModuleS {
     onEnterScene(userId, playerName, score, time, tryOn) {
         let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time);
+        let worldData = new WorldData;
+        worldData.setData(userId, playerName, time, score);
         try {
             this.isRefreshWorldData([ worldData ]);
         } catch (error) {}
@@ -7695,7 +7717,9 @@ class RankModuleS extends ModuleS {
     refreshScore(userId, score) {
         if (!this.roomDataMap.has(userId)) return;
         let roomData = this.roomDataMap.get(userId);
-        roomData.score = score;
+        let rankData = DataCenterS.getData(userId, RankData);
+        rankData?.setScore(score);
+        roomData.score = rankData?.score;
         this.synchrodata_Room();
     }
     async refreshTime() {
@@ -7707,7 +7731,8 @@ class RankModuleS extends ModuleS {
             if (!this.roomDataMap.has(userId)) return;
             let roomData = this.roomDataMap.get(userId);
             roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
+            let worldData = new WorldData;
+            worldData.setData(userId, roomData.playerName, roomData.time, roomData.score);
             tmpWorldDatas.push(worldData);
         }));
         try {
@@ -7743,7 +7768,7 @@ class RankModuleS extends ModuleS {
                 } else {
                     for (let i = 0; i < this.worldDatas.length; ++i) {
                         if (this.worldDatas[i].userId != worldData.userId) continue;
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 1);
                             break;
                         } else {
@@ -7753,7 +7778,7 @@ class RankModuleS extends ModuleS {
                     }
                     if (ishasData) continue;
                     for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.time > this.worldDatas[i].time) {
+                        if (worldData.score > this.worldDatas[i].score) {
                             this.worldDatas.splice(i, 0, worldData);
                             isPush = true;
                             isNeedSave = true;
@@ -7769,7 +7794,7 @@ class RankModuleS extends ModuleS {
             } else {
                 for (let i = 0; i < this.worldDatas.length; ++i) {
                     if (this.worldDatas[i].userId != worldData.userId) continue;
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 1);
                         ishasDelete = true;
                         break;
@@ -7780,7 +7805,7 @@ class RankModuleS extends ModuleS {
                 }
                 if (ishasData) continue;
                 for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.time > this.worldDatas[i].time) {
+                    if (worldData.score > this.worldDatas[i].score) {
                         this.worldDatas.splice(i, 0, worldData);
                         if (!ishasDelete) {
                             this.worldDatas.pop();
@@ -7793,6 +7818,7 @@ class RankModuleS extends ModuleS {
             }
         }
         if (isNeedSave) {
+            console.error(`wfz - isNeedSave: ${isNeedSave} - worldDatas: ${JSON.stringify(this.worldDatas)}`);
             Utils.setCustomData("WorldData", this.worldDatas);
         }
         return isNeedSave;
@@ -7817,10 +7843,12 @@ class RankModuleS extends ModuleS {
         this.worldUserIds.length = 0;
         this.worldNames.length = 0;
         this.worldTimes.length = 0;
+        this.worldScores.length = 0;
         for (let i = 0; i < this.worldDatas.length; i++) {
             this.worldUserIds.push(this.worldDatas[i].userId);
             this.worldNames.push(this.worldDatas[i].playerName);
             this.worldTimes.push(this.worldDatas[i].time);
+            this.worldScores.push(this.worldDatas[i].score);
         }
     }
     synchrodata_onEnterScene(sendUserId) {
@@ -7828,13 +7856,18 @@ class RankModuleS extends ModuleS {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
             } else {
                 this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         }));
     }
     synchrodata_Room() {
+        if (!this.isCanUpdateRoom) return;
+        this.isCanUpdateRoom = false;
+        TimeUtil.delaySecond(5).then((() => {
+            this.isCanUpdateRoom = true;
+        }));
         this.updateRoomData();
         this.syncPlayerMap.forEach(((value, key) => {
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
@@ -7849,18 +7882,18 @@ class RankModuleS extends ModuleS {
     synchrodata_World() {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         }));
     }
     synchrodata_RoomWorld() {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
         }));
     }
     synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
     }
     getNamesByUserId(userId1, userId2) {
         if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
@@ -10148,10 +10181,17 @@ const WorldActionDatas = "WorldActionDatas";
 class DanMuModuleS extends ModuleS {
     constructor() {
         super(...arguments);
+        this.rankModuleS = null;
         this.maxShowDistance = 2e3;
         this.playerInteractMap = new Map;
         this.playerBagMap = new Map;
         this.playerGlideMap = new Map;
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
     }
     onStart() {}
     onPlayerEnterGame(player) {
@@ -10243,8 +10283,9 @@ class DanMuModuleS extends ModuleS {
         code = await DataStorage.asyncSetData(saveKey, dataInfo);
         return code == mw.DataStorageResultCode.Success;
     }
-    net_showBubbleText(gameObjectId, text) {
-        let currentPlayer = this.currentPlayer;
+    net_showBubbleText(gameObjectId, text, score) {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         if (this.maxShowDistance == -1) {
             Player.getAllPlayers().forEach((player => {
                 this.getClient(player).net_showBubbleText(gameObjectId, text);
@@ -10252,10 +10293,10 @@ class DanMuModuleS extends ModuleS {
         } else {
             const players = Player.getAllPlayers();
             for (const player of players) {
-                if (player === currentPlayer) {
+                if (player === player) {
                     this.getClient(player).net_showBubbleText(gameObjectId, text);
                 } else {
-                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
+                    const len = Vector.distance(player.character.worldTransform.position, player.character.worldTransform.position);
                     if (len <= this.maxShowDistance) {
                         this.getClient(player).net_showBubbleText(gameObjectId, text);
                     }
@@ -10263,11 +10304,14 @@ class DanMuModuleS extends ModuleS {
             }
         }
     }
-    net_playExpression(assetId) {
+    net_playExpression(assetId, score) {
+        let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
     }
-    async net_EnterInteract(actionData) {
+    async net_EnterInteract(actionData, score) {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         return await this.enterInteract(player, actionData);
     }
     async enterInteract(player, actionData) {
@@ -10295,8 +10339,9 @@ class DanMuModuleS extends ModuleS {
         let playerInteract = this.playerInteractMap.get(playerId);
         return await playerInteract.clearInteractor(player);
     }
-    async net_useBag(bagId) {
+    async net_useBag(bagId, score) {
         let player = this.currentPlayer;
+        this.getRankModuleS.refreshScore(player.userId, score);
         let playerBag = null;
         let bagIds = [];
         if (!this.playerBagMap.has(player.playerId)) {
@@ -19734,8 +19779,8 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then((() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let bagIds = this.getInteractionData?.bagIds;
-            let score = !bagIds ? 0 : bagIds.length;
+            let score = this.data?.score;
+            if (!score && score != 0) score = 0;
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
             let tryon = this.getTryOnData?.tryOn;
@@ -19773,10 +19818,10 @@ class RankModuleC extends ModuleC {
             break;
         }
     }
-    updateWorldDatas(worldUserIds, worldNames, worldScores) {
+    updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores) {
         if (this.worldDatas.length > worldUserIds.length) {
             for (let i = 0; i < worldUserIds.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = worldUserIds.length; i < this.worldDatas.length; ++i) {
                 this.recycleWorldDatas.push(this.worldDatas[i]);
@@ -19784,15 +19829,16 @@ class RankModuleC extends ModuleC {
             this.worldDatas.length = worldUserIds.length;
         } else {
             for (let i = 0; i < this.worldDatas.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
             }
             for (let i = this.worldDatas.length; i < worldUserIds.length; ++i) {
                 let tmpWorldData = null;
                 if (this.recycleWorldDatas.length > 0) tmpWorldData = this.recycleWorldDatas.pop();
                 if (tmpWorldData) {
-                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 } else {
-                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldScores[i]);
+                    tmpWorldData = new WorldData;
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 }
                 this.worldDatas.push(tmpWorldData);
             }
@@ -19818,16 +19864,16 @@ class RankModuleC extends ModuleC {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
-    net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+    net_syncWorldRankData(worldUserIds, worldNames, worldTimes, worldScores) {
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldTimes, worldScores) {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
-        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
+        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
     }

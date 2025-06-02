@@ -28,12 +28,12 @@ export class WorldData {
     public time: number = 0;
     public score: number = 0;
 
-    public constructor(userId: string, name: string, time: number, score: number) {
-        this.userId = userId;
-        this.playerName = name;
-        this.time = time;
-        this.score = score;
-    }
+    // public constructor(userId: string, name: string, time: number, score: number) {
+    //     this.userId = userId;
+    //     this.playerName = name;
+    //     this.time = time;
+    //     this.score = score;
+    // }
 
     public setData(userId: string, name: string, time: number, score: number): void {
         this.userId = userId;

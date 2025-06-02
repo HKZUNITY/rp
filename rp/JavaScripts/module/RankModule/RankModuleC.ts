@@ -161,7 +161,8 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
                 if (tmpWorldData) {
                     tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 } else {
-                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
+                    tmpWorldData = new WorldData();
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
                 }
                 this.worldDatas.push(tmpWorldData);
             }

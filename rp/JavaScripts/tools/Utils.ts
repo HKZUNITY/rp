@@ -299,7 +299,7 @@ export default class Utils {
         while (fontColor.a == outlineColor.a && fontColor.r == outlineColor.r
             && fontColor.g == outlineColor.g && fontColor.b == outlineColor.b) {
             outlineColor = colors[this.randomInt(0, colors.length - 1)];
-            // Console.error("颜色重复");
+            console.error("颜色重复");
         }
         return [fontColor, outlineColor];
     }

@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ActionTabItem.ui
- * TIME: 2025.06.02-14.55.50
+ * TIME: 2025.06.02-15.03.04
  */
  
 @UIBind('UI/module/DanMuModule/ActionTabItem.ui')
