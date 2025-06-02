@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BagItem.ui
- * TIME: 2025.05.31-20.46.24
+ * TIME: 2025.06.02-14.55.50
  */
  
 @UIBind('UI/module/DanMuModule/BagItem.ui')

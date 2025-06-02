@@ -50,7 +50,7 @@ NoticeView_Generate = __decorate([ UIBind("UI/common/notice/NoticeView.ui") ], N
 
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign149 = Object.freeze({
+var foreign150 = Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -107,7 +107,7 @@ TopNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/TopNoticeItem.ui"
 
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign151 = Object.freeze({
+var foreign152 = Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -3404,7 +3404,7 @@ var MapEx;
     MapEx.copy = copy;
 })(MapEx || (MapEx = {}));
 
-var foreign144 = Object.freeze({
+var foreign145 = Object.freeze({
     __proto__: null,
     get MapEx() {
         return MapEx;
@@ -3835,7 +3835,7 @@ var AvatarDecora;
     AvatarDecora.getDecorByItemType = getDecorByItemType;
 })(AvatarDecora || (AvatarDecora = {}));
 
-var foreign139 = Object.freeze({
+var foreign140 = Object.freeze({
     __proto__: null,
     get AvatarDecora() {
         return AvatarDecora;
@@ -4475,7 +4475,7 @@ function getStyle(somatotype) {
     if (somatotype === mw.SomatotypeV2.CartoonyMale || somatotype === mw.SomatotypeV2.CartoonyFemale) return StyleType.Cartoony;
 }
 
-var foreign138 = Object.freeze({
+var foreign139 = Object.freeze({
     __proto__: null,
     get AvatarApi() {
         return AvatarApi;
@@ -4532,7 +4532,7 @@ LoadingPanel_Generate = __decorate([ UIBind("UI/tools/LoadingPanel.ui") ], Loadi
 
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign195 = Object.freeze({
+var foreign197 = Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -4563,7 +4563,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign146 = Object.freeze({
+var foreign147 = Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -4674,7 +4674,7 @@ class ExecutorManager {
 
 ExecutorManager._instance = undefined;
 
-var foreign148 = Object.freeze({
+var foreign149 = Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -4882,7 +4882,7 @@ class FlyText {
     }
 }
 
-var foreign142 = Object.freeze({
+var foreign143 = Object.freeze({
     __proto__: null,
     FlyText: FlyText
 });
@@ -5115,22 +5115,13 @@ class Utils {
         }
         return true;
     }
-    static randomColor() {
-        let colors = [ mw.LinearColor.red, mw.LinearColor.green, mw.LinearColor.blue, mw.LinearColor.yellow, new mw.LinearColor(1, 0, 1, 1), new mw.LinearColor(0, 1, 1, 1), mw.LinearColor.white ];
-        let fontColor = colors[this.randomInt(0, colors.length - 1)];
-        let outlineColor = colors[this.randomInt(0, colors.length - 1)];
-        while (fontColor.a == outlineColor.a && fontColor.r == outlineColor.r && fontColor.g == outlineColor.g && fontColor.b == outlineColor.b) {
-            outlineColor = colors[this.randomInt(0, colors.length - 1)];
-        }
-        return [ fontColor, outlineColor ];
-    }
 }
 
 Utils.assetIconDataMap = new Map;
 
 Utils.buffMap = new Map;
 
-Utils.birthPos = new mw.Vector(-5e3, 0, 1e3);
+Utils.birthPos = new mw.Vector(0, 0, 1e3);
 
 Utils.targetGuideEffectId = null;
 
@@ -5203,7 +5194,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign147 = Object.freeze({
+var foreign148 = Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -5255,7 +5246,7 @@ BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui")
 
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign158 = Object.freeze({
+var foreign159 = Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -5321,7 +5312,7 @@ HUDItem_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDItem.ui") ], HUDI
 
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign166 = Object.freeze({
+var foreign167 = Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -5736,7 +5727,7 @@ HUDPanel_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDPanel.ui") ], HU
 
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign167 = Object.freeze({
+var foreign168 = Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -5785,7 +5776,7 @@ SavePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SavePanel.ui") ]
 
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign189 = Object.freeze({
+var foreign191 = Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -5906,7 +5897,7 @@ SharePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SharePanel.ui")
 
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign190 = Object.freeze({
+var foreign192 = Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -5975,7 +5966,7 @@ AdPanel_Generate = __decorate([ UIBind("UI/module/AdModule/AdPanel.ui") ], AdPan
 
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign152 = Object.freeze({
+var foreign153 = Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -6049,7 +6040,7 @@ TipsPanel_Generate = __decorate([ UIBind("UI/module/AdModule/TipsPanel.ui") ], T
 
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign153 = Object.freeze({
+var foreign154 = Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -7402,7 +7393,7 @@ ChatPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatPanel.ui") ]
 
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign161 = Object.freeze({
+var foreign162 = Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -7523,7 +7514,7 @@ GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePane
 
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign168 = Object.freeze({
+var foreign169 = Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -7571,7 +7562,7 @@ OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClick
 
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign169 = Object.freeze({
+var foreign170 = Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -7599,21 +7590,18 @@ class RoomData {
 }
 
 class WorldData {
-    constructor(userId, name, time, score) {
+    constructor(userId, name, time) {
         this.userId = "";
         this.playerName = "";
         this.time = 0;
-        this.score = 0;
         this.userId = userId;
         this.playerName = name;
         this.time = time;
-        this.score = score;
     }
-    setData(userId, name, time, score) {
+    setData(userId, name, time) {
         this.userId = userId;
         this.playerName = name;
         this.time = time;
-        this.score = score;
     }
 }
 
@@ -7621,7 +7609,6 @@ class RankData extends Subdata {
     constructor() {
         super(...arguments);
         this.time = 0;
-        this.score = 0;
     }
     setTime(addTime) {
         this.time += addTime;
@@ -7630,20 +7617,11 @@ class RankData extends Subdata {
     get getTime() {
         return this.time;
     }
-    setScore(addScore) {
-        this.score += addScore;
-        this.save(false);
-    }
-    get getScore() {
-        return this.score;
-    }
 }
 
 __decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
 
-__decorate([ Decorator.persistence() ], RankData.prototype, "score", void 0);
-
-var foreign124 = Object.freeze({
+var foreign125 = Object.freeze({
     __proto__: null,
     RankData: RankData,
     RoomData: RoomData,
@@ -7667,8 +7645,6 @@ class RankModuleS extends ModuleS {
         this.worldUserIds = [];
         this.worldNames = [];
         this.worldTimes = [];
-        this.worldScores = [];
-        this.isCanUpdateRoom = true;
         this.redFirstModel = null;
         this.blueFirstModel = null;
     }
@@ -7707,7 +7683,7 @@ class RankModuleS extends ModuleS {
     onEnterScene(userId, playerName, score, time, tryOn) {
         let roomData = new RoomData(userId, playerName, score, time, tryOn);
         this.roomDataMap.set(userId, roomData);
-        let worldData = new WorldData(userId, playerName, time, score);
+        let worldData = new WorldData(userId, playerName, time);
         try {
             this.isRefreshWorldData([ worldData ]);
         } catch (error) {}
@@ -7719,9 +7695,7 @@ class RankModuleS extends ModuleS {
     refreshScore(userId, score) {
         if (!this.roomDataMap.has(userId)) return;
         let roomData = this.roomDataMap.get(userId);
-        let rankData = DataCenterS.getData(userId, RankData);
-        rankData?.setScore(score);
-        roomData.score = rankData?.score;
+        roomData.score = score;
         this.synchrodata_Room();
     }
     async refreshTime() {
@@ -7733,7 +7707,7 @@ class RankModuleS extends ModuleS {
             if (!this.roomDataMap.has(userId)) return;
             let roomData = this.roomDataMap.get(userId);
             roomData.time += 1;
-            let worldData = new WorldData(userId, roomData.playerName, roomData.time, roomData.score);
+            let worldData = new WorldData(userId, roomData.playerName, roomData.time);
             tmpWorldDatas.push(worldData);
         }));
         try {
@@ -7769,7 +7743,7 @@ class RankModuleS extends ModuleS {
                 } else {
                     for (let i = 0; i < this.worldDatas.length; ++i) {
                         if (this.worldDatas[i].userId != worldData.userId) continue;
-                        if (worldData.score > this.worldDatas[i].score) {
+                        if (worldData.time > this.worldDatas[i].time) {
                             this.worldDatas.splice(i, 1);
                             break;
                         } else {
@@ -7779,7 +7753,7 @@ class RankModuleS extends ModuleS {
                     }
                     if (ishasData) continue;
                     for (let i = 0; i < this.worldDatas.length; i++) {
-                        if (worldData.score > this.worldDatas[i].score) {
+                        if (worldData.time > this.worldDatas[i].time) {
                             this.worldDatas.splice(i, 0, worldData);
                             isPush = true;
                             isNeedSave = true;
@@ -7795,7 +7769,7 @@ class RankModuleS extends ModuleS {
             } else {
                 for (let i = 0; i < this.worldDatas.length; ++i) {
                     if (this.worldDatas[i].userId != worldData.userId) continue;
-                    if (worldData.score > this.worldDatas[i].score) {
+                    if (worldData.time > this.worldDatas[i].time) {
                         this.worldDatas.splice(i, 1);
                         ishasDelete = true;
                         break;
@@ -7806,7 +7780,7 @@ class RankModuleS extends ModuleS {
                 }
                 if (ishasData) continue;
                 for (let i = 0; i < this.worldDatas.length; i++) {
-                    if (worldData.score > this.worldDatas[i].score) {
+                    if (worldData.time > this.worldDatas[i].time) {
                         this.worldDatas.splice(i, 0, worldData);
                         if (!ishasDelete) {
                             this.worldDatas.pop();
@@ -7843,12 +7817,10 @@ class RankModuleS extends ModuleS {
         this.worldUserIds.length = 0;
         this.worldNames.length = 0;
         this.worldTimes.length = 0;
-        this.worldScores.length = 0;
         for (let i = 0; i < this.worldDatas.length; i++) {
             this.worldUserIds.push(this.worldDatas[i].userId);
             this.worldNames.push(this.worldDatas[i].playerName);
             this.worldTimes.push(this.worldDatas[i].time);
-            this.worldScores.push(this.worldDatas[i].score);
         }
     }
     synchrodata_onEnterScene(sendUserId) {
@@ -7856,18 +7828,13 @@ class RankModuleS extends ModuleS {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
                 this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
             }
         }));
     }
     synchrodata_Room() {
-        if (!this.isCanUpdateRoom) return;
-        this.isCanUpdateRoom = false;
-        TimeUtil.delaySecond(5).then((() => {
-            this.isCanUpdateRoom = true;
-        }));
         this.updateRoomData();
         this.syncPlayerMap.forEach(((value, key) => {
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
@@ -7882,18 +7849,18 @@ class RankModuleS extends ModuleS {
     synchrodata_World() {
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
+            this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
         }));
     }
     synchrodata_RoomWorld() {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
         }));
     }
     synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes, this.worldScores);
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
     }
     getNamesByUserId(userId1, userId2) {
         if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
@@ -7932,7 +7899,7 @@ __decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_onEnterScene", n
 
 __decorate([ Decorator.noReply() ], RankModuleS.prototype, "net_setFirstModel", null);
 
-var foreign126 = Object.freeze({
+var foreign127 = Object.freeze({
     __proto__: null,
     default: RankModuleS
 });
@@ -8491,7 +8458,7 @@ ActionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionItem.ui")
 
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign154 = Object.freeze({
+var foreign155 = Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -8581,7 +8548,7 @@ ActionTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionTabIte
 
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign155 = Object.freeze({
+var foreign156 = Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -8697,7 +8664,7 @@ BagItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagItem.ui") ], Ba
 
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign156 = Object.freeze({
+var foreign157 = Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -8805,7 +8772,7 @@ BagTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagTabItem.ui")
 
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign157 = Object.freeze({
+var foreign158 = Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -8907,7 +8874,7 @@ ChatItem1_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem1.ui") ]
 
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign159 = Object.freeze({
+var foreign160 = Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -8990,7 +8957,7 @@ ChatItem2_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem2.ui") ]
 
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign160 = Object.freeze({
+var foreign161 = Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -9080,7 +9047,7 @@ ExpressionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ExpressionI
 
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign163 = Object.freeze({
+var foreign164 = Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -9480,7 +9447,7 @@ DanMuPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/DanMuPanel.ui")
 
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign162 = Object.freeze({
+var foreign163 = Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -10181,17 +10148,10 @@ const WorldActionDatas = "WorldActionDatas";
 class DanMuModuleS extends ModuleS {
     constructor() {
         super(...arguments);
-        this.rankModuleS = null;
         this.maxShowDistance = 2e3;
         this.playerInteractMap = new Map;
         this.playerBagMap = new Map;
         this.playerGlideMap = new Map;
-    }
-    get getRankModuleS() {
-        if (this.rankModuleS == null) {
-            this.rankModuleS = ModuleService.getModule(RankModuleS);
-        }
-        return this.rankModuleS;
     }
     onStart() {}
     onPlayerEnterGame(player) {
@@ -10283,9 +10243,8 @@ class DanMuModuleS extends ModuleS {
         code = await DataStorage.asyncSetData(saveKey, dataInfo);
         return code == mw.DataStorageResultCode.Success;
     }
-    net_showBubbleText(gameObjectId, text, score) {
-        let player = this.currentPlayer;
-        this.getRankModuleS.refreshScore(player.userId, score);
+    net_showBubbleText(gameObjectId, text) {
+        let currentPlayer = this.currentPlayer;
         if (this.maxShowDistance == -1) {
             Player.getAllPlayers().forEach((player => {
                 this.getClient(player).net_showBubbleText(gameObjectId, text);
@@ -10293,10 +10252,10 @@ class DanMuModuleS extends ModuleS {
         } else {
             const players = Player.getAllPlayers();
             for (const player of players) {
-                if (player === player) {
+                if (player === currentPlayer) {
                     this.getClient(player).net_showBubbleText(gameObjectId, text);
                 } else {
-                    const len = Vector.distance(player.character.worldTransform.position, player.character.worldTransform.position);
+                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
                     if (len <= this.maxShowDistance) {
                         this.getClient(player).net_showBubbleText(gameObjectId, text);
                     }
@@ -10304,14 +10263,11 @@ class DanMuModuleS extends ModuleS {
             }
         }
     }
-    net_playExpression(assetId, score) {
-        let player = this.currentPlayer;
-        this.getRankModuleS.refreshScore(player.userId, score);
+    net_playExpression(assetId) {
         this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
     }
-    async net_EnterInteract(actionData, score) {
+    async net_EnterInteract(actionData) {
         let player = this.currentPlayer;
-        this.getRankModuleS.refreshScore(player.userId, score);
         return await this.enterInteract(player, actionData);
     }
     async enterInteract(player, actionData) {
@@ -10339,9 +10295,8 @@ class DanMuModuleS extends ModuleS {
         let playerInteract = this.playerInteractMap.get(playerId);
         return await playerInteract.clearInteractor(player);
     }
-    async net_useBag(bagId, score) {
+    async net_useBag(bagId) {
         let player = this.currentPlayer;
-        this.getRankModuleS.refreshScore(player.userId, score);
         let playerBag = null;
         let bagIds = [];
         if (!this.playerBagMap.has(player.playerId)) {
@@ -11426,7 +11381,7 @@ class CameraData {
     }
 }
 
-var foreign140 = Object.freeze({
+var foreign141 = Object.freeze({
     __proto__: null,
     default: CameraManager$1
 });
@@ -11936,7 +11891,7 @@ ColorPickPanel_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickPan
 
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign170 = Object.freeze({
+var foreign171 = Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11975,7 +11930,7 @@ ColorPickTab1_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab1
 
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign171 = Object.freeze({
+var foreign172 = Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -12063,7 +12018,7 @@ ColorPickTab2_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab2
 
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign172 = Object.freeze({
+var foreign173 = Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -12186,7 +12141,7 @@ ColorPickTab3_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab3
 
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign173 = Object.freeze({
+var foreign174 = Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -12325,7 +12280,7 @@ class TouchScript {
     }
 }
 
-var foreign145 = Object.freeze({
+var foreign146 = Object.freeze({
     __proto__: null,
     get Enums() {
         return Enums;
@@ -12557,7 +12512,7 @@ MallPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallPanel.ui") ],
 
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign179 = Object.freeze({
+var foreign180 = Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -12630,7 +12585,7 @@ MallItem_Big_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Big.u
 
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign174 = Object.freeze({
+var foreign175 = Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -12857,7 +12812,7 @@ MallItem_Character_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem
 
 var MallItem_Character_Generate$1 = MallItem_Character_Generate;
 
-var foreign175 = Object.freeze({
+var foreign176 = Object.freeze({
     __proto__: null,
     default: MallItem_Character_Generate$1
 });
@@ -12988,7 +12943,7 @@ MallItem_Color_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Col
 
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign176 = Object.freeze({
+var foreign177 = Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -13118,7 +13073,7 @@ MallItem_Self_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Self
 
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign177 = Object.freeze({
+var foreign178 = Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -13258,7 +13213,7 @@ MallItem_Small_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Sma
 
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign178 = Object.freeze({
+var foreign179 = Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -13648,7 +13603,7 @@ MallTab1_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab1.ui") ], M
 
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign180 = Object.freeze({
+var foreign181 = Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -13765,7 +13720,7 @@ MallTab2_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab2.ui") ], M
 
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign181 = Object.freeze({
+var foreign182 = Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -13880,7 +13835,7 @@ MallTab3_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab3.ui") ], M
 
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign182 = Object.freeze({
+var foreign183 = Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -15315,7 +15270,7 @@ MallTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallTipsPanel
 
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign183 = Object.freeze({
+var foreign184 = Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -15445,7 +15400,7 @@ MallVipTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallVipTip
 
 var MallVipTipsPanel_Generate$1 = MallVipTipsPanel_Generate;
 
-var foreign184 = Object.freeze({
+var foreign185 = Object.freeze({
     __proto__: null,
     default: MallVipTipsPanel_Generate$1
 });
@@ -17381,11 +17336,133 @@ var foreign106 = Object.freeze({
     default: MallModuleC
 });
 
+let Nickname_Generate = class Nickname_Generate extends UIScript {
+    get mEnterFlipBook() {
+        if (!this.mEnterFlipBook_Internal && this.uiWidgetBase) {
+            this.mEnterFlipBook_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mEnterFlipBook");
+        }
+        return this.mEnterFlipBook_Internal;
+    }
+    get mIdleFlipBook() {
+        if (!this.mIdleFlipBook_Internal && this.uiWidgetBase) {
+            this.mIdleFlipBook_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mIdleFlipBook");
+        }
+        return this.mIdleFlipBook_Internal;
+    }
+    get mVipIconImage() {
+        if (!this.mVipIconImage_Internal && this.uiWidgetBase) {
+            this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mVipIconImage");
+        }
+        return this.mVipIconImage_Internal;
+    }
+    get mVipCountText() {
+        if (!this.mVipCountText_Internal && this.uiWidgetBase) {
+            this.mVipCountText_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mVipIconImage/mVipCountText");
+        }
+        return this.mVipCountText_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.initLanguage(this.mVipCountText);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+Nickname_Generate = __decorate([ UIBind("UI/module/MallModule/Nickname.ui") ], Nickname_Generate);
+
+var Nickname_Generate$1 = Nickname_Generate;
+
+var foreign186 = Object.freeze({
+    __proto__: null,
+    default: Nickname_Generate$1
+});
+
+let Nickname = class Nickname extends Script {
+    constructor() {
+        super(...arguments);
+        this.vipCount = 0;
+        this.character = null;
+        this.nickname = null;
+        this.nicknameWidget = null;
+        this.isInit = false;
+    }
+    onStart() {
+        if (!SystemUtil.isClient()) return;
+        this.initNickname();
+    }
+    async initNickname() {
+        this.nickname = mw.UIService.create(Nickname_Generate$1);
+        this.nicknameWidget = await GameObject.asyncSpawn(`UIWidget`, {
+            replicates: false
+        });
+        this.nicknameWidget.setTargetUIWidget(this.nickname.uiWidgetBase);
+        this.nicknameWidget.widgetSpace = mw.WidgetSpaceMode.OverheadUI;
+        this.character = this.gameObject;
+        this.nicknameWidget.parent = this.character.overheadUI;
+        this.nicknameWidget.localTransform.position = Vector.down.multiply(10);
+        this.isInit = true;
+        this.onVipCountChange();
+    }
+    onVipCountChange() {
+        if (!this.isInit) return;
+        if (this.vipCount <= 0) {
+            Utils.setWidgetVisibility(this.nickname.mIdleFlipBook, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.nickname.mVipIconImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.nickname.mEnterFlipBook, mw.SlateVisibility.Collapsed);
+        } else {
+            Utils.setWidgetVisibility(this.nickname.mIdleFlipBook, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.nickname.mVipIconImage, mw.SlateVisibility.Collapsed);
+            Utils.setWidgetVisibility(this.nickname.mEnterFlipBook, mw.SlateVisibility.Visible);
+            this.nickname.mVipCountText.text = StringUtil.format(GameConfig.Language.Text_Remaining.Value, this.vipCount);
+            this.nickname.mEnterFlipBook.isLoop = false;
+            this.nickname.mEnterFlipBook.play();
+            this.nickname.mEnterFlipBook.onFinish.add((() => {
+                Utils.setWidgetVisibility(this.nickname.mEnterFlipBook, mw.SlateVisibility.Collapsed);
+                Utils.setWidgetVisibility(this.nickname.mIdleFlipBook, mw.SlateVisibility.Visible);
+                Utils.setWidgetVisibility(this.nickname.mVipIconImage, mw.SlateVisibility.SelfHitTestInvisible);
+                this.nickname.mIdleFlipBook.isLoop = true;
+                this.nickname.mIdleFlipBook.play();
+            }));
+        }
+    }
+};
+
+__decorate([ mw.Property({
+    replicated: true,
+    onChanged: "onVipCountChange"
+}) ], Nickname.prototype, "vipCount", void 0);
+
+Nickname = __decorate([ Component ], Nickname);
+
+var Nickname$1 = Nickname;
+
+var foreign123 = Object.freeze({
+    __proto__: null,
+    default: Nickname$1
+});
+
 class MallModuleS extends ModuleS {
     constructor() {
         super(...arguments);
         this.isContinueInitMallConfigData = true;
         this.mallConfigData = null;
+        this.nicknameMap = new Map;
     }
     onStart() {
         this.bindAction();
@@ -17400,6 +17477,9 @@ class MallModuleS extends ModuleS {
     onPlayerEnterGame(player) {
         this.initPlayerVipData(player);
         this.syncMallConfigData(player);
+    }
+    onPlayerLeft(player) {
+        this.deleteNickname(player);
     }
     async syncMallConfigData(player) {
         if (this.isContinueInitMallConfigData) {
@@ -17417,10 +17497,27 @@ class MallModuleS extends ModuleS {
     }
     initPlayerVipData(player) {
         let mallData = DataCenterS.getData(player, MallData);
-        this.getClient(player).net_initPlayerVipData(mallData.calculateVipCount, mallData.getIsUseFreeSave);
+        let vipCount = mallData.calculateVipCount;
+        this.getClient(player).net_initPlayerVipData(vipCount, mallData.getIsUseFreeSave);
+        let nickname = player.character.addComponent(Nickname$1, true);
+        this.nicknameMap.set(player.userId, nickname);
+        nickname.vipCount = vipCount;
+    }
+    deleteNickname(player) {
+        if (this.nicknameMap.has(player.userId)) {
+            let nickname = this.nicknameMap.get(player.userId);
+            nickname.destroy();
+            this.nicknameMap.delete(player.userId);
+        }
     }
     net_addVipCount(addVipCount) {
-        return this.currentData.addVipCount(addVipCount);
+        let player = this.currentPlayer;
+        let vipCount = this.currentData.addVipCount(addVipCount);
+        if (this.nicknameMap.has(player.userId)) {
+            let nickname = this.nicknameMap.get(player.userId);
+            nickname.vipCount = vipCount;
+        }
+        return vipCount;
     }
     net_getVipCount() {
         return this.currentData.calculateVipCount;
@@ -17594,7 +17691,7 @@ class NavigationModuleS extends ModuleS {
     }
 }
 
-var foreign123 = Object.freeze({
+var foreign124 = Object.freeze({
     __proto__: null,
     NavigationConfig: NavigationConfig,
     NavigationModel: NavigationModel,
@@ -17679,7 +17776,7 @@ TryOnItem_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnItem.ui") ]
 
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign193 = Object.freeze({
+var foreign195 = Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -17831,7 +17928,7 @@ TryOnPanel_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnPanel.ui")
 
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign194 = Object.freeze({
+var foreign196 = Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -18132,7 +18229,7 @@ SetPanel_Generate = __decorate([ UIBind("UI/module/SetModule/SetPanel.ui") ], Se
 
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign188 = Object.freeze({
+var foreign190 = Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -18258,7 +18355,7 @@ class SetPanel extends SetPanel_Generate$1 {
     }
 }
 
-var foreign131 = Object.freeze({
+var foreign132 = Object.freeze({
     __proto__: null,
     default: SetPanel
 });
@@ -18511,7 +18608,7 @@ __decorate([ Decorator.noReply() ], SetModuleS.prototype, "net_sendSetViewAngle"
 
 __decorate([ Decorator.noReply() ], SetModuleS.prototype, "net_reset", null);
 
-var foreign130 = Object.freeze({
+var foreign131 = Object.freeze({
     __proto__: null,
     SetData: SetData,
     SetModuleC: SetModuleC,
@@ -19056,7 +19153,7 @@ class TryOnConfigData {
     }
 }
 
-var foreign137 = Object.freeze({
+var foreign138 = Object.freeze({
     __proto__: null,
     TryOnConfigData: TryOnConfigData,
     TryOnData: TryOnData,
@@ -19250,7 +19347,7 @@ RankPanel_Generate = __decorate([ UIBind("UI/module/RankModule/RankPanel.ui") ],
 
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign185 = Object.freeze({
+var foreign187 = Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -19303,7 +19400,7 @@ RoomItem_Generate = __decorate([ UIBind("UI/module/RankModule/RoomItem.ui") ], R
 
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign186 = Object.freeze({
+var foreign188 = Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -19324,7 +19421,7 @@ class RoomItem extends RoomItem_Generate$1 {
     }
 }
 
-var foreign128 = Object.freeze({
+var foreign129 = Object.freeze({
     __proto__: null,
     default: RoomItem
 });
@@ -19384,7 +19481,7 @@ WorldItem_Generate = __decorate([ UIBind("UI/module/RankModule/WorldItem.ui") ],
 
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign187 = Object.freeze({
+var foreign189 = Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -19407,7 +19504,7 @@ class WorldItem extends WorldItem_Generate$1 {
     }
 }
 
-var foreign129 = Object.freeze({
+var foreign130 = Object.freeze({
     __proto__: null,
     default: WorldItem
 });
@@ -19551,7 +19648,7 @@ class RankPanel extends RankPanel_Generate$1 {
     }
 }
 
-var foreign127 = Object.freeze({
+var foreign128 = Object.freeze({
     __proto__: null,
     default: RankPanel
 });
@@ -19637,8 +19734,8 @@ class RankModuleC extends ModuleC {
         TimeUtil.delaySecond(5).then((() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
-            let score = this.data?.score;
-            if (!score && score != 0) score = 0;
+            let bagIds = this.getInteractionData?.bagIds;
+            let score = !bagIds ? 0 : bagIds.length;
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
             let tryon = this.getTryOnData?.tryOn;
@@ -19676,10 +19773,10 @@ class RankModuleC extends ModuleC {
             break;
         }
     }
-    updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores) {
+    updateWorldDatas(worldUserIds, worldNames, worldScores) {
         if (this.worldDatas.length > worldUserIds.length) {
             for (let i = 0; i < worldUserIds.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
             }
             for (let i = worldUserIds.length; i < this.worldDatas.length; ++i) {
                 this.recycleWorldDatas.push(this.worldDatas[i]);
@@ -19687,15 +19784,15 @@ class RankModuleC extends ModuleC {
             this.worldDatas.length = worldUserIds.length;
         } else {
             for (let i = 0; i < this.worldDatas.length; ++i) {
-                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
+                this.worldDatas[i].setData(worldUserIds[i], worldNames[i], worldScores[i]);
             }
             for (let i = this.worldDatas.length; i < worldUserIds.length; ++i) {
                 let tmpWorldData = null;
                 if (this.recycleWorldDatas.length > 0) tmpWorldData = this.recycleWorldDatas.pop();
                 if (tmpWorldData) {
-                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
+                    tmpWorldData.setData(worldUserIds[i], worldNames[i], worldScores[i]);
                 } else {
-                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldTimes[i], worldScores[i]);
+                    tmpWorldData = new WorldData(worldUserIds[i], worldNames[i], worldScores[i]);
                 }
                 this.worldDatas.push(tmpWorldData);
             }
@@ -19721,16 +19818,16 @@ class RankModuleC extends ModuleC {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
-    net_syncWorldRankData(worldUserIds, worldNames, worldTimes, worldScores) {
-        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
+    net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
+        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldTimes, worldScores) {
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
         this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
         this.sortRoomData();
         this.updateRoomIndex();
-        this.updateWorldDatas(worldUserIds, worldNames, worldTimes, worldScores);
+        this.updateWorldDatas(worldUserIds, worldNames, worldScores);
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
     }
@@ -19747,7 +19844,7 @@ class RankModuleC extends ModuleC {
     }
 }
 
-var foreign125 = Object.freeze({
+var foreign126 = Object.freeze({
     __proto__: null,
     default: RankModuleC
 });
@@ -19794,7 +19891,7 @@ class SignInConfigData {
     }
 }
 
-var foreign132 = Object.freeze({
+var foreign133 = Object.freeze({
     __proto__: null,
     SignInConfigData: SignInConfigData,
     SignInUserData: SignInUserData,
@@ -19864,7 +19961,7 @@ SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.u
 
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign192 = Object.freeze({
+var foreign194 = Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -19933,7 +20030,7 @@ SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui"
 
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign191 = Object.freeze({
+var foreign193 = Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -19989,7 +20086,7 @@ class SignInItem extends SignInItem_Generate$1 {
     }
 }
 
-var foreign135 = Object.freeze({
+var foreign136 = Object.freeze({
     __proto__: null,
     default: SignInItem
 });
@@ -20031,7 +20128,7 @@ class SignInPanel extends SignInPanel_Generate$1 {
     }
 }
 
-var foreign136 = Object.freeze({
+var foreign137 = Object.freeze({
     __proto__: null,
     default: SignInPanel
 });
@@ -20144,7 +20241,7 @@ class SignInModuleC extends ModuleC {
     }
 }
 
-var foreign133 = Object.freeze({
+var foreign134 = Object.freeze({
     __proto__: null,
     default: SignInModuleC
 });
@@ -20189,7 +20286,7 @@ class SignInModuleS extends ModuleS {
     }
 }
 
-var foreign134 = Object.freeze({
+var foreign135 = Object.freeze({
     __proto__: null,
     default: SignInModuleS
 });
@@ -20374,7 +20471,7 @@ GMHUD_Generate = __decorate([ UIBind("UI/module/GMModule/GMHUD.ui") ], GMHUD_Gen
 
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign164 = Object.freeze({
+var foreign165 = Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -20417,7 +20514,7 @@ GMItem_Generate = __decorate([ UIBind("UI/module/GMModule/GMItem.ui") ], GMItem_
 
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign165 = Object.freeze({
+var foreign166 = Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -20718,7 +20815,7 @@ CopyCharacter = __decorate([ Component ], CopyCharacter);
 
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign141 = Object.freeze({
+var foreign142 = Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -20882,7 +20979,7 @@ class KeyActionManager {
     }
 }
 
-var foreign143 = Object.freeze({
+var foreign144 = Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -20933,7 +21030,7 @@ SecondNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/SecondNoticeIt
 
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign150 = Object.freeze({
+var foreign151 = Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -21061,82 +21158,84 @@ const MWModuleMap = {
     "099CC63342C56F28195B5794157F5C82": foreign120,
     "63B7A637479107F0C4812A9513E4EF84": foreign121,
     "45809CF94F3F8E2FFD5D1BBDC3B28620": foreign122,
-    D8E6B9EF4DE0DF3088CC3C8599F76F45: foreign123,
-    "7833C871441E612CC5B5CE9BDDA947C9": foreign124,
-    A12B8D524B602E750EB63288C79D32E2: foreign125,
-    F057824E4569A842D403858DC7D1D88B: foreign126,
-    "9F1D50A144B07BFAFC552F925299CE71": foreign127,
-    "3E1D070A4147D9A5B46E0EAF1E5FD4E1": foreign128,
-    F215908B4B4F40F5531DE4A01F660731: foreign129,
-    A8FB760F441C95AFACBAD78838B58528: foreign130,
-    DC56F3F94E062B2AD909F386B767436F: foreign131,
-    "6688C3B84E092AFB395C0DB3E4331E3D": foreign132,
-    "535BEEA64A7F529F52631FA182212718": foreign133,
-    B23852CE407E0A008F3BE78DDE49EB51: foreign134,
-    FAAFDA5E4A40291D72B0459742CD601A: foreign135,
-    "1D10F64B4D38229D7655CC923071E9B2": foreign136,
-    "2032BEF24550E75CE53EE39AE53150E9": foreign137,
-    D64517A445CBA580CE34A68B0DE2D5D0: foreign138,
-    C48FD39D43DA5E48E2FFED92F839BB3D: foreign139,
-    "1757D7694B3B2F7BFB8C0897BDF03724": foreign140,
-    BC6767CF4240176E5C9B6984BB540726: foreign141,
-    B22511FF4720B10FB708B3BF2763368B: foreign142,
-    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign143,
-    F7EE8818455A5EE814A6F18A2F0CBB12: foreign144,
-    "49E1131448695DF591C8DEB790EFC952": foreign145,
-    "290BA293443A80CCA56170B9DA3D47C1": foreign146,
-    "71EC5D03421DCEEEB4172C8C643D8019": foreign147,
-    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign148,
-    "741B06144E25B4753E8005985816DAF8": foreign149,
-    EE3F354349BB041CD741FF84B745B113: foreign150,
-    "8FA0EC3E442A57C1B550BB833E68DA90": foreign151,
-    "100DA6744367634E7FFC0895CD98DDB9": foreign152,
-    "67892EC847DCDABBB14451A8CDFD526C": foreign153,
-    "486071A84887288700A7E297CBF6B438": foreign154,
-    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign155,
-    "50B679574FA404BE92C52CAD0436F5B1": foreign156,
-    BC28A8C5401B15E17AAEF482A8AA133E: foreign157,
-    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign158,
-    "3A88620945CCB3EE5B699F9D35A5A28F": foreign159,
-    "827757834BCFC569771BCB84A3609238": foreign160,
-    F58702064960960163820CB9C8D0F3C1: foreign161,
-    D92460FC43DFEF127C8EB39DECD67E58: foreign162,
-    C265D0BB488D0422A80DBBB6082E4CB4: foreign163,
-    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign164,
-    "95C84A464FBF396210D6DAB0DFAF53C3": foreign165,
-    C067E1F649184B0F7FC5E0B9456BC72C: foreign166,
-    "337A59B14A237973EEB178A260344C21": foreign167,
-    B9D019D74067C8F762132698D474BF63: foreign168,
-    C4E377B14812C09429E28988E62907DB: foreign169,
-    E038BA9A4A21ED21407734BBDEC1DF0C: foreign170,
-    AD7B5C5440FB6D1DA3795A9BA561546D: foreign171,
-    "06CF574844634CC9C0793EA8847C6FE2": foreign172,
-    "27DEB6624F87673F14AA499E8A3A7DD3": foreign173,
-    CEE9E492480CEF69BF9291BA357C9AC1: foreign174,
-    "458367AB498907FB6AAFE7A4CED12F6E": foreign175,
-    "713A8E764F3DAC8A8AD1BEB382C46158": foreign176,
-    "5E6E0BFE48C322071930C2B8DD56E900": foreign177,
-    C381E72F409A02A45B69B9BC32F4FCAF: foreign178,
-    FADB775E4F203C2565D31A9AA31E22D1: foreign179,
-    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign180,
-    F3E9117C4C567C26689F08B919B7E7DA: foreign181,
-    AF5DEB904C817468E94BAA9265F23AF7: foreign182,
-    AAE12F3F4FD38A0B43975DB01D2D496C: foreign183,
-    "8B73B18E407512CDB726C78934F89B97": foreign184,
-    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign185,
-    A8E0593D477EC697B2559789990E0882: foreign186,
-    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign187,
-    "559367EC4AA0BAE9AD25A694D5CA960C": foreign188,
-    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign189,
-    "52E3A8604FC761E6CC747FB22FD7160B": foreign190,
-    "14F8E49D4B31DFAA50548BA206585CCA": foreign191,
-    "656033E844C70FD925FC8F887EA9FA46": foreign192,
-    "6B744DEB4703AED17EA7279D0783813A": foreign193,
-    C6D169354450AEEF12B964B7B3BA8B2D: foreign194,
-    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign195
+    "33F936374F07A54384232BBE21FB280C": foreign123,
+    D8E6B9EF4DE0DF3088CC3C8599F76F45: foreign124,
+    "7833C871441E612CC5B5CE9BDDA947C9": foreign125,
+    A12B8D524B602E750EB63288C79D32E2: foreign126,
+    F057824E4569A842D403858DC7D1D88B: foreign127,
+    "9F1D50A144B07BFAFC552F925299CE71": foreign128,
+    "3E1D070A4147D9A5B46E0EAF1E5FD4E1": foreign129,
+    F215908B4B4F40F5531DE4A01F660731: foreign130,
+    A8FB760F441C95AFACBAD78838B58528: foreign131,
+    DC56F3F94E062B2AD909F386B767436F: foreign132,
+    "6688C3B84E092AFB395C0DB3E4331E3D": foreign133,
+    "535BEEA64A7F529F52631FA182212718": foreign134,
+    B23852CE407E0A008F3BE78DDE49EB51: foreign135,
+    FAAFDA5E4A40291D72B0459742CD601A: foreign136,
+    "1D10F64B4D38229D7655CC923071E9B2": foreign137,
+    "2032BEF24550E75CE53EE39AE53150E9": foreign138,
+    D64517A445CBA580CE34A68B0DE2D5D0: foreign139,
+    C48FD39D43DA5E48E2FFED92F839BB3D: foreign140,
+    "1757D7694B3B2F7BFB8C0897BDF03724": foreign141,
+    BC6767CF4240176E5C9B6984BB540726: foreign142,
+    B22511FF4720B10FB708B3BF2763368B: foreign143,
+    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign144,
+    F7EE8818455A5EE814A6F18A2F0CBB12: foreign145,
+    "49E1131448695DF591C8DEB790EFC952": foreign146,
+    "290BA293443A80CCA56170B9DA3D47C1": foreign147,
+    "71EC5D03421DCEEEB4172C8C643D8019": foreign148,
+    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign149,
+    "741B06144E25B4753E8005985816DAF8": foreign150,
+    EE3F354349BB041CD741FF84B745B113: foreign151,
+    "8FA0EC3E442A57C1B550BB833E68DA90": foreign152,
+    "100DA6744367634E7FFC0895CD98DDB9": foreign153,
+    "67892EC847DCDABBB14451A8CDFD526C": foreign154,
+    "486071A84887288700A7E297CBF6B438": foreign155,
+    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign156,
+    "50B679574FA404BE92C52CAD0436F5B1": foreign157,
+    BC28A8C5401B15E17AAEF482A8AA133E: foreign158,
+    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign159,
+    "3A88620945CCB3EE5B699F9D35A5A28F": foreign160,
+    "827757834BCFC569771BCB84A3609238": foreign161,
+    F58702064960960163820CB9C8D0F3C1: foreign162,
+    D92460FC43DFEF127C8EB39DECD67E58: foreign163,
+    C265D0BB488D0422A80DBBB6082E4CB4: foreign164,
+    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign165,
+    "95C84A464FBF396210D6DAB0DFAF53C3": foreign166,
+    C067E1F649184B0F7FC5E0B9456BC72C: foreign167,
+    "337A59B14A237973EEB178A260344C21": foreign168,
+    B9D019D74067C8F762132698D474BF63: foreign169,
+    C4E377B14812C09429E28988E62907DB: foreign170,
+    E038BA9A4A21ED21407734BBDEC1DF0C: foreign171,
+    AD7B5C5440FB6D1DA3795A9BA561546D: foreign172,
+    "06CF574844634CC9C0793EA8847C6FE2": foreign173,
+    "27DEB6624F87673F14AA499E8A3A7DD3": foreign174,
+    CEE9E492480CEF69BF9291BA357C9AC1: foreign175,
+    "458367AB498907FB6AAFE7A4CED12F6E": foreign176,
+    "713A8E764F3DAC8A8AD1BEB382C46158": foreign177,
+    "5E6E0BFE48C322071930C2B8DD56E900": foreign178,
+    C381E72F409A02A45B69B9BC32F4FCAF: foreign179,
+    FADB775E4F203C2565D31A9AA31E22D1: foreign180,
+    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign181,
+    F3E9117C4C567C26689F08B919B7E7DA: foreign182,
+    AF5DEB904C817468E94BAA9265F23AF7: foreign183,
+    AAE12F3F4FD38A0B43975DB01D2D496C: foreign184,
+    "8B73B18E407512CDB726C78934F89B97": foreign185,
+    "449514F640DE7AFBF190899F2FCD018F": foreign186,
+    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign187,
+    A8E0593D477EC697B2559789990E0882: foreign188,
+    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign189,
+    "559367EC4AA0BAE9AD25A694D5CA960C": foreign190,
+    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign191,
+    "52E3A8604FC761E6CC747FB22FD7160B": foreign192,
+    "14F8E49D4B31DFAA50548BA206585CCA": foreign193,
+    "656033E844C70FD925FC8F887EA9FA46": foreign194,
+    "6B744DEB4703AED17EA7279D0783813A": foreign195,
+    C6D169354450AEEF12B964B7B3BA8B2D: foreign196,
+    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign197
 };
 
-const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign123 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign124 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign126 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign127 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign129 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign130 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign131 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign132 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign137 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign138 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign139 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign140 || {}, "JavaScripts/tools/CameraManager" ], [ foreign141 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign142 || {}, "JavaScripts/tools/FlyText" ], [ foreign143 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign144 || {}, "JavaScripts/tools/MapEx" ], [ foreign145 || {}, "JavaScripts/tools/TouchScript" ], [ foreign146 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign147 || {}, "JavaScripts/tools/Utils" ], [ foreign148 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign149 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign150 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign151 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign152 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign153 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign154 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign155 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign156 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign157 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign158 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign159 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
+const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign123 || {}, "JavaScripts/module/MallModule/ui/Nickname" ], [ foreign124 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign126 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign127 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign129 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign130 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign131 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign132 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign137 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign138 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign139 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign140 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign141 || {}, "JavaScripts/tools/CameraManager" ], [ foreign142 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign143 || {}, "JavaScripts/tools/FlyText" ], [ foreign144 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign145 || {}, "JavaScripts/tools/MapEx" ], [ foreign146 || {}, "JavaScripts/tools/TouchScript" ], [ foreign147 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign148 || {}, "JavaScripts/tools/Utils" ], [ foreign149 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign150 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign151 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign152 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign153 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign154 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign155 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign156 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign157 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign158 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign159 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/MallModule/Nickname_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign196 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign197 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
 
 exports.MWFileMapping = MWFileMapping;
 
