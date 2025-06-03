@@ -15459,7 +15459,11 @@ class MallVipTipsPanel extends MallVipTipsPanel_Generate$1 {
     onStart() {
         this.canUpdate = false;
         this.layer = UILayerMiddle;
+        this.initUI();
         this.bindButtons();
+    }
+    initUI() {
+        Utils.setWidgetVisibility(this.mAdsButton, mw.SystemUtil.currentPlatform == mw.RuntimePlatform.Android ? mw.SlateVisibility.Visible : mw.SlateVisibility.Collapsed);
     }
     bindButtons() {
         this.mCoinButton.onClicked.add(this.addCoinButton.bind(this));
