@@ -7,6 +7,7 @@
 
 import { Notice } from "../../../common/notice/Notice";
 import { GameConfig } from "../../../configs/GameConfig";
+import Utils from "../../../tools/Utils";
 import MallVipTipsPanel_Generate from "../../../ui-generate/module/MallModule/MallVipTipsPanel_generate";
 
 export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
@@ -18,7 +19,13 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 		//设置能否每帧触发onUpdate
 		this.canUpdate = false;
 		this.layer = UILayerMiddle;
+		this.initUI();
 		this.bindButtons();
+	}
+
+	private initUI(): void {
+		Utils.setWidgetVisibility(this.mAdsButton, mw.SystemUtil.currentPlatform == mw.RuntimePlatform.Android
+			? mw.SlateVisibility.Visible : mw.SlateVisibility.Collapsed);
 	}
 
 	private bindButtons(): void {
