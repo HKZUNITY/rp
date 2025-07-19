@@ -133,6 +133,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.initShakeMallTween();
         this.initShakeShareTween();
         this.initShakeSignInTween();
+        this.initTaskTween();
     }
 
     public updateFreeTime(): void {
@@ -165,6 +166,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
         this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
+        this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -233,6 +235,10 @@ export class HUDPanel extends HUDPanel_Generate {
         this.getHUDModuleC.onOpenPhotoAction.call();
     }
 
+    private addOpenTaskButton(): void {
+        this.getHUDModuleC.onOpenTaskAction.call();
+    }
+
     private showHideGoodsButton(): void {
         this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
     }
@@ -249,6 +255,63 @@ export class HUDPanel extends HUDPanel_Generate {
     private addClothButton(): void {
         this.getHUDModuleC.onOpenClothAction.call();
     }
+
+    //#region TaskTween
+    private taskRedPointTween1: mw.Tween<any> = null;
+    private taskRedPointTween2: mw.Tween<any> = null;
+    public startTaskRedPointTween(): void {
+        if (!this.taskRedPointTween1 || !this.taskRedPointTween2) this.initTaskRedPointTweens();
+        this.taskRedPointTween1.start();
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    public stopTaskRedPointTween(): void {
+        if (this.taskRedPointTween1) this.taskRedPointTween1.stop();
+        if (this.taskRedPointTween2) this.taskRedPointTween2.stop();
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
+    }
+    private initTaskRedPointTweens(): void {
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
+        this.taskRedPointTween1 = new mw.Tween({ value: 0.8 })
+            .to({ value: 1.2 }, 0.2 * 1000)
+            .onStart(() => {
+                this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(0.8);
+            })
+            .onUpdate((v) => {
+                this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
+            })
+            .onComplete(() => {
+                if (this.taskRedPointTween2) this.taskRedPointTween2.start();
+            })
+            .easing(cubicBezier(0.25, 0.1, 0.25, 1));
+
+        this.taskRedPointTween2 = new mw.Tween({ value: 1.2 })
+            .to({ value: 0.8 }, 0.2 * 1000)
+            .onStart(() => {
+                this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(1.2);
+            })
+            .onUpdate((v) => {
+                this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
+            })
+            .onComplete(() => {
+                if (this.taskRedPointTween1) this.taskRedPointTween1.start();
+            })
+            .easing(cubicBezier(0.25, 0.1, 0.25, 1));
+    }
+    private initTaskTween(): void {
+        let leftToRight = this.getPosTween(this.mOpenTaskButton, 0.5, 0, 15, 40, 15);
+        let rightToLeft = this.getPosTween(this.mOpenTaskButton, 0.5, 40, 15, 0, 15);
+        leftToRight.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                rightToLeft.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        leftToRight.start();
+                    });
+                });
+            });
+        });
+        this.initTaskRedPointTweens();
+    }
+    //#endregion
 
     public controllerBagUIVisible(isVisible: boolean): void {
         Utils.setWidgetVisibility(this.mBagBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
@@ -466,6 +529,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
     public onOpenMallAction: Action = new Action();
     public onOpenPhotoAction: Action = new Action();
+    public onOpenTaskAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

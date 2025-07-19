@@ -290,6 +290,49 @@ export default class Utils {
         }
         return true;
     }
+
+    /**返回当前时间（例 13：15）。 */
+    public static getCurrentTime(): string {
+        let date = new Date();
+        return date.getHours() + ":" + date.getMinutes();
+    }
+
+    public static getWhatDay(): string {
+        let whatDay = "7123456".charAt(new Date().getDay());
+        return whatDay;
+    }
+
+    public static weekNumChangeToCN(num: number): string {
+        return "一二三四五六日".charAt(num - 1);
+    }
+
+    /**返回上次登录是周几 */
+    public static getLastDay(day: number): string {
+        let whatDay = "7123456".charAt(day);
+        return whatDay;
+    }
+
+    /**判断是否同一周 */
+    public static iSameWeek(date1, date2): boolean {
+        let dt1 = new Date();
+        dt1.setTime(date1);
+        let dt2 = new Date();
+        dt2.setTime(date2);
+        let md1 = this.tmonday(dt1);
+        let md2 = this.tmonday(dt2);
+        return md1 === md2;
+    }
+
+    public static tmonday(dtm): string {
+        let dte = new Date(dtm);
+        let day = dte.getDay();
+        let dty = dte.getDate();
+        if (day === 0) {
+            day = 7;
+        }
+        dte.setDate(dty - day + 1);
+        return dte.getFullYear() + '-' + dte.getMonth() + '-' + dte.getDate();
+    }
 }
 
 export function cubicBezier(p1x, p1y, p2x, p2y) {

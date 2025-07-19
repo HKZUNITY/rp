@@ -420,6 +420,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 TimeUtil.delaySecond(1).then(() => {
                     // this.getHUDModuleC.onOpenClothAction.call();
                     this.getHUDModuleC.onOpenMallAction.call();
+                    this.getHUDModuleC.onOpenTaskAction.call();
                 });
             });
             return;
@@ -427,6 +428,7 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
         this.getGuidePanel.showStartTips(() => {
             // this.getHUDModuleC.onOpenClothAction.call();
             this.getHUDModuleC.onOpenMallAction.call();
+            this.getHUDModuleC.onOpenTaskAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {

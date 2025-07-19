@@ -1970,6 +1970,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         return this.vipCount;
     }
 
+    public tryAddVipCount(count: number): void {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.addVipCount(count);
+            if (mw.UIService.getUI(MallPanel, false)?.visible) {
+                this.getMallPanel.updateVipCount(this.vipCount);
+            }
+        });
+    }
+
     public setIsUseFreeSave(isUseFreeSave: boolean): void {
         this.isUseFreeSave = isUseFreeSave;
         this.server.net_setIsUseFreeSave(this.isUseFreeSave);
