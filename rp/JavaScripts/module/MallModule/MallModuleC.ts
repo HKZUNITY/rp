@@ -1973,6 +1973,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public tryAddVipCount(count: number): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.addVipCount(count);
+            if (mw.UIService.getUI(MallPanel, false)?.visible) {
+                this.getMallPanel.updateVipCount(this.vipCount);
+            }
         });
     }
 

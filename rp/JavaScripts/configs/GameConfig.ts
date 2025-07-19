@@ -67,6 +67,7 @@ import {SuitTopConfig} from "./SuitTop";
 import {Tab1Config} from "./Tab1";
 import {Tab2Config} from "./Tab2";
 import {Tab3Config} from "./Tab3";
+import {TaskConfig} from "./Task";
 import {TightsBottomConfig} from "./TightsBottom";
 import {TopConfig} from "./Top";
 import {TrailingConfig} from "./Trailing";
@@ -157,6 +158,7 @@ export class GameConfig{
 	public static get Tab1():Tab1Config{ return this.getConfig(Tab1Config) };
 	public static get Tab2():Tab2Config{ return this.getConfig(Tab2Config) };
 	public static get Tab3():Tab3Config{ return this.getConfig(Tab3Config) };
+	public static get Task():TaskConfig{ return this.getConfig(TaskConfig) };
 	public static get TightsBottom():TightsBottomConfig{ return this.getConfig(TightsBottomConfig) };
 	public static get Top():TopConfig{ return this.getConfig(TopConfig) };
 	public static get Trailing():TrailingConfig{ return this.getConfig(TrailingConfig) };

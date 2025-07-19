@@ -20,7 +20,7 @@ export default class TaskPanel extends TaskPanel_Generate {
 	protected onStart(): void {
 		//设置能否每帧触发onUpdate
 		this.canUpdate = false;
-		this.layer = mw.UILayerMiddle;
+		this.layer = mw.UILayerTop;
 		this.initUIPanel();
 		this.bindButton();
 		this.initTime();
