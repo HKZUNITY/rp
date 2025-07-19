@@ -79,7 +79,7 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
         this.signInConfigData = signInConfigData;
         this.day = day;
         console.error(JSON.stringify(this.signInConfigData));
-        if (this.signInConfigData) return;
+        if (this.signInConfigData?.isOpenVersion2) return;
         let data = {
             "isOpen": false,
             "isOpenVersion2": true,
