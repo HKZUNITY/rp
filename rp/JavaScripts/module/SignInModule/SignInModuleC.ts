@@ -78,7 +78,8 @@ export default class SignInModuleC extends ModuleC<SignInModuleS, SignInData> {
     public net_syncSignInConfigData(signInConfigData: SignInConfigData, day: number): void {
         this.signInConfigData = signInConfigData;
         this.day = day;
-        if (this.signInConfigData) return;
+        console.error(JSON.stringify(this.signInConfigData));
+        if (this.signInConfigData?.isOpenVersion2) return;
         let data = {
             "isOpen": false,
             "isOpenVersion2": true,
