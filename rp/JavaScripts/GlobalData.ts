@@ -17,6 +17,10 @@ export default class GlobalData {
     public static onMusicIconGuid: string = `133445`;
 
     public static savaMaxCount: number = 6;
+    /**每日刷新时间（目前是凌晨4点，格式为4:0） */
+    public static dailyRefreshTime: string = "4:0";
+    /**每周刷新时间（目前是每周一凌晨4点，格式为4:0） */
+    public static weeklyRefreshTime: string = "4:0";
 }
 
 export enum EventType {
