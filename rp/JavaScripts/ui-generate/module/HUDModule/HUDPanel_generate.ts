@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.06.01-14.59.42
+ * TIME: 2025.07.26-23.00.52
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -147,6 +147,34 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mOpenShareTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenShareImage/mOpenShareTextBlock') as mw.TextBlock
 		}
 		return this.mOpenShareTextBlock_Internal
+	}
+	private mOpenTaskImage_Internal: mw.Image
+	public get mOpenTaskImage(): mw.Image {
+		if(!this.mOpenTaskImage_Internal&&this.uiWidgetBase) {
+			this.mOpenTaskImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenTaskImage') as mw.Image
+		}
+		return this.mOpenTaskImage_Internal
+	}
+	private mOpenTaskButton_Internal: mw.StaleButton
+	public get mOpenTaskButton(): mw.StaleButton {
+		if(!this.mOpenTaskButton_Internal&&this.uiWidgetBase) {
+			this.mOpenTaskButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenTaskImage/mOpenTaskButton') as mw.StaleButton
+		}
+		return this.mOpenTaskButton_Internal
+	}
+	private mOpenTaskTextBlock_Internal: mw.TextBlock
+	public get mOpenTaskTextBlock(): mw.TextBlock {
+		if(!this.mOpenTaskTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenTaskTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenTaskImage/mOpenTaskTextBlock') as mw.TextBlock
+		}
+		return this.mOpenTaskTextBlock_Internal
+	}
+	private mTaskPointImage_Internal: mw.Image
+	public get mTaskPointImage(): mw.Image {
+		if(!this.mTaskPointImage_Internal&&this.uiWidgetBase) {
+			this.mTaskPointImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenTaskImage/mTaskPointImage') as mw.Image
+		}
+		return this.mTaskPointImage_Internal
 	}
 	private mOpenSignInImage_Internal: mw.Image
 	public get mOpenSignInImage(): mw.Image {
@@ -397,6 +425,13 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenShareButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mOpenTaskButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenTaskButton");
+		});
+		this.initLanguage(this.mOpenTaskButton);
+		this.mOpenTaskButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mOpenSignInButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mOpenSignInButton");
 		});
@@ -503,6 +538,9 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOpenShareTextBlock)
+		
+	
+		this.initLanguage(this.mOpenTaskTextBlock)
 		
 	
 		this.initLanguage(this.mOpenSignInTextBlock)
