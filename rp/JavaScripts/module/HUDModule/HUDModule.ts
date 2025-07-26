@@ -166,7 +166,6 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
-        this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
         this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
     }
 
@@ -230,10 +229,6 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenMallButton(): void {
         this.getHUDModuleC.onOpenMallAction.call();
-    }
-
-    private addOpenPhotoButton(): void {
-        this.getHUDModuleC.onOpenPhotoAction.call();
     }
 
     private addOpenTaskButton(): void {
@@ -537,7 +532,6 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     /**切换背景音乐（-1前一首|1下一首） */
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
     public onOpenMallAction: Action = new Action();
-    public onOpenPhotoAction: Action = new Action();
     public onOpenTaskAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */

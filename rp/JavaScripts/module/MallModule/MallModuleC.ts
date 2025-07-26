@@ -4,7 +4,7 @@ import { IColorValueElement } from "../../configs/ColorValue";
 import { IFaceExpressionElement } from "../../configs/FaceExpression";
 import { GameConfig } from "../../configs/GameConfig";
 import { IOutfitElement } from "../../configs/Outfit";
-import { CameraManagerType, EventType } from "../../GlobalData";
+import GlobalData, { CameraManagerType, EventType } from "../../GlobalData";
 import CameraManager from "../../tools/CameraManager";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
@@ -98,6 +98,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.localPlayer.character.asyncReady().then(() => {
             TimeUtil.delaySecond(1).then(() => {
                 this.addOpenMallAction();
+                this.getHUDModuleC.onOpenTaskAction.call();
             });
         });
     }
@@ -1152,7 +1153,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
 
     private addVipAction(): void {
         this.getMallVipTipsPanel.showTips(() => {
-            this.placeOrder(`8pPDJnFinE200054y`, () => {
+            this.placeOrder(GlobalData.add1VipShopId, () => {
             });
         }, () => {
             Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
@@ -1168,7 +1169,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     private addPermanentVipAction(): void {
-        this.placeOrder(`3ki8ifW7BUs0006Pk`, () => {
+        this.placeOrder(GlobalData.add999VipShopId, () => {
         });
     }
 
@@ -1180,7 +1181,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                     this.saveCharacterDescription();
                 } else {
                     this.getMallVipTipsPanel.showTips(() => {
-                        this.placeOrder(`8pPDJnFinE200054y`, () => {
+                        this.placeOrder(GlobalData.add1VipShopId, () => {
                         });
                     }, () => {
                         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
@@ -2018,10 +2019,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     private async addVipCountByCommodityId(commodityId: string): Promise<void> {
         var addVipCount = 1;
         switch (commodityId) {
-            case `7A53roftO8B00054i`:
+            case GlobalData.add1VipShopId:
                 addVipCount = 1;
                 break;
-            case `3ki8ifW7BUs0006Pk`:
+            case GlobalData.add999VipShopId:
                 addVipCount = 999;
                 break;
             default:

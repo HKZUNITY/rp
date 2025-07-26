@@ -1,6 +1,7 @@
 ﻿import { Notice } from "../common/notice/Notice";
 import { GameConfig } from "../configs/GameConfig";
 import Buff from "../module/DanMuModule/Buff";
+import { RoomData } from "../module/RankModule/RankData";
 
 export default class Utils {
     private static assetIconDataMap: Map<string, mw.AssetIconData> = new Map<string, mw.AssetIconData>();
