@@ -8,6 +8,26 @@ export function AddGMCommand(cmd: GMData) {
 }
 
 AddGMCommand({
+    label: "1",
+    clientCmd: async (player, value) => {
+        await Utils.asyncDownloadAsset(value);
+        player.character.setDescription([value]);
+    },
+    serverCmd: (player, value) => {
+    }
+});
+
+AddGMCommand({
+    label: "2",
+    clientCmd: async (player, value) => {
+    },
+    serverCmd: async (player, value) => {
+        await Utils.asyncDownloadAsset(value);
+        player.character.setDescription([value]);
+    }
+});
+
+AddGMCommand({
     label: "applySharedId",
     clientCmd: async (player, value) => {
         Utils.applySharedId(player.character, value);
