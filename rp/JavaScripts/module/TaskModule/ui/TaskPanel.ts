@@ -5,6 +5,7 @@ import Utils from "../../../tools/Utils";
 import TaskItem_Generate from "../../../ui-generate/module/TaskModule/TaskItem_generate";
 import TaskPanel_Generate from "../../../ui-generate/module/TaskModule/TaskPanel_generate";
 import { HUDPanel } from "../../HUDModule/HUDModule";
+import MallModuleC from "../../MallModule/MallModuleC";
 import { TaskItemType, Task } from "../TaskData";
 import TaskModuleC from "../TaskModuleC";
 
@@ -32,6 +33,7 @@ export default class TaskPanel extends TaskPanel_Generate {
 
 	private bindButton(): void {
 		this.mCloseButton.onClicked.add(this.hideTween.bind(this));
+		this.mBuyVipButton.onClicked.add(this.buyVipButton.bind(this));
 	}
 
 	/**
@@ -39,6 +41,10 @@ export default class TaskPanel extends TaskPanel_Generate {
 	 */
 	public hideTween(): void {
 		this.hide();
+	}
+
+	private buyVipButton(): void {
+		ModuleService.getModule(MallModuleC).onAddPermanentVipAction.call();
 	}
 
 	protected onShow(...params: any[]): void {

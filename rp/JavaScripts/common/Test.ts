@@ -1,4 +1,5 @@
 ﻿import AdPanel from "../module/AdModule/ui/AdPanel";
+import MallModuleC from "../module/MallModule/MallModuleC";
 import ExecutorManager from "../tools/WaitingQueue";
 
 @Component
@@ -10,6 +11,15 @@ export default class Test extends Script {
             TimeUtil.delaySecond(10).then(() => {
                 (this.gameObject as mw.Trigger).onEnter.add((character: mw.Character) => {
                     if (character != Player.localPlayer.character) return;
+                    ModuleService.getModule(MallModuleC).tryTest(() => {
+                        ExecutorManager.instance.pushAsyncExecutor(async () => {
+                            Player.localPlayer.character.setDescription((this.gameObject.parent as mw.Character).getDescription());
+                            await Player.localPlayer.character.asyncReady();
+                            Player.localPlayer.character.syncDescription();
+                        });
+                    });
+
+                    return;
                     if (mw.SystemUtil.isPIE) {
                         ExecutorManager.instance.pushAsyncExecutor(async () => {
                             await TimeUtil.delaySecond(1);

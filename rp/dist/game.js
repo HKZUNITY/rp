@@ -3479,6 +3479,628 @@ var foreign85 = Object.freeze({
     default: AdPanel
 });
 
+class GlobalData {}
+
+GlobalData.languageId = 1;
+
+GlobalData.isOpenIAA = false;
+
+GlobalData.bagCount = 5;
+
+GlobalData.worldCount = 500;
+
+GlobalData.freeTime = 999;
+
+GlobalData.offMusicIconGuid = `133403`;
+
+GlobalData.onMusicIconGuid = `133445`;
+
+GlobalData.savaMaxCount = 6;
+
+GlobalData.dailyRefreshTime = "4:0";
+
+GlobalData.weeklyRefreshTime = "4:0";
+
+var EventType;
+
+(function(EventType) {
+    EventType["OnOffMainUI"] = "OnOffMainUI";
+    EventType["SwitchCamera"] = "SwitchCamera";
+})(EventType || (EventType = {}));
+
+var CameraManagerType;
+
+(function(CameraManagerType) {
+    CameraManagerType[CameraManagerType["Head"] = 104] = "Head";
+    CameraManagerType[CameraManagerType["Body"] = 105] = "Body";
+})(CameraManagerType || (CameraManagerType = {}));
+
+var foreign84 = Object.freeze({
+    __proto__: null,
+    get CameraManagerType() {
+        return CameraManagerType;
+    },
+    get EventType() {
+        return EventType;
+    },
+    default: GlobalData
+});
+
+var CameraManager_1;
+
+let CameraManager = CameraManager_1 = class CameraManager extends Script {
+    constructor() {
+        super(...arguments);
+        this.wfzCameraName = `WFZCamera`;
+        this.cameraType = CameraManagerType.Body;
+        this.isRotCharacter = false;
+        this.isRotWFZCamera = false;
+        this.mainCamera = null;
+        this.defaultRotation = mw.Rotation.zero;
+        this.targetCharacter = null;
+        this.oldSlotPos = mw.Vector.zero;
+        this.cameraData = new CameraData;
+        this.E_Head_H = new CameraData;
+        this.E_Body_H = new CameraData;
+        this.E_Head_V = new CameraData;
+        this.E_Body_V = new CameraData;
+        this.lastTouchPos = mw.Vector2.zero;
+        this.onTouchBegin = (index, location, touchType) => {
+            this.lastTouchPos = location;
+        };
+        this.onTouchMove = (index, loc, type) => {
+            if (this.isWFZCamera && this.targetCharacter) {
+                if (index == 0) {
+                    let rot = this.wfzCamera.parent.worldTransform.rotation;
+                    let z = loc.x - this.lastTouchPos.x;
+                    this.lastTouchPos = loc;
+                    if (Math.abs(z) > 80) return;
+                    if (this.isRotCharacter) {
+                        const rot = this.targetCharacter.worldTransform.rotation;
+                        rot.z -= z;
+                        this.targetCharacter.worldTransform.rotation = rot;
+                    }
+                    if (this.isRotWFZCamera) this.worldRotation([ rot.x, rot.y, rot.z + z ]);
+                }
+            }
+        };
+    }
+    static get instance() {
+        return CameraManager_1.cameraManager;
+    }
+    get wfzCamera() {
+        return this.gameObject;
+    }
+    get isWFZCamera() {
+        try {
+            return Camera.currentCamera?.getCustomProperty(this.wfzCameraName) == this.wfzCameraName;
+        } catch (error) {
+            return false;
+        }
+    }
+    static async asyncReady() {
+        while (!this.cameraManager) {
+            await TimeUtil.delaySecond(.1);
+        }
+    }
+    onStart() {
+        this.initData();
+        this.gameObject.asyncReady().then((() => {
+            this.gameObject.setCustomProperty(this.wfzCameraName, this.wfzCameraName);
+            CameraManager_1.cameraManager = this;
+            this.useUpdate = true;
+        }));
+        Event.addLocalListener(EventType.SwitchCamera, this.changeCameraType2.bind(this));
+    }
+    onUpdate(dt) {
+        this.follow();
+    }
+    switchWFZCamera(isOpenCamera, targetCharacter = null, isRotWFZCamera = false, isRotCharacter = false) {
+        this.targetCharacter = targetCharacter;
+        if (targetCharacter?.worldTransform?.rotation) this.defaultRotation = targetCharacter?.worldTransform?.rotation;
+        this.isRotWFZCamera = isRotWFZCamera;
+        this.isRotCharacter = isRotCharacter;
+        TouchInputUtil.getInstance().onTouchBegin.remove(this.onTouchBegin.bind(this));
+        TouchInputUtil.getInstance().onTouchMove.remove(this.onTouchMove.bind(this));
+        if (isOpenCamera) {
+            if (isRotWFZCamera || isRotCharacter) {
+                TouchInputUtil.getInstance().onTouchBegin.add(this.onTouchBegin.bind(this));
+                TouchInputUtil.getInstance().onTouchMove.add(this.onTouchMove.bind(this));
+            }
+            if (this.isWFZCamera) return;
+            this.mainCamera = Camera.currentCamera;
+            Camera.switch(this.wfzCamera);
+            const size = mw.getViewportSize();
+            if (size.x >= size.y) {
+                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainXFOV;
+            } else {
+                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainYFOV;
+            }
+        } else {
+            if (this.mainCamera && this.isWFZCamera) {
+                Camera.switch(this.mainCamera);
+                this.mainCamera = null;
+            }
+        }
+        this.useUpdate = isOpenCamera;
+    }
+    worldRotation(rotation) {
+        this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(rotation[0], rotation[1], rotation[2]);
+    }
+    follow() {
+        if (!this.targetCharacter) return;
+        let slotPos = CameraData.getTargetPos(this.targetCharacter, this.cameraData);
+        if (!slotPos) return;
+        this.oldSlotPos = slotPos;
+        this.wfzCamera.parent.worldTransform.position = slotPos;
+    }
+    setData(cameraData) {
+        this.wfzCamera.springArm.length = cameraData.l;
+        let rot = this.wfzCamera.localTransform.rotation;
+        this.wfzCamera.fov = cameraData.fov;
+        let rotY = cameraData.fov * cameraData.v;
+        this.wfzCamera.localTransform.rotation = new mw.Rotation(rot.x, rotY, cameraData.fov * cameraData.h);
+        if (this.targetCharacter) this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(0, 0, this.targetCharacter.worldTransform.rotation.z + 180);
+    }
+    setValue(name, value) {
+        this.cameraData[name] = value;
+        this.setData(this.cameraData);
+    }
+    initData() {
+        this.E_Body_H.l = 500;
+        this.E_Body_H.fov = 45;
+        this.E_Body_H.targetType = TargetType.WorldPos;
+        this.E_Body_H.h = .25;
+        this.E_Body_H.v = 0;
+        this.E_Head_V = {
+            h: 0,
+            v: -.1,
+            targetType: 1,
+            slot: 1,
+            l: 260,
+            fov: 45,
+            offset: Vector.zero
+        };
+        this.E_Body_V = {
+            h: 0,
+            v: -.13,
+            targetType: 2,
+            slot: 1,
+            l: 2500,
+            fov: 18,
+            offset: Vector.zero
+        };
+    }
+    changeCameraType2(avatarCameraType) {
+        if (this.targetCharacter?.worldTransform) this.targetCharacter.worldTransform.rotation = this.defaultRotation;
+        if (CameraManagerType[avatarCameraType]) {
+            this.cameraType = avatarCameraType;
+        } else if (CameraManagerType[this.cameraType]) ; else {
+            this.cameraType = CameraManagerType.Body;
+        }
+        let cameraData = this.getCameraDataByType(avatarCameraType);
+        this.cameraData.l = cameraData.l;
+        this.cameraData.fov = cameraData.fov;
+        this.cameraData.slot = cameraData.slot;
+        this.cameraData.targetType = cameraData.targetType;
+        this.cameraData.h = cameraData.h;
+        this.cameraData.v = cameraData.v;
+        this.cameraData.offset = cameraData.offset;
+        this.setData(cameraData);
+    }
+    getCameraDataByType(avatarCameraType) {
+        let size = mw.getViewportSize();
+        if (size.x < size.y) {
+            switch (avatarCameraType) {
+              case CameraManagerType.Head:
+                return this.E_Head_V;
+
+              default:
+                return this.E_Body_V;
+            }
+        } else {
+            switch (avatarCameraType) {
+              case CameraManagerType.Head:
+                return this.E_Head_H;
+
+              default:
+                return this.E_Body_H;
+            }
+        }
+    }
+};
+
+CameraManager.cameraManager = null;
+
+CameraManager = CameraManager_1 = __decorate([ Component ], CameraManager);
+
+var CameraManager$1 = CameraManager;
+
+var TargetType;
+
+(function(TargetType) {
+    TargetType[TargetType["slot"] = 1] = "slot";
+    TargetType[TargetType["WorldPos"] = 2] = "WorldPos";
+})(TargetType || (TargetType = {}));
+
+class CameraData {
+    constructor() {
+        this.h = .25;
+        this.v = 0;
+        this.targetType = TargetType.slot;
+        this.slot = mw.HumanoidSlotType.Head;
+        this.l = 250;
+        this.fov = 45;
+        this.offset = Vector.zero;
+    }
+    static getTargetPos(char, data) {
+        let pos = data.offset.clone();
+        switch (data.targetType) {
+          case TargetType.slot:
+            let v3 = char?.getSlotWorldPosition(data.slot);
+            if (v3) pos.add(v3);
+            break;
+
+          case TargetType.WorldPos:
+            pos.add(char.worldTransform.position);
+            break;
+        }
+        return pos;
+    }
+}
+
+var foreign147 = Object.freeze({
+    __proto__: null,
+    default: CameraManager$1
+});
+
+class Utils {
+    static setImageByAssetIconData(image, icon) {
+        if (this.assetIconDataMap.has(icon)) {
+            image.setImageByAssetIconData(this.assetIconDataMap.get(icon));
+        } else {
+            mw.assetIDChangeIconUrlRequest([ icon ]).then((() => {
+                try {
+                    let assetIconData = mw.getAssetIconDataByAssetID(icon);
+                    image.setImageByAssetIconData(assetIconData);
+                    this.assetIconDataMap.set(icon, assetIconData);
+                } catch (error) {}
+            }));
+        }
+    }
+    static async asyncDownloadAsset(InAssetId) {
+        if (!mw.AssetUtil.assetLoaded(InAssetId)) {
+            await mw.AssetUtil.asyncDownloadAsset(InAssetId);
+        }
+    }
+    static async asyncDownloadAssets(InAssetIds) {
+        for (let i = 0; i < InAssetIds.length; ++i) {
+            if (mw.AssetUtil.assetLoaded(InAssetIds[i])) continue;
+            await mw.AssetUtil.asyncDownloadAsset(InAssetIds[i]);
+        }
+    }
+    static setWidgetVisibility(ui, visibility) {
+        if (ui.visibility != visibility) ui.visibility = visibility;
+    }
+    static randomInt(min, max) {
+        if (min > max) {
+            let temp = min;
+            min = max;
+            max = temp;
+        }
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    static getDay() {
+        let day = "";
+        day += (new Date).getFullYear();
+        day += (new Date).getMonth() + 1;
+        day += (new Date).getDate();
+        return day;
+    }
+    static resetPlayerPos() {
+        Player.localPlayer.character.worldTransform.position = this.birthPos;
+    }
+    static async applySharedId(character, sharedId) {
+        return new Promise((async resolve => {
+            mw.AccountService.applySharedId(character, sharedId, (async success => {
+                console.error(`success:${success}`);
+                if (success) character.syncDescription();
+                await character.asyncReady();
+                return resolve(success);
+            }));
+        }));
+    }
+    static async createSharedId(character) {
+        return new Promise((async resolve => {
+            mw.AccountService.createSharedId(character, (dataString => {
+                console.error(`dataString:${dataString}`);
+                return resolve(dataString);
+            }));
+        }));
+    }
+    static startGuide(targetLoc, onComplete = null) {
+        if (!mw.SystemUtil.isClient()) return;
+        if (!targetLoc) return;
+        if (this.targetGuideEffectId) {
+            EffectService.stop(this.targetGuideEffectId);
+            this.targetGuideEffectId = null;
+        }
+        this.targetGuideEffectId = EffectService.playAtPosition(this.targetEffectGuid, targetLoc, {
+            loopCount: 0
+        });
+        if (this.guideIntervalId) {
+            TimeUtil.clearInterval(this.guideIntervalId);
+            this.guideIntervalId = null;
+        }
+        this.guideIntervalId = TimeUtil.setInterval((() => {
+            let character = Player.localPlayer?.character;
+            if (!character) return;
+            let playerLoc = character?.worldTransform?.position;
+            if (!playerLoc) return;
+            if (Math.abs(playerLoc.x - this.prePlayerLoc.x) < .1 && Math.abs(playerLoc.y - this.prePlayerLoc.y) < .1 && Math.abs(playerLoc.z - this.prePlayerLoc.z) < .1) return;
+            this.prePlayerLoc = playerLoc;
+            let distance = mw.Vector.distance(playerLoc, targetLoc);
+            if (distance <= 200) {
+                TimeUtil.clearInterval(this.guideIntervalId);
+                this.guideIntervalId = null;
+                if (this.targetGuideEffectId) {
+                    EffectService.stop(this.targetGuideEffectId);
+                    this.targetGuideEffectId = null;
+                }
+                if (this.guideEffectIds.length != 0) {
+                    this.guideEffectIds.forEach((effectId => {
+                        EffectService.stop(effectId);
+                    }));
+                    this.guideEffectIds.length = 0;
+                }
+                Notice.showDownNotice(GameConfig.Language.Text_GuideTips.Value);
+                if (onComplete) onComplete();
+                return;
+            }
+            let pointNum = Math.floor(distance / 100);
+            let locs = this.getCurvePointsInNum([ playerLoc, targetLoc ], pointNum);
+            if (pointNum > 35) {
+                pointNum = 35;
+            }
+            if (this.guideEffectIds.length == 0) {
+                for (let i = 1; i < pointNum; ++i) {
+                    let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i], {
+                        loopCount: 0
+                    });
+                    this.guideEffectIds.push(effectId);
+                }
+            } else {
+                if (this.guideEffectIds.length == pointNum) {
+                    for (let i = 1; i < pointNum; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i - 1]).then((effect => {
+                            effect.worldTransform.position = new mw.Vector(locs[i].x, locs[i].y, locs[i].z - 85);
+                        }));
+                    }
+                    EffectService.stop(this.guideEffectIds[pointNum - 1]);
+                    this.guideEffectIds.length = pointNum - 1;
+                } else if (this.guideEffectIds.length < pointNum) {
+                    for (let i = 0; i < this.guideEffectIds.length; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
+                            effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
+                        }));
+                    }
+                    for (let i = this.guideEffectIds.length; i < pointNum - 1; ++i) {
+                        let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i + 1], {
+                            loopCount: 0
+                        });
+                        this.guideEffectIds.push(effectId);
+                    }
+                } else if (this.guideEffectIds.length > pointNum) {
+                    for (let i = 0; i < pointNum; ++i) {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
+                            if (!locs[i + 1]) return;
+                            effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
+                        }));
+                    }
+                    for (let i = pointNum; i < this.guideEffectIds.length; ++i) {
+                        EffectService.stop(this.guideEffectIds[i]);
+                    }
+                    this.guideEffectIds.length = pointNum;
+                }
+            }
+        }), .1);
+    }
+    static getCurvePointsInNum(points, num) {
+        let result = new Array;
+        for (let i = 0; i < num; i++) {
+            let t = i / (num - 1);
+            let point = this.getKeyPoint(points, t);
+            result.push(point);
+        }
+        return result;
+    }
+    static getKeyPoint(points, t) {
+        if (points.length > 1) {
+            let dirs = new Array;
+            for (let i = 0; i < points.length - 1; ++i) {
+                dirs.push(new mw.Vector(points[i + 1].x - points[i].x, points[i + 1].y - points[i].y, points[i + 1].z - points[i].z));
+            }
+            let points2 = new Array;
+            for (let j = 0; j < dirs.length; j++) {
+                points2.push(new mw.Vector(points[j].x + dirs[j].x * t, points[j].y + dirs[j].y * t, points[j].z + dirs[j].z * t));
+            }
+            return this.getKeyPoint(points2, t);
+        } else {
+            return new mw.Vector(points[0].x, points[0].y, points[0].z);
+        }
+    }
+    static async getCustomdata(key) {
+        return (await DataStorage.asyncGetData(key)).data;
+    }
+    static async setCustomData(saveKey, dataInfo) {
+        let code = null;
+        code = await DataStorage.asyncSetData(saveKey, dataInfo);
+        return code == mw.DataStorageResultCode.Success;
+    }
+    static copyArray(array) {
+        let newArray = [];
+        for (let i = 0; i < array.length; ++i) {
+            newArray.push(array[i]);
+        }
+        return newArray;
+    }
+    static colorHexToLinearColorToString(inColorHex) {
+        if (this.inColorHexStrMap.has(inColorHex)) return this.inColorHexStrMap.get(inColorHex);
+        let inColorHexLinearColor = mw.LinearColor.colorHexToLinearColor(inColorHex);
+        this.inColorHexStrMap.set(inColorHex, inColorHexLinearColor);
+        return inColorHexLinearColor;
+    }
+    static isEqulaLinearColor(linearColor1, linearColor2) {
+        if (linearColor1.r.toFixed(5) != linearColor2.r.toFixed(5)) return false;
+        if (linearColor1.g.toFixed(5) != linearColor2.g.toFixed(5)) return false;
+        if (linearColor1.b.toFixed(5) != linearColor2.b.toFixed(5)) return false;
+        if (linearColor1.a.toFixed(5) != linearColor2.a.toFixed(5)) return false;
+        return true;
+    }
+    static stringArrayToTransform(strArray) {
+        let transform = new mw.Transform;
+        if (!strArray || strArray.length != 9) return transform;
+        transform.position = new mw.Vector(Number(strArray[0]), Number(strArray[1]), Number(strArray[2]));
+        transform.rotation = new mw.Rotation(Number(strArray[3]), Number(strArray[4]), Number(strArray[5]));
+        transform.scale = new mw.Vector(Number(strArray[6]), Number(strArray[7]), Number(strArray[8]));
+        return transform;
+    }
+    static accountServiceDownloadData(character) {
+        return new Promise((async resolve => {
+            mw.AccountService.downloadData(character, (async success => resolve(success)));
+        }));
+    }
+    static isSameRoomDataTryOn(roomDatas) {
+        let tryOnCount = 0;
+        if (!roomDatas || roomDatas.length == 0) tryOnCount = 0;
+        roomDatas.forEach((value => {
+            tryOnCount += value.tryOn;
+        }));
+        if (this.tryOnCount != tryOnCount) {
+            this.tryOnCount = tryOnCount;
+            return false;
+        }
+        return true;
+    }
+    static getCurrentTime() {
+        let date = new Date;
+        return date.getHours() + ":" + date.getMinutes();
+    }
+    static getWhatDay() {
+        let whatDay = "7123456".charAt((new Date).getDay());
+        return whatDay;
+    }
+    static weekNumChangeToCN(num) {
+        return "一二三四五六日".charAt(num - 1);
+    }
+    static getLastDay(day) {
+        let whatDay = "7123456".charAt(day);
+        return whatDay;
+    }
+    static iSameWeek(date1, date2) {
+        let dt1 = new Date;
+        dt1.setTime(date1);
+        let dt2 = new Date;
+        dt2.setTime(date2);
+        let md1 = this.tmonday(dt1);
+        let md2 = this.tmonday(dt2);
+        return md1 === md2;
+    }
+    static tmonday(dtm) {
+        let dte = new Date(dtm);
+        let day = dte.getDay();
+        let dty = dte.getDate();
+        if (day === 0) {
+            day = 7;
+        }
+        dte.setDate(dty - day + 1);
+        return dte.getFullYear() + "-" + dte.getMonth() + "-" + dte.getDate();
+    }
+}
+
+Utils.assetIconDataMap = new Map;
+
+Utils.buffMap = new Map;
+
+Utils.birthPos = new mw.Vector(0, 0, 1e3);
+
+Utils.targetGuideEffectId = null;
+
+Utils.guideIntervalId = null;
+
+Utils.guideEffectIds = [];
+
+Utils.prePlayerLoc = mw.Vector.zero;
+
+Utils.guideEffectGuid = `146775`;
+
+Utils.targetEffectGuid = `142962`;
+
+Utils.inColorHexStrMap = new Map;
+
+Utils.tryOnCount = -1;
+
+function cubicBezier(p1x, p1y, p2x, p2y) {
+    const ZERO_LIMIT = 1e-6;
+    const ax = 3 * p1x - 3 * p2x + 1;
+    const bx = 3 * p2x - 6 * p1x;
+    const cx = 3 * p1x;
+    const ay = 3 * p1y - 3 * p2y + 1;
+    const by = 3 * p2y - 6 * p1y;
+    const cy = 3 * p1y;
+    function sampleCurveDerivativeX(t) {
+        return (3 * ax * t + 2 * bx) * t + cx;
+    }
+    function sampleCurveX(t) {
+        return ((ax * t + bx) * t + cx) * t;
+    }
+    function sampleCurveY(t) {
+        return ((ay * t + by) * t + cy) * t;
+    }
+    function solveCurveX(x) {
+        let t2 = x;
+        let derivative;
+        let x2;
+        for (let i = 0; i < 8; i++) {
+            x2 = sampleCurveX(t2) - x;
+            if (Math.abs(x2) < ZERO_LIMIT) {
+                return t2;
+            }
+            derivative = sampleCurveDerivativeX(t2);
+            if (Math.abs(derivative) < ZERO_LIMIT) {
+                break;
+            }
+            t2 -= x2 / derivative;
+        }
+        let t1 = 1;
+        let t0 = 0;
+        t2 = x;
+        while (t1 > t0) {
+            x2 = sampleCurveX(t2) - x;
+            if (Math.abs(x2) < ZERO_LIMIT) {
+                return t2;
+            }
+            if (x2 > 0) {
+                t1 = t2;
+            } else {
+                t0 = t2;
+            }
+            t2 = (t1 + t0) / 2;
+        }
+        return t2;
+    }
+    function solve(x) {
+        return sampleCurveY(solveCurveX(x));
+    }
+    return solve;
+}
+
+var foreign153 = Object.freeze({
+    __proto__: null,
+    cubicBezier: cubicBezier,
+    default: Utils
+});
+
 let LoadingPanel_Generate = class LoadingPanel_Generate extends UIScript {
     get mMainCanvas() {
         if (!this.mMainCanvas_Internal && this.uiWidgetBase) {
@@ -3670,266 +4292,6 @@ ExecutorManager._instance = undefined;
 var foreign154 = Object.freeze({
     __proto__: null,
     default: ExecutorManager
-});
-
-let Test = class Test extends Script {
-    constructor() {
-        super(...arguments);
-        this.isTest = false;
-    }
-    onStart() {
-        if (mw.SystemUtil.isClient()) {
-            TimeUtil.delaySecond(10).then((() => {
-                this.gameObject.onEnter.add((character => {
-                    if (character != Player.localPlayer.character) return;
-                    if (mw.SystemUtil.isPIE) {
-                        ExecutorManager.instance.pushAsyncExecutor((async () => {
-                            await TimeUtil.delaySecond(1);
-                            Player.localPlayer.character.setDescription(this.gameObject.parent.getDescription());
-                            await Player.localPlayer.character.asyncReady();
-                            Player.localPlayer.character.syncDescription();
-                            await TimeUtil.delaySecond(1);
-                        }));
-                        return;
-                    }
-                    if (this.isTest) {
-                        ExecutorManager.instance.pushAsyncExecutor((async () => {
-                            Player.localPlayer.character.setDescription(this.gameObject.parent.getDescription());
-                            await Player.localPlayer.character.asyncReady();
-                            Player.localPlayer.character.syncDescription();
-                            await TimeUtil.delaySecond(1);
-                        }));
-                    } else {
-                        UIService.getUI(AdPanel).showRewardAd((() => {
-                            this.isTest = true;
-                            ExecutorManager.instance.pushAsyncExecutor((async () => {
-                                Player.localPlayer.character.setDescription(this.gameObject.parent.getDescription());
-                                await Player.localPlayer.character.asyncReady();
-                                Player.localPlayer.character.syncDescription();
-                                await TimeUtil.delaySecond(1);
-                            }));
-                        }), `看广告使用这个${this.gameObject.parent.name}山海经角色`, `不看`, `看广告`);
-                    }
-                }));
-            }));
-        }
-    }
-    onUpdate(dt) {}
-    onDestroy() {}
-};
-
-Test = __decorate([ Component ], Test);
-
-var Test$1 = Test;
-
-var foreign5 = Object.freeze({
-    __proto__: null,
-    default: Test$1
-});
-
-const EXCELDATA$1 = [ [ "ID", "Describe", "AssetId", "SexType" ], [ "", "", "", "" ], [ 1, "制服女", "367076", 2 ], [ 2, "制服女", "435694", 2 ], [ 3, "一定过套装", "253153", 2 ], [ 4, "主打求神套装", "264188", 2 ], [ 5, "卡皮巴拉套装1", "270007", 2 ], [ 6, "卡皮巴拉套装2", "213620", 2 ], [ 7, "女学生角色", "343066", 2 ], [ 8, "和服", "334005", 2 ], [ 9, "JK女生", "320751", 2 ], [ 10, "新年毛衣", "298108", 2 ], [ 11, "露肩长裙", "218598", 2 ], [ 12, null, "215971", 2 ], [ 13, null, "213622", 2 ], [ 14, null, "270008", 2 ], [ 15, null, "213535", 2 ], [ 16, null, "213533", 2 ], [ 17, null, "164426", 2 ], [ 18, null, "164421", 2 ], [ 19, null, "164418", 2 ], [ 20, null, "163712", 2 ], [ 21, null, "163710", 2 ], [ 22, null, "163709", 2 ], [ 23, null, "163708", 2 ], [ 24, null, "163707", 2 ], [ 25, null, "163706", 2 ], [ 26, null, "163624", 2 ], [ 27, null, "163551", 2 ], [ 28, null, "163550", 2 ], [ 29, null, "163548", 2 ], [ 30, null, "163547", 2 ], [ 31, null, "163546", 2 ], [ 32, null, "163545", 2 ], [ 33, null, "163544", 2 ], [ 34, null, "163543", 2 ], [ 35, null, "163529", 2 ], [ 36, null, "163528", 2 ], [ 37, null, "163527", 2 ], [ 38, null, "163526", 2 ], [ 39, null, "163525", 2 ], [ 40, null, "163524", 2 ], [ 41, null, "163523", 2 ], [ 42, null, "163522", 2 ], [ 43, null, "163521", 2 ], [ 44, null, "163334", 2 ], [ 45, null, "163333", 2 ], [ 46, null, "163332", 2 ], [ 47, null, "163331", 2 ], [ 48, null, "163328", 2 ], [ 49, null, "163327", 2 ], [ 50, null, "163325", 2 ], [ 51, null, "163324", 2 ], [ 52, null, "163323", 2 ], [ 53, null, "163322", 2 ], [ 54, null, "163321", 2 ], [ 55, null, "163320", 2 ], [ 56, null, "163319", 2 ], [ 57, null, "163318", 2 ], [ 58, null, "163317", 2 ], [ 59, null, "163316", 2 ], [ 60, null, "163315", 2 ], [ 61, null, "163313", 2 ], [ 62, null, "163312", 2 ], [ 63, null, "163311", 2 ], [ 64, null, "163310", 2 ], [ 65, null, "163309", 2 ], [ 66, null, "163308", 2 ], [ 67, null, "163307", 2 ], [ 68, null, "163306", 2 ], [ 69, null, "163305", 2 ], [ 70, null, "163303", 2 ], [ 71, null, "163302", 2 ], [ 72, null, "163301", 2 ], [ 73, null, "163300", 2 ], [ 74, null, "163299", 2 ], [ 75, null, "163298", 2 ], [ 76, null, "163297", 2 ], [ 77, null, "163296", 2 ], [ 78, null, "163294", 2 ], [ 79, null, "163293", 2 ], [ 80, null, "163292", 2 ], [ 81, null, "163291", 2 ], [ 82, null, "163290", 2 ], [ 83, null, "163288", 2 ], [ 84, null, "163287", 2 ], [ 85, null, "163286", 2 ], [ 86, null, "163284", 2 ], [ 87, null, "163283", 2 ], [ 88, null, "163282", 2 ], [ 89, null, "163275", 2 ], [ 90, null, "162960", 2 ], [ 91, null, "162957", 2 ], [ 92, null, "136183", 2 ], [ 93, null, "136184", 2 ], [ 94, null, "136185", 2 ], [ 95, null, "136186", 2 ], [ 96, null, "136187", 2 ], [ 97, null, "136188", 2 ], [ 98, null, "136190", 2 ], [ 99, null, "136191", 2 ], [ 100, null, "136289", 2 ], [ 101, null, "136290", 2 ], [ 102, null, "136291", 2 ], [ 103, null, "136292", 2 ], [ 104, null, "136295", 2 ], [ 105, null, "136300", 2 ], [ 106, null, "136302", 2 ], [ 107, null, "136304", 2 ], [ 108, null, "137840", 2 ], [ 109, null, "137847", 2 ], [ 110, null, "137852", 2 ], [ 111, null, "137855", 2 ], [ 112, null, "141013", 2 ], [ 113, null, "141016", 2 ], [ 114, null, "141019", 2 ], [ 115, null, "141020", 2 ], [ 116, null, "141022", 2 ], [ 117, null, "141023", 2 ], [ 118, null, "141026", 2 ], [ 119, null, "141027", 2 ], [ 120, null, "141048", 2 ], [ 121, null, "141049", 2 ], [ 122, null, "141051", 2 ], [ 123, null, "141052", 2 ], [ 124, null, "141053", 2 ], [ 125, null, "141054", 2 ], [ 126, null, "141057", 2 ], [ 127, null, "141059", 2 ], [ 128, null, "141060", 2 ], [ 129, null, "141080", 2 ], [ 130, null, "141082", 2 ], [ 131, null, "141084", 2 ], [ 132, null, "141085", 2 ], [ 133, null, "141089", 2 ], [ 134, null, "141090", 2 ], [ 135, null, "141091", 2 ], [ 136, null, "141093", 2 ], [ 137, null, "141095", 2 ], [ 138, null, "141100", 2 ], [ 139, null, "141102", 2 ], [ 140, null, "141106", 2 ], [ 141, null, "141126", 2 ], [ 142, null, "141141", 2 ], [ 143, null, "141142", 2 ], [ 144, null, "141154", 2 ], [ 145, null, "141483", 2 ], [ 146, null, "141484", 2 ], [ 147, null, "141488", 2 ], [ 148, null, "141490", 2 ], [ 149, null, "141492", 2 ], [ 150, null, "141494", 2 ], [ 151, null, "141501", 2 ], [ 152, null, "141502", 2 ], [ 153, null, "141503", 2 ], [ 154, null, "141505", 2 ], [ 155, null, "141528", 2 ], [ 156, null, "141542", 2 ], [ 157, null, "141620", 2 ], [ 158, null, "141647", 2 ], [ 159, null, "141714", 2 ], [ 160, null, "141717", 2 ], [ 161, null, "141733", 2 ], [ 162, null, "141928", 2 ], [ 163, null, "142185", 2 ], [ 164, null, "142188", 2 ], [ 165, null, "142189", 2 ], [ 166, null, "142191", 2 ], [ 167, null, "142194", 2 ], [ 168, null, "142249", 2 ], [ 169, null, "142257", 2 ], [ 170, null, "142267", 2 ], [ 171, null, "142269", 2 ], [ 172, null, "142274", 2 ], [ 173, null, "142287", 2 ], [ 174, null, "142289", 2 ], [ 175, null, "142304", 2 ], [ 176, null, "142307", 2 ], [ 177, null, "142309", 2 ], [ 178, null, "142348", 2 ], [ 179, null, "142350", 2 ], [ 180, null, "142391", 2 ], [ 181, null, "142392", 2 ], [ 182, null, "142427", 2 ], [ 183, null, "142866", 2 ], [ 184, null, "142867", 2 ], [ 185, null, "142875", 2 ], [ 186, null, "142879", 2 ], [ 187, null, "143391", 2 ], [ 188, null, "143393", 2 ], [ 189, null, "143400", 2 ], [ 190, null, "143401", 2 ], [ 191, null, "143419", 2 ], [ 192, null, "143420", 2 ], [ 193, null, "147934", 2 ], [ 194, null, "226385", 2 ], [ 195, null, "347528", 2 ], [ 196, null, "347564", 2 ], [ 197, null, "347607", 2 ], [ 198, null, "349208", 2 ], [ 199, null, "349214", 2 ], [ 200, null, "349215", 2 ], [ 201, null, "349245", 2 ], [ 202, null, "349269", 2 ], [ 203, null, "349270", 2 ], [ 204, null, "349310", 2 ], [ 205, null, "349315", 2 ], [ 206, null, "349371", 2 ], [ 207, null, "349375", 2 ], [ 208, null, "350314", 2 ], [ 209, null, "350315", 2 ], [ 210, null, "350318", 2 ], [ 211, null, "350568", 2 ], [ 212, null, "350569", 2 ], [ 213, null, "350570", 2 ], [ 214, null, "350574", 2 ], [ 215, null, "350575", 2 ], [ 216, null, "350576", 2 ], [ 217, null, "350667", 2 ], [ 218, null, "350738", 2 ], [ 219, null, "350739", 2 ], [ 220, null, "350740", 2 ], [ 221, null, "350744", 2 ], [ 222, null, "350746", 2 ], [ 223, null, "350752", 2 ], [ 224, null, "350756", 2 ], [ 225, null, "350956", 2 ], [ 226, null, "350958", 2 ], [ 227, null, "350959", 2 ], [ 228, null, "350973", 2 ], [ 229, null, "350987", 2 ], [ 230, null, "351004", 2 ], [ 231, null, "351025", 2 ], [ 232, null, "351397", 2 ], [ 233, null, "351404", 2 ], [ 234, null, "351497", 2 ], [ 235, null, "351500", 2 ], [ 236, null, "351600", 2 ], [ 237, null, "361910", 2 ], [ 238, null, "385222", 2 ], [ 239, null, "226377", 1 ], [ 240, null, "263401", 1 ], [ 241, null, "264189", 1 ], [ 242, null, "397887", 1 ], [ 243, null, "392825", 1 ], [ 244, null, "343523", 1 ], [ 245, null, "321374", 1 ], [ 246, null, "305216", 1 ], [ 247, null, "254424", 1 ], [ 248, null, "213621", 1 ], [ 249, null, "213534", 1 ], [ 250, null, "164379", 1 ], [ 251, null, "164376", 1 ], [ 252, null, "164375", 1 ], [ 253, null, "164374", 1 ], [ 254, null, "164372", 1 ], [ 255, null, "164370", 1 ], [ 256, null, "164365", 1 ], [ 257, null, "164363", 1 ], [ 258, null, "164357", 1 ], [ 259, null, "163627", 1 ], [ 260, null, "163626", 1 ], [ 261, null, "163625", 1 ], [ 262, null, "163623", 1 ], [ 263, null, "163622", 1 ], [ 264, null, "162975", 1 ], [ 265, null, "162974", 1 ], [ 266, null, "162973", 1 ], [ 267, null, "162972", 1 ], [ 268, null, "162970", 1 ], [ 269, null, "162969", 1 ], [ 270, null, "162968", 1 ], [ 271, null, "162967", 1 ], [ 272, null, "162966", 1 ], [ 273, null, "162963", 1 ], [ 274, null, "162962", 1 ], [ 275, null, "162961", 1 ], [ 276, null, "162959", 1 ], [ 277, null, "162958", 1 ], [ 278, null, "162956", 1 ], [ 279, null, "162954", 1 ], [ 280, null, "162953", 1 ], [ 281, null, "162952", 1 ], [ 282, null, "162949", 1 ], [ 283, null, "162948", 1 ], [ 284, null, "162947", 1 ], [ 285, null, "162945", 1 ], [ 286, null, "162944", 1 ], [ 287, null, "162943", 1 ], [ 288, null, "162942", 1 ], [ 289, null, "162941", 1 ], [ 290, null, "162940", 1 ], [ 291, null, "162939", 1 ], [ 292, null, "162936", 1 ], [ 293, null, "162935", 1 ], [ 294, null, "162934", 1 ], [ 295, null, "162932", 1 ], [ 296, null, "162931", 1 ], [ 297, null, "162930", 1 ], [ 298, null, "162929", 1 ], [ 299, null, "162927", 1 ], [ 300, null, "162925", 1 ], [ 301, null, "136258", 1 ], [ 302, null, "136259", 1 ], [ 303, null, "136260", 1 ], [ 304, null, "136261", 1 ], [ 305, null, "136293", 1 ], [ 306, null, "136294", 1 ], [ 307, null, "136296", 1 ], [ 308, null, "136297", 1 ], [ 309, null, "136301", 1 ], [ 310, null, "136303", 1 ], [ 311, null, "137809", 1 ], [ 312, null, "137838", 1 ], [ 313, null, "137839", 1 ], [ 314, null, "137842", 1 ], [ 315, null, "137844", 1 ], [ 316, null, "137845", 1 ], [ 317, null, "137846", 1 ], [ 318, null, "137848", 1 ], [ 319, null, "137849", 1 ], [ 320, null, "137850", 1 ], [ 321, null, "137853", 1 ], [ 322, null, "137854", 1 ], [ 323, null, "141014", 1 ], [ 324, null, "141015", 1 ], [ 325, null, "141017", 1 ], [ 326, null, "141018", 1 ], [ 327, null, "141024", 1 ], [ 328, null, "141025", 1 ], [ 329, null, "141028", 1 ], [ 330, null, "141029", 1 ], [ 331, null, "141030", 1 ], [ 332, null, "141031", 1 ], [ 333, null, "141041", 1 ], [ 334, null, "141042", 1 ], [ 335, null, "141043", 1 ], [ 336, null, "141045", 1 ], [ 337, null, "141047", 1 ], [ 338, null, "141050", 1 ], [ 339, null, "141058", 1 ], [ 340, null, "141078", 1 ], [ 341, null, "141079", 1 ], [ 342, null, "141081", 1 ], [ 343, null, "141083", 1 ], [ 344, null, "141088", 1 ], [ 345, null, "141092", 1 ], [ 346, null, "141097", 1 ], [ 347, null, "141098", 1 ], [ 348, null, "141101", 1 ], [ 349, null, "141107", 1 ], [ 350, null, "141108", 1 ], [ 351, null, "141127", 1 ], [ 352, null, "141140", 1 ], [ 353, null, "141152", 1 ], [ 354, null, "141482", 1 ], [ 355, null, "141485", 1 ], [ 356, null, "141486", 1 ], [ 357, null, "141487", 1 ], [ 358, null, "141489", 1 ], [ 359, null, "141491", 1 ], [ 360, null, "141493", 1 ], [ 361, null, "141526", 1 ], [ 362, null, "141527", 1 ], [ 363, null, "141536", 1 ], [ 364, null, "141537", 1 ], [ 365, null, "141609", 1 ], [ 366, null, "141618", 1 ], [ 367, null, "141623", 1 ], [ 368, null, "141643", 1 ], [ 369, null, "141713", 1 ], [ 370, null, "141715", 1 ], [ 371, null, "141716", 1 ], [ 372, null, "141718", 1 ], [ 373, null, "141719", 1 ], [ 374, null, "141720", 1 ], [ 375, null, "141927", 1 ], [ 376, null, "142139", 1 ], [ 377, null, "142184", 1 ], [ 378, null, "142190", 1 ], [ 379, null, "142192", 1 ], [ 380, null, "142193", 1 ], [ 381, null, "142250", 1 ], [ 382, null, "142258", 1 ], [ 383, null, "142259", 1 ], [ 384, null, "142260", 1 ], [ 385, null, "142266", 1 ], [ 386, null, "142268", 1 ], [ 387, null, "142271", 1 ], [ 388, null, "142275", 1 ], [ 389, null, "142277", 1 ], [ 390, null, "142279", 1 ], [ 391, null, "142280", 1 ], [ 392, null, "142281", 1 ], [ 393, null, "142282", 1 ], [ 394, null, "142283", 1 ], [ 395, null, "142286", 1 ], [ 396, null, "142288", 1 ], [ 397, null, "142290", 1 ], [ 398, null, "142295", 1 ], [ 399, null, "142296", 1 ], [ 400, null, "142297", 1 ], [ 401, null, "142298", 1 ], [ 402, null, "142299", 1 ], [ 403, null, "142301", 1 ], [ 404, null, "142302", 1 ], [ 405, null, "142303", 1 ], [ 406, null, "142305", 1 ], [ 407, null, "142314", 1 ], [ 408, null, "142349", 1 ], [ 409, null, "142390", 1 ], [ 410, null, "142393", 1 ], [ 411, null, "142394", 1 ], [ 412, null, "142395", 1 ], [ 413, null, "142396", 1 ], [ 414, null, "142397", 1 ], [ 415, null, "142398", 1 ], [ 416, null, "142399", 1 ], [ 417, null, "142864", 1 ], [ 418, null, "142865", 1 ], [ 419, null, "142868", 1 ], [ 420, null, "142869", 1 ], [ 421, null, "142870", 1 ], [ 422, null, "142871", 1 ], [ 423, null, "142872", 1 ], [ 424, null, "142873", 1 ], [ 425, null, "142876", 1 ], [ 426, null, "142878", 1 ], [ 427, null, "142882", 1 ], [ 428, null, "142883", 1 ], [ 429, null, "144870", 1 ], [ 430, null, "144871", 1 ], [ 431, null, "144872", 1 ], [ 432, null, "145320", 1 ], [ 433, null, "145321", 1 ], [ 434, null, "148750", 1 ], [ 435, null, "148751", 1 ], [ 436, null, "148752", 1 ], [ 437, null, "346901", 1 ], [ 438, null, "347527", 1 ], [ 439, null, "347872", 1 ], [ 440, null, "347873", 1 ], [ 441, null, "349324", 1 ], [ 442, null, "350317", 1 ], [ 443, null, "350571", 1 ], [ 444, null, "350737", 1 ], [ 445, null, "350741", 1 ], [ 446, null, "350742", 1 ], [ 447, null, "350745", 1 ], [ 448, null, "350971", 1 ], [ 449, null, "350974", 1 ], [ 450, null, "351024", 1 ], [ 451, null, "351098", 1 ], [ 452, null, "351109", 1 ], [ 453, null, "351496", 1 ], [ 454, null, "351679", 1 ], [ 455, null, "361905", 1 ], [ 456, null, "361911", 1 ], [ 457, null, "362521", 1 ], [ 458, null, "362522", 1 ], [ 459, null, "362523", 1 ], [ 460, null, "362524", 1 ], [ 461, null, "362526", 1 ], [ 462, null, "362534", 1 ], [ 463, null, "392830", 1 ], [ 464, null, "398164", 1 ] ];
-
-class DailyStylingOutfitConfig extends ConfigBase {
-    constructor() {
-        super(EXCELDATA$1);
-    }
-}
-
-var foreign21 = Object.freeze({
-    __proto__: null,
-    DailyStylingOutfitConfig: DailyStylingOutfitConfig
-});
-
-const EXCELDATA = [ [ "ID", "TriggerGuid", "InteractivityGuid", "HumanoidSlotType", "SitStance", "BagId" ], [ "", "", "", "", "", "" ], [ 1, "379F8E9E", "0D0850BD", 19, "122227", 10006 ], [ 2, "2555EDAA", "3D215C3A", 17, "122231", 10106 ], [ 3, "36A4512B", "270D9130", 18, "122232", 10016 ], [ 4, "0A2CF72B", "38F1AE5C", 19, "15208", 10016 ] ];
-
-class SitConfig extends ConfigBase {
-    constructor() {
-        super(EXCELDATA);
-    }
-}
-
-var foreign71 = Object.freeze({
-    __proto__: null,
-    SitConfig: SitConfig
-});
-
-class GlobalData {}
-
-GlobalData.languageId = 1;
-
-GlobalData.isOpenIAA = false;
-
-GlobalData.bagCount = 5;
-
-GlobalData.worldCount = 500;
-
-GlobalData.freeTime = 999;
-
-GlobalData.offMusicIconGuid = `133403`;
-
-GlobalData.onMusicIconGuid = `133445`;
-
-GlobalData.savaMaxCount = 6;
-
-GlobalData.dailyRefreshTime = "4:0";
-
-GlobalData.weeklyRefreshTime = "4:0";
-
-var EventType;
-
-(function(EventType) {
-    EventType["OnOffMainUI"] = "OnOffMainUI";
-    EventType["SwitchCamera"] = "SwitchCamera";
-})(EventType || (EventType = {}));
-
-var CameraManagerType;
-
-(function(CameraManagerType) {
-    CameraManagerType[CameraManagerType["Head"] = 104] = "Head";
-    CameraManagerType[CameraManagerType["Body"] = 105] = "Body";
-})(CameraManagerType || (CameraManagerType = {}));
-
-var foreign84 = Object.freeze({
-    __proto__: null,
-    get CameraManagerType() {
-        return CameraManagerType;
-    },
-    get EventType() {
-        return EventType;
-    },
-    default: GlobalData
-});
-
-var MapEx;
-
-(function(MapEx) {
-    function isNull(map) {
-        return !map || map == null || map == undefined;
-    }
-    MapEx.isNull = isNull;
-    function get(map, key) {
-        if (map[key]) {
-            return map[key];
-        }
-        let has = false;
-        let keys = Object.keys(map);
-        for (let i = 0; i < keys.length; ++i) {
-            if (keys[i] == key) {
-                has = true;
-                break;
-            }
-        }
-        if (has) {
-            return map[key];
-        }
-        return null;
-    }
-    MapEx.get = get;
-    function set(map, key, val) {
-        map[key] = val;
-    }
-    MapEx.set = set;
-    function del(map, key) {
-        if (map[key]) {
-            delete map[key];
-            return true;
-        }
-        let has = false;
-        let keys = Object.keys(map);
-        for (let i = 0; i < keys.length; ++i) {
-            if (keys[i] == key) {
-                has = true;
-                break;
-            }
-        }
-        if (has) {
-            delete map[key];
-            return true;
-        }
-        return false;
-    }
-    MapEx.del = del;
-    function has(map, key) {
-        if (map[key]) {
-            return true;
-        }
-        let has = false;
-        let keys = Object.keys(map);
-        for (let i = 0; i < keys.length; ++i) {
-            if (keys[i] == key) {
-                has = true;
-                break;
-            }
-        }
-        if (has) {
-            return true;
-        }
-        return false;
-    }
-    MapEx.has = has;
-    function count(map) {
-        let res = 0;
-        forEach(map, (e => {
-            ++res;
-        }));
-        return res;
-    }
-    MapEx.count = count;
-    function forEach(map, callback) {
-        for (let key in map) {
-            if (map[key]) {
-                callback(key, map[key]);
-            }
-        }
-    }
-    MapEx.forEach = forEach;
-    function copy(map) {
-        let res = {};
-        for (let key in map) {
-            res[key] = map[key];
-        }
-        return res;
-    }
-    MapEx.copy = copy;
-})(MapEx || (MapEx = {}));
-
-var foreign150 = Object.freeze({
-    __proto__: null,
-    get MapEx() {
-        return MapEx;
-    }
-});
-
-class CharacterData extends Subdata {
-    constructor() {
-        super(...arguments);
-        this.characterDataMap = {};
-    }
-    setCharacterData(key, value) {
-        MapEx.set(this.characterDataMap, key, value);
-        this.save(false);
-        return true;
-    }
-    delCharacterData(key) {
-        if (MapEx.has(this.characterDataMap, key)) {
-            MapEx.del(this.characterDataMap, key);
-            this.save(false);
-            return true;
-        }
-        return false;
-    }
-    clearCharacterData() {
-        this.characterDataMap = {};
-        this.save(false);
-        return true;
-    }
-}
-
-__decorate([ Decorator.persistence() ], CharacterData.prototype, "characterDataMap", void 0);
-
-var foreign86 = Object.freeze({
-    __proto__: null,
-    CharacterData: CharacterData
 });
 
 class Decora {
@@ -4975,6 +5337,106 @@ var foreign145 = Object.freeze({
     getStyle: getStyle
 });
 
+var MapEx;
+
+(function(MapEx) {
+    function isNull(map) {
+        return !map || map == null || map == undefined;
+    }
+    MapEx.isNull = isNull;
+    function get(map, key) {
+        if (map[key]) {
+            return map[key];
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            return map[key];
+        }
+        return null;
+    }
+    MapEx.get = get;
+    function set(map, key, val) {
+        map[key] = val;
+    }
+    MapEx.set = set;
+    function del(map, key) {
+        if (map[key]) {
+            delete map[key];
+            return true;
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            delete map[key];
+            return true;
+        }
+        return false;
+    }
+    MapEx.del = del;
+    function has(map, key) {
+        if (map[key]) {
+            return true;
+        }
+        let has = false;
+        let keys = Object.keys(map);
+        for (let i = 0; i < keys.length; ++i) {
+            if (keys[i] == key) {
+                has = true;
+                break;
+            }
+        }
+        if (has) {
+            return true;
+        }
+        return false;
+    }
+    MapEx.has = has;
+    function count(map) {
+        let res = 0;
+        forEach(map, (e => {
+            ++res;
+        }));
+        return res;
+    }
+    MapEx.count = count;
+    function forEach(map, callback) {
+        for (let key in map) {
+            if (map[key]) {
+                callback(key, map[key]);
+            }
+        }
+    }
+    MapEx.forEach = forEach;
+    function copy(map) {
+        let res = {};
+        for (let key in map) {
+            res[key] = map[key];
+        }
+        return res;
+    }
+    MapEx.copy = copy;
+})(MapEx || (MapEx = {}));
+
+var foreign150 = Object.freeze({
+    __proto__: null,
+    get MapEx() {
+        return MapEx;
+    }
+});
+
 class CharacterModuleC extends ModuleC {
     constructor() {
         super(...arguments);
@@ -5084,422 +5546,6 @@ class CharacterModuleC extends ModuleC {
 var foreign87 = Object.freeze({
     __proto__: null,
     CharacterModuleC: CharacterModuleC
-});
-
-class CharacterModuleS extends ModuleS {
-    onStart() {}
-    net_setCharacterData(key, value) {
-        return this.currentData.setCharacterData(key, value);
-    }
-    net_delCharacterData(key) {
-        return this.currentData.delCharacterData(key);
-    }
-    net_clearCharacterData() {
-        return this.currentData.clearCharacterData();
-    }
-}
-
-var foreign88 = Object.freeze({
-    __proto__: null,
-    CharacterModuleS: CharacterModuleS
-});
-
-class Utils {
-    static setImageByAssetIconData(image, icon) {
-        if (this.assetIconDataMap.has(icon)) {
-            image.setImageByAssetIconData(this.assetIconDataMap.get(icon));
-        } else {
-            mw.assetIDChangeIconUrlRequest([ icon ]).then((() => {
-                try {
-                    let assetIconData = mw.getAssetIconDataByAssetID(icon);
-                    image.setImageByAssetIconData(assetIconData);
-                    this.assetIconDataMap.set(icon, assetIconData);
-                } catch (error) {}
-            }));
-        }
-    }
-    static async asyncDownloadAsset(InAssetId) {
-        if (!mw.AssetUtil.assetLoaded(InAssetId)) {
-            await mw.AssetUtil.asyncDownloadAsset(InAssetId);
-        }
-    }
-    static async asyncDownloadAssets(InAssetIds) {
-        for (let i = 0; i < InAssetIds.length; ++i) {
-            if (mw.AssetUtil.assetLoaded(InAssetIds[i])) continue;
-            await mw.AssetUtil.asyncDownloadAsset(InAssetIds[i]);
-        }
-    }
-    static setWidgetVisibility(ui, visibility) {
-        if (ui.visibility != visibility) ui.visibility = visibility;
-    }
-    static randomInt(min, max) {
-        if (min > max) {
-            let temp = min;
-            min = max;
-            max = temp;
-        }
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-    static getDay() {
-        let day = "";
-        day += (new Date).getFullYear();
-        day += (new Date).getMonth() + 1;
-        day += (new Date).getDate();
-        return day;
-    }
-    static resetPlayerPos() {
-        Player.localPlayer.character.worldTransform.position = this.birthPos;
-    }
-    static async applySharedId(character, sharedId) {
-        return new Promise((async resolve => {
-            mw.AccountService.applySharedId(character, sharedId, (async success => {
-                console.error(`success:${success}`);
-                if (success) character.syncDescription();
-                await character.asyncReady();
-                return resolve(success);
-            }));
-        }));
-    }
-    static async createSharedId(character) {
-        return new Promise((async resolve => {
-            mw.AccountService.createSharedId(character, (dataString => {
-                console.error(`dataString:${dataString}`);
-                return resolve(dataString);
-            }));
-        }));
-    }
-    static startGuide(targetLoc, onComplete = null) {
-        if (!mw.SystemUtil.isClient()) return;
-        if (!targetLoc) return;
-        if (this.targetGuideEffectId) {
-            EffectService.stop(this.targetGuideEffectId);
-            this.targetGuideEffectId = null;
-        }
-        this.targetGuideEffectId = EffectService.playAtPosition(this.targetEffectGuid, targetLoc, {
-            loopCount: 0
-        });
-        if (this.guideIntervalId) {
-            TimeUtil.clearInterval(this.guideIntervalId);
-            this.guideIntervalId = null;
-        }
-        this.guideIntervalId = TimeUtil.setInterval((() => {
-            let character = Player.localPlayer?.character;
-            if (!character) return;
-            let playerLoc = character?.worldTransform?.position;
-            if (!playerLoc) return;
-            if (Math.abs(playerLoc.x - this.prePlayerLoc.x) < .1 && Math.abs(playerLoc.y - this.prePlayerLoc.y) < .1 && Math.abs(playerLoc.z - this.prePlayerLoc.z) < .1) return;
-            this.prePlayerLoc = playerLoc;
-            let distance = mw.Vector.distance(playerLoc, targetLoc);
-            if (distance <= 200) {
-                TimeUtil.clearInterval(this.guideIntervalId);
-                this.guideIntervalId = null;
-                if (this.targetGuideEffectId) {
-                    EffectService.stop(this.targetGuideEffectId);
-                    this.targetGuideEffectId = null;
-                }
-                if (this.guideEffectIds.length != 0) {
-                    this.guideEffectIds.forEach((effectId => {
-                        EffectService.stop(effectId);
-                    }));
-                    this.guideEffectIds.length = 0;
-                }
-                Notice.showDownNotice(GameConfig.Language.Text_GuideTips.Value);
-                if (onComplete) onComplete();
-                return;
-            }
-            let pointNum = Math.floor(distance / 100);
-            let locs = this.getCurvePointsInNum([ playerLoc, targetLoc ], pointNum);
-            if (pointNum > 35) {
-                pointNum = 35;
-            }
-            if (this.guideEffectIds.length == 0) {
-                for (let i = 1; i < pointNum; ++i) {
-                    let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i], {
-                        loopCount: 0
-                    });
-                    this.guideEffectIds.push(effectId);
-                }
-            } else {
-                if (this.guideEffectIds.length == pointNum) {
-                    for (let i = 1; i < pointNum; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i - 1]).then((effect => {
-                            effect.worldTransform.position = new mw.Vector(locs[i].x, locs[i].y, locs[i].z - 85);
-                        }));
-                    }
-                    EffectService.stop(this.guideEffectIds[pointNum - 1]);
-                    this.guideEffectIds.length = pointNum - 1;
-                } else if (this.guideEffectIds.length < pointNum) {
-                    for (let i = 0; i < this.guideEffectIds.length; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
-                            effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
-                        }));
-                    }
-                    for (let i = this.guideEffectIds.length; i < pointNum - 1; ++i) {
-                        let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i + 1], {
-                            loopCount: 0
-                        });
-                        this.guideEffectIds.push(effectId);
-                    }
-                } else if (this.guideEffectIds.length > pointNum) {
-                    for (let i = 0; i < pointNum; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
-                            if (!locs[i + 1]) return;
-                            effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
-                        }));
-                    }
-                    for (let i = pointNum; i < this.guideEffectIds.length; ++i) {
-                        EffectService.stop(this.guideEffectIds[i]);
-                    }
-                    this.guideEffectIds.length = pointNum;
-                }
-            }
-        }), .1);
-    }
-    static getCurvePointsInNum(points, num) {
-        let result = new Array;
-        for (let i = 0; i < num; i++) {
-            let t = i / (num - 1);
-            let point = this.getKeyPoint(points, t);
-            result.push(point);
-        }
-        return result;
-    }
-    static getKeyPoint(points, t) {
-        if (points.length > 1) {
-            let dirs = new Array;
-            for (let i = 0; i < points.length - 1; ++i) {
-                dirs.push(new mw.Vector(points[i + 1].x - points[i].x, points[i + 1].y - points[i].y, points[i + 1].z - points[i].z));
-            }
-            let points2 = new Array;
-            for (let j = 0; j < dirs.length; j++) {
-                points2.push(new mw.Vector(points[j].x + dirs[j].x * t, points[j].y + dirs[j].y * t, points[j].z + dirs[j].z * t));
-            }
-            return this.getKeyPoint(points2, t);
-        } else {
-            return new mw.Vector(points[0].x, points[0].y, points[0].z);
-        }
-    }
-    static async getCustomdata(key) {
-        return (await DataStorage.asyncGetData(key)).data;
-    }
-    static async setCustomData(saveKey, dataInfo) {
-        let code = null;
-        code = await DataStorage.asyncSetData(saveKey, dataInfo);
-        return code == mw.DataStorageResultCode.Success;
-    }
-    static copyArray(array) {
-        let newArray = [];
-        for (let i = 0; i < array.length; ++i) {
-            newArray.push(array[i]);
-        }
-        return newArray;
-    }
-    static colorHexToLinearColorToString(inColorHex) {
-        if (this.inColorHexStrMap.has(inColorHex)) return this.inColorHexStrMap.get(inColorHex);
-        let inColorHexLinearColor = mw.LinearColor.colorHexToLinearColor(inColorHex);
-        this.inColorHexStrMap.set(inColorHex, inColorHexLinearColor);
-        return inColorHexLinearColor;
-    }
-    static isEqulaLinearColor(linearColor1, linearColor2) {
-        if (linearColor1.r.toFixed(5) != linearColor2.r.toFixed(5)) return false;
-        if (linearColor1.g.toFixed(5) != linearColor2.g.toFixed(5)) return false;
-        if (linearColor1.b.toFixed(5) != linearColor2.b.toFixed(5)) return false;
-        if (linearColor1.a.toFixed(5) != linearColor2.a.toFixed(5)) return false;
-        return true;
-    }
-    static stringArrayToTransform(strArray) {
-        let transform = new mw.Transform;
-        if (!strArray || strArray.length != 9) return transform;
-        transform.position = new mw.Vector(Number(strArray[0]), Number(strArray[1]), Number(strArray[2]));
-        transform.rotation = new mw.Rotation(Number(strArray[3]), Number(strArray[4]), Number(strArray[5]));
-        transform.scale = new mw.Vector(Number(strArray[6]), Number(strArray[7]), Number(strArray[8]));
-        return transform;
-    }
-    static accountServiceDownloadData(character) {
-        return new Promise((async resolve => {
-            mw.AccountService.downloadData(character, (async success => resolve(success)));
-        }));
-    }
-    static isSameRoomDataTryOn(roomDatas) {
-        let tryOnCount = 0;
-        if (!roomDatas || roomDatas.length == 0) tryOnCount = 0;
-        roomDatas.forEach((value => {
-            tryOnCount += value.tryOn;
-        }));
-        if (this.tryOnCount != tryOnCount) {
-            this.tryOnCount = tryOnCount;
-            return false;
-        }
-        return true;
-    }
-    static getCurrentTime() {
-        let date = new Date;
-        return date.getHours() + ":" + date.getMinutes();
-    }
-    static getWhatDay() {
-        let whatDay = "7123456".charAt((new Date).getDay());
-        return whatDay;
-    }
-    static weekNumChangeToCN(num) {
-        return "一二三四五六日".charAt(num - 1);
-    }
-    static getLastDay(day) {
-        let whatDay = "7123456".charAt(day);
-        return whatDay;
-    }
-    static iSameWeek(date1, date2) {
-        let dt1 = new Date;
-        dt1.setTime(date1);
-        let dt2 = new Date;
-        dt2.setTime(date2);
-        let md1 = this.tmonday(dt1);
-        let md2 = this.tmonday(dt2);
-        return md1 === md2;
-    }
-    static tmonday(dtm) {
-        let dte = new Date(dtm);
-        let day = dte.getDay();
-        let dty = dte.getDate();
-        if (day === 0) {
-            day = 7;
-        }
-        dte.setDate(dty - day + 1);
-        return dte.getFullYear() + "-" + dte.getMonth() + "-" + dte.getDate();
-    }
-}
-
-Utils.assetIconDataMap = new Map;
-
-Utils.buffMap = new Map;
-
-Utils.birthPos = new mw.Vector(0, 0, 1e3);
-
-Utils.targetGuideEffectId = null;
-
-Utils.guideIntervalId = null;
-
-Utils.guideEffectIds = [];
-
-Utils.prePlayerLoc = mw.Vector.zero;
-
-Utils.guideEffectGuid = `146775`;
-
-Utils.targetEffectGuid = `142962`;
-
-Utils.inColorHexStrMap = new Map;
-
-Utils.tryOnCount = -1;
-
-function cubicBezier(p1x, p1y, p2x, p2y) {
-    const ZERO_LIMIT = 1e-6;
-    const ax = 3 * p1x - 3 * p2x + 1;
-    const bx = 3 * p2x - 6 * p1x;
-    const cx = 3 * p1x;
-    const ay = 3 * p1y - 3 * p2y + 1;
-    const by = 3 * p2y - 6 * p1y;
-    const cy = 3 * p1y;
-    function sampleCurveDerivativeX(t) {
-        return (3 * ax * t + 2 * bx) * t + cx;
-    }
-    function sampleCurveX(t) {
-        return ((ax * t + bx) * t + cx) * t;
-    }
-    function sampleCurveY(t) {
-        return ((ay * t + by) * t + cy) * t;
-    }
-    function solveCurveX(x) {
-        let t2 = x;
-        let derivative;
-        let x2;
-        for (let i = 0; i < 8; i++) {
-            x2 = sampleCurveX(t2) - x;
-            if (Math.abs(x2) < ZERO_LIMIT) {
-                return t2;
-            }
-            derivative = sampleCurveDerivativeX(t2);
-            if (Math.abs(derivative) < ZERO_LIMIT) {
-                break;
-            }
-            t2 -= x2 / derivative;
-        }
-        let t1 = 1;
-        let t0 = 0;
-        t2 = x;
-        while (t1 > t0) {
-            x2 = sampleCurveX(t2) - x;
-            if (Math.abs(x2) < ZERO_LIMIT) {
-                return t2;
-            }
-            if (x2 > 0) {
-                t1 = t2;
-            } else {
-                t0 = t2;
-            }
-            t2 = (t1 + t0) / 2;
-        }
-        return t2;
-    }
-    function solve(x) {
-        return sampleCurveY(solveCurveX(x));
-    }
-    return solve;
-}
-
-var foreign153 = Object.freeze({
-    __proto__: null,
-    cubicBezier: cubicBezier,
-    default: Utils
-});
-
-let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
-    get mDialogBg1() {
-        if (!this.mDialogBg1_Internal && this.uiWidgetBase) {
-            this.mDialogBg1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogBg1");
-        }
-        return this.mDialogBg1_Internal;
-    }
-    get mDialogBg2() {
-        if (!this.mDialogBg2_Internal && this.uiWidgetBase) {
-            this.mDialogBg2_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogBg2");
-        }
-        return this.mDialogBg2_Internal;
-    }
-    get mDialogTextBlock() {
-        if (!this.mDialogTextBlock_Internal && this.uiWidgetBase) {
-            this.mDialogTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogTextBlock");
-        }
-        return this.mDialogTextBlock_Internal;
-    }
-    onAwake() {
-        this.canUpdate = false;
-        this.layer = mw.UILayerBottom;
-        this.initButtons();
-    }
-    initButtons() {
-        this.initLanguage(this.mDialogTextBlock);
-    }
-    initLanguage(ui) {
-        let call = mw.UIScript.getBehavior("lan");
-        if (call && ui) {
-            call(ui);
-        }
-    }
-    onShow(...params) {}
-    show(...param) {
-        mw.UIService.showUI(this, this.layer, ...param);
-    }
-    hide() {
-        mw.UIService.hideUI(this);
-    }
-};
-
-BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui") ], BubbleItem_Generate);
-
-var BubbleItem_Generate$1 = BubbleItem_Generate;
-
-var foreign164 = Object.freeze({
-    __proto__: null,
-    default: BubbleItem_Generate$1
 });
 
 let HUDItem_Generate = class HUDItem_Generate extends UIScript {
@@ -6183,806 +6229,55 @@ var foreign197 = Object.freeze({
     default: SharePanel_Generate$1
 });
 
-class HUDItem extends HUDItem_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudPanel = null;
-        this.hudModuleC = null;
-        this.bagId = 0;
-        this.isUse = false;
-    }
-    get getHUDPanel() {
-        if (!this.hudPanel) {
-            this.hudPanel = UIService.getUI(HUDPanel);
+let BubbleItem_Generate = class BubbleItem_Generate extends UIScript {
+    get mDialogBg1() {
+        if (!this.mDialogBg1_Internal && this.uiWidgetBase) {
+            this.mDialogBg1_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogBg1");
         }
-        return this.hudPanel;
+        return this.mDialogBg1_Internal;
     }
-    get getHUDModuleC() {
-        if (!this.hudModuleC) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+    get mDialogBg2() {
+        if (!this.mDialogBg2_Internal && this.uiWidgetBase) {
+            this.mDialogBg2_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogBg2");
         }
-        return this.hudModuleC;
+        return this.mDialogBg2_Internal;
     }
-    onStart() {
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.useState(false);
-    }
-    bindButton() {
-        this.mClickButton.onClicked.add(this.addClickButton.bind(this));
-        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
-    }
-    addClickButton() {
-        let nextBagId = GameConfig.ActionProp.getElement(this.bagId).NextId;
-        if (!nextBagId || nextBagId <= 0) return;
-        this.getHUDModuleC.clickGoodItemAction.call(this.bagId);
-    }
-    addCloseButton() {
-        this.getHUDModuleC.clickCloseGoodItemAction.call(this.bagId);
-    }
-    setDatas(bagId) {
-        this.bagId = bagId;
-        let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
-        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-                this.useState(false);
-            } else {
-                this.useState(true);
-            }
-        } else {
-            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
-                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
-                this.useState(true);
-            } else {
-                this.useState(false);
-            }
+    get mDialogTextBlock() {
+        if (!this.mDialogTextBlock_Internal && this.uiWidgetBase) {
+            this.mDialogTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mDialogTextBlock");
         }
-        if (actionPropElement.VehiclesIcon) {
-            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
-        } else if (actionPropElement.Icon) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
-        } else if (actionPropElement.AssetId) {
-            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
-        } else if (bagId == actionPropElement.NextId) {
-            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
-            if (nextActionPropElement.VehiclesIcon) {
-                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
-            } else if (nextActionPropElement.Icon) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
-            } else if (nextActionPropElement.AssetId) {
-                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
-            }
+        return this.mDialogTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.initLanguage(this.mDialogTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
         }
     }
-    useState(isUse) {
-        this.isUse = isUse;
-        Utils.setWidgetVisibility(this.mSelectImage, this.isUse ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
     }
-}
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
 
-class HUDPanel extends HUDPanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.isOpenBGM = true;
-        this.taskRedPointTween1 = null;
-        this.taskRedPointTween2 = null;
-        this.hudItems = [];
-    }
-    get getHUDModuleC() {
-        if (!this.hudModuleC) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    onStart() {
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.controllerExitUIVisible(false);
-        this.controllerBagUIVisible(false);
-        this.controllerActionUIVisible(false);
-        this.constollerGoodsCanvasVisible(false);
-        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
-        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
-        this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
-        this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
-        this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
-        this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
-        this.mOpenMusicTextBlock.text = GameConfig.Language.Text_HUDPanelTips7.Value;
-        this.mOpenSetTextBlock.text = GameConfig.Language.Text_HUDPanelTips4.Value;
-        this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
-        Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
-        if (GlobalData.languageId == 0) {
-            Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
-        }
-        this.initShakeMallTween();
-        this.initShakeShareTween();
-        this.initShakeSignInTween();
-        this.initTaskTween();
-    }
-    updateFreeTime() {
-        console.error(`wfz - freeTime:${GlobalData.freeTime}`);
-        if (GlobalData.freeTime <= 0 || GlobalData.freeTime >= 999) {
-            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
-        } else {
-            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.SelfHitTestInvisible);
-            this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
-        }
-    }
-    bindButton() {
-        this.mJumpButton.onClicked.add(this.addJumpButton.bind(this));
-        this.mCrouchButton.onClicked.add(this.addCrouchButton.bind(this));
-        this.mExitButton.onClicked.add(this.addFlyButton.bind(this));
-        this.mActionButton.onClicked.add(this.addActionButton.bind(this));
-        this.mBagButton.onClicked.add(this.addBagButton.bind(this));
-        this.mShowHideGoodsButton.onClicked.add(this.showHideGoodsButton.bind(this));
-        this.mDeleteAllGoodsButton.onClicked.add(this.addDeleteAllGoods.bind(this));
-        this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
-        this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
-        this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
-        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
-        this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
-        this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
-        this.mOnOffMusicBtn.onClicked.add(this.addOnOffMusicButton.bind(this));
-        this.mLeftMusicBtn.onClicked.add(this.addPreMusicButton.bind(this));
-        this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
-        this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
-        this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
-        this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
-        this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
-    }
-    addJumpButton() {
-        this.getHUDModuleC.onJumpAction.call();
-    }
-    addCrouchButton() {
-        this.getHUDModuleC.onCrouchAction.call();
-    }
-    addFlyButton() {
-        this.getHUDModuleC.onExitAction.call();
-    }
-    addActionButton() {
-        this.getHUDModuleC.onActionButton.call();
-    }
-    addBagButton() {
-        this.getHUDModuleC.onBagButton.call();
-    }
-    addOpenRankButton() {
-        this.getHUDModuleC.onOpenRankAction.call();
-    }
-    addOpenShareButton() {
-        this.getHUDModuleC.onOpenShareAction.call(1);
-    }
-    addOpenSignInButton() {
-        this.getHUDModuleC.onOpenSignInAction.call();
-    }
-    addOpenMusicButton() {
-        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.SelfHitTestInvisible);
-    }
-    addOnOffMusicButton() {
-        this.isOpenBGM = !this.isOpenBGM;
-        this.getHUDModuleC.onOnOffMusicAction.call(this.isOpenBGM);
-        let offOnIcon = this.isOpenBGM ? GlobalData.onMusicIconGuid : GlobalData.offMusicIconGuid;
-        this.mOnOffMusicBtn.normalImageGuid = offOnIcon;
-        this.mOnOffMusicBtn.pressedImageGuid = offOnIcon;
-        this.mOnOffMusicBtn.disableImageGuid = offOnIcon;
-    }
-    addNextMusicButton() {
-        this.getHUDModuleC.onSwitchBgmAction.call(1);
-    }
-    addPreMusicButton() {
-        this.getHUDModuleC.onSwitchBgmAction.call(-1);
-    }
-    addCloseMusicButton() {
-        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
-    }
-    addOpenMallButton() {
-        this.getHUDModuleC.onOpenMallAction.call();
-    }
-    addOpenPhotoButton() {
-        this.getHUDModuleC.onOpenPhotoAction.call();
-    }
-    addOpenTaskButton() {
-        this.getHUDModuleC.onOpenTaskAction.call();
-    }
-    showHideGoodsButton() {
-        this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
-    }
-    addDeleteAllGoods() {
-        this.constollerGoodsContentCanvasVisible(false, true);
-        this.getHUDModuleC.deleteAllGoodsAction.call();
-    }
-    addSetButton() {
-        this.getHUDModuleC.onOpenSetAction.call();
-    }
-    addClothButton() {
-        this.getHUDModuleC.onOpenClothAction.call();
-    }
-    startTaskRedPointTween() {
-        if (!this.taskRedPointTween1 || !this.taskRedPointTween2) this.initTaskRedPointTweens();
-        this.taskRedPointTween1.start();
-        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.SelfHitTestInvisible);
-    }
-    stopTaskRedPointTween() {
-        if (this.taskRedPointTween1) this.taskRedPointTween1.stop();
-        if (this.taskRedPointTween2) this.taskRedPointTween2.stop();
-        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
-    }
-    initTaskRedPointTweens() {
-        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
-        this.taskRedPointTween1 = new mw.Tween({
-            value: .8
-        }).to({
-            value: 1.2
-        }, .2 * 1e3).onStart((() => {
-            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(.8);
-        })).onUpdate((v => {
-            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
-        })).onComplete((() => {
-            if (this.taskRedPointTween2) this.taskRedPointTween2.start();
-        })).easing(cubicBezier(.25, .1, .25, 1));
-        this.taskRedPointTween2 = new mw.Tween({
-            value: 1.2
-        }).to({
-            value: .8
-        }, .2 * 1e3).onStart((() => {
-            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(1.2);
-        })).onUpdate((v => {
-            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
-        })).onComplete((() => {
-            if (this.taskRedPointTween1) this.taskRedPointTween1.start();
-        })).easing(cubicBezier(.25, .1, .25, 1));
-    }
-    initTaskTween() {
-        let leftToRight = this.getPosTween(this.mOpenTaskButton, .5, 0, 15, 40, 15);
-        let rightToLeft = this.getPosTween(this.mOpenTaskButton, .5, 40, 15, 0, 15);
-        leftToRight.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                rightToLeft.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
-                        leftToRight.start();
-                    }));
-                }));
-            }));
-        }));
-        this.initTaskRedPointTweens();
-    }
-    controllerBagUIVisible(isVisible) {
-        Utils.setWidgetVisibility(this.mBagBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
-    }
-    controllerActionUIVisible(isVisible) {
-        Utils.setWidgetVisibility(this.mActionBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
-    }
-    controllerExitUIVisible(isVisible) {
-        Utils.setWidgetVisibility(this.mExitBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
-    }
-    updateBagIcon(bagId) {
-        if (bagId == 0) {
-            this.controllerBagUIVisible(false);
-        } else {
-            this.controllerBagUIVisible(true);
-            let bagIcon = GameConfig.ActionProp.getElement(bagId).ButtonIconId;
-            this.mBagButton.normalImageGuid = bagIcon;
-            this.mBagButton.pressedImageGuid = bagIcon;
-            this.mBagButton.disableImageGuid = bagIcon;
-        }
-    }
-    constollerGoodsCanvasVisible(isVisible) {
-        Utils.setWidgetVisibility(this.mGoodsCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
-    }
-    constollerGoodsContentCanvasVisible(isVisible, isParent) {
-        if (isParent) this.constollerGoodsCanvasVisible(isVisible);
-        Utils.setWidgetVisibility(this.mGoodsContentCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
-    }
-    updateGoodsListCanvas(bagIds) {
-        if (this.hudItems.length > bagIds.length) {
-            for (let i = 0; i < bagIds.length; ++i) {
-                this.hudItems[i].setDatas(bagIds[i]);
-                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-            }
-            for (let i = bagIds.length; i < this.hudItems.length; ++i) {
-                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.Collapsed);
-            }
-        } else {
-            for (let i = 0; i < this.hudItems.length; ++i) {
-                this.hudItems[i].setDatas(bagIds[i]);
-                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
-            }
-            for (let i = this.hudItems.length; i < bagIds.length; ++i) {
-                let hudItem = UIService.create(HUDItem);
-                this.mGoodsListCanvas.addChild(hudItem.uiObject);
-                hudItem.setDatas(bagIds[i]);
-                this.hudItems.push(hudItem);
-            }
-        }
-        this.constollerGoodsContentCanvasVisible(bagIds.length > 0, true);
-    }
-    onShow(...params) {
-        this.mVirtualJoystickPanel.resetJoyStick();
-    }
-    onHide() {
-        this.mVirtualJoystickPanel.resetJoyStick();
-    }
-    initShakeMallTween() {
-        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, .5, 20, -20, 1.5, .9);
-        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, .5, -20, 20, .9, 1.5);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
-                        rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
-    }
-    initShakeShareTween() {
-        let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, .3, .8, .8, 1.2, 1.2);
-        let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, .3, 1.2, 1.2, .8, .8);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
-                        rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
-    }
-    initShakeSignInTween() {
-        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 2, 0, 360);
-        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 2, 360, 0);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
-                        rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
-    }
-    getShakeTween(widget, angleTime, startAngle, endAngle) {
-        return new Tween({
-            angle: startAngle
-        }).to({
-            angle: endAngle
-        }, angleTime * 1e3).onUpdate((v => {
-            widget.renderTransformAngle = v.angle;
-        })).easing(cubicBezier(.22, .9, .28, .92));
-    }
-    getScaleTween(widget, scaleTime, startScaleX, startScaleY, endScaleX, endScaleY) {
-        return new Tween({
-            scaleX: startScaleX,
-            scaleY: startScaleY
-        }).to({
-            scaleX: endScaleX,
-            scaleY: endScaleY
-        }, scaleTime * 1e3).onUpdate((v => {
-            widget.renderScale = new mw.Vector2(v.scaleX, v.scaleY);
-        })).easing(cubicBezier(.22, .9, .28, .92));
-    }
-    getShakeScaleTween(widget, shakeScaleTime, startAngle, endAngle, startScale, endScale) {
-        return new Tween({
-            angle: startAngle,
-            scale: startScale
-        }).to({
-            angle: endAngle,
-            scale: endScale
-        }, shakeScaleTime * 1e3).onUpdate((v => {
-            widget.renderTransformAngle = v.angle;
-            widget.renderScale = new mw.Vector2(v.scale, v.scale);
-        })).easing(cubicBezier(.22, .9, .28, .92));
-    }
-    getRenderOpacityTween(widget, time, startOpacity, endOpacity) {
-        return new Tween({
-            opacity: startOpacity
-        }).to({
-            opacity: endOpacity
-        }, time * 1e3).onUpdate((v => {
-            widget.renderOpacity = v.opacity;
-        })).easing(cubicBezier(.22, .9, .28, .92));
-    }
-    getPosTween(widget, posTime, startPosX, startPosY, endPosX, endPosY) {
-        return new Tween({
-            posX: startPosX,
-            posY: startPosY
-        }).to({
-            posX: endPosX,
-            posY: endPosY
-        }, posTime * 1e3).onUpdate((v => {
-            widget.position = new mw.Vector2(v.posX, v.posY);
-        })).easing(cubicBezier(.22, .9, .28, .92));
-    }
-}
+BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui") ], BubbleItem_Generate);
 
-class HUDModuleC extends ModuleC {
-    constructor() {
-        super(...arguments);
-        this.hudPanel = null;
-        this.danMuModuleC = null;
-        this.savePanel = null;
-        this.adPanel = null;
-        this.onJumpAction = new Action;
-        this.onCrouchAction = new Action;
-        this.onExitAction = new Action;
-        this.onActionButton = new Action;
-        this.onBagButton = new Action;
-        this.clickGoodItemAction = new Action1;
-        this.clickCloseGoodItemAction = new Action1;
-        this.deleteAllGoodsAction = new Action;
-        this.onOpenSetAction = new Action;
-        this.onOpenClothAction = new Action;
-        this.onOpenRankAction = new Action;
-        this.onOpenShareAction = new Action1;
-        this.onUseShareAction = new Action2;
-        this.onOpenSignInAction = new Action;
-        this.onFreeTryOnAction = new Action;
-        this.onOnOffMusicAction = new Action1;
-        this.onSwitchBgmAction = new Action1;
-        this.onOpenMallAction = new Action;
-        this.onOpenPhotoAction = new Action;
-        this.onOpenTaskAction = new Action;
-        this.freeNpc = null;
-        this.currentBgmIndex = 1;
-        this.bgmMusics = [];
-        this.changeDescription = null;
-        this.resetDecriptionTimeoutId = null;
-        this.isOpenAvatar = false;
-        this.uiClickSoundId = null;
-    }
-    get getHUDPanel() {
-        if (!this.hudPanel) {
-            this.hudPanel = UIService.getUI(HUDPanel);
-        }
-        return this.hudPanel;
-    }
-    get getDanMuModuleC() {
-        if (!this.danMuModuleC) {
-            this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
-        }
-        return this.danMuModuleC;
-    }
-    get getSavePanel() {
-        if (!this.savePanel) {
-            this.savePanel = UIService.getUI(SavePanel);
-        }
-        return this.savePanel;
-    }
-    get getAdPanel() {
-        if (!this.adPanel) {
-            this.adPanel = UIService.getUI(AdPanel);
-        }
-        return this.adPanel;
-    }
-    onStart() {
-        this.initUI();
-        this.bindAction();
-    }
-    onEnterScene(sceneType) {
-        this.getHUDPanel.show();
-        this.playBGMusic(0);
-        this.registerGlobalClickSound();
-        AvatarEditorService.setAvatarEditorButtonVisible(true);
-        this.initFreeNpc();
-    }
-    net_syncFreeTime(freeTime) {
-        if (!isNaN(freeTime) && freeTime > 0) GlobalData.freeTime = freeTime;
-        if (mw.UIService.getUI(HUDPanel, false)?.visible) {
-            this.getHUDPanel.updateFreeTime();
-        } else {
-            TimeUtil.delaySecond(10).then((() => {
-                this.getHUDPanel.updateFreeTime();
-            }));
-        }
-    }
-    async initFreeNpc() {}
-    initUI() {}
-    bindAction() {
-        this.onJumpAction.add(this.onJumpActionHandler.bind(this));
-        this.onCrouchAction.add(this.onCrouchActionHandler.bind(this));
-        this.onActionButton.add(this.onActionButtonHandler.bind(this));
-        this.onBagButton.add(this.onBagButtonHandler.bind(this));
-        this.onOpenSetAction.add(this.onOpenSetActionHandler.bind(this));
-        this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
-        this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
-        this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
-        this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
-        mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
-        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
-        this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
-        this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
-        this.onOpenPhotoAction.add(this.addOpenPhotoAction.bind(this));
-    }
-    addOpenPhotoAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await PhotoStudioService.asyncOpenPhotoStudioModule();
-        }));
-    }
-    addOnOffMusicAction(isOpenBGM) {
-        isOpenBGM ? this.playBGMusic(0) : SoundService.stopBGM();
-    }
-    playBGMusic(bgmIndex) {
-        if (!this.bgmMusics || this.bgmMusics?.length == 0) this.bgmMusics = GameConfig.Music.getAllElement();
-        this.currentBgmIndex = this.currentBgmIndex + bgmIndex;
-        if (this.currentBgmIndex > this.bgmMusics.length) {
-            this.currentBgmIndex = 1;
-        } else if (this.currentBgmIndex < 1) {
-            this.currentBgmIndex = this.bgmMusics.length;
-        }
-        let bgmId = this.bgmMusics[this.currentBgmIndex - 1].Guid;
-        SoundService.playBGM(bgmId);
-        this.getHUDPanel.mMusicText.text = this.bgmMusics[this.currentBgmIndex - 1].Annotation;
-    }
-    onJumpActionHandler() {
-        if (this.localPlayer.character.getCurrentState() != mw.CharacterStateType.Jumping) {
-            this.localPlayer.character.changeState(mw.CharacterStateType.Jumping);
-        }
-    }
-    onCrouchActionHandler() {
-        if (this.localPlayer.character.getCurrentState() == mw.CharacterStateType.Running) {
-            this.localPlayer.character.changeState(mw.CharacterStateType.Crouching);
-        } else if (this.localPlayer.character.getCurrentState() == mw.CharacterStateType.Crouching) {
-            this.localPlayer.character.changeState(mw.CharacterStateType.Running);
-        }
-    }
-    onActionButtonHandler() {
-        this.getDanMuModuleC.onStopActionButton.call();
-    }
-    onBagButtonHandler() {
-        this.getDanMuModuleC.onNextBagAction.call();
-    }
-    onOpenSetActionHandler() {}
-    onOpenClothActionHandler() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await AvatarEditorService.asyncOpenAvatarEditorModule();
-        }));
-    }
-    onOpenShareActionHandler(openType) {
-        return;
-    }
-    onUseShareActionHandler(shareId, openType) {
-        if (openType == 1) {
-            this.useShareId(shareId);
-        } else if (openType == 2) {
-            AvatarEditorService.asyncCloseAvatarEditorModule().then((() => {
-                ExecutorManager.instance.pushAsyncExecutor((async () => {
-                    await TimeUtil.delaySecond(5);
-                    await this.useDescription();
-                }));
-            }));
-        }
-    }
-    addDescriptionChange() {
-        this.localPlayer.character.asyncReady().then((() => {
-            console.error(`变化`);
-            this.changeDescription = this.localPlayer.character.getDescription();
-            if (this.isOpenAvatar) {
-                if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
-            }
-        }));
-    }
-    useShareId(shareId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let isSuccess = await Utils.applySharedId(this.localPlayer.character, shareId);
-            if (isSuccess) {
-                Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-            } else {
-                Notice.showDownNotice(GameConfig.Language.Text_InvalidID.Value);
-            }
-        }));
-    }
-    addFreeTryOnAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.initFreeNpc();
-            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-            this.freeNpc.setDescription(this.localPlayer.character.getDescription());
-            await this.freeNpc.asyncReady();
-            await TimeUtil.delaySecond(1);
-            await AvatarEditorService.asyncCloseAvatarEditorModule();
-            TimeUtil.delaySecond(2).then((() => {
-                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-                TimeUtil.delaySecond(2).then((() => {
-                    Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-                }));
-            }));
-            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-            await TimeUtil.delaySecond(5);
-            await this.useDescription();
-        }));
-    }
-    async useDescription() {
-        await this.localPlayer.character.asyncReady();
-        this.localPlayer.character.setDescription(this.freeNpc.getDescription());
-        await this.localPlayer.character.asyncReady();
-        this.localPlayer.character.syncDescription();
-        Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-        this.resetDecription();
-    }
-    resetDecription() {
-        this.clearResetDecriptionTimeoutId();
-        this.resetDecriptionTimeoutId = setTimeout((() => {
-            AccountService.downloadData(this.localPlayer.character, (success => {
-                if (!success) return;
-                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes3.Value);
-            }));
-        }), GlobalData.freeTime * 60 * 1e3);
-    }
-    clearResetDecriptionTimeoutId() {
-        if (this.resetDecriptionTimeoutId) {
-            clearTimeout(this.resetDecriptionTimeoutId);
-            this.resetDecriptionTimeoutId = null;
-        }
-    }
-    addAvatarServiceDelegate(eventName, ...params) {
-        console.error(`eventName: ${eventName}`);
-        switch (eventName) {
-          case "AE_OnQuit":
-            Event.dispatchToLocal(EventType.OnOffMainUI, true);
-            if (UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.hide();
-            this.isOpenAvatar = false;
-            break;
+var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-          case "AE_OnOpen":
-            Event.dispatchToLocal(EventType.OnOffMainUI, false);
-            this.isOpenAvatar = true;
-            break;
-        }
-    }
-    addOnOffMainUI(isShow) {
-        console.error(`isShow: ${isShow}`);
-        isShow ? this.getHUDPanel.show() : this.getHUDPanel.hide();
-    }
-    controllerBagUIVisible(isVisible) {
-        this.getHUDPanel.controllerBagUIVisible(isVisible);
-    }
-    controllerActionUIVisible(isVisible) {
-        this.getHUDPanel.controllerActionUIVisible(isVisible);
-    }
-    controllerExitUIVisible(isVisible) {
-        this.getHUDPanel.controllerExitUIVisible(isVisible);
-    }
-    updateBagIcon(bagId) {
-        this.getHUDPanel.updateBagIcon(bagId);
-    }
-    updateGoodsListCanvas(bagIds) {
-        this.getHUDPanel.updateGoodsListCanvas(bagIds);
-    }
-    action(bagId) {
-        this.getDanMuModuleC.onClickBagItemAction.call(bagId);
-    }
-    registerGlobalClickSound() {
-        Event.addLocalListener("PlayButtonClick", (v => {
-            if (this.uiClickSoundId) {
-                SoundService.stopSound(this.uiClickSoundId);
-                this.uiClickSoundId = null;
-            }
-            this.uiClickSoundId = SoundService.playSound(`12723`);
-        }));
-    }
-}
-
-class HUDModuleS extends ModuleS {
-    onStart() {}
-    onPlayerEnterGame(player) {}
-    initFreeTime(player) {
-        Utils.getCustomdata(`FreeTime`).then((freeTime => {
-            this.getClient(player).net_syncFreeTime(freeTime);
-        }));
-    }
-}
-
-class SharePanel extends SharePanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-        this.openType = 1;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    onStart() {
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mMyselfTipsTextBlock.text = GameConfig.Language.Text_MyCharacterId.Value;
-        this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
-        this.mInputBox.text = "";
-        this.mInputBox.hintString = GameConfig.Language.Text_PleaseEnter.Value;
-        this.mCancelTextBlock.text = GameConfig.Language.Text_Cancel.Value;
-        this.mUseTextBlock.text = GameConfig.Language.Text_FreeTryOn.Value;
-        this.mAdsButton.text = GameConfig.Language.Text_FreeTryOn.Value;
-        Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
-    }
-    bindButton() {
-        this.mCopyButton.onClicked.add(this.addCopyButton.bind(this));
-        this.mCancelButton.onClicked.add(this.addCancelButton.bind(this));
-        this.mUseButton.onClicked.add(this.addUseButton.bind(this));
-    }
-    addCopyButton() {
-        let copyText = this.mMyselfTextBlock.text;
-        if (!copyText || copyText == "" || copyText.length == 0) return;
-        StringUtil.clipboardCopy(copyText);
-        Notice.showDownNotice(GameConfig.Language.Text_CopySuccessfully.Value);
-    }
-    addCancelButton() {
-        this.hide();
-    }
-    addUseButton() {
-        if (this.openType == 1) {
-            let shareId = this.mInputBox.text;
-            if (!shareId || shareId == "" || shareId.length == 0) return;
-            this.getHUDModuleC.onUseShareAction.call(shareId, this.openType);
-        } else if (this.openType == 2) {
-            this.getHUDModuleC.onUseShareAction.call(null, this.openType);
-        }
-        this.hide();
-    }
-    showPanel(shareId, openType) {
-        this.openType = openType;
-        this.mMyselfTextBlock.text = shareId;
-        if (openType == 1) {
-            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.SelfHitTestInvisible);
-            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
-            setTimeout((() => {
-                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x / 2, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
-            }), 1);
-        } else if (openType == 2) {
-            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
-            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
-            setTimeout((() => {
-                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
-            }), 1);
-        }
-    }
-    onShow(...params) {
-        this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
-        this.mInputBox.text = ``;
-    }
-}
-
-class SavePanel extends SavePanel_Generate$1 {
-    constructor() {
-        super(...arguments);
-        this.hudModuleC = null;
-    }
-    get getHUDModuleC() {
-        if (this.hudModuleC == null) {
-            this.hudModuleC = ModuleService.getModule(HUDModuleC);
-        }
-        return this.hudModuleC;
-    }
-    onStart() {
-        this.initUI();
-        this.bindButton();
-    }
-    initUI() {
-        this.mSaveTipsTextBlock.text = GameConfig.Language.Text_SaveImagesForFree.Value;
-    }
-    bindButton() {
-        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
-    }
-    addSaveButton() {
-        this.getHUDModuleC.onFreeTryOnAction.call();
-    }
-}
-
-var foreign104 = Object.freeze({
+var foreign164 = Object.freeze({
     __proto__: null,
-    HUDItem: HUDItem,
-    HUDModuleC: HUDModuleC,
-    HUDModuleS: HUDModuleS,
-    HUDPanel: HUDPanel,
-    SavePanel: SavePanel,
-    SharePanel: SharePanel
+    default: BubbleItem_Generate$1
 });
 
 class Bubble {
@@ -10252,848 +9547,806 @@ var foreign92 = Object.freeze({
     default: DanMuModuleC
 });
 
-let Buff = class Buff extends Script {
+class HUDItem extends HUDItem_Generate$1 {
     constructor() {
         super(...arguments);
+        this.hudPanel = null;
+        this.hudModuleC = null;
         this.bagId = 0;
-        this.playerId = 0;
-        this.springArmLength = 350;
-        this.startScale = 1;
-        this.targetScale = 1;
-        this.time = 0;
-        this.targetPlayer = null;
-        this.localPlayer = null;
+        this.isUse = false;
+    }
+    get getHUDPanel() {
+        if (!this.hudPanel) {
+            this.hudPanel = UIService.getUI(HUDPanel);
+        }
+        return this.hudPanel;
+    }
+    get getHUDModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
     }
     onStart() {
-        this.useUpdate = false;
+        this.initUI();
+        this.bindButton();
     }
-    onBagIdChange() {
-        if (!this.targetPlayer || !this.localPlayer) return;
-        if (this.bagId == 0) {
-            this.startScale = this.targetPlayer.character.worldTransform.scale.x;
-            this.targetScale = 1;
-            if (this.targetPlayer.playerId == this.localPlayer.playerId) {
-                Camera.currentCamera.springArm.length = this.springArmLength * this.targetScale;
+    initUI() {
+        this.useState(false);
+    }
+    bindButton() {
+        this.mClickButton.onClicked.add(this.addClickButton.bind(this));
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+    }
+    addClickButton() {
+        let nextBagId = GameConfig.ActionProp.getElement(this.bagId).NextId;
+        if (!nextBagId || nextBagId <= 0) return;
+        this.getHUDModuleC.clickGoodItemAction.call(this.bagId);
+    }
+    addCloseButton() {
+        this.getHUDModuleC.clickCloseGoodItemAction.call(this.bagId);
+    }
+    setDatas(bagId) {
+        this.bagId = bagId;
+        let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
+        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+                this.useState(false);
+            } else {
+                this.useState(true);
             }
         } else {
-            let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
-            if (actionPropElement.BuffId <= 0) return;
-            let buffParams = actionPropElement.BuffParams;
-            this.startScale = this.targetPlayer.character.worldTransform.scale.x;
-            this.targetScale = buffParams[0];
-            if (this.targetPlayer.playerId == this.localPlayer.playerId) {
-                Camera.currentCamera.springArm.length = this.springArmLength * this.targetScale;
+            if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
+                actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
+                this.useState(true);
+            } else {
+                this.useState(false);
             }
         }
-        this.time = 0;
-        this.useUpdate = true;
+        if (actionPropElement.VehiclesIcon) {
+            this.mIconImage.imageGuid = actionPropElement.VehiclesIcon;
+        } else if (actionPropElement.Icon) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.Icon);
+        } else if (actionPropElement.AssetId) {
+            Utils.setImageByAssetIconData(this.mIconImage, actionPropElement.AssetId);
+        } else if (bagId == actionPropElement.NextId) {
+            let nextActionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId - 1);
+            if (nextActionPropElement.VehiclesIcon) {
+                this.mIconImage.imageGuid = nextActionPropElement.VehiclesIcon;
+            } else if (nextActionPropElement.Icon) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.Icon);
+            } else if (nextActionPropElement.AssetId) {
+                Utils.setImageByAssetIconData(this.mIconImage, nextActionPropElement.AssetId);
+            }
+        }
     }
-    async onPlayerIdChange() {
-        this.targetPlayer = await Player.asyncGetPlayer(this.playerId);
-        this.localPlayer = await Player.asyncGetLocalPlayer();
+    useState(isUse) {
+        this.isUse = isUse;
+        Utils.setWidgetVisibility(this.mSelectImage, this.isUse ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
     }
-    onUpdate(dt) {
-        if (this.targetPlayer == null || this.time >= 1) return;
-        this.time = Math.min(this.time + dt * 5, 1);
-        this.startScale = this.startScale + (this.targetScale - this.startScale) * this.time;
-        try {
-            this.targetPlayer.character.worldTransform.scale = mw.Vector.multiply(mw.Vector.one, this.startScale);
-        } catch (error) {}
-    }
-    onDestroy() {}
-};
+}
 
-__decorate([ mw.Property({
-    replicated: true,
-    onChanged: "onBagIdChange"
-}) ], Buff.prototype, "bagId", void 0);
-
-__decorate([ mw.Property({
-    replicated: true,
-    onChanged: "onPlayerIdChange"
-}) ], Buff.prototype, "playerId", void 0);
-
-Buff = __decorate([ Component ], Buff);
-
-var Buff$1 = Buff;
-
-var foreign90 = Object.freeze({
-    __proto__: null,
-    default: Buff$1
-});
-
-const WorldChatDatas = "WorldChatDatas";
-
-const WorldExpressionDatas = "WorldExpressionDatas";
-
-const WorldActionDatas = "WorldActionDatas";
-
-class DanMuModuleS extends ModuleS {
+class HUDPanel extends HUDPanel_Generate$1 {
     constructor() {
         super(...arguments);
-        this.maxShowDistance = 2e3;
-        this.playerInteractMap = new Map;
-        this.playerBagMap = new Map;
-        this.playerGlideMap = new Map;
+        this.hudModuleC = null;
+        this.isOpenBGM = true;
+        this.taskRedPointTween1 = null;
+        this.taskRedPointTween2 = null;
+        this.hudItems = [];
     }
-    onStart() {}
-    onPlayerEnterGame(player) {
-        this.initChatDatas(player);
-        this.initExpressionDatas(player);
-        this.initBuff(player);
-    }
-    onPlayerLeft(player) {
-        if (Utils.buffMap.has(player.playerId)) {
-            Utils.buffMap.get(player.playerId)?.destroy();
-            Utils.buffMap.delete(player.playerId);
+    get getHUDModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
         }
-        this.unloadAllBag(player, false);
+        return this.hudModuleC;
     }
-    initBuff(player) {
-        let buff = player.character.addComponent(Buff$1, true);
-        buff.playerId = player.playerId;
-        Utils.buffMap.set(player.playerId, buff);
+    onStart() {
+        this.initUI();
+        this.bindButton();
     }
-    onUpdate(dt) {
-        this.playerBagMap.forEach((value => {
-            value.forEach((bag => {
-                if (bag.isUpdate) bag.update();
-            }));
-        }));
-    }
-    initChatDatas(player) {
-        this.getCustomdata(WorldChatDatas).then((chatDatas => {
-            if (!chatDatas || chatDatas.length == 0) return;
-            this.getClient(player).net_initChatDatas(chatDatas);
-        }));
-    }
-    initExpressionDatas(player) {
-        this.getCustomdata(WorldExpressionDatas).then((expressionAssets => {
-            if (!expressionAssets || expressionAssets.length == 0) return;
-            this.getClient(player).net_initExpressionDatas(expressionAssets);
-        }));
-    }
-    initActionDatas(player) {
-        this.getCustomdata(WorldActionDatas).then((actionDatas => {
-            if (!actionDatas || actionDatas.length == 0) return;
-            this.getClient(player).net_initActionDatas(actionDatas);
-        }));
-    }
-    setChat_Test() {
-        let chatDatas = [];
-        for (let i = 1; i <= 10; ++i) {
-            let ch = GameConfig.Chat.getElement(i);
-            let chats = ch.Chats;
-            let chatChilds = ch.ChatChilds;
-            chatDatas.push({
-                chats: chats,
-                chatChilds: chatChilds
-            });
+    initUI() {
+        this.controllerExitUIVisible(false);
+        this.controllerBagUIVisible(false);
+        this.controllerActionUIVisible(false);
+        this.constollerGoodsCanvasVisible(false);
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
+        this.mOpenSignInTextBlock.text = GameConfig.Language.Text_HUDPanelTips1.Value;
+        this.mOpenShareTextBlock.text = GameConfig.Language.Text_HUDPanelTips2.Value;
+        this.mOpenMallTextBlock.text = GameConfig.Language.Text_HUDPanelTips5.Value;
+        this.mOpenClothTextBlock.text = GameConfig.Language.Text_HUDPanelTips6.Value;
+        this.mOpenRankTextBlock.text = GameConfig.Language.Text_HUDPanelTips3.Value;
+        this.mOpenMusicTextBlock.text = GameConfig.Language.Text_HUDPanelTips7.Value;
+        this.mOpenSetTextBlock.text = GameConfig.Language.Text_HUDPanelTips4.Value;
+        this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
+        Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
+        if (GlobalData.languageId == 0) {
+            Utils.setWidgetVisibility(this.mOpenClothImage, mw.SlateVisibility.Collapsed);
         }
-        this.setCustomData(WorldChatDatas, chatDatas);
+        this.initShakeMallTween();
+        this.initShakeShareTween();
+        this.initShakeSignInTween();
+        this.initTaskTween();
     }
-    setExpression_Test() {
-        let expressionAssets = [];
-        GameConfig.Expression.getAllElement().forEach((value => {
-            expressionAssets.push(value.AssetId);
-        }));
-        this.setCustomData(WorldExpressionDatas, expressionAssets);
-    }
-    setAction_Test() {
-        let actionDatas = [];
-        GameConfig.ActionConfig.getAllElement().forEach((value => {
-            actionDatas.push({
-                tab: value.Tab,
-                icon: value.Icon,
-                assetId: value.ActionId,
-                names: value.Names,
-                loop: value.Loop,
-                pos: value.Pos,
-                rot: new mw.Rotation(value.Rot),
-                type: value.Type
-            });
-        }));
-        this.setCustomData(WorldActionDatas, actionDatas);
-    }
-    net_sendDanMu(msg, isActive) {
-        this.getAllClient().net_sendDanMu(this.currentPlayer.userId, msg, isActive);
-    }
-    async getCustomdata(key) {
-        return (await DataStorage.asyncGetData(key)).data;
-    }
-    async setCustomData(saveKey, dataInfo) {
-        let code = null;
-        code = await DataStorage.asyncSetData(saveKey, dataInfo);
-        return code == mw.DataStorageResultCode.Success;
-    }
-    net_showBubbleText(gameObjectId, text) {
-        let currentPlayer = this.currentPlayer;
-        if (this.maxShowDistance == -1) {
-            Player.getAllPlayers().forEach((player => {
-                this.getClient(player).net_showBubbleText(gameObjectId, text);
-            }));
+    updateFreeTime() {
+        console.error(`wfz - freeTime:${GlobalData.freeTime}`);
+        if (GlobalData.freeTime <= 0 || GlobalData.freeTime >= 999) {
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.Collapsed);
         } else {
-            const players = Player.getAllPlayers();
-            for (const player of players) {
-                if (player === currentPlayer) {
-                    this.getClient(player).net_showBubbleText(gameObjectId, text);
-                } else {
-                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
-                    if (len <= this.maxShowDistance) {
-                        this.getClient(player).net_showBubbleText(gameObjectId, text);
-                    }
-                }
-            }
+            Utils.setWidgetVisibility(this.mFreeTextBlock, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mFreeTextBlock.text = StringUtil.format(GameConfig.Language.Text_FreeChangeOfClothes2.Value, GlobalData.freeTime);
         }
     }
-    net_playExpression(assetId) {
-        this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
+    bindButton() {
+        this.mJumpButton.onClicked.add(this.addJumpButton.bind(this));
+        this.mCrouchButton.onClicked.add(this.addCrouchButton.bind(this));
+        this.mExitButton.onClicked.add(this.addFlyButton.bind(this));
+        this.mActionButton.onClicked.add(this.addActionButton.bind(this));
+        this.mBagButton.onClicked.add(this.addBagButton.bind(this));
+        this.mShowHideGoodsButton.onClicked.add(this.showHideGoodsButton.bind(this));
+        this.mDeleteAllGoodsButton.onClicked.add(this.addDeleteAllGoods.bind(this));
+        this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
+        this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
+        this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
+        this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
+        this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
+        this.mOnOffMusicBtn.onClicked.add(this.addOnOffMusicButton.bind(this));
+        this.mLeftMusicBtn.onClicked.add(this.addPreMusicButton.bind(this));
+        this.mRightMusicBtn.onClicked.add(this.addNextMusicButton.bind(this));
+        this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
+        this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
+        this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
+        this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
     }
-    async net_EnterInteract(actionData) {
-        let player = this.currentPlayer;
-        return await this.enterInteract(player, actionData);
+    addJumpButton() {
+        this.getHUDModuleC.onJumpAction.call();
     }
-    async enterInteract(player, actionData) {
-        let playerId = player.playerId;
-        if (!this.playerInteractMap.has(playerId)) {
-            this.playerInteractMap.set(playerId, new PlayerInteract);
-        }
-        let playerInteract = this.playerInteractMap.get(playerId);
-        await playerInteract.clearInteractor(player);
-        if (actionData.type == 0) {
-            return await playerInteract.playSingleAni(player, actionData);
-        } else if (actionData.type == 1) {
-            return await playerInteract.interact(player, actionData);
-        } else if (actionData.type == 2) {
-            return await playerInteract.playDoubleAni(player, actionData);
-        }
+    addCrouchButton() {
+        this.getHUDModuleC.onCrouchAction.call();
     }
-    async net_LeaveInteract() {
-        let player = this.currentPlayer;
-        return await this.leaveInteract(player);
+    addFlyButton() {
+        this.getHUDModuleC.onExitAction.call();
     }
-    async leaveInteract(player) {
-        let playerId = player.playerId;
-        if (!this.playerInteractMap.has(playerId)) return true;
-        let playerInteract = this.playerInteractMap.get(playerId);
-        return await playerInteract.clearInteractor(player);
+    addActionButton() {
+        this.getHUDModuleC.onActionButton.call();
     }
-    async net_useBag(bagId) {
-        let player = this.currentPlayer;
-        let playerBag = null;
-        let bagIds = [];
-        if (!this.playerBagMap.has(player.playerId)) {
-            playerBag = new PlayerBag;
-            this.playerBagMap.set(player.playerId, [ playerBag ]);
-        } else {
-            let playerBags = this.playerBagMap.get(player.playerId);
-            for (let i = 0; i < playerBags.length; ++i) {
-                if (GameConfig.ActionProp.getElement(bagId).Tab == 6) {
-                    if (GameConfig.ActionProp.getElement(playerBags[i].bagId).Tab == 6) {
-                        playerBag = playerBags[i];
-                        break;
-                    }
-                }
-                if (playerBags[i].bagId == bagId || GameConfig.ActionProp.getElement(playerBags[i].bagId).NextId == bagId) {
-                    playerBag = playerBags[i];
-                    break;
-                }
-            }
-            if (!playerBag) {
-                if (playerBags.length >= GlobalData.bagCount) {
-                    playerBags.forEach((value => {
-                        bagIds.push(value.bagId);
+    addBagButton() {
+        this.getHUDModuleC.onBagButton.call();
+    }
+    addOpenRankButton() {
+        this.getHUDModuleC.onOpenRankAction.call();
+    }
+    addOpenShareButton() {
+        this.getHUDModuleC.onOpenShareAction.call(1);
+    }
+    addOpenSignInButton() {
+        this.getHUDModuleC.onOpenSignInAction.call();
+    }
+    addOpenMusicButton() {
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    addOnOffMusicButton() {
+        this.isOpenBGM = !this.isOpenBGM;
+        this.getHUDModuleC.onOnOffMusicAction.call(this.isOpenBGM);
+        let offOnIcon = this.isOpenBGM ? GlobalData.onMusicIconGuid : GlobalData.offMusicIconGuid;
+        this.mOnOffMusicBtn.normalImageGuid = offOnIcon;
+        this.mOnOffMusicBtn.pressedImageGuid = offOnIcon;
+        this.mOnOffMusicBtn.disableImageGuid = offOnIcon;
+    }
+    addNextMusicButton() {
+        this.getHUDModuleC.onSwitchBgmAction.call(1);
+    }
+    addPreMusicButton() {
+        this.getHUDModuleC.onSwitchBgmAction.call(-1);
+    }
+    addCloseMusicButton() {
+        Utils.setWidgetVisibility(this.mMusicCanvas, mw.SlateVisibility.Collapsed);
+    }
+    addOpenMallButton() {
+        this.getHUDModuleC.onOpenMallAction.call();
+    }
+    addOpenPhotoButton() {
+        this.getHUDModuleC.onOpenPhotoAction.call();
+    }
+    addOpenTaskButton() {
+        this.getHUDModuleC.onOpenTaskAction.call();
+    }
+    showHideGoodsButton() {
+        this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
+    }
+    addDeleteAllGoods() {
+        this.constollerGoodsContentCanvasVisible(false, true);
+        this.getHUDModuleC.deleteAllGoodsAction.call();
+    }
+    addSetButton() {
+        this.getHUDModuleC.onOpenSetAction.call();
+    }
+    addClothButton() {
+        this.getHUDModuleC.onOpenClothAction.call();
+    }
+    startTaskRedPointTween() {
+        if (!this.taskRedPointTween1 || !this.taskRedPointTween2) this.initTaskRedPointTweens();
+        this.taskRedPointTween1.start();
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    stopTaskRedPointTween() {
+        if (this.taskRedPointTween1) this.taskRedPointTween1.stop();
+        if (this.taskRedPointTween2) this.taskRedPointTween2.stop();
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
+    }
+    initTaskRedPointTweens() {
+        Utils.setWidgetVisibility(this.mTaskPointImage, mw.SlateVisibility.Collapsed);
+        this.taskRedPointTween1 = new mw.Tween({
+            value: .8
+        }).to({
+            value: 1.2
+        }, .2 * 1e3).onStart((() => {
+            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(.8);
+        })).onUpdate((v => {
+            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
+        })).onComplete((() => {
+            if (this.taskRedPointTween2) this.taskRedPointTween2.start();
+        })).easing(cubicBezier(.25, .1, .25, 1));
+        this.taskRedPointTween2 = new mw.Tween({
+            value: 1.2
+        }).to({
+            value: .8
+        }, .2 * 1e3).onStart((() => {
+            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(1.2);
+        })).onUpdate((v => {
+            this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
+        })).onComplete((() => {
+            if (this.taskRedPointTween1) this.taskRedPointTween1.start();
+        })).easing(cubicBezier(.25, .1, .25, 1));
+    }
+    initTaskTween() {
+        let leftToRight = this.getPosTween(this.mOpenTaskButton, .5, 0, 15, 40, 15);
+        let rightToLeft = this.getPosTween(this.mOpenTaskButton, .5, 40, 15, 0, 15);
+        leftToRight.start().onComplete((() => {
+            TimeUtil.delaySecond(.1).then((() => {
+                rightToLeft.start().onComplete((() => {
+                    TimeUtil.delaySecond(.1).then((() => {
+                        leftToRight.start();
                     }));
-                    return bagIds;
-                }
-                playerBag = new PlayerBag;
-                playerBags.push(playerBag);
-            }
-        }
-        await playerBag.equip(player, bagId);
-        this.playerBagMap.get(player.playerId).forEach((value => {
-            bagIds.push(value.bagId);
+                }));
+            }));
         }));
-        return bagIds;
+        this.initTaskRedPointTweens();
     }
-    async net_unloadBag(bagId) {
-        let player = this.currentPlayer;
-        let bagIds = [];
-        if (!this.playerBagMap.has(player.playerId)) return bagIds;
-        let playerBags = this.playerBagMap.get(player.playerId);
-        let unloadIndex = -1;
-        for (let i = 0; i < playerBags.length; ++i) {
-            if (playerBags[i].bagId == bagId) {
-                await playerBags[i].unEquip(player, bagId);
-                unloadIndex = i;
-                break;
-            }
-        }
-        if (unloadIndex == -1 || !playerBags || playerBags.length == 0) return bagIds;
-        if (playerBags.length == 1) {
-            playerBags.length = 0;
-            playerBags = [];
+    controllerBagUIVisible(isVisible) {
+        Utils.setWidgetVisibility(this.mBagBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    }
+    controllerActionUIVisible(isVisible) {
+        Utils.setWidgetVisibility(this.mActionBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    }
+    controllerExitUIVisible(isVisible) {
+        Utils.setWidgetVisibility(this.mExitBgImage, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    }
+    updateBagIcon(bagId) {
+        if (bagId == 0) {
+            this.controllerBagUIVisible(false);
         } else {
-            for (let i = unloadIndex + 1; i < playerBags.length; ++i) {
-                playerBags[i - 1] = playerBags[i];
+            this.controllerBagUIVisible(true);
+            let bagIcon = GameConfig.ActionProp.getElement(bagId).ButtonIconId;
+            this.mBagButton.normalImageGuid = bagIcon;
+            this.mBagButton.pressedImageGuid = bagIcon;
+            this.mBagButton.disableImageGuid = bagIcon;
+        }
+    }
+    constollerGoodsCanvasVisible(isVisible) {
+        Utils.setWidgetVisibility(this.mGoodsCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    }
+    constollerGoodsContentCanvasVisible(isVisible, isParent) {
+        if (isParent) this.constollerGoodsCanvasVisible(isVisible);
+        Utils.setWidgetVisibility(this.mGoodsContentCanvas, isVisible ? mw.SlateVisibility.SelfHitTestInvisible : mw.SlateVisibility.Collapsed);
+    }
+    updateGoodsListCanvas(bagIds) {
+        if (this.hudItems.length > bagIds.length) {
+            for (let i = 0; i < bagIds.length; ++i) {
+                this.hudItems[i].setDatas(bagIds[i]);
+                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
             }
-            playerBags.length = playerBags.length - 1;
+            for (let i = bagIds.length; i < this.hudItems.length; ++i) {
+                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        } else {
+            for (let i = 0; i < this.hudItems.length; ++i) {
+                this.hudItems[i].setDatas(bagIds[i]);
+                Utils.setWidgetVisibility(this.hudItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.hudItems.length; i < bagIds.length; ++i) {
+                let hudItem = UIService.create(HUDItem);
+                this.mGoodsListCanvas.addChild(hudItem.uiObject);
+                hudItem.setDatas(bagIds[i]);
+                this.hudItems.push(hudItem);
+            }
         }
-        console.error(`playerBags.length:${playerBags.length}`);
-        playerBags.forEach((value => {
-            bagIds.push(value.bagId);
+        this.constollerGoodsContentCanvasVisible(bagIds.length > 0, true);
+    }
+    onShow(...params) {
+        this.mVirtualJoystickPanel.resetJoyStick();
+    }
+    onHide() {
+        this.mVirtualJoystickPanel.resetJoyStick();
+    }
+    initShakeMallTween() {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, .5, 20, -20, 1.5, .9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, .5, -20, 20, .9, 1.5);
+        rightBigToLeftSmall.start().onComplete((() => {
+            TimeUtil.delaySecond(.1).then((() => {
+                leftSamllToRightBig.start().onComplete((() => {
+                    TimeUtil.delaySecond(.1).then((() => {
+                        rightBigToLeftSmall.start();
+                    }));
+                }));
+            }));
         }));
-        return bagIds;
     }
-    async net_unloadAllBag() {
-        let player = this.currentPlayer;
-        return await this.unloadAllBag(player, true);
+    initShakeShareTween() {
+        let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, .3, .8, .8, 1.2, 1.2);
+        let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, .3, 1.2, 1.2, .8, .8);
+        rightBigToLeftSmall.start().onComplete((() => {
+            TimeUtil.delaySecond(.1).then((() => {
+                leftSamllToRightBig.start().onComplete((() => {
+                    TimeUtil.delaySecond(.1).then((() => {
+                        rightBigToLeftSmall.start();
+                    }));
+                }));
+            }));
+        }));
     }
-    async unloadAllBag(player, isSync) {
-        if (!this.playerBagMap.has(player.playerId)) return;
-        let playerBag = this.playerBagMap.get(player.playerId);
-        for (let i = 0; i < playerBag.length; ++i) {
-            await playerBag[i].unEquip(player, playerBag[i].bagId, isSync);
-        }
-        this.playerBagMap.delete(player.playerId);
-        return [];
+    initShakeSignInTween() {
+        let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 2, 0, 360);
+        let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 2, 360, 0);
+        rightBigToLeftSmall.start().onComplete((() => {
+            TimeUtil.delaySecond(.1).then((() => {
+                leftSamllToRightBig.start().onComplete((() => {
+                    TimeUtil.delaySecond(.1).then((() => {
+                        rightBigToLeftSmall.start();
+                    }));
+                }));
+            }));
+        }));
     }
-    async net_startGlide() {
-        let player = this.currentPlayer;
-        if (!this.playerGlideMap.has(player.playerId)) {
-            this.playerGlideMap.set(player.playerId, new PlayerGlide);
-        }
-        let playerGlide = this.playerGlideMap.get(player.playerId);
-        return await playerGlide.startGlide(player);
+    getShakeTween(widget, angleTime, startAngle, endAngle) {
+        return new Tween({
+            angle: startAngle
+        }).to({
+            angle: endAngle
+        }, angleTime * 1e3).onUpdate((v => {
+            widget.renderTransformAngle = v.angle;
+        })).easing(cubicBezier(.22, .9, .28, .92));
     }
-    net_stopGlide() {
-        let player = this.currentPlayer;
-        if (!this.playerGlideMap.has(player.playerId)) return true;
-        let playerGlide = this.playerGlideMap.get(player.playerId);
-        playerGlide.stopGlide();
-        this.playerGlideMap.delete(player.playerId);
-        return true;
+    getScaleTween(widget, scaleTime, startScaleX, startScaleY, endScaleX, endScaleY) {
+        return new Tween({
+            scaleX: startScaleX,
+            scaleY: startScaleY
+        }).to({
+            scaleX: endScaleX,
+            scaleY: endScaleY
+        }, scaleTime * 1e3).onUpdate((v => {
+            widget.renderScale = new mw.Vector2(v.scaleX, v.scaleY);
+        })).easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getShakeScaleTween(widget, shakeScaleTime, startAngle, endAngle, startScale, endScale) {
+        return new Tween({
+            angle: startAngle,
+            scale: startScale
+        }).to({
+            angle: endAngle,
+            scale: endScale
+        }, shakeScaleTime * 1e3).onUpdate((v => {
+            widget.renderTransformAngle = v.angle;
+            widget.renderScale = new mw.Vector2(v.scale, v.scale);
+        })).easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getRenderOpacityTween(widget, time, startOpacity, endOpacity) {
+        return new Tween({
+            opacity: startOpacity
+        }).to({
+            opacity: endOpacity
+        }, time * 1e3).onUpdate((v => {
+            widget.renderOpacity = v.opacity;
+        })).easing(cubicBezier(.22, .9, .28, .92));
+    }
+    getPosTween(widget, posTime, startPosX, startPosY, endPosX, endPosY) {
+        return new Tween({
+            posX: startPosX,
+            posY: startPosY
+        }).to({
+            posX: endPosX,
+            posY: endPosY
+        }, posTime * 1e3).onUpdate((v => {
+            widget.position = new mw.Vector2(v.posX, v.posY);
+        })).easing(cubicBezier(.22, .9, .28, .92));
     }
 }
 
-__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_sendDanMu", null);
-
-__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_showBubbleText", null);
-
-__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_playExpression", null);
-
-class PlayerGlide {
+class HUDModuleC extends ModuleC {
     constructor() {
-        this.animation = null;
-        this.glideObj = null;
-        this.effectId = null;
+        super(...arguments);
+        this.hudPanel = null;
+        this.danMuModuleC = null;
+        this.savePanel = null;
+        this.adPanel = null;
+        this.onJumpAction = new Action;
+        this.onCrouchAction = new Action;
+        this.onExitAction = new Action;
+        this.onActionButton = new Action;
+        this.onBagButton = new Action;
+        this.clickGoodItemAction = new Action1;
+        this.clickCloseGoodItemAction = new Action1;
+        this.deleteAllGoodsAction = new Action;
+        this.onOpenSetAction = new Action;
+        this.onOpenClothAction = new Action;
+        this.onOpenRankAction = new Action;
+        this.onOpenShareAction = new Action1;
+        this.onUseShareAction = new Action2;
+        this.onOpenSignInAction = new Action;
+        this.onFreeTryOnAction = new Action;
+        this.onOnOffMusicAction = new Action1;
+        this.onSwitchBgmAction = new Action1;
+        this.onOpenMallAction = new Action;
+        this.onOpenPhotoAction = new Action;
+        this.onOpenTaskAction = new Action;
+        this.freeNpc = null;
+        this.currentBgmIndex = 1;
+        this.bgmMusics = [];
+        this.changeDescription = null;
+        this.resetDecriptionTimeoutId = null;
+        this.isOpenAvatar = false;
+        this.uiClickSoundId = null;
     }
-    async startGlide(player) {
-        await Utils.asyncDownloadAsset(`148890`);
-        this.animation = player.character.loadAnimation(`148890`);
-        this.animation.loop = 0;
-        this.animation.play();
-        await Utils.asyncDownloadAsset(`162566`);
-        this.glideObj = await GameObjPool.asyncSpawn("162566");
-        await this.glideObj.asyncReady();
-        await this.glideObj.setCollision(mw.PropertyStatus.Off, true);
-        await Utils.asyncDownloadAsset(`27392`);
-        this.effectId = EffectService.playOnGameObject("27392", this.glideObj, {
-            loopCount: 0
-        });
-        player.character.attachToSlot(this.glideObj, mw.HumanoidSlotType.LeftHand);
-        this.glideObj.localTransform.position = new mw.Vector(0, 0, 0);
-        this.glideObj.localTransform.rotation = new mw.Rotation(-90, 0, 0);
-        return true;
-    }
-    stopGlide() {
-        if (this.effectId) {
-            EffectService.stop(this.effectId);
-            this.effectId = null;
+    get getHUDPanel() {
+        if (!this.hudPanel) {
+            this.hudPanel = UIService.getUI(HUDPanel);
         }
-        if (this.animation) {
-            this.animation.stop();
-            this.animation = null;
-        }
-        if (this.glideObj) {
-            GameObjPool.despawn(this.glideObj);
-            this.glideObj = null;
-        }
+        return this.hudPanel;
     }
-}
-
-class PlayerBag {
-    constructor() {
-        this.player = null;
-        this.bagId = null;
-        this.mode = null;
-        this.vehiclesMode = null;
-        this.isUpdate = false;
-        this.isMove = false;
-        this.playerVelocity = null;
-        this.actionPropElement = null;
-        this.vehiclesModeAnimation = null;
-        this.playerAnimation = null;
-        this.playerStatce = null;
-        this.originalMaterialId = null;
-        this.animation = null;
-        this.effectId = null;
-        this.soundId = null;
+    get getDanMuModuleC() {
+        if (!this.danMuModuleC) {
+            this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
+        }
+        return this.danMuModuleC;
     }
-    async equip(player, bagId) {
-        this.player = player;
-        this.bagId = bagId;
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        this.actionPropElement = actionPropElement;
-        if (actionPropElement.BuffId > 0) {
-            if (Utils.buffMap.has(player.playerId)) {
-                Utils.buffMap.get(player.playerId).bagId = bagId;
-            }
+    get getSavePanel() {
+        if (!this.savePanel) {
+            this.savePanel = UIService.getUI(SavePanel);
+        }
+        return this.savePanel;
+    }
+    get getAdPanel() {
+        if (!this.adPanel) {
+            this.adPanel = UIService.getUI(AdPanel);
+        }
+        return this.adPanel;
+    }
+    onStart() {
+        this.initUI();
+        this.bindAction();
+    }
+    onEnterScene(sceneType) {
+        this.getHUDPanel.show();
+        this.playBGMusic(0);
+        this.registerGlobalClickSound();
+        AvatarEditorService.setAvatarEditorButtonVisible(true);
+        this.initFreeNpc();
+    }
+    net_syncFreeTime(freeTime) {
+        if (!isNaN(freeTime) && freeTime > 0) GlobalData.freeTime = freeTime;
+        if (mw.UIService.getUI(HUDPanel, false)?.visible) {
+            this.getHUDPanel.updateFreeTime();
         } else {
-            if (actionPropElement.NextId > 0) {
-                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).BuffId > 0) {
-                    if (Utils.buffMap.has(player.playerId)) {
-                        Utils.buffMap.get(player.playerId).bagId = 0;
-                    }
-                }
-            }
-        }
-        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
-            this.recycleMode();
-            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
-        } else {
-            await this.updateMode(player, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
-        }
-        if (actionPropElement.VehiclesChildId && actionPropElement.VehiclesChildId.length > 0) {
-            this.recycleVehiclesMode();
-            await this.spawnVehiclesMode(player, actionPropElement.VehiclesChildId, actionPropElement.VehiclesChildParameter);
-        } else {
-            this.recycleVehiclesMode();
-        }
-        if (actionPropElement.MaterialId && actionPropElement.MaterialId.length > 0) {
-            this.setMaterial(actionPropElement.MaterialId);
-        } else {
-            this.resetMaterial();
-        }
-        if (actionPropElement.IsFly == 1) {
-            this.switchFlyState(player);
-        } else if (actionPropElement.IsFly == 0) {
-            if (actionPropElement.NextId > 0) {
-                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).IsFly == 1) {
-                    this.switchRunState(player);
-                }
-            }
-        }
-        if (actionPropElement.AnimationId && actionPropElement.AnimationId.length > 0) {
-            await this.playAnimation(player, actionPropElement.AnimationId, actionPropElement.AnimationSlot, actionPropElement.AnimationParameter);
-        } else {
-            this.stopAnimation();
-        }
-        if (actionPropElement.DelayAssetId && actionPropElement.DelayAssetId.length > 0) {
-            this.placingItems(player, actionPropElement);
-        }
-        if (actionPropElement.EffectId && actionPropElement.EffectId.length > 0) {
-            this.stopEffect();
-            await this.playEffect(actionPropElement.EffectId, actionPropElement.EffectLoop, actionPropElement.EffectOffsetParameter);
-        } else {
-            this.stopEffect();
-        }
-        if (actionPropElement.SoundId && actionPropElement.SoundId.length > 0) {
-            this.stop3DSound();
-            await this.play3DSound(actionPropElement.SoundId, actionPropElement.SoundParameter);
-        } else {
-            this.stop3DSound();
-        }
-        this.isUpdate = actionPropElement.Tab == 6;
-        await TimeUtil.delaySecond(.1);
-        return true;
-    }
-    async unEquip(player, bagId, isSync = true) {
-        this.isUpdate = false;
-        this.stopEffect();
-        this.stop3DSound();
-        this.stopAnimation();
-        this.stopPlayerVehiclesModeAnimation();
-        this.resetMaterial();
-        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
-        if (actionPropElement.IsFly == 1 && GameConfig.ActionProp.getElement(actionPropElement.NextId).IsFly == 0) {
-            this.switchRunState(player);
-        }
-        if (actionPropElement.BuffId > 0) {
-            if (actionPropElement.NextId > 0) {
-                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).BuffId <= 0) {
-                    if (Utils.buffMap.has(player.playerId)) {
-                        Utils.buffMap.get(player.playerId).bagId = 0;
-                    }
-                }
-            }
-        }
-        this.recycleMode();
-        this.recycleVehiclesMode();
-        if (isSync) await TimeUtil.delaySecond(.1);
-        return true;
-    }
-    async spawnMode(player, assetId, slotType, parameter) {
-        await Utils.asyncDownloadAsset(assetId);
-        this.mode = await GameObjPool.asyncSpawn(assetId);
-        await this.mode.asyncReady();
-        this.mode.setCollision(mw.PropertyStatus.Off, true);
-        player.character.attachToSlot(this.mode, slotType);
-        this.mode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
-        this.mode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
-        this.mode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
-    }
-    recycleMode() {
-        if (!this.mode) return;
-        GameObjPool.despawn(this.mode);
-        this.mode = null;
-    }
-    async updateMode(player, slotType, parameter) {
-        if (!this.mode) {
-            if (this.actionPropElement.AssetId && this.actionPropElement.AssetId.length > 0) ; else {
-                if (this.actionPropElement.NextId > 0) {
-                    if (this.actionPropElement.NextId == this.actionPropElement.ID) {
-                        let actionPropElement = GameConfig.ActionProp.getElement(this.actionPropElement.NextId - 1);
-                        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
-                            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
-                        }
-                    } else {
-                        let actionPropElement = GameConfig.ActionProp.getElement(this.actionPropElement.NextId);
-                        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
-                            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
-                        }
-                    }
-                }
-            }
-        }
-        player.character.attachToSlot(this.mode, slotType);
-        this.mode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
-        this.mode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
-        this.mode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
-    }
-    async spawnVehiclesMode(player, assetId, parameter) {
-        await Utils.asyncDownloadAsset(`Character`);
-        this.vehiclesMode = await GameObjPool.asyncSpawn(`Character`);
-        await this.vehiclesMode.asyncReady();
-        await Utils.asyncDownloadAsset(assetId);
-        this.vehiclesMode.description.base.wholeBody = assetId;
-        await this.vehiclesMode.asyncReady();
-        this.vehiclesMode.collisionWithOtherCharacterEnabled = false;
-        this.vehiclesMode.complexMovementEnabled = false;
-        player.character.attachToSlot(this.vehiclesMode, mw.HumanoidSlotType.Root);
-        this.vehiclesMode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
-        this.vehiclesMode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
-        this.vehiclesMode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
-    }
-    recycleVehiclesMode() {
-        if (!this.vehiclesMode) return;
-        GameObjPool.despawn(this.vehiclesMode);
-        this.vehiclesMode = null;
-    }
-    update() {
-        if (!this.isUpdate) return;
-        if (!this.player) return;
-        if (!this.playerVelocity) this.playerVelocity = this.player.character.velocity;
-        if (!this.isMove && (this.player.character.velocity.x != 0 || this.player.character.velocity.y != 0)) {
-            this.isMove = true;
-            this.playerMoveAction();
-        } else if (this.isMove && (this.player.character.velocity.x == 0 && this.player.character.velocity.y == 0)) {
-            this.isMove = false;
-            this.playerIdleAction();
-        }
-    }
-    stopPlayerVehiclesModeAnimation() {
-        if (this.vehiclesModeAnimation) {
-            this.vehiclesModeAnimation.stop();
-            this.vehiclesModeAnimation = null;
-        }
-        if (this.playerAnimation) {
-            this.playerAnimation.stop();
-            this.playerAnimation = null;
-        }
-        if (this.playerStatce) {
-            this.playerStatce.stop();
-            this.playerStatce = null;
-        }
-    }
-    async playerMoveAction() {
-        this.stopPlayerVehiclesModeAnimation();
-        if (this.vehiclesMode) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesChildMoveId);
-            this.vehiclesModeAnimation = this.vehiclesMode.loadAnimation(this.actionPropElement.VehiclesChildMoveId);
-            this.vehiclesModeAnimation.loop = 0;
-            this.vehiclesModeAnimation.play();
-        }
-        if (this.actionPropElement.VehiclesWalkAnimationId && this.actionPropElement.VehiclesWalkAnimationId.length > 0) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesWalkAnimationId);
-            this.playerAnimation = this.player.character.loadAnimation(this.actionPropElement.VehiclesWalkAnimationId);
-            this.playerAnimation.slot = this.actionPropElement.VehiclesWalkAnimationSlot;
-            this.playerAnimation.loop = 0;
-            this.playerAnimation.play();
-        }
-        if (this.actionPropElement.VehiclesWalkStanceId && this.actionPropElement.VehiclesWalkStanceId.length > 0) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesWalkStanceId);
-            this.playerStatce = this.player.character.loadSubStance(this.actionPropElement.VehiclesWalkStanceId);
-            this.playerStatce.blendMode = this.actionPropElement.VehiclesWalkStanceSlot - 1;
-            this.playerStatce.play();
-        }
-    }
-    async playerIdleAction() {
-        this.stopPlayerVehiclesModeAnimation();
-        if (this.vehiclesMode) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesChildIdleId);
-            this.vehiclesModeAnimation = this.vehiclesMode.loadAnimation(this.actionPropElement.VehiclesChildIdleId);
-            this.vehiclesModeAnimation.loop = 0;
-            this.vehiclesModeAnimation.play();
-        }
-        if (this.actionPropElement.VehiclesIdleAnimationId && this.actionPropElement.VehiclesIdleAnimationId.length > 0) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesIdleAnimationId);
-            this.playerAnimation = this.player.character.loadAnimation(this.actionPropElement.VehiclesIdleAnimationId);
-            this.playerAnimation.slot = this.actionPropElement.VehiclesIdleAnimationSlot;
-            this.playerAnimation.loop = 0;
-            this.playerAnimation.play();
-        }
-        if (this.actionPropElement.VehiclesIdleStanceId && this.actionPropElement.VehiclesIdleStanceId.length > 0) {
-            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesIdleStanceId);
-            this.playerStatce = this.player.character.loadSubStance(this.actionPropElement.VehiclesIdleStanceId);
-            this.playerStatce.blendMode = this.actionPropElement.VehiclesIdleStanceSlot - 1;
-            this.playerStatce.play();
-        }
-    }
-    switchFlyState(player) {
-        if (player.character.getCurrentState() != mw.CharacterStateType.Flying) {
-            player.character.changeState(mw.CharacterStateType.Flying);
-        }
-    }
-    switchRunState(player) {
-        if (player.character.getCurrentState() != mw.CharacterStateType.Running) {
-            player.character.changeState(mw.CharacterStateType.Running);
-        }
-    }
-    setMaterial(materialId) {
-        if (!this.mode) return;
-        this.originalMaterialId = materialId;
-        this.mode.setMaterial(materialId);
-    }
-    resetMaterial() {
-        if (!this.mode) return;
-        if (!this.originalMaterialId) return;
-        this.mode.resetMaterial();
-        this.originalMaterialId = null;
-    }
-    async playAnimation(player, assetId, slotType, parameter) {
-        await Utils.asyncDownloadAsset(assetId);
-        this.animation = player.character.loadAnimation(assetId);
-        if (slotType) this.animation.slot = slotType;
-        this.animation.speed = parameter[0];
-        this.animation.loop = parameter[1];
-        this.animation.play();
-    }
-    stopAnimation() {
-        if (!this.animation) return;
-        this.animation?.stop();
-        this.animation = null;
-    }
-    async placingItems(player, actionPropElement) {
-        if (!player || !actionPropElement) return;
-        let playAnimationTime = 1;
-        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
-            playAnimationTime = actionPropElement.AnimationParameter[0];
-        }
-        await TimeUtil.delaySecond(playAnimationTime);
-        if (!player || !actionPropElement) return;
-        let delayModeOffsetParameter = actionPropElement.DelayModeOffsetParameter;
-        let playerPos = player.character.worldTransform.position;
-        let offsetZ = player.character.collisionExtent.z / 2;
-        let playerForward = player.character.worldTransform.getForwardVector();
-        let itemPos = new Vector(playerPos.x + playerForward.x * 40, playerPos.y + playerForward.y * 40, playerPos.z + playerForward.z * 40 - offsetZ);
-        let itemRot = new mw.Rotation(new mw.Vector(playerForward.x * delayModeOffsetParameter[4], playerForward.y * delayModeOffsetParameter[4], playerForward.z * delayModeOffsetParameter[4] - 90));
-        let itemSca = new mw.Vector(delayModeOffsetParameter[6], delayModeOffsetParameter[7], delayModeOffsetParameter[8]);
-        let delayAssetId = actionPropElement.DelayAssetId;
-        await Utils.asyncDownloadAsset(delayAssetId);
-        let itemMode = await GameObjPool.asyncSpawn(delayAssetId);
-        await itemMode.asyncReady();
-        itemMode.worldTransform.position = itemPos;
-        itemMode.worldTransform.rotation = itemRot;
-        itemMode.worldTransform.scale = itemSca;
-        let delayModeEffectId = null;
-        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
-        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
-            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
-            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
-            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
-                loopCount: 0,
-                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
-                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
-                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
-            });
-        }
-        let delayParameter = actionPropElement.DelayParameter;
-        let delayTime = delayParameter[0];
-        let delayCount = delayParameter[1];
-        let delayInterval = delayParameter[2];
-        await TimeUtil.delaySecond(delayTime - playAnimationTime);
-        for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve => {
-                setTimeout((async () => {
-                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
-                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
-                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
-                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
-                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
-                            loopCount: 1,
-                            rotation: itemMode.worldTransform.rotation,
-                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
-                        });
-                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
-                        if (delayModeSoundId && delayModeSoundId.length > 0) {
-                            await Utils.asyncDownloadAsset(delayModeSoundId);
-                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
-                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], {
-                                radius: delayModeSoundParameter[1],
-                                falloffDistance: delayModeSoundParameter[1] * 1.2
-                            });
-                        }
-                    }
-                    return resolve();
-                }), delayInterval * 1e3);
+            TimeUtil.delaySecond(10).then((() => {
+                this.getHUDPanel.updateFreeTime();
             }));
         }
-        if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
-        if (delayModeEffectId) EffectService.stop(delayModeEffectId);
-        GameObjPool.despawn(itemMode);
     }
-    async playEffect(assetId, loop, parameter) {
-        await Utils.asyncDownloadAsset(assetId);
-        this.effectId = EffectService.playOnGameObject(assetId, this.mode, {
-            loopCount: loop,
-            position: new mw.Vector(parameter[0], parameter[1], parameter[2]),
-            rotation: new mw.Rotation(parameter[3], parameter[4], parameter[5]),
-            scale: new mw.Vector(parameter[6], parameter[7], parameter[8])
-        });
+    async initFreeNpc() {}
+    initUI() {}
+    bindAction() {
+        this.onJumpAction.add(this.onJumpActionHandler.bind(this));
+        this.onCrouchAction.add(this.onCrouchActionHandler.bind(this));
+        this.onActionButton.add(this.onActionButtonHandler.bind(this));
+        this.onBagButton.add(this.onBagButtonHandler.bind(this));
+        this.onOpenSetAction.add(this.onOpenSetActionHandler.bind(this));
+        this.onOpenClothAction.add(this.onOpenClothActionHandler.bind(this));
+        this.onOpenShareAction.add(this.onOpenShareActionHandler.bind(this));
+        this.onUseShareAction.add(this.onUseShareActionHandler.bind(this));
+        this.onFreeTryOnAction.add(this.addFreeTryOnAction.bind(this));
+        mw.AvatarEditorService.avatarServiceDelegate.add(this.addAvatarServiceDelegate.bind(this));
+        Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
+        this.onOnOffMusicAction.add(this.addOnOffMusicAction.bind(this));
+        this.onSwitchBgmAction.add(this.playBGMusic.bind(this));
+        this.onOpenPhotoAction.add(this.addOpenPhotoAction.bind(this));
     }
-    stopEffect() {
-        if (!this.effectId) return;
-        EffectService.stop(this.effectId);
-        this.effectId = null;
+    addOpenPhotoAction() {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await PhotoStudioService.asyncOpenPhotoStudioModule();
+        }));
     }
-    async play3DSound(assetId, parameter) {
-        await Utils.asyncDownloadAsset(assetId);
-        this.soundId = SoundService.play3DSound(assetId, this.mode, parameter[2], parameter[1], {
-            radius: parameter[0],
-            falloffDistance: parameter[0] * 1.2
-        });
+    addOnOffMusicAction(isOpenBGM) {
+        isOpenBGM ? this.playBGMusic(0) : SoundService.stopBGM();
     }
-    stop3DSound() {
-        if (!this.soundId) return;
-        SoundService.stop3DSound(this.soundId);
-        this.soundId = null;
+    playBGMusic(bgmIndex) {
+        if (!this.bgmMusics || this.bgmMusics?.length == 0) this.bgmMusics = GameConfig.Music.getAllElement();
+        this.currentBgmIndex = this.currentBgmIndex + bgmIndex;
+        if (this.currentBgmIndex > this.bgmMusics.length) {
+            this.currentBgmIndex = 1;
+        } else if (this.currentBgmIndex < 1) {
+            this.currentBgmIndex = this.bgmMusics.length;
+        }
+        let bgmId = this.bgmMusics[this.currentBgmIndex - 1].Guid;
+        SoundService.playBGM(bgmId);
+        this.getHUDPanel.mMusicText.text = this.bgmMusics[this.currentBgmIndex - 1].Annotation;
+    }
+    onJumpActionHandler() {
+        if (this.localPlayer.character.getCurrentState() != mw.CharacterStateType.Jumping) {
+            this.localPlayer.character.changeState(mw.CharacterStateType.Jumping);
+        }
+    }
+    onCrouchActionHandler() {
+        if (this.localPlayer.character.getCurrentState() == mw.CharacterStateType.Running) {
+            this.localPlayer.character.changeState(mw.CharacterStateType.Crouching);
+        } else if (this.localPlayer.character.getCurrentState() == mw.CharacterStateType.Crouching) {
+            this.localPlayer.character.changeState(mw.CharacterStateType.Running);
+        }
+    }
+    onActionButtonHandler() {
+        this.getDanMuModuleC.onStopActionButton.call();
+    }
+    onBagButtonHandler() {
+        this.getDanMuModuleC.onNextBagAction.call();
+    }
+    onOpenSetActionHandler() {}
+    onOpenClothActionHandler() {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await AvatarEditorService.asyncOpenAvatarEditorModule();
+        }));
+    }
+    onOpenShareActionHandler(openType) {
+        return;
+    }
+    onUseShareActionHandler(shareId, openType) {
+        if (openType == 1) {
+            this.useShareId(shareId);
+        } else if (openType == 2) {
+            AvatarEditorService.asyncCloseAvatarEditorModule().then((() => {
+                ExecutorManager.instance.pushAsyncExecutor((async () => {
+                    await TimeUtil.delaySecond(5);
+                    await this.useDescription();
+                }));
+            }));
+        }
+    }
+    addDescriptionChange() {
+        this.localPlayer.character.asyncReady().then((() => {
+            console.error(`变化`);
+            this.changeDescription = this.localPlayer.character.getDescription();
+            if (this.isOpenAvatar) {
+                if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
+            }
+        }));
+    }
+    useShareId(shareId) {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            let isSuccess = await Utils.applySharedId(this.localPlayer.character, shareId);
+            if (isSuccess) {
+                Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+            } else {
+                Notice.showDownNotice(GameConfig.Language.Text_InvalidID.Value);
+            }
+        }));
+    }
+    addFreeTryOnAction() {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await this.initFreeNpc();
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            this.freeNpc.setDescription(this.localPlayer.character.getDescription());
+            await this.freeNpc.asyncReady();
+            await TimeUtil.delaySecond(1);
+            await AvatarEditorService.asyncCloseAvatarEditorModule();
+            TimeUtil.delaySecond(2).then((() => {
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                TimeUtil.delaySecond(2).then((() => {
+                    Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+                }));
+            }));
+            Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
+            await TimeUtil.delaySecond(5);
+            await this.useDescription();
+        }));
+    }
+    async useDescription() {
+        await this.localPlayer.character.asyncReady();
+        this.localPlayer.character.setDescription(this.freeNpc.getDescription());
+        await this.localPlayer.character.asyncReady();
+        this.localPlayer.character.syncDescription();
+        Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
+        this.resetDecription();
+    }
+    resetDecription() {
+        this.clearResetDecriptionTimeoutId();
+        this.resetDecriptionTimeoutId = setTimeout((() => {
+            AccountService.downloadData(this.localPlayer.character, (success => {
+                if (!success) return;
+                Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes3.Value);
+            }));
+        }), GlobalData.freeTime * 60 * 1e3);
+    }
+    clearResetDecriptionTimeoutId() {
+        if (this.resetDecriptionTimeoutId) {
+            clearTimeout(this.resetDecriptionTimeoutId);
+            this.resetDecriptionTimeoutId = null;
+        }
+    }
+    addAvatarServiceDelegate(eventName, ...params) {
+        console.error(`eventName: ${eventName}`);
+        switch (eventName) {
+          case "AE_OnQuit":
+            Event.dispatchToLocal(EventType.OnOffMainUI, true);
+            if (UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.hide();
+            this.isOpenAvatar = false;
+            break;
+
+          case "AE_OnOpen":
+            Event.dispatchToLocal(EventType.OnOffMainUI, false);
+            this.isOpenAvatar = true;
+            break;
+        }
+    }
+    addOnOffMainUI(isShow) {
+        console.error(`isShow: ${isShow}`);
+        isShow ? this.getHUDPanel.show() : this.getHUDPanel.hide();
+    }
+    controllerBagUIVisible(isVisible) {
+        this.getHUDPanel.controllerBagUIVisible(isVisible);
+    }
+    controllerActionUIVisible(isVisible) {
+        this.getHUDPanel.controllerActionUIVisible(isVisible);
+    }
+    controllerExitUIVisible(isVisible) {
+        this.getHUDPanel.controllerExitUIVisible(isVisible);
+    }
+    updateBagIcon(bagId) {
+        this.getHUDPanel.updateBagIcon(bagId);
+    }
+    updateGoodsListCanvas(bagIds) {
+        this.getHUDPanel.updateGoodsListCanvas(bagIds);
+    }
+    action(bagId) {
+        this.getDanMuModuleC.onClickBagItemAction.call(bagId);
+    }
+    registerGlobalClickSound() {
+        Event.addLocalListener("PlayButtonClick", (v => {
+            if (this.uiClickSoundId) {
+                SoundService.stopSound(this.uiClickSoundId);
+                this.uiClickSoundId = null;
+            }
+            this.uiClickSoundId = SoundService.playSound(`12723`);
+        }));
     }
 }
 
-class PlayerInteract {
+class HUDModuleS extends ModuleS {
+    onStart() {}
+    onPlayerEnterGame(player) {}
+    initFreeTime(player) {
+        Utils.getCustomdata(`FreeTime`).then((freeTime => {
+            this.getClient(player).net_syncFreeTime(freeTime);
+        }));
+    }
+}
+
+class SharePanel extends SharePanel_Generate$1 {
     constructor() {
-        this.interactObj = null;
-        this.npc = null;
-        this.npcSubStance = null;
-        this.singleAni = null;
-        this.playerSubStance = null;
+        super(...arguments);
+        this.hudModuleC = null;
+        this.openType = 1;
     }
-    async initNpc() {
-        if (this.npc) return;
-        this.npc = await mw.GameObject.asyncSpawn("Character");
-        this.npc.collisionWithOtherCharacterEnabled = false;
-        await this.npc.asyncReady();
-    }
-    async playSingleAni(player, actionData) {
-        await Utils.asyncDownloadAsset(actionData.assetId);
-        this.singleAni = player.character.loadAnimation(actionData.assetId);
-        this.singleAni.loop = actionData.loop == 0 ? 1 : 0;
-        let isPlaySuccess = this.singleAni.play();
-        console.error(`isPlaySuccess:${isPlaySuccess}`);
-        return isPlaySuccess;
-    }
-    async playDoubleAni(player, actionData) {
-        await this.initNpc();
-        this.npc.setVisibility(true, true);
-        player.character.collisionWithOtherCharacterEnabled = false;
-        player.character.movementEnabled = false;
-        this.npc.worldTransform.position = player.character.worldTransform.position.add(actionData.pos);
-        let tmpRot = mw.Rotation.zero;
-        mw.Rotation.add(player.character.worldTransform.rotation, actionData.rot, tmpRot);
-        this.npc.worldTransform.rotation = tmpRot;
-        let aniStr = actionData.assetId.split("-");
-        await Utils.asyncDownloadAsset(aniStr[0]);
-        await Utils.asyncDownloadAsset(aniStr[1]);
-        this.playerSubStance = player.character.loadSubStance(aniStr[0]);
-        this.playerSubStance.play();
-        this.npcSubStance = this.npc.loadSubStance(aniStr[1]);
-        this.npcSubStance.play();
-        return true;
-    }
-    async interact(player, actionData) {
-        return new Promise((async resolve => {
-            await this.initNpc();
-            this.npc.setVisibility(true, true);
-            player.character.collisionWithOtherCharacterEnabled = false;
-            this.interactObj = await mw.GameObject.asyncSpawn("Interactor");
-            await this.interactObj.asyncReady();
-            player.character.attachToSlot(this.interactObj, mw.HumanoidSlotType.FaceOrnamental);
-            this.interactObj.onEnter.add((async () => {
-                let aniStr = actionData.assetId.split("-");
-                await Utils.asyncDownloadAsset(aniStr[0]);
-                await Utils.asyncDownloadAsset(aniStr[1]);
-                this.playerSubStance = player.character.loadSubStance(aniStr[0]);
-                this.playerSubStance.play();
-                this.npcSubStance = this.npc.loadSubStance(aniStr[1]);
-                this.npcSubStance.play();
-                this.interactObj.localTransform.position = actionData.pos;
-                this.interactObj.localTransform.rotation = actionData.rot;
-                return resolve(true);
-            }));
-            this.interactObj.enter(this.npc, mw.HumanoidSlotType.Buttocks);
-        }));
-    }
-    async clearInteractor(player) {
-        if (this.singleAni) {
-            this.singleAni?.stop();
-            this.singleAni = null;
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
         }
-        if (this.playerSubStance) {
-            this.playerSubStance.stop();
-            this.playerSubStance = null;
-        }
-        if (this.npcSubStance) {
-            this.npcSubStance.stop();
-            this.npcSubStance = null;
-            this.npc.setVisibility(false, true);
-        }
-        return await this.leaveInteract(player);
+        return this.hudModuleC;
     }
-    async leaveInteract(player) {
-        return new Promise((resolve => {
-            if (!this.interactObj) return resolve(true);
-            this.interactObj.onLeave.add((async () => {
-                this.interactObj.parent = null;
-                this.interactObj.destroy();
-                this.interactObj = null;
-                this.npc.parent = null;
-                this.npc.setVisibility(false, true);
-                if (!player.character.collisionWithOtherCharacterEnabled) player.character.collisionWithOtherCharacterEnabled = true;
-                await TimeUtil.delaySecond(1);
-                return resolve(true);
-            }));
-            this.interactObj.leave();
-        }));
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mMyselfTipsTextBlock.text = GameConfig.Language.Text_MyCharacterId.Value;
+        this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+        this.mInputBox.text = "";
+        this.mInputBox.hintString = GameConfig.Language.Text_PleaseEnter.Value;
+        this.mCancelTextBlock.text = GameConfig.Language.Text_Cancel.Value;
+        this.mUseTextBlock.text = GameConfig.Language.Text_FreeTryOn.Value;
+        this.mAdsButton.text = GameConfig.Language.Text_FreeTryOn.Value;
+        Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
+    }
+    bindButton() {
+        this.mCopyButton.onClicked.add(this.addCopyButton.bind(this));
+        this.mCancelButton.onClicked.add(this.addCancelButton.bind(this));
+        this.mUseButton.onClicked.add(this.addUseButton.bind(this));
+    }
+    addCopyButton() {
+        let copyText = this.mMyselfTextBlock.text;
+        if (!copyText || copyText == "" || copyText.length == 0) return;
+        StringUtil.clipboardCopy(copyText);
+        Notice.showDownNotice(GameConfig.Language.Text_CopySuccessfully.Value);
+    }
+    addCancelButton() {
+        this.hide();
+    }
+    addUseButton() {
+        if (this.openType == 1) {
+            let shareId = this.mInputBox.text;
+            if (!shareId || shareId == "" || shareId.length == 0) return;
+            this.getHUDModuleC.onUseShareAction.call(shareId, this.openType);
+        } else if (this.openType == 2) {
+            this.getHUDModuleC.onUseShareAction.call(null, this.openType);
+        }
+        this.hide();
+    }
+    showPanel(shareId, openType) {
+        this.openType = openType;
+        this.mMyselfTextBlock.text = shareId;
+        if (openType == 1) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
+            setTimeout((() => {
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x / 2, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }), 1);
+        } else if (openType == 2) {
+            Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
+            this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
+            setTimeout((() => {
+                this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
+            }), 1);
+        }
+    }
+    onShow(...params) {
+        this.mMyselfTextBlock.text = GameConfig.Language.Text_Loading.Value;
+        this.mInputBox.text = ``;
     }
 }
 
-var foreign93 = Object.freeze({
+class SavePanel extends SavePanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+    }
+    get getHUDModuleC() {
+        if (this.hudModuleC == null) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    onStart() {
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mSaveTipsTextBlock.text = GameConfig.Language.Text_SaveImagesForFree.Value;
+    }
+    bindButton() {
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+    }
+    addSaveButton() {
+        this.getHUDModuleC.onFreeTryOnAction.call();
+    }
+}
+
+var foreign104 = Object.freeze({
     __proto__: null,
-    PlayerBag: PlayerBag,
-    PlayerGlide: PlayerGlide,
-    PlayerInteract: PlayerInteract,
-    default: DanMuModuleS
+    HUDItem: HUDItem,
+    HUDModuleC: HUDModuleC,
+    HUDModuleS: HUDModuleS,
+    HUDPanel: HUDPanel,
+    SavePanel: SavePanel,
+    SharePanel: SharePanel
 });
 
 class MallData extends Subdata {
@@ -11339,234 +10592,6 @@ var foreign107 = Object.freeze({
         return TabType;
     },
     default: MallData
-});
-
-var CameraManager_1;
-
-let CameraManager = CameraManager_1 = class CameraManager extends Script {
-    constructor() {
-        super(...arguments);
-        this.wfzCameraName = `WFZCamera`;
-        this.cameraType = CameraManagerType.Body;
-        this.isRotCharacter = false;
-        this.isRotWFZCamera = false;
-        this.mainCamera = null;
-        this.defaultRotation = mw.Rotation.zero;
-        this.targetCharacter = null;
-        this.oldSlotPos = mw.Vector.zero;
-        this.cameraData = new CameraData;
-        this.E_Head_H = new CameraData;
-        this.E_Body_H = new CameraData;
-        this.E_Head_V = new CameraData;
-        this.E_Body_V = new CameraData;
-        this.lastTouchPos = mw.Vector2.zero;
-        this.onTouchBegin = (index, location, touchType) => {
-            this.lastTouchPos = location;
-        };
-        this.onTouchMove = (index, loc, type) => {
-            if (this.isWFZCamera && this.targetCharacter) {
-                if (index == 0) {
-                    let rot = this.wfzCamera.parent.worldTransform.rotation;
-                    let z = loc.x - this.lastTouchPos.x;
-                    this.lastTouchPos = loc;
-                    if (Math.abs(z) > 80) return;
-                    if (this.isRotCharacter) {
-                        const rot = this.targetCharacter.worldTransform.rotation;
-                        rot.z -= z;
-                        this.targetCharacter.worldTransform.rotation = rot;
-                    }
-                    if (this.isRotWFZCamera) this.worldRotation([ rot.x, rot.y, rot.z + z ]);
-                }
-            }
-        };
-    }
-    static get instance() {
-        return CameraManager_1.cameraManager;
-    }
-    get wfzCamera() {
-        return this.gameObject;
-    }
-    get isWFZCamera() {
-        try {
-            return Camera.currentCamera?.getCustomProperty(this.wfzCameraName) == this.wfzCameraName;
-        } catch (error) {
-            return false;
-        }
-    }
-    static async asyncReady() {
-        while (!this.cameraManager) {
-            await TimeUtil.delaySecond(.1);
-        }
-    }
-    onStart() {
-        this.initData();
-        this.gameObject.asyncReady().then((() => {
-            this.gameObject.setCustomProperty(this.wfzCameraName, this.wfzCameraName);
-            CameraManager_1.cameraManager = this;
-            this.useUpdate = true;
-        }));
-        Event.addLocalListener(EventType.SwitchCamera, this.changeCameraType2.bind(this));
-    }
-    onUpdate(dt) {
-        this.follow();
-    }
-    switchWFZCamera(isOpenCamera, targetCharacter = null, isRotWFZCamera = false, isRotCharacter = false) {
-        this.targetCharacter = targetCharacter;
-        if (targetCharacter?.worldTransform?.rotation) this.defaultRotation = targetCharacter?.worldTransform?.rotation;
-        this.isRotWFZCamera = isRotWFZCamera;
-        this.isRotCharacter = isRotCharacter;
-        TouchInputUtil.getInstance().onTouchBegin.remove(this.onTouchBegin.bind(this));
-        TouchInputUtil.getInstance().onTouchMove.remove(this.onTouchMove.bind(this));
-        if (isOpenCamera) {
-            if (isRotWFZCamera || isRotCharacter) {
-                TouchInputUtil.getInstance().onTouchBegin.add(this.onTouchBegin.bind(this));
-                TouchInputUtil.getInstance().onTouchMove.add(this.onTouchMove.bind(this));
-            }
-            if (this.isWFZCamera) return;
-            this.mainCamera = Camera.currentCamera;
-            Camera.switch(this.wfzCamera);
-            const size = mw.getViewportSize();
-            if (size.x >= size.y) {
-                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainXFOV;
-            } else {
-                this.wfzCamera.aspectRatioAxisConstraint = mw.AspectRatioAxisConstraint.MaintainYFOV;
-            }
-        } else {
-            if (this.mainCamera && this.isWFZCamera) {
-                Camera.switch(this.mainCamera);
-                this.mainCamera = null;
-            }
-        }
-        this.useUpdate = isOpenCamera;
-    }
-    worldRotation(rotation) {
-        this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(rotation[0], rotation[1], rotation[2]);
-    }
-    follow() {
-        if (!this.targetCharacter) return;
-        let slotPos = CameraData.getTargetPos(this.targetCharacter, this.cameraData);
-        if (!slotPos) return;
-        this.oldSlotPos = slotPos;
-        this.wfzCamera.parent.worldTransform.position = slotPos;
-    }
-    setData(cameraData) {
-        this.wfzCamera.springArm.length = cameraData.l;
-        let rot = this.wfzCamera.localTransform.rotation;
-        this.wfzCamera.fov = cameraData.fov;
-        let rotY = cameraData.fov * cameraData.v;
-        this.wfzCamera.localTransform.rotation = new mw.Rotation(rot.x, rotY, cameraData.fov * cameraData.h);
-        if (this.targetCharacter) this.wfzCamera.parent.worldTransform.rotation = new mw.Rotation(0, 0, this.targetCharacter.worldTransform.rotation.z + 180);
-    }
-    setValue(name, value) {
-        this.cameraData[name] = value;
-        this.setData(this.cameraData);
-    }
-    initData() {
-        this.E_Body_H.l = 500;
-        this.E_Body_H.fov = 45;
-        this.E_Body_H.targetType = TargetType.WorldPos;
-        this.E_Body_H.h = .25;
-        this.E_Body_H.v = 0;
-        this.E_Head_V = {
-            h: 0,
-            v: -.1,
-            targetType: 1,
-            slot: 1,
-            l: 260,
-            fov: 45,
-            offset: Vector.zero
-        };
-        this.E_Body_V = {
-            h: 0,
-            v: -.13,
-            targetType: 2,
-            slot: 1,
-            l: 2500,
-            fov: 18,
-            offset: Vector.zero
-        };
-    }
-    changeCameraType2(avatarCameraType) {
-        if (this.targetCharacter?.worldTransform) this.targetCharacter.worldTransform.rotation = this.defaultRotation;
-        if (CameraManagerType[avatarCameraType]) {
-            this.cameraType = avatarCameraType;
-        } else if (CameraManagerType[this.cameraType]) ; else {
-            this.cameraType = CameraManagerType.Body;
-        }
-        let cameraData = this.getCameraDataByType(avatarCameraType);
-        this.cameraData.l = cameraData.l;
-        this.cameraData.fov = cameraData.fov;
-        this.cameraData.slot = cameraData.slot;
-        this.cameraData.targetType = cameraData.targetType;
-        this.cameraData.h = cameraData.h;
-        this.cameraData.v = cameraData.v;
-        this.cameraData.offset = cameraData.offset;
-        this.setData(cameraData);
-    }
-    getCameraDataByType(avatarCameraType) {
-        let size = mw.getViewportSize();
-        if (size.x < size.y) {
-            switch (avatarCameraType) {
-              case CameraManagerType.Head:
-                return this.E_Head_V;
-
-              default:
-                return this.E_Body_V;
-            }
-        } else {
-            switch (avatarCameraType) {
-              case CameraManagerType.Head:
-                return this.E_Head_H;
-
-              default:
-                return this.E_Body_H;
-            }
-        }
-    }
-};
-
-CameraManager.cameraManager = null;
-
-CameraManager = CameraManager_1 = __decorate([ Component ], CameraManager);
-
-var CameraManager$1 = CameraManager;
-
-var TargetType;
-
-(function(TargetType) {
-    TargetType[TargetType["slot"] = 1] = "slot";
-    TargetType[TargetType["WorldPos"] = 2] = "WorldPos";
-})(TargetType || (TargetType = {}));
-
-class CameraData {
-    constructor() {
-        this.h = .25;
-        this.v = 0;
-        this.targetType = TargetType.slot;
-        this.slot = mw.HumanoidSlotType.Head;
-        this.l = 250;
-        this.fov = 45;
-        this.offset = Vector.zero;
-    }
-    static getTargetPos(char, data) {
-        let pos = data.offset.clone();
-        switch (data.targetType) {
-          case TargetType.slot:
-            let v3 = char?.getSlotWorldPosition(data.slot);
-            if (v3) pos.add(v3);
-            break;
-
-          case TargetType.WorldPos:
-            pos.add(char.worldTransform.position);
-            break;
-        }
-        return pos;
-    }
-}
-
-var foreign147 = Object.freeze({
-    __proto__: null,
-    default: CameraManager$1
 });
 
 class Mall {
@@ -15654,6 +14679,7 @@ class MallModuleC extends ModuleC {
         this.onSaveAction = new Action;
         this.onSexAction = new Action;
         this.onAddVipAction = new Action;
+        this.onAddPermanentVipAction = new Action;
         this.onCloseMallPanelAction = new Action;
         this.onSelectColorPickTab2Action = new Action1;
         this.onSelectColorPickTab3Action = new Action1;
@@ -15737,6 +14763,7 @@ class MallModuleC extends ModuleC {
         this.onResetAction.add(this.addResetAction.bind(this));
         this.onSexAction.add(this.addSexAction.bind(this));
         this.onAddVipAction.add(this.addVipAction.bind(this));
+        this.onAddPermanentVipAction.add(this.addPermanentVipAction.bind(this));
         this.onSelectColorPickTab2Action.add(this.addSelectColorPickTab2Action.bind(this));
         this.onSelectColorPickTab3Action.add(this.addSelectColorPickTab3Action.bind(this));
         this.onColorPickChangedAction.add(this.changeCharacterColor.bind(this));
@@ -16748,6 +15775,9 @@ class MallModuleC extends ModuleC {
             }));
         }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
     }
+    addPermanentVipAction() {
+        this.placeOrder(`3ki8ifW7BUs0006Pk`, (() => {}));
+    }
     saveCharacterDescriptionPrepare() {
         if (this.isUseFreeSave) {
             ExecutorManager.instance.pushAsyncExecutor((async () => {
@@ -17492,8 +16522,7 @@ class MallModuleC extends ModuleC {
                 if (buySuccessCallback) buySuccessCallback();
                 Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                 ExecutorManager.instance.pushAsyncExecutor((async () => {
-                    await this.addVipCount(1);
-                    this.getMallPanel.updateVipCount(this.vipCount);
+                    await this.addVipCountByCommodityId(commodityId);
                 }));
             } else {
                 mw.PurchaseService.placeOrder(commodityId, 1, ((status, msg) => {
@@ -17509,9 +16538,22 @@ class MallModuleC extends ModuleC {
         console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.addVipCount(1);
-            this.getMallPanel.updateVipCount(this.vipCount);
+            await this.addVipCountByCommodityId(commodityId);
         }));
+    }
+    async addVipCountByCommodityId(commodityId) {
+        var addVipCount = 1;
+        switch (commodityId) {
+          case `5KdGRn3IhB600054z`:
+            addVipCount = 1;
+            break;
+
+          case `3ki8ifW7BUs0006Pk`:
+            addVipCount = 999;
+            break;
+        }
+        await this.addVipCount(addVipCount);
+        this.getMallPanel.updateVipCount(this.vipCount);
     }
     net_syncMallConfigData(mallConfigData) {
         this.mallConfigData = mallConfigData;
@@ -17520,11 +16562,989 @@ class MallModuleC extends ModuleC {
         if (!this.mallConfigData) return 2;
         return this.mallConfigData.addVipCoinNumber;
     }
+    tryTest(callback) {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await this.getVipCount();
+            if (this.vipCount > 0) {
+                UIService.getUI(TipsPanel).showTips((() => {
+                    if (callback) callback();
+                }), GameConfig.Language.Text_Free.Value, GameConfig.Language.Text_Free.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
+            } else {
+                this.getMallVipTipsPanel.showTips((() => {
+                    this.placeOrder(`5KdGRn3IhB600054z`, (() => {
+                        if (callback) callback();
+                    }));
+                }), (() => {
+                    Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+                    ExecutorManager.instance.pushAsyncExecutor((async () => {
+                        await this.addVipCount(1);
+                        this.getMallPanel.updateVipCount(this.vipCount);
+                        if (callback) callback();
+                    }));
+                }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+            }
+        }));
+    }
 }
 
 var foreign108 = Object.freeze({
     __proto__: null,
     default: MallModuleC
+});
+
+let Test = class Test extends Script {
+    constructor() {
+        super(...arguments);
+        this.isTest = false;
+    }
+    onStart() {
+        if (mw.SystemUtil.isClient()) {
+            TimeUtil.delaySecond(10).then((() => {
+                this.gameObject.onEnter.add((character => {
+                    if (character != Player.localPlayer.character) return;
+                    ModuleService.getModule(MallModuleC).tryTest((() => {
+                        ExecutorManager.instance.pushAsyncExecutor((async () => {
+                            Player.localPlayer.character.setDescription(this.gameObject.parent.getDescription());
+                            await Player.localPlayer.character.asyncReady();
+                            Player.localPlayer.character.syncDescription();
+                        }));
+                    }));
+                    return;
+                }));
+            }));
+        }
+    }
+    onUpdate(dt) {}
+    onDestroy() {}
+};
+
+Test = __decorate([ Component ], Test);
+
+var Test$1 = Test;
+
+var foreign5 = Object.freeze({
+    __proto__: null,
+    default: Test$1
+});
+
+const EXCELDATA$1 = [ [ "ID", "Describe", "AssetId", "SexType" ], [ "", "", "", "" ], [ 1, "制服女", "367076", 2 ], [ 2, "制服女", "435694", 2 ], [ 3, "一定过套装", "253153", 2 ], [ 4, "主打求神套装", "264188", 2 ], [ 5, "卡皮巴拉套装1", "270007", 2 ], [ 6, "卡皮巴拉套装2", "213620", 2 ], [ 7, "女学生角色", "343066", 2 ], [ 8, "和服", "334005", 2 ], [ 9, "JK女生", "320751", 2 ], [ 10, "新年毛衣", "298108", 2 ], [ 11, "露肩长裙", "218598", 2 ], [ 12, null, "215971", 2 ], [ 13, null, "213622", 2 ], [ 14, null, "270008", 2 ], [ 15, null, "213535", 2 ], [ 16, null, "213533", 2 ], [ 17, null, "164426", 2 ], [ 18, null, "164421", 2 ], [ 19, null, "164418", 2 ], [ 20, null, "163712", 2 ], [ 21, null, "163710", 2 ], [ 22, null, "163709", 2 ], [ 23, null, "163708", 2 ], [ 24, null, "163707", 2 ], [ 25, null, "163706", 2 ], [ 26, null, "163624", 2 ], [ 27, null, "163551", 2 ], [ 28, null, "163550", 2 ], [ 29, null, "163548", 2 ], [ 30, null, "163547", 2 ], [ 31, null, "163546", 2 ], [ 32, null, "163545", 2 ], [ 33, null, "163544", 2 ], [ 34, null, "163543", 2 ], [ 35, null, "163529", 2 ], [ 36, null, "163528", 2 ], [ 37, null, "163527", 2 ], [ 38, null, "163526", 2 ], [ 39, null, "163525", 2 ], [ 40, null, "163524", 2 ], [ 41, null, "163523", 2 ], [ 42, null, "163522", 2 ], [ 43, null, "163521", 2 ], [ 44, null, "163334", 2 ], [ 45, null, "163333", 2 ], [ 46, null, "163332", 2 ], [ 47, null, "163331", 2 ], [ 48, null, "163328", 2 ], [ 49, null, "163327", 2 ], [ 50, null, "163325", 2 ], [ 51, null, "163324", 2 ], [ 52, null, "163323", 2 ], [ 53, null, "163322", 2 ], [ 54, null, "163321", 2 ], [ 55, null, "163320", 2 ], [ 56, null, "163319", 2 ], [ 57, null, "163318", 2 ], [ 58, null, "163317", 2 ], [ 59, null, "163316", 2 ], [ 60, null, "163315", 2 ], [ 61, null, "163313", 2 ], [ 62, null, "163312", 2 ], [ 63, null, "163311", 2 ], [ 64, null, "163310", 2 ], [ 65, null, "163309", 2 ], [ 66, null, "163308", 2 ], [ 67, null, "163307", 2 ], [ 68, null, "163306", 2 ], [ 69, null, "163305", 2 ], [ 70, null, "163303", 2 ], [ 71, null, "163302", 2 ], [ 72, null, "163301", 2 ], [ 73, null, "163300", 2 ], [ 74, null, "163299", 2 ], [ 75, null, "163298", 2 ], [ 76, null, "163297", 2 ], [ 77, null, "163296", 2 ], [ 78, null, "163294", 2 ], [ 79, null, "163293", 2 ], [ 80, null, "163292", 2 ], [ 81, null, "163291", 2 ], [ 82, null, "163290", 2 ], [ 83, null, "163288", 2 ], [ 84, null, "163287", 2 ], [ 85, null, "163286", 2 ], [ 86, null, "163284", 2 ], [ 87, null, "163283", 2 ], [ 88, null, "163282", 2 ], [ 89, null, "163275", 2 ], [ 90, null, "162960", 2 ], [ 91, null, "162957", 2 ], [ 92, null, "136183", 2 ], [ 93, null, "136184", 2 ], [ 94, null, "136185", 2 ], [ 95, null, "136186", 2 ], [ 96, null, "136187", 2 ], [ 97, null, "136188", 2 ], [ 98, null, "136190", 2 ], [ 99, null, "136191", 2 ], [ 100, null, "136289", 2 ], [ 101, null, "136290", 2 ], [ 102, null, "136291", 2 ], [ 103, null, "136292", 2 ], [ 104, null, "136295", 2 ], [ 105, null, "136300", 2 ], [ 106, null, "136302", 2 ], [ 107, null, "136304", 2 ], [ 108, null, "137840", 2 ], [ 109, null, "137847", 2 ], [ 110, null, "137852", 2 ], [ 111, null, "137855", 2 ], [ 112, null, "141013", 2 ], [ 113, null, "141016", 2 ], [ 114, null, "141019", 2 ], [ 115, null, "141020", 2 ], [ 116, null, "141022", 2 ], [ 117, null, "141023", 2 ], [ 118, null, "141026", 2 ], [ 119, null, "141027", 2 ], [ 120, null, "141048", 2 ], [ 121, null, "141049", 2 ], [ 122, null, "141051", 2 ], [ 123, null, "141052", 2 ], [ 124, null, "141053", 2 ], [ 125, null, "141054", 2 ], [ 126, null, "141057", 2 ], [ 127, null, "141059", 2 ], [ 128, null, "141060", 2 ], [ 129, null, "141080", 2 ], [ 130, null, "141082", 2 ], [ 131, null, "141084", 2 ], [ 132, null, "141085", 2 ], [ 133, null, "141089", 2 ], [ 134, null, "141090", 2 ], [ 135, null, "141091", 2 ], [ 136, null, "141093", 2 ], [ 137, null, "141095", 2 ], [ 138, null, "141100", 2 ], [ 139, null, "141102", 2 ], [ 140, null, "141106", 2 ], [ 141, null, "141126", 2 ], [ 142, null, "141141", 2 ], [ 143, null, "141142", 2 ], [ 144, null, "141154", 2 ], [ 145, null, "141483", 2 ], [ 146, null, "141484", 2 ], [ 147, null, "141488", 2 ], [ 148, null, "141490", 2 ], [ 149, null, "141492", 2 ], [ 150, null, "141494", 2 ], [ 151, null, "141501", 2 ], [ 152, null, "141502", 2 ], [ 153, null, "141503", 2 ], [ 154, null, "141505", 2 ], [ 155, null, "141528", 2 ], [ 156, null, "141542", 2 ], [ 157, null, "141620", 2 ], [ 158, null, "141647", 2 ], [ 159, null, "141714", 2 ], [ 160, null, "141717", 2 ], [ 161, null, "141733", 2 ], [ 162, null, "141928", 2 ], [ 163, null, "142185", 2 ], [ 164, null, "142188", 2 ], [ 165, null, "142189", 2 ], [ 166, null, "142191", 2 ], [ 167, null, "142194", 2 ], [ 168, null, "142249", 2 ], [ 169, null, "142257", 2 ], [ 170, null, "142267", 2 ], [ 171, null, "142269", 2 ], [ 172, null, "142274", 2 ], [ 173, null, "142287", 2 ], [ 174, null, "142289", 2 ], [ 175, null, "142304", 2 ], [ 176, null, "142307", 2 ], [ 177, null, "142309", 2 ], [ 178, null, "142348", 2 ], [ 179, null, "142350", 2 ], [ 180, null, "142391", 2 ], [ 181, null, "142392", 2 ], [ 182, null, "142427", 2 ], [ 183, null, "142866", 2 ], [ 184, null, "142867", 2 ], [ 185, null, "142875", 2 ], [ 186, null, "142879", 2 ], [ 187, null, "143391", 2 ], [ 188, null, "143393", 2 ], [ 189, null, "143400", 2 ], [ 190, null, "143401", 2 ], [ 191, null, "143419", 2 ], [ 192, null, "143420", 2 ], [ 193, null, "147934", 2 ], [ 194, null, "226385", 2 ], [ 195, null, "347528", 2 ], [ 196, null, "347564", 2 ], [ 197, null, "347607", 2 ], [ 198, null, "349208", 2 ], [ 199, null, "349214", 2 ], [ 200, null, "349215", 2 ], [ 201, null, "349245", 2 ], [ 202, null, "349269", 2 ], [ 203, null, "349270", 2 ], [ 204, null, "349310", 2 ], [ 205, null, "349315", 2 ], [ 206, null, "349371", 2 ], [ 207, null, "349375", 2 ], [ 208, null, "350314", 2 ], [ 209, null, "350315", 2 ], [ 210, null, "350318", 2 ], [ 211, null, "350568", 2 ], [ 212, null, "350569", 2 ], [ 213, null, "350570", 2 ], [ 214, null, "350574", 2 ], [ 215, null, "350575", 2 ], [ 216, null, "350576", 2 ], [ 217, null, "350667", 2 ], [ 218, null, "350738", 2 ], [ 219, null, "350739", 2 ], [ 220, null, "350740", 2 ], [ 221, null, "350744", 2 ], [ 222, null, "350746", 2 ], [ 223, null, "350752", 2 ], [ 224, null, "350756", 2 ], [ 225, null, "350956", 2 ], [ 226, null, "350958", 2 ], [ 227, null, "350959", 2 ], [ 228, null, "350973", 2 ], [ 229, null, "350987", 2 ], [ 230, null, "351004", 2 ], [ 231, null, "351025", 2 ], [ 232, null, "351397", 2 ], [ 233, null, "351404", 2 ], [ 234, null, "351497", 2 ], [ 235, null, "351500", 2 ], [ 236, null, "351600", 2 ], [ 237, null, "361910", 2 ], [ 238, null, "385222", 2 ], [ 239, null, "226377", 1 ], [ 240, null, "263401", 1 ], [ 241, null, "264189", 1 ], [ 242, null, "397887", 1 ], [ 243, null, "392825", 1 ], [ 244, null, "343523", 1 ], [ 245, null, "321374", 1 ], [ 246, null, "305216", 1 ], [ 247, null, "254424", 1 ], [ 248, null, "213621", 1 ], [ 249, null, "213534", 1 ], [ 250, null, "164379", 1 ], [ 251, null, "164376", 1 ], [ 252, null, "164375", 1 ], [ 253, null, "164374", 1 ], [ 254, null, "164372", 1 ], [ 255, null, "164370", 1 ], [ 256, null, "164365", 1 ], [ 257, null, "164363", 1 ], [ 258, null, "164357", 1 ], [ 259, null, "163627", 1 ], [ 260, null, "163626", 1 ], [ 261, null, "163625", 1 ], [ 262, null, "163623", 1 ], [ 263, null, "163622", 1 ], [ 264, null, "162975", 1 ], [ 265, null, "162974", 1 ], [ 266, null, "162973", 1 ], [ 267, null, "162972", 1 ], [ 268, null, "162970", 1 ], [ 269, null, "162969", 1 ], [ 270, null, "162968", 1 ], [ 271, null, "162967", 1 ], [ 272, null, "162966", 1 ], [ 273, null, "162963", 1 ], [ 274, null, "162962", 1 ], [ 275, null, "162961", 1 ], [ 276, null, "162959", 1 ], [ 277, null, "162958", 1 ], [ 278, null, "162956", 1 ], [ 279, null, "162954", 1 ], [ 280, null, "162953", 1 ], [ 281, null, "162952", 1 ], [ 282, null, "162949", 1 ], [ 283, null, "162948", 1 ], [ 284, null, "162947", 1 ], [ 285, null, "162945", 1 ], [ 286, null, "162944", 1 ], [ 287, null, "162943", 1 ], [ 288, null, "162942", 1 ], [ 289, null, "162941", 1 ], [ 290, null, "162940", 1 ], [ 291, null, "162939", 1 ], [ 292, null, "162936", 1 ], [ 293, null, "162935", 1 ], [ 294, null, "162934", 1 ], [ 295, null, "162932", 1 ], [ 296, null, "162931", 1 ], [ 297, null, "162930", 1 ], [ 298, null, "162929", 1 ], [ 299, null, "162927", 1 ], [ 300, null, "162925", 1 ], [ 301, null, "136258", 1 ], [ 302, null, "136259", 1 ], [ 303, null, "136260", 1 ], [ 304, null, "136261", 1 ], [ 305, null, "136293", 1 ], [ 306, null, "136294", 1 ], [ 307, null, "136296", 1 ], [ 308, null, "136297", 1 ], [ 309, null, "136301", 1 ], [ 310, null, "136303", 1 ], [ 311, null, "137809", 1 ], [ 312, null, "137838", 1 ], [ 313, null, "137839", 1 ], [ 314, null, "137842", 1 ], [ 315, null, "137844", 1 ], [ 316, null, "137845", 1 ], [ 317, null, "137846", 1 ], [ 318, null, "137848", 1 ], [ 319, null, "137849", 1 ], [ 320, null, "137850", 1 ], [ 321, null, "137853", 1 ], [ 322, null, "137854", 1 ], [ 323, null, "141014", 1 ], [ 324, null, "141015", 1 ], [ 325, null, "141017", 1 ], [ 326, null, "141018", 1 ], [ 327, null, "141024", 1 ], [ 328, null, "141025", 1 ], [ 329, null, "141028", 1 ], [ 330, null, "141029", 1 ], [ 331, null, "141030", 1 ], [ 332, null, "141031", 1 ], [ 333, null, "141041", 1 ], [ 334, null, "141042", 1 ], [ 335, null, "141043", 1 ], [ 336, null, "141045", 1 ], [ 337, null, "141047", 1 ], [ 338, null, "141050", 1 ], [ 339, null, "141058", 1 ], [ 340, null, "141078", 1 ], [ 341, null, "141079", 1 ], [ 342, null, "141081", 1 ], [ 343, null, "141083", 1 ], [ 344, null, "141088", 1 ], [ 345, null, "141092", 1 ], [ 346, null, "141097", 1 ], [ 347, null, "141098", 1 ], [ 348, null, "141101", 1 ], [ 349, null, "141107", 1 ], [ 350, null, "141108", 1 ], [ 351, null, "141127", 1 ], [ 352, null, "141140", 1 ], [ 353, null, "141152", 1 ], [ 354, null, "141482", 1 ], [ 355, null, "141485", 1 ], [ 356, null, "141486", 1 ], [ 357, null, "141487", 1 ], [ 358, null, "141489", 1 ], [ 359, null, "141491", 1 ], [ 360, null, "141493", 1 ], [ 361, null, "141526", 1 ], [ 362, null, "141527", 1 ], [ 363, null, "141536", 1 ], [ 364, null, "141537", 1 ], [ 365, null, "141609", 1 ], [ 366, null, "141618", 1 ], [ 367, null, "141623", 1 ], [ 368, null, "141643", 1 ], [ 369, null, "141713", 1 ], [ 370, null, "141715", 1 ], [ 371, null, "141716", 1 ], [ 372, null, "141718", 1 ], [ 373, null, "141719", 1 ], [ 374, null, "141720", 1 ], [ 375, null, "141927", 1 ], [ 376, null, "142139", 1 ], [ 377, null, "142184", 1 ], [ 378, null, "142190", 1 ], [ 379, null, "142192", 1 ], [ 380, null, "142193", 1 ], [ 381, null, "142250", 1 ], [ 382, null, "142258", 1 ], [ 383, null, "142259", 1 ], [ 384, null, "142260", 1 ], [ 385, null, "142266", 1 ], [ 386, null, "142268", 1 ], [ 387, null, "142271", 1 ], [ 388, null, "142275", 1 ], [ 389, null, "142277", 1 ], [ 390, null, "142279", 1 ], [ 391, null, "142280", 1 ], [ 392, null, "142281", 1 ], [ 393, null, "142282", 1 ], [ 394, null, "142283", 1 ], [ 395, null, "142286", 1 ], [ 396, null, "142288", 1 ], [ 397, null, "142290", 1 ], [ 398, null, "142295", 1 ], [ 399, null, "142296", 1 ], [ 400, null, "142297", 1 ], [ 401, null, "142298", 1 ], [ 402, null, "142299", 1 ], [ 403, null, "142301", 1 ], [ 404, null, "142302", 1 ], [ 405, null, "142303", 1 ], [ 406, null, "142305", 1 ], [ 407, null, "142314", 1 ], [ 408, null, "142349", 1 ], [ 409, null, "142390", 1 ], [ 410, null, "142393", 1 ], [ 411, null, "142394", 1 ], [ 412, null, "142395", 1 ], [ 413, null, "142396", 1 ], [ 414, null, "142397", 1 ], [ 415, null, "142398", 1 ], [ 416, null, "142399", 1 ], [ 417, null, "142864", 1 ], [ 418, null, "142865", 1 ], [ 419, null, "142868", 1 ], [ 420, null, "142869", 1 ], [ 421, null, "142870", 1 ], [ 422, null, "142871", 1 ], [ 423, null, "142872", 1 ], [ 424, null, "142873", 1 ], [ 425, null, "142876", 1 ], [ 426, null, "142878", 1 ], [ 427, null, "142882", 1 ], [ 428, null, "142883", 1 ], [ 429, null, "144870", 1 ], [ 430, null, "144871", 1 ], [ 431, null, "144872", 1 ], [ 432, null, "145320", 1 ], [ 433, null, "145321", 1 ], [ 434, null, "148750", 1 ], [ 435, null, "148751", 1 ], [ 436, null, "148752", 1 ], [ 437, null, "346901", 1 ], [ 438, null, "347527", 1 ], [ 439, null, "347872", 1 ], [ 440, null, "347873", 1 ], [ 441, null, "349324", 1 ], [ 442, null, "350317", 1 ], [ 443, null, "350571", 1 ], [ 444, null, "350737", 1 ], [ 445, null, "350741", 1 ], [ 446, null, "350742", 1 ], [ 447, null, "350745", 1 ], [ 448, null, "350971", 1 ], [ 449, null, "350974", 1 ], [ 450, null, "351024", 1 ], [ 451, null, "351098", 1 ], [ 452, null, "351109", 1 ], [ 453, null, "351496", 1 ], [ 454, null, "351679", 1 ], [ 455, null, "361905", 1 ], [ 456, null, "361911", 1 ], [ 457, null, "362521", 1 ], [ 458, null, "362522", 1 ], [ 459, null, "362523", 1 ], [ 460, null, "362524", 1 ], [ 461, null, "362526", 1 ], [ 462, null, "362534", 1 ], [ 463, null, "392830", 1 ], [ 464, null, "398164", 1 ] ];
+
+class DailyStylingOutfitConfig extends ConfigBase {
+    constructor() {
+        super(EXCELDATA$1);
+    }
+}
+
+var foreign21 = Object.freeze({
+    __proto__: null,
+    DailyStylingOutfitConfig: DailyStylingOutfitConfig
+});
+
+const EXCELDATA = [ [ "ID", "TriggerGuid", "InteractivityGuid", "HumanoidSlotType", "SitStance", "BagId" ], [ "", "", "", "", "", "" ], [ 1, "379F8E9E", "0D0850BD", 19, "122227", 10006 ], [ 2, "2555EDAA", "3D215C3A", 17, "122231", 10106 ], [ 3, "36A4512B", "270D9130", 18, "122232", 10016 ], [ 4, "0A2CF72B", "38F1AE5C", 19, "15208", 10016 ] ];
+
+class SitConfig extends ConfigBase {
+    constructor() {
+        super(EXCELDATA);
+    }
+}
+
+var foreign71 = Object.freeze({
+    __proto__: null,
+    SitConfig: SitConfig
+});
+
+class CharacterData extends Subdata {
+    constructor() {
+        super(...arguments);
+        this.characterDataMap = {};
+    }
+    setCharacterData(key, value) {
+        MapEx.set(this.characterDataMap, key, value);
+        this.save(false);
+        return true;
+    }
+    delCharacterData(key) {
+        if (MapEx.has(this.characterDataMap, key)) {
+            MapEx.del(this.characterDataMap, key);
+            this.save(false);
+            return true;
+        }
+        return false;
+    }
+    clearCharacterData() {
+        this.characterDataMap = {};
+        this.save(false);
+        return true;
+    }
+}
+
+__decorate([ Decorator.persistence() ], CharacterData.prototype, "characterDataMap", void 0);
+
+var foreign86 = Object.freeze({
+    __proto__: null,
+    CharacterData: CharacterData
+});
+
+class CharacterModuleS extends ModuleS {
+    onStart() {}
+    net_setCharacterData(key, value) {
+        return this.currentData.setCharacterData(key, value);
+    }
+    net_delCharacterData(key) {
+        return this.currentData.delCharacterData(key);
+    }
+    net_clearCharacterData() {
+        return this.currentData.clearCharacterData();
+    }
+}
+
+var foreign88 = Object.freeze({
+    __proto__: null,
+    CharacterModuleS: CharacterModuleS
+});
+
+let Buff = class Buff extends Script {
+    constructor() {
+        super(...arguments);
+        this.bagId = 0;
+        this.playerId = 0;
+        this.springArmLength = 350;
+        this.startScale = 1;
+        this.targetScale = 1;
+        this.time = 0;
+        this.targetPlayer = null;
+        this.localPlayer = null;
+    }
+    onStart() {
+        this.useUpdate = false;
+    }
+    onBagIdChange() {
+        if (!this.targetPlayer || !this.localPlayer) return;
+        if (this.bagId == 0) {
+            this.startScale = this.targetPlayer.character.worldTransform.scale.x;
+            this.targetScale = 1;
+            if (this.targetPlayer.playerId == this.localPlayer.playerId) {
+                Camera.currentCamera.springArm.length = this.springArmLength * this.targetScale;
+            }
+        } else {
+            let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
+            if (actionPropElement.BuffId <= 0) return;
+            let buffParams = actionPropElement.BuffParams;
+            this.startScale = this.targetPlayer.character.worldTransform.scale.x;
+            this.targetScale = buffParams[0];
+            if (this.targetPlayer.playerId == this.localPlayer.playerId) {
+                Camera.currentCamera.springArm.length = this.springArmLength * this.targetScale;
+            }
+        }
+        this.time = 0;
+        this.useUpdate = true;
+    }
+    async onPlayerIdChange() {
+        this.targetPlayer = await Player.asyncGetPlayer(this.playerId);
+        this.localPlayer = await Player.asyncGetLocalPlayer();
+    }
+    onUpdate(dt) {
+        if (this.targetPlayer == null || this.time >= 1) return;
+        this.time = Math.min(this.time + dt * 5, 1);
+        this.startScale = this.startScale + (this.targetScale - this.startScale) * this.time;
+        try {
+            this.targetPlayer.character.worldTransform.scale = mw.Vector.multiply(mw.Vector.one, this.startScale);
+        } catch (error) {}
+    }
+    onDestroy() {}
+};
+
+__decorate([ mw.Property({
+    replicated: true,
+    onChanged: "onBagIdChange"
+}) ], Buff.prototype, "bagId", void 0);
+
+__decorate([ mw.Property({
+    replicated: true,
+    onChanged: "onPlayerIdChange"
+}) ], Buff.prototype, "playerId", void 0);
+
+Buff = __decorate([ Component ], Buff);
+
+var Buff$1 = Buff;
+
+var foreign90 = Object.freeze({
+    __proto__: null,
+    default: Buff$1
+});
+
+const WorldChatDatas = "WorldChatDatas";
+
+const WorldExpressionDatas = "WorldExpressionDatas";
+
+const WorldActionDatas = "WorldActionDatas";
+
+class DanMuModuleS extends ModuleS {
+    constructor() {
+        super(...arguments);
+        this.maxShowDistance = 2e3;
+        this.playerInteractMap = new Map;
+        this.playerBagMap = new Map;
+        this.playerGlideMap = new Map;
+    }
+    onStart() {}
+    onPlayerEnterGame(player) {
+        this.initChatDatas(player);
+        this.initExpressionDatas(player);
+        this.initBuff(player);
+    }
+    onPlayerLeft(player) {
+        if (Utils.buffMap.has(player.playerId)) {
+            Utils.buffMap.get(player.playerId)?.destroy();
+            Utils.buffMap.delete(player.playerId);
+        }
+        this.unloadAllBag(player, false);
+    }
+    initBuff(player) {
+        let buff = player.character.addComponent(Buff$1, true);
+        buff.playerId = player.playerId;
+        Utils.buffMap.set(player.playerId, buff);
+    }
+    onUpdate(dt) {
+        this.playerBagMap.forEach((value => {
+            value.forEach((bag => {
+                if (bag.isUpdate) bag.update();
+            }));
+        }));
+    }
+    initChatDatas(player) {
+        this.getCustomdata(WorldChatDatas).then((chatDatas => {
+            if (!chatDatas || chatDatas.length == 0) return;
+            this.getClient(player).net_initChatDatas(chatDatas);
+        }));
+    }
+    initExpressionDatas(player) {
+        this.getCustomdata(WorldExpressionDatas).then((expressionAssets => {
+            if (!expressionAssets || expressionAssets.length == 0) return;
+            this.getClient(player).net_initExpressionDatas(expressionAssets);
+        }));
+    }
+    initActionDatas(player) {
+        this.getCustomdata(WorldActionDatas).then((actionDatas => {
+            if (!actionDatas || actionDatas.length == 0) return;
+            this.getClient(player).net_initActionDatas(actionDatas);
+        }));
+    }
+    setChat_Test() {
+        let chatDatas = [];
+        for (let i = 1; i <= 10; ++i) {
+            let ch = GameConfig.Chat.getElement(i);
+            let chats = ch.Chats;
+            let chatChilds = ch.ChatChilds;
+            chatDatas.push({
+                chats: chats,
+                chatChilds: chatChilds
+            });
+        }
+        this.setCustomData(WorldChatDatas, chatDatas);
+    }
+    setExpression_Test() {
+        let expressionAssets = [];
+        GameConfig.Expression.getAllElement().forEach((value => {
+            expressionAssets.push(value.AssetId);
+        }));
+        this.setCustomData(WorldExpressionDatas, expressionAssets);
+    }
+    setAction_Test() {
+        let actionDatas = [];
+        GameConfig.ActionConfig.getAllElement().forEach((value => {
+            actionDatas.push({
+                tab: value.Tab,
+                icon: value.Icon,
+                assetId: value.ActionId,
+                names: value.Names,
+                loop: value.Loop,
+                pos: value.Pos,
+                rot: new mw.Rotation(value.Rot),
+                type: value.Type
+            });
+        }));
+        this.setCustomData(WorldActionDatas, actionDatas);
+    }
+    net_sendDanMu(msg, isActive) {
+        this.getAllClient().net_sendDanMu(this.currentPlayer.userId, msg, isActive);
+    }
+    async getCustomdata(key) {
+        return (await DataStorage.asyncGetData(key)).data;
+    }
+    async setCustomData(saveKey, dataInfo) {
+        let code = null;
+        code = await DataStorage.asyncSetData(saveKey, dataInfo);
+        return code == mw.DataStorageResultCode.Success;
+    }
+    net_showBubbleText(gameObjectId, text) {
+        let currentPlayer = this.currentPlayer;
+        if (this.maxShowDistance == -1) {
+            Player.getAllPlayers().forEach((player => {
+                this.getClient(player).net_showBubbleText(gameObjectId, text);
+            }));
+        } else {
+            const players = Player.getAllPlayers();
+            for (const player of players) {
+                if (player === currentPlayer) {
+                    this.getClient(player).net_showBubbleText(gameObjectId, text);
+                } else {
+                    const len = Vector.distance(player.character.worldTransform.position, currentPlayer.character.worldTransform.position);
+                    if (len <= this.maxShowDistance) {
+                        this.getClient(player).net_showBubbleText(gameObjectId, text);
+                    }
+                }
+            }
+        }
+    }
+    net_playExpression(assetId) {
+        this.getAllClient().net_playExpression(this.currentPlayerId, assetId);
+    }
+    async net_EnterInteract(actionData) {
+        let player = this.currentPlayer;
+        return await this.enterInteract(player, actionData);
+    }
+    async enterInteract(player, actionData) {
+        let playerId = player.playerId;
+        if (!this.playerInteractMap.has(playerId)) {
+            this.playerInteractMap.set(playerId, new PlayerInteract);
+        }
+        let playerInteract = this.playerInteractMap.get(playerId);
+        await playerInteract.clearInteractor(player);
+        if (actionData.type == 0) {
+            return await playerInteract.playSingleAni(player, actionData);
+        } else if (actionData.type == 1) {
+            return await playerInteract.interact(player, actionData);
+        } else if (actionData.type == 2) {
+            return await playerInteract.playDoubleAni(player, actionData);
+        }
+    }
+    async net_LeaveInteract() {
+        let player = this.currentPlayer;
+        return await this.leaveInteract(player);
+    }
+    async leaveInteract(player) {
+        let playerId = player.playerId;
+        if (!this.playerInteractMap.has(playerId)) return true;
+        let playerInteract = this.playerInteractMap.get(playerId);
+        return await playerInteract.clearInteractor(player);
+    }
+    async net_useBag(bagId) {
+        let player = this.currentPlayer;
+        let playerBag = null;
+        let bagIds = [];
+        if (!this.playerBagMap.has(player.playerId)) {
+            playerBag = new PlayerBag;
+            this.playerBagMap.set(player.playerId, [ playerBag ]);
+        } else {
+            let playerBags = this.playerBagMap.get(player.playerId);
+            for (let i = 0; i < playerBags.length; ++i) {
+                if (GameConfig.ActionProp.getElement(bagId).Tab == 6) {
+                    if (GameConfig.ActionProp.getElement(playerBags[i].bagId).Tab == 6) {
+                        playerBag = playerBags[i];
+                        break;
+                    }
+                }
+                if (playerBags[i].bagId == bagId || GameConfig.ActionProp.getElement(playerBags[i].bagId).NextId == bagId) {
+                    playerBag = playerBags[i];
+                    break;
+                }
+            }
+            if (!playerBag) {
+                if (playerBags.length >= GlobalData.bagCount) {
+                    playerBags.forEach((value => {
+                        bagIds.push(value.bagId);
+                    }));
+                    return bagIds;
+                }
+                playerBag = new PlayerBag;
+                playerBags.push(playerBag);
+            }
+        }
+        await playerBag.equip(player, bagId);
+        this.playerBagMap.get(player.playerId).forEach((value => {
+            bagIds.push(value.bagId);
+        }));
+        return bagIds;
+    }
+    async net_unloadBag(bagId) {
+        let player = this.currentPlayer;
+        let bagIds = [];
+        if (!this.playerBagMap.has(player.playerId)) return bagIds;
+        let playerBags = this.playerBagMap.get(player.playerId);
+        let unloadIndex = -1;
+        for (let i = 0; i < playerBags.length; ++i) {
+            if (playerBags[i].bagId == bagId) {
+                await playerBags[i].unEquip(player, bagId);
+                unloadIndex = i;
+                break;
+            }
+        }
+        if (unloadIndex == -1 || !playerBags || playerBags.length == 0) return bagIds;
+        if (playerBags.length == 1) {
+            playerBags.length = 0;
+            playerBags = [];
+        } else {
+            for (let i = unloadIndex + 1; i < playerBags.length; ++i) {
+                playerBags[i - 1] = playerBags[i];
+            }
+            playerBags.length = playerBags.length - 1;
+        }
+        console.error(`playerBags.length:${playerBags.length}`);
+        playerBags.forEach((value => {
+            bagIds.push(value.bagId);
+        }));
+        return bagIds;
+    }
+    async net_unloadAllBag() {
+        let player = this.currentPlayer;
+        return await this.unloadAllBag(player, true);
+    }
+    async unloadAllBag(player, isSync) {
+        if (!this.playerBagMap.has(player.playerId)) return;
+        let playerBag = this.playerBagMap.get(player.playerId);
+        for (let i = 0; i < playerBag.length; ++i) {
+            await playerBag[i].unEquip(player, playerBag[i].bagId, isSync);
+        }
+        this.playerBagMap.delete(player.playerId);
+        return [];
+    }
+    async net_startGlide() {
+        let player = this.currentPlayer;
+        if (!this.playerGlideMap.has(player.playerId)) {
+            this.playerGlideMap.set(player.playerId, new PlayerGlide);
+        }
+        let playerGlide = this.playerGlideMap.get(player.playerId);
+        return await playerGlide.startGlide(player);
+    }
+    net_stopGlide() {
+        let player = this.currentPlayer;
+        if (!this.playerGlideMap.has(player.playerId)) return true;
+        let playerGlide = this.playerGlideMap.get(player.playerId);
+        playerGlide.stopGlide();
+        this.playerGlideMap.delete(player.playerId);
+        return true;
+    }
+}
+
+__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_sendDanMu", null);
+
+__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_showBubbleText", null);
+
+__decorate([ Decorator.noReply() ], DanMuModuleS.prototype, "net_playExpression", null);
+
+class PlayerGlide {
+    constructor() {
+        this.animation = null;
+        this.glideObj = null;
+        this.effectId = null;
+    }
+    async startGlide(player) {
+        await Utils.asyncDownloadAsset(`148890`);
+        this.animation = player.character.loadAnimation(`148890`);
+        this.animation.loop = 0;
+        this.animation.play();
+        await Utils.asyncDownloadAsset(`162566`);
+        this.glideObj = await GameObjPool.asyncSpawn("162566");
+        await this.glideObj.asyncReady();
+        await this.glideObj.setCollision(mw.PropertyStatus.Off, true);
+        await Utils.asyncDownloadAsset(`27392`);
+        this.effectId = EffectService.playOnGameObject("27392", this.glideObj, {
+            loopCount: 0
+        });
+        player.character.attachToSlot(this.glideObj, mw.HumanoidSlotType.LeftHand);
+        this.glideObj.localTransform.position = new mw.Vector(0, 0, 0);
+        this.glideObj.localTransform.rotation = new mw.Rotation(-90, 0, 0);
+        return true;
+    }
+    stopGlide() {
+        if (this.effectId) {
+            EffectService.stop(this.effectId);
+            this.effectId = null;
+        }
+        if (this.animation) {
+            this.animation.stop();
+            this.animation = null;
+        }
+        if (this.glideObj) {
+            GameObjPool.despawn(this.glideObj);
+            this.glideObj = null;
+        }
+    }
+}
+
+class PlayerBag {
+    constructor() {
+        this.player = null;
+        this.bagId = null;
+        this.mode = null;
+        this.vehiclesMode = null;
+        this.isUpdate = false;
+        this.isMove = false;
+        this.playerVelocity = null;
+        this.actionPropElement = null;
+        this.vehiclesModeAnimation = null;
+        this.playerAnimation = null;
+        this.playerStatce = null;
+        this.originalMaterialId = null;
+        this.animation = null;
+        this.effectId = null;
+        this.soundId = null;
+    }
+    async equip(player, bagId) {
+        this.player = player;
+        this.bagId = bagId;
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        this.actionPropElement = actionPropElement;
+        if (actionPropElement.BuffId > 0) {
+            if (Utils.buffMap.has(player.playerId)) {
+                Utils.buffMap.get(player.playerId).bagId = bagId;
+            }
+        } else {
+            if (actionPropElement.NextId > 0) {
+                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).BuffId > 0) {
+                    if (Utils.buffMap.has(player.playerId)) {
+                        Utils.buffMap.get(player.playerId).bagId = 0;
+                    }
+                }
+            }
+        }
+        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
+            this.recycleMode();
+            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
+        } else {
+            await this.updateMode(player, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
+        }
+        if (actionPropElement.VehiclesChildId && actionPropElement.VehiclesChildId.length > 0) {
+            this.recycleVehiclesMode();
+            await this.spawnVehiclesMode(player, actionPropElement.VehiclesChildId, actionPropElement.VehiclesChildParameter);
+        } else {
+            this.recycleVehiclesMode();
+        }
+        if (actionPropElement.MaterialId && actionPropElement.MaterialId.length > 0) {
+            this.setMaterial(actionPropElement.MaterialId);
+        } else {
+            this.resetMaterial();
+        }
+        if (actionPropElement.IsFly == 1) {
+            this.switchFlyState(player);
+        } else if (actionPropElement.IsFly == 0) {
+            if (actionPropElement.NextId > 0) {
+                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).IsFly == 1) {
+                    this.switchRunState(player);
+                }
+            }
+        }
+        if (actionPropElement.AnimationId && actionPropElement.AnimationId.length > 0) {
+            await this.playAnimation(player, actionPropElement.AnimationId, actionPropElement.AnimationSlot, actionPropElement.AnimationParameter);
+        } else {
+            this.stopAnimation();
+        }
+        if (actionPropElement.DelayAssetId && actionPropElement.DelayAssetId.length > 0) {
+            this.placingItems(player, actionPropElement);
+        }
+        if (actionPropElement.EffectId && actionPropElement.EffectId.length > 0) {
+            this.stopEffect();
+            await this.playEffect(actionPropElement.EffectId, actionPropElement.EffectLoop, actionPropElement.EffectOffsetParameter);
+        } else {
+            this.stopEffect();
+        }
+        if (actionPropElement.SoundId && actionPropElement.SoundId.length > 0) {
+            this.stop3DSound();
+            await this.play3DSound(actionPropElement.SoundId, actionPropElement.SoundParameter);
+        } else {
+            this.stop3DSound();
+        }
+        this.isUpdate = actionPropElement.Tab == 6;
+        await TimeUtil.delaySecond(.1);
+        return true;
+    }
+    async unEquip(player, bagId, isSync = true) {
+        this.isUpdate = false;
+        this.stopEffect();
+        this.stop3DSound();
+        this.stopAnimation();
+        this.stopPlayerVehiclesModeAnimation();
+        this.resetMaterial();
+        let actionPropElement = GameConfig.ActionProp.getElement(bagId);
+        if (actionPropElement.IsFly == 1 && GameConfig.ActionProp.getElement(actionPropElement.NextId).IsFly == 0) {
+            this.switchRunState(player);
+        }
+        if (actionPropElement.BuffId > 0) {
+            if (actionPropElement.NextId > 0) {
+                if (GameConfig.ActionProp.getElement(actionPropElement.NextId).BuffId <= 0) {
+                    if (Utils.buffMap.has(player.playerId)) {
+                        Utils.buffMap.get(player.playerId).bagId = 0;
+                    }
+                }
+            }
+        }
+        this.recycleMode();
+        this.recycleVehiclesMode();
+        if (isSync) await TimeUtil.delaySecond(.1);
+        return true;
+    }
+    async spawnMode(player, assetId, slotType, parameter) {
+        await Utils.asyncDownloadAsset(assetId);
+        this.mode = await GameObjPool.asyncSpawn(assetId);
+        await this.mode.asyncReady();
+        this.mode.setCollision(mw.PropertyStatus.Off, true);
+        player.character.attachToSlot(this.mode, slotType);
+        this.mode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
+        this.mode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
+        this.mode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
+    }
+    recycleMode() {
+        if (!this.mode) return;
+        GameObjPool.despawn(this.mode);
+        this.mode = null;
+    }
+    async updateMode(player, slotType, parameter) {
+        if (!this.mode) {
+            if (this.actionPropElement.AssetId && this.actionPropElement.AssetId.length > 0) ; else {
+                if (this.actionPropElement.NextId > 0) {
+                    if (this.actionPropElement.NextId == this.actionPropElement.ID) {
+                        let actionPropElement = GameConfig.ActionProp.getElement(this.actionPropElement.NextId - 1);
+                        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
+                            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
+                        }
+                    } else {
+                        let actionPropElement = GameConfig.ActionProp.getElement(this.actionPropElement.NextId);
+                        if (actionPropElement.AssetId && actionPropElement.AssetId.length > 0) {
+                            await this.spawnMode(player, actionPropElement.AssetId, actionPropElement.SlotType, actionPropElement.ModeOffsetParameter);
+                        }
+                    }
+                }
+            }
+        }
+        player.character.attachToSlot(this.mode, slotType);
+        this.mode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
+        this.mode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
+        this.mode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
+    }
+    async spawnVehiclesMode(player, assetId, parameter) {
+        await Utils.asyncDownloadAsset(`Character`);
+        this.vehiclesMode = await GameObjPool.asyncSpawn(`Character`);
+        await this.vehiclesMode.asyncReady();
+        await Utils.asyncDownloadAsset(assetId);
+        this.vehiclesMode.description.base.wholeBody = assetId;
+        await this.vehiclesMode.asyncReady();
+        this.vehiclesMode.collisionWithOtherCharacterEnabled = false;
+        this.vehiclesMode.complexMovementEnabled = false;
+        player.character.attachToSlot(this.vehiclesMode, mw.HumanoidSlotType.Root);
+        this.vehiclesMode.localTransform.rotation = new Rotation(parameter[3], parameter[4], parameter[5]);
+        this.vehiclesMode.localTransform.scale = new Vector(parameter[6], parameter[7], parameter[8]);
+        this.vehiclesMode.localTransform.position = new Vector(parameter[0], parameter[1], parameter[2]);
+    }
+    recycleVehiclesMode() {
+        if (!this.vehiclesMode) return;
+        GameObjPool.despawn(this.vehiclesMode);
+        this.vehiclesMode = null;
+    }
+    update() {
+        if (!this.isUpdate) return;
+        if (!this.player) return;
+        if (!this.playerVelocity) this.playerVelocity = this.player.character.velocity;
+        if (!this.isMove && (this.player.character.velocity.x != 0 || this.player.character.velocity.y != 0)) {
+            this.isMove = true;
+            this.playerMoveAction();
+        } else if (this.isMove && (this.player.character.velocity.x == 0 && this.player.character.velocity.y == 0)) {
+            this.isMove = false;
+            this.playerIdleAction();
+        }
+    }
+    stopPlayerVehiclesModeAnimation() {
+        if (this.vehiclesModeAnimation) {
+            this.vehiclesModeAnimation.stop();
+            this.vehiclesModeAnimation = null;
+        }
+        if (this.playerAnimation) {
+            this.playerAnimation.stop();
+            this.playerAnimation = null;
+        }
+        if (this.playerStatce) {
+            this.playerStatce.stop();
+            this.playerStatce = null;
+        }
+    }
+    async playerMoveAction() {
+        this.stopPlayerVehiclesModeAnimation();
+        if (this.vehiclesMode) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesChildMoveId);
+            this.vehiclesModeAnimation = this.vehiclesMode.loadAnimation(this.actionPropElement.VehiclesChildMoveId);
+            this.vehiclesModeAnimation.loop = 0;
+            this.vehiclesModeAnimation.play();
+        }
+        if (this.actionPropElement.VehiclesWalkAnimationId && this.actionPropElement.VehiclesWalkAnimationId.length > 0) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesWalkAnimationId);
+            this.playerAnimation = this.player.character.loadAnimation(this.actionPropElement.VehiclesWalkAnimationId);
+            this.playerAnimation.slot = this.actionPropElement.VehiclesWalkAnimationSlot;
+            this.playerAnimation.loop = 0;
+            this.playerAnimation.play();
+        }
+        if (this.actionPropElement.VehiclesWalkStanceId && this.actionPropElement.VehiclesWalkStanceId.length > 0) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesWalkStanceId);
+            this.playerStatce = this.player.character.loadSubStance(this.actionPropElement.VehiclesWalkStanceId);
+            this.playerStatce.blendMode = this.actionPropElement.VehiclesWalkStanceSlot - 1;
+            this.playerStatce.play();
+        }
+    }
+    async playerIdleAction() {
+        this.stopPlayerVehiclesModeAnimation();
+        if (this.vehiclesMode) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesChildIdleId);
+            this.vehiclesModeAnimation = this.vehiclesMode.loadAnimation(this.actionPropElement.VehiclesChildIdleId);
+            this.vehiclesModeAnimation.loop = 0;
+            this.vehiclesModeAnimation.play();
+        }
+        if (this.actionPropElement.VehiclesIdleAnimationId && this.actionPropElement.VehiclesIdleAnimationId.length > 0) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesIdleAnimationId);
+            this.playerAnimation = this.player.character.loadAnimation(this.actionPropElement.VehiclesIdleAnimationId);
+            this.playerAnimation.slot = this.actionPropElement.VehiclesIdleAnimationSlot;
+            this.playerAnimation.loop = 0;
+            this.playerAnimation.play();
+        }
+        if (this.actionPropElement.VehiclesIdleStanceId && this.actionPropElement.VehiclesIdleStanceId.length > 0) {
+            await Utils.asyncDownloadAsset(this.actionPropElement.VehiclesIdleStanceId);
+            this.playerStatce = this.player.character.loadSubStance(this.actionPropElement.VehiclesIdleStanceId);
+            this.playerStatce.blendMode = this.actionPropElement.VehiclesIdleStanceSlot - 1;
+            this.playerStatce.play();
+        }
+    }
+    switchFlyState(player) {
+        if (player.character.getCurrentState() != mw.CharacterStateType.Flying) {
+            player.character.changeState(mw.CharacterStateType.Flying);
+        }
+    }
+    switchRunState(player) {
+        if (player.character.getCurrentState() != mw.CharacterStateType.Running) {
+            player.character.changeState(mw.CharacterStateType.Running);
+        }
+    }
+    setMaterial(materialId) {
+        if (!this.mode) return;
+        this.originalMaterialId = materialId;
+        this.mode.setMaterial(materialId);
+    }
+    resetMaterial() {
+        if (!this.mode) return;
+        if (!this.originalMaterialId) return;
+        this.mode.resetMaterial();
+        this.originalMaterialId = null;
+    }
+    async playAnimation(player, assetId, slotType, parameter) {
+        await Utils.asyncDownloadAsset(assetId);
+        this.animation = player.character.loadAnimation(assetId);
+        if (slotType) this.animation.slot = slotType;
+        this.animation.speed = parameter[0];
+        this.animation.loop = parameter[1];
+        this.animation.play();
+    }
+    stopAnimation() {
+        if (!this.animation) return;
+        this.animation?.stop();
+        this.animation = null;
+    }
+    async placingItems(player, actionPropElement) {
+        if (!player || !actionPropElement) return;
+        let playAnimationTime = 1;
+        if (actionPropElement.AnimationParameter && actionPropElement.AnimationParameter.length > 0) {
+            playAnimationTime = actionPropElement.AnimationParameter[0];
+        }
+        await TimeUtil.delaySecond(playAnimationTime);
+        if (!player || !actionPropElement) return;
+        let delayModeOffsetParameter = actionPropElement.DelayModeOffsetParameter;
+        let playerPos = player.character.worldTransform.position;
+        let offsetZ = player.character.collisionExtent.z / 2;
+        let playerForward = player.character.worldTransform.getForwardVector();
+        let itemPos = new Vector(playerPos.x + playerForward.x * 40, playerPos.y + playerForward.y * 40, playerPos.z + playerForward.z * 40 - offsetZ);
+        let itemRot = new mw.Rotation(new mw.Vector(playerForward.x * delayModeOffsetParameter[4], playerForward.y * delayModeOffsetParameter[4], playerForward.z * delayModeOffsetParameter[4] - 90));
+        let itemSca = new mw.Vector(delayModeOffsetParameter[6], delayModeOffsetParameter[7], delayModeOffsetParameter[8]);
+        let delayAssetId = actionPropElement.DelayAssetId;
+        await Utils.asyncDownloadAsset(delayAssetId);
+        let itemMode = await GameObjPool.asyncSpawn(delayAssetId);
+        await itemMode.asyncReady();
+        itemMode.worldTransform.position = itemPos;
+        itemMode.worldTransform.rotation = itemRot;
+        itemMode.worldTransform.scale = itemSca;
+        let delayModeEffectId = null;
+        let delayModeEffectAssetId = actionPropElement.DelayModeEffectId;
+        if (delayModeEffectAssetId && delayModeEffectAssetId.length > 0) {
+            await Utils.asyncDownloadAsset(delayModeEffectAssetId);
+            let delayModeEffectOffsetParameter = actionPropElement.DelayModeEffectOffsetParameter;
+            delayModeEffectId = EffectService.playOnGameObject(delayModeEffectAssetId, itemMode, {
+                loopCount: 0,
+                position: new mw.Vector(delayModeEffectOffsetParameter[0], delayModeEffectOffsetParameter[1], delayModeEffectOffsetParameter[2]),
+                rotation: new mw.Rotation(delayModeEffectOffsetParameter[3], delayModeEffectOffsetParameter[4], delayModeEffectOffsetParameter[5]),
+                scale: new mw.Vector(delayModeEffectOffsetParameter[6], delayModeEffectOffsetParameter[7], delayModeEffectOffsetParameter[8])
+            });
+        }
+        let delayParameter = actionPropElement.DelayParameter;
+        let delayTime = delayParameter[0];
+        let delayCount = delayParameter[1];
+        let delayInterval = delayParameter[2];
+        await TimeUtil.delaySecond(delayTime - playAnimationTime);
+        for (let i = 0; i < delayCount; ++i) {
+            await new Promise((resolve => {
+                setTimeout((async () => {
+                    let DelayEffectAssetId = actionPropElement.DelayEffectId;
+                    if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
+                        await Utils.asyncDownloadAsset(DelayEffectAssetId);
+                        let delayEffectOffsetParameter = actionPropElement.DelayEffectOffsetParameter;
+                        EffectService.playAtPosition(DelayEffectAssetId, itemMode.worldTransform.position, {
+                            loopCount: 1,
+                            rotation: itemMode.worldTransform.rotation,
+                            scale: new mw.Vector(delayEffectOffsetParameter[6], delayEffectOffsetParameter[7], delayEffectOffsetParameter[8])
+                        });
+                        let delayModeSoundId = actionPropElement.DelayModeSoundId;
+                        if (delayModeSoundId && delayModeSoundId.length > 0) {
+                            await Utils.asyncDownloadAsset(delayModeSoundId);
+                            let delayModeSoundParameter = actionPropElement.DelayModeSoundParameter;
+                            SoundService.play3DSound(delayModeSoundId, itemMode.worldTransform.position, 1, delayModeSoundParameter[0], {
+                                radius: delayModeSoundParameter[1],
+                                falloffDistance: delayModeSoundParameter[1] * 1.2
+                            });
+                        }
+                    }
+                    return resolve();
+                }), delayInterval * 1e3);
+            }));
+        }
+        if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
+        if (delayModeEffectId) EffectService.stop(delayModeEffectId);
+        GameObjPool.despawn(itemMode);
+    }
+    async playEffect(assetId, loop, parameter) {
+        await Utils.asyncDownloadAsset(assetId);
+        this.effectId = EffectService.playOnGameObject(assetId, this.mode, {
+            loopCount: loop,
+            position: new mw.Vector(parameter[0], parameter[1], parameter[2]),
+            rotation: new mw.Rotation(parameter[3], parameter[4], parameter[5]),
+            scale: new mw.Vector(parameter[6], parameter[7], parameter[8])
+        });
+    }
+    stopEffect() {
+        if (!this.effectId) return;
+        EffectService.stop(this.effectId);
+        this.effectId = null;
+    }
+    async play3DSound(assetId, parameter) {
+        await Utils.asyncDownloadAsset(assetId);
+        this.soundId = SoundService.play3DSound(assetId, this.mode, parameter[2], parameter[1], {
+            radius: parameter[0],
+            falloffDistance: parameter[0] * 1.2
+        });
+    }
+    stop3DSound() {
+        if (!this.soundId) return;
+        SoundService.stop3DSound(this.soundId);
+        this.soundId = null;
+    }
+}
+
+class PlayerInteract {
+    constructor() {
+        this.interactObj = null;
+        this.npc = null;
+        this.npcSubStance = null;
+        this.singleAni = null;
+        this.playerSubStance = null;
+    }
+    async initNpc() {
+        if (this.npc) return;
+        this.npc = await mw.GameObject.asyncSpawn("Character");
+        this.npc.collisionWithOtherCharacterEnabled = false;
+        await this.npc.asyncReady();
+    }
+    async playSingleAni(player, actionData) {
+        await Utils.asyncDownloadAsset(actionData.assetId);
+        this.singleAni = player.character.loadAnimation(actionData.assetId);
+        this.singleAni.loop = actionData.loop == 0 ? 1 : 0;
+        let isPlaySuccess = this.singleAni.play();
+        console.error(`isPlaySuccess:${isPlaySuccess}`);
+        return isPlaySuccess;
+    }
+    async playDoubleAni(player, actionData) {
+        await this.initNpc();
+        this.npc.setVisibility(true, true);
+        player.character.collisionWithOtherCharacterEnabled = false;
+        player.character.movementEnabled = false;
+        this.npc.worldTransform.position = player.character.worldTransform.position.add(actionData.pos);
+        let tmpRot = mw.Rotation.zero;
+        mw.Rotation.add(player.character.worldTransform.rotation, actionData.rot, tmpRot);
+        this.npc.worldTransform.rotation = tmpRot;
+        let aniStr = actionData.assetId.split("-");
+        await Utils.asyncDownloadAsset(aniStr[0]);
+        await Utils.asyncDownloadAsset(aniStr[1]);
+        this.playerSubStance = player.character.loadSubStance(aniStr[0]);
+        this.playerSubStance.play();
+        this.npcSubStance = this.npc.loadSubStance(aniStr[1]);
+        this.npcSubStance.play();
+        return true;
+    }
+    async interact(player, actionData) {
+        return new Promise((async resolve => {
+            await this.initNpc();
+            this.npc.setVisibility(true, true);
+            player.character.collisionWithOtherCharacterEnabled = false;
+            this.interactObj = await mw.GameObject.asyncSpawn("Interactor");
+            await this.interactObj.asyncReady();
+            player.character.attachToSlot(this.interactObj, mw.HumanoidSlotType.FaceOrnamental);
+            this.interactObj.onEnter.add((async () => {
+                let aniStr = actionData.assetId.split("-");
+                await Utils.asyncDownloadAsset(aniStr[0]);
+                await Utils.asyncDownloadAsset(aniStr[1]);
+                this.playerSubStance = player.character.loadSubStance(aniStr[0]);
+                this.playerSubStance.play();
+                this.npcSubStance = this.npc.loadSubStance(aniStr[1]);
+                this.npcSubStance.play();
+                this.interactObj.localTransform.position = actionData.pos;
+                this.interactObj.localTransform.rotation = actionData.rot;
+                return resolve(true);
+            }));
+            this.interactObj.enter(this.npc, mw.HumanoidSlotType.Buttocks);
+        }));
+    }
+    async clearInteractor(player) {
+        if (this.singleAni) {
+            this.singleAni?.stop();
+            this.singleAni = null;
+        }
+        if (this.playerSubStance) {
+            this.playerSubStance.stop();
+            this.playerSubStance = null;
+        }
+        if (this.npcSubStance) {
+            this.npcSubStance.stop();
+            this.npcSubStance = null;
+            this.npc.setVisibility(false, true);
+        }
+        return await this.leaveInteract(player);
+    }
+    async leaveInteract(player) {
+        return new Promise((resolve => {
+            if (!this.interactObj) return resolve(true);
+            this.interactObj.onLeave.add((async () => {
+                this.interactObj.parent = null;
+                this.interactObj.destroy();
+                this.interactObj = null;
+                this.npc.parent = null;
+                this.npc.setVisibility(false, true);
+                if (!player.character.collisionWithOtherCharacterEnabled) player.character.collisionWithOtherCharacterEnabled = true;
+                await TimeUtil.delaySecond(1);
+                return resolve(true);
+            }));
+            this.interactObj.leave();
+        }));
+    }
+}
+
+var foreign93 = Object.freeze({
+    __proto__: null,
+    PlayerBag: PlayerBag,
+    PlayerGlide: PlayerGlide,
+    PlayerInteract: PlayerInteract,
+    default: DanMuModuleS
 });
 
 let Nickname_Generate = class Nickname_Generate extends UIScript {
@@ -20713,6 +20733,18 @@ let TaskPanel_Generate = class TaskPanel_Generate extends UIScript {
         }
         return this.mCloseButton_Internal;
     }
+    get mBuyVipButton() {
+        if (!this.mBuyVipButton_Internal && this.uiWidgetBase) {
+            this.mBuyVipButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/TaskCanvas/mBuyVipButton");
+        }
+        return this.mBuyVipButton_Internal;
+    }
+    get mBuyVipTextBlock() {
+        if (!this.mBuyVipTextBlock_Internal && this.uiWidgetBase) {
+            this.mBuyVipTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/TaskCanvas/mBuyVipButton/mBuyVipTextBlock");
+        }
+        return this.mBuyVipTextBlock_Internal;
+    }
     onAwake() {
         this.canUpdate = false;
         this.layer = mw.UILayerBottom;
@@ -20723,10 +20755,15 @@ let TaskPanel_Generate = class TaskPanel_Generate extends UIScript {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
         }));
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mBuyVipButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mBuyVipButton");
+        }));
+        this.mBuyVipButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mDailyTimeTextBlock);
         this.initLanguage(this.mDailyTaskDoneTextBlock);
         this.initLanguage(this.mWeekTimeTextBlock);
         this.initLanguage(this.mWeekTaskDoneTextBlock);
+        this.initLanguage(this.mBuyVipTextBlock);
         this.initLanguage(this.uiWidgetBase.findChildByPath("RootCanvas/TaskCanvas/DailyTaskCanvas/DailyTaskTitleImage/DailyTaskTitleTextBlock"));
         this.initLanguage(this.uiWidgetBase.findChildByPath("RootCanvas/TaskCanvas/WeekTaskCanvas/WeekTaskTitleImage/WeekTaskTitleTextBlock"));
     }
@@ -20787,9 +20824,13 @@ class TaskPanel extends TaskPanel_Generate$1 {
     }
     bindButton() {
         this.mCloseButton.onClicked.add(this.hideTween.bind(this));
+        this.mBuyVipButton.onClicked.add(this.buyVipButton.bind(this));
     }
     hideTween() {
         this.hide();
+    }
+    buyVipButton() {
+        ModuleService.getModule(MallModuleC).onAddPermanentVipAction.call();
     }
     onShow(...params) {
         this.canUpdate = true;

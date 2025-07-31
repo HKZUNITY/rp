@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TaskModule/TaskPanel.ui
- * TIME: 2025.07.19-13.24.18
+ * TIME: 2025.07.31-23.31.37
  */
  
 @UIBind('UI/module/TaskModule/TaskPanel.ui')
@@ -71,6 +71,20 @@ export default class TaskPanel_Generate extends UIScript {
 		}
 		return this.mCloseButton_Internal
 	}
+	private mBuyVipButton_Internal: mw.Button
+	public get mBuyVipButton(): mw.Button {
+		if(!this.mBuyVipButton_Internal&&this.uiWidgetBase) {
+			this.mBuyVipButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/TaskCanvas/mBuyVipButton') as mw.Button
+		}
+		return this.mBuyVipButton_Internal
+	}
+	private mBuyVipTextBlock_Internal: mw.TextBlock
+	public get mBuyVipTextBlock(): mw.TextBlock {
+		if(!this.mBuyVipTextBlock_Internal&&this.uiWidgetBase) {
+			this.mBuyVipTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/TaskCanvas/mBuyVipButton/mBuyVipTextBlock') as mw.TextBlock
+		}
+		return this.mBuyVipTextBlock_Internal
+	}
 
 
 	protected onAwake() {
@@ -90,6 +104,12 @@ export default class TaskPanel_Generate extends UIScript {
 		this.mCloseButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mBuyVipButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mBuyVipButton");
+		});
+		this.mBuyVipButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		//按钮多语言
 		
 		//文本多语言
@@ -104,6 +124,9 @@ export default class TaskPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mWeekTaskDoneTextBlock)
+		
+	
+		this.initLanguage(this.mBuyVipTextBlock)
 		
 	
 		//文本多语言
