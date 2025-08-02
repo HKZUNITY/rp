@@ -2,6 +2,7 @@
 import { GameConfig } from "../../configs/GameConfig";
 import { EventType } from "../../GlobalData";
 import { AvatarApi } from "../../tools/AvatarApi";
+import { AvatarDecora } from "../../tools/AvatarDecora";
 import { Enums, TouchScript } from "../../tools/TouchScript";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
@@ -373,7 +374,7 @@ export class TryOnModuleC extends ModuleC<TryOnModuleS, TryOnData> {
                     Notice.showDownNotice(GameConfig.Language.Text_TryOnTips8.Value);
                     return;
                 }
-                this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+                AvatarDecora.clearAllDecora(this.localPlayer.character);
                 await this.localPlayer.character.asyncReady();
                 this.localPlayer.character.setDescription(player.character.getDescription());
                 await this.server.net_tryOnSlotByUserId(roomData.userId);

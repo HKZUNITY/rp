@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/ChatPanel.ui
- * TIME: 2025.07.31-23.31.36
+ * TIME: 2025.08.02-13.36.55
  */
  
 @UIBind('UI/module/DanMuModule/ChatPanel.ui')
@@ -260,10 +260,17 @@ export default class ChatPanel_Generate extends UIScript {
 		}
 		return this.mCloseBagButton_Internal
 	}
+	private mBagTabScrollBox_Internal: mw.ScrollBox
+	public get mBagTabScrollBox(): mw.ScrollBox {
+		if(!this.mBagTabScrollBox_Internal&&this.uiWidgetBase) {
+			this.mBagTabScrollBox_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBagCanvas/mBagTabScrollBox') as mw.ScrollBox
+		}
+		return this.mBagTabScrollBox_Internal
+	}
 	private mBagTabCanvas_Internal: mw.Canvas
 	public get mBagTabCanvas(): mw.Canvas {
 		if(!this.mBagTabCanvas_Internal&&this.uiWidgetBase) {
-			this.mBagTabCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBagCanvas/mBagTabCanvas') as mw.Canvas
+			this.mBagTabCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mBagCanvas/mBagTabScrollBox/mBagTabCanvas') as mw.Canvas
 		}
 		return this.mBagTabCanvas_Internal
 	}

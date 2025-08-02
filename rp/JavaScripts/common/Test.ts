@@ -8,6 +8,7 @@ export default class Test extends Script {
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
         if (mw.SystemUtil.isClient()) {
+            return;
             TimeUtil.delaySecond(10).then(() => {
                 (this.gameObject as mw.Trigger).onEnter.add((character: mw.Character) => {
                     if (character != Player.localPlayer.character) return;

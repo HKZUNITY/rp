@@ -10,6 +10,7 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { TipsPanel } from "../AdModule/ui/AdPanel";
 import { CharacterModuleC } from "../CharacterModule/CharacterModuleC";
+import DanMuModuleC from "../DanMuModule/DanMuModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import Mall from "./Mall";
 import MallData, { AssetIdInfoData, ColorPickTab2Data, MallConfigData, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
@@ -66,6 +67,14 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.characterModuleC = ModuleService.getModule(CharacterModuleC);
         }
         return this.characterModuleC;
+    }
+
+    private danMuModuleC: DanMuModuleC = null;
+    private get getDanMuModuleC(): DanMuModuleC {
+        if (!this.danMuModuleC) {
+            this.danMuModuleC = ModuleService.getModule(DanMuModuleC);
+        }
+        return this.danMuModuleC;
     }
 
     public onSelectTab1Action: Action1<number> = new Action1<number>();
@@ -167,8 +176,10 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     public async isAccountServiceDownloadData(): Promise<boolean> {
+        await this.getDanMuModuleC.tryCloseSpecialGoodItem();
         let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
         if (somatotype != this.saveSomatotype) {
+            await this.localPlayer.character.asyncReady();
             await Utils.accountServiceDownloadData(this.localPlayer.character);
             await this.localPlayer.character.asyncReady();
             Notice.showDownNotice(GameConfig.Language.Text_ResetImage.Value);
@@ -1097,6 +1108,21 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             await this.maleNpc.asyncReady();
             this.maleNpc.setDescription(this.localPlayer.character.getDescription());
         }
+    }
+
+    public async net_tryResetCharacter(): Promise<void> {
+        await this.tryResetCharacter();
+    }
+
+    public async tryResetCharacter(): Promise<void> {
+        if (this.saveSomatotype % 2 == 0) {
+            this.localPlayer.character.setDescription(this.feMaleNpc.getDescription());
+        } else {
+            this.localPlayer.character.setDescription(this.maleNpc.getDescription());
+        }
+        await this.localPlayer.character.asyncReady();
+        this.localPlayer.character.syncDescription();
+        await this.localPlayer.character.asyncReady();
     }
 
     public get getCopyNpc(): mw.Character {

@@ -309,6 +309,7 @@ export default class ChatPanel extends ChatPanel_Generate {
 		`Food-食品`,
 		`Firework-烟花`,
 		`Vehicles-载具`,
+		`山海经-山海经`,
 	];//背包标签
 	private bagTabItems: BagTabItem[] = [];
 	private isInitBagUI: boolean = false;
@@ -349,6 +350,9 @@ export default class ChatPanel extends ChatPanel_Generate {
 				break;
 			case 6:
 				this.updatePropList(6);
+				break;
+			case 7:
+				this.updatePropList(7);
 				break;
 		}
 	}

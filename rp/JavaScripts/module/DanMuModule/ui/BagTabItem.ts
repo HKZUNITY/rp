@@ -54,6 +54,12 @@ export default class BagTabItem extends BagTabItem_Generate {
 		this.index = index;
 		let nameStr = name.split(`-`);
 		this.mTabNameTextBlock.text = nameStr[GlobalData.languageId];
+
+		if (index == 7) {
+			this.mTabNameTextBlock.fontSize = 35;
+		} else {
+			this.mTabNameTextBlock.fontSize = 45;
+		}
 	}
 
 	private isSelect: boolean = false;

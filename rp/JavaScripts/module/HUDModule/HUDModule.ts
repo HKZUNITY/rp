@@ -56,7 +56,7 @@ export class HUDItem extends HUDItem_Generate {
     public setDatas(bagId: number): void {
         this.bagId = bagId;
         let actionPropElement = GameConfig.ActionProp.getElement(this.bagId);
-        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6) {
+        if (actionPropElement.Tab == 2 || actionPropElement.Tab == 6 || actionPropElement.Tab == 7) {
             if (!actionPropElement.AssetId || actionPropElement.AssetId == "") {
                 actionPropElement = GameConfig.ActionProp.getElement(actionPropElement.NextId);
                 this.useState(false);

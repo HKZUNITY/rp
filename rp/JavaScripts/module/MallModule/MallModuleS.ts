@@ -84,4 +84,8 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
     public net_setIsUseFreeSave(isUseFreeSave: boolean): void {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
     }
+
+    public async tryResetCharacter(player: mw.Player): Promise<void> {
+        await this.getClient(player).net_tryResetCharacter();
+    }
 }

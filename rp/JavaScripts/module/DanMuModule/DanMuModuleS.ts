@@ -4,8 +4,9 @@ import { IExpressionElement } from "../../configs/Expression";
 import { GameConfig } from "../../configs/GameConfig";
 import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
+import MallModuleS from "../MallModule/MallModuleS";
 import Buff from "./Buff";
-import { ChatData, ActionData } from "./DanMuData";
+import { ActionData, ChatData } from "./DanMuData";
 import DanMuModuleC from "./DanMuModuleC";
 
 const WorldChatDatas: string = "WorldChatDatas";
@@ -193,12 +194,12 @@ export default class DanMuModuleS extends ModuleS<DanMuModuleC, null> {
             this.playerBagMap.set(player.playerId, [playerBag]);
         } else {
             let playerBags = this.playerBagMap.get(player.playerId);
+            let tab = GameConfig.ActionProp.getElement(bagId).Tab;
             for (let i = 0; i < playerBags.length; ++i) {
-                if (GameConfig.ActionProp.getElement(bagId).Tab == 6) {
-                    if (GameConfig.ActionProp.getElement(playerBags[i].bagId).Tab == 6) {
-                        playerBag = playerBags[i];
-                        break;
-                    }
+                let tmpTab = GameConfig.ActionProp.getElement(playerBags[i].bagId).Tab;
+                if ((tab == 6 && tmpTab == 6) || (tab == 7 && tmpTab == 7)) {
+                    playerBag = playerBags[i];
+                    break;
                 }
 
                 if (playerBags[i].bagId == bagId || GameConfig.ActionProp.getElement(playerBags[i].bagId).NextId == bagId) {
@@ -335,6 +336,11 @@ export class PlayerBag {
         let actionPropElement = GameConfig.ActionProp.getElement(bagId);
         this.actionPropElement = actionPropElement;
 
+        if (actionPropElement.Tab == 7) {
+            await this.changeCloth();
+            return true;
+        }
+
         if (actionPropElement.BuffId > 0) {
             if (Utils.buffMap.has(player.playerId)) {
                 Utils.buffMap.get(player.playerId).bagId = bagId;
@@ -430,6 +436,7 @@ export class PlayerBag {
         }
         this.recycleMode();
         this.recycleVehiclesMode();
+        await this.resetCloth();
         if (isSync) await TimeUtil.delaySecond(0.1);
         return true;
     }
@@ -732,6 +739,32 @@ export class PlayerBag {
         if (!this.soundId) return;
         SoundService.stop3DSound(this.soundId);
         this.soundId = null;
+    }
+
+    private clothMap: Map<string, mw.Character> = new Map<string, mw.Character>();
+    private async changeCloth(): Promise<void> {
+        if (!this.actionPropElement) return;
+
+        let assetId = this.actionPropElement.AssetId;
+        if (!assetId || assetId.length === 0) return;
+
+        let npc: mw.Character = null;
+        if (this.clothMap.has(assetId)) {
+            npc = this.clothMap.get(assetId);
+        } else {
+            npc = await mw.GameObject.asyncFindGameObjectById(assetId) as mw.Character;
+            await npc.asyncReady();
+            this.clothMap.set(assetId, npc);
+        }
+
+        if (!this.player) return;
+        this.player.character.setDescription(npc.getDescription());
+        await this.player.character.asyncReady();
+    }
+
+    private async resetCloth(): Promise<void> {
+        if (!this.player) return;
+        await ModuleService.getModule(MallModuleS).tryResetCharacter(this.player);
     }
 }
 

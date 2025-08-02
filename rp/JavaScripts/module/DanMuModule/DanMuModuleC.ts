@@ -496,20 +496,35 @@ export default class DanMuModuleC extends ModuleC<DanMuModuleS, null> {
         });
     }
 
+    public async tryCloseSpecialGoodItem(): Promise<void> {
+        if (!this.currentBagIds || this.currentBagIds.length == 0) return;
+        for (let i = 0; i < this.currentBagIds.length; i++) {
+            if (GameConfig.ActionProp.getElement(this.currentBagIds[i]).Tab == 7) {
+                await this.closeGoodItemAction(this.currentBagIds[i]);
+                break;
+            }
+        }
+        await TimeUtil.delaySecond(0.1);
+    }
+
     private addClickCloseGoodItemAction(bagId: number): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            if (this.currentBagIds.includes(bagId)) {
-                let bagIds: number[] = await this.server.net_unloadBag(bagId);
-                this.currentBagIds = bagIds;
-                console.error(`wfz  - CloseGoodItem - bagIds:${bagIds}`);
-                this.getHudModuleC.updateGoodsListCanvas(this.currentBagIds);
-                if (this.currentBagId == bagId) {
-                    this.currentBagId = 0;
-                    this.getHudModuleC.updateBagIcon(this.currentBagId);
-                }
-                console.error(`wfz  - CloseGoodItem - this.currentBagIds:${this.currentBagIds}`);
-            }
+            await this.closeGoodItemAction(bagId);
         });
+    }
+
+    private async closeGoodItemAction(bagId: number): Promise<void> {
+        if (this.currentBagIds.includes(bagId)) {
+            let bagIds: number[] = await this.server.net_unloadBag(bagId);
+            this.currentBagIds = bagIds;
+            console.error(`wfz  - CloseGoodItem - bagIds:${bagIds}`);
+            this.getHudModuleC.updateGoodsListCanvas(this.currentBagIds);
+            if (this.currentBagId == bagId) {
+                this.currentBagId = 0;
+                this.getHudModuleC.updateBagIcon(this.currentBagId);
+            }
+            console.error(`wfz  - CloseGoodItem - this.currentBagIds:${this.currentBagIds}`);
+        }
     }
 
     private addClickGoodItemAction(bagId: number): void {

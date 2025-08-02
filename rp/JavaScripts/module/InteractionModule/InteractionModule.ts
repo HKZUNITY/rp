@@ -278,23 +278,23 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
                 await npc.asyncReady();
                 npc.complexMovementEnabled = false;
                 npc.collisionWithOtherCharacterEnabled = false;
-                let shareId = value.ShareId;
-                if (shareId > 0) {
-                    let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
-                    if (shareIdStr && shareIdStr.length > 0) {
-                        Utils.applySharedId(npc, shareIdStr);
-                    }
-                } else {
-                    this.currentDescription = this.localPlayer.character.getDescription();
-                    npc.setDescription(this.currentDescription);
-                }
+                // let shareId = value.ShareId;
+                // if (shareId > 0) {
+                //     let shareIdStr = GameConfig.ShareId.getElement(shareId).ShareId;
+                //     if (shareIdStr && shareIdStr.length > 0) {
+                //         Utils.applySharedId(npc, shareIdStr);
+                //     }
+                // } else {
+                //     this.currentDescription = this.localPlayer.character.getDescription();
+                //     npc.setDescription(this.currentDescription);
+                // }
                 let npcAnimationId = value.NpcAnimationId;
                 if (npcAnimationId && npcAnimationId.length > 0) {
                     await Utils.asyncDownloadAsset(npcAnimationId);
                     npc.loadSubStance(npcAnimationId).play();
-                    setTimeout(() => {
-                        npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
-                    }, 1000);
+                    // setTimeout(() => {
+                    //     npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
+                    // }, 1000);
                 }
             }
             console.error(this.triggerLocMap.size);

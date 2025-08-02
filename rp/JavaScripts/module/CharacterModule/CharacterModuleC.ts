@@ -2,6 +2,7 @@
 import { GameConfig } from "../../configs/GameConfig";
 import GlobalData from "../../GlobalData";
 import { AvatarApi } from "../../tools/AvatarApi";
+import { AvatarDecora } from "../../tools/AvatarDecora";
 import { MapEx } from "../../tools/MapEx";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { CharacterData } from "./CharacterData";
@@ -61,7 +62,7 @@ export class CharacterModuleC extends ModuleC<CharacterModuleS, CharacterData> {
             if (!MapEx.has(this.characterDataMap, key)) return;
             let characterData = MapEx.get(this.characterDataMap, key);
             let descriptionApiData: AvatarApi.DescriptionApiData = JSON.parse(characterData);
-            this.localPlayer.character.detachAllFromSlot({ isDestroy: true });
+            AvatarDecora.clearAllDecora(this.localPlayer.character);
             await this.localPlayer.character.asyncReady();
             let isSuccess = await AvatarApi.setDescriptionByApiData2(this.localPlayer.character, descriptionApiData);
             await this.localPlayer.character.asyncReady();
