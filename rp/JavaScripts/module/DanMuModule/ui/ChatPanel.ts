@@ -319,8 +319,12 @@ export default class ChatPanel extends ChatPanel_Generate {
 			for (let i = 0; i < this.bagTabTexts.length; ++i) {
 				let bagTabItem = mw.UIService.create(BagTabItem);
 				bagTabItem.setDatas(i + 1, this.bagTabTexts[i]);
-				this.mBagTabCanvas.addChild(bagTabItem.uiObject);
 				this.bagTabItems.push(bagTabItem);
+			}
+
+			this.mBagTabCanvas.addChild(this.bagTabItems[this.bagTabTexts.length - 1].uiObject);
+			for (let i = 0; i < this.bagTabItems.length - 1; ++i) {
+				this.mBagTabCanvas.addChild(this.bagTabItems[i].uiObject);
 			}
 			// this.bagTabItems[4].uiObject.visibility = mw.SlateVisibility.Collapsed;
 		}
