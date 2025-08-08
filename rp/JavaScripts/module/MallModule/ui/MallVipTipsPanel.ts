@@ -30,6 +30,7 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 
 	private bindButtons(): void {
 		this.mCoinButton.onClicked.add(this.addCoinButton.bind(this));
+		this.mVipButton.onClicked.add(this.addVipButton.bind(this));
 		this.mAdsButton.onClose.add(this.addAdsButton.bind(this));
 		this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
 	}
@@ -40,6 +41,11 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 
 	private addCoinButton(): void {
 		if (this.coinCallback) this.coinCallback();
+		this.hide();
+	}
+
+	private addVipButton(): void {
+		if (this.adsCallback) this.adsCallback();
 		this.hide();
 	}
 

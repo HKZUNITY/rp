@@ -1155,10 +1155,7 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             this.placeOrder(`9XL5ExKkXvc00054c`, () => {
             });
         }, () => {
-            Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-            ExecutorManager.instance.pushAsyncExecutor(async () => {
-                await this.addVipCount(1);
-                this.getMallPanel.updateVipCount(this.vipCount);
+            this.placeOrder(`6EogPG3Vn3g0006pr`, () => {
             });
         },
             GameConfig.Language.Text_Vip2.Value,
@@ -1178,16 +1175,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                         this.placeOrder(`9XL5ExKkXvc00054c`, () => {
                         });
                     }, () => {
-                        Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                        ExecutorManager.instance.pushAsyncExecutor(async () => {
-                            await this.addVipCount(1);
-                            this.getMallPanel.updateVipCount(this.vipCount);
+                        this.placeOrder(`6EogPG3Vn3g0006pr`, () => {
                         });
                     },
                         GameConfig.Language.Text_Vip2.Value,
-                        StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
-                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
-                        GameConfig.Language.Text_Vip5.Value);
+                        `2派对币购买1天Vip\n1000派对币购买3年Vip\nVip期间可免费保存所有服装`,
+                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, 2),
+                        StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1000));
                 }
             });
         } else {
@@ -1981,7 +1975,18 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 if (buySuccessCallback) buySuccessCallback();
                 Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                 ExecutorManager.instance.pushAsyncExecutor(async () => {
-                    await this.addVipCount(1);
+                    let addVipDays = 0;
+                    switch (commodityId) {
+                        case `9XL5ExKkXvc00054c`:
+                            addVipDays = 1;
+                            break;
+                        case `6EogPG3Vn3g0006pr`:
+                            addVipDays = 1095;
+                            break;
+                        default:
+                            break;
+                    }
+                    await this.addVipCount(addVipDays);
                     this.getMallPanel.updateVipCount(this.vipCount);
                 });
             } else {
@@ -1999,8 +2004,19 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         //根据commodityId和amount来处理收货逻辑
         console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+        let addVipDays = 0;
+        switch (commodityId) {
+            case `9XL5ExKkXvc00054c`:
+                addVipDays = 1;
+                break;
+            case `6EogPG3Vn3g0006pr`:
+                addVipDays = 1095;
+                break;
+            default:
+                break;
+        }
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            await this.addVipCount(1);
+            await this.addVipCount(addVipDays);
             this.getMallPanel.updateVipCount(this.vipCount);
         });
     }

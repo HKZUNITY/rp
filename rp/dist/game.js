@@ -15390,6 +15390,18 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
         }
         return this.mCoinTextBlock_Internal;
     }
+    get mVipButton() {
+        if (!this.mVipButton_Internal && this.uiWidgetBase) {
+            this.mVipButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mVipButton");
+        }
+        return this.mVipButton_Internal;
+    }
+    get mVipextBlock() {
+        if (!this.mVipextBlock_Internal && this.uiWidgetBase) {
+            this.mVipextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mVipButton/mVipextBlock");
+        }
+        return this.mVipextBlock_Internal;
+    }
     get mAdsButton() {
         if (!this.mAdsButton_Internal && this.uiWidgetBase) {
             this.mAdsButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mAdsButton");
@@ -15418,6 +15430,10 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
             Event.dispatchToLocal("PlayButtonClick", "mCoinButton");
         }));
         this.mCoinButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mVipButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mVipButton");
+        }));
+        this.mVipButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.mCloseButton.onClicked.add((() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
         }));
@@ -15425,6 +15441,7 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
         this.initLanguage(this.mTipsTextBlock);
         this.initLanguage(this.mContentTextBlock);
         this.initLanguage(this.mCoinTextBlock);
+        this.initLanguage(this.mVipextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -15467,6 +15484,7 @@ class MallVipTipsPanel extends MallVipTipsPanel_Generate$1 {
     }
     bindButtons() {
         this.mCoinButton.onClicked.add(this.addCoinButton.bind(this));
+        this.mVipButton.onClicked.add(this.addVipButton.bind(this));
         this.mAdsButton.onClose.add(this.addAdsButton.bind(this));
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
     }
@@ -15475,6 +15493,10 @@ class MallVipTipsPanel extends MallVipTipsPanel_Generate$1 {
     }
     addCoinButton() {
         if (this.coinCallback) this.coinCallback();
+        this.hide();
+    }
+    addVipButton() {
+        if (this.adsCallback) this.adsCallback();
         this.hide();
     }
     addAdsButton(isSuccess) {
@@ -16607,11 +16629,7 @@ class MallModuleC extends ModuleC {
         this.getMallVipTipsPanel.showTips((() => {
             this.placeOrder(`9XL5ExKkXvc00054c`, (() => {}));
         }), (() => {
-            Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-            ExecutorManager.instance.pushAsyncExecutor((async () => {
-                await this.addVipCount(1);
-                this.getMallPanel.updateVipCount(this.vipCount);
-            }));
+            this.placeOrder(`6EogPG3Vn3g0006pr`, (() => {}));
         }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
     }
     saveCharacterDescriptionPrepare() {
@@ -16624,12 +16642,8 @@ class MallModuleC extends ModuleC {
                     this.getMallVipTipsPanel.showTips((() => {
                         this.placeOrder(`9XL5ExKkXvc00054c`, (() => {}));
                     }), (() => {
-                        Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                        ExecutorManager.instance.pushAsyncExecutor((async () => {
-                            await this.addVipCount(1);
-                            this.getMallPanel.updateVipCount(this.vipCount);
-                        }));
-                    }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+                        this.placeOrder(`6EogPG3Vn3g0006pr`, (() => {}));
+                    }), GameConfig.Language.Text_Vip2.Value, `2派对币购买1天Vip\n1000派对币购买3年Vip\nVip期间可免费保存所有服装`, StringUtil.format(GameConfig.Language.Text_Vip4.Value, 2), StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1e3));
                 }
             }));
         } else {
@@ -17350,7 +17364,17 @@ class MallModuleC extends ModuleC {
                 if (buySuccessCallback) buySuccessCallback();
                 Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
                 ExecutorManager.instance.pushAsyncExecutor((async () => {
-                    await this.addVipCount(1);
+                    let addVipDays = 0;
+                    switch (commodityId) {
+                      case `9XL5ExKkXvc00054c`:
+                        addVipDays = 1;
+                        break;
+
+                      case `6EogPG3Vn3g0006pr`:
+                        addVipDays = 1095;
+                        break;
+                    }
+                    await this.addVipCount(addVipDays);
                     this.getMallPanel.updateVipCount(this.vipCount);
                 }));
             } else {
@@ -17366,8 +17390,18 @@ class MallModuleC extends ModuleC {
     net_deliverGoods(commodityId, amount) {
         console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+        let addVipDays = 0;
+        switch (commodityId) {
+          case `9XL5ExKkXvc00054c`:
+            addVipDays = 1;
+            break;
+
+          case `6EogPG3Vn3g0006pr`:
+            addVipDays = 1095;
+            break;
+        }
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.addVipCount(1);
+            await this.addVipCount(addVipDays);
             this.getMallPanel.updateVipCount(this.vipCount);
         }));
     }

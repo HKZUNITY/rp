@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/common/notice/NoticeView.ui
- * TIME: 2025.06.02-15.03.04
+ * TIME: 2025.08.08-23.13.32
  */
  
 @UIBind('UI/common/notice/NoticeView.ui')
