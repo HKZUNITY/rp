@@ -1159,9 +1159,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
             });
         },
             GameConfig.Language.Text_Vip2.Value,
-            StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
-            StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
-            GameConfig.Language.Text_Vip5.Value,);
+            `2派对币购买1天Vip\n1000派对币购买3年Vip\nVip期间可免费保存所有服装`,
+            StringUtil.format(GameConfig.Language.Text_Vip4.Value, 2),
+            StringUtil.format(GameConfig.Language.Text_Vip4.Value, 1000));
     }
 
     private saveCharacterDescriptionPrepare(): void {
