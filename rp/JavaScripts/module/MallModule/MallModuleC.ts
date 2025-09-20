@@ -10,6 +10,7 @@ import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { CharacterModuleC } from "../CharacterModule/CharacterModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import { WishDataV0 } from "../WishModule/WishData";
 import Mall from "./Mall";
 import MallData, { AssetIdInfoData, ColorPickTab2Data, MallConfigData, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
 import MallModuleS from "./MallModuleS";
@@ -2044,5 +2045,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public get addVipCoinNumber(): number {
         if (!this.mallConfigData) return 2;
         return this.mallConfigData.addVipCoinNumber;
+    }
+
+    public async updateNickWish(wishDataV0: WishDataV0): Promise<void> {
+        await this.server.net_updateNickWish(wishDataV0);
+    }
+
+    public net_giveSuccess(): void {
+        Notice.showDownNotice(`好友帮你购买成功`);
     }
 }

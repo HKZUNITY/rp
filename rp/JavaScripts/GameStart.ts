@@ -23,6 +23,9 @@ import { TaskData } from "./module/TaskModule/TaskData";
 import TaskModuleC from "./module/TaskModule/TaskModuleC";
 import TaskModuleS from "./module/TaskModule/TaskModuleS";
 import { TryOnData, TryOnModuleC, TryOnModuleS } from "./module/TryOnModule/TryOnModule";
+import { WishData } from "./module/WishModule/WishData";
+import WishModuleC from "./module/WishModule/WishModuleC";
+import WishModuleS from "./module/WishModule/WishModuleS";
 
 @Component
 export default class GameStart extends Script {
@@ -60,6 +63,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
         ModuleService.registerModule(CharacterModuleS, CharacterModuleC, CharacterData);
         ModuleService.registerModule(TaskModuleS, TaskModuleC, TaskData);
+        ModuleService.registerModule(WishModuleS, WishModuleC, WishData);
     }
 
     /**
