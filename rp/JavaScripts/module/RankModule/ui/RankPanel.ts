@@ -214,7 +214,7 @@ export default class RankPanel extends RankPanel_Generate {
 		this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
 
 		this.mSelfMoneyWorldNameTextBlock.text = roomData.playerName;
-		this.mSelfMoneyWorldTimeTextBlock.text = roomData.time.toString();
+		this.mSelfMoneyWorldTimeTextBlock.text = roomData.money.toString();
 	}
 
 	public refreshSelfWorldRankUI(ranking: number): void {

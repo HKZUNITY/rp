@@ -15392,7 +15392,6 @@ class WishModuleC extends ModuleC {
         }));
     }
     addRequestBuyAction(wishDataV0) {
-        console.error(JSON.stringify(wishDataV0));
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.getMallModuleC.updateNickWish(wishDataV0);
             this.getWishPanel.hide();
