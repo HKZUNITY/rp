@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/SignInModule/SignInPanel.ui
- * TIME: 2025.09.20-00.11.53
+ * TIME: 2025.09.20-16.27.07
  */
  
 @UIBind('UI/module/SignInModule/SignInPanel.ui')

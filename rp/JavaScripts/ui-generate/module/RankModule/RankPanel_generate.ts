@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RankPanel.ui
- * TIME: 2025.09.20-00.11.53
+ * TIME: 2025.09.20-16.27.06
  */
  
 @UIBind('UI/module/RankModule/RankPanel.ui')
@@ -56,6 +56,13 @@ export default class RankPanel_Generate extends UIScript {
 			this.mRoomScoreTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomScoreTextBlock') as mw.TextBlock
 		}
 		return this.mRoomScoreTextBlock_Internal
+	}
+	private mRoomMoneyTextBlock_Internal: mw.TextBlock
+	public get mRoomMoneyTextBlock(): mw.TextBlock {
+		if(!this.mRoomMoneyTextBlock_Internal&&this.uiWidgetBase) {
+			this.mRoomMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomMoneyTextBlock') as mw.TextBlock
+		}
+		return this.mRoomMoneyTextBlock_Internal
 	}
 	private mRoomScrollBox_Internal: mw.ScrollBox
 	public get mRoomScrollBox(): mw.ScrollBox {
@@ -148,6 +155,83 @@ export default class RankPanel_Generate extends UIScript {
 		}
 		return this.mCloseWorldButton_Internal
 	}
+	private mMoneyWorldCanvas_Internal: mw.Canvas
+	public get mMoneyWorldCanvas(): mw.Canvas {
+		if(!this.mMoneyWorldCanvas_Internal&&this.uiWidgetBase) {
+			this.mMoneyWorldCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas') as mw.Canvas
+		}
+		return this.mMoneyWorldCanvas_Internal
+	}
+	private mMoneyTitleTextBlock_Internal: mw.TextBlock
+	public get mMoneyTitleTextBlock(): mw.TextBlock {
+		if(!this.mMoneyTitleTextBlock_Internal&&this.uiWidgetBase) {
+			this.mMoneyTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/MainMoneyWorldCanvas/TitleMoneyWorldCanvas/mMoneyTitleTextBlock') as mw.TextBlock
+		}
+		return this.mMoneyTitleTextBlock_Internal
+	}
+	private mMoneyWorldRankTextBlock_Internal: mw.TextBlock
+	public get mMoneyWorldRankTextBlock(): mw.TextBlock {
+		if(!this.mMoneyWorldRankTextBlock_Internal&&this.uiWidgetBase) {
+			this.mMoneyWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldRankTextBlock') as mw.TextBlock
+		}
+		return this.mMoneyWorldRankTextBlock_Internal
+	}
+	private mMoneyWorldNameTextBlock_Internal: mw.TextBlock
+	public get mMoneyWorldNameTextBlock(): mw.TextBlock {
+		if(!this.mMoneyWorldNameTextBlock_Internal&&this.uiWidgetBase) {
+			this.mMoneyWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldNameTextBlock') as mw.TextBlock
+		}
+		return this.mMoneyWorldNameTextBlock_Internal
+	}
+	private mMoneyWorldTimeTextBlock_Internal: mw.TextBlock
+	public get mMoneyWorldTimeTextBlock(): mw.TextBlock {
+		if(!this.mMoneyWorldTimeTextBlock_Internal&&this.uiWidgetBase) {
+			this.mMoneyWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldTimeTextBlock') as mw.TextBlock
+		}
+		return this.mMoneyWorldTimeTextBlock_Internal
+	}
+	private mMoneyWorldContentCanvas_Internal: mw.Canvas
+	public get mMoneyWorldContentCanvas(): mw.Canvas {
+		if(!this.mMoneyWorldContentCanvas_Internal&&this.uiWidgetBase) {
+			this.mMoneyWorldContentCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/MoneyScrollBox/mMoneyWorldContentCanvas') as mw.Canvas
+		}
+		return this.mMoneyWorldContentCanvas_Internal
+	}
+	private mSelfMoneyWorldCanvas_Internal: mw.Canvas
+	public get mSelfMoneyWorldCanvas(): mw.Canvas {
+		if(!this.mSelfMoneyWorldCanvas_Internal&&this.uiWidgetBase) {
+			this.mSelfMoneyWorldCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas') as mw.Canvas
+		}
+		return this.mSelfMoneyWorldCanvas_Internal
+	}
+	private mSelfMoneyWorldRankTextBlock_Internal: mw.TextBlock
+	public get mSelfMoneyWorldRankTextBlock(): mw.TextBlock {
+		if(!this.mSelfMoneyWorldRankTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSelfMoneyWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldRankTextBlock') as mw.TextBlock
+		}
+		return this.mSelfMoneyWorldRankTextBlock_Internal
+	}
+	private mSelfMoneyWorldNameTextBlock_Internal: mw.TextBlock
+	public get mSelfMoneyWorldNameTextBlock(): mw.TextBlock {
+		if(!this.mSelfMoneyWorldNameTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSelfMoneyWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldNameTextBlock') as mw.TextBlock
+		}
+		return this.mSelfMoneyWorldNameTextBlock_Internal
+	}
+	private mSelfMoneyWorldTimeTextBlock_Internal: mw.TextBlock
+	public get mSelfMoneyWorldTimeTextBlock(): mw.TextBlock {
+		if(!this.mSelfMoneyWorldTimeTextBlock_Internal&&this.uiWidgetBase) {
+			this.mSelfMoneyWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldTimeTextBlock') as mw.TextBlock
+		}
+		return this.mSelfMoneyWorldTimeTextBlock_Internal
+	}
+	private mCloseMoneyWorldButton_Internal: mw.Button
+	public get mCloseMoneyWorldButton(): mw.Button {
+		if(!this.mCloseMoneyWorldButton_Internal&&this.uiWidgetBase) {
+			this.mCloseMoneyWorldButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mCloseMoneyWorldButton') as mw.Button
+		}
+		return this.mCloseMoneyWorldButton_Internal
+	}
 
 
 	protected onAwake() {
@@ -180,6 +264,12 @@ export default class RankPanel_Generate extends UIScript {
 		this.mCloseWorldButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mCloseMoneyWorldButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mCloseMoneyWorldButton");
+		});
+		this.mCloseMoneyWorldButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		//按钮多语言
 		
 		//文本多语言
@@ -191,6 +281,9 @@ export default class RankPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mRoomScoreTextBlock)
+		
+	
+		this.initLanguage(this.mRoomMoneyTextBlock)
 		
 	
 		this.initLanguage(this.mTitleTextBlock)
@@ -212,6 +305,27 @@ export default class RankPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mSelfWorldTimeTextBlock)
+		
+	
+		this.initLanguage(this.mMoneyTitleTextBlock)
+		
+	
+		this.initLanguage(this.mMoneyWorldRankTextBlock)
+		
+	
+		this.initLanguage(this.mMoneyWorldNameTextBlock)
+		
+	
+		this.initLanguage(this.mMoneyWorldTimeTextBlock)
+		
+	
+		this.initLanguage(this.mSelfMoneyWorldRankTextBlock)
+		
+	
+		this.initLanguage(this.mSelfMoneyWorldNameTextBlock)
+		
+	
+		this.initLanguage(this.mSelfMoneyWorldTimeTextBlock)
 		
 	
 		//文本多语言
