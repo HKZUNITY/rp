@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/TaskModule/TaskPanel.ui
- * TIME: 2025.09.20-10.58.20
+ * TIME: 2025.09.20-21.58.13
  */
  
 @UIBind('UI/module/TaskModule/TaskPanel.ui')

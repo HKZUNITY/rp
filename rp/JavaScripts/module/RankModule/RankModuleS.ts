@@ -1,10 +1,11 @@
 ﻿import GlobalData from "../../GlobalData";
 import Utils from "../../tools/Utils";
-import { RankData, RoomData, WorldData } from "./RankData";
+import { MoneyWorldData, RankData, RoomData, WorldData } from "./RankData";
 import RankModuleC from "./RankModuleC";
 
 export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private worldDatas: WorldData[] = [];
+    private moneyWorldDatas: MoneyWorldData[] = [];
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -14,6 +15,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
     private isInitWorldDatas: boolean = false;
     private async initData(): Promise<void> {
         this.worldDatas = (await Utils.getCustomdata("WorldData")) as WorldData[];
+        this.moneyWorldDatas = (await Utils.getCustomdata("MoneyWorldData")) as MoneyWorldData[];
         this.isInitWorldDatas = true;
     }
 
@@ -45,22 +47,40 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
 
     private roomDataMap: Map<string, RoomData> = new Map<string, RoomData>();
     @Decorator.noReply()
-    public net_onEnterScene(playerName: string, score: number, time: number, tryOn: number): void {
+    public net_onEnterScene(playerName: string, score: number, time: number, tryOn: number, money: number): void {
         let player = this.currentPlayer;
         this.syncPlayerMap.set(player, false);
         player.character.displayName = playerName;
-        this.onEnterScene(player.userId, playerName, score, time, tryOn);
+        this.onEnterScene(player.userId, playerName, score, time, tryOn, money);
     }
 
-    private onEnterScene(userId: string, playerName: string, score: number, time: number, tryOn: number): void {
-        let roomData = new RoomData(userId, playerName, score, time, tryOn);
+    private onEnterScene(userId: string, playerName: string, score: number, time: number, tryOn: number, money: number): void {
+        let roomData = new RoomData(userId, playerName, score, time, tryOn, money);
         this.roomDataMap.set(userId, roomData);
         let worldData: WorldData = new WorldData(userId, playerName, time);
+        let moneyWorldData: MoneyWorldData = new MoneyWorldData(userId, playerName, money);
         try {
             this.isRefreshWorldData([worldData]);
+            this.isRefreshMoneyWorldData([moneyWorldData]);
         } catch (error) {
         }
         this.synchrodata_onEnterScene(userId);
+        this.synchrodata_MoneyWorld();
+    }
+
+    public net_refreshMoney(money: number): void {
+        this.refreshMoney(this.currentPlayer.userId, money);
+    }
+
+    public refreshMoney(userId: string, money: number): void {
+        if (!this.roomDataMap.has(userId)) return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.money += money;
+        DataCenterS.getData(userId, RankData)?.setMoney(money);
+
+        let moneyWorldData: MoneyWorldData = new MoneyWorldData(userId, roomData.playerName, roomData.money);
+        this.isRefreshMoneyWorldData([moneyWorldData]);
+        this.synchrodata_Room_MoneyWorld();
     }
 
     public net_refreshScore(score: number): void {
@@ -184,11 +204,90 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         return isNeedSave;
     }
 
+    private isRefreshMoneyWorldData(tmpMoneyWorldDatas: MoneyWorldData[]): boolean {
+        if (!this.isInitWorldDatas) return false;
+        if (!tmpMoneyWorldDatas || tmpMoneyWorldDatas?.length == 0) return false;
+        if (!this.moneyWorldDatas || this.moneyWorldDatas?.length == 0) this.moneyWorldDatas = [];
+        let isNeedSave = false;
+        for (let k = 0; k < tmpMoneyWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let moneyWorldData = tmpMoneyWorldDatas[k];
+            if (this.moneyWorldDatas.length < GlobalData.moneyWorldCount) {
+                if (this.moneyWorldDatas.length == 0) {
+                    this.moneyWorldDatas.push(moneyWorldData);
+                    isPush = true;
+                    isNeedSave = true;
+                } else {
+                    for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                        if (this.moneyWorldDatas[i].userId != moneyWorldData.userId) continue;
+                        if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                            this.moneyWorldDatas.splice(i, 1);
+                            break;
+                        } else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+
+                    if (ishasData) continue;
+
+                    for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+                        if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                            this.moneyWorldDatas.splice(i, 0, moneyWorldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+
+                    if (!isPush) {
+                        this.moneyWorldDatas.push(moneyWorldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            } else {
+                for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                    if (this.moneyWorldDatas[i].userId != moneyWorldData.userId) continue;
+                    if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                        this.moneyWorldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    } else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+
+                if (ishasData) continue;
+
+                for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+                    if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                        this.moneyWorldDatas.splice(i, 0, moneyWorldData);
+                        if (!ishasDelete) {
+                            this.moneyWorldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            Utils.setCustomData("MoneyWorldData", this.moneyWorldDatas);
+        }
+        return isNeedSave;
+    }
+
     private roomUserIds: string[] = [];
     private roomNames: string[] = [];
     private roomScores: number[] = [];
     private roomTimes: number[] = [];
     private roomTryOn: number[] = [];
+    private roomMoney: number[] = [];
     private updateRoomData(): void {
         if (!this.roomDataMap || this.roomDataMap?.size == 0) return;
         this.roomUserIds.length = 0;
@@ -196,12 +295,14 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.roomScores.length = 0;
         this.roomTimes.length = 0;
         this.roomTryOn.length = 0;
+        this.roomMoney.length = 0;
         this.roomDataMap?.forEach((value: RoomData, key: string) => {
             this.roomUserIds.push(value.userId);
             this.roomNames.push(value.playerName);
             this.roomScores.push(value.score);
             this.roomTimes.push(value.time);
             this.roomTryOn.push(value.tryOn);
+            this.roomMoney.push(value.money);
         });
     }
 
@@ -220,16 +321,31 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         }
     }
 
+    private moneyWorldUserIds: string[] = [];
+    private moneyWorldNames: string[] = [];
+    private moneyWorldMoney: number[] = [];
+    private updateMoneyWorldData(): void {
+        if (!this.moneyWorldDatas || this.moneyWorldDatas?.length == 0) return;
+        this.moneyWorldUserIds.length = 0;
+        this.moneyWorldNames.length = 0;
+        this.moneyWorldMoney.length = 0;
+        for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+            this.moneyWorldUserIds.push(this.moneyWorldDatas[i].userId);
+            this.moneyWorldNames.push(this.moneyWorldDatas[i].playerName);
+            this.moneyWorldMoney.push(this.moneyWorldDatas[i].money);
+        }
+    }
+
     private synchrodata_onEnterScene(sendUserId: string): void {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney,
                     this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
             }
         });
     }
@@ -238,7 +354,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.updateRoomData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
         });
     }
 
@@ -246,7 +362,7 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         this.updateRoomData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
         });
     }
 
@@ -258,18 +374,36 @@ export default class RankModuleS extends ModuleS<RankModuleC, RankData> {
         });
     }
 
+    private synchrodata_MoneyWorld(): void {
+        this.updateMoneyWorldData();
+        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+            // if (!value) return;
+            this.getClient(key).net_syncMoneyWorldRankData(this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
+        });
+    }
+
+    private synchrodata_Room_MoneyWorld(): void {
+        this.updateRoomData();
+        this.updateMoneyWorldData();
+        this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
+            // if (!value) return;
+            this.getClient(key).net_syncRoomMoneyWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney,
+                this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
+        });
+    }
+
     private synchrodata_RoomWorld(): void {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach((value: boolean, key: mw.Player) => {
             // if (!value) return;
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney,
                 this.worldUserIds, this.worldNames, this.worldTimes);
         });
     }
 
     private synchrodata_aRoomWorld(player: mw.Player): void {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn,
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney,
             this.worldUserIds, this.worldNames, this.worldTimes);
     }
 

@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/RankModule/RoomItem.ui
- * TIME: 2025.09.20-10.58.19
+ * TIME: 2025.09.20-21.58.13
  */
  
 @UIBind('UI/module/RankModule/RoomItem.ui')
@@ -29,6 +29,13 @@ export default class RoomItem_Generate extends UIScript {
 		}
 		return this.mKillCountTextBlock_Internal
 	}
+	private mKillMoneyTextBlock_Internal: mw.TextBlock
+	public get mKillMoneyTextBlock(): mw.TextBlock {
+		if(!this.mKillMoneyTextBlock_Internal&&this.uiWidgetBase) {
+			this.mKillMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/Canvas/mKillMoneyTextBlock') as mw.TextBlock
+		}
+		return this.mKillMoneyTextBlock_Internal
+	}
 
 
 	protected onAwake() {
@@ -53,6 +60,9 @@ export default class RoomItem_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mKillCountTextBlock)
+		
+	
+		this.initLanguage(this.mKillMoneyTextBlock)
 		
 	
 		//文本多语言

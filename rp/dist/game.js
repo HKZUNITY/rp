@@ -3489,6 +3489,8 @@ GlobalData.bagCount = 5;
 
 GlobalData.worldCount = 500;
 
+GlobalData.moneyWorldCount = 500;
+
 GlobalData.freeTime = 999;
 
 GlobalData.offMusicIconGuid = `133403`;
@@ -5846,6 +5848,24 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         }
         return this.mOpenPhotoTextBlock_Internal;
     }
+    get mOpenMoneyImage() {
+        if (!this.mOpenMoneyImage_Internal && this.uiWidgetBase) {
+            this.mOpenMoneyImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/UpperRightCanvas/mOpenMoneyImage");
+        }
+        return this.mOpenMoneyImage_Internal;
+    }
+    get mOpenMoneyButton() {
+        if (!this.mOpenMoneyButton_Internal && this.uiWidgetBase) {
+            this.mOpenMoneyButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/UpperRightCanvas/mOpenMoneyImage/mOpenMoneyButton");
+        }
+        return this.mOpenMoneyButton_Internal;
+    }
+    get mOpenMoneyTextBlock() {
+        if (!this.mOpenMoneyTextBlock_Internal && this.uiWidgetBase) {
+            this.mOpenMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/UpperRightCanvas/mOpenMoneyImage/mOpenMoneyTextBlock");
+        }
+        return this.mOpenMoneyTextBlock_Internal;
+    }
     get mJumpBgImage() {
         if (!this.mJumpBgImage_Internal && this.uiWidgetBase) {
             this.mJumpBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/LowRightCanvas/mJumpBgImage");
@@ -6047,6 +6067,11 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         }));
         this.initLanguage(this.mOpenPhotoButton);
         this.mOpenPhotoButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mOpenMoneyButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenMoneyButton");
+        }));
+        this.initLanguage(this.mOpenMoneyButton);
+        this.mOpenMoneyButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.mDeleteAllGoodsButton.onClicked.add((() => {
             Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
         }));
@@ -6106,6 +6131,7 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         this.initLanguage(this.mOpenTaskTextBlock);
         this.initLanguage(this.mOpenSignInTextBlock);
         this.initLanguage(this.mOpenPhotoTextBlock);
+        this.initLanguage(this.mOpenMoneyTextBlock);
         this.initLanguage(this.mWishTextBlock);
         this.initLanguage(this.mMusicText);
     }
@@ -6446,6 +6472,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenMoneyButton.onClicked.add(this.addOpenMoneyRankButton.bind(this));
         this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
         this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
         this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
@@ -6475,6 +6502,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     addOpenRankButton() {
         this.getHUDModuleC.onOpenRankAction.call();
+    }
+    addOpenMoneyRankButton() {
+        this.getHUDModuleC.onOpenMoneyRankAction.call();
     }
     addOpenShareButton() {
         this.getHUDModuleC.onOpenShareAction.call(1);
@@ -6756,6 +6786,7 @@ class HUDModuleC extends ModuleC {
         this.onOpenSetAction = new Action;
         this.onOpenClothAction = new Action;
         this.onOpenRankAction = new Action;
+        this.onOpenMoneyRankAction = new Action;
         this.onOpenShareAction = new Action1;
         this.onUseShareAction = new Action2;
         this.onOpenSignInAction = new Action;
@@ -7825,24 +7856,27 @@ var foreign184 = Object.freeze({
 });
 
 class RoomData {
-    constructor(userId, name, killCount, time, tryOn) {
+    constructor(userId, name, killCount, time, tryOn, money) {
         this.userId = "";
         this.playerName = "";
         this.score = 0;
         this.time = 0;
         this.tryOn = 0;
+        this.money = 0;
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
         this.tryOn = tryOn;
+        this.money = money;
     }
-    setData(userId, name, killCount, time, tryOn) {
+    setData(userId, name, killCount, time, tryOn, money) {
         this.userId = userId;
         this.playerName = name;
         this.score = killCount;
         this.time = time;
         this.tryOn = tryOn;
+        this.money = money;
     }
 }
 
@@ -7862,10 +7896,27 @@ class WorldData {
     }
 }
 
+class MoneyWorldData {
+    constructor(userId, name, money) {
+        this.userId = "";
+        this.playerName = "";
+        this.money = 0;
+        this.userId = userId;
+        this.playerName = name;
+        this.money = money;
+    }
+    setData(userId, name, money) {
+        this.userId = userId;
+        this.playerName = name;
+        this.money = money;
+    }
+}
+
 class RankData extends Subdata {
     constructor() {
         super(...arguments);
         this.time = 0;
+        this.money = 0;
     }
     setTime(addTime) {
         this.time += addTime;
@@ -7874,12 +7925,22 @@ class RankData extends Subdata {
     get getTime() {
         return this.time;
     }
+    setMoney(addMoeny) {
+        this.money += addMoeny;
+        this.save(false);
+    }
+    get getMoeny() {
+        return this.money;
+    }
 }
 
 __decorate([ Decorator.persistence() ], RankData.prototype, "time", void 0);
 
+__decorate([ Decorator.persistence() ], RankData.prototype, "money", void 0);
+
 var foreign127 = Object.freeze({
     __proto__: null,
+    MoneyWorldData: MoneyWorldData,
     RankData: RankData,
     RoomData: RoomData,
     WorldData: WorldData
@@ -7889,6 +7950,7 @@ class RankModuleS extends ModuleS {
     constructor() {
         super(...arguments);
         this.worldDatas = [];
+        this.moneyWorldDatas = [];
         this.isInitWorldDatas = false;
         this.time = 60;
         this.timer = 0;
@@ -7899,9 +7961,13 @@ class RankModuleS extends ModuleS {
         this.roomScores = [];
         this.roomTimes = [];
         this.roomTryOn = [];
+        this.roomMoney = [];
         this.worldUserIds = [];
         this.worldNames = [];
         this.worldTimes = [];
+        this.moneyWorldUserIds = [];
+        this.moneyWorldNames = [];
+        this.moneyWorldMoney = [];
         this.redFirstModel = null;
         this.blueFirstModel = null;
     }
@@ -7910,6 +7976,7 @@ class RankModuleS extends ModuleS {
     }
     async initData() {
         this.worldDatas = await Utils.getCustomdata("WorldData");
+        this.moneyWorldDatas = await Utils.getCustomdata("MoneyWorldData");
         this.isInitWorldDatas = true;
     }
     onUpdate(dt) {
@@ -7931,20 +7998,35 @@ class RankModuleS extends ModuleS {
         this.syncPlayerMap.set(player, isSync);
         if (isSync) this.synchrodata_aRoomWorld(player);
     }
-    net_onEnterScene(playerName, score, time, tryOn) {
+    net_onEnterScene(playerName, score, time, tryOn, money) {
         let player = this.currentPlayer;
         this.syncPlayerMap.set(player, false);
         player.character.displayName = playerName;
-        this.onEnterScene(player.userId, playerName, score, time, tryOn);
+        this.onEnterScene(player.userId, playerName, score, time, tryOn, money);
     }
-    onEnterScene(userId, playerName, score, time, tryOn) {
-        let roomData = new RoomData(userId, playerName, score, time, tryOn);
+    onEnterScene(userId, playerName, score, time, tryOn, money) {
+        let roomData = new RoomData(userId, playerName, score, time, tryOn, money);
         this.roomDataMap.set(userId, roomData);
         let worldData = new WorldData(userId, playerName, time);
+        let moneyWorldData = new MoneyWorldData(userId, playerName, money);
         try {
             this.isRefreshWorldData([ worldData ]);
+            this.isRefreshMoneyWorldData([ moneyWorldData ]);
         } catch (error) {}
         this.synchrodata_onEnterScene(userId);
+        this.synchrodata_MoneyWorld();
+    }
+    net_refreshMoney(money) {
+        this.refreshMoney(this.currentPlayer.userId, money);
+    }
+    refreshMoney(userId, money) {
+        if (!this.roomDataMap.has(userId)) return;
+        let roomData = this.roomDataMap.get(userId);
+        roomData.money += money;
+        DataCenterS.getData(userId, RankData)?.setMoney(money);
+        let moneyWorldData = new MoneyWorldData(userId, roomData.playerName, roomData.money);
+        this.isRefreshMoneyWorldData([ moneyWorldData ]);
+        this.synchrodata_Room_MoneyWorld();
     }
     net_refreshScore(score) {
         this.refreshScore(this.currentPlayer.userId, score);
@@ -8054,6 +8136,78 @@ class RankModuleS extends ModuleS {
         }
         return isNeedSave;
     }
+    isRefreshMoneyWorldData(tmpMoneyWorldDatas) {
+        if (!this.isInitWorldDatas) return false;
+        if (!tmpMoneyWorldDatas || tmpMoneyWorldDatas?.length == 0) return false;
+        if (!this.moneyWorldDatas || this.moneyWorldDatas?.length == 0) this.moneyWorldDatas = [];
+        let isNeedSave = false;
+        for (let k = 0; k < tmpMoneyWorldDatas.length; ++k) {
+            let isPush = false;
+            let ishasDelete = false;
+            let ishasData = false;
+            let moneyWorldData = tmpMoneyWorldDatas[k];
+            if (this.moneyWorldDatas.length < GlobalData.moneyWorldCount) {
+                if (this.moneyWorldDatas.length == 0) {
+                    this.moneyWorldDatas.push(moneyWorldData);
+                    isPush = true;
+                    isNeedSave = true;
+                } else {
+                    for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                        if (this.moneyWorldDatas[i].userId != moneyWorldData.userId) continue;
+                        if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                            this.moneyWorldDatas.splice(i, 1);
+                            break;
+                        } else {
+                            ishasData = true;
+                            break;
+                        }
+                    }
+                    if (ishasData) continue;
+                    for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+                        if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                            this.moneyWorldDatas.splice(i, 0, moneyWorldData);
+                            isPush = true;
+                            isNeedSave = true;
+                            break;
+                        }
+                    }
+                    if (!isPush) {
+                        this.moneyWorldDatas.push(moneyWorldData);
+                        isPush = true;
+                        isNeedSave = true;
+                    }
+                }
+            } else {
+                for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                    if (this.moneyWorldDatas[i].userId != moneyWorldData.userId) continue;
+                    if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                        this.moneyWorldDatas.splice(i, 1);
+                        ishasDelete = true;
+                        break;
+                    } else {
+                        ishasData = true;
+                        break;
+                    }
+                }
+                if (ishasData) continue;
+                for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+                    if (moneyWorldData.money > this.moneyWorldDatas[i].money) {
+                        this.moneyWorldDatas.splice(i, 0, moneyWorldData);
+                        if (!ishasDelete) {
+                            this.moneyWorldDatas.pop();
+                        }
+                        isPush = true;
+                        isNeedSave = true;
+                        break;
+                    }
+                }
+            }
+        }
+        if (isNeedSave) {
+            Utils.setCustomData("MoneyWorldData", this.moneyWorldDatas);
+        }
+        return isNeedSave;
+    }
     updateRoomData() {
         if (!this.roomDataMap || this.roomDataMap?.size == 0) return;
         this.roomUserIds.length = 0;
@@ -8061,12 +8215,14 @@ class RankModuleS extends ModuleS {
         this.roomScores.length = 0;
         this.roomTimes.length = 0;
         this.roomTryOn.length = 0;
+        this.roomMoney.length = 0;
         this.roomDataMap?.forEach(((value, key) => {
             this.roomUserIds.push(value.userId);
             this.roomNames.push(value.playerName);
             this.roomScores.push(value.score);
             this.roomTimes.push(value.time);
             this.roomTryOn.push(value.tryOn);
+            this.roomMoney.push(value.money);
         }));
     }
     updateWorldData() {
@@ -8080,27 +8236,38 @@ class RankModuleS extends ModuleS {
             this.worldTimes.push(this.worldDatas[i].time);
         }
     }
+    updateMoneyWorldData() {
+        if (!this.moneyWorldDatas || this.moneyWorldDatas?.length == 0) return;
+        this.moneyWorldUserIds.length = 0;
+        this.moneyWorldNames.length = 0;
+        this.moneyWorldMoney.length = 0;
+        for (let i = 0; i < this.moneyWorldDatas.length; i++) {
+            this.moneyWorldUserIds.push(this.moneyWorldDatas[i].userId);
+            this.moneyWorldNames.push(this.moneyWorldDatas[i].playerName);
+            this.moneyWorldMoney.push(this.moneyWorldDatas[i].money);
+        }
+    }
     synchrodata_onEnterScene(sendUserId) {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
             if (sendUserId == key.userId) {
-                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+                this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
-                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+                this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
             }
         }));
     }
     synchrodata_Room() {
         this.updateRoomData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
         }));
     }
     synchrodata_Room_TryOn() {
         this.updateRoomData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn);
+            this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
         }));
     }
     synchrodata_World() {
@@ -8109,15 +8276,28 @@ class RankModuleS extends ModuleS {
             this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
         }));
     }
+    synchrodata_MoneyWorld() {
+        this.updateMoneyWorldData();
+        this.syncPlayerMap.forEach(((value, key) => {
+            this.getClient(key).net_syncMoneyWorldRankData(this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
+        }));
+    }
+    synchrodata_Room_MoneyWorld() {
+        this.updateRoomData();
+        this.updateMoneyWorldData();
+        this.syncPlayerMap.forEach(((value, key) => {
+            this.getClient(key).net_syncRoomMoneyWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
+        }));
+    }
     synchrodata_RoomWorld() {
         this.updateRoomData();
         this.updateWorldData();
         this.syncPlayerMap.forEach(((value, key) => {
-            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+            this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
         }));
     }
     synchrodata_aRoomWorld(player) {
-        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.worldUserIds, this.worldNames, this.worldTimes);
+        this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
     }
     getNamesByUserId(userId1, userId2) {
         if (this.roomDataMap.has(userId1) && this.roomDataMap.has(userId2)) {
@@ -8614,7 +8794,7 @@ class WishTools {
     }
 }
 
-WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49 ];
+WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 53 ];
 
 var foreign152 = Object.freeze({
     __proto__: null,
@@ -8904,7 +9084,7 @@ class WishModuleC extends ModuleC {
     }
     addOpenWishOrMallAction() {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(GlobalData.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 this.getHudModuleC.onOpenMallAction.call();
                 this.getHudModuleC.onOpenTaskAction.call();
@@ -8914,6 +9094,7 @@ class WishModuleC extends ModuleC {
         }));
     }
     addRequestBuyAction(wishDataV0) {
+        console.error(JSON.stringify(wishDataV0));
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.getMallModuleC.updateNickWish(wishDataV0);
             this.getWishPanel.hide();
@@ -8999,6 +9180,7 @@ class WishModuleC extends ModuleC {
         let itemId = wishDataV0.itemId;
         let userId = wishDataV0.userId;
         let commodityId = wishDataV0.commodityId;
+        let price = wishDataV0.price;
         let cInfo = {
             commodityId: commodityId,
             number: 1,
@@ -9015,9 +9197,10 @@ class WishModuleC extends ModuleC {
         }), 60 * 1e3);
         await this.syncPlaceOrder(cInfo, (async status => {
             clearTimeout(timeoutId);
-            let wishDataV0 = new WishDataV0;
-            wishDataV0.userId = userId;
-            await this.getMallModuleC.updateNickWish(wishDataV0);
+            let tmpWishDataV0 = new WishDataV0;
+            tmpWishDataV0.userId = userId;
+            tmpWishDataV0.price = price;
+            await this.getMallModuleC.updateNickWish(tmpWishDataV0);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
         }), (async status => {
             clearTimeout(timeoutId);
@@ -18007,9 +18190,16 @@ var foreign125 = Object.freeze({
 class MallModuleS extends ModuleS {
     constructor() {
         super(...arguments);
+        this.rankModuleS = null;
         this.isContinueInitMallConfigData = true;
         this.mallConfigData = null;
         this.nicknameMap = new Map;
+    }
+    get getRankModuleS() {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
     }
     onStart() {
         this.bindAction();
@@ -18020,6 +18210,17 @@ class MallModuleS extends ModuleS {
     addShipOrder(playerId, orderId, commodityId, amount, confirmOrder) {
         this.getClient(playerId).net_deliverGoods(commodityId, amount);
         confirmOrder(true);
+        let money = 0;
+        switch (commodityId) {
+          case `3ki8ifW7BUs0006Pk`:
+            money = 1e3;
+            break;
+
+          case `5KdGRn3IhB600054z`:
+            money = 2;
+            break;
+        }
+        this.getRankModuleS.refreshMoney(Player.getPlayer(playerId).userId, money);
     }
     onPlayerEnterGame(player) {
         this.initPlayerVipData(player);
@@ -18081,7 +18282,10 @@ class MallModuleS extends ModuleS {
         if (this.nicknameMap.has(userId)) {
             let nickname = this.nicknameMap.get(userId);
             nickname.wishDataV0 = wishDataV0;
-            if (!wishDataV0.itemId) this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+            if (!wishDataV0.itemId) {
+                this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+                this.getRankModuleS.refreshMoney(wishDataV0.userId, wishDataV0.price);
+            }
             return true;
         }
         return false;
@@ -20629,6 +20833,12 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         }
         return this.mRoomScoreTextBlock_Internal;
     }
+    get mRoomMoneyTextBlock() {
+        if (!this.mRoomMoneyTextBlock_Internal && this.uiWidgetBase) {
+            this.mRoomMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mRoomCanvas/TitleRoomCanvas/mRoomMoneyTextBlock");
+        }
+        return this.mRoomMoneyTextBlock_Internal;
+    }
     get mRoomScrollBox() {
         if (!this.mRoomScrollBox_Internal && this.uiWidgetBase) {
             this.mRoomScrollBox_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mRoomCanvas/mRoomScrollBox");
@@ -20707,6 +20917,72 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         }
         return this.mCloseWorldButton_Internal;
     }
+    get mMoneyWorldCanvas() {
+        if (!this.mMoneyWorldCanvas_Internal && this.uiWidgetBase) {
+            this.mMoneyWorldCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas");
+        }
+        return this.mMoneyWorldCanvas_Internal;
+    }
+    get mMoneyTitleTextBlock() {
+        if (!this.mMoneyTitleTextBlock_Internal && this.uiWidgetBase) {
+            this.mMoneyTitleTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/MainMoneyWorldCanvas/TitleMoneyWorldCanvas/mMoneyTitleTextBlock");
+        }
+        return this.mMoneyTitleTextBlock_Internal;
+    }
+    get mMoneyWorldRankTextBlock() {
+        if (!this.mMoneyWorldRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mMoneyWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldRankTextBlock");
+        }
+        return this.mMoneyWorldRankTextBlock_Internal;
+    }
+    get mMoneyWorldNameTextBlock() {
+        if (!this.mMoneyWorldNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mMoneyWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldNameTextBlock");
+        }
+        return this.mMoneyWorldNameTextBlock_Internal;
+    }
+    get mMoneyWorldTimeTextBlock() {
+        if (!this.mMoneyWorldTimeTextBlock_Internal && this.uiWidgetBase) {
+            this.mMoneyWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/MoneyWorldCanvas/mMoneyWorldTimeTextBlock");
+        }
+        return this.mMoneyWorldTimeTextBlock_Internal;
+    }
+    get mMoneyWorldContentCanvas() {
+        if (!this.mMoneyWorldContentCanvas_Internal && this.uiWidgetBase) {
+            this.mMoneyWorldContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/MoneyScrollBox/mMoneyWorldContentCanvas");
+        }
+        return this.mMoneyWorldContentCanvas_Internal;
+    }
+    get mSelfMoneyWorldCanvas() {
+        if (!this.mSelfMoneyWorldCanvas_Internal && this.uiWidgetBase) {
+            this.mSelfMoneyWorldCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas");
+        }
+        return this.mSelfMoneyWorldCanvas_Internal;
+    }
+    get mSelfMoneyWorldRankTextBlock() {
+        if (!this.mSelfMoneyWorldRankTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfMoneyWorldRankTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldRankTextBlock");
+        }
+        return this.mSelfMoneyWorldRankTextBlock_Internal;
+    }
+    get mSelfMoneyWorldNameTextBlock() {
+        if (!this.mSelfMoneyWorldNameTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfMoneyWorldNameTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldNameTextBlock");
+        }
+        return this.mSelfMoneyWorldNameTextBlock_Internal;
+    }
+    get mSelfMoneyWorldTimeTextBlock() {
+        if (!this.mSelfMoneyWorldTimeTextBlock_Internal && this.uiWidgetBase) {
+            this.mSelfMoneyWorldTimeTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMoneyWorldCanvas/mSelfMoneyWorldCanvas/mSelfMoneyWorldTimeTextBlock");
+        }
+        return this.mSelfMoneyWorldTimeTextBlock_Internal;
+    }
+    get mCloseMoneyWorldButton() {
+        if (!this.mCloseMoneyWorldButton_Internal && this.uiWidgetBase) {
+            this.mCloseMoneyWorldButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCloseMoneyWorldButton");
+        }
+        return this.mCloseMoneyWorldButton_Internal;
+    }
     onAwake() {
         this.canUpdate = false;
         this.layer = mw.UILayerBottom;
@@ -20726,9 +21002,14 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
             Event.dispatchToLocal("PlayButtonClick", "mCloseWorldButton");
         }));
         this.mCloseWorldButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mCloseMoneyWorldButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseMoneyWorldButton");
+        }));
+        this.mCloseMoneyWorldButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mRoomRankTextBlock);
         this.initLanguage(this.mRoomNameTextBlock);
         this.initLanguage(this.mRoomScoreTextBlock);
+        this.initLanguage(this.mRoomMoneyTextBlock);
         this.initLanguage(this.mTitleTextBlock);
         this.initLanguage(this.mWorldRankTextBlock);
         this.initLanguage(this.mWorldNameTextBlock);
@@ -20736,6 +21017,13 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         this.initLanguage(this.mSelfWorldRankTextBlock);
         this.initLanguage(this.mSelfWorldNameTextBlock);
         this.initLanguage(this.mSelfWorldTimeTextBlock);
+        this.initLanguage(this.mMoneyTitleTextBlock);
+        this.initLanguage(this.mMoneyWorldRankTextBlock);
+        this.initLanguage(this.mMoneyWorldNameTextBlock);
+        this.initLanguage(this.mMoneyWorldTimeTextBlock);
+        this.initLanguage(this.mSelfMoneyWorldRankTextBlock);
+        this.initLanguage(this.mSelfMoneyWorldNameTextBlock);
+        this.initLanguage(this.mSelfMoneyWorldTimeTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -20780,6 +21068,12 @@ let RoomItem_Generate = class RoomItem_Generate extends UIScript {
         }
         return this.mKillCountTextBlock_Internal;
     }
+    get mKillMoneyTextBlock() {
+        if (!this.mKillMoneyTextBlock_Internal && this.uiWidgetBase) {
+            this.mKillMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Canvas/mKillMoneyTextBlock");
+        }
+        return this.mKillMoneyTextBlock_Internal;
+    }
     onAwake() {
         this.canUpdate = false;
         this.layer = mw.UILayerBottom;
@@ -20789,6 +21083,7 @@ let RoomItem_Generate = class RoomItem_Generate extends UIScript {
         this.initLanguage(this.mRankTextBlock);
         this.initLanguage(this.mNameTextBlock);
         this.initLanguage(this.mKillCountTextBlock);
+        this.initLanguage(this.mKillMoneyTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -20823,10 +21118,12 @@ class RoomItem extends RoomItem_Generate$1 {
         this.mRankTextBlock.text = ranking.toString();
         this.mNameTextBlock.text = roomData.playerName;
         this.mKillCountTextBlock.text = roomData.score.toString();
+        this.mKillMoneyTextBlock.text = roomData.money.toString();
         let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
         this.mRankTextBlock.fontColor = fontColor;
         this.mNameTextBlock.fontColor = fontColor;
         this.mKillCountTextBlock.fontColor = fontColor;
+        this.mKillMoneyTextBlock.fontColor = fontColor;
     }
 }
 
@@ -20896,7 +21193,11 @@ class WorldItem extends WorldItem_Generate$1 {
     setData(ranking, roomData, isSelf) {
         this.mRankTextBlock.text = ranking.toString();
         this.mNameTextBlock.text = roomData.playerName;
-        this.mTimeTextBlock.text = roomData.time.toString();
+        if (roomData instanceof WorldData) {
+            this.mTimeTextBlock.text = roomData.time.toString();
+        } else if (roomData instanceof MoneyWorldData) {
+            this.mTimeTextBlock.text = roomData.money.toString();
+        }
         let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
         this.mRankTextBlock.fontColor = fontColor;
         this.mNameTextBlock.fontColor = fontColor;
@@ -20915,6 +21216,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.rankModuleC = null;
         this.roomItems = [];
         this.worldItems = [];
+        this.moneyWorldItems = [];
     }
     get getRankModuleC() {
         if (!this.rankModuleC) {
@@ -20933,19 +21235,28 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mCloseRoomButton.onClicked.add(this.bindCloseRoomButton.bind(this));
         this.mCloseWorldButton.onClicked.add(this.bindCloseWorldButton.bind(this));
         this.getRankModuleC.onOpenWorldRankAction.add(this.addOpenWorldRankAction.bind(this));
+        this.mCloseMoneyWorldButton.onClicked.add(this.bindCloseMoneyWorldButton.bind(this));
+        this.getRankModuleC.onOpenMoneyWorldRankAction.add(this.addOpenMoneyWorldRankAction.bind(this));
     }
     initUI() {
         this.mRoomRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mRoomNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
+        this.mRoomMoneyTextBlock.text = `富豪积分`;
         this.mTitleTextBlock.text = StringUtil.format(GameConfig.Language.Text_TopInTermsOfDuration.Value, GlobalData.worldCount);
+        this.mMoneyTitleTextBlock.text = `富豪榜前${GlobalData.worldCount}名`;
         this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
         this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
         this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
+        this.mMoneyWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
+        this.mMoneyWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
+        this.mMoneyWorldTimeTextBlock.text = `富豪积分`;
         Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
         Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.Collapsed);
         if (GlobalData.languageId == 0) {
             this.mRoomRankTextBlock.fontSize = 15;
             this.mRoomNameTextBlock.fontSize = 15;
@@ -20975,6 +21286,14 @@ class RankPanel extends RankPanel_Generate$1 {
         Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
         Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
     }
+    addOpenMoneyWorldRankAction() {
+        Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Visible);
+        Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+    }
+    bindCloseMoneyWorldButton() {
+        Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Collapsed);
+        Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.Collapsed);
+    }
     refreshRankPanel_RoomWorld(roomDatas, curRoomIndex, worldDatas, curWorldIndex) {
         if (roomDatas && roomDatas?.length > 0) {
             this.refreshRoomRankPanel(roomDatas, curRoomIndex);
@@ -20982,6 +21301,10 @@ class RankPanel extends RankPanel_Generate$1 {
             Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
         }
         if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+    }
+    refreshRankPanel_RoomMoneyWorld(roomDatas, curRoomIndex, moneyWorldDatas, curMoneyWorldIndex) {
+        if (roomDatas && roomDatas?.length > 0) this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+        this.refreshRankPanel_MoneyWorld(moneyWorldDatas, curMoneyWorldIndex);
     }
     refreshRankPanel_Room(roomDatas, curRoomIndex) {
         if (roomDatas && roomDatas?.length > 0) this.refreshRoomRankPanel(roomDatas, curRoomIndex);
@@ -21011,6 +21334,9 @@ class RankPanel extends RankPanel_Generate$1 {
     refreshRankPanel_World(worldDatas, curWorldIndex) {
         if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
     }
+    refreshRankPanel_MoneyWorld(moneyWorldDatas, curMoneyWorldIndex) {
+        if (moneyWorldDatas && moneyWorldDatas?.length > 0) this.refreshMoneyWorldRankPanel(moneyWorldDatas, curMoneyWorldIndex);
+    }
     refreshWorldRankPanel(worldDatas, curWorldIndex) {
         if (worldDatas.length > this.worldItems.length) {
             for (let i = 0; i < this.worldItems.length; ++i) {
@@ -21033,15 +21359,46 @@ class RankPanel extends RankPanel_Generate$1 {
             }
         }
     }
+    refreshMoneyWorldRankPanel(moneyWorldDatas, curMoneyWorldIndex) {
+        if (moneyWorldDatas.length > this.moneyWorldItems.length) {
+            for (let i = 0; i < this.moneyWorldItems.length; ++i) {
+                this.moneyWorldItems[i].setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+                Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.moneyWorldItems.length; i < moneyWorldDatas.length; ++i) {
+                let worldItem = UIService.create(WorldItem);
+                worldItem.setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+                this.mMoneyWorldContentCanvas.addChild(worldItem.uiObject);
+                this.moneyWorldItems.push(worldItem);
+            }
+        } else {
+            for (let i = 0; i < moneyWorldDatas.length; ++i) {
+                this.moneyWorldItems[i].setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+                Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = moneyWorldDatas.length; i < this.moneyWorldItems.length; ++i) {
+                Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+    }
     refreshSelfWorldNameAndTimeUI(roomData) {
         this.mSelfWorldNameTextBlock.text = roomData.playerName;
         this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
+        this.mSelfMoneyWorldNameTextBlock.text = roomData.playerName;
+        this.mSelfMoneyWorldTimeTextBlock.text = roomData.time.toString();
     }
     refreshSelfWorldRankUI(ranking) {
         if (ranking == -1) {
             this.mSelfWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
         } else {
             this.mSelfWorldRankTextBlock.text = (ranking + 1).toString();
+        }
+    }
+    refreshSelfMoneyWorldRankUI(ranking) {
+        if (ranking == -1) {
+            this.mSelfMoneyWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
+        } else {
+            this.mSelfMoneyWorldRankTextBlock.text = (ranking + 1).toString();
         }
     }
 }
@@ -21061,12 +21418,16 @@ class RankModuleC extends ModuleC {
         this.tryOnModuleC = null;
         this.tryOnData = null;
         this.onOpenWorldRankAction = new Action;
+        this.onOpenMoneyWorldRankAction = new Action;
         this.roomDatas = [];
         this.recycleRoomDatas = [];
         this.curRoomIndex = -1;
         this.worldDatas = [];
         this.recycleWorldDatas = [];
         this.curWorldIndex = -1;
+        this.moneyWorldDatas = [];
+        this.recycleMoneyWorldDatas = [];
+        this.curMoneyWorldIndex = -1;
     }
     get getHUDModuleC() {
         if (!this.hudModuleC) {
@@ -21109,15 +21470,24 @@ class RankModuleC extends ModuleC {
     }
     initEventAction() {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
+        this.getHUDModuleC.onOpenMoneyRankAction.add(this.addOnOffMoneyRankPanelAction.bind(this));
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
         let score = 0;
-        InputUtil.onKeyDown(mw.Keys.L, (() => {
+        InputUtil.onKeyDown(mw.Keys.One, (() => {
             score++;
             this.server.net_refreshScore(score);
+        }));
+        let money = 0;
+        InputUtil.onKeyDown(mw.Keys.Two, (() => {
+            money++;
+            this.server.net_refreshMoney(money);
         }));
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
+    }
+    addOnOffMoneyRankPanelAction() {
+        this.onOpenMoneyWorldRankAction.call();
     }
     addOnOffMainUI(isShow) {
         console.error(`isShow: ${isShow}`);
@@ -21138,13 +21508,15 @@ class RankModuleC extends ModuleC {
             if (!time && time != 0) time = 0;
             let tryon = this.getTryOnData?.tryOn;
             if (!tryon && tryon != 0) tryon = 0;
-            this.server.net_onEnterScene(nickName, score, time, tryon);
+            let money = this.data?.money;
+            if (!money && money != 0) money = 0;
+            this.server.net_onEnterScene(nickName, score, time, tryon, money);
         }));
     }
-    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
+    updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney) {
         if (this.roomDatas.length > roomUserIds.length) {
             for (let i = 0; i < roomUserIds.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
             }
             for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
                 this.recycleRoomDatas.push(this.roomDatas[i]);
@@ -21152,12 +21524,12 @@ class RankModuleC extends ModuleC {
             this.roomDatas.length = roomUserIds.length;
         } else {
             for (let i = 0; i < this.roomDatas.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
             }
             for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
                 let tmpRoomData = null;
                 if (this.recycleRoomDatas.length > 0) tmpRoomData = this.recycleRoomDatas.pop();
-                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
                 this.roomDatas.push(tmpRoomData);
             }
         }
@@ -21205,15 +21577,49 @@ class RankModuleC extends ModuleC {
         }
         this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
-    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+    updateMoneyWorldDatas(worldUserIds, worldNames, worldMoneys) {
+        if (this.moneyWorldDatas.length > worldUserIds.length) {
+            for (let i = 0; i < worldUserIds.length; ++i) {
+                this.moneyWorldDatas[i].setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+            }
+            for (let i = worldUserIds.length; i < this.moneyWorldDatas.length; ++i) {
+                this.recycleMoneyWorldDatas.push(this.moneyWorldDatas[i]);
+            }
+            this.moneyWorldDatas.length = worldUserIds.length;
+        } else {
+            for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                this.moneyWorldDatas[i].setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+            }
+            for (let i = this.moneyWorldDatas.length; i < worldUserIds.length; ++i) {
+                let tmpMoneyWorldData = null;
+                if (this.recycleMoneyWorldDatas.length > 0) tmpMoneyWorldData = this.recycleMoneyWorldDatas.pop();
+                if (tmpMoneyWorldData) {
+                    tmpMoneyWorldData.setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+                } else {
+                    tmpMoneyWorldData = new MoneyWorldData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+                }
+                this.moneyWorldDatas.push(tmpMoneyWorldData);
+            }
+        }
+    }
+    updateMoneyWorldIndex() {
+        this.curMoneyWorldIndex = -1;
+        for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+            if (this.moneyWorldDatas[i].userId != this.currentUserId) continue;
+            this.curMoneyWorldIndex = i;
+            break;
+        }
+        this.getRankPanel.refreshSelfMoneyWorldRankUI(this.curMoneyWorldIndex);
+    }
+    net_syncRoomRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
-    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+    net_syncRoomRankData_TryOn(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
     net_syncWorldRankData(worldUserIds, worldNames, worldScores) {
@@ -21221,8 +21627,21 @@ class RankModuleC extends ModuleC {
         this.updateWorldIndex();
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
-    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, worldUserIds, worldNames, worldScores) {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+    net_syncMoneyWorldRankData(worldUserIds, worldNames, worldMoneys) {
+        this.updateMoneyWorldDatas(worldUserIds, worldNames, worldMoneys);
+        this.updateMoneyWorldIndex();
+        this.getRankPanel.refreshRankPanel_MoneyWorld(this.moneyWorldDatas, this.curMoneyWorldIndex);
+    }
+    net_syncRoomMoneyWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney, worldUserIds, worldNames, worldMoneys) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
+        this.sortRoomData();
+        this.updateRoomIndex();
+        this.updateMoneyWorldDatas(worldUserIds, worldNames, worldMoneys);
+        this.updateMoneyWorldIndex();
+        this.getRankPanel.refreshRankPanel_RoomMoneyWorld(this.roomDatas, this.curRoomIndex, this.moneyWorldDatas, this.curMoneyWorldIndex);
+    }
+    net_syncRoomWorldRankData(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney, worldUserIds, worldNames, worldScores) {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.sortRoomData();
         this.updateRoomIndex();
         this.updateWorldDatas(worldUserIds, worldNames, worldScores);
