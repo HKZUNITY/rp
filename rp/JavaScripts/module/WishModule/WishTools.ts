@@ -61,6 +61,7 @@ export default class WishTools {
         32,
         39,
         40,
-        42
+        42,
+        49
     ];
 }

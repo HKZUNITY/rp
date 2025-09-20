@@ -50,7 +50,7 @@ NoticeView_Generate = __decorate([ UIBind("UI/common/notice/NoticeView.ui") ], N
 
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign155 = Object.freeze({
+var foreign164 = Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -107,7 +107,7 @@ TopNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/TopNoticeItem.ui"
 
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign157 = Object.freeze({
+var foreign166 = Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -3322,7 +3322,7 @@ AdPanel_Generate = __decorate([ UIBind("UI/module/AdModule/AdPanel.ui") ], AdPan
 
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign158 = Object.freeze({
+var foreign167 = Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -3396,7 +3396,7 @@ TipsPanel_Generate = __decorate([ UIBind("UI/module/AdModule/TipsPanel.ui") ], T
 
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign159 = Object.freeze({
+var foreign168 = Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -3500,6 +3500,8 @@ GlobalData.savaMaxCount = 6;
 GlobalData.dailyRefreshTime = "4:0";
 
 GlobalData.weeklyRefreshTime = "4:0";
+
+GlobalData.userId = `47958884`;
 
 var EventType;
 
@@ -3749,7 +3751,7 @@ class CameraData {
     }
 }
 
-var foreign147 = Object.freeze({
+var foreign155 = Object.freeze({
     __proto__: null,
     default: CameraManager$1
 });
@@ -4095,7 +4097,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign153 = Object.freeze({
+var foreign162 = Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -4147,7 +4149,7 @@ LoadingPanel_Generate = __decorate([ UIBind("UI/tools/LoadingPanel.ui") ], Loadi
 
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign204 = Object.freeze({
+var foreign216 = Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -4178,7 +4180,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign152 = Object.freeze({
+var foreign161 = Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -4289,7 +4291,7 @@ class ExecutorManager {
 
 ExecutorManager._instance = undefined;
 
-var foreign154 = Object.freeze({
+var foreign163 = Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -4686,7 +4688,7 @@ var AvatarDecora;
     AvatarDecora.getDecorByItemType = getDecorByItemType;
 })(AvatarDecora || (AvatarDecora = {}));
 
-var foreign146 = Object.freeze({
+var foreign154 = Object.freeze({
     __proto__: null,
     get AvatarDecora() {
         return AvatarDecora;
@@ -5326,7 +5328,7 @@ function getStyle(somatotype) {
     if (somatotype === mw.SomatotypeV2.CartoonyMale || somatotype === mw.SomatotypeV2.CartoonyFemale) return StyleType.Cartoony;
 }
 
-var foreign145 = Object.freeze({
+var foreign153 = Object.freeze({
     __proto__: null,
     get AvatarApi() {
         return AvatarApi;
@@ -5430,7 +5432,7 @@ var MapEx;
     MapEx.copy = copy;
 })(MapEx || (MapEx = {}));
 
-var foreign150 = Object.freeze({
+var foreign158 = Object.freeze({
     __proto__: null,
     get MapEx() {
         return MapEx;
@@ -5592,7 +5594,7 @@ BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui")
 
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign164 = Object.freeze({
+var foreign173 = Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -5658,7 +5660,7 @@ HUDItem_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDItem.ui") ], HUDI
 
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign172 = Object.freeze({
+var foreign181 = Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -5904,6 +5906,24 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         }
         return this.mActionButton_Internal;
     }
+    get mWishBgImage() {
+        if (!this.mWishBgImage_Internal && this.uiWidgetBase) {
+            this.mWishBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/LowRightCanvas/mWishBgImage");
+        }
+        return this.mWishBgImage_Internal;
+    }
+    get mWishtButton() {
+        if (!this.mWishtButton_Internal && this.uiWidgetBase) {
+            this.mWishtButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/LowRightCanvas/mWishBgImage/mWishtButton");
+        }
+        return this.mWishtButton_Internal;
+    }
+    get mWishTextBlock() {
+        if (!this.mWishTextBlock_Internal && this.uiWidgetBase) {
+            this.mWishTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/LowRightCanvas/mWishBgImage/mWishTextBlock");
+        }
+        return this.mWishTextBlock_Internal;
+    }
     get mGoodsCanvas() {
         if (!this.mGoodsCanvas_Internal && this.uiWidgetBase) {
             this.mGoodsCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mGoodsCanvas");
@@ -6052,6 +6072,10 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
             Event.dispatchToLocal("PlayButtonClick", "mActionButton");
         }));
         this.mActionButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mWishtButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mWishtButton");
+        }));
+        this.mWishtButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.mShowHideGoodsButton.onClicked.add((() => {
             Event.dispatchToLocal("PlayButtonClick", "mShowHideGoodsButton");
         }));
@@ -6082,6 +6106,7 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         this.initLanguage(this.mOpenTaskTextBlock);
         this.initLanguage(this.mOpenSignInTextBlock);
         this.initLanguage(this.mOpenPhotoTextBlock);
+        this.initLanguage(this.mWishTextBlock);
         this.initLanguage(this.mMusicText);
     }
     initLanguage(ui) {
@@ -6103,7 +6128,7 @@ HUDPanel_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDPanel.ui") ], HU
 
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign173 = Object.freeze({
+var foreign182 = Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -6152,7 +6177,7 @@ SavePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SavePanel.ui") ]
 
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign196 = Object.freeze({
+var foreign205 = Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -6273,7 +6298,7 @@ SharePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SharePanel.ui")
 
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign197 = Object.freeze({
+var foreign206 = Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -6399,6 +6424,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.initShakeShareTween();
         this.initShakeSignInTween();
         this.initTaskTween();
+        this.initShakeWishTween();
     }
     updateFreeTime() {
         console.error(`wfz - freeTime:${GlobalData.freeTime}`);
@@ -6430,6 +6456,7 @@ class HUDPanel extends HUDPanel_Generate$1 {
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
         this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
         this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
+        this.mWishtButton.onClicked.add(this.addAddWishButton.bind(this));
     }
     addJumpButton() {
         this.getHUDModuleC.onJumpAction.call();
@@ -6483,6 +6510,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
     }
     addOpenTaskButton() {
         this.getHUDModuleC.onOpenTaskAction.call();
+    }
+    addAddWishButton() {
+        this.getHUDModuleC.onOpenWishAction.call();
     }
     showHideGoodsButton() {
         this.constollerGoodsContentCanvasVisible(!this.mGoodsContentCanvas.visible, false);
@@ -6615,6 +6645,19 @@ class HUDPanel extends HUDPanel_Generate$1 {
             }));
         }));
     }
+    initShakeWishTween() {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mWishtButton, .5, 20, -20, 1.5, .9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mWishtButton, .5, -20, 20, .9, 1.5);
+        rightBigToLeftSmall.start().onComplete((() => {
+            TimeUtil.delaySecond(.1).then((() => {
+                leftSamllToRightBig.start().onComplete((() => {
+                    TimeUtil.delaySecond(.1).then((() => {
+                        rightBigToLeftSmall.start();
+                    }));
+                }));
+            }));
+        }));
+    }
     initShakeShareTween() {
         let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, .3, .8, .8, 1.2, 1.2);
         let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, .3, 1.2, 1.2, .8, .8);
@@ -6722,6 +6765,7 @@ class HUDModuleC extends ModuleC {
         this.onOpenMallAction = new Action;
         this.onOpenPhotoAction = new Action;
         this.onOpenTaskAction = new Action;
+        this.onOpenWishAction = new Action;
         this.freeNpc = null;
         this.currentBgmIndex = 1;
         this.bgmMusics = [];
@@ -7606,7 +7650,7 @@ ChatPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatPanel.ui") ]
 
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign167 = Object.freeze({
+var foreign176 = Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -7727,7 +7771,7 @@ GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePane
 
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign174 = Object.freeze({
+var foreign183 = Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -7775,7 +7819,7 @@ OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClick
 
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign175 = Object.freeze({
+var foreign184 = Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -8117,6 +8161,944 @@ var foreign129 = Object.freeze({
     default: RankModuleS
 });
 
+const http_wishListQueueResopnse = "metaverse/item/wish/item/wishListQueue";
+
+const http_applySendWishItem = "metaverse/item/wish/item/applySendWishItem";
+
+const http_cancelWishSend = "metaverse/item/wish/item/cancelWishSend";
+
+class PortalData {
+    static async wishListQueueRequest(otherUserid, page, perPage = 50) {
+        const jsonContent = {
+            otherUserId: otherUserid,
+            page: page,
+            perPage: perPage
+        };
+        const responseData = await HttpHelper.HttpUtils.syncGet(http_wishListQueueResopnse, jsonContent);
+        const resultData2 = ResultData.create(responseData.code, responseData.data, responseData.msg);
+        return resultData2;
+    }
+    static async applySendWishItemRequest(itemId, destUserid) {
+        const jsonContent = {
+            itemId: itemId,
+            destUserId: destUserid
+        };
+        const responseData = await HttpHelper.HttpUtils.syncPost(http_applySendWishItem, jsonContent);
+        const resultData2 = ResultData.create(responseData.code, responseData.data, responseData.msg);
+        console.log(responseData.data.status);
+        return resultData2;
+    }
+    static async cancelSendWishItemRequest(itemIds, userId) {
+        const jsonContent = {
+            itemIds: itemIds,
+            destUserId: userId
+        };
+        const responseData = await HttpHelper.HttpUtils.syncPost(http_cancelWishSend, jsonContent);
+        const resultData2 = ResultData.create(responseData.code, responseData.data, responseData.msg);
+        return resultData2;
+    }
+}
+
+var MaxCount = 5;
+
+class ResultData {
+    get hasData() {
+        return this.code == 200 && !!this.data;
+    }
+    constructor(code, data, msg) {
+        this.code = code;
+        this.data = data;
+        this.msg = msg;
+    }
+    static create(code, data, msg) {
+        const r = new ResultData(code, data, msg);
+        return r;
+    }
+    pushResult() {
+        console.log(`pushResult:${this.code},${this.data},${this.msg}`);
+        return this;
+    }
+}
+
+var HttpHelper;
+
+(function(HttpHelper) {
+    function extensionHttpRequestTransmitData(response, paramUrl, jsonContent, requestType) {
+        return httpRequestTransmitData(response, paramUrl, jsonContent, requestType);
+    }
+    class HttpUtils {
+        static buildUrl(baseUrl, params) {
+            var queryString = Object.keys(params).map((function(key) {
+                return key + "=" + params[key];
+            })).join("&");
+            let url = baseUrl + "?" + queryString;
+            console.log(`HttpUtils.buildUrl( ${baseUrl} , ${params} => ${url}) `);
+            return url;
+        }
+        static get(baseUrl, params, response) {
+            return extensionHttpRequestTransmitData(response, HttpUtils.buildUrl(baseUrl, params), {}, HttpRequestType.Get);
+        }
+        static post(url, jsonBody, response) {
+            return extensionHttpRequestTransmitData(response, url, jsonBody, HttpRequestType.Post);
+        }
+        static syncGet(baseUrl, params) {
+            return new Promise((resolve => {
+                HttpUtils.get(baseUrl, params, ((result, content, responseCode) => {
+                    console.info(`HttpUtils.syncGet url:${baseUrl} param:${params} result:${result} content:${content} responseCode:${responseCode}`);
+                    if (!result) return resolve(null);
+                    if (responseCode != 200) return resolve(null);
+                    try {
+                        if (!content) return resolve(null);
+                        let rData = JSON.parse(content);
+                        if (rData) return resolve(rData);
+                    } catch (error) {
+                        return resolve(null);
+                    }
+                }));
+            }));
+        }
+        static syncPost(baseUrl, jsonBody) {
+            return new Promise((resolve => {
+                HttpUtils.post(baseUrl, jsonBody, ((result, content, responseCode) => {
+                    console.info(`HttpUtils.syncPost url:${baseUrl} body:${jsonBody} result:${result} content:${content} responseCode:${responseCode}`);
+                    if (!result) return resolve(null);
+                    if (responseCode != 200) return resolve(null);
+                    try {
+                        if (!content) return resolve(null);
+                        let rData = JSON.parse(content);
+                        if (rData) return resolve(rData);
+                    } catch (error) {
+                        return resolve(null);
+                    }
+                }));
+            }));
+        }
+    }
+    HttpHelper.HttpUtils = HttpUtils;
+})(HttpHelper || (HttpHelper = {}));
+
+var WishResponseData_S;
+
+(function(WishResponseData_S) {
+    class WishItem2GV0 {}
+    WishResponseData_S.WishItem2GV0 = WishItem2GV0;
+    class WishListQueueResopnse {}
+    WishResponseData_S.WishListQueueResopnse = WishListQueueResopnse;
+    class ApplySendWishItemResponse {}
+    WishResponseData_S.ApplySendWishItemResponse = ApplySendWishItemResponse;
+    class CancelWishSendResponse {}
+    WishResponseData_S.CancelWishSendResponse = CancelWishSendResponse;
+    class AddwishItemResponse {}
+    WishResponseData_S.AddwishItemResponse = AddwishItemResponse;
+    class DeleteWishItemResponse {}
+    WishResponseData_S.DeleteWishItemResponse = DeleteWishItemResponse;
+    class GetIconUrlByAssetIdsResponse {}
+    WishResponseData_S.GetIconUrlByAssetIdsResponse = GetIconUrlByAssetIdsResponse;
+    class WishNewRecommend {}
+    WishResponseData_S.WishNewRecommend = WishNewRecommend;
+    class WishRecommendItemResponse {}
+    WishResponseData_S.WishRecommendItemResponse = WishRecommendItemResponse;
+    class HotItemResponse {
+        constructor() {
+            this.itemIds = [];
+        }
+    }
+    WishResponseData_S.HotItemResponse = HotItemResponse;
+    class Itemnotify {}
+    WishResponseData_S.Itemnotify = Itemnotify;
+    class PushData {}
+    WishResponseData_S.PushData = PushData;
+})(WishResponseData_S || (WishResponseData_S = {}));
+
+var ExtraInformationType;
+
+(function(ExtraInformationType) {
+    ExtraInformationType[ExtraInformationType["UNKNOW_ITEM"] = 0] = "UNKNOW_ITEM";
+    ExtraInformationType[ExtraInformationType["NOT_ACQUIRED"] = 1] = "NOT_ACQUIRED";
+    ExtraInformationType[ExtraInformationType["NOT_VIP"] = 2] = "NOT_VIP";
+    ExtraInformationType[ExtraInformationType["STORE_PURCHASED"] = 3] = "STORE_PURCHASED";
+    ExtraInformationType[ExtraInformationType["EVENT_ACQUIRED"] = 4] = "EVENT_ACQUIRED";
+    ExtraInformationType[ExtraInformationType["ITEM_FOR_FREE"] = 5] = "ITEM_FOR_FREE";
+    ExtraInformationType[ExtraInformationType["VIP_PRIVILEGE"] = 6] = "VIP_PRIVILEGE";
+    ExtraInformationType[ExtraInformationType["ACTIVITY_WEEK_SEND_ITEM"] = 7] = "ACTIVITY_WEEK_SEND_ITEM";
+    ExtraInformationType[ExtraInformationType["INIT_SEND_AVATAR_ITEM"] = 8] = "INIT_SEND_AVATAR_ITEM";
+    ExtraInformationType[ExtraInformationType["UNKNOW_ACQUIRED"] = 9] = "UNKNOW_ACQUIRED";
+    ExtraInformationType[ExtraInformationType["OUTFIT"] = 10] = "OUTFIT";
+})(ExtraInformationType || (ExtraInformationType = {}));
+
+var AcquiredFrom;
+
+(function(AcquiredFrom) {
+    AcquiredFrom[AcquiredFrom["无获取途径"] = 0] = "无获取途径";
+    AcquiredFrom[AcquiredFrom["免费商品"] = 1] = "免费商品";
+    AcquiredFrom[AcquiredFrom["vip权益"] = 2] = "vip权益";
+    AcquiredFrom[AcquiredFrom["商城购买"] = 3] = "商城购买";
+    AcquiredFrom[AcquiredFrom["活动获取"] = 4] = "活动获取";
+    AcquiredFrom[AcquiredFrom["盲盒"] = 5] = "盲盒";
+    AcquiredFrom[AcquiredFrom["积分"] = 6] = "积分";
+})(AcquiredFrom || (AcquiredFrom = {}));
+
+var PermissionStatus;
+
+(function(PermissionStatus) {
+    PermissionStatus[PermissionStatus["未知"] = 0] = "未知";
+    PermissionStatus[PermissionStatus["可用"] = 1] = "可用";
+    PermissionStatus[PermissionStatus["不可用"] = 2] = "不可用";
+})(PermissionStatus || (PermissionStatus = {}));
+
+class ItemJsonData {
+    constructor() {
+        this.onUpdateData = new Action1;
+    }
+    toString() {
+        return JSON.stringify({
+            itemId: this.itemId,
+            tagIds: this.tagIds,
+            prefabGuid: this.prefabGuid,
+            content: this.content,
+            commodityId: this.commodityId,
+            grade: this.grade,
+            discount: this.discount,
+            acquiredFrom: this.acquiredFrom
+        });
+    }
+}
+
+class SuitData {
+    static toJson(data) {
+        return JSON.stringify(data);
+    }
+    static parse(str) {
+        return JSON.parse(str);
+    }
+    static checkDress(char, suitData) {
+        const v2 = char.description.advance;
+        const frontHair = v2.hair.frontHair.style;
+        const behindHair = v2.hair.backHair.style;
+        const upperCloth = v2.clothing.upperCloth.style;
+        const lowerCloth = v2.clothing.lowerCloth.style;
+        const gloves = v2.clothing.gloves.style;
+        const shoe = v2.clothing.shoes.style;
+        return (suitData.frontHair ? frontHair == suitData.frontHair : true) && (suitData.behindHair ? behindHair == suitData.behindHair : true) && (suitData.upperCloth ? upperCloth == suitData.upperCloth : true) && (suitData.lowerCloth ? lowerCloth == suitData.lowerCloth : true) && (suitData.gloves ? gloves == suitData.gloves : true) && (suitData.shoe ? shoe == suitData.shoe : true);
+    }
+    static async guidToJson(guid, char) {
+        const loadSuccess = await AssetUtil.asyncDownloadAsset(guid);
+        if (loadSuccess) {
+            char.setDescription([ guid ]);
+            await TimeUtil.delaySecond(TimeUtil.deltatime());
+            await char.asyncReady();
+            const v2 = char.description.advance;
+            const suitData = new SuitData;
+            suitData.somatotype = char.description.advance.base.characterSetting.somatotype;
+            suitData.frontHair = v2.hair.frontHair.style;
+            suitData.behindHair = v2.hair.backHair.style;
+            suitData.upperCloth = v2.clothing.upperCloth.style;
+            suitData.lowerCloth = v2.clothing.lowerCloth.style;
+            suitData.gloves = v2.clothing.gloves.style;
+            suitData.shoe = v2.clothing.shoes.style;
+            return JSON.stringify(suitData);
+        }
+        return null;
+    }
+}
+
+var foreign159 = Object.freeze({
+    __proto__: null,
+    get AcquiredFrom() {
+        return AcquiredFrom;
+    },
+    get ExtraInformationType() {
+        return ExtraInformationType;
+    },
+    get HttpHelper() {
+        return HttpHelper;
+    },
+    ItemJsonData: ItemJsonData,
+    MaxCount: MaxCount,
+    get PermissionStatus() {
+        return PermissionStatus;
+    },
+    ResultData: ResultData,
+    SuitData: SuitData,
+    get WishResponseData_S() {
+        return WishResponseData_S;
+    },
+    default: PortalData
+});
+
+let WishPanel_Generate = class WishPanel_Generate extends UIScript {
+    get mLeftCanvas() {
+        if (!this.mLeftCanvas_Internal && this.uiWidgetBase) {
+            this.mLeftCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas");
+        }
+        return this.mLeftCanvas_Internal;
+    }
+    get mItemBgImage() {
+        if (!this.mItemBgImage_Internal && this.uiWidgetBase) {
+            this.mItemBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mItemBgImage");
+        }
+        return this.mItemBgImage_Internal;
+    }
+    get mItemIconImage() {
+        if (!this.mItemIconImage_Internal && this.uiWidgetBase) {
+            this.mItemIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mItemBgImage/mItemIconImage");
+        }
+        return this.mItemIconImage_Internal;
+    }
+    get mSaveButton() {
+        if (!this.mSaveButton_Internal && this.uiWidgetBase) {
+            this.mSaveButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mSaveButton");
+        }
+        return this.mSaveButton_Internal;
+    }
+    get mSaveTextBlock() {
+        if (!this.mSaveTextBlock_Internal && this.uiWidgetBase) {
+            this.mSaveTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mSaveButton/mSaveTextBlock");
+        }
+        return this.mSaveTextBlock_Internal;
+    }
+    get mListBgImage() {
+        if (!this.mListBgImage_Internal && this.uiWidgetBase) {
+            this.mListBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListBgImage");
+        }
+        return this.mListBgImage_Internal;
+    }
+    get mListCanvas() {
+        if (!this.mListCanvas_Internal && this.uiWidgetBase) {
+            this.mListCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas");
+        }
+        return this.mListCanvas_Internal;
+    }
+    get mTab1Canvas() {
+        if (!this.mTab1Canvas_Internal && this.uiWidgetBase) {
+            this.mTab1Canvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mTab1Canvas");
+        }
+        return this.mTab1Canvas_Internal;
+    }
+    get mTab1ScrollBox() {
+        if (!this.mTab1ScrollBox_Internal && this.uiWidgetBase) {
+            this.mTab1ScrollBox_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mTab1Canvas/mTab1ScrollBox");
+        }
+        return this.mTab1ScrollBox_Internal;
+    }
+    get mTab1ContentCanvas() {
+        if (!this.mTab1ContentCanvas_Internal && this.uiWidgetBase) {
+            this.mTab1ContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mTab1Canvas/mTab1ScrollBox/mTab1ContentCanvas");
+        }
+        return this.mTab1ContentCanvas_Internal;
+    }
+    get mWishTipsTextBlock() {
+        if (!this.mWishTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mWishTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mTab1Canvas/mTab1ScrollBox/mTab1ContentCanvas/mWishTipsTextBlock");
+        }
+        return this.mWishTipsTextBlock_Internal;
+    }
+    get mItemScrollBox() {
+        if (!this.mItemScrollBox_Internal && this.uiWidgetBase) {
+            this.mItemScrollBox_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mItemScrollBox");
+        }
+        return this.mItemScrollBox_Internal;
+    }
+    get mItemContentCanvas() {
+        if (!this.mItemContentCanvas_Internal && this.uiWidgetBase) {
+            this.mItemContentCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mListCanvas/mItemScrollBox/mItemContentCanvas");
+        }
+        return this.mItemContentCanvas_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mCloseButton");
+        }
+        return this.mCloseButton_Internal;
+    }
+    get mCloseImage() {
+        if (!this.mCloseImage_Internal && this.uiWidgetBase) {
+            this.mCloseImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/ListCanvas/mCloseButton/mCloseImage");
+        }
+        return this.mCloseImage_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mSaveButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
+        }));
+        this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mCloseButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        }));
+        this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mSaveTextBlock);
+        this.initLanguage(this.mWishTipsTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+WishPanel_Generate = __decorate([ UIBind("UI/module/WishModule/WishPanel.ui") ], WishPanel_Generate);
+
+var WishPanel_Generate$1 = WishPanel_Generate;
+
+var foreign215 = Object.freeze({
+    __proto__: null,
+    default: WishPanel_Generate$1
+});
+
+class WishData extends Subdata {}
+
+class WishDataV0 {}
+
+var foreign149 = Object.freeze({
+    __proto__: null,
+    WishData: WishData,
+    WishDataV0: WishDataV0
+});
+
+class WishTools {
+    static async getWishDataV0s(userId) {
+        let wishDataV0s = [];
+        let wishListQueueResopnse = await PortalData.wishListQueueRequest(userId, 1, 100);
+        if (!wishListQueueResopnse || !wishListQueueResopnse.data || !wishListQueueResopnse.data.rows) {
+            console.error(`wfz - 获取心愿单失败`);
+            return wishDataV0s;
+        }
+        let itemIds = [];
+        let rows = wishListQueueResopnse.data.rows;
+        for (let i = 0; i < rows.length; ++i) {
+            let itemId = rows[i].itemId;
+            if (!itemId || itemId.length == 0) continue;
+            itemIds.push(Number(itemId));
+        }
+        if (itemIds.length == 0) {
+            console.error(`wfz - 心愿单为空`);
+            return wishDataV0s;
+        }
+        let commodityListObj = await AvatarEditorService.asyncGetCommodityListByItemIds(itemIds);
+        if (!commodityListObj || !commodityListObj.data) {
+            console.error(`wfz - 获取心愿单商品信息失败`);
+            return wishDataV0s;
+        }
+        let data = commodityListObj.data;
+        for (let i = 0; i < itemIds.length; ++i) {
+            let jsonData = data[itemIds[i]];
+            if (!jsonData || !jsonData?.commodityId) continue;
+            let wishDataV0 = new WishDataV0;
+            wishDataV0.commodityId = jsonData?.commodityId;
+            wishDataV0.iconGuid = jsonData?.iconGuid;
+            wishDataV0.itemId = jsonData?.itemId;
+            wishDataV0.itemName = jsonData?.itemName;
+            wishDataV0.prefabGuid = jsonData?.prefabGuid;
+            wishDataV0.price = jsonData?.price;
+            wishDataV0.itemType = jsonData?.itemType;
+            wishDataV0.userId = userId;
+            wishDataV0s.push(wishDataV0);
+        }
+        if (wishDataV0s.length == 0) {
+            console.error(`wfz - 心愿单数据转化失败`);
+        }
+        return wishDataV0s;
+    }
+}
+
+WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49 ];
+
+var foreign152 = Object.freeze({
+    __proto__: null,
+    default: WishTools
+});
+
+let WishItem_Generate = class WishItem_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mBgImage");
+        }
+        return this.mBgImage_Internal;
+    }
+    get mIconImage() {
+        if (!this.mIconImage_Internal && this.uiWidgetBase) {
+            this.mIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mIconImage");
+        }
+        return this.mIconImage_Internal;
+    }
+    get mMaskImage() {
+        if (!this.mMaskImage_Internal && this.uiWidgetBase) {
+            this.mMaskImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMaskImage");
+        }
+        return this.mMaskImage_Internal;
+    }
+    get mSelectButton() {
+        if (!this.mSelectButton_Internal && this.uiWidgetBase) {
+            this.mSelectButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mSelectButton");
+        }
+        return this.mSelectButton_Internal;
+    }
+    get mCoinCanvas() {
+        if (!this.mCoinCanvas_Internal && this.uiWidgetBase) {
+            this.mCoinCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCoinCanvas");
+        }
+        return this.mCoinCanvas_Internal;
+    }
+    get mCoinIconImage() {
+        if (!this.mCoinIconImage_Internal && this.uiWidgetBase) {
+            this.mCoinIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCoinCanvas/mCoinIconImage");
+        }
+        return this.mCoinIconImage_Internal;
+    }
+    get mPriceTextBlock() {
+        if (!this.mPriceTextBlock_Internal && this.uiWidgetBase) {
+            this.mPriceTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mCoinCanvas/mPriceTextBlock");
+        }
+        return this.mPriceTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mSelectButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
+        }));
+        this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mPriceTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+WishItem_Generate = __decorate([ UIBind("UI/module/WishModule/WishItem.ui") ], WishItem_Generate);
+
+var WishItem_Generate$1 = WishItem_Generate;
+
+var foreign214 = Object.freeze({
+    __proto__: null,
+    default: WishItem_Generate$1
+});
+
+class WishItem extends WishItem_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.wishModuleC = null;
+        this.wishDataV0 = null;
+        this.isSelect = false;
+    }
+    get getWishModuleC() {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+        this.bindAction();
+    }
+    initUI() {
+        this.mIconImage.imageGuid = `32115`;
+        this.updateSelectStateUI();
+    }
+    bindButton() {
+        this.mSelectButton.onClicked.add(this.addItemButton.bind(this));
+    }
+    bindAction() {
+        this.getWishModuleC.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+    }
+    addItemButton() {
+        this.getWishModuleC.onSelectItemAction.call(this.wishDataV0);
+    }
+    initItem(wishDataV0) {
+        this.wishDataV0 = wishDataV0;
+        let icon = wishDataV0.iconGuid;
+        if (WishTools.pendantItemTypes.includes(wishDataV0.itemType)) {
+            this.mIconImage.imageInfo.setByAssetIcon(wishDataV0.prefabGuid, mw.AssetIconSize.Icon_128px);
+        } else {
+            this.mIconImage.imageGuid = icon;
+        }
+        this.mPriceTextBlock.text = wishDataV0.price.toString();
+        this.updateSelectState(false);
+    }
+    addSelectItemAction(wishDataV0) {
+        this.updateSelectState(this.wishDataV0.itemId == wishDataV0.itemId);
+    }
+    updateSelectState(isSelect) {
+        if (this.isSelect == isSelect) return;
+        this.isSelect = isSelect;
+        this.updateSelectStateUI();
+    }
+    updateSelectStateUI() {
+        if (this.isSelect) {
+            this.mSelectButton.renderOpacity = 1;
+        } else {
+            this.mSelectButton.renderOpacity = 0;
+        }
+    }
+}
+
+var foreign146 = Object.freeze({
+    __proto__: null,
+    default: WishItem
+});
+
+class WishPanel extends WishPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.wishModuleC = null;
+        this.wishDataV0 = null;
+        this.wishItems = [];
+    }
+    get getWishModuleC() {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.bindButton();
+        this.bindAction();
+    }
+    bindButton() {
+        this.mSaveButton.onClicked.add(this.addSaveButton.bind(this));
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+    }
+    addSaveButton() {
+        this.getWishModuleC.onRequestBuyAction.call(this.wishDataV0);
+    }
+    addCloseButton() {
+        this.hide();
+    }
+    bindAction() {
+        this.getWishModuleC.onSelectItemAction.add(this.addSelectItemAction.bind(this));
+    }
+    addSelectItemAction(wishDataV0) {
+        this.wishDataV0 = wishDataV0;
+        this.updateIcon();
+    }
+    updateIcon() {
+        let icon = this.wishDataV0.iconGuid;
+        if (WishTools.pendantItemTypes.includes(this.wishDataV0.itemType)) {
+            this.mItemIconImage.imageInfo.setByAssetIcon(this.wishDataV0.prefabGuid, mw.AssetIconSize.Icon_128px);
+        } else {
+            this.mItemIconImage.imageGuid = icon;
+        }
+    }
+    refreshPanel(wishDataV0s) {
+        if (wishDataV0s.length > this.wishItems.length) {
+            for (let i = 0; i < this.wishItems.length; ++i) {
+                this.wishItems[i].initItem(wishDataV0s[i]);
+                Utils.setWidgetVisibility(this.wishItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = this.wishItems.length; i < wishDataV0s.length; ++i) {
+                let worldItem = UIService.create(WishItem);
+                worldItem.initItem(wishDataV0s[i]);
+                this.mItemContentCanvas.addChild(worldItem.uiObject);
+                this.wishItems.push(worldItem);
+            }
+        } else {
+            for (let i = 0; i < wishDataV0s.length; ++i) {
+                this.wishItems[i].initItem(wishDataV0s[i]);
+                Utils.setWidgetVisibility(this.wishItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+            }
+            for (let i = wishDataV0s.length; i < this.wishItems.length; ++i) {
+                Utils.setWidgetVisibility(this.wishItems[i].uiObject, mw.SlateVisibility.Collapsed);
+            }
+        }
+        if (this.wishDataV0 && this.wishDataV0?.itemId != wishDataV0s[0]?.itemId) {
+            this.getWishModuleC.onSelectItemAction.call(this.wishDataV0);
+        } else {
+            this.wishDataV0 = wishDataV0s[0];
+            this.wishItems[0].updateSelectState(true);
+            this.updateIcon();
+        }
+        this.show();
+    }
+    onShow(...params) {
+        Event.dispatchToLocal(EventType.OnOffMainUI, false);
+    }
+    onHide() {
+        Event.dispatchToLocal(EventType.OnOffMainUI, true);
+    }
+}
+
+var foreign147 = Object.freeze({
+    __proto__: null,
+    default: WishPanel
+});
+
+class WishModuleC extends ModuleC {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+        this.mallModuleC = null;
+        this.onSelectItemAction = new Action1;
+        this.onRequestBuyAction = new Action1;
+        this.onBuyAction = new Action1;
+        this.onOpenWishAction = new Action;
+    }
+    get getHudModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    get getMallModuleC() {
+        if (!this.mallModuleC) {
+            this.mallModuleC = ModuleService.getModule(MallModuleC);
+        }
+        return this.mallModuleC;
+    }
+    get getWishPanel() {
+        if (!this.wishPanel) {
+            this.wishPanel = UIService.getUI(WishPanel);
+        }
+        return this.wishPanel;
+    }
+    onStart() {
+        this.bindAction();
+    }
+    bindAction() {
+        this.getHudModuleC.onOpenWishAction.add(this.addOpenWishAction.bind(this));
+        this.onOpenWishAction.add(this.addOpenWishOrMallAction.bind(this));
+        this.onRequestBuyAction.add(this.addRequestBuyAction.bind(this));
+        this.onBuyAction.add(this.addBuyAction.bind(this));
+    }
+    addOpenWishAction() {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
+            if (!wishDataV0s || wishDataV0s.length == 0) {
+                Notice.showDownNotice(`你还没有添加心愿单`);
+                Notice.showDownNotice(`请在商城添加心愿单`);
+                this.getHudModuleC.onOpenClothAction.call();
+                return;
+            }
+            this.getWishPanel.refreshPanel(wishDataV0s);
+        }));
+    }
+    addOpenWishOrMallAction() {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
+            if (!wishDataV0s || wishDataV0s.length == 0) {
+                this.getHudModuleC.onOpenMallAction.call();
+                this.getHudModuleC.onOpenTaskAction.call();
+                return;
+            }
+            this.getWishPanel.refreshPanel(wishDataV0s);
+        }));
+    }
+    addRequestBuyAction(wishDataV0) {
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await this.getMallModuleC.updateNickWish(wishDataV0);
+            this.getWishPanel.hide();
+        }));
+    }
+    addBuyAction(wishDataV0) {
+        console.error(JSON.stringify(wishDataV0));
+        ExecutorManager.instance.pushAsyncExecutor((async () => {
+            await this.giveOtherBuyWish(wishDataV0);
+        }));
+    }
+    async giveOtherBuyWish(wishDataV0) {
+        let itemId = wishDataV0.itemId;
+        let userId = wishDataV0.userId;
+        let applySendWishItemResponse = await PortalData.applySendWishItemRequest(itemId, userId);
+        let status = applySendWishItemResponse.data.status;
+        switch (status) {
+          case 0:
+            await this.placeOrder(wishDataV0, applySendWishItemResponse.data.token);
+            break;
+
+          case 1:
+            Notice.showDownNotice(`道具不合法,联系作者解决`);
+            break;
+
+          case 2:
+            Notice.showDownNotice(`用户不存在`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 3:
+            Notice.showDownNotice(`非好友关系`);
+            RoomService.showUserProfile((() => {
+                RoomService.showUserProfile((() => {
+                    Notice.showDownNotice(`非好友关系`);
+                }), userId);
+            }), userId);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 4:
+            Notice.showDownNotice(`对方拥有`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 5:
+            Notice.showDownNotice(`联系作者解决`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 6:
+            Notice.showDownNotice(`超过最大次数`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 7:
+            Notice.showDownNotice(`不是对方的心愿物品`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 8:
+            Notice.showDownNotice(`不能给自己赠送物品`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 9:
+            Notice.showDownNotice(`功能未开启`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          case 10:
+            Notice.showDownNotice(`物品正在被其他玩家赠送,请稍后再试`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+
+          default:
+            Notice.showDownNotice(`联系作者解决`);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            break;
+        }
+    }
+    async placeOrder(wishDataV0, token) {
+        let itemId = wishDataV0.itemId;
+        let userId = wishDataV0.userId;
+        let commodityId = wishDataV0.commodityId;
+        let cInfo = {
+            commodityId: commodityId,
+            number: 1,
+            expand: {
+                shippedParams: {
+                    shippedType: "1",
+                    shippedArg: token
+                }
+            }
+        };
+        let timeoutId = setTimeout((async () => {
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+            Notice.showDownNotice(`网络超时 取消赠送`);
+        }), 60 * 1e3);
+        await this.syncPlaceOrder(cInfo, (async status => {
+            clearTimeout(timeoutId);
+            let wishDataV0 = new WishDataV0;
+            wishDataV0.userId = userId;
+            await this.getMallModuleC.updateNickWish(wishDataV0);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+        }), (async status => {
+            clearTimeout(timeoutId);
+            await PortalData.cancelSendWishItemRequest([ itemId ], userId);
+        }));
+    }
+    syncPlaceOrder(cInfo, successCallback, failCallback) {
+        return new Promise((resolve => {
+            mw.AvatarEditorService.placeOrder([ cInfo ], ((stateNum, msg, orderID) => {
+                switch (stateNum) {
+                  case 200:
+                    Notice.showDownNotice(`赠送成功`);
+                    if (successCallback) successCallback(stateNum);
+                    break;
+
+                  case 408:
+                    Notice.showDownNotice(`请求超时`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 409:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 410:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 501:
+                    Notice.showDownNotice(`余额不足`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 502:
+                    Notice.showDownNotice(`暂未开放购买`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 503:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 504:
+                    Notice.showDownNotice(`用户取消`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 505:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 506:
+                    Notice.showDownNotice(`该版本不支持`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  case 507:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+
+                  default:
+                    Notice.showDownNotice(`赠送失败`);
+                    if (failCallback) failCallback(stateNum);
+                    break;
+                }
+                return resolve();
+            }));
+        }));
+    }
+}
+
+var foreign150 = Object.freeze({
+    __proto__: null,
+    default: WishModuleC
+});
+
 class GuidePanel extends GuidePanel_Generate$1 {
     constructor() {
         super(...arguments);
@@ -8275,6 +9257,7 @@ class InteractionModuleC extends ModuleC {
         super(...arguments);
         this.onClickPanel = null;
         this.hudModuleC = null;
+        this.wishModuleC = null;
         this.adPanel = null;
         this.tipsPanel = null;
         this.onClickBagItemAction = new Action1;
@@ -8296,6 +9279,12 @@ class InteractionModuleC extends ModuleC {
             this.hudModuleC = ModuleService.getModule(HUDModuleC);
         }
         return this.hudModuleC;
+    }
+    get getWishModuleC() {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
     }
     get getAdPanel() {
         if (this.adPanel == null) {
@@ -8451,15 +9440,13 @@ class InteractionModuleC extends ModuleC {
         if (this.guideStep >= this.guideBagIds.length - 1) {
             this.localPlayer.character.asyncReady().then((() => {
                 TimeUtil.delaySecond(1).then((() => {
-                    this.getHUDModuleC.onOpenMallAction.call();
-                    this.getHUDModuleC.onOpenTaskAction.call();
+                    this.getWishModuleC.onOpenWishAction.call();
                 }));
             }));
             return;
         }
         this.getGuidePanel.showStartTips((() => {
-            this.getHUDModuleC.onOpenMallAction.call();
-            this.getHUDModuleC.onOpenTaskAction.call();
+            this.getWishModuleC.onOpenWishAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {
@@ -8738,7 +9725,7 @@ ActionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionItem.ui")
 
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign160 = Object.freeze({
+var foreign169 = Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -8828,7 +9815,7 @@ ActionTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionTabIte
 
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign161 = Object.freeze({
+var foreign170 = Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -8944,7 +9931,7 @@ BagItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagItem.ui") ], Ba
 
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign162 = Object.freeze({
+var foreign171 = Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -9055,7 +10042,7 @@ BagTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagTabItem.ui")
 
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign163 = Object.freeze({
+var foreign172 = Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -9162,7 +10149,7 @@ ChatItem1_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem1.ui") ]
 
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign165 = Object.freeze({
+var foreign174 = Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -9245,7 +10232,7 @@ ChatItem2_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem2.ui") ]
 
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign166 = Object.freeze({
+var foreign175 = Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -9335,7 +10322,7 @@ ExpressionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ExpressionI
 
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign169 = Object.freeze({
+var foreign178 = Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -9739,7 +10726,7 @@ DanMuPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/DanMuPanel.ui")
 
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign168 = Object.freeze({
+var foreign177 = Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -10963,9 +11950,11 @@ Mall.defaultAssetIds = [ `398608`, `77763`, `292004`, `343474`, `292002`, `34346
 
 Mall.headTabIds = [ Tab2Type.Tab2_Face, Tab2Type.Tab2_Eyebrows, Tab2Type.Tab2_Expression, Tab3Type.Tab3_PupilStyle, Tab3Type.Tab3_Lens, Tab3Type.Tab3_UpperHighlight, Tab3Type.Tab3_LowerHighlight, Tab3Type.Tab3_Eyelashes, Tab3Type.Tab3_Eyeshadow, Tab3Type.Tab3_Blush, Tab3Type.Tab3_LipMakeup, Tab3Type.Tab3_FaceTattoo, Tab3Type.Tab3_FullHair, Tab3Type.Tab3_FrontHair, Tab3Type.Tab3_BackHair ];
 
+var Mall$1 = Mall;
+
 var foreign106 = Object.freeze({
     __proto__: null,
-    default: Mall
+    default: Mall$1
 });
 
 let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
@@ -11112,7 +12101,7 @@ ColorPickPanel_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickPan
 
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign176 = Object.freeze({
+var foreign185 = Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -11151,7 +12140,7 @@ ColorPickTab1_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab1
 
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign177 = Object.freeze({
+var foreign186 = Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -11239,7 +12228,7 @@ ColorPickTab2_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab2
 
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign178 = Object.freeze({
+var foreign187 = Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -11362,7 +12351,7 @@ ColorPickTab3_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab3
 
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign179 = Object.freeze({
+var foreign188 = Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -11501,7 +12490,7 @@ class TouchScript {
     }
 }
 
-var foreign151 = Object.freeze({
+var foreign160 = Object.freeze({
     __proto__: null,
     get Enums() {
         return Enums;
@@ -11733,7 +12722,7 @@ MallPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallPanel.ui") ],
 
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign185 = Object.freeze({
+var foreign194 = Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -11806,7 +12795,7 @@ MallItem_Big_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Big.u
 
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign180 = Object.freeze({
+var foreign189 = Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -12033,7 +13022,7 @@ MallItem_Character_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem
 
 var MallItem_Character_Generate$1 = MallItem_Character_Generate;
 
-var foreign181 = Object.freeze({
+var foreign190 = Object.freeze({
     __proto__: null,
     default: MallItem_Character_Generate$1
 });
@@ -12164,7 +13153,7 @@ MallItem_Color_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Col
 
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign182 = Object.freeze({
+var foreign191 = Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -12294,7 +13283,7 @@ MallItem_Self_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Self
 
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign183 = Object.freeze({
+var foreign192 = Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -12340,7 +13329,7 @@ class MallItem_Self extends MallItem_Self_Generate$1 {
             this.mIconImage.imageColor = new mw.LinearColor(.3098, .1921, .7176);
             break;
         }
-        this.isDefault = Mall.isDefaultAssetId(this.assetId);
+        this.isDefault = Mall$1.isDefaultAssetId(this.assetId);
         Utils.setWidgetVisibility(this.mCloseButton, this.isDefault ? mw.SlateVisibility.Collapsed : mw.SlateVisibility.Visible);
     }
 }
@@ -12434,7 +13423,7 @@ MallItem_Small_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Sma
 
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign184 = Object.freeze({
+var foreign193 = Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -12486,8 +13475,8 @@ class MallItem_Small extends MallItem_Small_Generate$1 {
         this.tabId = tabId;
         this.assetId = assetId;
         this.mIconImage.imageColor = mw.LinearColor.white;
-        this.isSupportColor = Mall.isSupportColorPick(tabId);
-        this.isRemovableTabId = Mall.isRemovableTabId(tabId);
+        this.isSupportColor = Mall$1.isSupportColorPick(tabId);
+        this.isRemovableTabId = Mall$1.isRemovableTabId(tabId);
         switch (tabId) {
           case Tab3Type.Tab3_Lens:
           case Tab3Type.Tab3_UpperHighlight:
@@ -12824,7 +13813,7 @@ MallTab1_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab1.ui") ], M
 
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign186 = Object.freeze({
+var foreign195 = Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -12941,7 +13930,7 @@ MallTab2_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab2.ui") ], M
 
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign187 = Object.freeze({
+var foreign196 = Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -13056,7 +14045,7 @@ MallTab3_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab3.ui") ], M
 
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign188 = Object.freeze({
+var foreign197 = Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -13927,7 +14916,7 @@ class MallPanel extends MallPanel_Generate$1 {
             this.initMallItemSmall();
         }
         this.checkMallItemState();
-        this.getMallModuleC.onSwitchCameraAction.call(Mall.isHeadTabId(this.currentConfigId) ? 1 : 2);
+        this.getMallModuleC.onSwitchCameraAction.call(Mall$1.isHeadTabId(this.currentConfigId) ? 1 : 2);
     }
     initMallItemBig() {
         if (this.mallItemAssetIds.length > this.mallItem_Big.length) {
@@ -14491,7 +15480,7 @@ MallTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallTipsPanel
 
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign189 = Object.freeze({
+var foreign198 = Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -14621,7 +15610,7 @@ MallVipTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallVipTip
 
 var MallVipTipsPanel_Generate$1 = MallVipTipsPanel_Generate;
 
-var foreign190 = Object.freeze({
+var foreign199 = Object.freeze({
     __proto__: null,
     default: MallVipTipsPanel_Generate$1
 });
@@ -14850,24 +15839,24 @@ class MallModuleC extends ModuleC {
     initUsingCharacterData() {
         this.usingAssetIdMap.clear();
         this.usingAssetIds.length = 0;
-        let fullHair = Mall.getAssetId(Tab3Type.Tab3_FullHair);
+        let fullHair = Mall$1.getAssetId(Tab3Type.Tab3_FullHair);
         if (fullHair && fullHair.length > 0) {
             let fullHairElement = GameConfig.FullHair.findElement(`AssetId`, fullHair);
             if (fullHairElement) {
                 this.usingAssetIdMap.set(Tab3Type.Tab3_FullHair, new AssetIdInfoData(fullHair));
             } else {
-                let frontHair = Mall.getAssetId(Tab3Type.Tab3_FrontHair);
+                let frontHair = Mall$1.getAssetId(Tab3Type.Tab3_FrontHair);
                 if (frontHair && frontHair.length > 0) this.usingAssetIdMap.set(Tab3Type.Tab3_FrontHair, new AssetIdInfoData(frontHair));
                 this.usingAssetIdMap.set(Tab3Type.Tab3_BackHair, new AssetIdInfoData(fullHair));
             }
         }
-        let top = Mall.getAssetId(Tab2Type.Tab2_Top);
+        let top = Mall$1.getAssetId(Tab2Type.Tab2_Top);
         if (top && top.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Top, new AssetIdInfoData(top));
-        let bottom = Mall.getAssetId(Tab2Type.Tab2_Bottom);
+        let bottom = Mall$1.getAssetId(Tab2Type.Tab2_Bottom);
         if (bottom && bottom.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Bottom, new AssetIdInfoData(bottom));
-        let shoes = Mall.getAssetId(Tab2Type.Tab2_Shoes);
+        let shoes = Mall$1.getAssetId(Tab2Type.Tab2_Shoes);
         if (shoes && shoes.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Shoes, new AssetIdInfoData(shoes));
-        let gloves = Mall.getAssetId(Tab2Type.Tab2_Gloves);
+        let gloves = Mall$1.getAssetId(Tab2Type.Tab2_Gloves);
         if (gloves && gloves.length > 0) this.usingAssetIdMap.set(Tab2Type.Tab2_Gloves, new AssetIdInfoData(gloves));
         let slot = this.localPlayer.character.description.advance.slotAndDecoration.slot;
         for (let i = 0; i < slot.length; ++i) {
@@ -14878,28 +15867,28 @@ class MallModuleC extends ModuleC {
                 this.usingAssetIds.push(Number(decoration.attachmentAssetId));
             }
         }
-        let eyebrows = Mall.getAssetId(Tab2Type.Tab2_Eyebrows);
+        let eyebrows = Mall$1.getAssetId(Tab2Type.Tab2_Eyebrows);
         if (eyebrows && eyebrows.length > 0 && eyebrows != `32115`) this.usingAssetIdMap.set(Tab2Type.Tab2_Eyebrows, new AssetIdInfoData(eyebrows));
-        let pupilStyle = Mall.getAssetId(Tab3Type.Tab3_PupilStyle);
+        let pupilStyle = Mall$1.getAssetId(Tab3Type.Tab3_PupilStyle);
         if (pupilStyle && pupilStyle.length > 0 && pupilStyle != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_PupilStyle, new AssetIdInfoData(pupilStyle));
-        let Lens = Mall.getAssetId(Tab3Type.Tab3_Lens);
+        let Lens = Mall$1.getAssetId(Tab3Type.Tab3_Lens);
         if (Lens && Lens.length > 0 && Lens != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Lens, new AssetIdInfoData(Lens));
-        let UpperHighlight = Mall.getAssetId(Tab3Type.Tab3_UpperHighlight);
+        let UpperHighlight = Mall$1.getAssetId(Tab3Type.Tab3_UpperHighlight);
         if (UpperHighlight && UpperHighlight.length > 0 && UpperHighlight != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_UpperHighlight, new AssetIdInfoData(UpperHighlight));
-        let LowerHighlight = Mall.getAssetId(Tab3Type.Tab3_LowerHighlight);
+        let LowerHighlight = Mall$1.getAssetId(Tab3Type.Tab3_LowerHighlight);
         if (LowerHighlight && LowerHighlight.length > 0 && LowerHighlight != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_LowerHighlight, new AssetIdInfoData(LowerHighlight));
-        let Eyelashes = Mall.getAssetId(Tab3Type.Tab3_Eyelashes);
+        let Eyelashes = Mall$1.getAssetId(Tab3Type.Tab3_Eyelashes);
         if (Eyelashes && Eyelashes.length > 0 && Eyelashes != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyelashes, new AssetIdInfoData(Eyelashes));
-        let Eyeshadow = Mall.getAssetId(Tab3Type.Tab3_Eyeshadow);
+        let Eyeshadow = Mall$1.getAssetId(Tab3Type.Tab3_Eyeshadow);
         if (Eyeshadow && Eyeshadow.length > 0 && Eyeshadow != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Eyeshadow, new AssetIdInfoData(Eyeshadow));
-        let Blush = Mall.getAssetId(Tab3Type.Tab3_Blush);
+        let Blush = Mall$1.getAssetId(Tab3Type.Tab3_Blush);
         if (Blush && Blush.length > 0 && Blush != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_Blush, new AssetIdInfoData(Blush));
-        let LipMakeup = Mall.getAssetId(Tab3Type.Tab3_LipMakeup);
+        let LipMakeup = Mall$1.getAssetId(Tab3Type.Tab3_LipMakeup);
         if (LipMakeup && LipMakeup.length > 0 && LipMakeup != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
     }
     addCloseMallItemSelfAction(tabId, assetId) {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            if (Mall.isClothingTabId(tabId)) {
+            if (Mall$1.isClothingTabId(tabId)) {
                 await this.changeCharacter(tabId, assetId);
             } else {
                 if (!this.usingAssetIdMap.has(Number(assetId))) return;
@@ -14920,9 +15909,9 @@ class MallModuleC extends ModuleC {
         if (tabType == TabType.None) return;
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.changeCharacter(tabId, assetId);
-            if (!Mall.isRemovableTabId(tabId) || assetId == `0`) return;
+            if (!Mall$1.isRemovableTabId(tabId) || assetId == `0`) return;
             this.initUsingCharacterData();
-            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall.isSlot(tabId));
+            this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall$1.isSlot(tabId));
         }));
     }
     addDeleteItemAction(tabType, tabId, assetId) {
@@ -15454,7 +16443,7 @@ class MallModuleC extends ModuleC {
         if (!this.transitionNpc) await this.initTransitionNpc();
         this.transitionNpc.setDescription([ assetId ]);
         await this.transitionNpc.asyncReady();
-        await Mall.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
+        await Mall$1.copyCharacterClothingAndHair(this.transitionNpc, this.localPlayer.character);
     }
     async changeSlotAndDecoration(tagId, assetId, transform, slotIndex) {
         let decorationIndex = -1;
@@ -16620,6 +17609,12 @@ class MallModuleC extends ModuleC {
             }
         }));
     }
+    async updateNickWish(wishDataV0) {
+        await this.server.net_updateNickWish(wishDataV0);
+    }
+    net_giveSuccess() {
+        Notice.showDownNotice(`好友帮你购买成功`);
+    }
 }
 
 var foreign108 = Object.freeze({
@@ -16751,6 +17746,30 @@ let Nickname_Generate = class Nickname_Generate extends UIScript {
         }
         return this.mVipCountText_Internal;
     }
+    get mWishBgImage() {
+        if (!this.mWishBgImage_Internal && this.uiWidgetBase) {
+            this.mWishBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mWishBgImage");
+        }
+        return this.mWishBgImage_Internal;
+    }
+    get mWishIconImage() {
+        if (!this.mWishIconImage_Internal && this.uiWidgetBase) {
+            this.mWishIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mWishBgImage/mWishIconImage");
+        }
+        return this.mWishIconImage_Internal;
+    }
+    get mWishFlipBook() {
+        if (!this.mWishFlipBook_Internal && this.uiWidgetBase) {
+            this.mWishFlipBook_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mWishBgImage/mWishFlipBook");
+        }
+        return this.mWishFlipBook_Internal;
+    }
+    get mWishTipsTextBlock() {
+        if (!this.mWishTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mWishTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/NicknameCanvas/mWishBgImage/mWishTipsTextBlock");
+        }
+        return this.mWishTipsTextBlock_Internal;
+    }
     onAwake() {
         this.canUpdate = false;
         this.layer = mw.UILayerBottom;
@@ -16758,6 +17777,7 @@ let Nickname_Generate = class Nickname_Generate extends UIScript {
     }
     initButtons() {
         this.initLanguage(this.mVipCountText);
+        this.initLanguage(this.mWishTipsTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -16778,19 +17798,109 @@ Nickname_Generate = __decorate([ UIBind("UI/module/MallModule/Nickname.ui") ], N
 
 var Nickname_Generate$1 = Nickname_Generate;
 
-var foreign191 = Object.freeze({
+var foreign200 = Object.freeze({
     __proto__: null,
     default: Nickname_Generate$1
+});
+
+let OnClickWishPanel_Generate = class OnClickWishPanel_Generate extends UIScript {
+    get mBgImage() {
+        if (!this.mBgImage_Internal && this.uiWidgetBase) {
+            this.mBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mBgImage");
+        }
+        return this.mBgImage_Internal;
+    }
+    get mClickBtn() {
+        if (!this.mClickBtn_Internal && this.uiWidgetBase) {
+            this.mClickBtn_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mClickBtn");
+        }
+        return this.mClickBtn_Internal;
+    }
+    get mClickTextBlock() {
+        if (!this.mClickTextBlock_Internal && this.uiWidgetBase) {
+            this.mClickTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mClickTextBlock");
+        }
+        return this.mClickTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mClickBtn.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
+        }));
+        this.mClickBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mClickTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+OnClickWishPanel_Generate = __decorate([ UIBind("UI/module/WishModule/OnClickWishPanel.ui") ], OnClickWishPanel_Generate);
+
+var OnClickWishPanel_Generate$1 = OnClickWishPanel_Generate;
+
+var foreign213 = Object.freeze({
+    __proto__: null,
+    default: OnClickWishPanel_Generate$1
+});
+
+class OnClickWishPanel extends OnClickWishPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.wishModuleC = null;
+        this.wishDataV0 = null;
+    }
+    get getWishModuleC() {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.bindButtons();
+    }
+    bindButtons() {
+        this.mClickBtn.onClicked.add(this.onClickButtons.bind(this));
+    }
+    onClickButtons() {
+        this.getWishModuleC.onBuyAction.call(this.wishDataV0);
+    }
+    updateWishDataV0(wishDataV0) {
+        this.wishDataV0 = wishDataV0;
+    }
+}
+
+var foreign145 = Object.freeze({
+    __proto__: null,
+    default: OnClickWishPanel
 });
 
 let Nickname = class Nickname extends Script {
     constructor() {
         super(...arguments);
         this.vipCount = 0;
+        this.wishDataV0 = null;
         this.character = null;
         this.nickname = null;
         this.nicknameWidget = null;
         this.isInit = false;
+        this.onClickWishPanel = null;
     }
     onStart() {
         if (!SystemUtil.isClient()) return;
@@ -16808,6 +17918,7 @@ let Nickname = class Nickname extends Script {
         this.nicknameWidget.localTransform.position = Vector.down.multiply(10);
         this.isInit = true;
         this.onVipCountChange();
+        this.onWishDataV0Change();
     }
     onVipCountChange() {
         if (!this.isInit) return;
@@ -16831,12 +17942,58 @@ let Nickname = class Nickname extends Script {
             }));
         }
     }
+    onWishDataV0Change() {
+        if (this.wishDataV0 && this.wishDataV0.userId && this.wishDataV0.itemId) {
+            Utils.setWidgetVisibility(this.nickname.mWishBgImage, mw.SlateVisibility.SelfHitTestInvisible);
+            let icon = this.wishDataV0.iconGuid;
+            if (WishTools.pendantItemTypes.includes(this.wishDataV0.itemType)) {
+                this.nickname.mWishIconImage.imageInfo.setByAssetIcon(this.wishDataV0.prefabGuid, mw.AssetIconSize.Icon_128px);
+            } else {
+                this.nickname.mWishIconImage.imageGuid = icon;
+            }
+            if (!this.onClickWishPanel) {
+                if (this.character.gameObjectId == Player.localPlayer.character.gameObjectId) return;
+                this.onClickWishPanel = UIService.create(OnClickWishPanel);
+                this.onClickWishPanel.updateWishDataV0(this.wishDataV0);
+                this.onClickWishPanel.show();
+            }
+            if (this.onClickWishPanel) {
+                this.onClickWishPanel.updateWishDataV0(this.wishDataV0);
+                this.onClickWishPanel.show();
+                this.useUpdate = true;
+            }
+        } else {
+            Utils.setWidgetVisibility(this.nickname.mWishBgImage, mw.SlateVisibility.Collapsed);
+            if (this.onClickWishPanel) this.onClickWishPanel.hide();
+            this.useUpdate = false;
+        }
+    }
+    onUpdate(dt) {
+        if (!mw.SystemUtil.isClient()) return;
+        this.onUpdateC(dt);
+    }
+    onUpdateC(dt) {
+        if (!this.onClickWishPanel || !this.character) return;
+        let dis = Vector.distance(this.character.worldTransform.position, Player.localPlayer.character.worldTransform.position);
+        if (dis > 1e3) {
+            this.onClickWishPanel.hide();
+            return;
+        }
+        if (!this.onClickWishPanel.visible) this.onClickWishPanel.show();
+        let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.character.worldTransform.position.add(new mw.Vector(0, 0, 0)), false).screenPosition;
+        this.onClickWishPanel.rootCanvas.position = pos.subtract(this.onClickWishPanel.rootCanvas.size.multiply(.5));
+    }
 };
 
 __decorate([ mw.Property({
     replicated: true,
     onChanged: "onVipCountChange"
 }) ], Nickname.prototype, "vipCount", void 0);
+
+__decorate([ mw.Property({
+    replicated: true,
+    onChanged: "onWishDataV0Change"
+}) ], Nickname.prototype, "wishDataV0", void 0);
 
 Nickname = __decorate([ Component ], Nickname);
 
@@ -16892,6 +18049,7 @@ class MallModuleS extends ModuleS {
         let nickname = player.character.addComponent(Nickname$1, true);
         this.nicknameMap.set(player.userId, nickname);
         nickname.vipCount = vipCount;
+        nickname.wishDataV0 = null;
     }
     deleteNickname(player) {
         if (this.nicknameMap.has(player.userId)) {
@@ -16917,6 +18075,16 @@ class MallModuleS extends ModuleS {
     }
     async tryResetCharacter(player) {
         await this.getClient(player).net_tryResetCharacter();
+    }
+    net_updateNickWish(wishDataV0) {
+        let userId = wishDataV0.userId;
+        if (this.nicknameMap.has(userId)) {
+            let nickname = this.nicknameMap.get(userId);
+            nickname.wishDataV0 = wishDataV0;
+            if (!wishDataV0.itemId) this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+            return true;
+        }
+        return false;
     }
 }
 
@@ -18039,7 +19207,7 @@ TryOnItem_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnItem.ui") ]
 
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign202 = Object.freeze({
+var foreign211 = Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -18191,7 +19359,7 @@ TryOnPanel_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnPanel.ui")
 
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign203 = Object.freeze({
+var foreign212 = Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -18492,7 +19660,7 @@ SetPanel_Generate = __decorate([ UIBind("UI/module/SetModule/SetPanel.ui") ], Se
 
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign195 = Object.freeze({
+var foreign204 = Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -19292,7 +20460,7 @@ class TryOnModuleC extends ModuleC {
         this.localPlayer.character.worldTransform.rotation = this.localPlayer.character.worldTransform.rotation.add(new mw.Rotation(0, 0, -(this.mallCharacterRotSpeed * dir)));
     }
     net_tryOnSlotByUserId(userId) {
-        let slotDataArrStr = Mall.getSlotDataArrStr(this.localPlayer.character);
+        let slotDataArrStr = Mall$1.getSlotDataArrStr(this.localPlayer.character);
         console.error(JSON.stringify(slotDataArrStr));
         if (!slotDataArrStr || slotDataArrStr.length == 0) return;
         this.server.net_canTryOnSlotByUserId(userId, slotDataArrStr);
@@ -19300,7 +20468,7 @@ class TryOnModuleC extends ModuleC {
     net_canTryOnSlotByUserId(slotDataArrStr) {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.localPlayer.character.asyncReady();
-            await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
+            await Mall$1.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
         }));
     }
@@ -19588,7 +20756,7 @@ RankPanel_Generate = __decorate([ UIBind("UI/module/RankModule/RankPanel.ui") ],
 
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign192 = Object.freeze({
+var foreign201 = Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -19641,7 +20809,7 @@ RoomItem_Generate = __decorate([ UIBind("UI/module/RankModule/RoomItem.ui") ], R
 
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign193 = Object.freeze({
+var foreign202 = Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -19715,7 +20883,7 @@ WorldItem_Generate = __decorate([ UIBind("UI/module/RankModule/WorldItem.ui") ],
 
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign194 = Object.freeze({
+var foreign203 = Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -20191,7 +21359,7 @@ SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.u
 
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign199 = Object.freeze({
+var foreign208 = Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -20260,7 +21428,7 @@ SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui"
 
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign198 = Object.freeze({
+var foreign207 = Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -20723,7 +21891,7 @@ TaskItem_Generate = __decorate([ UIBind("UI/module/TaskModule/TaskItem.ui") ], T
 
 var TaskItem_Generate$1 = TaskItem_Generate;
 
-var foreign200 = Object.freeze({
+var foreign209 = Object.freeze({
     __proto__: null,
     default: TaskItem_Generate$1
 });
@@ -20836,7 +22004,7 @@ TaskPanel_Generate = __decorate([ UIBind("UI/module/TaskModule/TaskPanel.ui") ],
 
 var TaskPanel_Generate$1 = TaskPanel_Generate;
 
-var foreign201 = Object.freeze({
+var foreign210 = Object.freeze({
     __proto__: null,
     default: TaskPanel_Generate$1
 });
@@ -21541,6 +22709,15 @@ var foreign142 = Object.freeze({
     default: TaskModuleS
 });
 
+class WishModuleS extends ModuleS {
+    onStart() {}
+}
+
+var foreign151 = Object.freeze({
+    __proto__: null,
+    default: WishModuleS
+});
+
 let GameStart = class GameStart extends Script {
     constructor() {
         super(...arguments);
@@ -21571,6 +22748,7 @@ let GameStart = class GameStart extends Script {
         ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
         ModuleService.registerModule(CharacterModuleS, CharacterModuleC, CharacterData);
         ModuleService.registerModule(TaskModuleS, TaskModuleC, TaskData);
+        ModuleService.registerModule(WishModuleS, WishModuleC, WishData);
     }
     onUpdate(dt) {
         if (mw.SystemUtil.isClient()) {
@@ -21722,7 +22900,7 @@ GMHUD_Generate = __decorate([ UIBind("UI/module/GMModule/GMHUD.ui") ], GMHUD_Gen
 
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign170 = Object.freeze({
+var foreign179 = Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -21765,7 +22943,7 @@ GMItem_Generate = __decorate([ UIBind("UI/module/GMModule/GMItem.ui") ], GMItem_
 
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign171 = Object.freeze({
+var foreign180 = Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -22041,6 +23219,21 @@ var foreign103 = Object.freeze({
     default: GMService$1
 });
 
+let Wish = class Wish extends Script {
+    onStart() {}
+    onUpdate(dt) {}
+    onDestroy() {}
+};
+
+Wish = __decorate([ Component ], Wish);
+
+var Wish$1 = Wish;
+
+var foreign148 = Object.freeze({
+    __proto__: null,
+    default: Wish$1
+});
+
 let CopyCharacter = class CopyCharacter extends Script {
     constructor() {
         super(...arguments);
@@ -22068,7 +23261,7 @@ CopyCharacter = __decorate([ Component ], CopyCharacter);
 
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign148 = Object.freeze({
+var foreign156 = Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -22232,7 +23425,7 @@ class KeyActionManager {
     }
 }
 
-var foreign149 = Object.freeze({
+var foreign157 = Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -22283,7 +23476,7 @@ SecondNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/SecondNoticeIt
 
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign156 = Object.freeze({
+var foreign165 = Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -22433,69 +23626,81 @@ const MWModuleMap = {
     "4CA21C094DAD2346E120EFBEA3D7736C": foreign142,
     E8535D714F5BFEC20EF595B175FA24BD: foreign143,
     "2032BEF24550E75CE53EE39AE53150E9": foreign144,
-    D64517A445CBA580CE34A68B0DE2D5D0: foreign145,
-    C48FD39D43DA5E48E2FFED92F839BB3D: foreign146,
-    "1757D7694B3B2F7BFB8C0897BDF03724": foreign147,
-    BC6767CF4240176E5C9B6984BB540726: foreign148,
-    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign149,
-    F7EE8818455A5EE814A6F18A2F0CBB12: foreign150,
-    "49E1131448695DF591C8DEB790EFC952": foreign151,
-    "290BA293443A80CCA56170B9DA3D47C1": foreign152,
-    "71EC5D03421DCEEEB4172C8C643D8019": foreign153,
-    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign154,
-    "741B06144E25B4753E8005985816DAF8": foreign155,
-    EE3F354349BB041CD741FF84B745B113: foreign156,
-    "8FA0EC3E442A57C1B550BB833E68DA90": foreign157,
-    "100DA6744367634E7FFC0895CD98DDB9": foreign158,
-    "67892EC847DCDABBB14451A8CDFD526C": foreign159,
-    "486071A84887288700A7E297CBF6B438": foreign160,
-    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign161,
-    "50B679574FA404BE92C52CAD0436F5B1": foreign162,
-    BC28A8C5401B15E17AAEF482A8AA133E: foreign163,
-    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign164,
-    "3A88620945CCB3EE5B699F9D35A5A28F": foreign165,
-    "827757834BCFC569771BCB84A3609238": foreign166,
-    F58702064960960163820CB9C8D0F3C1: foreign167,
-    D92460FC43DFEF127C8EB39DECD67E58: foreign168,
-    C265D0BB488D0422A80DBBB6082E4CB4: foreign169,
-    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign170,
-    "95C84A464FBF396210D6DAB0DFAF53C3": foreign171,
-    C067E1F649184B0F7FC5E0B9456BC72C: foreign172,
-    "337A59B14A237973EEB178A260344C21": foreign173,
-    B9D019D74067C8F762132698D474BF63: foreign174,
-    C4E377B14812C09429E28988E62907DB: foreign175,
-    E038BA9A4A21ED21407734BBDEC1DF0C: foreign176,
-    AD7B5C5440FB6D1DA3795A9BA561546D: foreign177,
-    "06CF574844634CC9C0793EA8847C6FE2": foreign178,
-    "27DEB6624F87673F14AA499E8A3A7DD3": foreign179,
-    CEE9E492480CEF69BF9291BA357C9AC1: foreign180,
-    "458367AB498907FB6AAFE7A4CED12F6E": foreign181,
-    "713A8E764F3DAC8A8AD1BEB382C46158": foreign182,
-    "5E6E0BFE48C322071930C2B8DD56E900": foreign183,
-    C381E72F409A02A45B69B9BC32F4FCAF: foreign184,
-    FADB775E4F203C2565D31A9AA31E22D1: foreign185,
-    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign186,
-    F3E9117C4C567C26689F08B919B7E7DA: foreign187,
-    AF5DEB904C817468E94BAA9265F23AF7: foreign188,
-    AAE12F3F4FD38A0B43975DB01D2D496C: foreign189,
-    "3995FC904A90AC530E4F16872207B9AF": foreign190,
-    B05A09CF494A261597181F8E7ED1556F: foreign191,
-    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign192,
-    A8E0593D477EC697B2559789990E0882: foreign193,
-    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign194,
-    "559367EC4AA0BAE9AD25A694D5CA960C": foreign195,
-    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign196,
-    "52E3A8604FC761E6CC747FB22FD7160B": foreign197,
-    "14F8E49D4B31DFAA50548BA206585CCA": foreign198,
-    "656033E844C70FD925FC8F887EA9FA46": foreign199,
-    EEC285444F7B3CFFC6643F85ABEE15E0: foreign200,
-    DDF332D24642D0AA1E03FC8877A6DE4B: foreign201,
-    "6B744DEB4703AED17EA7279D0783813A": foreign202,
-    C6D169354450AEEF12B964B7B3BA8B2D: foreign203,
-    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign204
+    "69267A5348B99DD1644DA499695F1AB4": foreign145,
+    "4FB3F3E34C536DC344559B805FA4DA71": foreign146,
+    "2E684D274F264A866668389E780227CA": foreign147,
+    "542BCB464E9ED3B15B37839FD7C46A7E": foreign148,
+    "34692B66410695092E660AAB2420D8F2": foreign149,
+    A5D61CA94C39DFC6DE00129E1BB59B0D: foreign150,
+    "173455CC4263035E0A3816A3DC647B63": foreign151,
+    "0D0C10934C90B4D1942DF197857B31C6": foreign152,
+    D64517A445CBA580CE34A68B0DE2D5D0: foreign153,
+    C48FD39D43DA5E48E2FFED92F839BB3D: foreign154,
+    "1757D7694B3B2F7BFB8C0897BDF03724": foreign155,
+    BC6767CF4240176E5C9B6984BB540726: foreign156,
+    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign157,
+    F7EE8818455A5EE814A6F18A2F0CBB12: foreign158,
+    "0E633A6746902AA0CC6FD48C2396ED49": foreign159,
+    "49E1131448695DF591C8DEB790EFC952": foreign160,
+    "290BA293443A80CCA56170B9DA3D47C1": foreign161,
+    "71EC5D03421DCEEEB4172C8C643D8019": foreign162,
+    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign163,
+    "741B06144E25B4753E8005985816DAF8": foreign164,
+    EE3F354349BB041CD741FF84B745B113: foreign165,
+    "8FA0EC3E442A57C1B550BB833E68DA90": foreign166,
+    "100DA6744367634E7FFC0895CD98DDB9": foreign167,
+    "67892EC847DCDABBB14451A8CDFD526C": foreign168,
+    "486071A84887288700A7E297CBF6B438": foreign169,
+    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign170,
+    "50B679574FA404BE92C52CAD0436F5B1": foreign171,
+    BC28A8C5401B15E17AAEF482A8AA133E: foreign172,
+    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign173,
+    "3A88620945CCB3EE5B699F9D35A5A28F": foreign174,
+    "827757834BCFC569771BCB84A3609238": foreign175,
+    F58702064960960163820CB9C8D0F3C1: foreign176,
+    D92460FC43DFEF127C8EB39DECD67E58: foreign177,
+    C265D0BB488D0422A80DBBB6082E4CB4: foreign178,
+    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign179,
+    "95C84A464FBF396210D6DAB0DFAF53C3": foreign180,
+    C067E1F649184B0F7FC5E0B9456BC72C: foreign181,
+    "337A59B14A237973EEB178A260344C21": foreign182,
+    B9D019D74067C8F762132698D474BF63: foreign183,
+    C4E377B14812C09429E28988E62907DB: foreign184,
+    E038BA9A4A21ED21407734BBDEC1DF0C: foreign185,
+    AD7B5C5440FB6D1DA3795A9BA561546D: foreign186,
+    "06CF574844634CC9C0793EA8847C6FE2": foreign187,
+    "27DEB6624F87673F14AA499E8A3A7DD3": foreign188,
+    CEE9E492480CEF69BF9291BA357C9AC1: foreign189,
+    "458367AB498907FB6AAFE7A4CED12F6E": foreign190,
+    "713A8E764F3DAC8A8AD1BEB382C46158": foreign191,
+    "5E6E0BFE48C322071930C2B8DD56E900": foreign192,
+    C381E72F409A02A45B69B9BC32F4FCAF: foreign193,
+    FADB775E4F203C2565D31A9AA31E22D1: foreign194,
+    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign195,
+    F3E9117C4C567C26689F08B919B7E7DA: foreign196,
+    AF5DEB904C817468E94BAA9265F23AF7: foreign197,
+    AAE12F3F4FD38A0B43975DB01D2D496C: foreign198,
+    "3995FC904A90AC530E4F16872207B9AF": foreign199,
+    B05A09CF494A261597181F8E7ED1556F: foreign200,
+    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign201,
+    A8E0593D477EC697B2559789990E0882: foreign202,
+    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign203,
+    "559367EC4AA0BAE9AD25A694D5CA960C": foreign204,
+    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign205,
+    "52E3A8604FC761E6CC747FB22FD7160B": foreign206,
+    "14F8E49D4B31DFAA50548BA206585CCA": foreign207,
+    "656033E844C70FD925FC8F887EA9FA46": foreign208,
+    EEC285444F7B3CFFC6643F85ABEE15E0: foreign209,
+    DDF332D24642D0AA1E03FC8877A6DE4B: foreign210,
+    "6B744DEB4703AED17EA7279D0783813A": foreign211,
+    C6D169354450AEEF12B964B7B3BA8B2D: foreign212,
+    "8C22327148426ADD74A002B4C14150C2": foreign213,
+    "672AB9254E7723C3B84CD1A38B298049": foreign214,
+    "7B80832F4F90B3098969CDB029A9A13F": foreign215,
+    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign216
 };
 
-const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/common/Test" ], [ foreign6 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign7 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign8 || {}, "JavaScripts/configs/ActionProp" ], [ foreign9 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign10 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign11 || {}, "JavaScripts/configs/Back" ], [ foreign12 || {}, "JavaScripts/configs/BackHair" ], [ foreign13 || {}, "JavaScripts/configs/BackPet" ], [ foreign14 || {}, "JavaScripts/configs/Blush" ], [ foreign15 || {}, "JavaScripts/configs/BodyType" ], [ foreign16 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign17 || {}, "JavaScripts/configs/Bottom" ], [ foreign18 || {}, "JavaScripts/configs/Chat" ], [ foreign19 || {}, "JavaScripts/configs/ColorValue" ], [ foreign20 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign23 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign24 || {}, "JavaScripts/configs/Description" ], [ foreign25 || {}, "JavaScripts/configs/Ear" ], [ foreign26 || {}, "JavaScripts/configs/Effects" ], [ foreign27 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign28 || {}, "JavaScripts/configs/Expression" ], [ foreign29 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign30 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign31 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign32 || {}, "JavaScripts/configs/Face" ], [ foreign33 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign34 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign35 || {}, "JavaScripts/configs/Facing" ], [ foreign36 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign37 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign38 || {}, "JavaScripts/configs/FrontHair" ], [ foreign39 || {}, "JavaScripts/configs/FullHair" ], [ foreign40 || {}, "JavaScripts/configs/GameConfig" ], [ foreign41 || {}, "JavaScripts/configs/Gloves" ], [ foreign42 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign43 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign44 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign45 || {}, "JavaScripts/configs/Hip" ], [ foreign46 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign47 || {}, "JavaScripts/configs/Interact" ], [ foreign48 || {}, "JavaScripts/configs/Language" ], [ foreign49 || {}, "JavaScripts/configs/LeftHand" ], [ foreign50 || {}, "JavaScripts/configs/Lens" ], [ foreign51 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign52 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign53 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign54 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign55 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign56 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign57 || {}, "JavaScripts/configs/Music" ], [ foreign58 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign59 || {}, "JavaScripts/configs/Outfit" ], [ foreign60 || {}, "JavaScripts/configs/Pet" ], [ foreign61 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign62 || {}, "JavaScripts/configs/RightHand" ], [ foreign63 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign64 || {}, "JavaScripts/configs/ShareId" ], [ foreign65 || {}, "JavaScripts/configs/Shoes" ], [ foreign66 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign67 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign68 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign69 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign70 || {}, "JavaScripts/configs/Shoulder" ], [ foreign71 || {}, "JavaScripts/configs/Sit" ], [ foreign72 || {}, "JavaScripts/configs/SkinTone" ], [ foreign73 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign74 || {}, "JavaScripts/configs/SuitTop" ], [ foreign75 || {}, "JavaScripts/configs/Tab1" ], [ foreign76 || {}, "JavaScripts/configs/Tab2" ], [ foreign77 || {}, "JavaScripts/configs/Tab3" ], [ foreign78 || {}, "JavaScripts/configs/Task" ], [ foreign79 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign80 || {}, "JavaScripts/configs/Top" ], [ foreign81 || {}, "JavaScripts/configs/Trailing" ], [ foreign82 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign83 || {}, "JavaScripts/GameStart" ], [ foreign84 || {}, "JavaScripts/GlobalData" ], [ foreign85 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign87 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign88 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign101 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign102 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign103 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign104 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign105 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign106 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign108 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign109 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign123 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign124 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign125 || {}, "JavaScripts/module/MallModule/ui/Nickname" ], [ foreign126 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign127 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign128 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign129 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign130 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign131 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign132 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign133 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign134 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign137 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign138 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign139 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign140 || {}, "JavaScripts/module/TaskModule/TaskData" ], [ foreign141 || {}, "JavaScripts/module/TaskModule/TaskModuleC" ], [ foreign142 || {}, "JavaScripts/module/TaskModule/TaskModuleS" ], [ foreign143 || {}, "JavaScripts/module/TaskModule/ui/TaskPanel" ], [ foreign144 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign145 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign146 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign147 || {}, "JavaScripts/tools/CameraManager" ], [ foreign148 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign149 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign150 || {}, "JavaScripts/tools/MapEx" ], [ foreign151 || {}, "JavaScripts/tools/TouchScript" ], [ foreign152 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign153 || {}, "JavaScripts/tools/Utils" ], [ foreign154 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign155 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign156 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign157 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign158 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign159 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/MallModule/Nickname_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign196 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign197 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign198 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign199 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign200 || {}, "JavaScripts/ui-generate/module/TaskModule/TaskItem_generate" ], [ foreign201 || {}, "JavaScripts/ui-generate/module/TaskModule/TaskPanel_generate" ], [ foreign202 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign203 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign204 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
+const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/common/Test" ], [ foreign6 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign7 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign8 || {}, "JavaScripts/configs/ActionProp" ], [ foreign9 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign10 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign11 || {}, "JavaScripts/configs/Back" ], [ foreign12 || {}, "JavaScripts/configs/BackHair" ], [ foreign13 || {}, "JavaScripts/configs/BackPet" ], [ foreign14 || {}, "JavaScripts/configs/Blush" ], [ foreign15 || {}, "JavaScripts/configs/BodyType" ], [ foreign16 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign17 || {}, "JavaScripts/configs/Bottom" ], [ foreign18 || {}, "JavaScripts/configs/Chat" ], [ foreign19 || {}, "JavaScripts/configs/ColorValue" ], [ foreign20 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign23 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign24 || {}, "JavaScripts/configs/Description" ], [ foreign25 || {}, "JavaScripts/configs/Ear" ], [ foreign26 || {}, "JavaScripts/configs/Effects" ], [ foreign27 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign28 || {}, "JavaScripts/configs/Expression" ], [ foreign29 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign30 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign31 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign32 || {}, "JavaScripts/configs/Face" ], [ foreign33 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign34 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign35 || {}, "JavaScripts/configs/Facing" ], [ foreign36 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign37 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign38 || {}, "JavaScripts/configs/FrontHair" ], [ foreign39 || {}, "JavaScripts/configs/FullHair" ], [ foreign40 || {}, "JavaScripts/configs/GameConfig" ], [ foreign41 || {}, "JavaScripts/configs/Gloves" ], [ foreign42 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign43 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign44 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign45 || {}, "JavaScripts/configs/Hip" ], [ foreign46 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign47 || {}, "JavaScripts/configs/Interact" ], [ foreign48 || {}, "JavaScripts/configs/Language" ], [ foreign49 || {}, "JavaScripts/configs/LeftHand" ], [ foreign50 || {}, "JavaScripts/configs/Lens" ], [ foreign51 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign52 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign53 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign54 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign55 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign56 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign57 || {}, "JavaScripts/configs/Music" ], [ foreign58 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign59 || {}, "JavaScripts/configs/Outfit" ], [ foreign60 || {}, "JavaScripts/configs/Pet" ], [ foreign61 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign62 || {}, "JavaScripts/configs/RightHand" ], [ foreign63 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign64 || {}, "JavaScripts/configs/ShareId" ], [ foreign65 || {}, "JavaScripts/configs/Shoes" ], [ foreign66 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign67 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign68 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign69 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign70 || {}, "JavaScripts/configs/Shoulder" ], [ foreign71 || {}, "JavaScripts/configs/Sit" ], [ foreign72 || {}, "JavaScripts/configs/SkinTone" ], [ foreign73 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign74 || {}, "JavaScripts/configs/SuitTop" ], [ foreign75 || {}, "JavaScripts/configs/Tab1" ], [ foreign76 || {}, "JavaScripts/configs/Tab2" ], [ foreign77 || {}, "JavaScripts/configs/Tab3" ], [ foreign78 || {}, "JavaScripts/configs/Task" ], [ foreign79 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign80 || {}, "JavaScripts/configs/Top" ], [ foreign81 || {}, "JavaScripts/configs/Trailing" ], [ foreign82 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign83 || {}, "JavaScripts/GameStart" ], [ foreign84 || {}, "JavaScripts/GlobalData" ], [ foreign85 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign87 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign88 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign101 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign102 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign103 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign104 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign105 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign106 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign108 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign109 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign123 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign124 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign125 || {}, "JavaScripts/module/MallModule/ui/Nickname" ], [ foreign126 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign127 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign128 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign129 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign130 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign131 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign132 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign133 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign134 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign137 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign138 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign139 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign140 || {}, "JavaScripts/module/TaskModule/TaskData" ], [ foreign141 || {}, "JavaScripts/module/TaskModule/TaskModuleC" ], [ foreign142 || {}, "JavaScripts/module/TaskModule/TaskModuleS" ], [ foreign143 || {}, "JavaScripts/module/TaskModule/ui/TaskPanel" ], [ foreign144 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign145 || {}, "JavaScripts/module/WishModule/ui/OnClickWishPanel" ], [ foreign146 || {}, "JavaScripts/module/WishModule/ui/WishItem" ], [ foreign147 || {}, "JavaScripts/module/WishModule/ui/WishPanel" ], [ foreign148 || {}, "JavaScripts/module/WishModule/Wish" ], [ foreign149 || {}, "JavaScripts/module/WishModule/WishData" ], [ foreign150 || {}, "JavaScripts/module/WishModule/WishModuleC" ], [ foreign151 || {}, "JavaScripts/module/WishModule/WishModuleS" ], [ foreign152 || {}, "JavaScripts/module/WishModule/WishTools" ], [ foreign153 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign154 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign155 || {}, "JavaScripts/tools/CameraManager" ], [ foreign156 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign157 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign158 || {}, "JavaScripts/tools/MapEx" ], [ foreign159 || {}, "JavaScripts/tools/PortalData" ], [ foreign160 || {}, "JavaScripts/tools/TouchScript" ], [ foreign161 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign162 || {}, "JavaScripts/tools/Utils" ], [ foreign163 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign164 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign196 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign197 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign198 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign199 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign200 || {}, "JavaScripts/ui-generate/module/MallModule/Nickname_generate" ], [ foreign201 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign202 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign203 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign204 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign205 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign206 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign207 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign208 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign209 || {}, "JavaScripts/ui-generate/module/TaskModule/TaskItem_generate" ], [ foreign210 || {}, "JavaScripts/ui-generate/module/TaskModule/TaskPanel_generate" ], [ foreign211 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign212 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign213 || {}, "JavaScripts/ui-generate/module/WishModule/OnClickWishPanel_generate" ], [ foreign214 || {}, "JavaScripts/ui-generate/module/WishModule/WishItem_generate" ], [ foreign215 || {}, "JavaScripts/ui-generate/module/WishModule/WishPanel_generate" ], [ foreign216 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
 
 exports.MWFileMapping = MWFileMapping;
 
