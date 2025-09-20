@@ -158,6 +158,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenMoneyButton.onClicked.add(this.addOpenMoneyRankButton.bind(this));
         this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
         this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
         this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
@@ -193,6 +194,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenRankButton(): void {
         this.getHUDModuleC.onOpenRankAction.call();
+    }
+
+    private addOpenMoneyRankButton(): void {
+        this.getHUDModuleC.onOpenMoneyRankAction.call();
     }
 
     private addOpenShareButton(): void {
@@ -539,6 +544,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenSetAction: Action = new Action();
     public onOpenClothAction: Action = new Action();
     public onOpenRankAction: Action = new Action();
+    public onOpenMoneyRankAction: Action = new Action();
     public onOpenShareAction: Action1<number> = new Action1<number>();
     public onUseShareAction: Action2<string, number> = new Action2<string, number>();
     public onOpenSignInAction: Action = new Action();

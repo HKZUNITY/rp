@@ -161,6 +161,7 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
         let itemId = wishDataV0.itemId;
         let userId = wishDataV0.userId;
         let commodityId = wishDataV0.commodityId;
+        let price = wishDataV0.price;
         let cInfo: Commodity = {
             commodityId: commodityId,
             number: 1,
@@ -179,9 +180,10 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
 
         await this.syncPlaceOrder(cInfo, async (status: number) => {
             clearTimeout(timeoutId);
-            let wishDataV0 = new WishDataV0();
-            wishDataV0.userId = userId;
-            await this.getMallModuleC.updateNickWish(wishDataV0);
+            let tmpWishDataV0 = new WishDataV0();
+            tmpWishDataV0.userId = userId;
+            tmpWishDataV0.price = price;
+            await this.getMallModuleC.updateNickWish(tmpWishDataV0);
             await PortalData.cancelSendWishItemRequest([itemId], userId);
         }, async (status: number) => {
             clearTimeout(timeoutId);

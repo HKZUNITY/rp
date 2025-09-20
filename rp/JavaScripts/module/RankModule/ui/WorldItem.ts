@@ -1,5 +1,5 @@
 ﻿import WorldItem_Generate from "../../../ui-generate/module/RankModule/WorldItem_generate";
-import { WorldData } from "../RankData";
+import { MoneyWorldData, WorldData } from "../RankData";
 
 export default class WorldItem extends WorldItem_Generate {
 
@@ -12,10 +12,14 @@ export default class WorldItem extends WorldItem_Generate {
 		this.layer = UILayerMiddle;
 	}
 
-	public setData(ranking: number, roomData: WorldData, isSelf: boolean): void {
+	public setData(ranking: number, roomData: WorldData | MoneyWorldData, isSelf: boolean): void {
 		this.mRankTextBlock.text = ranking.toString();
 		this.mNameTextBlock.text = roomData.playerName;
-		this.mTimeTextBlock.text = roomData.time.toString();
+		if (roomData instanceof WorldData) {
+			this.mTimeTextBlock.text = roomData.time.toString();
+		} else if (roomData instanceof MoneyWorldData) {
+			this.mTimeTextBlock.text = roomData.money.toString();
+		}
 
 		let fontColor = isSelf ? mw.LinearColor.green : mw.LinearColor.white;
 		this.mRankTextBlock.fontColor = fontColor;

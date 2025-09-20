@@ -88,7 +88,7 @@ export default class WishPanel extends WishPanel_Generate {
 			}
 		}
 
-		if (this.wishDataV0 && this.wishDataV0?.itemId == wishDataV0s[0]?.itemId) {
+		if (this.wishDataV0 && this.wishDataV0?.itemId != wishDataV0s[0]?.itemId) {
 			this.getWishModuleC.onSelectItemAction.call(this.wishDataV0);
 		} else {
 			this.wishDataV0 = wishDataV0s[0];
