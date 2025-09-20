@@ -57,7 +57,7 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
 
     private addOpenWishAction() {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(mw.SystemUtil.isPIE ? GlobalData.userId : this.localPlayer.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 Notice.showDownNotice(`你还没有添加心愿单`);
                 Notice.showDownNotice(`请在商城添加心愿单`);
@@ -71,7 +71,7 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
 
     private addOpenWishOrMallAction(): void {
         ExecutorManager.instance.pushAsyncExecutor(async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(mw.SystemUtil.isPIE ? GlobalData.userId : this.localPlayer.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 this.getHudModuleC.onOpenMallAction.call();
                 this.getHudModuleC.onOpenTaskAction.call();

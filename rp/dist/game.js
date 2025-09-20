@@ -14912,7 +14912,7 @@ class WishTools {
     }
 }
 
-WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42 ];
+WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52 ];
 
 var foreign151 = Object.freeze({
     __proto__: null,
@@ -15190,7 +15190,7 @@ class WishModuleC extends ModuleC {
     }
     addOpenWishAction() {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(mw.SystemUtil.isPIE ? GlobalData.userId : this.localPlayer.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 Notice.showDownNotice(`你还没有添加心愿单`);
                 Notice.showDownNotice(`请在商城添加心愿单`);
@@ -15202,7 +15202,7 @@ class WishModuleC extends ModuleC {
     }
     addOpenWishOrMallAction() {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(mw.SystemUtil.isPIE ? GlobalData.userId : this.localPlayer.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 this.getHudModuleC.onOpenMallAction.call();
                 this.getHudModuleC.onOpenTaskAction.call();
@@ -18735,6 +18735,12 @@ let Nickname = class Nickname extends Script {
     }
     onUpdateC(dt) {
         if (!this.onClickWishPanel || !this.character) return;
+        let dis = Vector.distance(this.character.worldTransform.position, Player.localPlayer.character.worldTransform.position);
+        if (dis > 1e3) {
+            this.onClickWishPanel.hide();
+            return;
+        }
+        if (!this.onClickWishPanel.visible) this.onClickWishPanel.show();
         let pos = mw.InputUtil.projectWorldPositionToWidgetPosition(this.character.worldTransform.position.add(new mw.Vector(0, 0, 0)), false).screenPosition;
         this.onClickWishPanel.rootCanvas.position = pos.subtract(this.onClickWishPanel.rootCanvas.size.multiply(.5));
     }

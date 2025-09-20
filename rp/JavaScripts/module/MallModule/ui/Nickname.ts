@@ -98,7 +98,13 @@ export default class Nickname extends Script {
 
     private onUpdateC(dt: number): void {
         if (!this.onClickWishPanel || !this.character) return;
+        let dis = Vector.distance(this.character.worldTransform.position, Player.localPlayer.character.worldTransform.position);
+        if (dis > 1000) {
+            this.onClickWishPanel.hide();
+            return;
+        }
 
+        if (!this.onClickWishPanel.visible) this.onClickWishPanel.show();
         let pos: mw.Vector2 = mw.InputUtil.projectWorldPositionToWidgetPosition(this.character.worldTransform.position.add(new mw.Vector(0, 0, 0)), false).screenPosition;
         this.onClickWishPanel.rootCanvas.position = pos.subtract(this.onClickWishPanel.rootCanvas.size.multiply(0.5));
     }
