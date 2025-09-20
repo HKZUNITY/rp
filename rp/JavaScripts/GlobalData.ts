@@ -21,6 +21,8 @@ export default class GlobalData {
     public static dailyRefreshTime: string = "4:0";
     /**每周刷新时间（目前是每周一凌晨4点，格式为4:0） */
     public static weeklyRefreshTime: string = "4:0";
+
+    public static userId: string = `47958884`;
 }
 
 export enum EventType {
