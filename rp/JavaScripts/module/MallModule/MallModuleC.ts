@@ -150,7 +150,12 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         }
     }
 
+    private isFirst: boolean = true;
     private addOpenMallAction(): void {
+        if (this.isFirst) {
+            this.getHUDModuleC.onOpenTaskAction.call();
+            this.isFirst = false;
+        }
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             await this.isAccountServiceDownloadData();
