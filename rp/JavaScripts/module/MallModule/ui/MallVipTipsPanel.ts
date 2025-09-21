@@ -24,8 +24,7 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 	}
 
 	private initUI(): void {
-		Utils.setWidgetVisibility(this.mAdsButton, mw.SystemUtil.currentPlatform == mw.RuntimePlatform.Android
-			? mw.SlateVisibility.Visible : mw.SlateVisibility.Collapsed);
+		Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
 	}
 
 	private bindButtons(): void {

@@ -20,6 +20,9 @@ import SignInData from "./module/SignInModule/SignInData";
 import SignInModuleC from "./module/SignInModule/SignInModuleC";
 import SignInModuleS from "./module/SignInModule/SignInModuleS";
 import { TryOnData, TryOnModuleC, TryOnModuleS } from "./module/TryOnModule/TryOnModule";
+import { WishData } from "./module/WishModule/WishData";
+import WishModuleC from "./module/WishModule/WishModuleC";
+import WishModuleS from "./module/WishModule/WishModuleS";
 
 @Component
 export default class GameStart extends Script {
@@ -56,6 +59,7 @@ export default class GameStart extends Script {
         ModuleService.registerModule(MallModuleS, MallModuleC, MallData);
         ModuleService.registerModule(TryOnModuleS, TryOnModuleC, TryOnData);
         ModuleService.registerModule(CharacterModuleS, CharacterModuleC, CharacterData);
+        ModuleService.registerModule(WishModuleS, WishModuleC, WishData);
     }
 
     /**

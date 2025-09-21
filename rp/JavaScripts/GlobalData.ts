@@ -16,7 +16,11 @@ export default class GlobalData {
     /**打开背景音乐图标Guid */
     public static onMusicIconGuid: string = `133445`;
 
-    public static savaMaxCount: number = 6;
+    public static savaMaxCount: number = 10;
+
+    public static userId: string = `47958884`;
+
+    public static score: number = 10000;
 }
 
 export enum EventType {

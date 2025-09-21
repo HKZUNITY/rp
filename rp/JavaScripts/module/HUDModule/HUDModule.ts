@@ -10,6 +10,7 @@ import SavePanel_Generate from "../../ui-generate/module/ShareModule/SavePanel_g
 import SharePanel_Generate from "../../ui-generate/module/ShareModule/SharePanel_generate";
 import AdPanel from "../AdModule/ui/AdPanel";
 import DanMuModuleC from "../DanMuModule/DanMuModuleC";
+import WishModuleC from "../WishModule/WishModuleC";
 
 export class HUDItem extends HUDItem_Generate {
     private hudPanel: HUDPanel = null;
@@ -133,6 +134,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.initShakeMallTween();
         this.initShakeShareTween();
         this.initShakeSignInTween();
+        this.initShakeWishTween();
     }
 
     public updateFreeTime(): void {
@@ -165,6 +167,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
         this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
+        this.mWishtButton.onClicked.add(this.addAddWishButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -231,6 +234,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenPhotoButton(): void {
         this.getHUDModuleC.onOpenPhotoAction.call();
+    }
+
+    private addAddWishButton(): void {
+        this.getHUDModuleC.onOpenWishAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -361,6 +368,22 @@ export class HUDPanel extends HUDPanel_Generate {
         });
     }
 
+    public initShakeWishTween(): void {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mWishtButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mWishtButton, 0.5, -20, 20, 0.9, 1.5);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
+    }
+
+
     private getShakeTween(widget: Widget, angleTime: number, startAngle: number, endAngle: number): mw.Tween<any> {
         return new Tween({ angle: startAngle })
             .to({ angle: endAngle }, angleTime * 1000)
@@ -444,6 +467,14 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
         return this.adPanel;
     }
 
+    private wishModuleC: WishModuleC = null;
+    private get getWishModuleC(): WishModuleC {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
+    }
+
     public onJumpAction: Action = new Action();
     public onCrouchAction: Action = new Action();
     public onExitAction: Action = new Action();
@@ -466,6 +497,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
     public onOpenMallAction: Action = new Action();
     public onOpenPhotoAction: Action = new Action();
+    public onOpenWishAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -483,7 +515,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
 
         this.localPlayer.character.asyncReady().then(() => {
             TimeUtil.delaySecond(1).then(() => {
-                this.onOpenMallAction.call();
+                this.getWishModuleC.onOpenWishAction.call();
             });
         });
     }

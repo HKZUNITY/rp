@@ -4,12 +4,14 @@ import { IColorValueElement } from "../../configs/ColorValue";
 import { IFaceExpressionElement } from "../../configs/FaceExpression";
 import { GameConfig } from "../../configs/GameConfig";
 import { IOutfitElement } from "../../configs/Outfit";
-import { CameraManagerType, EventType } from "../../GlobalData";
+import GlobalData, { CameraManagerType, EventType } from "../../GlobalData";
 import CameraManager from "../../tools/CameraManager";
+import { FlyText } from "../../tools/FlyText";
 import Utils from "../../tools/Utils";
 import ExecutorManager from "../../tools/WaitingQueue";
 import { CharacterModuleC } from "../CharacterModule/CharacterModuleC";
 import { HUDModuleC } from "../HUDModule/HUDModule";
+import { WishDataV0 } from "../WishModule/WishData";
 import Mall from "./Mall";
 import MallData, { AssetIdInfoData, ColorPickTab2Data, MallConfigData, Tab1Type, Tab2Type, Tab3Type, TabType } from "./MallData";
 import MallModuleS from "./MallModuleS";
@@ -2005,16 +2007,21 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
         let addVipDays = 0;
+        let price: number = 0;
         switch (commodityId) {
             case `9XL5ExKkXvc00054c`:
                 addVipDays = 1;
+                price = 2;
                 break;
             case `6EogPG3Vn3g0006pr`:
                 addVipDays = 1095;
+                price = 1000;
                 break;
             default:
                 break;
         }
+        let fontColor: mw.LinearColor[] = Utils.randomColor();
+        FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value} +${price * GlobalData.score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
         ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.addVipCount(addVipDays);
             this.getMallPanel.updateVipCount(this.vipCount);
@@ -2029,5 +2036,13 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     public get addVipCoinNumber(): number {
         if (!this.mallConfigData) return 2;
         return this.mallConfigData.addVipCoinNumber;
+    }
+
+    public async updateNickWish(wishDataV0: WishDataV0): Promise<void> {
+        await this.server.net_updateNickWish(wishDataV0);
+    }
+
+    public net_giveSuccess(): void {
+        Notice.showDownNotice(`好友帮你购买成功`);
     }
 }
