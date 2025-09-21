@@ -19051,13 +19051,14 @@ class MallModuleS extends ModuleS {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
     }
     net_updateNickWish(wishDataV0) {
+        let targetUserId = this.currentPlayer.userId;
         let userId = wishDataV0.userId;
         if (this.nicknameMap.has(userId)) {
             let nickname = this.nicknameMap.get(userId);
             nickname.wishDataV0 = wishDataV0;
             if (!wishDataV0.itemId) {
                 this.getClient(Player.getPlayer(userId)).net_giveSuccess();
-                this.getRankModuleS.refreshMoney(wishDataV0.userId, wishDataV0.price);
+                this.getRankModuleS.refreshMoney(targetUserId, wishDataV0.price);
             }
             return true;
         }
