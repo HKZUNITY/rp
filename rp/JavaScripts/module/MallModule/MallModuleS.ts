@@ -1,9 +1,18 @@
 ﻿import Utils from "../../tools/Utils";
+import RankModuleS from "../RankModule/RankModuleS";
+import { WishDataV0 } from "../WishModule/WishData";
 import MallData, { MallConfigData } from "./MallData";
 import MallModuleC from "./MallModuleC";
 import Nickname from "./ui/Nickname";
 
 export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
+    private rankModuleS: RankModuleS = null;
+    private get getRankModuleS(): RankModuleS {
+        if (this.rankModuleS == null) {
+            this.rankModuleS = ModuleService.getModule(RankModuleS);
+        }
+        return this.rankModuleS;
+    }
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -18,6 +27,19 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
         //根据playerId和commodityId来处理购买逻辑
         this.getClient(playerId).net_deliverGoods(commodityId, amount);
         confirmOrder(true);//调用这个方法表示确认收货成功
+
+        let money = 0;
+        switch (commodityId) {
+            case `3ki8ifW7BUs0006Pk`:
+                money = 1000;
+                break;
+            case `7A53roftO8B00054i`:
+                money = 2;
+                break;
+            default:
+                break;
+        }
+        this.getRankModuleS.refreshMoney(Player.getPlayer(playerId).userId, money);
     }
 
     protected onPlayerEnterGame(player: mw.Player): void {
@@ -83,5 +105,20 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
     @Decorator.noReply()
     public net_setIsUseFreeSave(isUseFreeSave: boolean): void {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
+    }
+
+    public net_updateNickWish(wishDataV0: WishDataV0): boolean {
+        let targetUserId = this.currentPlayer.userId;
+        let userId = wishDataV0.userId;
+        if (this.nicknameMap.has(userId)) {
+            let nickname = this.nicknameMap.get(userId);
+            nickname.wishDataV0 = wishDataV0;
+            if (!wishDataV0.itemId) {
+                this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+                this.getRankModuleS.refreshMoney(targetUserId, wishDataV0.price);
+            }
+            return true;
+        }
+        return false;
     }
 }

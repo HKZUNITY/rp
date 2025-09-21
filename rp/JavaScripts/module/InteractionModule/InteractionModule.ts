@@ -9,6 +9,7 @@ import OnClickPanel_Generate from "../../ui-generate/module/InteractionModule/On
 import AdPanel, { TipsPanel } from "../AdModule/ui/AdPanel";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import RankModuleS from "../RankModule/RankModuleS";
+import WishModuleC from "../WishModule/WishModuleC";
 
 export class GuidePanel extends GuidePanel_Generate {
     protected onStart(): void {
@@ -209,6 +210,13 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
             this.hudModuleC = ModuleService.getModule(HUDModuleC);
         }
         return this.hudModuleC;
+    }
+    private wishModuleC: WishModuleC = null;
+    private get getWishModuleC(): WishModuleC {
+        if (!this.wishModuleC) {
+            this.wishModuleC = ModuleService.getModule(WishModuleC);
+        }
+        return this.wishModuleC;
     }
     private adPanel: AdPanel = null;
     private get getAdPanel(): AdPanel {
@@ -419,16 +427,18 @@ export class InteractionModuleC extends ModuleC<InteractionModuleS, InteractionD
             this.localPlayer.character.asyncReady().then(() => {
                 TimeUtil.delaySecond(1).then(() => {
                     // this.getHUDModuleC.onOpenClothAction.call();
-                    this.getHUDModuleC.onOpenMallAction.call();
-                    this.getHUDModuleC.onOpenTaskAction.call();
+                    // this.getHUDModuleC.onOpenMallAction.call();
+                    // this.getHUDModuleC.onOpenTaskAction.call();
+                    this.getWishModuleC.onOpenWishAction.call();
                 });
             });
             return;
         }
         this.getGuidePanel.showStartTips(() => {
             // this.getHUDModuleC.onOpenClothAction.call();
-            this.getHUDModuleC.onOpenMallAction.call();
-            this.getHUDModuleC.onOpenTaskAction.call();
+            // this.getHUDModuleC.onOpenMallAction.call();
+            // this.getHUDModuleC.onOpenTaskAction.call();
+            this.getWishModuleC.onOpenWishAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
             if (!this.triggerLocMap.has(bagId)) {

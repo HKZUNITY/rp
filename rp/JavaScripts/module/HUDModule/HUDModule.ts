@@ -134,6 +134,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.initShakeShareTween();
         this.initShakeSignInTween();
         this.initTaskTween();
+        this.initShakeWishTween();
     }
 
     public updateFreeTime(): void {
@@ -157,6 +158,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenSetButton.onClicked.add(this.addSetButton.bind(this));
         this.mOpenClothButton.onClicked.add(this.addClothButton.bind(this));
         this.mOpenRankButton.onClicked.add(this.addOpenRankButton.bind(this));
+        this.mOpenMoneyButton.onClicked.add(this.addOpenMoneyRankButton.bind(this));
         this.mOpenShareButton.onClicked.add(this.addOpenShareButton.bind(this));
         this.mOpenSignInButton.onClicked.add(this.addOpenSignInButton.bind(this));
         this.mOpenMusicButton.onClicked.add(this.addOpenMusicButton.bind(this));
@@ -167,6 +169,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
         this.mOpenPhotoButton.onClicked.add(this.addOpenPhotoButton.bind(this));
         this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
+        this.mWishtButton.onClicked.add(this.addAddWishButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -191,6 +194,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenRankButton(): void {
         this.getHUDModuleC.onOpenRankAction.call();
+    }
+
+    private addOpenMoneyRankButton(): void {
+        this.getHUDModuleC.onOpenMoneyRankAction.call();
     }
 
     private addOpenShareButton(): void {
@@ -237,6 +244,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenTaskButton(): void {
         this.getHUDModuleC.onOpenTaskAction.call();
+    }
+
+    private addAddWishButton(): void {
+        this.getHUDModuleC.onOpenWishAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -310,6 +321,21 @@ export class HUDPanel extends HUDPanel_Generate {
             });
         });
         this.initTaskRedPointTweens();
+    }
+
+    public initShakeWishTween(): void {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mWishtButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mWishtButton, 0.5, -20, 20, 0.9, 1.5);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
     }
     //#endregion
 
@@ -518,6 +544,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenSetAction: Action = new Action();
     public onOpenClothAction: Action = new Action();
     public onOpenRankAction: Action = new Action();
+    public onOpenMoneyRankAction: Action = new Action();
     public onOpenShareAction: Action1<number> = new Action1<number>();
     public onUseShareAction: Action2<string, number> = new Action2<string, number>();
     public onOpenSignInAction: Action = new Action();
@@ -530,6 +557,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onOpenMallAction: Action = new Action();
     public onOpenPhotoAction: Action = new Action();
     public onOpenTaskAction: Action = new Action();
+    public onOpenWishAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

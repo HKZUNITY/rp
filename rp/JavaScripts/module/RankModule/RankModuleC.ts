@@ -1,8 +1,8 @@
 ﻿import { EventType } from "../../GlobalData";
 import { HUDModuleC } from "../HUDModule/HUDModule";
 import { InteractionData } from "../InteractionModule/InteractionModule";
-import { TryOnData, TryOnModuleC } from "../TryOnModule/TryOnModule";
-import { RankData, RoomData, WorldData } from "./RankData";
+import { TryOnModuleC, TryOnData } from "../TryOnModule/TryOnModule";
+import { RankData, RoomData, WorldData, MoneyWorldData } from "./RankData";
 import RankModuleS from "./RankModuleS";
 import RankPanel from "./ui/RankPanel";
 
@@ -56,6 +56,7 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
     }
 
     public onOpenWorldRankAction: Action = new Action();
+    public onOpenMoneyWorldRankAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {
@@ -64,17 +65,28 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
 
     private initEventAction(): void {
         this.getHUDModuleC.onOpenRankAction.add(this.addOnOffRankPanelAction.bind(this));
+        this.getHUDModuleC.onOpenMoneyRankAction.add(this.addOnOffMoneyRankPanelAction.bind(this));
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
 
         let score = 0;
-        InputUtil.onKeyDown(mw.Keys.L, () => {
+        InputUtil.onKeyDown(mw.Keys.One, () => {
             score++;
             this.server.net_refreshScore(score);
+        });
+
+        let money = 0;
+        InputUtil.onKeyDown(mw.Keys.Two, () => {
+            money++;
+            this.server.net_refreshMoney(money);
         });
     }
 
     private addOnOffRankPanelAction(): void {
         this.onOpenWorldRankAction.call();
+    }
+
+    private addOnOffMoneyRankPanelAction(): void {
+        this.onOpenMoneyWorldRankAction.call();
     }
 
     private addOnOffMainUI(isShow: boolean): void {
@@ -91,22 +103,28 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
+
             let bagIds = this.getInteractionData?.bagIds;
             let score = (!bagIds) ? 0 : bagIds.length;
+
             let time = this.data?.time;
             if (!time && time != 0) time = 0;
+
             let tryon = this.getTryOnData?.tryOn;
             if (!tryon && tryon != 0) tryon = 0;
-            this.server.net_onEnterScene(nickName, score, time, tryon);
+
+            let money = this.data?.money;
+            if (!money && money != 0) money = 0;
+            this.server.net_onEnterScene(nickName, score, time, tryon, money);
         });
     }
 
     private roomDatas: RoomData[] = [];
     private recycleRoomDatas: RoomData[] = [];
-    private updateRoomDatas(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
+    private updateRoomDatas(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[], roomMoney: number[]): void {
         if (this.roomDatas.length > roomUserIds.length) {
             for (let i = 0; i < roomUserIds.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
             }
             for (let i = roomUserIds.length; i < this.roomDatas.length; ++i) {
                 this.recycleRoomDatas.push(this.roomDatas[i]);
@@ -114,12 +132,12 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
             this.roomDatas.length = roomUserIds.length;
         } else {
             for (let i = 0; i < this.roomDatas.length; ++i) {
-                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                this.roomDatas[i].setData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
             }
             for (let i = this.roomDatas.length; i < roomUserIds.length; ++i) {
                 let tmpRoomData = null;
                 if (this.recycleRoomDatas.length > 0) tmpRoomData = this.recycleRoomDatas.pop();
-                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i]);
+                if (!tmpRoomData) tmpRoomData = new RoomData(roomUserIds[i], roomNames[i], roomScores[i], roomTimes[i], roomTryOn[i], roomMoney[i]);
                 this.roomDatas.push(tmpRoomData);
             }
         }
@@ -176,17 +194,55 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.getRankPanel.refreshSelfWorldRankUI(this.curWorldIndex);
     }
 
-    public net_syncRoomRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
-        // console.error("wfz = " + roomUserIds.length);
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+    private moneyWorldDatas: MoneyWorldData[] = [];
+    private recycleMoneyWorldDatas: MoneyWorldData[] = [];
+    private updateMoneyWorldDatas(worldUserIds: string[], worldNames: string[], worldMoneys: number[]): void {
+        if (this.moneyWorldDatas.length > worldUserIds.length) {
+            for (let i = 0; i < worldUserIds.length; ++i) {
+                this.moneyWorldDatas[i].setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+            }
+            for (let i = worldUserIds.length; i < this.moneyWorldDatas.length; ++i) {
+                this.recycleMoneyWorldDatas.push(this.moneyWorldDatas[i]);
+            }
+            this.moneyWorldDatas.length = worldUserIds.length;
+        } else {
+            for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+                this.moneyWorldDatas[i].setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+            }
+            for (let i = this.moneyWorldDatas.length; i < worldUserIds.length; ++i) {
+                let tmpMoneyWorldData: MoneyWorldData = null;
+                if (this.recycleMoneyWorldDatas.length > 0) tmpMoneyWorldData = this.recycleMoneyWorldDatas.pop();
+                if (tmpMoneyWorldData) {
+                    tmpMoneyWorldData.setData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+                } else {
+                    tmpMoneyWorldData = new MoneyWorldData(worldUserIds[i], worldNames[i], worldMoneys[i]);
+                }
+                this.moneyWorldDatas.push(tmpMoneyWorldData);
+            }
+        }
+    }
+
+    private curMoneyWorldIndex: number = -1;
+    private updateMoneyWorldIndex(): void {
+        this.curMoneyWorldIndex = -1;
+        for (let i = 0; i < this.moneyWorldDatas.length; ++i) {
+            if (this.moneyWorldDatas[i].userId != this.currentUserId) continue;
+            this.curMoneyWorldIndex = i;
+            break;
+        }
+        this.getRankPanel.refreshSelfMoneyWorldRankUI(this.curMoneyWorldIndex);
+    }
+
+    public net_syncRoomRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[], roomMoney: number[]): void {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.sortRoomData();
         this.updateRoomIndex();
         this.getRankPanel.refreshRankPanel_Room(this.roomDatas, this.curRoomIndex);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
-    public net_syncRoomRankData_TryOn(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[]): void {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+    public net_syncRoomRankData_TryOn(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[], roomMoney: number[]): void {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.getTryOnModuleC.refreshTryOnPanel(this.getRoomDatas());
     }
 
@@ -196,9 +252,26 @@ export default class RankModuleC extends ModuleC<RankModuleS, RankData> {
         this.getRankPanel.refreshRankPanel_World(this.worldDatas, this.curWorldIndex);
     }
 
-    public net_syncRoomWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[],
+    public net_syncMoneyWorldRankData(worldUserIds: string[], worldNames: string[], worldMoneys: number[]): void {
+        this.updateMoneyWorldDatas(worldUserIds, worldNames, worldMoneys);
+        this.updateMoneyWorldIndex();
+        this.getRankPanel.refreshRankPanel_MoneyWorld(this.moneyWorldDatas, this.curMoneyWorldIndex);
+    }
+
+    public net_syncRoomMoneyWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[], roomMoney: number[],
+        worldUserIds: string[], worldNames: string[], worldMoneys: number[]): void {
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
+        this.sortRoomData();
+        this.updateRoomIndex();
+
+        this.updateMoneyWorldDatas(worldUserIds, worldNames, worldMoneys);
+        this.updateMoneyWorldIndex();
+        this.getRankPanel.refreshRankPanel_RoomMoneyWorld(this.roomDatas, this.curRoomIndex, this.moneyWorldDatas, this.curMoneyWorldIndex);
+    }
+
+    public net_syncRoomWorldRankData(roomUserIds: string[], roomNames: string[], roomScores: number[], roomTimes: number[], roomTryOn: number[], roomMoney: number[],
         worldUserIds: string[], worldNames: string[], worldScores: number[]): void {
-        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn);
+        this.updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney);
         this.sortRoomData();
         this.updateRoomIndex();
 

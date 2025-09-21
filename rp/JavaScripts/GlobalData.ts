@@ -8,6 +8,7 @@ export default class GlobalData {
     public static bagCount: number = 5;
 
     public static worldCount: number = 500;
+    public static moneyWorldCount: number = 500;
 
     public static freeTime: number = 999;
 
@@ -21,6 +22,8 @@ export default class GlobalData {
     public static dailyRefreshTime: string = "4:0";
     /**每周刷新时间（目前是每周一凌晨4点，格式为4:0） */
     public static weeklyRefreshTime: string = "4:0";
+
+    public static userId: string = `47958884`;
 }
 
 export enum EventType {

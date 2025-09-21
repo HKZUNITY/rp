@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/HUDModule/HUDPanel.ui
- * TIME: 2025.07.26-23.00.52
+ * TIME: 2025.09.21-13.16.41
  */
  
 @UIBind('UI/module/HUDModule/HUDPanel.ui')
@@ -218,6 +218,27 @@ export default class HUDPanel_Generate extends UIScript {
 		}
 		return this.mOpenPhotoTextBlock_Internal
 	}
+	private mOpenMoneyImage_Internal: mw.Image
+	public get mOpenMoneyImage(): mw.Image {
+		if(!this.mOpenMoneyImage_Internal&&this.uiWidgetBase) {
+			this.mOpenMoneyImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMoneyImage') as mw.Image
+		}
+		return this.mOpenMoneyImage_Internal
+	}
+	private mOpenMoneyButton_Internal: mw.StaleButton
+	public get mOpenMoneyButton(): mw.StaleButton {
+		if(!this.mOpenMoneyButton_Internal&&this.uiWidgetBase) {
+			this.mOpenMoneyButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMoneyImage/mOpenMoneyButton') as mw.StaleButton
+		}
+		return this.mOpenMoneyButton_Internal
+	}
+	private mOpenMoneyTextBlock_Internal: mw.TextBlock
+	public get mOpenMoneyTextBlock(): mw.TextBlock {
+		if(!this.mOpenMoneyTextBlock_Internal&&this.uiWidgetBase) {
+			this.mOpenMoneyTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/UpperRightCanvas/mOpenMoneyImage/mOpenMoneyTextBlock') as mw.TextBlock
+		}
+		return this.mOpenMoneyTextBlock_Internal
+	}
 	private mJumpBgImage_Internal: mw.Image
 	public get mJumpBgImage(): mw.Image {
 		if(!this.mJumpBgImage_Internal&&this.uiWidgetBase) {
@@ -287,6 +308,27 @@ export default class HUDPanel_Generate extends UIScript {
 			this.mActionButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mActionBgImage/mActionButton') as mw.Button
 		}
 		return this.mActionButton_Internal
+	}
+	private mWishBgImage_Internal: mw.Image
+	public get mWishBgImage(): mw.Image {
+		if(!this.mWishBgImage_Internal&&this.uiWidgetBase) {
+			this.mWishBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mWishBgImage') as mw.Image
+		}
+		return this.mWishBgImage_Internal
+	}
+	private mWishtButton_Internal: mw.Button
+	public get mWishtButton(): mw.Button {
+		if(!this.mWishtButton_Internal&&this.uiWidgetBase) {
+			this.mWishtButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mWishBgImage/mWishtButton') as mw.Button
+		}
+		return this.mWishtButton_Internal
+	}
+	private mWishTextBlock_Internal: mw.TextBlock
+	public get mWishTextBlock(): mw.TextBlock {
+		if(!this.mWishTextBlock_Internal&&this.uiWidgetBase) {
+			this.mWishTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/LowRightCanvas/mWishBgImage/mWishTextBlock') as mw.TextBlock
+		}
+		return this.mWishTextBlock_Internal
 	}
 	private mGoodsCanvas_Internal: mw.Canvas
 	public get mGoodsCanvas(): mw.Canvas {
@@ -446,6 +488,13 @@ export default class HUDPanel_Generate extends UIScript {
 		this.mOpenPhotoButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mOpenMoneyButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mOpenMoneyButton");
+		});
+		this.initLanguage(this.mOpenMoneyButton);
+		this.mOpenMoneyButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mDeleteAllGoodsButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
 		});
@@ -483,6 +532,12 @@ export default class HUDPanel_Generate extends UIScript {
 			Event.dispatchToLocal("PlayButtonClick", "mActionButton");
 		});
 		this.mActionButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
+		this.mWishtButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mWishtButton");
+		});
+		this.mWishtButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
 		this.mShowHideGoodsButton.onClicked.add(()=>{
@@ -547,6 +602,12 @@ export default class HUDPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mOpenPhotoTextBlock)
+		
+	
+		this.initLanguage(this.mOpenMoneyTextBlock)
+		
+	
+		this.initLanguage(this.mWishTextBlock)
 		
 	
 		this.initLanguage(this.mMusicText)

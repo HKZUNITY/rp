@@ -3,7 +3,7 @@ import { GameConfig } from "../../../configs/GameConfig";
 import GlobalData from "../../../GlobalData";
 import Utils from "../../../tools/Utils";
 import RankPanel_Generate from "../../../ui-generate/module/RankModule/RankPanel_generate";
-import { RoomData, WorldData } from "../RankData";
+import { RoomData, WorldData, MoneyWorldData } from "../RankData";
 import RankModuleC from "../RankModuleC";
 import RoomItem from "./RoomItem";
 import WorldItem from "./WorldItem";
@@ -34,24 +34,36 @@ export default class RankPanel extends RankPanel_Generate {
 
 		this.mCloseWorldButton.onClicked.add(this.bindCloseWorldButton.bind(this));
 		this.getRankModuleC.onOpenWorldRankAction.add(this.addOpenWorldRankAction.bind(this));
+
+		this.mCloseMoneyWorldButton.onClicked.add(this.bindCloseMoneyWorldButton.bind(this));
+		this.getRankModuleC.onOpenMoneyWorldRankAction.add(this.addOpenMoneyWorldRankAction.bind(this));
 	}
 
 	private initUI(): void {
 		this.mRoomRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
 		this.mRoomNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mRoomScoreTextBlock.text = GameConfig.Language.Text_Score.Value;
+		this.mRoomMoneyTextBlock.text = `富豪积分`;
 
 		this.mTitleTextBlock.text = StringUtil.format(GameConfig.Language.Text_TopInTermsOfDuration.Value, GlobalData.worldCount);
+		this.mMoneyTitleTextBlock.text = `富豪榜前${GlobalData.worldCount}名`
 
 		this.mWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
 		this.mWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
 		this.mWorldTimeTextBlock.text = GameConfig.Language.Text_Duration.Value;
+
+		this.mMoneyWorldRankTextBlock.text = GameConfig.Language.Text_Ranking.Value;
+		this.mMoneyWorldNameTextBlock.text = GameConfig.Language.Text_Nickname.Value;
+		this.mMoneyWorldTimeTextBlock.text = `富豪积分`;
 
 		Utils.setWidgetVisibility(this.mOpenRoomRankImage, mw.SlateVisibility.SelfHitTestInvisible);
 		Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.Collapsed);
 
 		Utils.setWidgetVisibility(this.mCloseWorldButton, mw.SlateVisibility.Collapsed);
 		Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
+
+		Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Collapsed);
+		Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.Collapsed);
 
 		if (GlobalData.languageId == 0) {
 			this.mRoomRankTextBlock.fontSize = 15;
@@ -87,6 +99,16 @@ export default class RankPanel extends RankPanel_Generate {
 		Utils.setWidgetVisibility(this.mWorldCanvas, mw.SlateVisibility.Collapsed);
 	}
 
+	private addOpenMoneyWorldRankAction(): void {
+		Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Visible);
+		Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.SelfHitTestInvisible);
+	}
+
+	private bindCloseMoneyWorldButton(): void {
+		Utils.setWidgetVisibility(this.mCloseMoneyWorldButton, mw.SlateVisibility.Collapsed);
+		Utils.setWidgetVisibility(this.mMoneyWorldCanvas, mw.SlateVisibility.Collapsed);
+	}
+
 	public refreshRankPanel_RoomWorld(roomDatas: RoomData[], curRoomIndex: number,
 		worldDatas: WorldData[], curWorldIndex: number): void {
 		if (roomDatas && roomDatas?.length > 0) {
@@ -95,6 +117,12 @@ export default class RankPanel extends RankPanel_Generate {
 			Utils.setWidgetVisibility(this.mRoomCanvas, mw.SlateVisibility.SelfHitTestInvisible);
 		}
 		if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
+	}
+
+	public refreshRankPanel_RoomMoneyWorld(roomDatas: RoomData[], curRoomIndex: number,
+		moneyWorldDatas: MoneyWorldData[], curMoneyWorldIndex: number): void {
+		if (roomDatas && roomDatas?.length > 0) this.refreshRoomRankPanel(roomDatas, curRoomIndex);
+		this.refreshRankPanel_MoneyWorld(moneyWorldDatas, curMoneyWorldIndex);
 	}
 
 	public refreshRankPanel_Room(roomDatas: RoomData[], curRoomIndex: number): void {
@@ -129,6 +157,10 @@ export default class RankPanel extends RankPanel_Generate {
 		if (worldDatas && worldDatas?.length > 0) this.refreshWorldRankPanel(worldDatas, curWorldIndex);
 	}
 
+	public refreshRankPanel_MoneyWorld(moneyWorldDatas: MoneyWorldData[], curMoneyWorldIndex: number): void {
+		if (moneyWorldDatas && moneyWorldDatas?.length > 0) this.refreshMoneyWorldRankPanel(moneyWorldDatas, curMoneyWorldIndex);
+	}
+
 	private worldItems: WorldItem[] = [];
 	private refreshWorldRankPanel(worldDatas: WorldData[], curWorldIndex: number): void {
 		if (worldDatas.length > this.worldItems.length) {
@@ -153,9 +185,36 @@ export default class RankPanel extends RankPanel_Generate {
 		}
 	}
 
+	private moneyWorldItems: WorldItem[] = [];
+	private refreshMoneyWorldRankPanel(moneyWorldDatas: MoneyWorldData[], curMoneyWorldIndex: number): void {
+		if (moneyWorldDatas.length > this.moneyWorldItems.length) {
+			for (let i = 0; i < this.moneyWorldItems.length; ++i) {
+				this.moneyWorldItems[i].setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+				Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+			}
+			for (let i = this.moneyWorldItems.length; i < moneyWorldDatas.length; ++i) {
+				let worldItem = UIService.create(WorldItem);
+				worldItem.setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+				this.mMoneyWorldContentCanvas.addChild(worldItem.uiObject);
+				this.moneyWorldItems.push(worldItem);
+			}
+		} else {
+			for (let i = 0; i < moneyWorldDatas.length; ++i) {
+				this.moneyWorldItems[i].setData(i + 1, moneyWorldDatas[i], i == curMoneyWorldIndex);
+				Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.SelfHitTestInvisible);
+			}
+			for (let i = moneyWorldDatas.length; i < this.moneyWorldItems.length; ++i) {
+				Utils.setWidgetVisibility(this.moneyWorldItems[i].uiObject, mw.SlateVisibility.Collapsed);
+			}
+		}
+	}
+
 	public refreshSelfWorldNameAndTimeUI(roomData: RoomData): void {
 		this.mSelfWorldNameTextBlock.text = roomData.playerName;
 		this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
+
+		this.mSelfMoneyWorldNameTextBlock.text = roomData.playerName;
+		this.mSelfMoneyWorldTimeTextBlock.text = roomData.money.toString();
 	}
 
 	public refreshSelfWorldRankUI(ranking: number): void {
@@ -163,6 +222,14 @@ export default class RankPanel extends RankPanel_Generate {
 			this.mSelfWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
 		} else {
 			this.mSelfWorldRankTextBlock.text = (ranking + 1).toString();
+		}
+	}
+
+	public refreshSelfMoneyWorldRankUI(ranking: number): void {
+		if (ranking == -1) {
+			this.mSelfMoneyWorldRankTextBlock.text = GameConfig.Language.Text_NoOnTheList.Value;
+		} else {
+			this.mSelfMoneyWorldRankTextBlock.text = (ranking + 1).toString();
 		}
 	}
 }
