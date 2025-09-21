@@ -8785,6 +8785,7 @@ class WishTools {
             wishDataV0.price = jsonData?.price;
             wishDataV0.itemType = jsonData?.itemType;
             wishDataV0.userId = userId;
+            wishDataV0.nickName = this.getNickName();
             wishDataV0s.push(wishDataV0);
         }
         if (wishDataV0s.length == 0) {
@@ -8792,9 +8793,23 @@ class WishTools {
         }
         return wishDataV0s;
     }
+    static getNickName() {
+        if (!this.nickName) this.nickName = AccountService.getNickName();
+        return this.nickName ? this.nickName : `账号异常`;
+    }
+    static danmuSyncServer(name1, name2, price) {
+        Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+        for (let i = 0; i < 5; ++i) {
+            TimeUtil.delaySecond(i).then((() => {
+                Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+            }));
+        }
+    }
 }
 
-WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 53 ];
+WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 43, 53 ];
+
+WishTools.nickName = null;
 
 var foreign152 = Object.freeze({
     __proto__: null,
@@ -9084,7 +9099,7 @@ class WishModuleC extends ModuleC {
     }
     addOpenWishOrMallAction() {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            let wishDataV0s = await WishTools.getWishDataV0s(GlobalData.userId);
+            let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 this.getHudModuleC.onOpenMallAction.call();
                 this.getHudModuleC.onOpenTaskAction.call();
@@ -9094,7 +9109,6 @@ class WishModuleC extends ModuleC {
         }));
     }
     addRequestBuyAction(wishDataV0) {
-        console.error(JSON.stringify(wishDataV0));
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.getMallModuleC.updateNickWish(wishDataV0);
             this.getWishPanel.hide();
@@ -9200,6 +9214,7 @@ class WishModuleC extends ModuleC {
             let tmpWishDataV0 = new WishDataV0;
             tmpWishDataV0.userId = userId;
             tmpWishDataV0.price = price;
+            WishTools.danmuSyncServer(WishTools.getNickName(), wishDataV0.nickName, price);
             await this.getMallModuleC.updateNickWish(tmpWishDataV0);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
         }), (async status => {

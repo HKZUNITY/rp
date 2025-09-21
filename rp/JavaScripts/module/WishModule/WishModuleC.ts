@@ -183,6 +183,7 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
             let tmpWishDataV0 = new WishDataV0();
             tmpWishDataV0.userId = userId;
             tmpWishDataV0.price = price;
+            WishTools.danmuSyncServer(WishTools.getNickName(), wishDataV0.nickName, price);
             await this.getMallModuleC.updateNickWish(tmpWishDataV0);
             await PortalData.cancelSendWishItemRequest([itemId], userId);
         }, async (status: number) => {
