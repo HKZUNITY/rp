@@ -135,6 +135,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.initShakeShareTween();
         this.initShakeSignInTween();
         this.initTaskTween();
+        this.initShakeWishTween();
     }
 
     public updateFreeTime(): void {
@@ -167,6 +168,7 @@ export class HUDPanel extends HUDPanel_Generate {
         this.mCloseMusicBtn.onClicked.add(this.addCloseMusicButton.bind(this));
         this.mOpenMallButton.onClicked.add(this.addOpenMallButton.bind(this));
         this.mOpenTaskButton.onClicked.add(this.addOpenTaskButton.bind(this));
+        this.mWishtButton.onClicked.add(this.addAddWishButton.bind(this));
     }
 
     private addJumpButton(): void {
@@ -233,6 +235,10 @@ export class HUDPanel extends HUDPanel_Generate {
 
     private addOpenTaskButton(): void {
         this.getHUDModuleC.onOpenTaskAction.call();
+    }
+
+    private addAddWishButton(): void {
+        this.getHUDModuleC.onOpenWishAction.call();
     }
 
     private showHideGoodsButton(): void {
@@ -306,6 +312,21 @@ export class HUDPanel extends HUDPanel_Generate {
             });
         });
         this.initTaskRedPointTweens();
+    }
+
+    public initShakeWishTween(): void {
+        let rightBigToLeftSmall = this.getShakeScaleTween(this.mWishtButton, 0.5, 20, -20, 1.5, 0.9);
+        let leftSamllToRightBig = this.getShakeScaleTween(this.mWishtButton, 0.5, -20, 20, 0.9, 1.5);
+
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(0.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(0.1).then(() => {
+                        rightBigToLeftSmall.start();
+                    });
+                });
+            })
+        });
     }
     //#endregion
 
@@ -533,6 +554,7 @@ export class HUDModuleC extends ModuleC<HUDModuleS, null> {
     public onSwitchBgmAction: Action1<number> = new Action1<number>();
     public onOpenMallAction: Action = new Action();
     public onOpenTaskAction: Action = new Action();
+    public onOpenWishAction: Action = new Action();
 
     /** 当脚本被实例后，会在第一帧更新前调用此函数 */
     protected onStart(): void {

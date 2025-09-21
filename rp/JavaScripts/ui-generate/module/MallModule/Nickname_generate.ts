@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/Nickname.ui
- * TIME: 2025.07.26-23.29.20
+ * TIME: 2025.09.21-14.55.50
  */
  
 @UIBind('UI/module/MallModule/Nickname.ui')
@@ -36,6 +36,34 @@ export default class Nickname_Generate extends UIScript {
 		}
 		return this.mVipCountText_Internal
 	}
+	private mWishBgImage_Internal: mw.Image
+	public get mWishBgImage(): mw.Image {
+		if(!this.mWishBgImage_Internal&&this.uiWidgetBase) {
+			this.mWishBgImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/NicknameCanvas/mWishBgImage') as mw.Image
+		}
+		return this.mWishBgImage_Internal
+	}
+	private mWishIconImage_Internal: mw.Image
+	public get mWishIconImage(): mw.Image {
+		if(!this.mWishIconImage_Internal&&this.uiWidgetBase) {
+			this.mWishIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/NicknameCanvas/mWishBgImage/mWishIconImage') as mw.Image
+		}
+		return this.mWishIconImage_Internal
+	}
+	private mWishFlipBook_Internal: mw.FlipBook
+	public get mWishFlipBook(): mw.FlipBook {
+		if(!this.mWishFlipBook_Internal&&this.uiWidgetBase) {
+			this.mWishFlipBook_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/NicknameCanvas/mWishBgImage/mWishFlipBook') as mw.FlipBook
+		}
+		return this.mWishFlipBook_Internal
+	}
+	private mWishTipsTextBlock_Internal: mw.TextBlock
+	public get mWishTipsTextBlock(): mw.TextBlock {
+		if(!this.mWishTipsTextBlock_Internal&&this.uiWidgetBase) {
+			this.mWishTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/NicknameCanvas/mWishBgImage/mWishTipsTextBlock') as mw.TextBlock
+		}
+		return this.mWishTipsTextBlock_Internal
+	}
 
 
 	protected onAwake() {
@@ -54,6 +82,9 @@ export default class Nickname_Generate extends UIScript {
 		//文本多语言
 		
 		this.initLanguage(this.mVipCountText)
+		
+	
+		this.initLanguage(this.mWishTipsTextBlock)
 		
 	
 		//文本多语言

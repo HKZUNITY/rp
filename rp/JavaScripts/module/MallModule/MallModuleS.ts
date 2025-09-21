@@ -1,4 +1,5 @@
 ﻿import Utils from "../../tools/Utils";
+import { WishDataV0 } from "../WishModule/WishData";
 import MallData, { MallConfigData } from "./MallData";
 import MallModuleC from "./MallModuleC";
 import Nickname from "./ui/Nickname";
@@ -83,5 +84,16 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
     @Decorator.noReply()
     public net_setIsUseFreeSave(isUseFreeSave: boolean): void {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
+    }
+
+    public net_updateNickWish(wishDataV0: WishDataV0): boolean {
+        let userId = wishDataV0.userId;
+        if (this.nicknameMap.has(userId)) {
+            let nickname = this.nicknameMap.get(userId);
+            nickname.wishDataV0 = wishDataV0;
+            if (!wishDataV0.itemId) this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+            return true;
+        }
+        return false;
     }
 }

@@ -24,6 +24,8 @@ export default class GlobalData {
 
     public static add1VipShopId = `7A53roftO8B00054i`;
     public static add999VipShopId = `3ki8ifW7BUs0006Pk`;
+
+    public static userId: string = `47958884`;
 }
 
 export enum EventType {
