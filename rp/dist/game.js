@@ -15888,6 +15888,7 @@ class MallModuleC extends ModuleC {
         this.onCloseColorPickPanelAction = new Action;
         this.onSaveColorPickPanelAction = new Action;
         this.onCloseMallItemSelfAction = new Action2;
+        this.isFirst = true;
         this.usingAssetIdMap = new Map;
         this.usingAssetIds = [];
         this.delaySwitchCameraTabIds = [ Tab1Type.Tab1_Clothing, Tab2Type.Tab2_BodyType ];
@@ -16006,6 +16007,10 @@ class MallModuleC extends ModuleC {
         }
     }
     addOpenMallAction() {
+        if (this.isFirst) {
+            this.getHUDModuleC.onOpenTaskAction.call();
+            this.isFirst = false;
+        }
         ExecutorManager.instance.pushAsyncExecutor((async () => {
             await this.localPlayer.character.asyncReady();
             await this.isAccountServiceDownloadData();
@@ -21401,7 +21406,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mSelfWorldNameTextBlock.text = roomData.playerName;
         this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
         this.mSelfMoneyWorldNameTextBlock.text = roomData.playerName;
-        this.mSelfMoneyWorldTimeTextBlock.text = roomData.time.toString();
+        this.mSelfMoneyWorldTimeTextBlock.text = roomData.money.toString();
     }
     refreshSelfWorldRankUI(ranking) {
         if (ranking == -1) {

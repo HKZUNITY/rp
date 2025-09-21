@@ -41,11 +41,6 @@ export default class WishModuleC extends ModuleC<WishModuleS, WishData> {
 
     protected onStart(): void {
         this.bindAction();
-        // let assetId = this.localPlayer.character.description.advance.clothing.upperCloth.style;
-        // AvatarEditorService.asyncGetCommodityByAssetIds([assetId]).then((result) => {
-        //     console.error(`wfz - result:${JSON.stringify(result.data)}`);
-        // });
-        // let a = await PortalData.applySendWishItemRequest("27291", this.localPlayer.userId);
     }
 
     private bindAction() {
