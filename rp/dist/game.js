@@ -15083,6 +15083,7 @@ class WishTools {
             wishDataV0.price = jsonData?.price;
             wishDataV0.itemType = jsonData?.itemType;
             wishDataV0.userId = userId;
+            wishDataV0.nickName = this.getNickName();
             wishDataV0s.push(wishDataV0);
         }
         if (wishDataV0s.length == 0) {
@@ -15090,9 +15091,23 @@ class WishTools {
         }
         return wishDataV0s;
     }
+    static getNickName() {
+        if (!this.nickName) this.nickName = AccountService.getNickName();
+        return this.nickName ? this.nickName : `账号异常`;
+    }
+    static danmuSyncServer(name1, name2, price) {
+        Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+        for (let i = 0; i < 5; ++i) {
+            TimeUtil.delaySecond(i).then((() => {
+                Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+            }));
+        }
+    }
 }
 
 WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 43, 53 ];
+
+WishTools.nickName = null;
 
 var foreign151 = Object.freeze({
     __proto__: null,
@@ -15497,6 +15512,7 @@ class WishModuleC extends ModuleC {
             let tmpWishDataV0 = new WishDataV0;
             tmpWishDataV0.userId = userId;
             tmpWishDataV0.price = price;
+            WishTools.danmuSyncServer(WishTools.getNickName(), wishDataV0.nickName, price);
             await this.getMallModuleC.updateNickWish(tmpWishDataV0);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
         }), (async status => {
@@ -21274,7 +21290,7 @@ class RankPanel extends RankPanel_Generate$1 {
         this.mSelfWorldNameTextBlock.text = roomData.playerName;
         this.mSelfWorldTimeTextBlock.text = roomData.time.toString();
         this.mSelfMoneyWorldNameTextBlock.text = roomData.playerName;
-        this.mSelfMoneyWorldTimeTextBlock.text = roomData.time.toString();
+        this.mSelfMoneyWorldTimeTextBlock.text = roomData.money.toString();
     }
     refreshSelfWorldRankUI(ranking) {
         if (ranking == -1) {
