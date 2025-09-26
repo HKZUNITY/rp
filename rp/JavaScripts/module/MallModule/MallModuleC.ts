@@ -107,9 +107,9 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         this.initShopCamera();
         this.localPlayer.character.asyncReady().then(() => {
             TimeUtil.delaySecond(1).then(() => {
-                // this.addOpenMallAction();
-                // this.getHUDModuleC.onOpenTaskAction.call();
-                this.getWishModuleC.onOpenWishAction.call();
+                this.addOpenMallAction();
+                this.getHUDModuleC.onOpenTaskAction.call();
+                // this.getWishModuleC.onOpenWishAction.call();
             });
         });
     }

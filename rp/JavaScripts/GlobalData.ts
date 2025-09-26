@@ -16,7 +16,7 @@ export default class GlobalData {
     /**打开背景音乐图标Guid */
     public static onMusicIconGuid: string = `133445`;
 
-    public static savaMaxCount: number = 6;
+    public static savaMaxCount: number = 10;
     /**每日刷新时间（目前是凌晨4点，格式为4:0） */
     public static dailyRefreshTime: string = "4:0";
     /**每周刷新时间（目前是每周一凌晨4点，格式为4:0） */
