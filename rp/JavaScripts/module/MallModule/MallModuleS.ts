@@ -82,6 +82,7 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
     private deleteNickname(player: mw.Player): void {
         if (this.nicknameMap.has(player.userId)) {
             let nickname = this.nicknameMap.get(player.userId);
+            nickname.wishDataV0 = null;
             nickname.destroy();
             this.nicknameMap.delete(player.userId);
         }

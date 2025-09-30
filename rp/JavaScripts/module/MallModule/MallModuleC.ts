@@ -132,6 +132,19 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
         InputUtil.onKeyDown(mw.Keys.O, () => {
             this.addOpenMallAction();
         });
+
+        InputUtil.onKeyDown(mw.Keys.NumPadNine, () => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
+                await this.localPlayer.character.asyncReady();
+                this.copyNpc.setDescription(this.localPlayer.character.getDescription());
+                await this.copyNpc.asyncReady();
+                await AvatarEditorService.asyncCloseAvatarEditorModule();
+                await TimeUtil.delaySecond(1);
+                this.localPlayer.character.setDescription(this.copyNpc.getDescription());
+                await this.localPlayer.character.asyncReady();
+                this.localPlayer.character.syncDescription();
+            });
+        });
     }
 
     private addSaveColorPickPanelAction(): void {
