@@ -763,7 +763,7 @@ export class PlayerBag {
     }
 
     private async resetCloth(): Promise<void> {
-        if (!this.player) return;
+        if (!this.player || this.actionPropElement.Tab != 7) return;
         await ModuleService.getModule(MallModuleS).tryResetCharacter(this.player);
     }
 }

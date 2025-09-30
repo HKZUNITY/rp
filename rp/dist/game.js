@@ -19216,7 +19216,7 @@ class PlayerBag {
         await this.player.character.asyncReady();
     }
     async resetCloth() {
-        if (!this.player) return;
+        if (!this.player || this.actionPropElement.Tab != 7) return;
         await ModuleService.getModule(MallModuleS).tryResetCharacter(this.player);
     }
 }
