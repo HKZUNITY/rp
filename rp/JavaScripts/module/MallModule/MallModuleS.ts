@@ -108,14 +108,14 @@ export default class MallModuleS extends ModuleS<MallModuleC, MallData> {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
     }
 
-    public net_updateNickWish(wishDataV0: WishDataV0): boolean {
+    public net_updateNickWish(wishDataV0: WishDataV0, isGive: boolean): boolean {
         let targetUserId = this.currentPlayer.userId;
         let userId = wishDataV0.userId;
         if (this.nicknameMap.has(userId)) {
             let nickname = this.nicknameMap.get(userId);
             nickname.wishDataV0 = wishDataV0;
-            if (!wishDataV0.itemId) {
-                this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+            if (isGive) {
+                this.getClient(Player.getPlayer(userId)).net_giveSuccess(wishDataV0);
                 this.getRankModuleS.refreshMoney(targetUserId, wishDataV0.price);
             }
             return true;
