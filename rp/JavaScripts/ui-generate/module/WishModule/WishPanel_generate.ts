@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/WishModule/WishPanel.ui
- * TIME: 2025.09.21-13.16.42
+ * TIME: 2025.10.02-19.42.30
  */
  
 @UIBind('UI/module/WishModule/WishPanel.ui')
