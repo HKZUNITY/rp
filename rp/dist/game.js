@@ -50,7 +50,7 @@ NoticeView_Generate = __decorate([ UIBind("UI/common/notice/NoticeView.ui") ], N
 
 var NoticeView_Generate$1 = NoticeView_Generate;
 
-var foreign159 = Object.freeze({
+var foreign160 = Object.freeze({
     __proto__: null,
     default: NoticeView_Generate$1
 });
@@ -107,7 +107,7 @@ TopNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/TopNoticeItem.ui"
 
 var TopNoticeItem_Generate$1 = TopNoticeItem_Generate;
 
-var foreign161 = Object.freeze({
+var foreign162 = Object.freeze({
     __proto__: null,
     default: TopNoticeItem_Generate$1
 });
@@ -3408,7 +3408,7 @@ var MapEx;
     MapEx.copy = copy;
 })(MapEx || (MapEx = {}));
 
-var foreign153 = Object.freeze({
+var foreign154 = Object.freeze({
     __proto__: null,
     get MapEx() {
         return MapEx;
@@ -3839,7 +3839,7 @@ var AvatarDecora;
     AvatarDecora.getDecorByItemType = getDecorByItemType;
 })(AvatarDecora || (AvatarDecora = {}));
 
-var foreign148 = Object.freeze({
+var foreign149 = Object.freeze({
     __proto__: null,
     get AvatarDecora() {
         return AvatarDecora;
@@ -4479,7 +4479,7 @@ function getStyle(somatotype) {
     if (somatotype === mw.SomatotypeV2.CartoonyMale || somatotype === mw.SomatotypeV2.CartoonyFemale) return StyleType.Cartoony;
 }
 
-var foreign147 = Object.freeze({
+var foreign148 = Object.freeze({
     __proto__: null,
     get AvatarApi() {
         return AvatarApi;
@@ -4536,7 +4536,7 @@ LoadingPanel_Generate = __decorate([ UIBind("UI/tools/LoadingPanel.ui") ], Loadi
 
 var LoadingPanel_Generate$1 = LoadingPanel_Generate;
 
-var foreign209 = Object.freeze({
+var foreign211 = Object.freeze({
     __proto__: null,
     default: LoadingPanel_Generate$1
 });
@@ -4567,7 +4567,7 @@ class LoadingPanel extends LoadingPanel_Generate$1 {
     }
 }
 
-var foreign156 = Object.freeze({
+var foreign157 = Object.freeze({
     __proto__: null,
     default: LoadingPanel
 });
@@ -4678,7 +4678,7 @@ class ExecutorManager {
 
 ExecutorManager._instance = undefined;
 
-var foreign158 = Object.freeze({
+var foreign159 = Object.freeze({
     __proto__: null,
     default: ExecutorManager
 });
@@ -4886,7 +4886,7 @@ class FlyText {
     }
 }
 
-var foreign151 = Object.freeze({
+var foreign152 = Object.freeze({
     __proto__: null,
     FlyText: FlyText
 });
@@ -5208,7 +5208,7 @@ function cubicBezier(p1x, p1y, p2x, p2y) {
     return solve;
 }
 
-var foreign157 = Object.freeze({
+var foreign158 = Object.freeze({
     __proto__: null,
     cubicBezier: cubicBezier,
     default: Utils
@@ -5260,7 +5260,7 @@ BubbleItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BubbleItem.ui")
 
 var BubbleItem_Generate$1 = BubbleItem_Generate;
 
-var foreign168 = Object.freeze({
+var foreign169 = Object.freeze({
     __proto__: null,
     default: BubbleItem_Generate$1
 });
@@ -5326,7 +5326,7 @@ HUDItem_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDItem.ui") ], HUDI
 
 var HUDItem_Generate$1 = HUDItem_Generate;
 
-var foreign176 = Object.freeze({
+var foreign177 = Object.freeze({
     __proto__: null,
     default: HUDItem_Generate$1
 });
@@ -5764,7 +5764,7 @@ HUDPanel_Generate = __decorate([ UIBind("UI/module/HUDModule/HUDPanel.ui") ], HU
 
 var HUDPanel_Generate$1 = HUDPanel_Generate;
 
-var foreign177 = Object.freeze({
+var foreign178 = Object.freeze({
     __proto__: null,
     default: HUDPanel_Generate$1
 });
@@ -5813,7 +5813,7 @@ SavePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SavePanel.ui") ]
 
 var SavePanel_Generate$1 = SavePanel_Generate;
 
-var foreign200 = Object.freeze({
+var foreign201 = Object.freeze({
     __proto__: null,
     default: SavePanel_Generate$1
 });
@@ -5934,7 +5934,7 @@ SharePanel_Generate = __decorate([ UIBind("UI/module/ShareModule/SharePanel.ui")
 
 var SharePanel_Generate$1 = SharePanel_Generate;
 
-var foreign201 = Object.freeze({
+var foreign202 = Object.freeze({
     __proto__: null,
     default: SharePanel_Generate$1
 });
@@ -6003,7 +6003,7 @@ AdPanel_Generate = __decorate([ UIBind("UI/module/AdModule/AdPanel.ui") ], AdPan
 
 var AdPanel_Generate$1 = AdPanel_Generate;
 
-var foreign162 = Object.freeze({
+var foreign163 = Object.freeze({
     __proto__: null,
     default: AdPanel_Generate$1
 });
@@ -6077,7 +6077,7 @@ TipsPanel_Generate = __decorate([ UIBind("UI/module/AdModule/TipsPanel.ui") ], T
 
 var TipsPanel_Generate$1 = TipsPanel_Generate;
 
-var foreign163 = Object.freeze({
+var foreign164 = Object.freeze({
     __proto__: null,
     default: TipsPanel_Generate$1
 });
@@ -6401,7 +6401,7 @@ class SuitData {
     }
 }
 
-var foreign154 = Object.freeze({
+var foreign155 = Object.freeze({
     __proto__: null,
     get AcquiredFrom() {
         return AcquiredFrom;
@@ -6648,9 +6648,220 @@ class CameraData {
     }
 }
 
-var foreign149 = Object.freeze({
+var foreign150 = Object.freeze({
     __proto__: null,
     default: CameraManager$1
+});
+
+let GetWishPanel_Generate = class GetWishPanel_Generate extends UIScript {
+    get mTipsTextBlock() {
+        if (!this.mTipsTextBlock_Internal && this.uiWidgetBase) {
+            this.mTipsTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mTipsTextBlock");
+        }
+        return this.mTipsTextBlock_Internal;
+    }
+    get mItemBgImage() {
+        if (!this.mItemBgImage_Internal && this.uiWidgetBase) {
+            this.mItemBgImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mItemBgImage");
+        }
+        return this.mItemBgImage_Internal;
+    }
+    get mItemIconImage() {
+        if (!this.mItemIconImage_Internal && this.uiWidgetBase) {
+            this.mItemIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mItemBgImage/mItemIconImage");
+        }
+        return this.mItemIconImage_Internal;
+    }
+    get mOpenAvatarButton() {
+        if (!this.mOpenAvatarButton_Internal && this.uiWidgetBase) {
+            this.mOpenAvatarButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mOpenAvatarButton");
+        }
+        return this.mOpenAvatarButton_Internal;
+    }
+    get mAvatarTextBlock() {
+        if (!this.mAvatarTextBlock_Internal && this.uiWidgetBase) {
+            this.mAvatarTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mOpenAvatarButton/mAvatarTextBlock");
+        }
+        return this.mAvatarTextBlock_Internal;
+    }
+    get mCloseButton() {
+        if (!this.mCloseButton_Internal && this.uiWidgetBase) {
+            this.mCloseButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mCloseButton");
+        }
+        return this.mCloseButton_Internal;
+    }
+    get mCloseTextBlock() {
+        if (!this.mCloseTextBlock_Internal && this.uiWidgetBase) {
+            this.mCloseTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/Image/mCloseButton/mCloseTextBlock");
+        }
+        return this.mCloseTextBlock_Internal;
+    }
+    onAwake() {
+        this.canUpdate = false;
+        this.layer = mw.UILayerBottom;
+        this.initButtons();
+    }
+    initButtons() {
+        this.mOpenAvatarButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mOpenAvatarButton");
+        }));
+        this.mOpenAvatarButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mCloseButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
+        }));
+        this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.initLanguage(this.mTipsTextBlock);
+        this.initLanguage(this.mAvatarTextBlock);
+        this.initLanguage(this.mCloseTextBlock);
+    }
+    initLanguage(ui) {
+        let call = mw.UIScript.getBehavior("lan");
+        if (call && ui) {
+            call(ui);
+        }
+    }
+    onShow(...params) {}
+    show(...param) {
+        mw.UIService.showUI(this, this.layer, ...param);
+    }
+    hide() {
+        mw.UIService.hideUI(this);
+    }
+};
+
+GetWishPanel_Generate = __decorate([ UIBind("UI/module/WishModule/GetWishPanel.ui") ], GetWishPanel_Generate);
+
+var GetWishPanel_Generate$1 = GetWishPanel_Generate;
+
+var foreign207 = Object.freeze({
+    __proto__: null,
+    default: GetWishPanel_Generate$1
+});
+
+class WishData extends Subdata {}
+
+class WishDataV0 {}
+
+var foreign144 = Object.freeze({
+    __proto__: null,
+    WishData: WishData,
+    WishDataV0: WishDataV0
+});
+
+class WishTools {
+    static async getWishDataV0s(userId) {
+        let wishDataV0s = [];
+        let wishListQueueResopnse = await PortalData.wishListQueueRequest(userId, 1, 100);
+        if (!wishListQueueResopnse || !wishListQueueResopnse.data || !wishListQueueResopnse.data.rows) {
+            console.error(`wfz - 获取心愿单失败`);
+            return wishDataV0s;
+        }
+        let itemIds = [];
+        let rows = wishListQueueResopnse.data.rows;
+        for (let i = 0; i < rows.length; ++i) {
+            let itemId = rows[i].itemId;
+            if (!itemId || itemId.length == 0) continue;
+            itemIds.push(Number(itemId));
+        }
+        if (itemIds.length == 0) {
+            console.error(`wfz - 心愿单为空`);
+            return wishDataV0s;
+        }
+        let commodityListObj = await AvatarEditorService.asyncGetCommodityListByItemIds(itemIds);
+        if (!commodityListObj || !commodityListObj.data) {
+            console.error(`wfz - 获取心愿单商品信息失败`);
+            return wishDataV0s;
+        }
+        let data = commodityListObj.data;
+        for (let i = 0; i < itemIds.length; ++i) {
+            let jsonData = data[itemIds[i]];
+            if (!jsonData || !jsonData?.commodityId) continue;
+            let wishDataV0 = new WishDataV0;
+            wishDataV0.commodityId = jsonData?.commodityId;
+            wishDataV0.iconGuid = jsonData?.iconGuid;
+            wishDataV0.itemId = jsonData?.itemId;
+            wishDataV0.itemName = jsonData?.itemName;
+            wishDataV0.prefabGuid = jsonData?.prefabGuid;
+            wishDataV0.price = jsonData?.price;
+            wishDataV0.itemType = jsonData?.itemType;
+            wishDataV0.userId = userId;
+            wishDataV0.nickName = this.getNickName();
+            wishDataV0s.push(wishDataV0);
+        }
+        if (wishDataV0s.length == 0) {
+            console.error(`wfz - 心愿单数据转化失败`);
+        }
+        return wishDataV0s;
+    }
+    static getNickName() {
+        if (!this.nickName) this.nickName = AccountService.getNickName();
+        return this.nickName ? this.nickName : `账号异常`;
+    }
+    static danmuSyncServer(name1, name2, price) {
+        Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+        for (let i = 0; i < 5; ++i) {
+            TimeUtil.delaySecond(i).then((() => {
+                Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
+            }));
+        }
+    }
+}
+
+WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 43, 53 ];
+
+WishTools.nickName = null;
+
+var foreign147 = Object.freeze({
+    __proto__: null,
+    default: WishTools
+});
+
+class GetWishPanel extends GetWishPanel_Generate$1 {
+    constructor() {
+        super(...arguments);
+        this.hudModuleC = null;
+    }
+    get getHudModuleC() {
+        if (!this.hudModuleC) {
+            this.hudModuleC = ModuleService.getModule(HUDModuleC);
+        }
+        return this.hudModuleC;
+    }
+    onStart() {
+        this.canUpdate = false;
+        this.layer = UILayerMiddle;
+        this.initUI();
+        this.bindButton();
+    }
+    initUI() {
+        this.mItemIconImage.imageGuid = `32115`;
+    }
+    bindButton() {
+        this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
+        this.mOpenAvatarButton.onClicked.add(this.addOpenAvatarButton.bind(this));
+    }
+    addOpenAvatarButton() {
+        this.hide();
+        this.getHudModuleC.onOpenClothAction.call();
+    }
+    addCloseButton() {
+        this.hide();
+    }
+    showGetWishPanel(wishDataV0) {
+        let icon = wishDataV0.iconGuid;
+        if (WishTools.pendantItemTypes.includes(wishDataV0.itemType)) {
+            this.mItemIconImage.imageInfo.setByAssetIcon(wishDataV0.prefabGuid, mw.AssetIconSize.Icon_128px);
+        } else {
+            this.mItemIconImage.imageGuid = icon;
+        }
+        this.mTipsTextBlock.text = `恭喜你获得玩家《${wishDataV0.nickName}》帮你购买的心愿单`;
+        if (!this.visible) this.show();
+    }
+}
+
+var foreign139 = Object.freeze({
+    __proto__: null,
+    default: GetWishPanel
 });
 
 class MallData extends Subdata {
@@ -7403,7 +7614,7 @@ ColorPickPanel_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickPan
 
 var ColorPickPanel_Generate$1 = ColorPickPanel_Generate;
 
-var foreign180 = Object.freeze({
+var foreign181 = Object.freeze({
     __proto__: null,
     default: ColorPickPanel_Generate$1
 });
@@ -7442,7 +7653,7 @@ ColorPickTab1_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab1
 
 var ColorPickTab1_Generate$1 = ColorPickTab1_Generate;
 
-var foreign181 = Object.freeze({
+var foreign182 = Object.freeze({
     __proto__: null,
     default: ColorPickTab1_Generate$1
 });
@@ -7530,7 +7741,7 @@ ColorPickTab2_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab2
 
 var ColorPickTab2_Generate$1 = ColorPickTab2_Generate;
 
-var foreign182 = Object.freeze({
+var foreign183 = Object.freeze({
     __proto__: null,
     default: ColorPickTab2_Generate$1
 });
@@ -7653,7 +7864,7 @@ ColorPickTab3_Generate = __decorate([ UIBind("UI/module/MallModule/ColorPickTab3
 
 var ColorPickTab3_Generate$1 = ColorPickTab3_Generate;
 
-var foreign183 = Object.freeze({
+var foreign184 = Object.freeze({
     __proto__: null,
     default: ColorPickTab3_Generate$1
 });
@@ -7792,7 +8003,7 @@ class TouchScript {
     }
 }
 
-var foreign155 = Object.freeze({
+var foreign156 = Object.freeze({
     __proto__: null,
     get Enums() {
         return Enums;
@@ -8024,7 +8235,7 @@ MallPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallPanel.ui") ],
 
 var MallPanel_Generate$1 = MallPanel_Generate;
 
-var foreign189 = Object.freeze({
+var foreign190 = Object.freeze({
     __proto__: null,
     default: MallPanel_Generate$1
 });
@@ -8097,7 +8308,7 @@ MallItem_Big_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Big.u
 
 var MallItem_Big_Generate$1 = MallItem_Big_Generate;
 
-var foreign184 = Object.freeze({
+var foreign185 = Object.freeze({
     __proto__: null,
     default: MallItem_Big_Generate$1
 });
@@ -8324,7 +8535,7 @@ MallItem_Character_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem
 
 var MallItem_Character_Generate$1 = MallItem_Character_Generate;
 
-var foreign185 = Object.freeze({
+var foreign186 = Object.freeze({
     __proto__: null,
     default: MallItem_Character_Generate$1
 });
@@ -8455,7 +8666,7 @@ MallItem_Color_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Col
 
 var MallItem_Color_Generate$1 = MallItem_Color_Generate;
 
-var foreign186 = Object.freeze({
+var foreign187 = Object.freeze({
     __proto__: null,
     default: MallItem_Color_Generate$1
 });
@@ -8585,7 +8796,7 @@ MallItem_Self_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Self
 
 var MallItem_Self_Generate$1 = MallItem_Self_Generate;
 
-var foreign187 = Object.freeze({
+var foreign188 = Object.freeze({
     __proto__: null,
     default: MallItem_Self_Generate$1
 });
@@ -8725,7 +8936,7 @@ MallItem_Small_Generate = __decorate([ UIBind("UI/module/MallModule/MallItem_Sma
 
 var MallItem_Small_Generate$1 = MallItem_Small_Generate;
 
-var foreign188 = Object.freeze({
+var foreign189 = Object.freeze({
     __proto__: null,
     default: MallItem_Small_Generate$1
 });
@@ -9115,7 +9326,7 @@ MallTab1_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab1.ui") ], M
 
 var MallTab1_Generate$1 = MallTab1_Generate;
 
-var foreign190 = Object.freeze({
+var foreign191 = Object.freeze({
     __proto__: null,
     default: MallTab1_Generate$1
 });
@@ -9232,7 +9443,7 @@ MallTab2_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab2.ui") ], M
 
 var MallTab2_Generate$1 = MallTab2_Generate;
 
-var foreign191 = Object.freeze({
+var foreign192 = Object.freeze({
     __proto__: null,
     default: MallTab2_Generate$1
 });
@@ -9347,7 +9558,7 @@ MallTab3_Generate = __decorate([ UIBind("UI/module/MallModule/MallTab3.ui") ], M
 
 var MallTab3_Generate$1 = MallTab3_Generate;
 
-var foreign192 = Object.freeze({
+var foreign193 = Object.freeze({
     __proto__: null,
     default: MallTab3_Generate$1
 });
@@ -10782,7 +10993,7 @@ MallTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallTipsPanel
 
 var MallTipsPanel_Generate$1 = MallTipsPanel_Generate;
 
-var foreign193 = Object.freeze({
+var foreign194 = Object.freeze({
     __proto__: null,
     default: MallTipsPanel_Generate$1
 });
@@ -10929,7 +11140,7 @@ MallVipTipsPanel_Generate = __decorate([ UIBind("UI/module/MallModule/MallVipTip
 
 var MallVipTipsPanel_Generate$1 = MallVipTipsPanel_Generate;
 
-var foreign194 = Object.freeze({
+var foreign195 = Object.freeze({
     __proto__: null,
     default: MallVipTipsPanel_Generate$1
 });
@@ -12884,11 +13095,12 @@ class MallModuleC extends ModuleC {
         if (!this.mallConfigData) return 2;
         return this.mallConfigData.addVipCoinNumber;
     }
-    async updateNickWish(wishDataV0) {
-        await this.server.net_updateNickWish(wishDataV0);
+    async updateNickWish(wishDataV0, isGive) {
+        await this.server.net_updateNickWish(wishDataV0, isGive);
     }
-    net_giveSuccess() {
-        Notice.showDownNotice(`好友帮你购买成功`);
+    net_giveSuccess(wishDataV0) {
+        Notice.showDownNotice(`你的心愿单好友帮你购买成功`);
+        UIService.getUI(GetWishPanel).showGetWishPanel(wishDataV0);
     }
 }
 
@@ -13024,87 +13236,9 @@ WishPanel_Generate = __decorate([ UIBind("UI/module/WishModule/WishPanel.ui") ],
 
 var WishPanel_Generate$1 = WishPanel_Generate;
 
-var foreign208 = Object.freeze({
+var foreign210 = Object.freeze({
     __proto__: null,
     default: WishPanel_Generate$1
-});
-
-class WishData extends Subdata {}
-
-class WishDataV0 {}
-
-var foreign143 = Object.freeze({
-    __proto__: null,
-    WishData: WishData,
-    WishDataV0: WishDataV0
-});
-
-class WishTools {
-    static async getWishDataV0s(userId) {
-        let wishDataV0s = [];
-        let wishListQueueResopnse = await PortalData.wishListQueueRequest(userId, 1, 100);
-        if (!wishListQueueResopnse || !wishListQueueResopnse.data || !wishListQueueResopnse.data.rows) {
-            console.error(`wfz - 获取心愿单失败`);
-            return wishDataV0s;
-        }
-        let itemIds = [];
-        let rows = wishListQueueResopnse.data.rows;
-        for (let i = 0; i < rows.length; ++i) {
-            let itemId = rows[i].itemId;
-            if (!itemId || itemId.length == 0) continue;
-            itemIds.push(Number(itemId));
-        }
-        if (itemIds.length == 0) {
-            console.error(`wfz - 心愿单为空`);
-            return wishDataV0s;
-        }
-        let commodityListObj = await AvatarEditorService.asyncGetCommodityListByItemIds(itemIds);
-        if (!commodityListObj || !commodityListObj.data) {
-            console.error(`wfz - 获取心愿单商品信息失败`);
-            return wishDataV0s;
-        }
-        let data = commodityListObj.data;
-        for (let i = 0; i < itemIds.length; ++i) {
-            let jsonData = data[itemIds[i]];
-            if (!jsonData || !jsonData?.commodityId) continue;
-            let wishDataV0 = new WishDataV0;
-            wishDataV0.commodityId = jsonData?.commodityId;
-            wishDataV0.iconGuid = jsonData?.iconGuid;
-            wishDataV0.itemId = jsonData?.itemId;
-            wishDataV0.itemName = jsonData?.itemName;
-            wishDataV0.prefabGuid = jsonData?.prefabGuid;
-            wishDataV0.price = jsonData?.price;
-            wishDataV0.itemType = jsonData?.itemType;
-            wishDataV0.userId = userId;
-            wishDataV0.nickName = this.getNickName();
-            wishDataV0s.push(wishDataV0);
-        }
-        if (wishDataV0s.length == 0) {
-            console.error(`wfz - 心愿单数据转化失败`);
-        }
-        return wishDataV0s;
-    }
-    static getNickName() {
-        if (!this.nickName) this.nickName = AccountService.getNickName();
-        return this.nickName ? this.nickName : `账号异常`;
-    }
-    static danmuSyncServer(name1, name2, price) {
-        Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
-        for (let i = 0; i < 5; ++i) {
-            TimeUtil.delaySecond(i).then((() => {
-                Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
-            }));
-        }
-    }
-}
-
-WishTools.pendantItemTypes = [ 28, 29, 30, 31, 32, 39, 40, 42, 49, 7, 18, 47, 51, 52, 8, 5, 6, 27, 48, 43, 53 ];
-
-WishTools.nickName = null;
-
-var foreign146 = Object.freeze({
-    __proto__: null,
-    default: WishTools
 });
 
 let WishItem_Generate = class WishItem_Generate extends UIScript {
@@ -13181,7 +13315,7 @@ WishItem_Generate = __decorate([ UIBind("UI/module/WishModule/WishItem.ui") ], W
 
 var WishItem_Generate$1 = WishItem_Generate;
 
-var foreign207 = Object.freeze({
+var foreign209 = Object.freeze({
     __proto__: null,
     default: WishItem_Generate$1
 });
@@ -13247,7 +13381,7 @@ class WishItem extends WishItem_Generate$1 {
     }
 }
 
-var foreign140 = Object.freeze({
+var foreign141 = Object.freeze({
     __proto__: null,
     default: WishItem
 });
@@ -13317,13 +13451,7 @@ class WishPanel extends WishPanel_Generate$1 {
                 Utils.setWidgetVisibility(this.wishItems[i].uiObject, mw.SlateVisibility.Collapsed);
             }
         }
-        if (this.wishDataV0 && this.wishDataV0?.itemId != wishDataV0s[0]?.itemId) {
-            this.getWishModuleC.onSelectItemAction.call(this.wishDataV0);
-        } else {
-            this.wishDataV0 = wishDataV0s[0];
-            this.wishItems[0].updateSelectState(true);
-            this.updateIcon();
-        }
+        this.getWishModuleC.onSelectItemAction.call(wishDataV0s[0]);
         this.show();
     }
     onShow(...params) {
@@ -13334,7 +13462,7 @@ class WishPanel extends WishPanel_Generate$1 {
     }
 }
 
-var foreign141 = Object.freeze({
+var foreign142 = Object.freeze({
     __proto__: null,
     default: WishPanel
 });
@@ -13400,7 +13528,7 @@ class WishModuleC extends ModuleC {
     }
     addRequestBuyAction(wishDataV0) {
         ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.getMallModuleC.updateNickWish(wishDataV0);
+            await this.getMallModuleC.updateNickWish(wishDataV0, false);
             this.getWishPanel.hide();
         }));
     }
@@ -13485,6 +13613,10 @@ class WishModuleC extends ModuleC {
         let userId = wishDataV0.userId;
         let commodityId = wishDataV0.commodityId;
         let price = wishDataV0.price;
+        let iconGuid = wishDataV0.iconGuid;
+        let itemType = wishDataV0.itemType;
+        let nickName = WishTools.getNickName();
+        let prefabGuid = wishDataV0.prefabGuid;
         let cInfo = {
             commodityId: commodityId,
             number: 1,
@@ -13504,10 +13636,14 @@ class WishModuleC extends ModuleC {
             let tmpWishDataV0 = new WishDataV0;
             tmpWishDataV0.userId = userId;
             tmpWishDataV0.price = price;
+            tmpWishDataV0.iconGuid = iconGuid;
+            tmpWishDataV0.itemType = itemType;
+            tmpWishDataV0.nickName = nickName;
+            tmpWishDataV0.prefabGuid = prefabGuid;
             WishTools.danmuSyncServer(WishTools.getNickName(), wishDataV0.nickName, price);
             let fontColor = Utils.randomColor();
             FlyText.instance.showFlyText(`${GameConfig.Language.Text_Score.Value} +${price * GlobalData.score}`, this.localPlayer.character.worldTransform.position, fontColor[0], fontColor[1]);
-            await this.getMallModuleC.updateNickWish(tmpWishDataV0);
+            await this.getMallModuleC.updateNickWish(tmpWishDataV0, true);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
         }), (async status => {
             clearTimeout(timeoutId);
@@ -13584,7 +13720,7 @@ class WishModuleC extends ModuleC {
     }
 }
 
-var foreign144 = Object.freeze({
+var foreign145 = Object.freeze({
     __proto__: null,
     default: WishModuleC
 });
@@ -14885,7 +15021,7 @@ ChatPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatPanel.ui") ]
 
 var ChatPanel_Generate$1 = ChatPanel_Generate;
 
-var foreign171 = Object.freeze({
+var foreign172 = Object.freeze({
     __proto__: null,
     default: ChatPanel_Generate$1
 });
@@ -15006,7 +15142,7 @@ GuidePanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/GuidePane
 
 var GuidePanel_Generate$1 = GuidePanel_Generate;
 
-var foreign178 = Object.freeze({
+var foreign179 = Object.freeze({
     __proto__: null,
     default: GuidePanel_Generate$1
 });
@@ -15054,7 +15190,7 @@ OnClickPanel_Generate = __decorate([ UIBind("UI/module/InteractionModule/OnClick
 
 var OnClickPanel_Generate$1 = OnClickPanel_Generate;
 
-var foreign179 = Object.freeze({
+var foreign180 = Object.freeze({
     __proto__: null,
     default: OnClickPanel_Generate$1
 });
@@ -15973,7 +16109,7 @@ ActionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionItem.ui")
 
 var ActionItem_Generate$1 = ActionItem_Generate;
 
-var foreign164 = Object.freeze({
+var foreign165 = Object.freeze({
     __proto__: null,
     default: ActionItem_Generate$1
 });
@@ -16063,7 +16199,7 @@ ActionTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ActionTabIte
 
 var ActionTabItem_Generate$1 = ActionTabItem_Generate;
 
-var foreign165 = Object.freeze({
+var foreign166 = Object.freeze({
     __proto__: null,
     default: ActionTabItem_Generate$1
 });
@@ -16179,7 +16315,7 @@ BagItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagItem.ui") ], Ba
 
 var BagItem_Generate$1 = BagItem_Generate;
 
-var foreign166 = Object.freeze({
+var foreign167 = Object.freeze({
     __proto__: null,
     default: BagItem_Generate$1
 });
@@ -16287,7 +16423,7 @@ BagTabItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/BagTabItem.ui")
 
 var BagTabItem_Generate$1 = BagTabItem_Generate;
 
-var foreign167 = Object.freeze({
+var foreign168 = Object.freeze({
     __proto__: null,
     default: BagTabItem_Generate$1
 });
@@ -16389,7 +16525,7 @@ ChatItem1_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem1.ui") ]
 
 var ChatItem1_Generate$1 = ChatItem1_Generate;
 
-var foreign169 = Object.freeze({
+var foreign170 = Object.freeze({
     __proto__: null,
     default: ChatItem1_Generate$1
 });
@@ -16472,7 +16608,7 @@ ChatItem2_Generate = __decorate([ UIBind("UI/module/DanMuModule/ChatItem2.ui") ]
 
 var ChatItem2_Generate$1 = ChatItem2_Generate;
 
-var foreign170 = Object.freeze({
+var foreign171 = Object.freeze({
     __proto__: null,
     default: ChatItem2_Generate$1
 });
@@ -16562,7 +16698,7 @@ ExpressionItem_Generate = __decorate([ UIBind("UI/module/DanMuModule/ExpressionI
 
 var ExpressionItem_Generate$1 = ExpressionItem_Generate;
 
-var foreign173 = Object.freeze({
+var foreign174 = Object.freeze({
     __proto__: null,
     default: ExpressionItem_Generate$1
 });
@@ -16962,7 +17098,7 @@ DanMuPanel_Generate = __decorate([ UIBind("UI/module/DanMuModule/DanMuPanel.ui")
 
 var DanMuPanel_Generate$1 = DanMuPanel_Generate;
 
-var foreign172 = Object.freeze({
+var foreign173 = Object.freeze({
     __proto__: null,
     default: DanMuPanel_Generate$1
 });
@@ -18517,7 +18653,7 @@ Nickname_Generate = __decorate([ UIBind("UI/module/MallModule/Nickname.ui") ], N
 
 var Nickname_Generate$1 = Nickname_Generate;
 
-var foreign195 = Object.freeze({
+var foreign196 = Object.freeze({
     __proto__: null,
     default: Nickname_Generate$1
 });
@@ -18572,7 +18708,7 @@ OnClickWishPanel_Generate = __decorate([ UIBind("UI/module/WishModule/OnClickWis
 
 var OnClickWishPanel_Generate$1 = OnClickWishPanel_Generate;
 
-var foreign206 = Object.freeze({
+var foreign208 = Object.freeze({
     __proto__: null,
     default: OnClickWishPanel_Generate$1
 });
@@ -18605,7 +18741,7 @@ class OnClickWishPanel extends OnClickWishPanel_Generate$1 {
     }
 }
 
-var foreign139 = Object.freeze({
+var foreign140 = Object.freeze({
     __proto__: null,
     default: OnClickWishPanel
 });
@@ -18624,6 +18760,11 @@ let Nickname = class Nickname extends Script {
     onStart() {
         if (!SystemUtil.isClient()) return;
         this.initNickname();
+    }
+    onDestroy() {
+        if (!SystemUtil.isClient()) return;
+        Utils.setWidgetVisibility(this.nickname.mWishBgImage, mw.SlateVisibility.Collapsed);
+        if (this.onClickWishPanel) this.onClickWishPanel.hide();
     }
     async initNickname() {
         this.nickname = mw.UIService.create(Nickname_Generate$1);
@@ -18809,14 +18950,14 @@ class MallModuleS extends ModuleS {
     net_setIsUseFreeSave(isUseFreeSave) {
         this.currentData.setIsUseFreeSave(isUseFreeSave);
     }
-    net_updateNickWish(wishDataV0) {
+    net_updateNickWish(wishDataV0, isGive) {
         let targetUserId = this.currentPlayer.userId;
         let userId = wishDataV0.userId;
         if (this.nicknameMap.has(userId)) {
             let nickname = this.nicknameMap.get(userId);
             nickname.wishDataV0 = wishDataV0;
-            if (!wishDataV0.itemId) {
-                this.getClient(Player.getPlayer(userId)).net_giveSuccess();
+            if (isGive) {
+                this.getClient(Player.getPlayer(userId)).net_giveSuccess(wishDataV0);
                 this.getRankModuleS.refreshScore(targetUserId, wishDataV0.price * GlobalData.score);
             }
             return true;
@@ -19074,7 +19215,7 @@ TryOnItem_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnItem.ui") ]
 
 var TryOnItem_Generate$1 = TryOnItem_Generate;
 
-var foreign204 = Object.freeze({
+var foreign205 = Object.freeze({
     __proto__: null,
     default: TryOnItem_Generate$1
 });
@@ -19226,7 +19367,7 @@ TryOnPanel_Generate = __decorate([ UIBind("UI/module/TryOnModule/TryOnPanel.ui")
 
 var TryOnPanel_Generate$1 = TryOnPanel_Generate;
 
-var foreign205 = Object.freeze({
+var foreign206 = Object.freeze({
     __proto__: null,
     default: TryOnPanel_Generate$1
 });
@@ -19527,7 +19668,7 @@ SetPanel_Generate = __decorate([ UIBind("UI/module/SetModule/SetPanel.ui") ], Se
 
 var SetPanel_Generate$1 = SetPanel_Generate;
 
-var foreign199 = Object.freeze({
+var foreign200 = Object.freeze({
     __proto__: null,
     default: SetPanel_Generate$1
 });
@@ -20645,7 +20786,7 @@ RankPanel_Generate = __decorate([ UIBind("UI/module/RankModule/RankPanel.ui") ],
 
 var RankPanel_Generate$1 = RankPanel_Generate;
 
-var foreign196 = Object.freeze({
+var foreign197 = Object.freeze({
     __proto__: null,
     default: RankPanel_Generate$1
 });
@@ -20698,7 +20839,7 @@ RoomItem_Generate = __decorate([ UIBind("UI/module/RankModule/RoomItem.ui") ], R
 
 var RoomItem_Generate$1 = RoomItem_Generate;
 
-var foreign197 = Object.freeze({
+var foreign198 = Object.freeze({
     __proto__: null,
     default: RoomItem_Generate$1
 });
@@ -20779,7 +20920,7 @@ WorldItem_Generate = __decorate([ UIBind("UI/module/RankModule/WorldItem.ui") ],
 
 var WorldItem_Generate$1 = WorldItem_Generate;
 
-var foreign198 = Object.freeze({
+var foreign199 = Object.freeze({
     __proto__: null,
     default: WorldItem_Generate$1
 });
@@ -21260,7 +21401,7 @@ SignInPanel_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInPanel.u
 
 var SignInPanel_Generate$1 = SignInPanel_Generate;
 
-var foreign203 = Object.freeze({
+var foreign204 = Object.freeze({
     __proto__: null,
     default: SignInPanel_Generate$1
 });
@@ -21329,7 +21470,7 @@ SignInItem_Generate = __decorate([ UIBind("UI/module/SignInModule/SignInItem.ui"
 
 var SignInItem_Generate$1 = SignInItem_Generate;
 
-var foreign202 = Object.freeze({
+var foreign203 = Object.freeze({
     __proto__: null,
     default: SignInItem_Generate$1
 });
@@ -21594,7 +21735,7 @@ class WishModuleS extends ModuleS {
     onStart() {}
 }
 
-var foreign145 = Object.freeze({
+var foreign146 = Object.freeze({
     __proto__: null,
     default: WishModuleS
 });
@@ -21780,7 +21921,7 @@ GMHUD_Generate = __decorate([ UIBind("UI/module/GMModule/GMHUD.ui") ], GMHUD_Gen
 
 var GMHUD_Generate$1 = GMHUD_Generate;
 
-var foreign174 = Object.freeze({
+var foreign175 = Object.freeze({
     __proto__: null,
     default: GMHUD_Generate$1
 });
@@ -21823,7 +21964,7 @@ GMItem_Generate = __decorate([ UIBind("UI/module/GMModule/GMItem.ui") ], GMItem_
 
 var GMItem_Generate$1 = GMItem_Generate;
 
-var foreign175 = Object.freeze({
+var foreign176 = Object.freeze({
     __proto__: null,
     default: GMItem_Generate$1
 });
@@ -22107,7 +22248,7 @@ Wish = __decorate([ Component ], Wish);
 
 var Wish$1 = Wish;
 
-var foreign142 = Object.freeze({
+var foreign143 = Object.freeze({
     __proto__: null,
     default: Wish$1
 });
@@ -22139,7 +22280,7 @@ CopyCharacter = __decorate([ Component ], CopyCharacter);
 
 var CopyCharacter$1 = CopyCharacter;
 
-var foreign150 = Object.freeze({
+var foreign151 = Object.freeze({
     __proto__: null,
     default: CopyCharacter$1
 });
@@ -22303,7 +22444,7 @@ class KeyActionManager {
     }
 }
 
-var foreign152 = Object.freeze({
+var foreign153 = Object.freeze({
     __proto__: null,
     default: FreeCamera$1
 });
@@ -22354,7 +22495,7 @@ SecondNoticeItem_Generate = __decorate([ UIBind("UI/common/notice/SecondNoticeIt
 
 var SecondNoticeItem_Generate$1 = SecondNoticeItem_Generate;
 
-var foreign160 = Object.freeze({
+var foreign161 = Object.freeze({
     __proto__: null,
     default: SecondNoticeItem_Generate$1
 });
@@ -22498,80 +22639,82 @@ const MWModuleMap = {
     FAAFDA5E4A40291D72B0459742CD601A: foreign136,
     "1D10F64B4D38229D7655CC923071E9B2": foreign137,
     "2032BEF24550E75CE53EE39AE53150E9": foreign138,
-    "69267A5348B99DD1644DA499695F1AB4": foreign139,
-    "4FB3F3E34C536DC344559B805FA4DA71": foreign140,
-    "2E684D274F264A866668389E780227CA": foreign141,
-    "542BCB464E9ED3B15B37839FD7C46A7E": foreign142,
-    "34692B66410695092E660AAB2420D8F2": foreign143,
-    A5D61CA94C39DFC6DE00129E1BB59B0D: foreign144,
-    "173455CC4263035E0A3816A3DC647B63": foreign145,
-    "0D0C10934C90B4D1942DF197857B31C6": foreign146,
-    D64517A445CBA580CE34A68B0DE2D5D0: foreign147,
-    C48FD39D43DA5E48E2FFED92F839BB3D: foreign148,
-    "1757D7694B3B2F7BFB8C0897BDF03724": foreign149,
-    BC6767CF4240176E5C9B6984BB540726: foreign150,
-    B22511FF4720B10FB708B3BF2763368B: foreign151,
-    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign152,
-    F7EE8818455A5EE814A6F18A2F0CBB12: foreign153,
-    "69B82282416B08FD93B7DD9688F5DD9F": foreign154,
-    "49E1131448695DF591C8DEB790EFC952": foreign155,
-    "290BA293443A80CCA56170B9DA3D47C1": foreign156,
-    "71EC5D03421DCEEEB4172C8C643D8019": foreign157,
-    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign158,
-    "741B06144E25B4753E8005985816DAF8": foreign159,
-    EE3F354349BB041CD741FF84B745B113: foreign160,
-    "8FA0EC3E442A57C1B550BB833E68DA90": foreign161,
-    "100DA6744367634E7FFC0895CD98DDB9": foreign162,
-    "67892EC847DCDABBB14451A8CDFD526C": foreign163,
-    "486071A84887288700A7E297CBF6B438": foreign164,
-    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign165,
-    "50B679574FA404BE92C52CAD0436F5B1": foreign166,
-    BC28A8C5401B15E17AAEF482A8AA133E: foreign167,
-    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign168,
-    "3A88620945CCB3EE5B699F9D35A5A28F": foreign169,
-    "827757834BCFC569771BCB84A3609238": foreign170,
-    F58702064960960163820CB9C8D0F3C1: foreign171,
-    D92460FC43DFEF127C8EB39DECD67E58: foreign172,
-    C265D0BB488D0422A80DBBB6082E4CB4: foreign173,
-    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign174,
-    "95C84A464FBF396210D6DAB0DFAF53C3": foreign175,
-    C067E1F649184B0F7FC5E0B9456BC72C: foreign176,
-    "337A59B14A237973EEB178A260344C21": foreign177,
-    B9D019D74067C8F762132698D474BF63: foreign178,
-    C4E377B14812C09429E28988E62907DB: foreign179,
-    E038BA9A4A21ED21407734BBDEC1DF0C: foreign180,
-    AD7B5C5440FB6D1DA3795A9BA561546D: foreign181,
-    "06CF574844634CC9C0793EA8847C6FE2": foreign182,
-    "27DEB6624F87673F14AA499E8A3A7DD3": foreign183,
-    CEE9E492480CEF69BF9291BA357C9AC1: foreign184,
-    "458367AB498907FB6AAFE7A4CED12F6E": foreign185,
-    "713A8E764F3DAC8A8AD1BEB382C46158": foreign186,
-    "5E6E0BFE48C322071930C2B8DD56E900": foreign187,
-    C381E72F409A02A45B69B9BC32F4FCAF: foreign188,
-    FADB775E4F203C2565D31A9AA31E22D1: foreign189,
-    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign190,
-    F3E9117C4C567C26689F08B919B7E7DA: foreign191,
-    AF5DEB904C817468E94BAA9265F23AF7: foreign192,
-    AAE12F3F4FD38A0B43975DB01D2D496C: foreign193,
-    "8B73B18E407512CDB726C78934F89B97": foreign194,
-    "449514F640DE7AFBF190899F2FCD018F": foreign195,
-    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign196,
-    A8E0593D477EC697B2559789990E0882: foreign197,
-    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign198,
-    "559367EC4AA0BAE9AD25A694D5CA960C": foreign199,
-    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign200,
-    "52E3A8604FC761E6CC747FB22FD7160B": foreign201,
-    "14F8E49D4B31DFAA50548BA206585CCA": foreign202,
-    "656033E844C70FD925FC8F887EA9FA46": foreign203,
-    "6B744DEB4703AED17EA7279D0783813A": foreign204,
-    C6D169354450AEEF12B964B7B3BA8B2D: foreign205,
-    "44A91361403E72369702F2A9E95FA734": foreign206,
-    "2202634D40DB9215B34FE0AF4FEF3CD0": foreign207,
-    "620D4A5146E4658C3C0151BDDB79B3D9": foreign208,
-    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign209
+    FE44DAA54BBE7033C9B9C4952A00343D: foreign139,
+    "69267A5348B99DD1644DA499695F1AB4": foreign140,
+    "4FB3F3E34C536DC344559B805FA4DA71": foreign141,
+    "2E684D274F264A866668389E780227CA": foreign142,
+    "542BCB464E9ED3B15B37839FD7C46A7E": foreign143,
+    "34692B66410695092E660AAB2420D8F2": foreign144,
+    A5D61CA94C39DFC6DE00129E1BB59B0D: foreign145,
+    "173455CC4263035E0A3816A3DC647B63": foreign146,
+    "0D0C10934C90B4D1942DF197857B31C6": foreign147,
+    D64517A445CBA580CE34A68B0DE2D5D0: foreign148,
+    C48FD39D43DA5E48E2FFED92F839BB3D: foreign149,
+    "1757D7694B3B2F7BFB8C0897BDF03724": foreign150,
+    BC6767CF4240176E5C9B6984BB540726: foreign151,
+    B22511FF4720B10FB708B3BF2763368B: foreign152,
+    "7EA40C8447FE422BDA45A6A15ACAB0C2": foreign153,
+    F7EE8818455A5EE814A6F18A2F0CBB12: foreign154,
+    "69B82282416B08FD93B7DD9688F5DD9F": foreign155,
+    "49E1131448695DF591C8DEB790EFC952": foreign156,
+    "290BA293443A80CCA56170B9DA3D47C1": foreign157,
+    "71EC5D03421DCEEEB4172C8C643D8019": foreign158,
+    "0AEE9F474D44E77C3A083FBF0EFD7775": foreign159,
+    "741B06144E25B4753E8005985816DAF8": foreign160,
+    EE3F354349BB041CD741FF84B745B113: foreign161,
+    "8FA0EC3E442A57C1B550BB833E68DA90": foreign162,
+    "100DA6744367634E7FFC0895CD98DDB9": foreign163,
+    "67892EC847DCDABBB14451A8CDFD526C": foreign164,
+    "486071A84887288700A7E297CBF6B438": foreign165,
+    BB12954A4FC0D5D00C29B0BFD73F83A2: foreign166,
+    "50B679574FA404BE92C52CAD0436F5B1": foreign167,
+    BC28A8C5401B15E17AAEF482A8AA133E: foreign168,
+    "4FBD7D6C429DD0F90494B5B35FD1AE7F": foreign169,
+    "3A88620945CCB3EE5B699F9D35A5A28F": foreign170,
+    "827757834BCFC569771BCB84A3609238": foreign171,
+    F58702064960960163820CB9C8D0F3C1: foreign172,
+    D92460FC43DFEF127C8EB39DECD67E58: foreign173,
+    C265D0BB488D0422A80DBBB6082E4CB4: foreign174,
+    "2DB355DB4AE5EEA9FAD9E39C7071F66C": foreign175,
+    "95C84A464FBF396210D6DAB0DFAF53C3": foreign176,
+    C067E1F649184B0F7FC5E0B9456BC72C: foreign177,
+    "337A59B14A237973EEB178A260344C21": foreign178,
+    B9D019D74067C8F762132698D474BF63: foreign179,
+    C4E377B14812C09429E28988E62907DB: foreign180,
+    E038BA9A4A21ED21407734BBDEC1DF0C: foreign181,
+    AD7B5C5440FB6D1DA3795A9BA561546D: foreign182,
+    "06CF574844634CC9C0793EA8847C6FE2": foreign183,
+    "27DEB6624F87673F14AA499E8A3A7DD3": foreign184,
+    CEE9E492480CEF69BF9291BA357C9AC1: foreign185,
+    "458367AB498907FB6AAFE7A4CED12F6E": foreign186,
+    "713A8E764F3DAC8A8AD1BEB382C46158": foreign187,
+    "5E6E0BFE48C322071930C2B8DD56E900": foreign188,
+    C381E72F409A02A45B69B9BC32F4FCAF: foreign189,
+    FADB775E4F203C2565D31A9AA31E22D1: foreign190,
+    AF6D5EC44D0BB050F181CD8B9544DD7B: foreign191,
+    F3E9117C4C567C26689F08B919B7E7DA: foreign192,
+    AF5DEB904C817468E94BAA9265F23AF7: foreign193,
+    AAE12F3F4FD38A0B43975DB01D2D496C: foreign194,
+    "8B73B18E407512CDB726C78934F89B97": foreign195,
+    "449514F640DE7AFBF190899F2FCD018F": foreign196,
+    "9E3A8E7D4942E24576FFE88DEBE534D2": foreign197,
+    A8E0593D477EC697B2559789990E0882: foreign198,
+    BF8FC10D4207BD4C47028EBC0D3ACF8F: foreign199,
+    "559367EC4AA0BAE9AD25A694D5CA960C": foreign200,
+    "2AD51BC848CD83DE2F0BA68674DE3EE1": foreign201,
+    "52E3A8604FC761E6CC747FB22FD7160B": foreign202,
+    "14F8E49D4B31DFAA50548BA206585CCA": foreign203,
+    "656033E844C70FD925FC8F887EA9FA46": foreign204,
+    "6B744DEB4703AED17EA7279D0783813A": foreign205,
+    C6D169354450AEEF12B964B7B3BA8B2D: foreign206,
+    "16BF444E48959465B94D0B84B2720902": foreign207,
+    "44A91361403E72369702F2A9E95FA734": foreign208,
+    "2202634D40DB9215B34FE0AF4FEF3CD0": foreign209,
+    "620D4A5146E4658C3C0151BDDB79B3D9": foreign210,
+    "46D363B5455BBB5A2A9BB58A4E4A04D2": foreign211
 };
 
-const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign123 || {}, "JavaScripts/module/MallModule/ui/Nickname" ], [ foreign124 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign126 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign127 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign129 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign130 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign131 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign132 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign137 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign138 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign139 || {}, "JavaScripts/module/WishModule/ui/OnClickWishPanel" ], [ foreign140 || {}, "JavaScripts/module/WishModule/ui/WishItem" ], [ foreign141 || {}, "JavaScripts/module/WishModule/ui/WishPanel" ], [ foreign142 || {}, "JavaScripts/module/WishModule/Wish" ], [ foreign143 || {}, "JavaScripts/module/WishModule/WishData" ], [ foreign144 || {}, "JavaScripts/module/WishModule/WishModuleC" ], [ foreign145 || {}, "JavaScripts/module/WishModule/WishModuleS" ], [ foreign146 || {}, "JavaScripts/module/WishModule/WishTools" ], [ foreign147 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign148 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign149 || {}, "JavaScripts/tools/CameraManager" ], [ foreign150 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign151 || {}, "JavaScripts/tools/FlyText" ], [ foreign152 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign153 || {}, "JavaScripts/tools/MapEx" ], [ foreign154 || {}, "JavaScripts/tools/PortalData" ], [ foreign155 || {}, "JavaScripts/tools/TouchScript" ], [ foreign156 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign157 || {}, "JavaScripts/tools/Utils" ], [ foreign158 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign159 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign160 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/module/MallModule/Nickname_generate" ], [ foreign196 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign197 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign198 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign199 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign200 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign201 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign202 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign203 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign204 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign205 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign206 || {}, "JavaScripts/ui-generate/module/WishModule/OnClickWishPanel_generate" ], [ foreign207 || {}, "JavaScripts/ui-generate/module/WishModule/WishItem_generate" ], [ foreign208 || {}, "JavaScripts/ui-generate/module/WishModule/WishPanel_generate" ], [ foreign209 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
+const MWFileMapping = new WeakMap([ [ foreign1 || {}, "JavaScripts/common/notice/Notice" ], [ foreign2 || {}, "JavaScripts/common/notice/Tween" ], [ foreign3 || {}, "JavaScripts/common/notice/UIPool" ], [ foreign4 || {}, "JavaScripts/common/notice/Updater" ], [ foreign5 || {}, "JavaScripts/configs/AccessoriesGloves" ], [ foreign6 || {}, "JavaScripts/configs/ActionConfig" ], [ foreign7 || {}, "JavaScripts/configs/ActionProp" ], [ foreign8 || {}, "JavaScripts/configs/ALongCoatTop" ], [ foreign9 || {}, "JavaScripts/configs/AncientMoldingOutfit" ], [ foreign10 || {}, "JavaScripts/configs/Back" ], [ foreign11 || {}, "JavaScripts/configs/BackHair" ], [ foreign12 || {}, "JavaScripts/configs/BackPet" ], [ foreign13 || {}, "JavaScripts/configs/Blush" ], [ foreign14 || {}, "JavaScripts/configs/BodyType" ], [ foreign15 || {}, "JavaScripts/configs/BootsShoes" ], [ foreign16 || {}, "JavaScripts/configs/Bottom" ], [ foreign17 || {}, "JavaScripts/configs/Chat" ], [ foreign18 || {}, "JavaScripts/configs/ColorValue" ], [ foreign19 || {}, "JavaScripts/configs/ConfigBase" ], [ foreign20 || {}, "JavaScripts/configs/DailyStylingOutfit" ], [ foreign21 || {}, "JavaScripts/configs/DailyStylingOutfit1" ], [ foreign22 || {}, "JavaScripts/configs/DailyStylingOutfit2" ], [ foreign23 || {}, "JavaScripts/configs/Description" ], [ foreign24 || {}, "JavaScripts/configs/Ear" ], [ foreign25 || {}, "JavaScripts/configs/Effects" ], [ foreign26 || {}, "JavaScripts/configs/EverydayShoes" ], [ foreign27 || {}, "JavaScripts/configs/Expression" ], [ foreign28 || {}, "JavaScripts/configs/Eyebrows" ], [ foreign29 || {}, "JavaScripts/configs/Eyelashes" ], [ foreign30 || {}, "JavaScripts/configs/Eyeshadow" ], [ foreign31 || {}, "JavaScripts/configs/Face" ], [ foreign32 || {}, "JavaScripts/configs/FaceExpression" ], [ foreign33 || {}, "JavaScripts/configs/FaceTattoo" ], [ foreign34 || {}, "JavaScripts/configs/Facing" ], [ foreign35 || {}, "JavaScripts/configs/FantasyModelingOutfit" ], [ foreign36 || {}, "JavaScripts/configs/FootCoverShoes" ], [ foreign37 || {}, "JavaScripts/configs/FrontHair" ], [ foreign38 || {}, "JavaScripts/configs/FullHair" ], [ foreign39 || {}, "JavaScripts/configs/GameConfig" ], [ foreign40 || {}, "JavaScripts/configs/Gloves" ], [ foreign41 || {}, "JavaScripts/configs/GlovesGloves" ], [ foreign42 || {}, "JavaScripts/configs/HeroStylingOutfit" ], [ foreign43 || {}, "JavaScripts/configs/HighHeelsShoes" ], [ foreign44 || {}, "JavaScripts/configs/Hip" ], [ foreign45 || {}, "JavaScripts/configs/HolidayStylingOutfit" ], [ foreign46 || {}, "JavaScripts/configs/Interact" ], [ foreign47 || {}, "JavaScripts/configs/Language" ], [ foreign48 || {}, "JavaScripts/configs/LeftHand" ], [ foreign49 || {}, "JavaScripts/configs/Lens" ], [ foreign50 || {}, "JavaScripts/configs/LipMakeup" ], [ foreign51 || {}, "JavaScripts/configs/LongPantsBottom" ], [ foreign52 || {}, "JavaScripts/configs/LongSinglePieceTop" ], [ foreign53 || {}, "JavaScripts/configs/LongSkirtBottom" ], [ foreign54 || {}, "JavaScripts/configs/LowerHighlight" ], [ foreign55 || {}, "JavaScripts/configs/MuppetStylingOutfit" ], [ foreign56 || {}, "JavaScripts/configs/Music" ], [ foreign57 || {}, "JavaScripts/configs/NakedDressShoes" ], [ foreign58 || {}, "JavaScripts/configs/Outfit" ], [ foreign59 || {}, "JavaScripts/configs/Pet" ], [ foreign60 || {}, "JavaScripts/configs/PupilStyle" ], [ foreign61 || {}, "JavaScripts/configs/RightHand" ], [ foreign62 || {}, "JavaScripts/configs/ScienceFictionStylingOutfit" ], [ foreign63 || {}, "JavaScripts/configs/ShareId" ], [ foreign64 || {}, "JavaScripts/configs/Shoes" ], [ foreign65 || {}, "JavaScripts/configs/ShortJacketTop" ], [ foreign66 || {}, "JavaScripts/configs/ShortsBottom" ], [ foreign67 || {}, "JavaScripts/configs/ShortSinglePieceTop" ], [ foreign68 || {}, "JavaScripts/configs/ShortSkirtBottom" ], [ foreign69 || {}, "JavaScripts/configs/Shoulder" ], [ foreign70 || {}, "JavaScripts/configs/Sit" ], [ foreign71 || {}, "JavaScripts/configs/SkinTone" ], [ foreign72 || {}, "JavaScripts/configs/SportsShoesShoes" ], [ foreign73 || {}, "JavaScripts/configs/SuitTop" ], [ foreign74 || {}, "JavaScripts/configs/Tab1" ], [ foreign75 || {}, "JavaScripts/configs/Tab2" ], [ foreign76 || {}, "JavaScripts/configs/Tab3" ], [ foreign77 || {}, "JavaScripts/configs/TightsBottom" ], [ foreign78 || {}, "JavaScripts/configs/Top" ], [ foreign79 || {}, "JavaScripts/configs/Trailing" ], [ foreign80 || {}, "JavaScripts/configs/UpperHighlight" ], [ foreign81 || {}, "JavaScripts/GameStart" ], [ foreign82 || {}, "JavaScripts/GlobalData" ], [ foreign83 || {}, "JavaScripts/module/AdModule/ui/AdPanel" ], [ foreign84 || {}, "JavaScripts/module/CharacterModule/CharacterData" ], [ foreign85 || {}, "JavaScripts/module/CharacterModule/CharacterModuleC" ], [ foreign86 || {}, "JavaScripts/module/CharacterModule/CharacterModuleS" ], [ foreign87 || {}, "JavaScripts/module/DanMuModule/Bubble" ], [ foreign88 || {}, "JavaScripts/module/DanMuModule/Buff" ], [ foreign89 || {}, "JavaScripts/module/DanMuModule/DanMuData" ], [ foreign90 || {}, "JavaScripts/module/DanMuModule/DanMuModuleC" ], [ foreign91 || {}, "JavaScripts/module/DanMuModule/DanMuModuleS" ], [ foreign92 || {}, "JavaScripts/module/DanMuModule/ui/ActionItem" ], [ foreign93 || {}, "JavaScripts/module/DanMuModule/ui/ActionTabItem" ], [ foreign94 || {}, "JavaScripts/module/DanMuModule/ui/BagItem" ], [ foreign95 || {}, "JavaScripts/module/DanMuModule/ui/BagTabItem" ], [ foreign96 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem1" ], [ foreign97 || {}, "JavaScripts/module/DanMuModule/ui/ChatItem2" ], [ foreign98 || {}, "JavaScripts/module/DanMuModule/ui/ChatPanel" ], [ foreign99 || {}, "JavaScripts/module/DanMuModule/ui/DanMuPanel" ], [ foreign100 || {}, "JavaScripts/module/DanMuModule/ui/ExpressionItem" ], [ foreign101 || {}, "JavaScripts/module/GmModule/GMService" ], [ foreign102 || {}, "JavaScripts/module/HUDModule/HUDModule" ], [ foreign103 || {}, "JavaScripts/module/InteractionModule/InteractionModule" ], [ foreign104 || {}, "JavaScripts/module/MallModule/Mall" ], [ foreign105 || {}, "JavaScripts/module/MallModule/MallData" ], [ foreign106 || {}, "JavaScripts/module/MallModule/MallModuleC" ], [ foreign107 || {}, "JavaScripts/module/MallModule/MallModuleS" ], [ foreign108 || {}, "JavaScripts/module/MallModule/ui/ColorPickPanel" ], [ foreign109 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab1" ], [ foreign110 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab2" ], [ foreign111 || {}, "JavaScripts/module/MallModule/ui/ColorPickTab3" ], [ foreign112 || {}, "JavaScripts/module/MallModule/ui/MallItem_Big" ], [ foreign113 || {}, "JavaScripts/module/MallModule/ui/MallItem_Character" ], [ foreign114 || {}, "JavaScripts/module/MallModule/ui/MallItem_Color" ], [ foreign115 || {}, "JavaScripts/module/MallModule/ui/MallItem_Self" ], [ foreign116 || {}, "JavaScripts/module/MallModule/ui/MallItem_Small" ], [ foreign117 || {}, "JavaScripts/module/MallModule/ui/MallPanel" ], [ foreign118 || {}, "JavaScripts/module/MallModule/ui/MallTab1" ], [ foreign119 || {}, "JavaScripts/module/MallModule/ui/MallTab2" ], [ foreign120 || {}, "JavaScripts/module/MallModule/ui/MallTab3" ], [ foreign121 || {}, "JavaScripts/module/MallModule/ui/MallTipsPanel" ], [ foreign122 || {}, "JavaScripts/module/MallModule/ui/MallVipTipsPanel" ], [ foreign123 || {}, "JavaScripts/module/MallModule/ui/Nickname" ], [ foreign124 || {}, "JavaScripts/module/NavigationModule/NavigationModule" ], [ foreign125 || {}, "JavaScripts/module/RankModule/RankData" ], [ foreign126 || {}, "JavaScripts/module/RankModule/RankModuleC" ], [ foreign127 || {}, "JavaScripts/module/RankModule/RankModuleS" ], [ foreign128 || {}, "JavaScripts/module/RankModule/ui/RankPanel" ], [ foreign129 || {}, "JavaScripts/module/RankModule/ui/RoomItem" ], [ foreign130 || {}, "JavaScripts/module/RankModule/ui/WorldItem" ], [ foreign131 || {}, "JavaScripts/module/SetModule/SetModule" ], [ foreign132 || {}, "JavaScripts/module/SetModule/ui/SetPanel" ], [ foreign133 || {}, "JavaScripts/module/SignInModule/SignInData" ], [ foreign134 || {}, "JavaScripts/module/SignInModule/SignInModuleC" ], [ foreign135 || {}, "JavaScripts/module/SignInModule/SignInModuleS" ], [ foreign136 || {}, "JavaScripts/module/SignInModule/ui/SignInItem" ], [ foreign137 || {}, "JavaScripts/module/SignInModule/ui/SignInPanel" ], [ foreign138 || {}, "JavaScripts/module/TryOnModule/TryOnModule" ], [ foreign139 || {}, "JavaScripts/module/WishModule/ui/GetWishPanel" ], [ foreign140 || {}, "JavaScripts/module/WishModule/ui/OnClickWishPanel" ], [ foreign141 || {}, "JavaScripts/module/WishModule/ui/WishItem" ], [ foreign142 || {}, "JavaScripts/module/WishModule/ui/WishPanel" ], [ foreign143 || {}, "JavaScripts/module/WishModule/Wish" ], [ foreign144 || {}, "JavaScripts/module/WishModule/WishData" ], [ foreign145 || {}, "JavaScripts/module/WishModule/WishModuleC" ], [ foreign146 || {}, "JavaScripts/module/WishModule/WishModuleS" ], [ foreign147 || {}, "JavaScripts/module/WishModule/WishTools" ], [ foreign148 || {}, "JavaScripts/tools/AvatarApi" ], [ foreign149 || {}, "JavaScripts/tools/AvatarDecora" ], [ foreign150 || {}, "JavaScripts/tools/CameraManager" ], [ foreign151 || {}, "JavaScripts/tools/CopyCharacter" ], [ foreign152 || {}, "JavaScripts/tools/FlyText" ], [ foreign153 || {}, "JavaScripts/tools/FreeCamera" ], [ foreign154 || {}, "JavaScripts/tools/MapEx" ], [ foreign155 || {}, "JavaScripts/tools/PortalData" ], [ foreign156 || {}, "JavaScripts/tools/TouchScript" ], [ foreign157 || {}, "JavaScripts/tools/ui/LoadingPanel" ], [ foreign158 || {}, "JavaScripts/tools/Utils" ], [ foreign159 || {}, "JavaScripts/tools/WaitingQueue" ], [ foreign160 || {}, "JavaScripts/ui-generate/common/notice/NoticeView_generate" ], [ foreign161 || {}, "JavaScripts/ui-generate/common/notice/SecondNoticeItem_generate" ], [ foreign162 || {}, "JavaScripts/ui-generate/common/notice/TopNoticeItem_generate" ], [ foreign163 || {}, "JavaScripts/ui-generate/module/AdModule/AdPanel_generate" ], [ foreign164 || {}, "JavaScripts/ui-generate/module/AdModule/TipsPanel_generate" ], [ foreign165 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionItem_generate" ], [ foreign166 || {}, "JavaScripts/ui-generate/module/DanMuModule/ActionTabItem_generate" ], [ foreign167 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagItem_generate" ], [ foreign168 || {}, "JavaScripts/ui-generate/module/DanMuModule/BagTabItem_generate" ], [ foreign169 || {}, "JavaScripts/ui-generate/module/DanMuModule/BubbleItem_generate" ], [ foreign170 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem1_generate" ], [ foreign171 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatItem2_generate" ], [ foreign172 || {}, "JavaScripts/ui-generate/module/DanMuModule/ChatPanel_generate" ], [ foreign173 || {}, "JavaScripts/ui-generate/module/DanMuModule/DanMuPanel_generate" ], [ foreign174 || {}, "JavaScripts/ui-generate/module/DanMuModule/ExpressionItem_generate" ], [ foreign175 || {}, "JavaScripts/ui-generate/module/GMModule/GMHUD_generate" ], [ foreign176 || {}, "JavaScripts/ui-generate/module/GMModule/GMItem_generate" ], [ foreign177 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDItem_generate" ], [ foreign178 || {}, "JavaScripts/ui-generate/module/HUDModule/HUDPanel_generate" ], [ foreign179 || {}, "JavaScripts/ui-generate/module/InteractionModule/GuidePanel_generate" ], [ foreign180 || {}, "JavaScripts/ui-generate/module/InteractionModule/OnClickPanel_generate" ], [ foreign181 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickPanel_generate" ], [ foreign182 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab1_generate" ], [ foreign183 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab2_generate" ], [ foreign184 || {}, "JavaScripts/ui-generate/module/MallModule/ColorPickTab3_generate" ], [ foreign185 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Big_generate" ], [ foreign186 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Character_generate" ], [ foreign187 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Color_generate" ], [ foreign188 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Self_generate" ], [ foreign189 || {}, "JavaScripts/ui-generate/module/MallModule/MallItem_Small_generate" ], [ foreign190 || {}, "JavaScripts/ui-generate/module/MallModule/MallPanel_generate" ], [ foreign191 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab1_generate" ], [ foreign192 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab2_generate" ], [ foreign193 || {}, "JavaScripts/ui-generate/module/MallModule/MallTab3_generate" ], [ foreign194 || {}, "JavaScripts/ui-generate/module/MallModule/MallTipsPanel_generate" ], [ foreign195 || {}, "JavaScripts/ui-generate/module/MallModule/MallVipTipsPanel_generate" ], [ foreign196 || {}, "JavaScripts/ui-generate/module/MallModule/Nickname_generate" ], [ foreign197 || {}, "JavaScripts/ui-generate/module/RankModule/RankPanel_generate" ], [ foreign198 || {}, "JavaScripts/ui-generate/module/RankModule/RoomItem_generate" ], [ foreign199 || {}, "JavaScripts/ui-generate/module/RankModule/WorldItem_generate" ], [ foreign200 || {}, "JavaScripts/ui-generate/module/SetModule/SetPanel_generate" ], [ foreign201 || {}, "JavaScripts/ui-generate/module/ShareModule/SavePanel_generate" ], [ foreign202 || {}, "JavaScripts/ui-generate/module/ShareModule/SharePanel_generate" ], [ foreign203 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInItem_generate" ], [ foreign204 || {}, "JavaScripts/ui-generate/module/SignInModule/SignInPanel_generate" ], [ foreign205 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnItem_generate" ], [ foreign206 || {}, "JavaScripts/ui-generate/module/TryOnModule/TryOnPanel_generate" ], [ foreign207 || {}, "JavaScripts/ui-generate/module/WishModule/GetWishPanel_generate" ], [ foreign208 || {}, "JavaScripts/ui-generate/module/WishModule/OnClickWishPanel_generate" ], [ foreign209 || {}, "JavaScripts/ui-generate/module/WishModule/WishItem_generate" ], [ foreign210 || {}, "JavaScripts/ui-generate/module/WishModule/WishPanel_generate" ], [ foreign211 || {}, "JavaScripts/ui-generate/tools/LoadingPanel_generate" ] ]);
 
 exports.MWFileMapping = MWFileMapping;
 

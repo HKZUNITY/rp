@@ -34,7 +34,7 @@ export default class GetWishPanel extends GetWishPanel_Generate {
 
 	private addOpenAvatarButton(): void {
 		this.hide();
-		this.getHudModuleC.onOpenClothAction.call(1);
+		this.getHudModuleC.onOpenClothAction.call();
 	}
 
 	private addCloseButton(): void {

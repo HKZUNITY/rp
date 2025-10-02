@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/DanMuModule/BubbleItem.ui
- * TIME: 2025.09.21-15.42.04
+ * TIME: 2025.10.02-19.09.19
  */
  
 @UIBind('UI/module/DanMuModule/BubbleItem.ui')
