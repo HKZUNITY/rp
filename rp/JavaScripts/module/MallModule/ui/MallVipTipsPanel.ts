@@ -7,6 +7,7 @@
 
 import { Notice } from "../../../common/notice/Notice";
 import { GameConfig } from "../../../configs/GameConfig";
+import Utils from "../../../tools/Utils";
 import MallVipTipsPanel_Generate from "../../../ui-generate/module/MallModule/MallVipTipsPanel_generate";
 
 export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
@@ -18,11 +19,13 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 		//设置能否每帧触发onUpdate
 		this.canUpdate = false;
 		this.layer = UILayerMiddle;
+		Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
 		this.bindButtons();
 	}
 
 	private bindButtons(): void {
 		this.mCoinButton.onClicked.add(this.addCoinButton.bind(this));
+		this.mArkButton.onClicked.add(this.addArkButton.bind(this));
 		this.mAdsButton.onClose.add(this.addAdsButton.bind(this));
 		this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
 	}
@@ -45,15 +48,23 @@ export default class MallVipTipsPanel extends MallVipTipsPanel_Generate {
 		this.hide();
 	}
 
+	private addArkButton(): void {
+		if (this.arkCallback) this.arkCallback();
+		this.hide();
+	}
+
 	private coinCallback: () => void = null;
 	private adsCallback: () => void = null;
-	public showTips(coinCallback: () => void, adsCallback: () => void, titleText: string, contentText: string, coinText: string, adsText: string): void {
+	private arkCallback: () => void = null;
+	public showTips(coinCallback: () => void, adsCallback: () => void, arkCallback: () => void, titleText: string, contentText: string, coinText: string, adsText: string, arkText: string): void {
 		this.coinCallback = coinCallback;
 		this.adsCallback = adsCallback;
+		this.arkCallback = arkCallback;
 		this.mTipsTextBlock.text = titleText;
 		this.mContentTextBlock.text = contentText;
 		this.mCoinTextBlock.text = coinText;
 		this.mAdsButton.text = adsText;
+		this.mArkTextBlock.text = arkText;
 		this.show();
 	}
 }

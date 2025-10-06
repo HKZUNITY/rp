@@ -12844,23 +12844,41 @@ let MallPanel_Generate = class MallPanel_Generate extends UIScript {
         }
         return this.mLeftCanvas_Internal;
     }
+    get mVipCanvas() {
+        if (!this.mVipCanvas_Internal && this.uiWidgetBase) {
+            this.mVipCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas");
+        }
+        return this.mVipCanvas_Internal;
+    }
     get mAddVipButton() {
         if (!this.mAddVipButton_Internal && this.uiWidgetBase) {
-            this.mAddVipButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mAddVipButton");
+            this.mAddVipButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mAddVipButton");
         }
         return this.mAddVipButton_Internal;
     }
+    get mVipButtonCanvas() {
+        if (!this.mVipButtonCanvas_Internal && this.uiWidgetBase) {
+            this.mVipButtonCanvas_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas");
+        }
+        return this.mVipButtonCanvas_Internal;
+    }
     get mVipIconImage() {
         if (!this.mVipIconImage_Internal && this.uiWidgetBase) {
-            this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mAddVipButton/mVipIconImage");
+            this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipIconImage");
         }
         return this.mVipIconImage_Internal;
     }
     get mVipCountTextBlock() {
         if (!this.mVipCountTextBlock_Internal && this.uiWidgetBase) {
-            this.mVipCountTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/mAddVipButton/mVipCountTextBlock");
+            this.mVipCountTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipCountTextBlock");
         }
         return this.mVipCountTextBlock_Internal;
+    }
+    get mVipAddImage() {
+        if (!this.mVipAddImage_Internal && this.uiWidgetBase) {
+            this.mVipAddImage_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipAddImage");
+        }
+        return this.mVipAddImage_Internal;
     }
     get mResetButton() {
         if (!this.mResetButton_Internal && this.uiWidgetBase) {
@@ -15888,6 +15906,18 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
         }
         return this.mCoinTextBlock_Internal;
     }
+    get mArkButton() {
+        if (!this.mArkButton_Internal && this.uiWidgetBase) {
+            this.mArkButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mArkButton");
+        }
+        return this.mArkButton_Internal;
+    }
+    get mArkTextBlock() {
+        if (!this.mArkTextBlock_Internal && this.uiWidgetBase) {
+            this.mArkTextBlock_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mArkButton/mArkTextBlock");
+        }
+        return this.mArkTextBlock_Internal;
+    }
     get mAdsButton() {
         if (!this.mAdsButton_Internal && this.uiWidgetBase) {
             this.mAdsButton_Internal = this.uiWidgetBase.findChildByPath("RootCanvas/mMainImage/mAdsButton");
@@ -15916,6 +15946,10 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
             Event.dispatchToLocal("PlayButtonClick", "mCoinButton");
         }));
         this.mCoinButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
+        this.mArkButton.onClicked.add((() => {
+            Event.dispatchToLocal("PlayButtonClick", "mArkButton");
+        }));
+        this.mArkButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.mCloseButton.onClicked.add((() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
         }));
@@ -15923,6 +15957,7 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
         this.initLanguage(this.mTipsTextBlock);
         this.initLanguage(this.mContentTextBlock);
         this.initLanguage(this.mCoinTextBlock);
+        this.initLanguage(this.mArkTextBlock);
     }
     initLanguage(ui) {
         let call = mw.UIScript.getBehavior("lan");
@@ -15953,14 +15988,17 @@ class MallVipTipsPanel extends MallVipTipsPanel_Generate$1 {
         super(...arguments);
         this.coinCallback = null;
         this.adsCallback = null;
+        this.arkCallback = null;
     }
     onStart() {
         this.canUpdate = false;
         this.layer = UILayerMiddle;
+        Utils.setWidgetVisibility(this.mAdsButton, mw.SlateVisibility.Collapsed);
         this.bindButtons();
     }
     bindButtons() {
         this.mCoinButton.onClicked.add(this.addCoinButton.bind(this));
+        this.mArkButton.onClicked.add(this.addArkButton.bind(this));
         this.mAdsButton.onClose.add(this.addAdsButton.bind(this));
         this.mCloseButton.onClicked.add(this.addCloseButton.bind(this));
     }
@@ -15979,13 +16017,19 @@ class MallVipTipsPanel extends MallVipTipsPanel_Generate$1 {
         if (this.adsCallback) this.adsCallback();
         this.hide();
     }
-    showTips(coinCallback, adsCallback, titleText, contentText, coinText, adsText) {
+    addArkButton() {
+        if (this.arkCallback) this.arkCallback();
+        this.hide();
+    }
+    showTips(coinCallback, adsCallback, arkCallback, titleText, contentText, coinText, adsText, arkText) {
         this.coinCallback = coinCallback;
         this.adsCallback = adsCallback;
+        this.arkCallback = arkCallback;
         this.mTipsTextBlock.text = titleText;
         this.mContentTextBlock.text = contentText;
         this.mCoinTextBlock.text = coinText;
         this.mAdsButton.text = adsText;
+        this.mArkTextBlock.text = arkText;
         this.show();
     }
 }
@@ -17147,7 +17191,9 @@ class MallModuleC extends ModuleC {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
             }));
-        }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+        }), (() => {
+            this.placeOrder(`3ki8ifW7BUs0006Pk`, (() => {}));
+        }), GameConfig.Language.Text_Vip2.Value, `2派对币购买1天Vip\n1000派对币购买999天Vip\nVip期间可免费保存所有服装`, StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value, `1000派对币购买`);
     }
     addPermanentVipAction() {
         this.placeOrder(`3ki8ifW7BUs0006Pk`, (() => {}));
@@ -17167,7 +17213,9 @@ class MallModuleC extends ModuleC {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
                         }));
-                    }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+                    }), (() => {
+                        this.placeOrder(`3ki8ifW7BUs0006Pk`, (() => {}));
+                    }), GameConfig.Language.Text_Vip2.Value, `2派对币购买1天Vip\n1000派对币购买999天Vip\nVip期间可免费保存所有服装`, StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value, `1000派对币购买`);
                 }
             }));
         } else {
@@ -17936,29 +17984,7 @@ class MallModuleC extends ModuleC {
         if (!this.mallConfigData) return 2;
         return this.mallConfigData.addVipCoinNumber;
     }
-    tryTest(callback) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.getVipCount();
-            if (this.vipCount > 0) {
-                UIService.getUI(TipsPanel).showTips((() => {
-                    if (callback) callback();
-                }), GameConfig.Language.Text_Free.Value, GameConfig.Language.Text_Free.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
-            } else {
-                this.getMallVipTipsPanel.showTips((() => {
-                    this.placeOrder(`5KdGRn3IhB600054z`, (() => {
-                        if (callback) callback();
-                    }));
-                }), (() => {
-                    Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                    ExecutorManager.instance.pushAsyncExecutor((async () => {
-                        await this.addVipCount(1);
-                        this.getMallPanel.updateVipCount(this.vipCount);
-                        if (callback) callback();
-                    }));
-                }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
-            }
-        }));
-    }
+    tryTest(callback) {}
     async updateNickWish(wishDataV0, isGive) {
         await this.server.net_updateNickWish(wishDataV0, isGive);
     }

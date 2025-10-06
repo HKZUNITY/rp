@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallPanel.ui
- * TIME: 2025.09.27-19.34.02
+ * TIME: 2025.10.06-10.51.15
  */
  
 @UIBind('UI/module/MallModule/MallPanel.ui')
@@ -22,26 +22,47 @@ export default class MallPanel_Generate extends UIScript {
 		}
 		return this.mLeftCanvas_Internal
 	}
+	private mVipCanvas_Internal: mw.Canvas
+	public get mVipCanvas(): mw.Canvas {
+		if(!this.mVipCanvas_Internal&&this.uiWidgetBase) {
+			this.mVipCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas') as mw.Canvas
+		}
+		return this.mVipCanvas_Internal
+	}
 	private mAddVipButton_Internal: mw.Button
 	public get mAddVipButton(): mw.Button {
 		if(!this.mAddVipButton_Internal&&this.uiWidgetBase) {
-			this.mAddVipButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton') as mw.Button
+			this.mAddVipButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mAddVipButton') as mw.Button
 		}
 		return this.mAddVipButton_Internal
+	}
+	private mVipButtonCanvas_Internal: mw.Canvas
+	public get mVipButtonCanvas(): mw.Canvas {
+		if(!this.mVipButtonCanvas_Internal&&this.uiWidgetBase) {
+			this.mVipButtonCanvas_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas') as mw.Canvas
+		}
+		return this.mVipButtonCanvas_Internal
 	}
 	private mVipIconImage_Internal: mw.Image
 	public get mVipIconImage(): mw.Image {
 		if(!this.mVipIconImage_Internal&&this.uiWidgetBase) {
-			this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton/mVipIconImage') as mw.Image
+			this.mVipIconImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipIconImage') as mw.Image
 		}
 		return this.mVipIconImage_Internal
 	}
 	private mVipCountTextBlock_Internal: mw.TextBlock
 	public get mVipCountTextBlock(): mw.TextBlock {
 		if(!this.mVipCountTextBlock_Internal&&this.uiWidgetBase) {
-			this.mVipCountTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/mAddVipButton/mVipCountTextBlock') as mw.TextBlock
+			this.mVipCountTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipCountTextBlock') as mw.TextBlock
 		}
 		return this.mVipCountTextBlock_Internal
+	}
+	private mVipAddImage_Internal: mw.Image
+	public get mVipAddImage(): mw.Image {
+		if(!this.mVipAddImage_Internal&&this.uiWidgetBase) {
+			this.mVipAddImage_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mLeftCanvas/VipCanvas/mVipCanvas/mVipButtonCanvas/mVipAddImage') as mw.Image
+		}
+		return this.mVipAddImage_Internal
 	}
 	private mResetButton_Internal: mw.Button
 	public get mResetButton(): mw.Button {

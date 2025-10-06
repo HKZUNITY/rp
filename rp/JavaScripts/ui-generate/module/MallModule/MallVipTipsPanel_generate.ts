@@ -3,7 +3,7 @@
  * WARNING: DO NOT MODIFY THIS FILE,MAY CAUSE CODE LOST.
  * AUTHOR: 爱玩游戏的小胖子
  * UI: UI/module/MallModule/MallVipTipsPanel.ui
- * TIME: 2025.09.27-19.34.02
+ * TIME: 2025.10.06-10.51.15
  */
  
 @UIBind('UI/module/MallModule/MallVipTipsPanel.ui')
@@ -42,6 +42,20 @@ export default class MallVipTipsPanel_Generate extends UIScript {
 			this.mCoinTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mCoinButton/mCoinTextBlock') as mw.TextBlock
 		}
 		return this.mCoinTextBlock_Internal
+	}
+	private mArkButton_Internal: mw.Button
+	public get mArkButton(): mw.Button {
+		if(!this.mArkButton_Internal&&this.uiWidgetBase) {
+			this.mArkButton_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mArkButton') as mw.Button
+		}
+		return this.mArkButton_Internal
+	}
+	private mArkTextBlock_Internal: mw.TextBlock
+	public get mArkTextBlock(): mw.TextBlock {
+		if(!this.mArkTextBlock_Internal&&this.uiWidgetBase) {
+			this.mArkTextBlock_Internal = this.uiWidgetBase.findChildByPath('RootCanvas/mMainImage/mArkButton/mArkTextBlock') as mw.TextBlock
+		}
+		return this.mArkTextBlock_Internal
 	}
 	private mAdsButton_Internal: mw.AdsButton
 	public get mAdsButton(): mw.AdsButton {
@@ -83,6 +97,12 @@ export default class MallVipTipsPanel_Generate extends UIScript {
 		this.mCoinButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
 		
 	
+		this.mArkButton.onClicked.add(()=>{
+			Event.dispatchToLocal("PlayButtonClick", "mArkButton");
+		});
+		this.mArkButton.touchMethod = (mw.ButtonTouchMethod.PreciseTap);
+		
+	
 		this.mCloseButton.onClicked.add(()=>{
 			Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
 		});
@@ -100,6 +120,9 @@ export default class MallVipTipsPanel_Generate extends UIScript {
 		
 	
 		this.initLanguage(this.mCoinTextBlock)
+		
+	
+		this.initLanguage(this.mArkTextBlock)
 		
 	
 		//文本多语言

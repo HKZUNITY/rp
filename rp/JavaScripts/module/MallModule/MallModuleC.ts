@@ -1209,11 +1209,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
             });
+        }, () => {
+            this.placeOrder(`3ki8ifW7BUs0006Pk`, () => {
+            });
         },
             GameConfig.Language.Text_Vip2.Value,
-            StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
+            `2派对币购买1天Vip\n1000派对币购买999天Vip\nVip期间可免费保存所有服装`,
             StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
-            GameConfig.Language.Text_Vip5.Value,);
+            GameConfig.Language.Text_Vip5.Value,
+            `1000派对币购买`);
     }
 
     private addPermanentVipAction(): void {
@@ -1237,11 +1241,15 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
                         });
+                    }, () => {
+                        this.placeOrder(`3ki8ifW7BUs0006Pk`, () => {
+                        });
                     },
                         GameConfig.Language.Text_Vip2.Value,
-                        StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
+                        `2派对币购买1天Vip\n1000派对币购买999天Vip\nVip期间可免费保存所有服装`,
                         StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
-                        GameConfig.Language.Text_Vip5.Value);
+                        GameConfig.Language.Text_Vip5.Value,
+                        `1000派对币购买`);
                 }
             });
         } else {
@@ -2093,34 +2101,34 @@ export default class MallModuleC extends ModuleC<MallModuleS, MallData> {
     }
 
     public tryTest(callback: () => void): void {
-        ExecutorManager.instance.pushAsyncExecutor(async () => {
-            await this.getVipCount();
-            if (this.vipCount > 0) {
-                UIService.getUI(TipsPanel).showTips(() => {
-                    if (callback) callback();
-                }, GameConfig.Language.Text_Free.Value,
-                    GameConfig.Language.Text_Free.Value,
-                    GameConfig.Language.Text_Dont.Value,
-                    GameConfig.Language.Text_Free.Value);
-            } else {
-                this.getMallVipTipsPanel.showTips(() => {
-                    this.placeOrder(`5KdGRn3IhB600054z`, () => {
-                        if (callback) callback();
-                    });
-                }, () => {
-                    Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                    ExecutorManager.instance.pushAsyncExecutor(async () => {
-                        await this.addVipCount(1);
-                        this.getMallPanel.updateVipCount(this.vipCount);
-                        if (callback) callback();
-                    });
-                },
-                    GameConfig.Language.Text_Vip2.Value,
-                    StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
-                    StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
-                    GameConfig.Language.Text_Vip5.Value);
-            }
-        });
+        // ExecutorManager.instance.pushAsyncExecutor(async () => {
+        //     await this.getVipCount();
+        //     if (this.vipCount > 0) {
+        //         UIService.getUI(TipsPanel).showTips(() => {
+        //             if (callback) callback();
+        //         }, GameConfig.Language.Text_Free.Value,
+        //             GameConfig.Language.Text_Free.Value,
+        //             GameConfig.Language.Text_Dont.Value,
+        //             GameConfig.Language.Text_Free.Value);
+        //     } else {
+        //         this.getMallVipTipsPanel.showTips(() => {
+        //             this.placeOrder(`5KdGRn3IhB600054z`, () => {
+        //                 if (callback) callback();
+        //             });
+        //         }, () => {
+        //             Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
+        //             ExecutorManager.instance.pushAsyncExecutor(async () => {
+        //                 await this.addVipCount(1);
+        //                 this.getMallPanel.updateVipCount(this.vipCount);
+        //                 if (callback) callback();
+        //             });
+        //         },
+        //             GameConfig.Language.Text_Vip2.Value,
+        //             StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1),
+        //             StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber),
+        //             GameConfig.Language.Text_Vip5.Value);
+        //     }
+        // });
     }
 
     public async updateNickWish(wishDataV0: WishDataV0, isGive: boolean): Promise<void> {
