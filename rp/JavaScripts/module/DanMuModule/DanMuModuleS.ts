@@ -481,6 +481,7 @@ export class PlayerBag {
     public async spawnVehiclesMode(player: mw.Player, assetId: string, parameter: number[]): Promise<void> {
         await Utils.asyncDownloadAsset(`Character`);
         this.vehiclesMode = await GameObjPool.asyncSpawn(`Character`) as mw.Character;
+        this.vehiclesMode.setCollision(mw.PropertyStatus.Off, true);
         await this.vehiclesMode.asyncReady();
         await Utils.asyncDownloadAsset(assetId);
         this.vehiclesMode.description.base.wholeBody = assetId;
