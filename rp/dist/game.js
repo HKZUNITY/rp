@@ -401,7 +401,7 @@ class Group {
         this._tweensAddedDuringUpdate = {};
     }
     getAll() {
-        return Object.keys(this._tweens).map((tweenId => this._tweens[tweenId]));
+        return Object.keys(this._tweens).map(tweenId => this._tweens[tweenId]);
     }
     removeAll() {
         this._tweens = {};
@@ -972,9 +972,9 @@ var foreign4 = Object.freeze({
 class Notice {
     static showDownNotice(context) {
         this.checkView();
-        this.view.topNoticeComponent2.insert((notice => {
+        this.view.topNoticeComponent2.insert(notice => {
             notice.setInfo(context);
-        }));
+        });
     }
     static checkView() {
         if (this.view) return;
@@ -989,12 +989,12 @@ class TopNoticeComponent {
         this.targetCanvas = targetCanvas;
         this.noticeCanvasHeight = this.targetCanvas.size.y;
         this.insertItemTempLocation = new mw.Vector2;
-        this.noticeItemPool = new UIPool((() => {
+        this.noticeItemPool = new UIPool(() => {
             let item = mw.UIService.create(TopNoticeItem);
             this.targetCanvas.addChild(item.uiObject);
             item.uiObject.size = new mw.Vector2(700, 60);
             return item;
-        }));
+        });
     }
     insert(initAction) {
         this.pendingQueue.push(initAction);
@@ -1008,10 +1008,10 @@ class TopNoticeComponent {
         if (first.lifeTime >= TopNoticeComponent.NoticeItemLifeTime) {
             this.fadeoutNoticeElement();
         }
-        this.noticeItemPool.eachVisibleItem((item => {
+        this.noticeItemPool.eachVisibleItem(item => {
             if (item.targetHeight >= item.position.y) return;
             item.setLocation(item.position.x, item.position.y - TopNoticeComponent.NoticeMoveStepCount);
-        }));
+        });
     }
     insertPendingNotice(initAction) {
         if (this.visibleNotice.length >= TopNoticeComponent.NoticeItemMaxCount) {
@@ -1034,9 +1034,9 @@ class TopNoticeComponent {
             alpha: 0
         }).to({
             alpha: 1
-        }, 250).onUpdate((arg => {
+        }, 250).onUpdate(arg => {
             recent.uiObject.renderOpacity = arg.alpha;
-        })).start();
+        }).start();
     }
     fadeoutNoticeElement() {
         let item = this.visibleNotice.shift();
@@ -1044,11 +1044,11 @@ class TopNoticeComponent {
             alpha: 1
         }).to({
             alpha: 0
-        }, 250).onUpdate((arg => {
+        }, 250).onUpdate(arg => {
             item.uiObject.renderOpacity = arg.alpha;
-        })).onComplete((() => {
+        }).onComplete(() => {
             this.noticeItemPool.giveBack(item);
-        })).start();
+        }).start();
     }
     checkPendingNotice() {
         if (this.pendingQueue.length < 1) return;
@@ -1078,12 +1078,12 @@ class TopNoticeComponent2 {
         this.targetCanvas = targetCanvas;
         this.noticeCanvasHeight = this.targetCanvas.size.y;
         this.insertItemTempLocation = new mw.Vector2;
-        this.noticeItemPool = new UIPool((() => {
+        this.noticeItemPool = new UIPool(() => {
             let item = mw.UIService.create(TopNoticeItem);
             this.targetCanvas.addChild(item.uiObject);
             item.uiObject.size = new mw.Vector2(item.uiObject.size.x, item.uiObject.size.y);
             return item;
-        }));
+        });
     }
     insert(initAction) {
         this.insertPendingNotice(initAction);
@@ -1099,10 +1099,10 @@ class TopNoticeComponent2 {
             }
         }
         this.eachLeftRightItem();
-        this.noticeItemPool.eachVisibleItem((item => {
+        this.noticeItemPool.eachVisibleItem(item => {
             if (item.targetHeight >= item.position.y) return;
             item.setLocation(item.position.x, item.position.y - TopNoticeComponent2.NoticeMoveStepCount);
-        }));
+        });
     }
     insertPendingNotice(initAction) {
         this.isinsert = true;
@@ -1142,9 +1142,9 @@ class TopNoticeComponent2 {
             posy: -500
         }).to({
             posy: this.insertItemTempLocation.y
-        }, 500).onUpdate((arg => {
+        }, 500).onUpdate(arg => {
             recent.setLocation(this.insertItemTempLocation.x, arg.posy);
-        })).start().easing(Easing.Linear.None);
+        }).start().easing(Easing.Linear.None);
         this.isinsert = false;
     }
     eachLeftRightItem() {
@@ -1159,10 +1159,10 @@ class TopNoticeComponent2 {
             posX: 0
         }).to({
             posX: 1
-        }, 500).onComplete((() => {
+        }, 500).onComplete(() => {
             this.isRemoveing = false;
-        })).start();
-        let arr = this.visibleNotice.filter((e => !this.needmovingNotice.includes(e)));
+        }).start();
+        let arr = this.visibleNotice.filter(e => !this.needmovingNotice.includes(e));
         for (let i = 0; i < arr.length; i++) {
             const element = arr[i];
             element.targetHeight = TopNoticeComponent2.NoticeItemIntervalSpace + i * TopNoticeComponent2.NoticeItemIntervalSpace;
@@ -1170,9 +1170,9 @@ class TopNoticeComponent2 {
                 posy: element.uiObject.position.y
             }).to({
                 posy: element.targetHeight
-            }, 500).onUpdate((arg => {
+            }, 500).onUpdate(arg => {
                 element.setLocation(this.insertItemTempLocation.x, arg.posy);
-            })).onComplete((() => {})).easing(Easing.Linear.None).start();
+            }).onComplete(() => {}).easing(Easing.Linear.None).start();
         }
         while (this.needmovingNotice.length > 0) {
             let item = this.needmovingNotice.shift();
@@ -1183,13 +1183,13 @@ class TopNoticeComponent2 {
                 posX: 0
             }).to({
                 posX: this.isLeft ? 3e3 : -3e3
-            }, 250).onUpdate((arg => {
+            }, 250).onUpdate(arg => {
                 target.x = arg.posX;
                 item.uiObject.position = target;
-            })).onComplete((() => {
+            }).onComplete(() => {
                 this.noticeItemPool.giveBack(item);
-            })).easing(Easing.Linear.None).start();
-            let index = this.visibleNotice.findIndex((ele => item));
+            }).easing(Easing.Linear.None).start();
+            let index = this.visibleNotice.findIndex(ele => item);
             if (index != -1) {
                 this.visibleNotice.splice(index, 1);
             }
@@ -3404,9 +3404,9 @@ var MapEx;
     MapEx.has = has;
     function count(map) {
         let res = 0;
-        forEach(map, (e => {
+        forEach(map, e => {
             ++res;
-        }));
+        });
         return res;
     }
     MapEx.count = count;
@@ -4098,22 +4098,22 @@ var AvatarApi;
                 break;
             }
         }
-        extraFuncIndexArr?.forEach((e => {
+        extraFuncIndexArr?.forEach(e => {
             funcIndexArr.push(e);
-        }));
+        });
         return getByFuncIndexArr(char, funcIndexArr, dataVersion);
     }
     AvatarApi.getDataBySaveType = getDataBySaveType;
     function getDataBySaveTypeArr(char, saveTypeArr, dataVersion = 1, extraFuncIndexArr) {
         let funcIndexArr = [];
         for (const cfg of GameConfig.Description.getAllElement()) {
-            saveTypeArr.forEach((saveType => {
+            saveTypeArr.forEach(saveType => {
                 if (cfg.saveType == saveType) funcIndexArr.push(cfg.funcIndex);
-            }));
+            });
         }
-        extraFuncIndexArr?.forEach((e => {
+        extraFuncIndexArr?.forEach(e => {
             funcIndexArr.push(e);
-        }));
+        });
         return getByFuncIndexArr(char, funcIndexArr, dataVersion);
     }
     AvatarApi.getDataBySaveTypeArr = getDataBySaveTypeArr;
@@ -4440,15 +4440,15 @@ var AvatarApi;
                 }
             }
         }
-        getSlotDataArr2(char).forEach((e => {
+        getSlotDataArr2(char).forEach(e => {
             assetMap.set(e.assetId, true);
-        }));
+        });
         let assets = "";
         let a = [ ...assetMap.keys() ];
         const lastIndex = a.length - 1;
-        a.forEach(((guid, index) => {
+        a.forEach((guid, index) => {
             assets += index != lastIndex ? `${guid},` : `${guid}`;
-        }));
+        });
         return assets;
     }
     AvatarApi.getAssets = getAssets;
@@ -4674,25 +4674,25 @@ class ExecutorManager {
         this.doneCb.call();
     }
     runExecute(exeFunc) {
-        return new Promise((async resolve => {
-            let timeOut = setTimeout((() => {
+        return new Promise(async resolve => {
+            let timeOut = setTimeout(() => {
                 console.error(`命令执行10秒超时`);
                 return resolve();
-            }), 10 * 1e3);
+            }, 10 * 1e3);
             await exeFunc();
             clearTimeout(timeOut);
             return resolve();
-        }));
+        });
     }
     awaitDone() {
-        return new Promise((resolve => {
+        return new Promise(resolve => {
             if (!this.running) return resolve();
             const doneFunc = () => {
                 this.doneCb.remove(doneFunc, this);
                 return resolve();
             };
             this.doneCb.add(doneFunc, this);
-        }));
+        });
     }
 }
 
@@ -4716,11 +4716,11 @@ class CharacterModuleC extends ModuleC {
         let retKey = null;
         if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0) return retKey;
         let characterDataStr = JSON.stringify(AvatarApi.getAllData(this.localPlayer.character));
-        MapEx.forEach(this.characterDataMap, ((key, element) => {
+        MapEx.forEach(this.characterDataMap, (key, element) => {
             if (characterDataStr == element) {
                 retKey = key;
             }
-        }));
+        });
         return retKey;
     }
     get getCharacterData() {
@@ -4772,9 +4772,9 @@ class CharacterModuleC extends ModuleC {
     get getCharacterDataKeys() {
         let keys = [];
         if (!this.characterDataMap || MapEx.count(this.characterDataMap) == 0) return keys;
-        MapEx.forEach(this.characterDataMap, ((key, element) => {
+        MapEx.forEach(this.characterDataMap, (key, element) => {
             keys.push(key);
-        }));
+        });
         return keys;
     }
     getCharacterDataUpAssetIdByKey(key) {
@@ -4802,10 +4802,10 @@ class CharacterModuleC extends ModuleC {
         }
     }
     clearCharacterData() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             this.characterDataMap = {};
             await this.server.net_clearCharacterData();
-        }));
+        });
     }
 }
 
@@ -4837,13 +4837,13 @@ class Utils {
         if (this.assetIconDataMap.has(icon)) {
             image.setImageByAssetIconData(this.assetIconDataMap.get(icon));
         } else {
-            mw.assetIDChangeIconUrlRequest([ icon ]).then((() => {
+            mw.assetIDChangeIconUrlRequest([ icon ]).then(() => {
                 try {
                     let assetIconData = mw.getAssetIconDataByAssetID(icon);
                     image.setImageByAssetIconData(assetIconData);
                     this.assetIconDataMap.set(icon, assetIconData);
                 } catch (error) {}
-            }));
+            });
         }
     }
     static async asyncDownloadAsset(InAssetId) {
@@ -4879,22 +4879,22 @@ class Utils {
         Player.localPlayer.character.worldTransform.position = this.birthPos;
     }
     static async applySharedId(character, sharedId) {
-        return new Promise((async resolve => {
-            mw.AccountService.applySharedId(character, sharedId, (async success => {
+        return new Promise(async resolve => {
+            mw.AccountService.applySharedId(character, sharedId, async success => {
                 console.error(`success:${success}`);
                 if (success) character.syncDescription();
                 await character.asyncReady();
                 return resolve(success);
-            }));
-        }));
+            });
+        });
     }
     static async createSharedId(character) {
-        return new Promise((async resolve => {
-            mw.AccountService.createSharedId(character, (dataString => {
+        return new Promise(async resolve => {
+            mw.AccountService.createSharedId(character, dataString => {
                 console.error(`dataString:${dataString}`);
                 return resolve(dataString);
-            }));
-        }));
+            });
+        });
     }
     static startGuide(targetLoc, onComplete = null) {
         if (!mw.SystemUtil.isClient()) return;
@@ -4910,7 +4910,7 @@ class Utils {
             TimeUtil.clearInterval(this.guideIntervalId);
             this.guideIntervalId = null;
         }
-        this.guideIntervalId = TimeUtil.setInterval((() => {
+        this.guideIntervalId = TimeUtil.setInterval(() => {
             let character = Player.localPlayer?.character;
             if (!character) return;
             let playerLoc = character?.worldTransform?.position;
@@ -4926,9 +4926,9 @@ class Utils {
                     this.targetGuideEffectId = null;
                 }
                 if (this.guideEffectIds.length != 0) {
-                    this.guideEffectIds.forEach((effectId => {
+                    this.guideEffectIds.forEach(effectId => {
                         EffectService.stop(effectId);
-                    }));
+                    });
                     this.guideEffectIds.length = 0;
                 }
                 Notice.showDownNotice(GameConfig.Language.Text_GuideTips.Value);
@@ -4950,17 +4950,17 @@ class Utils {
             } else {
                 if (this.guideEffectIds.length == pointNum) {
                     for (let i = 1; i < pointNum; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i - 1]).then((effect => {
+                        EffectService.getEffectById(this.guideEffectIds[i - 1]).then(effect => {
                             effect.worldTransform.position = new mw.Vector(locs[i].x, locs[i].y, locs[i].z - 85);
-                        }));
+                        });
                     }
                     EffectService.stop(this.guideEffectIds[pointNum - 1]);
                     this.guideEffectIds.length = pointNum - 1;
                 } else if (this.guideEffectIds.length < pointNum) {
                     for (let i = 0; i < this.guideEffectIds.length; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then(effect => {
                             effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
-                        }));
+                        });
                     }
                     for (let i = this.guideEffectIds.length; i < pointNum - 1; ++i) {
                         let effectId = EffectService.playAtPosition(this.guideEffectGuid, locs[i + 1], {
@@ -4970,10 +4970,10 @@ class Utils {
                     }
                 } else if (this.guideEffectIds.length > pointNum) {
                     for (let i = 0; i < pointNum; ++i) {
-                        EffectService.getEffectById(this.guideEffectIds[i]).then((effect => {
+                        EffectService.getEffectById(this.guideEffectIds[i]).then(effect => {
                             if (!locs[i + 1]) return;
                             effect.worldTransform.position = new mw.Vector(locs[i + 1].x, locs[i + 1].y, locs[i + 1].z - 85);
-                        }));
+                        });
                     }
                     for (let i = pointNum; i < this.guideEffectIds.length; ++i) {
                         EffectService.stop(this.guideEffectIds[i]);
@@ -4981,7 +4981,7 @@ class Utils {
                     this.guideEffectIds.length = pointNum;
                 }
             }
-        }), .1);
+        }, .1);
     }
     static getCurvePointsInNum(points, num) {
         let result = new Array;
@@ -5044,16 +5044,16 @@ class Utils {
         return transform;
     }
     static accountServiceDownloadData(character) {
-        return new Promise((async resolve => {
-            mw.AccountService.downloadData(character, (async success => resolve(success)));
-        }));
+        return new Promise(async resolve => {
+            mw.AccountService.downloadData(character, async success => resolve(success));
+        });
     }
     static isSameRoomDataTryOn(roomDatas) {
         let tryOnCount = 0;
         if (!roomDatas || roomDatas.length == 0) tryOnCount = 0;
-        roomDatas.forEach((value => {
+        roomDatas.forEach(value => {
             tryOnCount += value.tryOn;
-        }));
+        });
         if (this.tryOnCount != tryOnCount) {
             this.tryOnCount = tryOnCount;
             return false;
@@ -5261,14 +5261,14 @@ let HUDItem_Generate = class HUDItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.initLanguage(this.mClickButton);
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.initLanguage(this.mCloseButton);
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
@@ -5651,104 +5651,104 @@ let HUDPanel_Generate = class HUDPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mOpenSetButton.onClicked.add((() => {
+        this.mOpenSetButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenSetButton");
-        }));
+        });
         this.initLanguage(this.mOpenSetButton);
         this.mOpenSetButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenMusicButton.onClicked.add((() => {
+        this.mOpenMusicButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenMusicButton");
-        }));
+        });
         this.initLanguage(this.mOpenMusicButton);
         this.mOpenMusicButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenRankButton.onClicked.add((() => {
+        this.mOpenRankButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenRankButton");
-        }));
+        });
         this.initLanguage(this.mOpenRankButton);
         this.mOpenRankButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenClothButton.onClicked.add((() => {
+        this.mOpenClothButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenClothButton");
-        }));
+        });
         this.initLanguage(this.mOpenClothButton);
         this.mOpenClothButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenMallButton.onClicked.add((() => {
+        this.mOpenMallButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenMallButton");
-        }));
+        });
         this.initLanguage(this.mOpenMallButton);
         this.mOpenMallButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenShareButton.onClicked.add((() => {
+        this.mOpenShareButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
-        }));
+        });
         this.initLanguage(this.mOpenShareButton);
         this.mOpenShareButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenTaskButton.onClicked.add((() => {
+        this.mOpenTaskButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenTaskButton");
-        }));
+        });
         this.initLanguage(this.mOpenTaskButton);
         this.mOpenTaskButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenSignInButton.onClicked.add((() => {
+        this.mOpenSignInButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenSignInButton");
-        }));
+        });
         this.initLanguage(this.mOpenSignInButton);
         this.mOpenSignInButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenPhotoButton.onClicked.add((() => {
+        this.mOpenPhotoButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenPhotoButton");
-        }));
+        });
         this.initLanguage(this.mOpenPhotoButton);
         this.mOpenPhotoButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenMoneyButton.onClicked.add((() => {
+        this.mOpenMoneyButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenMoneyButton");
-        }));
+        });
         this.initLanguage(this.mOpenMoneyButton);
         this.mOpenMoneyButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mDeleteAllGoodsButton.onClicked.add((() => {
+        this.mDeleteAllGoodsButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mDeleteAllGoodsButton");
-        }));
+        });
         this.initLanguage(this.mDeleteAllGoodsButton);
         this.mDeleteAllGoodsButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mJumpButton.onClicked.add((() => {
+        this.mJumpButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mJumpButton");
-        }));
+        });
         this.mJumpButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCrouchButton.onClicked.add((() => {
+        this.mCrouchButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCrouchButton");
-        }));
+        });
         this.mCrouchButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mBagButton.onClicked.add((() => {
+        this.mBagButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mBagButton");
-        }));
+        });
         this.mBagButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mExitButton.onClicked.add((() => {
+        this.mExitButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mExitButton");
-        }));
+        });
         this.mExitButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mActionButton.onClicked.add((() => {
+        this.mActionButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mActionButton");
-        }));
+        });
         this.mActionButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mWishtButton.onClicked.add((() => {
+        this.mWishtButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mWishtButton");
-        }));
+        });
         this.mWishtButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mShowHideGoodsButton.onClicked.add((() => {
+        this.mShowHideGoodsButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mShowHideGoodsButton");
-        }));
+        });
         this.mShowHideGoodsButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseMusicBtn.onClicked.add((() => {
+        this.mCloseMusicBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseMusicBtn");
-        }));
+        });
         this.mCloseMusicBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mLeftMusicBtn.onClicked.add((() => {
+        this.mLeftMusicBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mLeftMusicBtn");
-        }));
+        });
         this.mLeftMusicBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOnOffMusicBtn.onClicked.add((() => {
+        this.mOnOffMusicBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOnOffMusicBtn");
-        }));
+        });
         this.mOnOffMusicBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mRightMusicBtn.onClicked.add((() => {
+        this.mRightMusicBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mRightMusicBtn");
-        }));
+        });
         this.mRightMusicBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mOpenSetTextBlock);
         this.initLanguage(this.mOpenMusicTextBlock);
@@ -5807,9 +5807,9 @@ let SavePanel_Generate = class SavePanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSaveButton.onClicked.add((() => {
+        this.mSaveButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
-        }));
+        });
         this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mSaveTipsTextBlock);
     }
@@ -5916,17 +5916,17 @@ let SharePanel_Generate = class SharePanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mCopyButton.onClicked.add((() => {
+        this.mCopyButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCopyButton");
-        }));
+        });
         this.mCopyButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCancelButton.onClicked.add((() => {
+        this.mCancelButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCancelButton");
-        }));
+        });
         this.mCancelButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mUseButton.onClicked.add((() => {
+        this.mUseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mUseButton");
-        }));
+        });
         this.mUseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mMyselfTipsTextBlock);
         this.initLanguage(this.mMyselfTextBlock);
@@ -5995,9 +5995,9 @@ let AdPanel_Generate = class AdPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mNoBtn.onClicked.add((() => {
+        this.mNoBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
-        }));
+        });
         this.initLanguage(this.mNoBtn);
         this.mNoBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTitleTxt);
@@ -6064,14 +6064,14 @@ let TipsPanel_Generate = class TipsPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mNoBtn.onClicked.add((() => {
+        this.mNoBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mNoBtn");
-        }));
+        });
         this.initLanguage(this.mNoBtn);
         this.mNoBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mYesBtn.onClicked.add((() => {
+        this.mYesBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mYesBtn");
-        }));
+        });
         this.initLanguage(this.mYesBtn);
         this.mYesBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTitleTxt);
@@ -6131,13 +6131,13 @@ class AdPanel extends AdPanel_Generate$1 {
         this.mContentTxt.text = contentText;
         this.mNoBtn.text = noText;
         this.mYesBtn.text = yesText;
-        setTimeout((() => {
+        setTimeout(() => {
             if (openType == 1) {
                 this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
             } else {
                 this.mCanvas.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mCanvas.size.x / 2, this.rootCanvas.size.y / 2 - this.mCanvas.size.y / 2);
             }
-        }), 1);
+        }, 1);
         this.show();
     }
 }
@@ -6423,37 +6423,37 @@ class HUDPanel extends HUDPanel_Generate$1 {
             value: .8
         }).to({
             value: 1.2
-        }, .2 * 1e3).onStart((() => {
+        }, .2 * 1e3).onStart(() => {
             this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(.8);
-        })).onUpdate((v => {
+        }).onUpdate(v => {
             this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
-        })).onComplete((() => {
+        }).onComplete(() => {
             if (this.taskRedPointTween2) this.taskRedPointTween2.start();
-        })).easing(cubicBezier(.25, .1, .25, 1));
+        }).easing(cubicBezier(.25, .1, .25, 1));
         this.taskRedPointTween2 = new mw.Tween({
             value: 1.2
         }).to({
             value: .8
-        }, .2 * 1e3).onStart((() => {
+        }, .2 * 1e3).onStart(() => {
             this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(1.2);
-        })).onUpdate((v => {
+        }).onUpdate(v => {
             this.mTaskPointImage.renderScale = mw.Vector2.one.multiply(v.value);
-        })).onComplete((() => {
+        }).onComplete(() => {
             if (this.taskRedPointTween1) this.taskRedPointTween1.start();
-        })).easing(cubicBezier(.25, .1, .25, 1));
+        }).easing(cubicBezier(.25, .1, .25, 1));
     }
     initTaskTween() {
         let leftToRight = this.getPosTween(this.mOpenTaskButton, .5, 0, 15, 40, 15);
         let rightToLeft = this.getPosTween(this.mOpenTaskButton, .5, 40, 15, 0, 15);
-        leftToRight.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                rightToLeft.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
+        leftToRight.start().onComplete(() => {
+            TimeUtil.delaySecond(.1).then(() => {
+                rightToLeft.start().onComplete(() => {
+                    TimeUtil.delaySecond(.1).then(() => {
                         leftToRight.start();
-                    }));
-                }));
-            }));
-        }));
+                    });
+                });
+            });
+        });
         this.initTaskRedPointTweens();
     }
     controllerBagUIVisible(isVisible) {
@@ -6515,63 +6515,63 @@ class HUDPanel extends HUDPanel_Generate$1 {
     initShakeMallTween() {
         let rightBigToLeftSmall = this.getShakeScaleTween(this.mOpenMallButton, .5, 20, -20, 1.5, .9);
         let leftSamllToRightBig = this.getShakeScaleTween(this.mOpenMallButton, .5, -20, 20, .9, 1.5);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(.1).then(() => {
                         rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
+                    });
+                });
+            });
+        });
     }
     initShakeWishTween() {
         let rightBigToLeftSmall = this.getShakeScaleTween(this.mWishtButton, .5, 20, -20, 1.5, .9);
         let leftSamllToRightBig = this.getShakeScaleTween(this.mWishtButton, .5, -20, 20, .9, 1.5);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(.1).then(() => {
                         rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
+                    });
+                });
+            });
+        });
     }
     initShakeShareTween() {
         let rightBigToLeftSmall = this.getScaleTween(this.mOpenShareButton, .3, .8, .8, 1.2, 1.2);
         let leftSamllToRightBig = this.getScaleTween(this.mOpenShareButton, .3, 1.2, 1.2, .8, .8);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(.1).then(() => {
                         rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
+                    });
+                });
+            });
+        });
     }
     initShakeSignInTween() {
         let rightBigToLeftSmall = this.getShakeTween(this.mOpenSignInButton, 2, 0, 360);
         let leftSamllToRightBig = this.getShakeTween(this.mOpenSignInButton, 2, 360, 0);
-        rightBigToLeftSmall.start().onComplete((() => {
-            TimeUtil.delaySecond(.1).then((() => {
-                leftSamllToRightBig.start().onComplete((() => {
-                    TimeUtil.delaySecond(.1).then((() => {
+        rightBigToLeftSmall.start().onComplete(() => {
+            TimeUtil.delaySecond(.1).then(() => {
+                leftSamllToRightBig.start().onComplete(() => {
+                    TimeUtil.delaySecond(.1).then(() => {
                         rightBigToLeftSmall.start();
-                    }));
-                }));
-            }));
-        }));
+                    });
+                });
+            });
+        });
     }
     getShakeTween(widget, angleTime, startAngle, endAngle) {
         return new Tween({
             angle: startAngle
         }).to({
             angle: endAngle
-        }, angleTime * 1e3).onUpdate((v => {
+        }, angleTime * 1e3).onUpdate(v => {
             widget.renderTransformAngle = v.angle;
-        })).easing(cubicBezier(.22, .9, .28, .92));
+        }).easing(cubicBezier(.22, .9, .28, .92));
     }
     getScaleTween(widget, scaleTime, startScaleX, startScaleY, endScaleX, endScaleY) {
         return new Tween({
@@ -6580,9 +6580,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
         }).to({
             scaleX: endScaleX,
             scaleY: endScaleY
-        }, scaleTime * 1e3).onUpdate((v => {
+        }, scaleTime * 1e3).onUpdate(v => {
             widget.renderScale = new mw.Vector2(v.scaleX, v.scaleY);
-        })).easing(cubicBezier(.22, .9, .28, .92));
+        }).easing(cubicBezier(.22, .9, .28, .92));
     }
     getShakeScaleTween(widget, shakeScaleTime, startAngle, endAngle, startScale, endScale) {
         return new Tween({
@@ -6591,19 +6591,19 @@ class HUDPanel extends HUDPanel_Generate$1 {
         }).to({
             angle: endAngle,
             scale: endScale
-        }, shakeScaleTime * 1e3).onUpdate((v => {
+        }, shakeScaleTime * 1e3).onUpdate(v => {
             widget.renderTransformAngle = v.angle;
             widget.renderScale = new mw.Vector2(v.scale, v.scale);
-        })).easing(cubicBezier(.22, .9, .28, .92));
+        }).easing(cubicBezier(.22, .9, .28, .92));
     }
     getRenderOpacityTween(widget, time, startOpacity, endOpacity) {
         return new Tween({
             opacity: startOpacity
         }).to({
             opacity: endOpacity
-        }, time * 1e3).onUpdate((v => {
+        }, time * 1e3).onUpdate(v => {
             widget.renderOpacity = v.opacity;
-        })).easing(cubicBezier(.22, .9, .28, .92));
+        }).easing(cubicBezier(.22, .9, .28, .92));
     }
     getPosTween(widget, posTime, startPosX, startPosY, endPosX, endPosY) {
         return new Tween({
@@ -6612,9 +6612,9 @@ class HUDPanel extends HUDPanel_Generate$1 {
         }).to({
             posX: endPosX,
             posY: endPosY
-        }, posTime * 1e3).onUpdate((v => {
+        }, posTime * 1e3).onUpdate(v => {
             widget.position = new mw.Vector2(v.posX, v.posY);
-        })).easing(cubicBezier(.22, .9, .28, .92));
+        }).easing(cubicBezier(.22, .9, .28, .92));
     }
 }
 
@@ -6695,9 +6695,9 @@ class HUDModuleC extends ModuleC {
         if (mw.UIService.getUI(HUDPanel, false)?.visible) {
             this.getHUDPanel.updateFreeTime();
         } else {
-            TimeUtil.delaySecond(10).then((() => {
+            TimeUtil.delaySecond(10).then(() => {
                 this.getHUDPanel.updateFreeTime();
-            }));
+            });
         }
     }
     async initFreeNpc() {}
@@ -6719,9 +6719,9 @@ class HUDModuleC extends ModuleC {
         this.onOpenPhotoAction.add(this.addOpenPhotoAction.bind(this));
     }
     addOpenPhotoAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await PhotoStudioService.asyncOpenPhotoStudioModule();
-        }));
+        });
     }
     addOnOffMusicAction(isOpenBGM) {
         isOpenBGM ? this.playBGMusic(0) : SoundService.stopBGM();
@@ -6758,9 +6758,9 @@ class HUDModuleC extends ModuleC {
     }
     onOpenSetActionHandler() {}
     onOpenClothActionHandler() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await AvatarEditorService.asyncOpenAvatarEditorModule();
-        }));
+        });
     }
     onOpenShareActionHandler(openType) {
         return;
@@ -6769,51 +6769,51 @@ class HUDModuleC extends ModuleC {
         if (openType == 1) {
             this.useShareId(shareId);
         } else if (openType == 2) {
-            AvatarEditorService.asyncCloseAvatarEditorModule().then((() => {
-                ExecutorManager.instance.pushAsyncExecutor((async () => {
+            AvatarEditorService.asyncCloseAvatarEditorModule().then(() => {
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
                     await TimeUtil.delaySecond(5);
                     await this.useDescription();
-                }));
-            }));
+                });
+            });
         }
     }
     addDescriptionChange() {
-        this.localPlayer.character.asyncReady().then((() => {
+        this.localPlayer.character.asyncReady().then(() => {
             console.error(`变化`);
             this.changeDescription = this.localPlayer.character.getDescription();
             if (this.isOpenAvatar) {
                 if (!UIService.getUI(SavePanel, false)?.visible) this.getSavePanel.show();
             }
-        }));
+        });
     }
     useShareId(shareId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let isSuccess = await Utils.applySharedId(this.localPlayer.character, shareId);
             if (isSuccess) {
                 Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
             } else {
                 Notice.showDownNotice(GameConfig.Language.Text_InvalidID.Value);
             }
-        }));
+        });
     }
     addFreeTryOnAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.initFreeNpc();
             Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             this.freeNpc.setDescription(this.localPlayer.character.getDescription());
             await this.freeNpc.asyncReady();
             await TimeUtil.delaySecond(1);
             await AvatarEditorService.asyncCloseAvatarEditorModule();
-            TimeUtil.delaySecond(2).then((() => {
+            TimeUtil.delaySecond(2).then(() => {
                 Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-                TimeUtil.delaySecond(2).then((() => {
+                TimeUtil.delaySecond(2).then(() => {
                     Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
-                }));
-            }));
+                });
+            });
             Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes1.Value);
             await TimeUtil.delaySecond(5);
             await this.useDescription();
-        }));
+        });
     }
     async useDescription() {
         await this.localPlayer.character.asyncReady();
@@ -6825,12 +6825,12 @@ class HUDModuleC extends ModuleC {
     }
     resetDecription() {
         this.clearResetDecriptionTimeoutId();
-        this.resetDecriptionTimeoutId = setTimeout((() => {
-            AccountService.downloadData(this.localPlayer.character, (success => {
+        this.resetDecriptionTimeoutId = setTimeout(() => {
+            AccountService.downloadData(this.localPlayer.character, success => {
                 if (!success) return;
                 Notice.showDownNotice(GameConfig.Language.Text_FreeChangeOfClothes3.Value);
-            }));
-        }), GlobalData.freeTime * 60 * 1e3);
+            });
+        }, GlobalData.freeTime * 60 * 1e3);
     }
     clearResetDecriptionTimeoutId() {
         if (this.resetDecriptionTimeoutId) {
@@ -6876,13 +6876,13 @@ class HUDModuleC extends ModuleC {
         this.getDanMuModuleC.onClickBagItemAction.call(bagId);
     }
     registerGlobalClickSound() {
-        Event.addLocalListener("PlayButtonClick", (v => {
+        Event.addLocalListener("PlayButtonClick", v => {
             if (this.uiClickSoundId) {
                 SoundService.stopSound(this.uiClickSoundId);
                 this.uiClickSoundId = null;
             }
             this.uiClickSoundId = SoundService.playSound(`12723`);
-        }));
+        });
     }
 }
 
@@ -6890,9 +6890,9 @@ class HUDModuleS extends ModuleS {
     onStart() {}
     onPlayerEnterGame(player) {}
     initFreeTime(player) {
-        Utils.getCustomdata(`FreeTime`).then((freeTime => {
+        Utils.getCustomdata(`FreeTime`).then(freeTime => {
             this.getClient(player).net_syncFreeTime(freeTime);
-        }));
+        });
     }
 }
 
@@ -6952,15 +6952,15 @@ class SharePanel extends SharePanel_Generate$1 {
         if (openType == 1) {
             Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.SelfHitTestInvisible);
             this.mOtherTipsTextBlock.text = GameConfig.Language.Text_TryOnYourFriendAvatarForFree.Value;
-            setTimeout((() => {
+            setTimeout(() => {
                 this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x / 2, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
-            }), 1);
+            }, 1);
         } else if (openType == 2) {
             Utils.setWidgetVisibility(this.mInputBgImage, mw.SlateVisibility.Collapsed);
             this.mOtherTipsTextBlock.text = GameConfig.Language.Text_CopyTheCharacterIDShareFriendsTryOn.Value;
-            setTimeout((() => {
+            setTimeout(() => {
                 this.mMainImage.position = new mw.Vector2(this.rootCanvas.size.x / 2 - this.mMainImage.size.x, this.rootCanvas.size.y / 2 - this.mMainImage.size.y / 2);
-            }), 1);
+            }, 1);
         }
     }
     onShow(...params) {
@@ -7108,7 +7108,7 @@ class BubbleFsm {
     }
     switchState(stateClass) {
         if (this._currentState.constructor.name != stateClass.name) {
-            this._nextState = this._stateList.find((i => i.constructor.name == stateClass.name));
+            this._nextState = this._stateList.find(i => i.constructor.name == stateClass.name);
         }
     }
 }
@@ -7455,55 +7455,55 @@ let ChatPanel_Generate = class ChatPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mOpenChatButton.onClicked.add((() => {
+        this.mOpenChatButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenChatButton");
-        }));
+        });
         this.initLanguage(this.mOpenChatButton);
         this.mOpenChatButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenExpressionButton.onClicked.add((() => {
+        this.mOpenExpressionButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenExpressionButton");
-        }));
+        });
         this.initLanguage(this.mOpenExpressionButton);
         this.mOpenExpressionButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenBagButton.onClicked.add((() => {
+        this.mOpenBagButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenBagButton");
-        }));
+        });
         this.initLanguage(this.mOpenBagButton);
         this.mOpenBagButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mOpenActionButton.onClicked.add((() => {
+        this.mOpenActionButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenActionButton");
-        }));
+        });
         this.initLanguage(this.mOpenActionButton);
         this.mOpenActionButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseBagButton.onClicked.add((() => {
+        this.mCloseBagButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseBagButton");
-        }));
+        });
         this.initLanguage(this.mCloseBagButton);
         this.mCloseBagButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mBackBagButton.onClicked.add((() => {
+        this.mBackBagButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mBackBagButton");
-        }));
+        });
         this.initLanguage(this.mBackBagButton);
         this.mBackBagButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mUnloadButton.onClicked.add((() => {
+        this.mUnloadButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mUnloadButton");
-        }));
+        });
         this.mUnloadButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseChatList1Button.onClicked.add((() => {
+        this.mCloseChatList1Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseChatList1Button");
-        }));
+        });
         this.mCloseChatList1Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseChatList2Button.onClicked.add((() => {
+        this.mCloseChatList2Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseChatList2Button");
-        }));
+        });
         this.mCloseChatList2Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseExpressionListButton.onClicked.add((() => {
+        this.mCloseExpressionListButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseExpressionListButton");
-        }));
+        });
         this.mCloseExpressionListButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseActionListButton.onClicked.add((() => {
+        this.mCloseActionListButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseActionListButton");
-        }));
+        });
         this.mCloseActionListButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -7615,13 +7615,13 @@ let GuidePanel_Generate = class GuidePanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickNextStepButton.onClicked.add((() => {
+        this.mClickNextStepButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickNextStepButton");
-        }));
+        });
         this.mClickNextStepButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mClickStartButton.onClicked.add((() => {
+        this.mClickStartButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickStartButton");
-        }));
+        });
         this.mClickStartButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mClickNextStepTextBlock);
         this.initLanguage(this.mContentTextBlock);
@@ -7670,9 +7670,9 @@ let OnClickPanel_Generate = class OnClickPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickBtn.onClicked.add((() => {
+        this.mClickBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
-        }));
+        });
         this.mClickBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -7884,7 +7884,7 @@ class RankModuleS extends ModuleS {
     async refreshTime() {
         if (!this.syncPlayerMap || this.syncPlayerMap?.size == 0) return;
         let tmpWorldDatas = [];
-        this.syncPlayerMap?.forEach(((value, key) => {
+        this.syncPlayerMap?.forEach((value, key) => {
             DataCenterS.getData(key, RankData)?.setTime(1);
             let userId = key.userId;
             if (!this.roomDataMap.has(userId)) return;
@@ -7892,7 +7892,7 @@ class RankModuleS extends ModuleS {
             roomData.time += 1;
             let worldData = new WorldData(userId, roomData.playerName, roomData.time);
             tmpWorldDatas.push(worldData);
-        }));
+        });
         try {
             this.worldDatas = await Utils.getCustomdata("WorldData");
             this.isRefreshWorldData(tmpWorldDatas);
@@ -8060,14 +8060,14 @@ class RankModuleS extends ModuleS {
         this.roomTimes.length = 0;
         this.roomTryOn.length = 0;
         this.roomMoney.length = 0;
-        this.roomDataMap?.forEach(((value, key) => {
+        this.roomDataMap?.forEach((value, key) => {
             this.roomUserIds.push(value.userId);
             this.roomNames.push(value.playerName);
             this.roomScores.push(value.score);
             this.roomTimes.push(value.time);
             this.roomTryOn.push(value.tryOn);
             this.roomMoney.push(value.money);
-        }));
+        });
     }
     updateWorldData() {
         if (!this.worldDatas || this.worldDatas?.length == 0) return;
@@ -8094,51 +8094,51 @@ class RankModuleS extends ModuleS {
     synchrodata_onEnterScene(sendUserId) {
         this.updateRoomData();
         this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             if (sendUserId == key.userId) {
                 this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
             } else {
                 this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
             }
-        }));
+        });
     }
     synchrodata_Room() {
         this.updateRoomData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncRoomRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
-        }));
+        });
     }
     synchrodata_Room_TryOn() {
         this.updateRoomData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncRoomRankData_TryOn(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney);
-        }));
+        });
     }
     synchrodata_World() {
         this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncWorldRankData(this.worldUserIds, this.worldNames, this.worldTimes);
-        }));
+        });
     }
     synchrodata_MoneyWorld() {
         this.updateMoneyWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncMoneyWorldRankData(this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
-        }));
+        });
     }
     synchrodata_Room_MoneyWorld() {
         this.updateRoomData();
         this.updateMoneyWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncRoomMoneyWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.moneyWorldUserIds, this.moneyWorldNames, this.moneyWorldMoney);
-        }));
+        });
     }
     synchrodata_RoomWorld() {
         this.updateRoomData();
         this.updateWorldData();
-        this.syncPlayerMap.forEach(((value, key) => {
+        this.syncPlayerMap.forEach((value, key) => {
             this.getClient(key).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
-        }));
+        });
     }
     synchrodata_aRoomWorld(player) {
         this.getClient(player).net_syncRoomWorldRankData(this.roomUserIds, this.roomNames, this.roomScores, this.roomTimes, this.roomTryOn, this.roomMoney, this.worldUserIds, this.worldNames, this.worldTimes);
@@ -8252,9 +8252,9 @@ var HttpHelper;
     }
     class HttpUtils {
         static buildUrl(baseUrl, params) {
-            var queryString = Object.keys(params).map((function(key) {
+            var queryString = Object.keys(params).map(function(key) {
                 return key + "=" + params[key];
-            })).join("&");
+            }).join("&");
             let url = baseUrl + "?" + queryString;
             console.log(`HttpUtils.buildUrl( ${baseUrl} , ${params} => ${url}) `);
             return url;
@@ -8266,8 +8266,8 @@ var HttpHelper;
             return extensionHttpRequestTransmitData(response, url, jsonBody, HttpRequestType.Post);
         }
         static syncGet(baseUrl, params) {
-            return new Promise((resolve => {
-                HttpUtils.get(baseUrl, params, ((result, content, responseCode) => {
+            return new Promise(resolve => {
+                HttpUtils.get(baseUrl, params, (result, content, responseCode) => {
                     console.info(`HttpUtils.syncGet url:${baseUrl} param:${params} result:${result} content:${content} responseCode:${responseCode}`);
                     if (!result) return resolve(null);
                     if (responseCode != 200) return resolve(null);
@@ -8278,12 +8278,12 @@ var HttpHelper;
                     } catch (error) {
                         return resolve(null);
                     }
-                }));
-            }));
+                });
+            });
         }
         static syncPost(baseUrl, jsonBody) {
-            return new Promise((resolve => {
-                HttpUtils.post(baseUrl, jsonBody, ((result, content, responseCode) => {
+            return new Promise(resolve => {
+                HttpUtils.post(baseUrl, jsonBody, (result, content, responseCode) => {
                     console.info(`HttpUtils.syncPost url:${baseUrl} body:${jsonBody} result:${result} content:${content} responseCode:${responseCode}`);
                     if (!result) return resolve(null);
                     if (responseCode != 200) return resolve(null);
@@ -8294,8 +8294,8 @@ var HttpHelper;
                     } catch (error) {
                         return resolve(null);
                     }
-                }));
-            }));
+                });
+            });
         }
     }
     HttpHelper.HttpUtils = HttpUtils;
@@ -8509,11 +8509,11 @@ let CameraManager = CameraManager_1 = class CameraManager extends Script {
     }
     onStart() {
         this.initData();
-        this.gameObject.asyncReady().then((() => {
+        this.gameObject.asyncReady().then(() => {
             this.gameObject.setCustomProperty(this.wfzCameraName, this.wfzCameraName);
             CameraManager_1.cameraManager = this;
             this.useUpdate = true;
-        }));
+        });
         Event.addLocalListener(EventType.SwitchCamera, this.changeCameraType2.bind(this));
     }
     onUpdate(dt) {
@@ -8727,13 +8727,13 @@ let GetWishPanel_Generate = class GetWishPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mOpenAvatarButton.onClicked.add((() => {
+        this.mOpenAvatarButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenAvatarButton");
-        }));
+        });
         this.mOpenAvatarButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTipsTextBlock);
         this.initLanguage(this.mAvatarTextBlock);
@@ -8825,9 +8825,9 @@ class WishTools {
     static danmuSyncServer(name1, name2, price) {
         Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
         for (let i = 0; i < 5; ++i) {
-            TimeUtil.delaySecond(i).then((() => {
+            TimeUtil.delaySecond(i).then(() => {
                 Event.dispatchToLocal(DanmuSyncServer, `玩家《${name1}》赠送给玩家《${name2}》价值${price}派对币的心愿单`);
-            }));
+            });
         }
     }
 }
@@ -9610,13 +9610,13 @@ let ColorPickPanel_Generate = class ColorPickPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSaveButton.onClicked.add((() => {
+        this.mSaveButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
-        }));
+        });
         this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mSaveTextBlock);
     }
@@ -9741,9 +9741,9 @@ let ColorPickTab2_Generate = class ColorPickTab2_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mTab2Button.onClicked.add((() => {
+        this.mTab2Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mTab2Button");
-        }));
+        });
         this.mTab2Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTab2TextBlock);
     }
@@ -9865,9 +9865,9 @@ let ColorPickTab3_Generate = class ColorPickTab3_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -10217,25 +10217,25 @@ let MallPanel_Generate = class MallPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mAddVipButton.onClicked.add((() => {
+        this.mAddVipButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mAddVipButton");
-        }));
+        });
         this.mAddVipButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mResetButton.onClicked.add((() => {
+        this.mResetButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mResetButton");
-        }));
+        });
         this.mResetButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mSaveButton.onClicked.add((() => {
+        this.mSaveButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
-        }));
+        });
         this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mSexButton.onClicked.add((() => {
+        this.mSexButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSexButton");
-        }));
+        });
         this.mSexButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mVipCountTextBlock);
         this.initLanguage(this.mResetTextBlock);
@@ -10308,9 +10308,9 @@ let MallItem_Big_Generate = class MallItem_Big_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mPriceTextBlock);
     }
@@ -10530,13 +10530,13 @@ let MallItem_Character_Generate = class MallItem_Character_Generate extends UISc
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mDeleteButton.onClicked.add((() => {
+        this.mDeleteButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mDeleteButton");
-        }));
+        });
         this.mDeleteButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mAddBgTextBlock);
         this.initLanguage(this.mAddTextBlock);
@@ -10667,9 +10667,9 @@ let MallItem_Color_Generate = class MallItem_Color_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -10796,9 +10796,9 @@ let MallItem_Self_Generate = class MallItem_Self_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.initLanguage(this.mCloseButton);
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
@@ -10932,13 +10932,13 @@ let MallItem_Small_Generate = class MallItem_Small_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mColorButton.onClicked.add((() => {
+        this.mColorButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mColorButton");
-        }));
+        });
         this.mColorButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mPriceTextBlock);
     }
@@ -11326,9 +11326,9 @@ let MallTab1_Generate = class MallTab1_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mTab1Button.onClicked.add((() => {
+        this.mTab1Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mTab1Button");
-        }));
+        });
         this.mTab1Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTab1TextBlock);
     }
@@ -11443,9 +11443,9 @@ let MallTab2_Generate = class MallTab2_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mTab2Button.onClicked.add((() => {
+        this.mTab2Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mTab2Button");
-        }));
+        });
         this.mTab2Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTab2TextBlock);
     }
@@ -11558,9 +11558,9 @@ let MallTab3_Generate = class MallTab3_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mTab3Button.onClicked.add((() => {
+        this.mTab3Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mTab3Button");
-        }));
+        });
         this.mTab3Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTab3TextBlock);
     }
@@ -11786,9 +11786,9 @@ class MallPanel extends MallPanel_Generate$1 {
         }
         this.showTab1Canvas();
         this.tab1Ids.length = 0;
-        this.tab1Elements.forEach((value => {
+        this.tab1Elements.forEach(value => {
             this.tab1Ids.push(value.ID);
-        }));
+        });
         this.updateTab1();
         this.tab1Id = this.tab1Ids[1];
         this.getMallModuleC.onSelectTab1Action.call(this.tab1Id);
@@ -11890,9 +11890,9 @@ class MallPanel extends MallPanel_Generate$1 {
         if (this.tabIdDataMap.has(this.tab1Id)) {
             let tab2IdDataMap = this.tabIdDataMap.get(this.tab1Id).tabIdDataMap;
             if (!tab2IdDataMap || tab2IdDataMap.size == 0) return tab2Id;
-            tab2IdDataMap.forEach(((value, key) => {
+            tab2IdDataMap.forEach((value, key) => {
                 if (value.isOn) tab2Id = key;
-            }));
+            });
             return tab2Id;
         } else {
             return tab2Id;
@@ -11911,9 +11911,9 @@ class MallPanel extends MallPanel_Generate$1 {
             if (tab2IdDataMap.has(this.tab2Id)) {
                 let tab3IdDataMap = tab2IdDataMap.get(this.tab2Id).tabIdDataMap;
                 if (!tab3IdDataMap || tab3IdDataMap.size == 0) return tab3Id;
-                tab3IdDataMap.forEach(((value, key) => {
+                tab3IdDataMap.forEach((value, key) => {
                     if (value.isOn) tab3Id = key;
-                }));
+                });
                 return tab3Id;
             } else {
                 return tab3Id;
@@ -11928,9 +11928,9 @@ class MallPanel extends MallPanel_Generate$1 {
             tab1IdData.tabId = this.tab1Id;
             this.tabIdDataMap.set(this.tab1Id, tab1IdData);
         }
-        this.tabIdDataMap.forEach(((value, key) => {
+        this.tabIdDataMap.forEach((value, key) => {
             value.isOn = key == this.tab1Id;
-        }));
+        });
     }
     initTab2IdDataMap() {
         let tab1IdData = null;
@@ -11941,22 +11941,22 @@ class MallPanel extends MallPanel_Generate$1 {
                 tab2IdData.tabId = this.tab2Id;
                 tab1IdData.tabIdDataMap.set(this.tab2Id, tab2IdData);
             }
-            tab1IdData.tabIdDataMap.forEach(((value, key) => {
+            tab1IdData.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab2Id;
-            }));
+            });
         } else {
             tab1IdData = new TabIdData;
             tab1IdData.tabId = this.tab1Id;
             let tab2IdData = new TabIdData;
             tab2IdData.tabId = this.tab2Id;
             tab1IdData.tabIdDataMap.set(this.tab2Id, tab2IdData);
-            tab1IdData.tabIdDataMap.forEach(((value, key) => {
+            tab1IdData.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab2Id;
-            }));
+            });
             this.tabIdDataMap.set(this.tab1Id, tab1IdData);
-            this.tabIdDataMap.forEach(((value, key) => {
+            this.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab1Id;
-            }));
+            });
         }
     }
     initTab3IdDataMap() {
@@ -11971,21 +11971,21 @@ class MallPanel extends MallPanel_Generate$1 {
                     tab3IdData.tabId = this.tab3Id;
                     tab2IdData.tabIdDataMap.set(this.tab3Id, tab3IdData);
                 }
-                tab2IdData.tabIdDataMap.forEach(((value, key) => {
+                tab2IdData.tabIdDataMap.forEach((value, key) => {
                     value.isOn = key == this.tab3Id;
-                }));
+                });
             } else {
                 tab2IdData.tabId = this.tab2Id;
                 tab1IdData.tabIdDataMap.set(this.tab2Id, tab2IdData);
-                tab1IdData.tabIdDataMap.forEach(((value, key) => {
+                tab1IdData.tabIdDataMap.forEach((value, key) => {
                     value.isOn = key == this.tab2Id;
-                }));
+                });
                 let tab3IdData = new TabIdData;
                 tab3IdData.tabId = this.tab3Id;
                 tab2IdData.tabIdDataMap.set(this.tab3Id, tab3IdData);
-                tab2IdData.tabIdDataMap.forEach(((value, key) => {
+                tab2IdData.tabIdDataMap.forEach((value, key) => {
                     value.isOn = key == this.tab3Id;
-                }));
+                });
             }
         } else {
             tab1IdData = new TabIdData;
@@ -11993,19 +11993,19 @@ class MallPanel extends MallPanel_Generate$1 {
             let tab2IdData = new TabIdData;
             tab2IdData.tabId = this.tab2Id;
             tab1IdData.tabIdDataMap.set(this.tab2Id, tab2IdData);
-            tab1IdData.tabIdDataMap.forEach(((value, key) => {
+            tab1IdData.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab2Id;
-            }));
+            });
             let tab3IdData = new TabIdData;
             tab3IdData.tabId = this.tab3Id;
             tab2IdData.tabIdDataMap.set(this.tab3Id, tab3IdData);
-            tab2IdData.tabIdDataMap.forEach(((value, key) => {
+            tab2IdData.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab3Id;
-            }));
+            });
             this.tabIdDataMap.set(this.tab1Id, tab1IdData);
-            this.tabIdDataMap.forEach(((value, key) => {
+            this.tabIdDataMap.forEach((value, key) => {
                 value.isOn = key == this.tab1Id;
-            }));
+            });
         }
     }
     clearMallItemData() {
@@ -12016,69 +12016,69 @@ class MallPanel extends MallPanel_Generate$1 {
         this.clearMallItemData();
         switch (this.tab2Id) {
           case Tab2Type.Tab2_BodyType:
-            GameConfig.BodyType.getAllElement().forEach((value => {
+            GameConfig.BodyType.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_SkinTone:
-            GameConfig.SkinTone.getAllElement().forEach((value => {
+            GameConfig.SkinTone.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.SkinTone);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Face:
-            GameConfig.Face.getAllElement().forEach((value => {
+            GameConfig.Face.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Eyebrows:
-            GameConfig.Eyebrows.getAllElement().forEach((value => {
+            GameConfig.Eyebrows.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Expression:
-            GameConfig.FaceExpression.getAllElement().forEach((value => {
+            GameConfig.FaceExpression.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Outfit:
-            GameConfig.Outfit.getAllElement().forEach((value => {
+            GameConfig.Outfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Top:
-            GameConfig.Top.getAllElement().forEach((value => {
+            GameConfig.Top.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Bottom:
-            GameConfig.Bottom.getAllElement().forEach((value => {
+            GameConfig.Bottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Shoes:
-            GameConfig.Shoes.getAllElement().forEach((value => {
+            GameConfig.Shoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Gloves:
-            GameConfig.Gloves.getAllElement().forEach((value => {
+            GameConfig.Gloves.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_Pet:
-            GameConfig.Pet.getAllElement().forEach((value => {
+            GameConfig.Pet.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
         }
         this.currentConfigId = this.tab2Id;
@@ -12088,288 +12088,288 @@ class MallPanel extends MallPanel_Generate$1 {
         this.clearMallItemData();
         switch (this.tab3Id) {
           case Tab3Type.Tab3_PupilStyle:
-            GameConfig.PupilStyle.getAllElement().forEach((value => {
+            GameConfig.PupilStyle.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Lens:
-            GameConfig.Lens.getAllElement().forEach((value => {
+            GameConfig.Lens.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_UpperHighlight:
-            GameConfig.UpperHighlight.getAllElement().forEach((value => {
+            GameConfig.UpperHighlight.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LowerHighlight:
-            GameConfig.LowerHighlight.getAllElement().forEach((value => {
+            GameConfig.LowerHighlight.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Eyelashes:
-            GameConfig.Eyelashes.getAllElement().forEach((value => {
+            GameConfig.Eyelashes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Eyeshadow:
-            GameConfig.Eyeshadow.getAllElement().forEach((value => {
+            GameConfig.Eyeshadow.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Blush:
-            GameConfig.Blush.getAllElement().forEach((value => {
+            GameConfig.Blush.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LipMakeup:
-            GameConfig.LipMakeup.getAllElement().forEach((value => {
+            GameConfig.LipMakeup.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_FaceTattoo:
             break;
 
           case Tab3Type.Tab3_FullHair:
-            GameConfig.FullHair.getAllElement().forEach((value => {
+            GameConfig.FullHair.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_FrontHair:
-            GameConfig.FrontHair.getAllElement().forEach((value => {
+            GameConfig.FrontHair.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_BackHair:
-            GameConfig.BackHair.getAllElement().forEach((value => {
+            GameConfig.BackHair.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(value.AssetId);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LeftHand:
-            GameConfig.LeftHand.getAllElement().forEach((value => {
+            GameConfig.LeftHand.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_RightHand:
-            GameConfig.RightHand.getAllElement().forEach((value => {
+            GameConfig.RightHand.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Back:
-            GameConfig.Back.getAllElement().forEach((value => {
+            GameConfig.Back.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Ear:
-            GameConfig.Ear.getAllElement().forEach((value => {
+            GameConfig.Ear.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Face:
-            GameConfig.Facing.getAllElement().forEach((value => {
+            GameConfig.Facing.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Hip:
-            GameConfig.Hip.getAllElement().forEach((value => {
+            GameConfig.Hip.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Shoulder:
-            GameConfig.Shoulder.getAllElement().forEach((value => {
+            GameConfig.Shoulder.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Effects:
-            GameConfig.Effects.getAllElement().forEach((value => {
+            GameConfig.Effects.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Trailing:
-            GameConfig.Trailing.getAllElement().forEach((value => {
+            GameConfig.Trailing.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_BackPet:
-            GameConfig.BackPet.getAllElement().forEach((value => {
+            GameConfig.BackPet.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_DailyStyling_Suit1:
-            GameConfig.DailyStylingOutfit1.getAllElement().forEach((value => {
+            GameConfig.DailyStylingOutfit1.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_DailyStyling_Suit2:
-            GameConfig.DailyStylingOutfit2.getAllElement().forEach((value => {
+            GameConfig.DailyStylingOutfit2.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_MuppetStyling_Suit:
-            GameConfig.MuppetStylingOutfit.getAllElement().forEach((value => {
+            GameConfig.MuppetStylingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_HeroStyling_Suit:
-            GameConfig.HeroStylingOutfit.getAllElement().forEach((value => {
+            GameConfig.HeroStylingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_FantasyModeling_Suit:
-            GameConfig.FantasyModelingOutfit.getAllElement().forEach((value => {
+            GameConfig.FantasyModelingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_HolidayStyling_Suit:
-            GameConfig.HolidayStylingOutfit.getAllElement().forEach((value => {
+            GameConfig.HolidayStylingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_ScienceFictionStyling_Suit:
-            GameConfig.ScienceFictionStylingOutfit.getAllElement().forEach((value => {
+            GameConfig.ScienceFictionStylingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_AncientMolding_Suit:
-            GameConfig.AncientMoldingOutfit.getAllElement().forEach((value => {
+            GameConfig.AncientMoldingOutfit.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LongSinglePiece_Top:
-            GameConfig.LongSinglePieceTop.getAllElement().forEach((value => {
+            GameConfig.LongSinglePieceTop.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_ShortJacket_Top:
-            GameConfig.ShortJacketTop.getAllElement().forEach((value => {
+            GameConfig.ShortJacketTop.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_ShortSinglePiece_Top:
-            GameConfig.ShortSinglePieceTop.getAllElement().forEach((value => {
+            GameConfig.ShortSinglePieceTop.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Suit_Top:
-            GameConfig.SuitTop.getAllElement().forEach((value => {
+            GameConfig.SuitTop.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_ALongCoat_Top:
-            GameConfig.ALongCoatTop.getAllElement().forEach((value => {
+            GameConfig.ALongCoatTop.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_ShortSkirt_Bottom:
-            GameConfig.ShortSkirtBottom.getAllElement().forEach((value => {
+            GameConfig.ShortSkirtBottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LongPants_Bottom:
-            GameConfig.LongPantsBottom.getAllElement().forEach((value => {
+            GameConfig.LongPantsBottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Shorts_Bottom:
-            GameConfig.ShortsBottom.getAllElement().forEach((value => {
+            GameConfig.ShortsBottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_LongSkirt_Bottom:
-            GameConfig.LongSkirtBottom.getAllElement().forEach((value => {
+            GameConfig.LongSkirtBottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Tights_Bottom:
-            GameConfig.TightsBottom.getAllElement().forEach((value => {
+            GameConfig.TightsBottom.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Gloves_Gloves:
-            GameConfig.GlovesGloves.getAllElement().forEach((value => {
+            GameConfig.GlovesGloves.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Accessories_Gloves:
-            GameConfig.AccessoriesGloves.getAllElement().forEach((value => {
+            GameConfig.AccessoriesGloves.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Everyday_Shoes:
-            GameConfig.EverydayShoes.getAllElement().forEach((value => {
+            GameConfig.EverydayShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_Boots_Shoes:
-            GameConfig.BootsShoes.getAllElement().forEach((value => {
+            GameConfig.BootsShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_FootCover_Shoes:
-            GameConfig.FootCoverShoes.getAllElement().forEach((value => {
+            GameConfig.FootCoverShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_NakedDress_Shoes:
-            GameConfig.NakedDressShoes.getAllElement().forEach((value => {
+            GameConfig.NakedDressShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_HighHeels_Shoes:
-            GameConfig.HighHeelsShoes.getAllElement().forEach((value => {
+            GameConfig.HighHeelsShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
 
           case Tab3Type.Tab3_SportsShoes_Shoes:
-            GameConfig.SportsShoesShoes.getAllElement().forEach((value => {
+            GameConfig.SportsShoesShoes.getAllElement().forEach(value => {
                 if (value.SexType == 0 || value.SexType == this.currentSomatotype) this.mallItemAssetIds.push(`${value.ID}`);
-            }));
+            });
             break;
         }
         this.currentConfigId = this.tab3Id;
@@ -12395,48 +12395,48 @@ class MallPanel extends MallPanel_Generate$1 {
         }
     }
     hideOtherMallItemNoHasColor() {
-        this.mallItem_Small.forEach((value => {
+        this.mallItem_Small.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Big.forEach((value => {
+        });
+        this.mallItem_Big.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Character.forEach((value => {
+        });
+        this.mallItem_Character.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
+        });
     }
     hideOtherMallItemNoHasBig() {
-        this.mallItem_Small.forEach((value => {
+        this.mallItem_Small.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Color.forEach((value => {
+        });
+        this.mallItem_Color.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Character.forEach((value => {
+        });
+        this.mallItem_Character.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
+        });
     }
     hideOtherMallItemNoHasSmall() {
-        this.mallItem_Big.forEach((value => {
+        this.mallItem_Big.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Color.forEach((value => {
+        });
+        this.mallItem_Color.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Character.forEach((value => {
+        });
+        this.mallItem_Character.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
+        });
     }
     hideOtherMallItemNoHasCharacter() {
-        this.mallItem_Color.forEach((value => {
+        this.mallItem_Color.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Small.forEach((value => {
+        });
+        this.mallItem_Small.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
-        this.mallItem_Big.forEach((value => {
+        });
+        this.mallItem_Big.forEach(value => {
             Utils.setWidgetVisibility(value.uiObject, mw.SlateVisibility.Collapsed);
-        }));
+        });
     }
     initMallItem() {
         this.thisFeatureIsNotEnabled();
@@ -12557,7 +12557,7 @@ class MallPanel extends MallPanel_Generate$1 {
         }
     }
     checkMallItemState() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let assetId = null;
             switch (this.currentConfigId) {
               case Tab2Type.Tab2_SkinTone:
@@ -12579,23 +12579,23 @@ class MallPanel extends MallPanel_Generate$1 {
                 this.mallItemMap.get(assetId).updateSelectState(true);
                 break;
             }
-        }));
+        });
     }
     checkSkinToneMallItemState() {
         if (this.currentConfigId != Tab2Type.Tab2_SkinTone) return;
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let assetId = await this.getMallModuleC.getCharacterAssetId(this.currentConfigId);
             let isHasSelect = false;
-            this.mallItemMap.forEach(((value, key) => {
+            this.mallItemMap.forEach((value, key) => {
                 if (Utils.isEqulaLinearColor(Utils.colorHexToLinearColorToString(key), assetId)) {
                     isHasSelect = true;
                     value.updateSelectState(true);
                 } else {
                     value.updateSelectState(false);
                 }
-            }));
+            });
             if (!isHasSelect) this.mallItemMap.get(`ColorPick`).updateSelectState(true);
-        }));
+        });
     }
     hideTab123Canvas() {
         Utils.setWidgetVisibility(this.mTab1Canvas, mw.SlateVisibility.Collapsed);
@@ -12735,9 +12735,9 @@ class MallPanel extends MallPanel_Generate$1 {
     }
     initMallRot() {
         this.moveVec = [];
-        mw.TimeUtil.delayExecute((() => {
+        mw.TimeUtil.delayExecute(() => {
             this.movePos = this.mTouchImage.position.multiply(1);
-        }), 3);
+        }, 3);
     }
     onUpdate(dt) {
         if (this.dir != 0) {
@@ -12906,9 +12906,9 @@ class ColorPickPanel extends ColorPickPanel_Generate$1 {
     }
     checkColorPickTab3AndColorPick(color) {
         if (!color) return;
-        this.colorPickTab3Map.forEach(((value, key) => {
+        this.colorPickTab3Map.forEach((value, key) => {
             value.updateSelectState(Utils.isEqulaLinearColor(Utils.colorHexToLinearColorToString(key), color));
-        }));
+        });
         this.isLockColorPick = true;
         this.mColorPick.color = color;
         this.isLockColorPick = false;
@@ -12924,9 +12924,9 @@ class ColorPickPanel extends ColorPickPanel_Generate$1 {
     addColorChanged(Content) {
         if (this.isLockColorPick) return;
         this.getMallModuleC.onColorPickChangedAction.call(Content);
-        this.colorPickTab3Map.forEach(((value, key) => {
+        this.colorPickTab3Map.forEach((value, key) => {
             value.updateSelectState(false);
-        }));
+        });
         if (this.currenrColorPickTab2Index < 0 || !this.colorPickTab2s || this.currenrColorPickTab2Index >= this.colorPickTab2s.length) return;
         this.colorPickTab2s[this.currenrColorPickTab2Index].refreshColorImage(Content);
     }
@@ -12986,13 +12986,13 @@ let MallTipsPanel_Generate = class MallTipsPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mCancelButton.onClicked.add((() => {
+        this.mCancelButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCancelButton");
-        }));
+        });
         this.mCancelButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mSureButton.onClicked.add((() => {
+        this.mSureButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSureButton");
-        }));
+        });
         this.mSureButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTipsTextBlock);
         this.initLanguage(this.mContentTextBlock);
@@ -13117,13 +13117,13 @@ let MallVipTipsPanel_Generate = class MallVipTipsPanel_Generate extends UIScript
         this.initButtons();
     }
     initButtons() {
-        this.mCoinButton.onClicked.add((() => {
+        this.mCoinButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCoinButton");
-        }));
+        });
         this.mCoinButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTipsTextBlock);
         this.initLanguage(this.mContentTextBlock);
@@ -13313,9 +13313,9 @@ class MallModuleC extends ModuleC {
         this.onCloseMallItemSelfAction.add(this.addCloseMallItemSelfAction.bind(this));
     }
     bindEvent() {
-        InputUtil.onKeyDown(mw.Keys.O, (() => {
+        InputUtil.onKeyDown(mw.Keys.O, () => {
             this.addOpenMallAction();
-        }));
+        });
     }
     addSaveColorPickPanelAction() {
         this.isNeedSaveColor = false;
@@ -13323,18 +13323,18 @@ class MallModuleC extends ModuleC {
     }
     addCloseColorPickPanelAction() {
         if (this.isNeedSaveColor) {
-            this.getMallTipsPanel.showTips((() => {
+            this.getMallTipsPanel.showTips(() => {
                 this.isNeedSaveColor = false;
                 this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-            }), (() => {
+            }, () => {
                 this.isNeedSaveColor = false;
-                ExecutorManager.instance.pushAsyncExecutor((async () => {
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
                     await this.copyNpc.asyncReady();
                     this.localPlayer.character.setDescription(this.copyNpc.getDescription());
                     await this.localPlayer.character.asyncReady();
                     this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
-                }));
-            }), GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherToKeepTheCurrentColor.Value, GameConfig.Language.Text_NoRetain.Value, GameConfig.Language.Text_Retain.Value);
+                });
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherToKeepTheCurrentColor.Value, GameConfig.Language.Text_NoRetain.Value, GameConfig.Language.Text_Retain.Value);
         } else {
             this.getMallPanel.checkSkinToneMallItemStateAndShowMallPanel();
         }
@@ -13344,7 +13344,7 @@ class MallModuleC extends ModuleC {
             this.getHUDModuleC.onOpenTaskAction.call();
             this.isFirst = false;
         }
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             await this.isAccountServiceDownloadData();
             this.initUsingCharacterData();
@@ -13355,7 +13355,7 @@ class MallModuleC extends ModuleC {
             }
             this.getMallPanel.show();
             this.decorationIndexMap.clear();
-        }));
+        });
     }
     async isAccountServiceDownloadData() {
         let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
@@ -13421,7 +13421,7 @@ class MallModuleC extends ModuleC {
         if (LipMakeup && LipMakeup.length > 0 && LipMakeup != `32115`) this.usingAssetIdMap.set(Tab3Type.Tab3_LipMakeup, new AssetIdInfoData(LipMakeup));
     }
     addCloseMallItemSelfAction(tabId, assetId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (Mall.isClothingTabId(tabId)) {
                 await this.changeCharacter(tabId, assetId);
             } else {
@@ -13437,35 +13437,35 @@ class MallModuleC extends ModuleC {
             }
             this.initUsingCharacterData();
             this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, true);
-        }));
+        });
     }
     addSelectItemAction(tabType, tabId, assetId) {
         if (tabType == TabType.None) return;
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.changeCharacter(tabId, assetId);
             if (!Mall.isRemovableTabId(tabId) || assetId == `0`) return;
             this.initUsingCharacterData();
             this.getMallPanel.refreshMallItemSelf(this.usingAssetIdMap, Mall.isSlot(tabId));
-        }));
+        });
     }
     addDeleteItemAction(tabType, tabId, assetId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
-            await this.getCharacterModuleC.deleteCharacterData(assetId, (() => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
+            await this.getCharacterModuleC.deleteCharacterData(assetId, () => {
                 this.getMallPanel.initTab1Item();
-            }));
-        }));
+            });
+        });
     }
     async changeCharacter(tabId, assetId) {
         await this.localPlayer.character.asyncReady();
         switch (tabId) {
           case Tab1Type.Tab1_Collection:
-            await this.getCharacterModuleC.useCharacterData(assetId, (isAdd => {
+            await this.getCharacterModuleC.useCharacterData(assetId, isAdd => {
                 if (isAdd) {
                     this.getMallPanel.initTab1Item();
                 } else {
                     this.updateMallPanelBySomatotype();
                 }
-            }));
+            });
             break;
 
           case Tab2Type.Tab2_BodyType:
@@ -14236,7 +14236,7 @@ class MallModuleC extends ModuleC {
         Camera.currentCamera;
         let shopCamera = await GameObject.asyncSpawn(`Camera`);
         shopCamera.worldTransform.rotation = mw.Rotation.zero;
-        this.onSwitchCameraAction.add((cameraType => {
+        this.onSwitchCameraAction.add(cameraType => {
             if (cameraType == 0) {
                 CameraManager$1.instance.switchWFZCamera(false);
                 return;
@@ -14249,7 +14249,7 @@ class MallModuleC extends ModuleC {
                 Event.dispatchToLocal(EventType.SwitchCamera, CameraManagerType.Body);
                 return;
             }
-        }));
+        });
     }
     addRoatation(dir) {
         if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform) return;
@@ -14294,12 +14294,12 @@ class MallModuleC extends ModuleC {
         await this.transitionNpc.asyncReady();
     }
     addOpenColorPickAction(tabType, tabId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             this.copyNpc.setDescription(this.localPlayer.character.getDescription());
             await this.copyNpc.asyncReady();
             this.openColorPickPanel(tabId);
-        }));
+        });
     }
     async openTryOnPanel() {
         await this.localPlayer.character.asyncReady();
@@ -14310,44 +14310,44 @@ class MallModuleC extends ModuleC {
         this.saveCharacterDescriptionPrepare();
     }
     addVipAction() {
-        this.getMallVipTipsPanel.showTips((() => {
-            this.placeOrder(`5KdGRn3IhB600054z`, (() => {}));
-        }), (() => {
+        this.getMallVipTipsPanel.showTips(() => {
+            this.placeOrder(`5KdGRn3IhB600054z`, () => {});
+        }, () => {
             Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-            ExecutorManager.instance.pushAsyncExecutor((async () => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
                 await this.addVipCount(1);
                 this.getMallPanel.updateVipCount(this.vipCount);
-            }));
-        }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+            });
+        }, GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
     }
     addPermanentVipAction() {
-        this.placeOrder(`3ki8ifW7BUs0006Pk`, (() => {}));
+        this.placeOrder(`3ki8ifW7BUs0006Pk`, () => {});
     }
     saveCharacterDescriptionPrepare() {
         if (this.isUseFreeSave) {
-            ExecutorManager.instance.pushAsyncExecutor((async () => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
                 await this.getVipCount();
                 if (this.vipCount > 0) {
                     this.saveCharacterDescription();
                 } else {
-                    this.getMallVipTipsPanel.showTips((() => {
-                        this.placeOrder(`5KdGRn3IhB600054z`, (() => {}));
-                    }), (() => {
+                    this.getMallVipTipsPanel.showTips(() => {
+                        this.placeOrder(`5KdGRn3IhB600054z`, () => {});
+                    }, () => {
                         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                        ExecutorManager.instance.pushAsyncExecutor((async () => {
+                        ExecutorManager.instance.pushAsyncExecutor(async () => {
                             await this.addVipCount(1);
                             this.getMallPanel.updateVipCount(this.vipCount);
-                        }));
-                    }), GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
+                        });
+                    }, GameConfig.Language.Text_Vip2.Value, StringUtil.format(GameConfig.Language.Text_Vip3.Value, 1), StringUtil.format(GameConfig.Language.Text_Vip4.Value, this.addVipCoinNumber), GameConfig.Language.Text_Vip5.Value);
                 }
-            }));
+            });
         } else {
             this.saveCharacterDescription();
             this.setIsUseFreeSave(true);
         }
     }
     saveCharacterDescription() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
             this.recordSex(somatotype);
@@ -14362,25 +14362,25 @@ class MallModuleC extends ModuleC {
             this.isNeedSaveCharacter = false;
             this.closeMallPanel();
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
-        }));
+        });
     }
     addCloseAction() {
         if (this.isNeedSaveCharacter) {
-            this.getMallTipsPanel.showTips((() => {
+            this.getMallTipsPanel.showTips(() => {
                 this.isNeedSaveCharacter = false;
                 this.saveCharacterDescriptionPrepare();
                 this.closeMallPanel();
-            }), (() => {
+            }, () => {
                 this.isNeedSaveCharacter = false;
                 this.recoverCharacter();
                 this.closeMallPanel();
-            }), GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
         } else {
             this.closeMallPanel();
         }
     }
     recoverCharacter() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             this.getMallPanel.hide();
             this.onSwitchCameraAction.call(0);
             if (this.saveSomatotype % 2 == 0) {
@@ -14389,10 +14389,10 @@ class MallModuleC extends ModuleC {
                 this.localPlayer.character.setDescription(this.maleNpc.getDescription());
             }
             await this.localPlayer.character.asyncReady();
-        }));
+        });
     }
     addResetAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let isSuccess = await Utils.accountServiceDownloadData(this.localPlayer.character);
             if (!isSuccess) {
                 Notice.showDownNotice(GameConfig.Language.Text_ResetImageFaild.Value);
@@ -14403,10 +14403,10 @@ class MallModuleC extends ModuleC {
             this.initUsingCharacterData();
             if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap, this.vipCount);
             Notice.showDownNotice(GameConfig.Language.Text_ResetSuccessfully.Value);
-        }));
+        });
     }
     addSexAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
             if (somatotype % 2 == 0) {
@@ -14419,7 +14419,7 @@ class MallModuleC extends ModuleC {
             this.initUsingCharacterData();
             if (mw.UIService.getUI(MallPanel, false)?.visible) this.getMallPanel.initMallPanel(somatotype, this.usingAssetIdMap, this.vipCount);
             Notice.showDownNotice(GameConfig.Language.Text_SwitchSuccessfully.Value);
-        }));
+        });
     }
     updateMallPanelBySomatotype() {
         let somatotype = this.localPlayer.character.description.advance.base.characterSetting.somatotype;
@@ -14537,9 +14537,9 @@ class MallModuleC extends ModuleC {
         let tab1Text = `${GameConfig.Language.Text_ColorPick.Value} - ${name}`;
         let colorPickTab2Data = new ColorPickTab2Data(name, this.localPlayer.character.description.advance.makeup.skinTone.skinColor);
         this.colorPickTab2Datas.push(colorPickTab2Data);
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.SkinToneColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyebrowsColorPickPanel() {
@@ -14549,9 +14549,9 @@ class MallModuleC extends ModuleC {
         let eyebrowColor = mw.LinearColor.white;
         if (eyebrows?.eyebrowColor) eyebrowColor = eyebrows?.eyebrowColor;
         this.colorPickTab2Datas.push(new ColorPickTab2Data(name, eyebrowColor));
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.EyebrowsColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openTopColorPickPanel() {
@@ -14571,9 +14571,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.TopColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBottomColorPickPanel() {
@@ -14593,9 +14593,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.BottomColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openShoesColorPickPanel() {
@@ -14615,9 +14615,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.ShoeColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openGlovesColorPickPanel() {
@@ -14637,9 +14637,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.GloveColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openPupilStyleColorPickPanel() {
@@ -14663,9 +14663,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLensColorPickPanel() {
@@ -14683,9 +14683,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openUpperHighlightColorPickPanel() {
@@ -14703,9 +14703,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLowerHighlightColorPickPanel() {
@@ -14723,9 +14723,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.PupilStyleColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyelashesColorPickPanel() {
@@ -14743,9 +14743,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.EyeLashColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openEyeshadowColorPickPanel() {
@@ -14763,9 +14763,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.EyeShadow);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBlushColorPickPanel() {
@@ -14783,9 +14783,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.BlushColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openLipMakeupColorPickPanel() {
@@ -14803,9 +14803,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.LipstickColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openFullHairColorPickPanel() {
@@ -14829,9 +14829,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.HairColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openFrontHairColorPickPanel() {
@@ -14855,9 +14855,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.HairColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     openBackHairColorPickPanel() {
@@ -14881,9 +14881,9 @@ class MallModuleC extends ModuleC {
             Notice.showDownNotice(StringUtil.format(GameConfig.Language.Text_NotSupportToning.Value, name));
             return;
         }
-        GameConfig.ColorValue.getAllElement().forEach((value => {
+        GameConfig.ColorValue.getAllElement().forEach(value => {
             this.colorPickTab3Colors.push(value.HairColor);
-        }));
+        });
         this.getColorPickPanel.showColorPickPanel(tab1Text, name, this.colorPickTab2Datas, this.colorPickTab3Colors);
     }
     changeCharacterColor(color) {
@@ -15050,41 +15050,41 @@ class MallModuleC extends ModuleC {
         return this.vipCount;
     }
     tryAddVipCount(count) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.addVipCount(count);
             if (mw.UIService.getUI(MallPanel, false)?.visible) {
                 this.getMallPanel.updateVipCount(this.vipCount);
             }
-        }));
+        });
     }
     setIsUseFreeSave(isUseFreeSave) {
         this.isUseFreeSave = isUseFreeSave;
         this.server.net_setIsUseFreeSave(this.isUseFreeSave);
     }
     placeOrder(commodityId, buySuccessCallback) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (mw.SystemUtil.isPIE) {
                 if (buySuccessCallback) buySuccessCallback();
                 Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-                ExecutorManager.instance.pushAsyncExecutor((async () => {
+                ExecutorManager.instance.pushAsyncExecutor(async () => {
                     await this.addVipCountByCommodityId(commodityId);
-                }));
+                });
             } else {
-                mw.PurchaseService.placeOrder(commodityId, 1, ((status, msg) => {
+                mw.PurchaseService.placeOrder(commodityId, 1, (status, msg) => {
                     mw.PurchaseService.getArkBalance();
                     if (status != 200) return;
                     if (buySuccessCallback) buySuccessCallback();
-                }));
+                });
                 await TimeUtil.delaySecond(3);
             }
-        }));
+        });
     }
     net_deliverGoods(commodityId, amount) {
         console.error(`ArkModuleC net_deliverGoods commodityId: ${commodityId}, amount: ${amount} `);
         Notice.showDownNotice(GameConfig.Language.Text_Vip6.Value);
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.addVipCountByCommodityId(commodityId);
-        }));
+        });
     }
     async addVipCountByCommodityId(commodityId) {
         var addVipCount = 1;
@@ -15218,13 +15218,13 @@ let WishPanel_Generate = class WishPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSaveButton.onClicked.add((() => {
+        this.mSaveButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
-        }));
+        });
         this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mSaveTextBlock);
         this.initLanguage(this.mWishTipsTextBlock);
@@ -15302,9 +15302,9 @@ let WishItem_Generate = class WishItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSelectButton.onClicked.add((() => {
+        this.mSelectButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSelectButton");
-        }));
+        });
         this.mSelectButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mPriceTextBlock);
     }
@@ -15517,7 +15517,7 @@ class WishModuleC extends ModuleC {
         this.onBuyAction.add(this.addBuyAction.bind(this));
     }
     addOpenWishAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 Notice.showDownNotice(`你还没有添加心愿单`);
@@ -15526,10 +15526,10 @@ class WishModuleC extends ModuleC {
                 return;
             }
             this.getWishPanel.refreshPanel(wishDataV0s);
-        }));
+        });
     }
     addOpenWishOrMallAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let wishDataV0s = await WishTools.getWishDataV0s(this.localPlayer.userId);
             if (!wishDataV0s || wishDataV0s.length == 0) {
                 this.getHudModuleC.onOpenMallAction.call();
@@ -15537,19 +15537,19 @@ class WishModuleC extends ModuleC {
                 return;
             }
             this.getWishPanel.refreshPanel(wishDataV0s);
-        }));
+        });
     }
     addRequestBuyAction(wishDataV0) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.getMallModuleC.updateNickWish(wishDataV0, false);
             this.getWishPanel.hide();
-        }));
+        });
     }
     addBuyAction(wishDataV0) {
         console.error(JSON.stringify(wishDataV0));
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.giveOtherBuyWish(wishDataV0);
-        }));
+        });
     }
     async giveOtherBuyWish(wishDataV0) {
         let itemId = wishDataV0.itemId;
@@ -15572,11 +15572,11 @@ class WishModuleC extends ModuleC {
 
           case 3:
             Notice.showDownNotice(`非好友关系`);
-            RoomService.showUserProfile((() => {
-                RoomService.showUserProfile((() => {
+            RoomService.showUserProfile(() => {
+                RoomService.showUserProfile(() => {
                     Notice.showDownNotice(`非好友关系`);
-                }), userId);
-            }), userId);
+                }, userId);
+            }, userId);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
             break;
 
@@ -15640,11 +15640,11 @@ class WishModuleC extends ModuleC {
                 }
             }
         };
-        let timeoutId = setTimeout((async () => {
+        let timeoutId = setTimeout(async () => {
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
             Notice.showDownNotice(`网络超时 取消赠送`);
-        }), 60 * 1e3);
-        await this.syncPlaceOrder(cInfo, (async status => {
+        }, 60 * 1e3);
+        await this.syncPlaceOrder(cInfo, async status => {
             clearTimeout(timeoutId);
             let tmpWishDataV0 = new WishDataV0;
             tmpWishDataV0.userId = userId;
@@ -15656,14 +15656,14 @@ class WishModuleC extends ModuleC {
             WishTools.danmuSyncServer(WishTools.getNickName(), wishDataV0.nickName, price);
             await this.getMallModuleC.updateNickWish(tmpWishDataV0, true);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
-        }), (async status => {
+        }, async status => {
             clearTimeout(timeoutId);
             await PortalData.cancelSendWishItemRequest([ itemId ], userId);
-        }));
+        });
     }
     syncPlaceOrder(cInfo, successCallback, failCallback) {
-        return new Promise((resolve => {
-            mw.AvatarEditorService.placeOrder([ cInfo ], ((stateNum, msg, orderID) => {
+        return new Promise(resolve => {
+            mw.AvatarEditorService.placeOrder([ cInfo ], (stateNum, msg, orderID) => {
                 switch (stateNum) {
                   case 200:
                     Notice.showDownNotice(`赠送成功`);
@@ -15726,8 +15726,8 @@ class WishModuleC extends ModuleC {
                     break;
                 }
                 return resolve();
-            }));
-        }));
+            });
+        });
     }
 }
 
@@ -15947,23 +15947,23 @@ class InteractionModuleC extends ModuleC {
         this.onClickBagItemAction.add(this.addClickBagItemAction.bind(this));
     }
     findTriggers() {
-        GameConfig.Interact.getAllElement().forEach((async value => {
+        GameConfig.Interact.getAllElement().forEach(async value => {
             let triggerGuid = value.TriggerGuid;
             if (triggerGuid && triggerGuid.length > 0) {
                 let trigger = await GameObject.asyncFindGameObjectById(triggerGuid);
                 await trigger.asyncReady();
-                trigger.onEnter.add((char => {
+                trigger.onEnter.add(char => {
                     this.onEnterTrigger(char, value.ID, trigger);
-                }));
-                trigger.onLeave.add((char => {
+                });
+                trigger.onLeave.add(char => {
                     this.onLeaveTrigger(char);
-                }));
+                });
                 let bagId = value.BagId;
                 this.triggerLocMap.set(bagId, trigger.worldTransform.position);
                 if (value.ModelGuid_C && value.ModelGuid_C.length > 0) {
-                    GameObject.asyncSpawn(value.ModelGuid_C).then((model => {
+                    GameObject.asyncSpawn(value.ModelGuid_C).then(model => {
                         model.worldTransform.position = trigger.worldTransform.position;
-                    }));
+                    });
                 }
             }
             let npcId = value.NpcId;
@@ -15986,13 +15986,13 @@ class InteractionModuleC extends ModuleC {
                 if (npcAnimationId && npcAnimationId.length > 0) {
                     await Utils.asyncDownloadAsset(npcAnimationId);
                     npc.loadSubStance(npcAnimationId).play();
-                    setTimeout((() => {
+                    setTimeout(() => {
                         npc.localTransform.position = new mw.Vector(0, 0, npc.localTransform.position.z);
-                    }), 1e3);
+                    }, 1e3);
                 }
             }
             console.error(this.triggerLocMap.size);
-        }));
+        });
     }
     onEnterTrigger(char, id, go) {
         if (char != Player.localPlayer.character) return;
@@ -16003,17 +16003,17 @@ class InteractionModuleC extends ModuleC {
         this.getOnClickPanel.hideBtn();
     }
     interact(isInteract, id) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let interact = GameConfig.Interact.getElement(id);
             let bagId = interact.BagId;
             if (bagId && bagId > 0) {
                 let modelGuid = interact.ModelGuid;
                 if (modelGuid && modelGuid.length > 0) {
-                    this.server.net_playInteract(bagId, modelGuid).then((interactCode => {
+                    this.server.net_playInteract(bagId, modelGuid).then(interactCode => {
                         if (interactCode == 0) {
                             Notice.showDownNotice(GameConfig.Language.Text_ThisItemIsInUse.Value);
                         }
-                    }));
+                    });
                 }
                 if (GameConfig.ActionProp.getElement(bagId).NextId == bagId) bagId -= 1;
                 this.getHUDModuleC.action(bagId);
@@ -16037,26 +16037,26 @@ class InteractionModuleC extends ModuleC {
                     this.localPlayer.character.syncDescription();
                 }
             }
-        }));
+        });
     }
     addClickBagItemAction(bagId) {
         if (this.bagIds.includes(bagId)) return;
         let nextId = GameConfig.ActionProp.getElement(bagId).NextId;
         if (nextId && nextId > 0) bagId = nextId;
         if (GlobalData.isOpenIAA) {
-            this.getAdPanel.showRewardAd((() => {
+            this.getAdPanel.showRewardAd(() => {
                 if (this.triggerLocMap.has(bagId)) {
                     let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {}));
+                    Utils.startGuide(targetLoc, () => {});
                 }
-            }), GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
+            }, GameConfig.Language.Text_ADGetTips.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
         } else {
-            this.getTipsPanel.showTips((() => {
+            this.getTipsPanel.showTips(() => {
                 if (this.triggerLocMap.has(bagId)) {
                     let targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {}));
+                    Utils.startGuide(targetLoc, () => {});
                 }
-            }), GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
+            }, GameConfig.Language.Text_BootPrompt.Value, GameConfig.Language.Text_FreeGuideYouGet.Value, GameConfig.Language.Text_Dont.Value, GameConfig.Language.Text_Free.Value);
         }
     }
     initBagIds() {
@@ -16088,14 +16088,14 @@ class InteractionModuleC extends ModuleC {
     startGuide() {
         if (!this.guideBagIds || this.guideBagIds.length == 0) return;
         if (this.guideStep >= this.guideBagIds.length - 1) {
-            this.localPlayer.character.asyncReady().then((() => {
-                TimeUtil.delaySecond(1).then((() => {
+            this.localPlayer.character.asyncReady().then(() => {
+                TimeUtil.delaySecond(1).then(() => {
                     this.getWishModuleC.onOpenWishAction.call();
-                }));
-            }));
+                });
+            });
             return;
         }
-        this.getGuidePanel.showStartTips((() => {
+        this.getGuidePanel.showStartTips(() => {
             this.getWishModuleC.onOpenWishAction.call();
             let bagId = this.guideBagIds[0];
             console.error(`bagId1:${bagId}`);
@@ -16105,46 +16105,46 @@ class InteractionModuleC extends ModuleC {
             }
             let targetLoc = this.triggerLocMap.get(bagId);
             console.error(`targetLoc:${targetLoc}`);
-            Utils.startGuide(targetLoc, (() => {
+            Utils.startGuide(targetLoc, () => {
                 this.setGuideStep(1);
-                this.getGuidePanel.showStepTips(bagId, (() => {
+                this.getGuidePanel.showStepTips(bagId, () => {
                     this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                     if (this.guideStep >= this.guideBagIds.length) return;
                     bagId = this.guideBagIds[1];
                     if (!this.triggerLocMap.has(bagId)) return;
                     targetLoc = this.triggerLocMap.get(bagId);
-                    Utils.startGuide(targetLoc, (() => {
+                    Utils.startGuide(targetLoc, () => {
                         this.setGuideStep(1);
-                        this.getGuidePanel.showStepTips(bagId, (() => {
+                        this.getGuidePanel.showStepTips(bagId, () => {
                             this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                             if (this.guideStep >= this.guideBagIds.length) return;
                             bagId = this.guideBagIds[2];
                             if (!this.triggerLocMap.has(bagId)) return;
                             targetLoc = this.triggerLocMap.get(bagId);
-                            Utils.startGuide(targetLoc, (() => {
+                            Utils.startGuide(targetLoc, () => {
                                 this.setGuideStep(1);
-                                this.getGuidePanel.showStepTips(bagId, (() => {
+                                this.getGuidePanel.showStepTips(bagId, () => {
                                     this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
                                     if (this.guideStep >= this.guideBagIds.length) return;
                                     bagId = this.guideBagIds[3];
                                     if (!this.triggerLocMap.has(bagId)) return;
                                     targetLoc = this.triggerLocMap.get(bagId);
-                                    Utils.startGuide(targetLoc, (() => {
+                                    Utils.startGuide(targetLoc, () => {
                                         this.setGuideStep(1);
-                                        this.getGuidePanel.showStepTips(bagId, (() => {
+                                        this.getGuidePanel.showStepTips(bagId, () => {
                                             this.interact(true, GameConfig.Interact.findElement(`BagId`, bagId).ID);
-                                            this.getGuidePanel.showStepTips(bagId, (() => {
-                                                this.getGuidePanel.showStartTips((() => {}), GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
-                                            }), GameConfig.Language.Text_UpNext.Value);
-                                        }), GameConfig.Language.Text_UpNext.Value);
-                                    }));
-                                }), GameConfig.Language.Text_UpNext.Value);
-                            }));
-                        }), GameConfig.Language.Text_UpNext.Value);
-                    }));
-                }), GameConfig.Language.Text_UpNext.Value);
-            }));
-        }), GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
+                                            this.getGuidePanel.showStepTips(bagId, () => {
+                                                this.getGuidePanel.showStartTips(() => {}, GameConfig.Language.Text_Close.Value, GameConfig.Language.Text_GuideEnd.Value);
+                                            }, GameConfig.Language.Text_UpNext.Value);
+                                        }, GameConfig.Language.Text_UpNext.Value);
+                                    });
+                                }, GameConfig.Language.Text_UpNext.Value);
+                            });
+                        }, GameConfig.Language.Text_UpNext.Value);
+                    });
+                }, GameConfig.Language.Text_UpNext.Value);
+            });
+        }, GameConfig.Language.Text_StartGame.Value, GameConfig.Language.Text_WelcomeTo.Value);
     }
 }
 
@@ -16184,10 +16184,10 @@ class InteractionModuleS extends ModuleS {
             this.modelGuidMap.set(modelGuid, model);
         }
         await model.asyncReady();
-        this.placingItems(player, bagId, model).then((() => {
+        this.placingItems(player, bagId, model).then(() => {
             usingBagIds.splice(usingBagIds.indexOf(bagId), 1);
             console.error(`usingBagIds = ${usingBagIds}`);
-        }));
+        });
         return 1;
     }
     async placingItems(player, bagId, itemMode) {
@@ -16228,8 +16228,8 @@ class InteractionModuleS extends ModuleS {
         let delayInterval = delayParameter[2];
         await TimeUtil.delaySecond(delayTime - playAnimationTime);
         for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve => {
-                setTimeout((async () => {
+            await new Promise(resolve => {
+                setTimeout(async () => {
                     let DelayEffectAssetId = actionPropElement.DelayEffectId;
                     if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
                         await Utils.asyncDownloadAsset(DelayEffectAssetId);
@@ -16250,8 +16250,8 @@ class InteractionModuleS extends ModuleS {
                         }
                     }
                     return resolve();
-                }), delayInterval * 1e3);
-            }));
+                }, delayInterval * 1e3);
+            });
         }
         if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
         if (delayModeEffectId) EffectService.stop(delayModeEffectId);
@@ -16350,9 +16350,9 @@ let ActionItem_Generate = class ActionItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.nNameTextBlock);
     }
@@ -16404,9 +16404,9 @@ class ActionItem extends ActionItem_Generate$1 {
     addClickButton() {
         if (!this.isCanClick) return;
         this.isCanClick = false;
-        TimeUtil.delaySecond(1).then((() => {
+        TimeUtil.delaySecond(1).then(() => {
             this.isCanClick = true;
-        }));
+        });
         this.getDanMuModuleC.onClickActionItemAction.call(this.index);
     }
     setDatas(tabIndex, index, actionData) {
@@ -16440,9 +16440,9 @@ let ActionTabItem_Generate = class ActionTabItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTabNameTextBlock);
     }
@@ -16557,9 +16557,9 @@ let BagItem_Generate = class BagItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -16667,9 +16667,9 @@ let BagTabItem_Generate = class BagTabItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTabNameTextBlock);
     }
@@ -16769,9 +16769,9 @@ let ChatItem1_Generate = class ChatItem1_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.initLanguage(this.mClickButton);
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
@@ -16823,9 +16823,9 @@ class ChatItem1 extends ChatItem1_Generate$1 {
     addClickButton() {
         if (!this.isCanClick) return;
         this.isCanClick = false;
-        TimeUtil.delaySecond(1).then((() => {
+        TimeUtil.delaySecond(1).then(() => {
             this.isCanClick = true;
-        }));
+        });
         this.getDanMuModuleC.onClickChatItem1Action.call(this.index);
     }
     setData(index, text) {
@@ -16852,9 +16852,9 @@ let ChatItem2_Generate = class ChatItem2_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.initLanguage(this.mClickButton);
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
@@ -16907,9 +16907,9 @@ class ChatItem2 extends ChatItem2_Generate$1 {
     addClickButton() {
         if (!this.isCanClick) return;
         this.isCanClick = false;
-        TimeUtil.delaySecond(1).then((() => {
+        TimeUtil.delaySecond(1).then(() => {
             this.isCanClick = true;
-        }));
+        });
         this.getDanMuModuleC.onClickChatItem2Action.call(this.index, this.childIndex);
     }
     setData(index, childIndex, text) {
@@ -16943,9 +16943,9 @@ let ExpressionItem_Generate = class ExpressionItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
     initLanguage(ui) {
@@ -16996,9 +16996,9 @@ class ExpressionItem extends ExpressionItem_Generate$1 {
     addClickButton() {
         if (!this.isCanClick) return;
         this.isCanClick = false;
-        TimeUtil.delaySecond(5).then((() => {
+        TimeUtil.delaySecond(5).then(() => {
             this.isCanClick = true;
-        }));
+        });
         this.getDanMuModuleC.onClickExpressionItemAction.call(this.index);
     }
     setDatas(index, assetId) {
@@ -17301,8 +17301,8 @@ class ChatPanel extends ChatPanel_Generate$1 {
     }
     updatePropList(tabIndex) {
         let actionPropElement = GameConfig.ActionProp.getAllElement();
-        actionPropElement = actionPropElement.filter((value => value.AssetId && value.AssetId != "" && value.Tab == tabIndex));
-        actionPropElement.sort(((a, b) => a.Sort - b.Sort));
+        actionPropElement = actionPropElement.filter(value => value.AssetId && value.AssetId != "" && value.Tab == tabIndex);
+        actionPropElement.sort((a, b) => a.Sort - b.Sort);
         let bagIds = this.getInteractionModuleC.getBagIds;
         if (actionPropElement.length > this.bagItems.length) {
             for (let i = 0; i < this.bagItems.length; ++i) {
@@ -17387,11 +17387,11 @@ class DanMuPanel extends DanMuPanel_Generate$1 {
         this.initData();
     }
     initData() {
-        setTimeout((() => {
+        setTimeout(() => {
             this.axisMin = 0;
             this.axisMax = this.mDanMuCanvas.size.y;
             console.error(`this.axisMax:${this.axisMax}`);
-        }), 1);
+        }, 1);
     }
     createDanMuItem(msg, isActive, isSelf) {
         if (!msg || !msg["toString"]) return;
@@ -17412,15 +17412,15 @@ class DanMuPanel extends DanMuPanel_Generate$1 {
             y: danMuItem.pos.y
         };
         let textBlock = danMuItem.textBlock;
-        new Tween(danMuItem.pos).to(endpos, this.time * 1e3).onUpdate((v => {
+        new Tween(danMuItem.pos).to(endpos, this.time * 1e3).onUpdate(v => {
             textBlock.position = v;
-        })).onComplete((() => {
+        }).onComplete(() => {
             danMuItem.run = false;
-        })).start();
+        }).start();
     }
     getNewBc(msg, lockY) {
         msg = msg.toString();
-        let danMuItem = this.danMuItems.find((v => !v.run));
+        let danMuItem = this.danMuItems.find(v => !v.run);
         if (!danMuItem) {
             let ui = mw.TextBlock.newObject(this.mDanMuCanvas, "msgUIObject");
             this.mDanMuCanvas.addChild(ui);
@@ -17478,7 +17478,7 @@ class DanMuModuleC extends ModuleC {
         this.isAlreadyInitChatDatas = false;
         this._bubbles = [];
         this.sortAllBubbles = owner => {
-            const playerBubbles = this._bubbles.filter((i => i.object == owner));
+            const playerBubbles = this._bubbles.filter(i => i.object == owner);
             let offset = 0;
             for (let i = playerBubbles.length - 1; i >= 0; i--) {
                 offset += playerBubbles[i].height;
@@ -17525,15 +17525,15 @@ class DanMuModuleC extends ModuleC {
     }
     onStart() {
         this.bindEvent();
-        InputUtil.onKeyDown(mw.Keys.P, (() => {
+        InputUtil.onKeyDown(mw.Keys.P, () => {
             Event.dispatchToLocal(DanmuSyncClient, "测试弹幕");
-        }));
-        InputUtil.onKeyDown(mw.Keys.O, (() => {
+        });
+        InputUtil.onKeyDown(mw.Keys.O, () => {
             Event.dispatchToLocal(DanmuSyncServer, "测试弹幕");
-        }));
-        InputUtil.onKeyDown(mw.Keys.SpaceBar, (() => {
+        });
+        InputUtil.onKeyDown(mw.Keys.SpaceBar, () => {
             this.localPlayer.character.jump();
-        }));
+        });
     }
     onEnterScene(sceneType) {
         this.showPanels();
@@ -17597,12 +17597,12 @@ class DanMuModuleC extends ModuleC {
         if (!this.isAlreadyInitChatDatas) {
             if (!this.chatDatas || this.chatDatas.length == 0) {
                 this.chatDatas = [];
-                GameConfig.Chat.getAllElement().forEach((value => {
+                GameConfig.Chat.getAllElement().forEach(value => {
                     this.chatDatas.push({
                         chats: value.Chats,
                         chatChilds: value.ChatChilds
                     });
-                }));
+                });
             }
             this.getChatPanel.showChatList1(this.chatDatas, this.isAlreadyInitChatDatas);
             this.isAlreadyInitChatDatas = true;
@@ -17632,35 +17632,35 @@ class DanMuModuleC extends ModuleC {
         }
     }
     initBubble() {
-        this._uiPool = new ObjPool((() => {
+        this._uiPool = new ObjPool(() => {
             const ui = UIService.create(BubbleItem_Generate$1);
             return ui;
-        }), (ui => {
+        }, ui => {
             ui.rootCanvas.visibility = mw.SlateVisibility.HitTestInvisible;
             ui.rootCanvas.renderScale = Vector2.zero;
             ui.mDialogTextBlock.autoSizeEnable = true;
             ui.mDialogTextBlock.textHorizontalLayout = mw.UITextHorizontalLayout.NoClipping;
             ui.mDialogTextBlock.text = "";
             ui.mDialogTextBlock.invalidateLayoutAndVolatility();
-        }), (ui => {
+        }, ui => {
             ui.destroy();
-        }), (() => {}), 3);
+        }, () => {}, 3);
     }
     showBubbleText(text) {
         this.server.net_showBubbleText(this.localPlayer.character.gameObjectId, text);
     }
     net_showBubbleText(gameObjectId, text) {
-        mw.GameObject.asyncFindGameObjectById(gameObjectId).then((value => {
-            value.onDestroyDelegate.add((() => {
+        mw.GameObject.asyncFindGameObjectById(gameObjectId).then(value => {
+            value.onDestroyDelegate.add(() => {
                 this.clear(value);
-            }));
+            });
             this.showDialog(value, text);
-        }));
+        });
     }
     showDialog(object, text) {
-        const playerBubbles = this._bubbles.filter((i => i.object == object));
+        const playerBubbles = this._bubbles.filter(i => i.object == object);
         if (playerBubbles.length > 4) {
-            const index = this._bubbles.findIndex((i => i.object == object));
+            const index = this._bubbles.findIndex(i => i.object == object);
             this._bubbles[index].destory();
             this._bubbles.splice(index, 1);
         }
@@ -17692,9 +17692,9 @@ class DanMuModuleC extends ModuleC {
         if (!this.isAlreadyInitExpressionDatas) {
             if (!this.expressionAssets || this.expressionAssets.length == 0) {
                 this.expressionAssets = [];
-                GameConfig.Expression.getAllElement().forEach((value => {
+                GameConfig.Expression.getAllElement().forEach(value => {
                     this.expressionAssets.push(value.AssetId);
-                }));
+                });
             }
             this.getChatPanel.showExpressionList(this.expressionAssets, this.isAlreadyInitExpressionDatas);
             this.isAlreadyInitExpressionDatas = true;
@@ -17711,7 +17711,7 @@ class DanMuModuleC extends ModuleC {
     net_playExpression(playerId, assetId) {
         let player = Player.getPlayer(playerId);
         if (!player) return;
-        Utils.asyncDownloadAsset(assetId).then((() => {
+        Utils.asyncDownloadAsset(assetId).then(() => {
             if (this.expressionMap.has(playerId)) {
                 let expression = this.expressionMap.get(playerId);
                 if (expression.playId) {
@@ -17728,7 +17728,7 @@ class DanMuModuleC extends ModuleC {
                 loopCount: 0,
                 position: new mw.Vector(0, 0, 200)
             });
-            let timeoutId = setTimeout((() => {
+            let timeoutId = setTimeout(() => {
                 if (this.expressionMap.has(playerId)) {
                     let expression = this.expressionMap.get(playerId);
                     if (expression.playId) {
@@ -17740,32 +17740,32 @@ class DanMuModuleC extends ModuleC {
                         expression.timeoutId = null;
                     }
                 }
-            }), 5 * 1e3);
+            }, 5 * 1e3);
             this.expressionMap.set(playerId, {
                 playId: playId,
                 timeoutId: timeoutId
             });
-        }));
+        });
     }
     net_initActionDatas(actionDatas) {
         this.actionDatas = actionDatas;
         console.error(JSON.stringify(actionDatas));
         this.actionDataMap.clear();
-        actionDatas.forEach((value => {
+        actionDatas.forEach(value => {
             if (this.actionDataMap.has(value.tab)) {
                 let actionDatas = this.actionDataMap.get(value.tab);
                 actionDatas.push(value);
             } else {
                 this.actionDataMap.set(value.tab, [ value ]);
             }
-        }));
+        });
     }
     addOpenActionAction() {
         if (!this.isAlreadyInitActionDatas) {
             if (!this.actionDataMap || this.actionDataMap.size == 0) {
                 this.actionDataMap = new Map;
                 this.actionDataMap.clear();
-                GameConfig.ActionConfig.getAllElement().forEach((value => {
+                GameConfig.ActionConfig.getAllElement().forEach(value => {
                     let actionData = new ActionData;
                     actionData.tab = value.Tab;
                     actionData.icon = value.Icon;
@@ -17781,7 +17781,7 @@ class DanMuModuleC extends ModuleC {
                     } else {
                         this.actionDataMap.set(actionData.tab, [ actionData ]);
                     }
-                }));
+                });
             }
             this.getChatPanel.showActionList(this.actionDataMap, this.isAlreadyInitActionDatas);
             this.isAlreadyInitActionDatas = true;
@@ -17805,7 +17805,7 @@ class DanMuModuleC extends ModuleC {
             return;
         }
         this.isCanInteract = false;
-        this.server.net_EnterInteract(actionData).then((async () => {
+        this.server.net_EnterInteract(actionData).then(async () => {
             this.isPlaying = true;
             this.isCanInteract = true;
             this.clearActionTimeOut();
@@ -17813,11 +17813,11 @@ class DanMuModuleC extends ModuleC {
             if (actionData.loop != 0) return;
             await Utils.asyncDownloadAsset(actionData.assetId);
             let length = this.localPlayer.character.loadAnimation(actionData.assetId).length;
-            this.actionTimeOutId = setTimeout((() => {
+            this.actionTimeOutId = setTimeout(() => {
                 this.getHudModuleC.controllerActionUIVisible(false);
                 this.clearActionTimeOut();
-            }), length * 1e3);
-        }));
+            }, length * 1e3);
+        });
     }
     clearActionTimeOut() {
         if (this.actionTimeOutId) {
@@ -17830,9 +17830,9 @@ class DanMuModuleC extends ModuleC {
         this.clearActionTimeOut();
         if (!this.localPlayer.character.movementEnabled) this.localPlayer.character.movementEnabled = true;
         if (!this.isPlaying) return;
-        this.server.net_LeaveInteract().then((() => {
+        this.server.net_LeaveInteract().then(() => {
             this.isPlaying = false;
-        }));
+        });
     }
     addOpenBagAction() {
         this.getChatPanel.showBagCanvas();
@@ -17855,7 +17855,7 @@ class DanMuModuleC extends ModuleC {
     }
     addClickBagItemAction(bagId) {
         console.error(`wfz - ClickBagItem - bagId:${bagId}`);
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let bagIds = await this.server.net_useBag(bagId);
             this.getChatPanel.closeBagCanvas(false);
             this.currentBagIds = bagIds;
@@ -17867,10 +17867,10 @@ class DanMuModuleC extends ModuleC {
             } else {
                 Notice.showDownNotice(GameConfig.Language.Text_TheItemBarIsFull.Value);
             }
-        }));
+        });
     }
     addClickCloseGoodItemAction(bagId) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (this.currentBagIds.includes(bagId)) {
                 let bagIds = await this.server.net_unloadBag(bagId);
                 this.currentBagIds = bagIds;
@@ -17882,7 +17882,7 @@ class DanMuModuleC extends ModuleC {
                 }
                 console.error(`wfz  - CloseGoodItem - this.currentBagIds:${this.currentBagIds}`);
             }
-        }));
+        });
     }
     addClickGoodItemAction(bagId) {
         if (this.currentBagIds.includes(bagId)) {
@@ -17892,26 +17892,26 @@ class DanMuModuleC extends ModuleC {
         }
     }
     addDeleteAllGoodsAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let bagIds = await this.server.net_unloadAllBag();
             this.currentBagIds = bagIds;
             this.currentBagId = 0;
             this.getHudModuleC.updateBagIcon(this.currentBagId);
             this.getHudModuleC.updateGoodsListCanvas(this.currentBagIds);
             console.error(`wfz - DeleteAllGoods - this.currentBagIds:${this.currentBagIds}  this.currentBagId:${this.currentBagId}`);
-        }));
+        });
     }
     addClickUnloadBagItemAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (this.currentBagId == 0) return;
             let bagIds = await this.server.net_unloadBag(this.currentBagId);
             this.currentBagIds = bagIds;
             this.currentBagId = 0;
             this.getChatPanel.updateBagIcon(this.currentBagId);
-        }));
+        });
     }
     initDance() {
-        danceInteracts.forEach((async value => {
+        danceInteracts.forEach(async value => {
             let npcs = [];
             for (let i = 0; i < value.npcIds.length; ++i) {
                 let npc = await mw.GameObject.asyncFindGameObjectById(value.npcIds[i]);
@@ -17923,7 +17923,7 @@ class DanMuModuleC extends ModuleC {
             for (let i = 0; i < npcs.length; ++i) {
                 npcs[i].loadSubStance(value.danceIds[i]).play();
             }
-        }));
+        });
     }
     initParachute() {
         this.maxFallingSpeed = this.localPlayer.character.maxFallingSpeed;
@@ -17939,9 +17939,9 @@ class DanMuModuleC extends ModuleC {
         this.localPlayer.character.maxFallingSpeed = 400;
         this.localPlayer.character.gravityScale = .2;
         this.localPlayer.character.rotateRate = 90;
-        this.server.net_startGlide().then((() => {
+        this.server.net_startGlide().then(() => {
             this.localPlayer.character.addImpulse(new mw.Vector(0, 0, 1e3), true);
-            let checkIsGlide = TimeUtil.setInterval((() => {
+            let checkIsGlide = TimeUtil.setInterval(() => {
                 if (!this.localPlayer.character.isJumping) {
                     this.server.net_stopGlide();
                     this.isGlide = false;
@@ -17950,8 +17950,8 @@ class DanMuModuleC extends ModuleC {
                     this.localPlayer.character.rotateRate = this.rotateRate;
                     TimeUtil.clearInterval(checkIsGlide);
                 }
-            }), 2 / 100);
-        }));
+            }, 2 / 100);
+        });
     }
 }
 
@@ -18080,29 +18080,29 @@ class DanMuModuleS extends ModuleS {
         Utils.buffMap.set(player.playerId, buff);
     }
     onUpdate(dt) {
-        this.playerBagMap.forEach((value => {
-            value.forEach((bag => {
+        this.playerBagMap.forEach(value => {
+            value.forEach(bag => {
                 if (bag.isUpdate) bag.update();
-            }));
-        }));
+            });
+        });
     }
     initChatDatas(player) {
-        this.getCustomdata(WorldChatDatas).then((chatDatas => {
+        this.getCustomdata(WorldChatDatas).then(chatDatas => {
             if (!chatDatas || chatDatas.length == 0) return;
             this.getClient(player).net_initChatDatas(chatDatas);
-        }));
+        });
     }
     initExpressionDatas(player) {
-        this.getCustomdata(WorldExpressionDatas).then((expressionAssets => {
+        this.getCustomdata(WorldExpressionDatas).then(expressionAssets => {
             if (!expressionAssets || expressionAssets.length == 0) return;
             this.getClient(player).net_initExpressionDatas(expressionAssets);
-        }));
+        });
     }
     initActionDatas(player) {
-        this.getCustomdata(WorldActionDatas).then((actionDatas => {
+        this.getCustomdata(WorldActionDatas).then(actionDatas => {
             if (!actionDatas || actionDatas.length == 0) return;
             this.getClient(player).net_initActionDatas(actionDatas);
-        }));
+        });
     }
     setChat_Test() {
         let chatDatas = [];
@@ -18119,14 +18119,14 @@ class DanMuModuleS extends ModuleS {
     }
     setExpression_Test() {
         let expressionAssets = [];
-        GameConfig.Expression.getAllElement().forEach((value => {
+        GameConfig.Expression.getAllElement().forEach(value => {
             expressionAssets.push(value.AssetId);
-        }));
+        });
         this.setCustomData(WorldExpressionDatas, expressionAssets);
     }
     setAction_Test() {
         let actionDatas = [];
-        GameConfig.ActionConfig.getAllElement().forEach((value => {
+        GameConfig.ActionConfig.getAllElement().forEach(value => {
             actionDatas.push({
                 tab: value.Tab,
                 icon: value.Icon,
@@ -18137,7 +18137,7 @@ class DanMuModuleS extends ModuleS {
                 rot: new mw.Rotation(value.Rot),
                 type: value.Type
             });
-        }));
+        });
         this.setCustomData(WorldActionDatas, actionDatas);
     }
     net_sendDanMu(msg, isActive) {
@@ -18154,9 +18154,9 @@ class DanMuModuleS extends ModuleS {
     net_showBubbleText(gameObjectId, text) {
         let currentPlayer = this.currentPlayer;
         if (this.maxShowDistance == -1) {
-            Player.getAllPlayers().forEach((player => {
+            Player.getAllPlayers().forEach(player => {
                 this.getClient(player).net_showBubbleText(gameObjectId, text);
-            }));
+            });
         } else {
             const players = Player.getAllPlayers();
             for (const player of players) {
@@ -18226,9 +18226,9 @@ class DanMuModuleS extends ModuleS {
             }
             if (!playerBag) {
                 if (playerBags.length >= GlobalData.bagCount) {
-                    playerBags.forEach((value => {
+                    playerBags.forEach(value => {
                         bagIds.push(value.bagId);
-                    }));
+                    });
                     return bagIds;
                 }
                 playerBag = new PlayerBag;
@@ -18236,9 +18236,9 @@ class DanMuModuleS extends ModuleS {
             }
         }
         await playerBag.equip(player, bagId);
-        this.playerBagMap.get(player.playerId).forEach((value => {
+        this.playerBagMap.get(player.playerId).forEach(value => {
             bagIds.push(value.bagId);
-        }));
+        });
         return bagIds;
     }
     async net_unloadBag(bagId) {
@@ -18265,9 +18265,9 @@ class DanMuModuleS extends ModuleS {
             playerBags.length = playerBags.length - 1;
         }
         console.error(`playerBags.length:${playerBags.length}`);
-        playerBags.forEach((value => {
+        playerBags.forEach(value => {
             bagIds.push(value.bagId);
-        }));
+        });
         return bagIds;
     }
     async net_unloadAllBag() {
@@ -18660,8 +18660,8 @@ class PlayerBag {
         let delayInterval = delayParameter[2];
         await TimeUtil.delaySecond(delayTime - playAnimationTime);
         for (let i = 0; i < delayCount; ++i) {
-            await new Promise((resolve => {
-                setTimeout((async () => {
+            await new Promise(resolve => {
+                setTimeout(async () => {
                     let DelayEffectAssetId = actionPropElement.DelayEffectId;
                     if (DelayEffectAssetId && DelayEffectAssetId.length > 0) {
                         await Utils.asyncDownloadAsset(DelayEffectAssetId);
@@ -18682,8 +18682,8 @@ class PlayerBag {
                         }
                     }
                     return resolve();
-                }), delayInterval * 1e3);
-            }));
+                }, delayInterval * 1e3);
+            });
         }
         if (actionPropElement.ID != 30004) await TimeUtil.delaySecond(delayInterval);
         if (delayModeEffectId) EffectService.stop(delayModeEffectId);
@@ -18758,14 +18758,14 @@ class PlayerInteract {
         return true;
     }
     async interact(player, actionData) {
-        return new Promise((async resolve => {
+        return new Promise(async resolve => {
             await this.initNpc();
             this.npc.setVisibility(true, true);
             player.character.collisionWithOtherCharacterEnabled = false;
             this.interactObj = await mw.GameObject.asyncSpawn("Interactor");
             await this.interactObj.asyncReady();
             player.character.attachToSlot(this.interactObj, mw.HumanoidSlotType.FaceOrnamental);
-            this.interactObj.onEnter.add((async () => {
+            this.interactObj.onEnter.add(async () => {
                 let aniStr = actionData.assetId.split("-");
                 await Utils.asyncDownloadAsset(aniStr[0]);
                 await Utils.asyncDownloadAsset(aniStr[1]);
@@ -18776,9 +18776,9 @@ class PlayerInteract {
                 this.interactObj.localTransform.position = actionData.pos;
                 this.interactObj.localTransform.rotation = actionData.rot;
                 return resolve(true);
-            }));
+            });
             this.interactObj.enter(this.npc, mw.HumanoidSlotType.Buttocks);
-        }));
+        });
     }
     async clearInteractor(player) {
         if (this.singleAni) {
@@ -18797,9 +18797,9 @@ class PlayerInteract {
         return await this.leaveInteract(player);
     }
     async leaveInteract(player) {
-        return new Promise((resolve => {
+        return new Promise(resolve => {
             if (!this.interactObj) return resolve(true);
-            this.interactObj.onLeave.add((async () => {
+            this.interactObj.onLeave.add(async () => {
                 this.interactObj.parent = null;
                 this.interactObj.destroy();
                 this.interactObj = null;
@@ -18808,9 +18808,9 @@ class PlayerInteract {
                 if (!player.character.collisionWithOtherCharacterEnabled) player.character.collisionWithOtherCharacterEnabled = true;
                 await TimeUtil.delaySecond(1);
                 return resolve(true);
-            }));
+            });
             this.interactObj.leave();
-        }));
+        });
     }
 }
 
@@ -18929,9 +18929,9 @@ let OnClickWishPanel_Generate = class OnClickWishPanel_Generate extends UIScript
         this.initButtons();
     }
     initButtons() {
-        this.mClickBtn.onClicked.add((() => {
+        this.mClickBtn.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickBtn");
-        }));
+        });
         this.mClickBtn.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mClickTextBlock);
     }
@@ -19039,13 +19039,13 @@ let Nickname = class Nickname extends Script {
             this.nickname.mVipCountText.text = StringUtil.format(GameConfig.Language.Text_Remaining.Value, this.vipCount);
             this.nickname.mEnterFlipBook.isLoop = false;
             this.nickname.mEnterFlipBook.play();
-            this.nickname.mEnterFlipBook.onFinish.add((() => {
+            this.nickname.mEnterFlipBook.onFinish.add(() => {
                 Utils.setWidgetVisibility(this.nickname.mEnterFlipBook, mw.SlateVisibility.Collapsed);
                 Utils.setWidgetVisibility(this.nickname.mIdleFlipBook, mw.SlateVisibility.Visible);
                 Utils.setWidgetVisibility(this.nickname.mVipIconImage, mw.SlateVisibility.SelfHitTestInvisible);
                 this.nickname.mIdleFlipBook.isLoop = true;
                 this.nickname.mIdleFlipBook.play();
-            }));
+            });
         }
     }
     onWishDataV0Change() {
@@ -19156,9 +19156,9 @@ class MallModuleS extends ModuleS {
         if (this.isContinueInitMallConfigData) {
             this.isContinueInitMallConfigData = false;
             await this.initMallConfigData();
-            TimeUtil.delaySecond(5).then((() => {
+            TimeUtil.delaySecond(5).then(() => {
                 this.isContinueInitMallConfigData = true;
-            }));
+            });
         }
         this.getClient(player).net_syncMallConfigData(this.mallConfigData);
     }
@@ -19255,9 +19255,9 @@ class NavigationModel {
         if (this.pathIndex == this.pathVecs.length) this.pathIndex = 0;
         this.isInitComplete = true;
         this.copyOtherPlayerDescription();
-        TimeUtil.setInterval((() => {
+        TimeUtil.setInterval(() => {
             this.copyOtherPlayerDescription();
-        }), 300);
+        }, 300);
     }
     copyOtherPlayerDescription() {
         let players = Player.getAllPlayers();
@@ -19294,10 +19294,10 @@ class NavigationModel {
         await this.interactor.asyncReady();
         await this.npc.asyncReady();
         this.interactor.onEnter.clear();
-        this.interactor.onEnter.add((() => {
+        this.interactor.onEnter.add(() => {
             this.npc.localTransform.position = mw.Vector.zero;
             this.npc.localTransform.rotation = mw.Rotation.zero;
-        }));
+        });
         this.interactor.enter(this.npc, mw.HumanoidSlotType.Root);
     }
 }
@@ -19341,39 +19341,39 @@ class NavigationModuleS extends ModuleS {
         this.initNavigation();
     }
     initNavigation() {
-        TimeUtil.delaySecond(15).then((() => {
+        TimeUtil.delaySecond(15).then(() => {
             this.initNavigationModels();
-        }));
+        });
     }
     initNavigationModels() {
-        navigationConfigs.forEach((navigationConfig => {
+        navigationConfigs.forEach(navigationConfig => {
             let navigationModel = new NavigationModel;
             navigationModel.speed = navigationConfig.speed;
-            GameObject.asyncFindGameObjectById(navigationConfig.modelId).then((model => {
+            GameObject.asyncFindGameObjectById(navigationConfig.modelId).then(model => {
                 navigationModel.model = model;
-                GameObject.asyncFindGameObjectById(navigationConfig.npcId).then((async npcModel => {
+                GameObject.asyncFindGameObjectById(navigationConfig.npcId).then(async npcModel => {
                     navigationModel.npc = npcModel;
-                    GameObject.asyncFindGameObjectById(navigationConfig.interactionObjId).then((async interactorModel => {
+                    GameObject.asyncFindGameObjectById(navigationConfig.interactionObjId).then(async interactorModel => {
                         navigationModel.interactor = interactorModel;
                         navigationModel.enterInteractor();
-                        GameObject.asyncFindGameObjectById(navigationConfig.pathId).then((pathModel => {
+                        GameObject.asyncFindGameObjectById(navigationConfig.pathId).then(pathModel => {
                             let path = pathModel.getChildren();
-                            path.forEach((pathNode => {
+                            path.forEach(pathNode => {
                                 navigationModel.pathVecs.push(pathNode.worldTransform.position);
-                            }));
+                            });
                             navigationModel.prepareMove();
                             this.navigationModels.push(navigationModel);
-                        }));
-                    }));
-                }));
-            }));
-        }));
+                        });
+                    });
+                });
+            });
+        });
     }
     onUpdate(dt) {
         if (!this.navigationModels || this.navigationModels.length == 0) return;
-        this.navigationModels.forEach((navigationModel => {
+        this.navigationModels.forEach(navigationModel => {
             navigationModel.updateMove();
-        }));
+        });
     }
 }
 
@@ -19434,9 +19434,9 @@ let TryOnItem_Generate = class TryOnItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mClickButton.onClicked.add((() => {
+        this.mClickButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mClickButton");
-        }));
+        });
         this.mClickButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mRankTextBlock);
         this.initLanguage(this.mNameTextBlock);
@@ -19576,18 +19576,18 @@ let TryOnPanel_Generate = class TryOnPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mOpenShareButton.onClicked.add((() => {
+        this.mOpenShareButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenShareButton");
-        }));
+        });
         this.initLanguage(this.mOpenShareButton);
         this.mOpenShareButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mSaveButton.onClicked.add((() => {
+        this.mSaveButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSaveButton");
-        }));
+        });
         this.mSaveButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mSaveTextBlock);
         this.initLanguage(this.mTitleTextBlock);
@@ -19860,29 +19860,29 @@ let SetPanel_Generate = class SetPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSet1Button.onClicked.add((() => {
+        this.mSet1Button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSet1Button");
-        }));
+        });
         this.mSet1Button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mShowNickNameButton.onClicked.add((() => {
+        this.mShowNickNameButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mShowNickNameButton");
-        }));
+        });
         this.mShowNickNameButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mTryOnPermissionButton.onClicked.add((() => {
+        this.mTryOnPermissionButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mTryOnPermissionButton");
-        }));
+        });
         this.mTryOnPermissionButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mResetButton.onClicked.add((() => {
+        this.mResetButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mResetButton");
-        }));
+        });
         this.mResetButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mResetPosButton.onClicked.add((() => {
+        this.mResetPosButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mResetPosButton");
-        }));
+        });
         this.mResetPosButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mSet1TextBlock);
         this.initLanguage(this.mQualityTextBlock);
@@ -20134,12 +20134,12 @@ class SetModuleC extends ModuleC {
     }
     onStart() {
         this.initEvent();
-        InputUtil.onKeyDown(mw.Keys.K, (() => {
+        InputUtil.onKeyDown(mw.Keys.K, () => {
             console.error(GraphicsSettings.getDefaultCPULevel());
             console.error(GraphicsSettings.getDefaultGPULevel());
             console.error(GraphicsSettings.getGPULevel());
             console.error(GraphicsSettings.getCPULevel());
-        }));
+        });
     }
     onEnterScene(sceneType) {
         this.initSetData();
@@ -20451,9 +20451,9 @@ class TryOnPanel extends TryOnPanel_Generate$1 {
     }
     initTryOnRot() {
         this.moveVec = [];
-        mw.TimeUtil.delayExecute((() => {
+        mw.TimeUtil.delayExecute(() => {
             this.movePos = this.mTouchImage.position.multiply(1);
-        }), 3);
+        }, 3);
     }
     onUpdate(dt) {
         if (this.dir != 0) {
@@ -20565,11 +20565,11 @@ class TryOnModuleC extends ModuleC {
         this.onOpenShareAction.add(this.addOpenShareAction.bind(this));
     }
     addOpenShareAction() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             this.getSharePanel.show();
             let sharedId = await Utils.createSharedId(this.localPlayer.character);
             this.getSharePanel.showPanel(sharedId, 1);
-        }));
+        });
     }
     onOpenShareActionHandler() {
         console.error(`-------------${JSON.stringify(this.tryOnConfigData)}`);
@@ -20577,7 +20577,7 @@ class TryOnModuleC extends ModuleC {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_1.Value);
             return;
         }
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.getMallModuleC.isAccountServiceDownloadData();
             this.tryOnRoomData = null;
             await this.getMallModuleC.openTryOnPanel();
@@ -20594,7 +20594,7 @@ class TryOnModuleC extends ModuleC {
             }
             this.getTryOnPanel.refreshTryOnPanel(roomDatas, curRoomIndex);
             this.getMallModuleC.onSwitchCameraAction.call(2);
-        }));
+        });
     }
     refreshTryOnPanel(roomDatas) {
         if (!UIService.getUI(TryOnPanel, false)?.visible) return;
@@ -20609,11 +20609,11 @@ class TryOnModuleC extends ModuleC {
     }
     addCloseTryOnPanelAction() {
         if (this.isNeedSaveCharacter) {
-            this.getMallTipsPanel.showTips((() => {
+            this.getMallTipsPanel.showTips(() => {
                 this.onSaveAction.call();
-            }), (() => {
+            }, () => {
                 this.resetCharacterDescription();
-            }), GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
+            }, GameConfig.Language.Text_CloseTips.Value, GameConfig.Language.Text_WhetherSaveImage.Value, GameConfig.Language.Text_NoSave.Value, GameConfig.Language.Text_Save.Value);
         } else {
             this.getTryOnPanel.hide();
             this.getMallModuleC.onSwitchCameraAction.call(0);
@@ -20625,7 +20625,7 @@ class TryOnModuleC extends ModuleC {
             Notice.showDownNotice(GameConfig.Language.Text_TryOnTips7.Value);
             return;
         }
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             if (roomData.userId == this.localPlayer.userId) {
                 this.localPlayer.character.setDescription(this.getMallModuleC.getCopyNpc.getDescription());
             } else {
@@ -20659,16 +20659,16 @@ class TryOnModuleC extends ModuleC {
             await TimeUtil.delaySecond(1);
             this.getMallModuleC.onSwitchCameraAction.call(2);
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-        }));
+        });
     }
     resetCharacterDescription() {
         this.isNeedSaveCharacter = false;
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             let copyNpc = this.getMallModuleC.getCopyNpc;
             await copyNpc.asyncReady();
             this.localPlayer.character.setDescription(copyNpc.getDescription());
             await this.localPlayer.character.asyncReady();
-        }));
+        });
         this.getTryOnPanel.hide();
         this.getMallModuleC.onSwitchCameraAction.call(0);
     }
@@ -20684,7 +20684,7 @@ class TryOnModuleC extends ModuleC {
         }
     }
     openAvatarEditor() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             let buyCharacterDescription = this.localPlayer.character.getDescription();
             let copyNpc = this.getMallModuleC.getCopyNpc;
@@ -20700,17 +20700,17 @@ class TryOnModuleC extends ModuleC {
             await this.localPlayer.character.asyncReady();
             if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
             this.server.net_addTryOn(this.tryOnRoomData.userId);
-        }));
+        });
     }
     saveCharacter() {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             this.localPlayer.character.syncDescription();
             Notice.showDownNotice(GameConfig.Language.Text_SaveSuccessfully.Value);
             await this.getMallModuleC.syncTryOnCharacter();
             if (!this.tryOnRoomData || !this.tryOnRoomData?.userId || this.tryOnRoomData.userId == "") return;
             this.server.net_addTryOn(this.tryOnRoomData.userId);
-        }));
+        });
     }
     addRoatation(dir) {
         if (!this.localPlayer || !this.localPlayer?.character || !this.localPlayer.character?.worldTransform) return;
@@ -20723,27 +20723,27 @@ class TryOnModuleC extends ModuleC {
         this.server.net_canTryOnSlotByUserId(userId, slotDataArrStr);
     }
     net_canTryOnSlotByUserId(slotDataArrStr) {
-        ExecutorManager.instance.pushAsyncExecutor((async () => {
+        ExecutorManager.instance.pushAsyncExecutor(async () => {
             await this.localPlayer.character.asyncReady();
             await Mall.setSlotByDataArrStr(this.localPlayer.character, slotDataArrStr);
             Notice.showDownNotice(GameConfig.Language.Text_TryItOnSuccessfully.Value);
-        }));
+        });
     }
     net_syncTryOnConfigData(tryOnConfigData) {
         this.tryOnConfigData = tryOnConfigData;
-        TimeUtil.delaySecond(10).then((() => {
+        TimeUtil.delaySecond(10).then(() => {
             this.initNpc();
-        }));
+        });
     }
     initNpc() {
         if (!this.tryOnConfigData.isInitNpc && !mw.SystemUtil.isPIE) return;
         let i = 0;
-        this.npcIds.forEach(((value, index) => {
-            mw.GameObject.asyncFindGameObjectById(value.npcId).then((async npc => {
+        this.npcIds.forEach((value, index) => {
+            mw.GameObject.asyncFindGameObjectById(value.npcId).then(async npc => {
                 await TimeUtil.delaySecond(i++);
                 AvatarApi.setDescriptionByApiData2(npc, JSON.parse(value.shareId));
-            }));
-        }));
+            });
+        });
     }
 }
 
@@ -20768,9 +20768,9 @@ class TryOnModuleS extends ModuleS {
         if (this.isContinueInitTryOnData) {
             this.isContinueInitTryOnData = false;
             await this.initTryOnConfigData();
-            TimeUtil.delaySecond(5).then((() => {
+            TimeUtil.delaySecond(5).then(() => {
                 this.isContinueInitTryOnData = true;
-            }));
+            });
         }
         this.getClient(player).net_syncTryOnConfigData(this.tryOnConfigData);
     }
@@ -21042,22 +21042,22 @@ let RankPanel_Generate = class RankPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mOpenRoomRankButton.onClicked.add((() => {
+        this.mOpenRoomRankButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mOpenRoomRankButton");
-        }));
+        });
         this.initLanguage(this.mOpenRoomRankButton);
         this.mOpenRoomRankButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseRoomButton.onClicked.add((() => {
+        this.mCloseRoomButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseRoomButton");
-        }));
+        });
         this.mCloseRoomButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseWorldButton.onClicked.add((() => {
+        this.mCloseWorldButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseWorldButton");
-        }));
+        });
         this.mCloseWorldButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mCloseMoneyWorldButton.onClicked.add((() => {
+        this.mCloseMoneyWorldButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseMoneyWorldButton");
-        }));
+        });
         this.mCloseMoneyWorldButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mRoomRankTextBlock);
         this.initLanguage(this.mRoomNameTextBlock);
@@ -21526,15 +21526,15 @@ class RankModuleC extends ModuleC {
         this.getHUDModuleC.onOpenMoneyRankAction.add(this.addOnOffMoneyRankPanelAction.bind(this));
         Event.addLocalListener(EventType.OnOffMainUI, this.addOnOffMainUI.bind(this));
         let score = 0;
-        InputUtil.onKeyDown(mw.Keys.One, (() => {
+        InputUtil.onKeyDown(mw.Keys.One, () => {
             score++;
             this.server.net_refreshScore(score);
-        }));
+        });
         let money = 0;
-        InputUtil.onKeyDown(mw.Keys.Two, (() => {
+        InputUtil.onKeyDown(mw.Keys.Two, () => {
             money++;
             this.server.net_refreshMoney(money);
-        }));
+        });
     }
     addOnOffRankPanelAction() {
         this.onOpenWorldRankAction.call();
@@ -21552,7 +21552,7 @@ class RankModuleC extends ModuleC {
     }
     onEnterScene(sceneType) {
         this.getRankPanel.show();
-        TimeUtil.delaySecond(5).then((() => {
+        TimeUtil.delaySecond(5).then(() => {
             let nickName = mw.AccountService.getNickName();
             nickName = nickName ? nickName : "UserId：" + this.currentUserId;
             let bagIds = this.getInteractionData?.bagIds;
@@ -21564,7 +21564,7 @@ class RankModuleC extends ModuleC {
             let money = this.data?.money;
             if (!money && money != 0) money = 0;
             this.server.net_onEnterScene(nickName, score, time, tryon, money);
-        }));
+        });
     }
     updateRoomDatas(roomUserIds, roomNames, roomScores, roomTimes, roomTryOn, roomMoney) {
         if (this.roomDatas.length > roomUserIds.length) {
@@ -21702,14 +21702,14 @@ class RankModuleC extends ModuleC {
         this.getRankPanel.refreshRankPanel_RoomWorld(this.roomDatas, this.curRoomIndex, this.worldDatas, this.curWorldIndex);
     }
     sortRoomData() {
-        this.roomDatas.sort(((a, b) => b.score - a.score));
+        this.roomDatas.sort((a, b) => b.score - a.score);
     }
     getRoomDatas() {
         let tmpRoomDatas = [];
-        this.roomDatas.forEach((value => {
+        this.roomDatas.forEach(value => {
             tmpRoomDatas.push(value);
-        }));
-        tmpRoomDatas.sort(((a, b) => b.tryOn - a.tryOn));
+        });
+        tmpRoomDatas.sort((a, b) => b.tryOn - a.tryOn);
         return tmpRoomDatas;
     }
 }
@@ -21805,9 +21805,9 @@ let SignInPanel_Generate = class SignInPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mTitleTextBlock);
         this.initLanguage(this.mTotalDayTextBlock);
@@ -21873,9 +21873,9 @@ let SignInItem_Generate = class SignInItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mSignInButton.onClicked.add((() => {
+        this.mSignInButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mSignInButton");
-        }));
+        });
         this.mSignInButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mHasTextBlock);
         this.initLanguage(this.mDayTextBlock);
@@ -22045,11 +22045,11 @@ class SignInModuleC extends ModuleC {
     }
     addSignInAction(day, sharedId) {
         if (day <= this.day) {
-            ExecutorManager.instance.pushAsyncExecutor((async () => {
+            ExecutorManager.instance.pushAsyncExecutor(async () => {
                 this.getSignInPanel.hide();
                 await this.useShareId(sharedId);
                 Notice.showDownNotice(GameConfig.Language.Text_SignIn_2.Value);
-            }));
+            });
         } else {
             Notice.showDownNotice(GameConfig.Language.Text_SignIn_3.Value);
         }
@@ -22130,9 +22130,9 @@ class SignInModuleS extends ModuleS {
         if (this.isContinueInitSignInData) {
             this.isContinueInitSignInData = false;
             await this.initSignInConfigData();
-            TimeUtil.delaySecond(5).then((() => {
+            TimeUtil.delaySecond(5).then(() => {
                 this.isContinueInitSignInData = true;
-            }));
+            });
         }
         this.getClient(player).net_syncSignInConfigData(this.signInConfigData, this.getDay(player));
     }
@@ -22334,9 +22334,9 @@ let TaskItem_Generate = class TaskItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mFinishButton.onClicked.add((() => {
+        this.mFinishButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mFinishButton");
-        }));
+        });
         this.mFinishButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mNameTextBlock);
         this.initLanguage(this.mCoinTextBlock);
@@ -22441,13 +22441,13 @@ let TaskPanel_Generate = class TaskPanel_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.mCloseButton.onClicked.add((() => {
+        this.mCloseButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mCloseButton");
-        }));
+        });
         this.mCloseButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.mBuyVipButton.onClicked.add((() => {
+        this.mBuyVipButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "mBuyVipButton");
-        }));
+        });
         this.mBuyVipButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.mDailyTimeTextBlock);
         this.initLanguage(this.mDailyTaskDoneTextBlock);
@@ -22546,12 +22546,12 @@ class TaskPanel extends TaskPanel_Generate$1 {
         this.recycleAllDailyTaskItem();
         if (dailyTaskDataMap.size == 0) return;
         Utils.setWidgetVisibility(this.mDailyTaskDoneTextBlock, mw.SlateVisibility.Collapsed);
-        dailyTaskDataMap.forEach(((value, key) => {
+        dailyTaskDataMap.forEach((value, key) => {
             let dailyTaskItem = UIService.create(TaskItem);
             dailyTaskItem.initTaskItemData(key, value);
             this.mDailyTaskCanvas.addChild(dailyTaskItem.uiObject);
             this.dailyTaskItemsMap.set(key, dailyTaskItem);
-        }));
+        });
     }
     updateTaskPanel(vipTaskType, progress) {
         if (this.dailyTaskItemsMap.has(vipTaskType)) {
@@ -22567,12 +22567,12 @@ class TaskPanel extends TaskPanel_Generate$1 {
         this.recycleAllWeeklyTaskItem();
         if (weeklyTaskDataMap.size == 0) return;
         Utils.setWidgetVisibility(this.mWeekTaskDoneTextBlock, mw.SlateVisibility.Collapsed);
-        weeklyTaskDataMap.forEach(((value, key) => {
+        weeklyTaskDataMap.forEach((value, key) => {
             let weeklyTaskItem = UIService.create(TaskItem);
             weeklyTaskItem.initTaskItemData(key, value);
             this.mWeekTaskCanvas.addChild(weeklyTaskItem.uiObject);
             this.weeklyTaskItemsMap.set(key, weeklyTaskItem);
-        }));
+        });
     }
     updateTaskCompletePanel(vipTaskType) {
         if (this.dailyTaskItemsMap.has(vipTaskType)) {
@@ -22604,18 +22604,18 @@ class TaskPanel extends TaskPanel_Generate$1 {
     }
     recycleAllDailyTaskItem() {
         if (this.dailyTaskItemsMap.size == 0) return;
-        this.dailyTaskItemsMap.forEach(((value, key) => {
+        this.dailyTaskItemsMap.forEach((value, key) => {
             value.destroy();
             this.dailyTaskItemsMap.delete(key);
-        }));
+        });
         this.dailyTaskItemsMap.clear();
     }
     recycleAllWeeklyTaskItem() {
         if (this.weeklyTaskItemsMap.size == 0) return;
-        this.weeklyTaskItemsMap.forEach(((value, key) => {
+        this.weeklyTaskItemsMap.forEach((value, key) => {
             value.destroy();
             this.weeklyTaskItemsMap.delete(key);
-        }));
+        });
         this.weeklyTaskItemsMap.clear();
     }
     initTime() {
@@ -22698,10 +22698,10 @@ class TaskItem extends TaskItem_Generate$1 {
         if (this.vIPTaskElement.Diamond == 0 || this.vIPTaskElement.Diamond == null) {
             Utils.setWidgetVisibility(this.mDiamondCanvas, mw.SlateVisibility.Collapsed);
         }
-        this.mFinishButton.onClicked.add((() => {
+        this.mFinishButton.onClicked.add(() => {
             ModuleService.getModule(TaskModuleC).onTaskRewardAction.call(this.vipTaskType, this.task.taskId);
             mw.UIService.getUI(TaskPanel).controllerPic(-1);
-        }));
+        });
     }
     isShowFinishBtn(isShow) {
         if (isShow) {
@@ -22816,23 +22816,23 @@ class TaskModuleC extends ModuleC {
         let dailyTaskTypes = [];
         let dailyProgresss = [];
         if (MapEx.count(this.tempDailTask) > 0) {
-            MapEx.forEach(this.tempDailTask, ((key, value) => {
+            MapEx.forEach(this.tempDailTask, (key, value) => {
                 dailyTaskIds.push(value.taskId);
                 dailyTaskTypes.push(key);
                 dailyProgresss.push(value.progress);
                 MapEx.del(this.tempDailTask, key);
-            }));
+            });
         }
         let weeklyTaskIds = [];
         let weeklyTaskTypes = [];
         let weeklyProgresss = [];
         if (MapEx.count(this.tempWeeklyTask) > 0) {
-            MapEx.forEach(this.tempWeeklyTask, ((key, value) => {
+            MapEx.forEach(this.tempWeeklyTask, (key, value) => {
                 weeklyTaskIds.push(value.taskId);
                 weeklyTaskTypes.push(key);
                 weeklyProgresss.push(value.progress);
                 MapEx.del(this.tempWeeklyTask, key);
-            }));
+            });
         }
         if (dailyTaskIds.length == 0 && weeklyTaskIds.length == 0) {
             return;
@@ -23074,15 +23074,15 @@ class TaskModuleS extends ModuleS {
         }
     }
     resetAllPlayersDailyTask() {
-        this.playerTaskMap.forEach((player => {
+        this.playerTaskMap.forEach(player => {
             DataCenterS.getData(player, TaskData).resetDailyTask();
-        }));
+        });
         this.getAllClient().net_resetDailyTask();
     }
     resetAllPlayersWeeklyTask() {
-        this.playerTaskMap.forEach((player => {
+        this.playerTaskMap.forEach(player => {
             DataCenterS.getData(player, TaskData).resetWeeklyTask();
-        }));
+        });
         this.getAllClient().net_resetWeeklyTask();
     }
     net_saveTaskProgress(dailyTaskIds, dailyTaskTypes, dailyProgresss, weeklyTaskIds, weeklyTaskTypes, weeklyProgresss) {
@@ -23254,17 +23254,17 @@ let GameStart = class GameStart extends Script {
         }
         GlobalData.languageId = languageId;
         console.error(`wfz - languageId:${languageId}`);
-        GameConfig.initLanguage(languageId, (key => {
+        GameConfig.initLanguage(languageId, key => {
             let ele = GameConfig.Language.getElement(key);
             if (ele == null) return "unknow_" + key;
             return ele.Value;
-        }));
-        mw.UIScript.addBehavior("lan", (ui => {
+        });
+        mw.UIScript.addBehavior("lan", ui => {
             let key = ui.text;
             if (!key) return;
             let languageElement = GameConfig.Language.getElement(key);
             if (languageElement) ui.text = languageElement.Value;
-        }));
+        });
     }
     onUpdateC(dt) {
         mw.TweenUtil.TWEEN.update();
@@ -23341,14 +23341,14 @@ let GMHUD_Generate = class GMHUD_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.oKbutton.onClicked.add((() => {
+        this.oKbutton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "oKbutton");
-        }));
+        });
         this.initLanguage(this.oKbutton);
         this.oKbutton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-        this.cmdButton.onClicked.add((() => {
+        this.cmdButton.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "cmdButton");
-        }));
+        });
         this.initLanguage(this.cmdButton);
         this.cmdButton.touchMethod = mw.ButtonTouchMethod.PreciseTap;
         this.initLanguage(this.pingText);
@@ -23390,9 +23390,9 @@ let GMItem_Generate = class GMItem_Generate extends UIScript {
         this.initButtons();
     }
     initButtons() {
-        this.button.onClicked.add((() => {
+        this.button.onClicked.add(() => {
             Event.dispatchToLocal("PlayButtonClick", "button");
-        }));
+        });
         this.initLanguage(this.button);
         this.button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
     }
@@ -23505,9 +23505,9 @@ AddGMCommand({
 
 let GMService = GMService_1 = class GMService extends mw.Script {
     createUI(dropDownList) {
-        GMConfig.forEach((cmd => {
+        GMConfig.forEach(cmd => {
             dropDownList.addItem(cmd);
-        }));
+        });
     }
     onStart() {
         GMService_1.instance = this;
@@ -23515,10 +23515,10 @@ let GMService = GMService_1 = class GMService extends mw.Script {
             console.log("[GM]：模块初始化");
             new GMBasePanel;
             let isOpen = false;
-            mw.InputUtil.onKeyDown(mw.Keys.NumPadOne, (() => {
+            mw.InputUtil.onKeyDown(mw.Keys.NumPadOne, () => {
                 isOpen = !isOpen;
                 isOpen ? OpenGMUI() : CloseGMUI();
-            }));
+            });
         }
     }
     cmd(player, data, param) {
@@ -23563,18 +23563,18 @@ class GMBasePanel {
             panel: this._view.dropList,
             button: this._view.oKbutton,
             label: this._view.cmdButton
-        }, GMItem_Generate$1, ((ui, data) => {
-            ui.button.onClicked.add((() => {
+        }, GMItem_Generate$1, (ui, data) => {
+            ui.button.onClicked.add(() => {
                 GMService.instance.cmd(Player.localPlayer, data, this._view.argText.text);
-            }));
+            });
             ui.button.text = data.label;
-        }), 5);
+        }, 5);
         GMService.instance.createUI(this.dropDownList);
-        this._view.cmdButton.onClicked.add((() => {
+        this._view.cmdButton.onClicked.add(() => {
             if (this.dropDownList.selectItem) {
                 GMService.instance.cmd(Player.localPlayer, this.dropDownList.selectItem.data, this._view.argText.text);
             }
-        }));
+        });
     }
 }
 
@@ -23597,10 +23597,10 @@ class DropdownList {
         this.addExpandEvent();
     }
     addExpandEvent() {
-        this._root.button.onClicked.add((() => {
+        this._root.button.onClicked.add(() => {
             this._isDropdown = !this._isDropdown;
             this._invalidateLayout();
-        }));
+        });
     }
     get selectItem() {
         return this._select;
@@ -23610,12 +23610,12 @@ class DropdownList {
         if (!itemUI.list) {
             itemUI.list = this;
             itemUI.button.touchMethod = mw.ButtonTouchMethod.PreciseTap;
-            itemUI.button.onClicked.add((() => {
+            itemUI.button.onClicked.add(() => {
                 this._select = itemUI;
                 this._root.label.text = data.label;
                 this._isDropdown = !this._isDropdown;
                 this._invalidateLayout();
-            }));
+            });
             this._root.panel.addChild(itemUI.uiObject);
         }
         itemUI.data = data;
@@ -23695,19 +23695,19 @@ let CopyCharacter = class CopyCharacter extends Script {
     }
     onStart() {
         if (mw.SystemUtil.isServer()) return;
-        this.gameObject.onEnter.add((character => {
+        this.gameObject.onEnter.add(character => {
             if (Player.localPlayer.character.gameObjectId != character.gameObjectId) return;
             if (!this.isCanTrigger) return;
             this.isCanTrigger = false;
-            TimeUtil.delaySecond(60).then((() => {
+            TimeUtil.delaySecond(60).then(() => {
                 this.isCanTrigger = true;
-            }));
+            });
             console.error(`aaaaaaa2`);
             character.setDescription(this.gameObject.parent.getDescription());
-            character.asyncReady().then((() => {
+            character.asyncReady().then(() => {
                 character.syncDescription();
-            }));
-        }));
+            });
+        });
     }
 };
 
@@ -23746,18 +23746,18 @@ let FreeCamera = FreeCamera_1 = class FreeCamera extends Script {
         this.freeCamera.springArm.localTransform = Transform.identity;
         this.freeCamera.springArm.length = 0;
         this.freeCamera.springArm.collisionEnabled = false;
-        InputUtil.onKeyDown(Keys.F8, (() => {
+        InputUtil.onKeyDown(Keys.F8, () => {
             if (this.isFreeCamera) {
                 this.exitFreeCamera();
             } else {
                 this.enterFreeCamera();
             }
-        }));
-        InputUtil.onKeyDown(Keys.NumPadNine, (() => {
+        });
+        InputUtil.onKeyDown(Keys.NumPadNine, () => {
             this.freeCamera.springArm.worldTransform.position = Player.localPlayer.character.worldTransform.position.clone();
             this._moveLoc = this.freeCamera.springArm.worldTransform.position.clone();
-        }));
-        Event.addLocalListener(FreeCamera_1.EVENTS_JOYSTICK_INPUT, (dir => {
+        });
+        Event.addLocalListener(FreeCamera_1.EVENTS_JOYSTICK_INPUT, dir => {
             if (this.freeCamera) {
                 const forward = this.freeCamera.worldTransform.clone().getForwardVector().clone();
                 const right = this.freeCamera.worldTransform.clone().getRightVector().clone();
@@ -23766,7 +23766,7 @@ let FreeCamera = FreeCamera_1 = class FreeCamera extends Script {
                 this.freeCamera.springArm.worldTransform.position = this._moveLoc;
                 if (this.useUpdate) this.useUpdate = false;
             }
-        }));
+        });
         KeyActionManager.instance.add([ Keys.W, Keys.S, Keys.A, Keys.D, Keys.E, Keys.Q ]);
     }
     enterFreeCamera() {
@@ -23859,22 +23859,22 @@ class KeyActionManager {
     add(btn) {
         if (btn instanceof Button) {
             this._btnStates.set(btn.guid, false);
-            btn.onPressed.add((() => {
+            btn.onPressed.add(() => {
                 this._btnStates.set(btn.guid, true);
-            }));
-            btn.onReleased.add((() => {
+            });
+            btn.onReleased.add(() => {
                 this._btnStates.set(btn.guid, false);
-            }));
+            });
         } else {
-            btn.forEach((element => {
+            btn.forEach(element => {
                 this._actionStates.set(element, false);
-                InputUtil.onKeyDown(element, (() => {
+                InputUtil.onKeyDown(element, () => {
                     this._actionStates.set(element, true);
-                }));
-                InputUtil.onKeyUp(element, (() => {
+                });
+                InputUtil.onKeyUp(element, () => {
                     this._actionStates.set(element, false);
-                }));
-            }));
+                });
+            });
         }
     }
 }
